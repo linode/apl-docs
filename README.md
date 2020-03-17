@@ -1,7 +1,7 @@
 # otomi
 This repository is for the public Otomi Stack documentation
 
-How to deploy Otomi
+[How to deploy Otomi](howtodeploy.md)
 
 Extra features
 

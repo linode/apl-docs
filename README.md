@@ -1,0 +1,2 @@
+# otomi
+Otomi Stack documentation

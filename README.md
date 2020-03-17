@@ -1,2 +1,2 @@
 # otomi
-Otomi Stack documentation
+This repository is for the public Otomi Stack documentation

@@ -1,4 +1,4 @@
-#How To Deploy Otomi
+How To Deploy Otomi
 
 Quickly set up a production-ready Kubernetes environment and customize it when desired.
 Otomi Stack can be deployed to any upstream Kubernetes cluster, running in the cloud or on-premises with only a single command. 

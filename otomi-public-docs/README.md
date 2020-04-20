@@ -24,6 +24,4 @@ This command generates static content into the `build` directory and can be serv
 
 ### Deployment
 
-```
 https://v2.docusaurus.io/docs/deployment
-```

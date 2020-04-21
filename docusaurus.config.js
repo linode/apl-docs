@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Otomi Stack',
+  title: 'Otomi Stack Documentation',
   tagline: 'Documentation for Otomi Stack',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
@@ -7,6 +7,7 @@ module.exports = {
   organizationName: 'redkubes', // Usually your GitHub org/user name.
   projectName: 'otomi', // Usually your repo name.
   themeConfig: {
+    sidebarCollapsible: false,
     navbar: {
       links: [
         {
@@ -15,6 +16,7 @@ module.exports = {
           label: 'Overview',
           position: 'left',
         },
+        {to: 'blog', label: 'Blog', position: 'left'},
       ],
     },
     footer: {

@@ -1,8 +1,8 @@
 module.exports = {
   title: 'Otomi Stack Documentation',
   tagline: 'Documentation for Otomi Stack',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://redkubes.github.io/otomi/',
+  baseUrl: '/otomi/',
   favicon: 'img/favicon.ico',
   organizationName: 'redkubes', // Usually your GitHub org/user name.
   projectName: 'otomi', // Usually your repo name.

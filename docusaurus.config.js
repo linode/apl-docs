@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'Documentation for Otomi Stack',
   url: 'https://redkubes.github.io/otomi/',
   baseUrl: '/otomi/',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/otomi-stack.ico',
   organizationName: 'redkubes', // Usually your GitHub org/user name.
   projectName: 'otomi', // Usually your repo name.
   themeConfig: {
@@ -16,7 +16,11 @@ module.exports = {
           label: 'Overview',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        {
+          to: 'blog', 
+          label: 'Blog', 
+          position: 'left'
+        },
       ],
     },
     footer: {
@@ -26,12 +30,8 @@ module.exports = {
           title: 'Links',
           items: [
             {
-              label: 'Red Kubes',
+              label: 'Red Kubes Site',
               to: 'https://www.redkubes.com',
-            },
-            {
-              label: 'GitHub',
-              to: 'https://github.com/redkubes/',
             },
           ],
         },

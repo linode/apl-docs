@@ -11,10 +11,25 @@ module.exports = {
     navbar: {
       links: [
         {
-          to: 'docs/what-is-otomi',
+          to: 'docs/about-otomi',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
+        },
+        {
+          to: 'docs/installation', 
+          label: 'installation', 
+          position: 'left'
+        },
+        {
+          to: 'docs/administration-overview', 
+          label: 'Administration', 
+          position: 'left'
+        },
+        {
+          to: 'docs/faq', 
+          label: 'FAQ', 
+          position: 'left'
         },
         {
           to: 'blog', 

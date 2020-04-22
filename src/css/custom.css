@@ -24,14 +24,6 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-table, th, td {
-  border: 1px solid black;
-}
-
-table {
-  padding: 5px;
-}
-
 table#t01 {
   width: 100%; 
 }

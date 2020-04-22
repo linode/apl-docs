@@ -1,6 +1,6 @@
 ---
-id: tools-used
-title: Tools Used
+id: app-suite
+title: App Suite
 ---
 
 The Otomi Stack consists of the following open source applications working in tandem. 

@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Otomi Stack Documentation',
-  tagline: 'Documentation for Otomi Stack',
+  title: 'Otomi Documentation',
+  tagline: '',
   url: 'https://redkubes.github.io/otomi/',
   baseUrl: '/otomi/',
   favicon: 'img/otomi-stack.ico',
@@ -11,9 +11,9 @@ module.exports = {
     navbar: {
       links: [
         {
-          to: 'docs/overview',
+          to: 'docs/what-is-otomi',
           activeBasePath: 'docs',
-          label: 'Overview',
+          label: 'Docs',
           position: 'left',
         },
         {
@@ -36,7 +36,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Red Kubes. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Red Kubes. Built with <a href="https://v2.docusaurus.io/">Docusaurus</a>`,
     },
   },
   presets: [

@@ -2,7 +2,7 @@ module.exports = {
   title: 'Otomi Documentation',
   tagline: '',
   url: 'https://redkubes.github.io/',
-  baseUrl: '/',
+  baseUrl: '/otomi/',
   favicon: 'img/otomi-stack.ico',
   organizationName: 'redkubes', // Usually your GitHub org/user name.
   projectName: 'otomi', // Usually your repo name.

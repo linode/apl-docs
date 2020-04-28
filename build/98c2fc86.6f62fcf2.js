@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[23],{122:function(o){o.exports=JSON.parse('{"allTagsPath":"/otomi/blog/tags","slug":"welcome","name":"welcome","count":1,"permalink":"/otomi/blog/tags/welcome"}')}}]);

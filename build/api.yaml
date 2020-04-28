@@ -1,0 +1,856 @@
+openapi: 3.0.0
+security:
+  - groupAuthz: []
+info:
+  title: The otomi-stack API
+  version: 0.1.0
+# the x- prefix allows to define own objects that are ignored by openapi spec validation
+x-fields:
+  domain: &domainNameField
+    type: string
+    pattern: ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$
+  repository: &repositoryField
+    type: string
+    pattern: ^[a-z0-9]+(?:[/._-]{1,2}[a-z0-9]+)*$
+    description: A container image repository
+  memoryQuantity: &k8sResourceMemoryQuantityField
+    type: string
+    pattern: ^[0-9]+\.?[0-9]+(E|P|T|G|M|K|Ei|Pi|Ti|Gi|Mi|Ki)?$
+  cpuQuantity: &k8sResourceCpuQuantityField
+    type: string
+    pattern: ^([0-9]+\.[0-9]{1,2})|([0-9]{2,3}m)?$
+  env: &envField
+    type: string
+    pattern: ^[a-zA-Z0-9_]*$
+  annotation: &k8sAnnotationField
+    type: string
+    pattern: ^((.){1,253}\/)?(.){1,63}$
+  uuid: &uuidField
+    type: string
+    pattern: ^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$
+  name: &nameField
+    type: string
+    pattern: ^[A-Z0-9]([-a-z0-9]*[a-z0-9])?$
+  idName: &idNameField
+    type: string
+    pattern: ^[a-z0-9]([-a-z0-9]*[a-z0-9])?$
+
+x-post-responses: &DefaultPostResponses
+  '400':
+    description: Bad Request
+    content:
+      'application/json':
+        schema:
+          $ref: '#/components/schemas/OpenApiValidationError'
+  '409':
+    description: Resource already exists
+    content:
+      'application/json':
+        schema:
+          $ref: '#/components/schemas/OtomiStackError'
+
+x-get-responses: &DefaultGetResponses
+  '400':
+    description: Bad Request
+    content:
+      'application/json':
+        schema:
+          $ref: '#/components/schemas/OpenApiValidationError'
+  '404':
+    description: Resource does not exist
+    content:
+      'application/json':
+        schema:
+          $ref: '#/components/schemas/OtomiStackError'
+
+paths:
+  /readiness:
+    get:
+      security: []
+      description: Check readiness
+      responses:
+        '200':
+          description: Service is ready
+  /clusters:
+    get:
+      operationId: getClusters
+      description: Get available clusters
+      responses:
+        '200':
+          description: Successfully obtained cluster collection
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Clusters'
+
+  /services:
+    get:
+      operationId: getAllServices
+      description: Get services from a given team
+      responses:
+        '200':
+          description: Successfully obtained all services
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Services'
+        '400':
+          description: Bad Request
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/OpenApiValidationError'
+
+  /teams:
+    get:
+      operationId: getTeams
+      description: Get teams collection
+      responses:
+        '200':
+          description: Successfully obtained teams collection
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Teams'
+    post:
+      operationId: createTeam
+      description: Create a team
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Team'
+        description: Team object that needs to be added to the collection
+        required: true
+      responses:
+        <<: *DefaultPostResponses
+        '200':
+          description: Successfully obtained teams collection
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Team'
+
+  '/teams/{teamId}':
+    get:
+      operationId: getTeam
+      description: Get a specific team
+      parameters:
+        - name: teamId
+          in: path
+          description: ID of team to return
+          required: true
+          schema:
+            type: string
+      responses:
+        <<: *DefaultGetResponses
+        '200':
+          description: Successfully obtained team
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Team'
+    put:
+      operationId: editTeam
+      description: Edit a team
+      parameters:
+        - name: teamId
+          in: path
+          description: ID of team to return
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Team'
+        description: Team object that contains updated values
+        required: true
+      responses:
+        <<: *DefaultGetResponses
+        '200':
+          description: Successfully edited team
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Team'
+    delete:
+      operationId: deleteTeam
+      description: Delete team
+      parameters:
+        - name: teamId
+          in: path
+          description: ID of team to delete
+          required: true
+          schema:
+            type: string
+      responses:
+        <<: *DefaultGetResponses
+        '200':
+          description: Successfully deleted a team
+  '/teams/{teamId}/services':
+    get:
+      operationId: getTeamServices
+      description: Get services from a given team
+      parameters:
+        - name: teamId
+          in: path
+          description: ID of team
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully obtained services
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Services'
+        '400':
+          description: Bad Request
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/OpenApiValidationError'
+    post:
+      operationId: createService
+      description: Create a service
+      parameters:
+        - name: teamId
+          in: path
+          description: ID of team
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Service'
+        description: Service object
+        required: true
+      responses:
+        <<: *DefaultPostResponses
+        '200':
+          description: Successfully stored service configuration
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Service'
+
+  '/teams/{teamId}/services/{serviceId}':
+    get:
+      operationId: getService
+      description: Get a service from a given team
+      parameters:
+        - name: teamId
+          in: path
+          description: ID of team
+          required: true
+          schema:
+            type: string
+        - name: serviceId
+          in: path
+          description: ID of the service
+          required: true
+          schema:
+            type: string
+      responses:
+        <<: *DefaultGetResponses
+        '200':
+          description: Successfully obtained service configuration
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Service'
+    put:
+      operationId: editService
+      description: Edit a service from a given team
+      parameters:
+        - name: teamId
+          in: path
+          description: ID of team to return
+          required: true
+          schema:
+            type: string
+        - name: serviceId
+          in: path
+          description: ID of the service
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Service'
+        description: Service object that contains updated values
+        required: true
+      responses:
+        <<: *DefaultGetResponses
+        '200':
+          description: Successfully edited service
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Team'
+    delete:
+      operationId: deleteService
+      description: Delete a service from a given team
+      parameters:
+        - name: teamId
+          in: path
+          description: ID of team to delete
+          required: true
+          schema:
+            type: string
+        - name: serviceId
+          in: path
+          description: ID of the service
+          required: true
+          schema:
+            type: string
+      responses:
+        <<: *DefaultGetResponses
+        '200':
+          description: Successfully deleted a service
+
+  /deploy:
+    get:
+      operationId: deploy
+      description: Trigger a deployment (only for admin)
+      responses:
+        '202':
+          description: Deployment has been triggered
+          content:
+            'application/json':
+              schema:
+                type: object
+        '409':
+          description: Unable not push data to git repo
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/OtomiStackError'
+
+  /session:
+    get:
+      security: []
+      operationId: getSession
+      description: Get the session for the current user
+      responses:
+        '200':
+          description: Get the session for the logged in user
+          content:
+            'application/json':
+              schema:
+                type: object
+        default:
+          description: The requested session.
+  /apiDocs:
+    get:
+      security: []
+      description: Get OpenApi document
+      responses:
+        '200':
+          description: The requested apiDoc.
+          content:
+            'application/json':
+              schema:
+                type: object
+        default:
+          description: The requested apiDoc.
+servers:
+  - url: '/v1'
+
+# -------------------- Components
+components:
+  securitySchemes:
+    groupAuthn:
+      type: apiKey
+      name: Auth-User
+      in: header
+    groupAuthz:
+      type: apiKey
+      name: Auth-Group
+      in: header
+  schemas:
+    AzureMonitor: &AzureMonitor
+      type: object
+      description: Azure Monitor is the platform service that provides a single source for monitoring Azure resources.
+      anyOf:
+        - title: No Azure monitoring
+          nullable: true
+          additionalProperties: false
+        - title: Azure monitoring with global settings
+          type: object
+          properties:
+            useAdmin:
+              type: boolean
+              default: true
+          nullable: true
+          additionalProperties: false
+        - title: Azure monitoring with custom settings
+          type: object
+          properties:
+            clientId:
+              description:
+                'An Azure client ID (Azure Active Directory -> App Registrations -> Choose your app -> Application ID)'
+              <<: *uuidField
+            clientSecret:
+              type: string
+              writeOnly: true
+              description:
+                An Azure client secret (Azure Active Directory -> App Registrations -> Choose your app -> Keys -> Create
+                a key -> Use client secret)
+            logAnalyticsClientId:
+              description: 'A dedicated client ID for Azure Log Analytics. Default: form clientId field'
+              <<: *uuidField
+            logAnalyticsClientSecret:
+              description: 'A client Secret for Azure Log Analytics. Default: form clientSecret field'
+              type: string
+              writeOnly: true
+            appInsightsAppId:
+              description: 'An API key for use with an Application Insights resource. Default: form clientId field'
+              type: string
+            appInsightsAppSecret:
+              description:
+                'An API secret for use with an Application Insights resource. Default: form clientSecret field'
+              type: string
+              writeOnly: true
+          required:
+            - clientId
+            - clientSecret
+          nullable: true
+          additionalProperties: false
+
+    Azure: &Azure
+      title: Azure
+      type: object
+      properties:
+        monitor:
+          <<: *AzureMonitor
+          type: object
+
+    x-clusters: &Clusters
+      type: array
+      description: Clusters on which deployment takes effect
+      items:
+        type: object
+        properties:
+          name:
+            description: cluster name
+            example: dev
+            type: string
+          cloud:
+            description: cluster provider name
+            example: google
+            type: string
+
+    x-available-clusters: &AvailableClusters # description: Select from available clusters
+      type: array
+      items:
+        type: string
+      uniqueItems: true
+
+    x-annotations: &K8sAnnotation
+      description: Kubernetes annotations with arbitrary metadata
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            title: Annotation name
+            description: Annotation name
+            <<: *k8sAnnotationField
+          value:
+            title: Annotation value
+            type: string
+            maxLength: 32767
+
+    KnativeServicePredeployed: &KnativeServicePredeployed
+      type: object
+      properties: &KnativeServicePredeployedProperties
+        predeployed:
+          type: boolean
+          default: true
+          readOnly: true
+      required:
+        - predeployed
+      additionalProperties: false
+
+    KnativeService: &KnativeService # description: Knative service definition
+      type: object
+      properties: &KnativeServiceProperties
+        image:
+          title: Container image
+          type: object
+          nullable: true
+          properties:
+            repository:
+              <<: *repositoryField
+            tag:
+              type: string
+          required:
+            - repository
+            - tag
+        env:
+          title: Environment variables
+          # description: Environment variables for containers
+          type: array
+          nullable: true
+          items:
+            type: object
+            properties:
+              name:
+                <<: *envField
+              value:
+                type: string
+                maxLength: 131072
+            required:
+              - name
+              - value
+        resources:
+          title: Pod resources
+          # description: Compute resources for containers
+          type: object
+          nullable: true
+          properties:
+            requests:
+              type: object
+              properties:
+                cpu:
+                  description: 'The guaranteed amount of CPU'
+                  <<: *k8sResourceCpuQuantityField
+                  default: 50m
+                memory:
+                  description: 'The guaranteed amount of RAM'
+                  <<: *k8sResourceMemoryQuantityField
+                  default: 64Mi
+              required:
+                - cpu
+                - memory
+            limits:
+              type: object
+              properties:
+                cpu:
+                  description: 'The maximal amount of CPU'
+                  <<: *k8sResourceCpuQuantityField
+                  default: 100m
+                memory:
+                  description: 'The maximal amount of RAM'
+                  <<: *k8sResourceMemoryQuantityField
+                  default: 128Mi
+              required:
+                - cpu
+                - memory
+        annotations:
+          title: Pod annotations
+          <<: *K8sAnnotation
+        autoCD:
+          title: Continuous delivery pipeline
+          description: Deploys new images based on a tagging strategy
+          type: object
+          oneOf:
+            - title: Off
+              nullable: true
+              additionalProperties: false
+            - title: Semver versioning
+              nullable: true
+              properties:
+                tagMatcher:
+                  type: string
+                  enum: [semver]
+                  default: semver
+                semver:
+                  title: Semver version pattern
+                  type: string
+                  example: 'PATCH only: "~1.1", MINOR and PATCH only "~1", ALL "*",  ">=1.2.3-0"'
+                  description:
+                    'Use this filter if your images tags follow semantic versioning rules (MAJOR.MINOR.PATCH). E.g.:
+                    PATCH only: "~1.1", MINOR and PATCH only "~1", ALL "*"'
+              required:
+                - semver
+              # additionalProperties: false
+            - title: Glob pattern matching
+              # nullable: true
+              properties:
+                tagMatcher:
+                  type: string
+                  enum: [glob]
+                  default: glob
+                glob:
+                  title: Glob string pattern
+                  type: string
+                  description: 'Use this filter if you want to make simple non-standard patterns. E.g.: "master-v1.*.*"'
+                  example: 'master-v1.*.*'
+              required:
+                - glob
+              additionalProperties: false
+      required:
+        - image
+        - resources
+      additionalProperties: false
+
+    Clusters:
+      type: array
+      items:
+        $ref: '#/components/schemas/Cluster'
+    Cluster:
+      type: object
+      properties:
+        cluster:
+          type: string
+          description: A cluster name
+          readOnly: true
+        cloud:
+          type: string
+          description: A cloud provider name
+          readOnly: true
+        domain:
+          type: string
+          description: A default cluster DNS zone
+          readOnly: true
+        dnsZones:
+          type: array
+          description: A list of DNS zones that are available to the cluster
+          items:
+            type: string
+          readOnly: true
+          uniqueItems: true
+        hasKnative:
+          description: A flag that indicates capability for deploying serverless services by using Knative
+          type: boolean
+          readOnly: true
+        k8sVersion:
+          description: A version of kubernetes that is installed on the cluster
+          type: string
+          readOnly: true
+        region:
+          description: A physical location of the cluster
+          type: string
+          readOnly: true
+        clusterId:
+          description: An unique cluster identifier
+          type: string
+          readOnly: true
+
+    Teams:
+      type: object
+      properties:
+        teams:
+          type: array
+          items:
+            $ref: '#/components/schemas/Team'
+    Services:
+      properties:
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/Service'
+    Deployment:
+      properties:
+        id:
+          type: integer
+        status:
+          type: string
+          readOnly: true
+          description: Deployment status
+          enum:
+            - in-progress
+            - completed
+            - failed
+    Team:
+      type: object
+      properties:
+        name:
+          <<: *nameField
+          example: 'Team Otomi'
+          x-acl:
+            team: [read]
+            admin: [read, write]
+          description: A team name
+        clusters:
+          title: Clusters
+          <<: *AvailableClusters
+          minItems: 1
+          x-acl:
+            team: [read]
+            admin: [read, write]
+        password:
+          type: string
+          # description: "A secret that is used access multi-tenant log aggregation system (Loki)"
+          writeOnly: true
+        teamId:
+          type: string
+          readOnly: true
+        receiver:
+          title: Alerting Endpoint
+          type: object
+          # description: Alerting Endpoint
+          anyOf:
+            - title: Slack
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - slack
+                  default: slack
+                url:
+                  title: Web hook
+                  type: string
+                  description: Slack web hook. If none is given the global one is used.
+                channel:
+                  title: Channel
+                  type: string
+                  description:
+                    Slack channel. If none is given the global one is used. When overridden here, an extra channel with
+                    the suffix '-crit' must exist as well!
+            - title: Microsoft Teams
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - msteams
+                  default: msteams
+                lowPrio:
+                  title: High prio webhook
+                  type: string
+                  description: The low prio web hook
+                highPrio:
+                  title: Low prio webhook
+                  type: string
+                  description: The high prio web hook
+            - title: None
+        azure:
+          <<: *Azure
+      required:
+        - name
+        - clusters
+
+    ServiceIngress:
+      properties: &ServiceIngress
+        domain:
+          title: DNS Zone
+          description: A managed DNS zone
+          type: string
+        useDefaultSubdomain:
+          title: 'Use suggested domain (preferred)'
+          type: boolean
+          default: true
+          description: Allows to use wildcard certs already available. Only override for public facing services.
+        subdomain:
+          title: 'Host'
+          type: string
+          nullable: true
+          description: A host that is used to set DNS 'A' record
+          <<: *domainNameField
+        hasSingleSignOn:
+          title: Authenticate with Single Sign On
+          type: boolean
+          default: false
+        hasCert:
+          title: Already has a certificate
+          type: boolean
+          default: true
+          description: If true a certificate is gto be deployed as a TLS secret already. Otherwise it will be generated.
+        certArn:
+          type: string
+          title: Certificate ARN
+          description: Certificate ARN of an existing AWS certificate
+          example: arn:aws:acm:eu-central-1:xxx:certificate/xxx
+      required:
+        - domain
+        - subdomain
+
+    Service:
+      properties:
+        name:
+          <<: *idNameField
+          description: A service name
+          example: service01
+        clusterId:
+          type: string
+          description: A kubernetes cluster for the service
+        ingress:
+          title: Exposure
+          type: object
+          x-acl:
+            team: [read]
+            admin: [read, write]
+          oneOf:
+            - title: Private
+              nullable: true
+              additionalProperties: false
+            - title: Public URL
+              nullable: true
+              properties:
+                <<: *ServiceIngress
+
+        ksvc:
+          title: Type
+          type: object
+          oneOf:
+            - title: Knative service
+              nullable: true
+              properties:
+                serviceType:
+                  type: string
+                  enum: [ksvc]
+                  default: ksvc
+                <<: *KnativeServiceProperties
+            - title: Existing Knative service
+              properties:
+                serviceType:
+                  type: string
+                  enum: [ksvcPredeployed]
+                  default: ksvcPredeployed
+              required:
+                - serviceType
+            - title: Existing Kubernetes service
+              properties:
+                serviceType:
+                  type: string
+                  enum: [svcPredeployed]
+                  default: svcPredeployed
+              required:
+                - serviceType
+
+        teamId:
+          type: string
+          readOnly: true
+        serviceId:
+          type: string
+          readOnly: true
+      required:
+        - name
+        - clusterId
+
+    OpenApiValidationError:
+      properties:
+        status:
+          type: integer
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      properties:
+        path:
+          type: string
+        errorCode:
+          type: string
+        message:
+          type: string
+        location:
+          type: string
+          enum:
+            - body
+            - path
+    OtomiStackError:
+      properties:
+        message:
+          type: string

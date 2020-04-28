@@ -1,8 +1,8 @@
 module.exports = {
   title: 'Otomi Documentation',
   tagline: '',
-  url: 'https://redkubes.github.io/otomi/',
-  baseUrl: '/otomi/',
+  url: 'https://redkubes.github.io/',
+  baseUrl: '/',
   favicon: 'img/otomi-stack.ico',
   organizationName: 'redkubes', // Usually your GitHub org/user name.
   projectName: 'otomi', // Usually your repo name.
@@ -17,24 +17,29 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/installation', 
-          label: 'installation', 
-          position: 'left'
+          to: 'docs/installation',
+          label: 'Installation',
+          position: 'left',
         },
         {
-          to: 'docs/administration-overview', 
-          label: 'Administration', 
-          position: 'left'
+          to: '/docApi',
+          label: 'API',
+          position: 'left',
         },
         {
-          to: 'docs/faq', 
-          label: 'FAQ', 
-          position: 'left'
+          to: 'docs/administration-overview',
+          label: 'Administration',
+          position: 'left',
         },
         {
-          to: 'blog', 
-          label: 'Blog', 
-          position: 'left'
+          to: 'docs/faq',
+          label: 'FAQ',
+          position: 'left',
+        },
+        {
+          to: 'blog',
+          label: 'Blog',
+          position: 'left',
         },
       ],
     },
@@ -60,8 +65,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -69,4 +73,4 @@ module.exports = {
       },
     ],
   ],
-};
+}

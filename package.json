@@ -1,0 +1,73 @@
+{
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@docusaurus/core": "^2.0.0-alpha.50",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.50",
+    "classnames": "^2.2.6",
+    "core-js": "^3.6.5",
+    "mobx": "^4.15.4",
+    "react": "^16.8.4",
+    "react-dom": "^16.13.1",
+    "redoc": "^2.0.0-rc.27",
+    "styled-components": "^5.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "post-checkout": "run-if-changed",
+      "post-commit": "run-if-changed",
+      "post-merge": "run-if-changed",
+      "post-rewrite": "run-if-changed",
+      "pre-commit": "npm run husky:pre-commit"
+    }
+  },
+  "lint-staged": {
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ],
+    "*.{js}": [
+      "eslint --project ./eslintrc.yml"
+    ]
+  },
+  "name": "otomi-public-docs",
+  "private": true,
+  "run-if-changed": {
+    "package-lock.json": "npm install --prefer-offline --no-audit"
+  },
+  "scripts": {
+    "build": "docusaurus build",
+    "cz": "git-cz",
+    "cz:retry": "git-cz --retry",
+    "deploy": "docusaurus deploy",
+    "husky:lint-staged": "lint-staged",
+    "husky:pre-commit": "lint-staged",
+    "lint": "eslint --ext js,ts --fix .",
+    "lint:fix": "eslint --ext js,ts .",
+    "release": "standard-version",
+    "start": "docusaurus start",
+    "swizzle": "docusaurus swizzle"
+  },
+  "version": "0.0.0",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.3"
+  }
+}

@@ -7,7 +7,7 @@ module.exports = {
       'creating-a-team',
       'creating-a-service',
       'configuring-apps',
-      'configuring-dashboards',
+      'configuring-dashboard',
     ],
     Reference: [
       'app-suite',

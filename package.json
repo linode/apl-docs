@@ -59,7 +59,7 @@
     "husky:pre-commit": "lint-staged",
     "lint": "eslint --ext js,ts --fix .",
     "lint:fix": "eslint --ext js,ts .",
-    "release": "standard-version",
+    "release": "docusaurus docs:version",
     "start": "docusaurus start",
     "swizzle": "docusaurus swizzle"
   },

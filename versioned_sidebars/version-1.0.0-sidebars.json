@@ -1,0 +1,73 @@
+{
+  "version-1.0.0/mainSidebar": [
+    {
+      "type": "category",
+      "label": "About",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/about-otomi"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/roadmap"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Administration",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/administration-overview"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/installation"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/creating-a-team"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/creating-a-service"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/configuring-apps"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.0.0/configuring-dashboards"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Reference",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/app-suite"
+        },
+        {
+          "type": "link",
+          "label": "API",
+          "href": "/otomi/docApi"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "FAQ",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.0.0/faq"
+        }
+      ]
+    }
+  ]
+}

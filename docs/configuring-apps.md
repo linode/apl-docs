@@ -1,6 +1,17 @@
 ---
 id: configuring-apps
-title: Configuring Apps
+title: Configuring apps
 ---
 
-This is a test for versioning. This is 1.0.1. in text.
+Under 'Otomi Apps' all the currently installed applications are displayed.
+
+For each installed App there are three buttons: Settings, Enter, and Help.
+
+_Settings:_  
+Change the settings for this app.
+
+_Enter:_  
+Go into the app.
+
+_Help:_  
+Get info about this app, may link to an external URL.

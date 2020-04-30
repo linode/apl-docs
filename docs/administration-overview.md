@@ -3,4 +3,12 @@ id: administration-overview
 title: Overview
 ---
 
-This is a test for versioning. This is 1.0.1. in text.
+Learn how to configure:
+
+- [Teams](configuring-team.md)
+- [Services](configuring-service.md)
+- [Apps](configuring-app.md)
+- [Dashboards](configuring-dashboard.md)
+- [Clusters](configuring-clusters.md)
+- [Settings](settings.md)
+- [Deploy Changes](deploy-changes.md)

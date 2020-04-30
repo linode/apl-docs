@@ -1,6 +1,6 @@
 ---
 id: configuring-dashboard
-title: Configuring Dashboard
+title: Configuring dashboard
 ---
 
 Know thyself.

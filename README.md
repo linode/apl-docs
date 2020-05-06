@@ -1,3 +1,9 @@
+<html>
+<head>
+<meta name='robots' content='noindex,nofollow' />
+</head>
+</html>
+
 # Website
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.

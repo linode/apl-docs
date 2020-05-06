@@ -1,6 +1,6 @@
 ---
 id: configuring-team
-title: Configuring team
+title: Configuring a team
 ---
 
 This page is for documenting how to create a team, and how to edit a team. Both creating and editing a team use the same

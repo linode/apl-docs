@@ -1,6 +1,4 @@
 name: main.yml
-env:
-  GIT_USER: redkubesbot
 on:
   push:
     branches: [master]
@@ -11,3 +9,6 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm install
       - run: npm run deploy
+        env:
+          GIT_USER: redkubesbot
+          PASSWORD: ${{ secrets.GITHUB_TOKEN }}

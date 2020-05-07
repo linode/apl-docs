@@ -1,12 +1,30 @@
 module.exports = {
   mainSidebar: {
     About: ['about-otomi', 'roadmap'],
-    Administration: ['administration-overview', 'installation', 'creating-a-team', 'creating-a-service', 'configuring-apps', 'configuring-dashboards'],
-    Reference: ['app-suite', {
-      type: 'link',
-      label: 'API',
-      href: '/docApi',
-    },],
+    Installation: [
+      'installation',
+      'setup',
+      'configuration',
+      'deployment', // how to deploy
+    ],
+    Administration: [
+      'administration-overview',
+      'configuring-team',
+      'configuring-service',
+      'configuring-apps',
+      'configuring-dashboard',
+      'configuring-clusters',
+      'settings',
+      'deploy-changes',
+    ],
+    Reference: [
+      'app-suite',
+      {
+        type: 'link',
+        label: 'API',
+        href: '/otomi/docApi',
+      },
+    ],
     FAQ: ['faq'],
   },
-};
+}

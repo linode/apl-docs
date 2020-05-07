@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{117:function(o){o.exports=JSON.parse('{"allTagsPath":"/otomi/blog/tags","slug":"redkubes","name":"redkubes","count":1,"permalink":"/otomi/blog/tags/redkubes"}')}}]);

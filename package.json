@@ -27,6 +27,12 @@
     "redoc": "^2.0.0-rc.27",
     "styled-components": "^5.1.0"
   },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.3"
+  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
@@ -54,20 +60,14 @@
     "build": "docusaurus build",
     "cz": "git-cz",
     "cz:retry": "git-cz --retry",
-    "deploy": "docusaurus deploy",
+    "deploy": "USE_SSH=true docusaurus deploy",
     "husky:lint-staged": "lint-staged",
     "husky:pre-commit": "lint-staged",
     "lint": "eslint --ext js,ts --fix .",
     "lint:fix": "eslint --ext js,ts .",
-    "release": "standard-version",
+    "release": "docusaurus docs:version",
     "start": "docusaurus start",
     "swizzle": "docusaurus swizzle"
   },
-  "version": "0.0.0",
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-prettier": "^3.1.3"
-  }
+  "version": "0.0.0"
 }

@@ -1,7 +1,7 @@
-.history/*
+.history
 *.DS_Store
-.docusaurus/*
-.vscode/*
+.docusaurus
+.vscode
 .gitignore.swp
 build/
-node_modules/*
+node_modules

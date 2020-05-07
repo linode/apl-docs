@@ -65,7 +65,7 @@ Oauth2 / OpenID</td>
 </tr>
 
 <tr>
-<td id="th01"><a href="https://github.com/helm/charts/tree/master/stable/external-dns" target="_blank"><img src="../img/externalDNS_logo.svg" alt="External DNS" width="40"/> </a><br></br> 
+<td id="th01"><a href="https://github.com/helm/charts/tree/master/stable/external-dns" target="_blank"><img src="../img/kubernetes_logo.svg" alt="External DNS" width="40"/> </a><br></br> 
 External DNS</td>
 <td id="th02">Making sure your service ips are found on the internet using hostnames</td>
 </tr>
@@ -95,7 +95,7 @@ Velero</td>
 </tr>
 
 <tr>
-<td id="th01"><a href="https://drone.io/" target="_blank"><img src="../img/infinity.svg" alt="Infinity icon" width="40"/> </a><br></br> 
+<td id="th01"><a href="https://drone.io/" target="_blank"><img src="../img/drone_logo.svg" alt="Infinity icon" width="40"/> </a><br></br> 
 Gitlab-CI / Drone</td>
 <td id="th02">Choose your favorite CI/CD platform</td>
 </tr>

@@ -60,7 +60,7 @@
     "build": "docusaurus build",
     "cz": "git-cz",
     "cz:retry": "git-cz --retry",
-    "deploy": "USE_SSH=true docusaurus deploy",
+    "deploy": "docusaurus deploy",
     "husky:lint-staged": "lint-staged",
     "husky:pre-commit": "lint-staged",
     "lint": "eslint --ext js,ts --fix .",

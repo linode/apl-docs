@@ -2,13 +2,17 @@ name: main.yml
 on:
   push:
     branches: [master]
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: npm install
-      - run: npm run deploy
-        env:
-          GIT_USER: redkubesbot
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Login GitHub
+        run: |
+          git config --global user.email "redkubesbot@users.noreply.github.com"
+          git config --global user.name "redkubesbot"
+          echo "machine github.com login $GIT_USERNAME password $GITHUB_TOKEN" > ~/.netrc
+          yarn && yarn deploy

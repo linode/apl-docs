@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Deploy
-        uses: redkubes/docusaurus-builddeploy-action@v1
+        uses: redkubes/docusaurus-builddeploy-action@master
         with:
           git-user: redkubesbot
           git-password: ${{ secrets.GITHUB_TOKEN }}

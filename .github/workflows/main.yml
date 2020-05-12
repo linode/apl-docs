@@ -15,7 +15,7 @@ jobs:
       - name: Deploy
         uses: redkubes/docusaurus-deploy-action@master
         with:
-          source: '.'
+          source-folder: '.'
           git-user: redkubesbot
           git-password: ${{ secrets.GITHUB_TOKEN }}
       # - name: Install Node

@@ -2,9 +2,9 @@ name: main.yml
 on:
   push:
     branches: [master]
-env:
-  GIT_USER: redkubesbot
-  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+# env:
+#   GIT_USER: redkubesbot
+#   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
 jobs:
   build:
@@ -12,13 +12,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12'
       - name: Deploy
-        run: |
-          git config --global user.email "redkubesbot@users.noreply.github.com"
-          git config --global user.name "redkubesbot"
-          echo "machine github.com login $GIT_USER password $GITHUB_TOKEN" > ~/.netrc
-          npm install && npm run deploy
+        uses: redkubes/docusaurus-builddeploy-action@v1
+        with:
+          git-user: redkubesbot
+          source: '.'
+      # - name: Install Node
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: '12'
+      # - name: Deploy
+      #   run: |
+      #     git config --global user.email "redkubesbot@users.noreply.github.com"
+      #     git config --global user.name "redkubesbot"
+      #     echo "machine github.com login $GIT_USER password $GITHUB_TOKEN" > ~/.netrc
+      #     npm install && npm run deploy

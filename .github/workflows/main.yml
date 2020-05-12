@@ -16,12 +16,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Deploy
-        uses: redkubes/docusaurus-builddeploy-action@master
+        uses: redkubes/docusaurus-deploy-action@master
         with:
+          source: '.'
           git-user: redkubesbot
           git-password: ${{ secrets.GITHUB_TOKEN }}
-          build: 'true'
-          source: '.'
       # - name: Install Node
       #   uses: actions/setup-node@v1
       #   with:

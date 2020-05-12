@@ -17,6 +17,7 @@ jobs:
         with:
           git-user: redkubesbot
           git-password: ${{ secrets.GITHUB_TOKEN }}
+          build: 'true'
           source: '.'
       # - name: Install Node
       #   uses: actions/setup-node@v1

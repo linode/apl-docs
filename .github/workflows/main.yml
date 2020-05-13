@@ -15,13 +15,3 @@ jobs:
           source-folder: '.'
           git-user: redkubesbot
           git-password: ${{ secrets.GH_TOKEN }}
-      # - name: Install Node
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: '12'
-      # - name: Deploy
-      #   run: |
-      #     git config --global user.email "redkubesbot@users.noreply.github.com"
-      #     git config --global user.name "redkubesbot"
-      #     echo "machine github.com login $GIT_USER password $GITHUB_TOKEN" > ~/.netrc
-      #     npm install && npm run deploy

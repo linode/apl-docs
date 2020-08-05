@@ -1,6 +1,6 @@
 ---
 id: configuring-service
-title: Configuring service
+title: Configuring services
 ---
 
 This page is for documenting how to create a service, and how to edit a service. Both creating and editing a service use

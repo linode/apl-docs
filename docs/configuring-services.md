@@ -6,19 +6,22 @@ title: Configuring services
 This page is for documenting how to create a service, and how to edit a service. Both creating and editing a service use
 the same form.
 
-**Name** Fill in a name
-
-**Cluster ID** Cluster ID to use.
+| Setting | Description |
+| ------- | ----------- |
+| Name | Name of the service. Will be used to generate hostname if `Use suggested domain` is chosen. |
+| Cluster ID | Cluster to deploy service on. |
 
 **Exposure** Two options: Private, or 'Public URL'.
 
 ## Public URL
 
-Boolean: Use suggested domain  
-Textfield: Host  
-Textfield: DNS Zone  
-Boolean: Authenticate with Single Sign On  
-Boolean: Already has a certificate
+| Setting | Description |
+| ------- | ----------- |
+| Boolean: | Use suggested domain |
+| Textfield: | Host |
+| Textfield: | DNS Zone |
+| Boolean: | Authenticate with Single Sign On |
+| Boolean: | Already has a certificate |
 
 ## Private
 

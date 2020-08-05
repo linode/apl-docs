@@ -8,7 +8,7 @@ Learn how to configure:
 - [Teams](configuring-teams.md)
 - [Services](configuring-services.md)
 - [Apps](configuring-apps.md)
-- [Dashboards](configuring-dashboard.md)
+- [Dashboard](configuring-dashboard.md)
 - [Clusters](configuring-clusters.md)
 - [Settings](settings.md)
 - [Deploy Changes](deploy-changes.md)

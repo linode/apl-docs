@@ -2,7 +2,6 @@ module.exports = {
   mainSidebar: {
     About: ['about-otomi', 'roadmap'],
     Installation: [
-      'installation',
       'setup',
       'configuration',
       'deployment', // how to deploy

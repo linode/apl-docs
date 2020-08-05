@@ -4,4 +4,6 @@ title: Deployment
 sidebar_label: Deployment
 ---
 
-This page explains in detail how to deploy Otomi Container Platform.
+Coming Soon: detailed documentation on how to deploy Otomi Container Platform.
+
+For now we refer to the [Otomi Stack README](https://github.com/redkubes/otomi-stack/README.md).

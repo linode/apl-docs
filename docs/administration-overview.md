@@ -3,12 +3,12 @@ id: administration-overview
 title: Overview
 ---
 
-Learn how to configure:
+Learn about:
 
+- [Apps](configuring-apps.md)
+- [Clusters](configuring-clusters.md)
 - [Teams](configuring-teams.md)
 - [Services](configuring-services.md)
-- [Apps](configuring-apps.md)
-- [Dashboard](configuring-dashboard.md)
-- [Clusters](configuring-clusters.md)
 - [Settings](settings.md)
-- [Deploy Changes](deploy-changes.md)
+- [The Dashboard](configuring-dashboard.md)
+- [Deployment of changes](deploy-changes.md)

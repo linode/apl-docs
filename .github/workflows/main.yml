@@ -14,4 +14,4 @@ jobs:
         with:
           source-folder: '.'
           git-user: redkubesbot
-          git-password: ${{ secrets.GITHUB_TOKEN }}
+          git-password: ${{ secrets.GH_TOKEN }}

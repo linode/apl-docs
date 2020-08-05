@@ -9,8 +9,8 @@ module.exports = {
     ],
     Administration: [
       'administration-overview',
-      'configuring-team',
-      'configuring-service',
+      'configuring-teams',
+      'configuring-services',
       'configuring-apps',
       'configuring-dashboard',
       'configuring-clusters',

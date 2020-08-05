@@ -6,7 +6,7 @@ class docApi extends React.Component {
     return (
       <div>
         <RedocStandalone
-          specUrl='api.yaml'
+          specUrl='api.json'
           options={{
             nativeScrollbars: true,
             showExtensions: false,

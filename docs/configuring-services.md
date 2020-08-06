@@ -9,7 +9,7 @@ the same form.
 | Setting | Description |
 | ------- | ----------- |
 | Name | Name of the service. Will be used to generate hostname if `Use suggested domain` is chosen. |
-| Cluster ID | Cluster to deploy service on. |
+| Cluster ID | Cluster to deploy service on. |$$
 
 **Exposure** Two options: Private, or 'Public URL'.
 

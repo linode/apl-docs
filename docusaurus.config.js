@@ -17,7 +17,7 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/installation',
+          to: 'docs/installation-overview',
           label: 'Installation',
           position: 'left',
         },

@@ -2,18 +2,19 @@ module.exports = {
   mainSidebar: {
     About: ['about-otomi', 'roadmap'],
     Installation: [
+      'installation-overview',
       'setup',
       'configuration',
       'deployment', // how to deploy
     ],
     Administration: [
       'administration-overview',
+      'configuring-apps',
+      'configuring-clusters',
       'configuring-teams',
       'configuring-services',
-      'configuring-apps',
-      'configuring-dashboard',
-      'configuring-clusters',
       'settings',
+      'configuring-dashboard',
       'deploy-changes',
     ],
     Reference: [

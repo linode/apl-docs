@@ -6,7 +6,7 @@ class docApi extends React.Component {
     return (
       <div>
         <RedocStandalone
-          specUrl='api.json'
+          specUrl='otomi-api.json'
           options={{
             nativeScrollbars: true,
             showExtensions: false,

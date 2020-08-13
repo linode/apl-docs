@@ -3,11 +3,15 @@ module.exports = {
     About: ['about-otomi', 'roadmap'],
     Installation: [
       'installation-overview',
+      'prerequisites',
       'setup',
       'configuration',
-      'deployment', // how to deploy
     ],
-    Administration: [
+    'Lifecycle Management': [
+      'lm-configuration-changes',
+      'lm-upgrades',
+    ],
+    'Administration': [
       'administration-overview',
       'configuring-apps',
       'configuring-clusters',

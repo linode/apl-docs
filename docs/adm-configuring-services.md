@@ -31,23 +31,27 @@ Deploy a new knative service.
 | Container image repository | The full repository url of the image (i.e. `eu.gcr.io/otomi-cloud/otomi-stack`) |
 | Container image tag        | The image tag (i.e. `v0.11.1`)                                                  |
 
-### 1.1 Environment variables
+### 1.1 scaleToZero
+
+Will bring down service if not accessed for 60 seconds. Will also disable probes that check to see if the service is up.
+
+### 1.2 Environment variables
 
 Provide all the needed environment variables that are needed for your container to run.
 
-### 1.2 Pod resources
+### 1.3 Pod resources
 
-### 1.2.1 Requests
+### 1.3.1 Requests
 
 Textfield: cpu (the guaranteed amount of CPU)  
 Textfield: memory (the guaranteed amount of RAM)
 
-### 1.2.2 Limits
+### 1.3.2 Limits
 
 Please refer to the kubernetes documentation for in depth information on how to determine the values your workload
 needs.
 
-### 1.3 Pod annotations
+### 1.4 Pod annotations
 
 Kubernetes annotations with arbitrary metadata.
 

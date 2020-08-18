@@ -35,23 +35,33 @@ Deploy a new knative service.
 
 Will bring down service if not accessed for 60 seconds. Will also disable probes that check to see if the service is up.
 
-### 1.2 Environment variables
+### 1.2 Container image
+
+- repository: The image repository of the container to deploy.
+- tag: The image tag of the container to deploy. We recommend semver version tags for a sane deployment strategy. For more on that see section [AutoCD](#autocd) below.
+
+### 1.3 Environment variables
 
 Provide all the needed environment variables that are needed for your container to run.
 
-### 1.3 Pod resources
-
-### 1.3.1 Requests
-
-Textfield: cpu (the guaranteed amount of CPU)  
-Textfield: memory (the guaranteed amount of RAM)
-
-### 1.3.2 Limits
+### 1.4 Pod resources
 
 Please refer to the kubernetes documentation for in depth information on how to determine the values your workload
 needs.
 
-### 1.4 Pod annotations
+### 1.4.1 Requests
+
+- cpu: the guaranteed amount of CPU
+- memory: the guaranteed amount of RAM
+
+### 1.4.2 Limits
+
+- cpu: the maximum amount of CPU
+- memory: the maximum amount of RAM
+
+NOTE: Limits are not guaranteed. If you need guaranteed resources, set higher [requests](#141-requests).
+
+### 1.5 Pod annotations
 
 Kubernetes annotations with arbitrary metadata.
 

@@ -31,7 +31,7 @@ Deploy a new knative service.
 | Container image repository | The full repository url of the image (i.e. `eu.gcr.io/otomi-cloud/otomi-stack`) |
 | Container image tag        | The image tag (i.e. `v0.11.1`)                                                  |
 
-### 1.1 scaleToZero
+### 1.1 Scale to zero
 
 Will bring down service if not accessed for 60 seconds. Will also disable probes that check to see if the service is up.
 

@@ -1,0 +1,51 @@
+{
+    "version": "0.1",
+    "allowCompoundWords": true,
+    "enableFiletypes": [
+        "dockerfile",
+        "md",
+        "yaml"
+    ],
+    "enabledLanguageIds": [
+        "json",
+        "jsonc",
+        "markdown",
+        "yaml",
+        "yml"
+    ],
+    "ignorePaths": [
+        "./**",
+        "./.**/**",
+        "!/docs/**/**.md",
+        "!/values-schema.yaml",
+        "!/README.md"
+    ],
+    "ignoreRegExpList": [
+        "/'s\\b/"
+    ],
+    "ignoreWords": [
+        "hashicorp",
+        "mkdir",
+        "nofollow",
+        "noindex"
+    ],
+    "words": [
+        "autocd",
+        "criticals",
+        "gcloud",
+        "initalize",
+        "istio",
+        "kiali",
+        "knative",
+        "kube",
+        "kubeconfig",
+        "kubectl",
+        "kubernetes",
+        "ldap",
+        "oidc",
+        "onprem",
+        "openid",
+        "otomi",
+        "velero"
+    ]
+}

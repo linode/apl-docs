@@ -1,34 +1,18 @@
 module.exports = {
   mainSidebar: {
-    About: ['about-otomi', 'roadmap'],
-    Installation: [
-      'installation-overview',
-      'prerequisites',
-      'setup',
-      'configuration',
+    About: ['about-otomi', 'about-roadmap'],
+    Installation: ['inst-overview', 'inst-prerequisites', 'inst-setup', 'inst-configuration'],
+    'Otomi Console': [
+      'adm-overview',
+      'adm-configuring-apps',
+      'adm-configuring-clusters',
+      'adm-configuring-teams',
+      'adm-configuring-services',
+      'adm-settings',
+      'adm-deploy-changes',
     ],
-    'Lifecycle Management': [
-      'lm-configuration-changes',
-      'lm-upgrades',
-    ],
-    'Administration': [
-      'administration-overview',
-      'configuring-apps',
-      'configuring-clusters',
-      'configuring-teams',
-      'configuring-services',
-      'settings',
-      'configuring-dashboard',
-      'deploy-changes',
-    ],
-    Reference: [
-      'app-suite',
-      {
-        type: 'link',
-        label: 'API',
-        href: '/otomi/docApi',
-      },
-    ],
+    'Lifecycle Management': ['lm-overview', 'lm-upgrades'],
+    Reference: ['ref-app-suite'],
     FAQ: ['faq'],
   },
 }

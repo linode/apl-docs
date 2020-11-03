@@ -1,5 +1,5 @@
 ---
-id: configuring-services
+slug: configuring-services
 title: Configuring services
 ---
 
@@ -26,10 +26,10 @@ What type of service to deploy/expose. Three options exist:
 
 Deploy a new knative service.
 
-| Setting                    | Description                                                                     |
-| -------------------------- | ------------------------------------------------------------------------------- |
-| Container image repository | The full repository url of the image (i.e. `eu.gcr.io/otomi-cloud/otomi-stack`) |
-| Container image tag        | The image tag (i.e. `v0.11.1`)                                                  |
+| Setting                    | Description                                                 |
+| -------------------------- | ----------------------------------------------------------- |
+| Container image repository | The full repository url of the image (i.e. `otomi/console`) |
+| Container image tag        | The image tag (i.e. `latest`)                               |
 
 ### 1.1 Scale to zero
 
@@ -38,7 +38,8 @@ Will bring down service if not accessed for 60 seconds. Will also disable probes
 ### 1.2 Container image
 
 - repository: The image repository of the container to deploy.
-- tag: The image tag of the container to deploy. We recommend semver version tags for a sane deployment strategy. For more on that see section [AutoCD](#autocd) below.
+- tag: The image tag of the container to deploy. We recommend semver version tags for a sane deployment strategy. For
+  more on that see section [AutoCD](#autocd) below.
 
 ### 1.3 Environment variables
 

@@ -3,13 +3,19 @@ module.exports = {
   tagline: '',
   url: 'https://redkubes.github.io/',
   baseUrl: '/otomi/',
-  favicon: 'img/otomi-stack.ico',
+  favicon: 'img/otomi.ico',
   organizationName: 'redkubes', // Usually your GitHub org/user name.
   projectName: 'otomi', // Usually your repo name.
   themeConfig: {
     sidebarCollapsible: false,
     navbar: {
-      links: [
+      logo: {
+        alt: 'Site Logo',
+        src: 'img/otomi_logo.svg',
+        href: '/', // Default to `siteConfig.baseUrl`.
+        target: '_self', // By default, this value is calculated based on the `href` attribute (the external link will open in a new tab, all others in the current one).
+      },
+      items: [
         {
           to: 'docs/about-otomi',
           activeBasePath: 'docs',
@@ -22,13 +28,8 @@ module.exports = {
           position: 'left',
         },
         {
-          to: '/docApi',
-          label: 'API',
-          position: 'left',
-        },
-        {
-          to: 'docs/administration-overview',
-          label: 'Administration',
+          to: 'docs/console-overview',
+          label: 'Otomi Console',
           position: 'left',
         },
         {

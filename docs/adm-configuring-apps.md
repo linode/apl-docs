@@ -1,5 +1,5 @@
 ---
-id: configuring-apps
+slug: configuring-apps
 title: Configuring apps
 ---
 
@@ -7,6 +7,6 @@ title: Configuring apps
 
 For each installed App there are three options/buttons
 
-- **Settings**: Change the settings for this app.
+- **Settings**: [NOT USED] Change the settings for this app.
 - **Enter**: Go into the app.
-- **Help**: Get info about this app, may link to an external URL.
+- **Help**: [COMING SOON] Get info about this app, may link to an external URL.

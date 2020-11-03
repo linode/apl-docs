@@ -1,5 +1,5 @@
 ---
-id: app-suite
+slug: app-suite
 title: App Suite
 ---
 

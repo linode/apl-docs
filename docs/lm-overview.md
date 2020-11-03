@@ -1,9 +1,8 @@
 ---
-id: lm-overview
-title: Lifecycle Management
+slug: lifecycle-management
+title: LM Overview
 ---
 
 Learn about Otomi Lifecycle Management:
 
-- [Configuration changes](./lm-configuration-changes.md)
-- [Upgrades](./lm-upgrades.md)
+- [Upgrades](upgrades)

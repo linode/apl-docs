@@ -1,18 +1,17 @@
-  
 env:
-    # es6: true
-    mocha: true
-    node: true
-  extends:
-    - eslint:recommended
-    - plugin:prettier/recommended
-    - plugin:import/errors
-    - plugin:import/warnings
-  
-  globals: {}
-  parserOptions:
-    ecmaVersion: 2019
-  rules:
-    no-unused-vars:
-      - error
-      - args: none
+  es6: true
+  mocha: true
+  node: true
+extends:
+  - eslint:recommended
+  - plugin:prettier/recommended
+  - plugin:import/errors
+  - plugin:import/warnings
+
+globals: {}
+parserOptions:
+  ecmaVersion: 2019
+rules:
+  no-unused-vars:
+    - error
+    - args: none

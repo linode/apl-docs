@@ -1,5 +1,5 @@
 ---
-id: faq
+slug: faq
 title: FAQ
 ---
 

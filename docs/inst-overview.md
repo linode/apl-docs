@@ -1,10 +1,10 @@
 ---
-id: installation-overview
-title: Overview
+slug: installation
+title: Installation Overview
 ---
 
 Learn about:
 
-- [Prerequisites](prerequisites)
-- [Setup](setup)
-- [Configuration & deployment](configuration)
+- [Prerequisites](inst-prerequisites)
+- [Setup](inst-setup)
+- [Configuration & deployment](inst-configuration)

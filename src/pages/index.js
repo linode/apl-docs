@@ -30,7 +30,7 @@ function Home() {
     )
   }*/
   return (
-    <Layout title={`Hello from ${siteConfig.title}`} description='Redkubes Otomi Documentation site'>
+    <Layout title={`Otomi Documentation`} description='Documentation for the Otomi Container Platform'>
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className='container'>
           <h1 className='hero__title'>{siteConfig.title}</h1>

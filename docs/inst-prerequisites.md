@@ -1,10 +1,13 @@
 ---
-id: prerequisites
+slug: prerequisites
 title: Prerequisites
 ---
 
-Otomi needs a working kubernetes cluster to deploy on.
-If you don't have access with kubectl to your cluster, you may have to pull the credentials from the cloud first:
+### 1. Working k8s cluster(s)
+
+Otomi needs a working kubernetes cluster to deploy on. It supports two versions down from 1.19, so at a minimum 1.17 is
+required. If you don't have access with kubectl to your cluster, you may have to pull the credentials from the cloud
+first:
 
 - Azure: `az aks get-credentials --resource-group $RG --name $CLUSTER_NAME --admin`
 - AWS: `aws eks update-kubeconfig --name $CLUSTER_NAME`
@@ -15,3 +18,16 @@ If you are not logged in with the correct credentials then re-login first:
 - Azure: `az login`
 - AWS: `aws login eks`
 - Google: `gcloud auth login`
+
+### 2. Kubectl running
+
+To be able to target different kube contexts, kubectl needs to be installed.
+
+### 3. Docker running
+
+Otomi runs everything else from containers, so please start docker if you haven't already.
+
+### 4. Pull secret for the API
+
+When you have a paid license to use the api you will have a pull secret. Please keep it handy for the
+[setup steps](setup).

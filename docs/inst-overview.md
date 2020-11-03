@@ -1,10 +1,11 @@
 ---
 slug: installation
 title: Installation Overview
+sidebar_label: Overview
 ---
 
 Learn about:
 
-- [Prerequisites](inst-prerequisites)
-- [Setup](inst-setup)
-- [Configuration & deployment](inst-configuration)
+- [Prerequisites](prerequisites)
+- [Setup](setup)
+- [Configuration & deployment](configuration)

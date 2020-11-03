@@ -1,5 +1,4 @@
-
-proseWrap: always
+proseWrap: never
 semi: false
 trailingComma: all
 singleQuote: true

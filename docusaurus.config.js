@@ -3,6 +3,7 @@ module.exports = {
   tagline: '',
   url: 'https://redkubes.github.io/',
   baseUrl: '/otomi/',
+  onBrokenLinks: 'throw',
   favicon: 'img/otomi.ico',
   organizationName: 'redkubes', // Usually your GitHub org/user name.
   projectName: 'otomi', // Usually your repo name.
@@ -23,12 +24,12 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/installation-overview',
+          to: 'docs/installation',
           label: 'Installation',
           position: 'left',
         },
         {
-          to: 'docs/console-overview',
+          to: 'docs/console',
           label: 'Otomi Console',
           position: 'left',
         },

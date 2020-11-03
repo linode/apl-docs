@@ -5,30 +5,10 @@ import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import styles from './styles.module.css'
-import { RedocStandalone } from 'redoc'
 
 function Home() {
   const context = useDocusaurusContext()
   const { siteConfig = {} } = context
-  /*const { location } = window
-
-  debugger
-  if (location.indexOf('/api')) {
-    return (
-      <div>
-        <RedocStandalone
-          specUrl='api.yaml'
-          options={{
-            nativeScrollbars: true,
-            showExtensions: false,
-            hideSchemaTitles: true,
-            hideDownloadButton: true,
-            theme: { colors: { main: '#dd5522' } },
-          }}
-        />
-      </div>
-    )
-  }*/
   return (
     <Layout title={`Otomi Documentation`} description='Documentation for the Otomi Container Platform'>
       <header className={classnames('hero hero--primary', styles.heroBanner)}>

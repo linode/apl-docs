@@ -1,6 +1,7 @@
 ---
 slug: console
 title: Console Overview
+sidebar_label: Overview
 ---
 
 Administration of the Otomi Container Platform can be done most easily through the Otomi Console, which needs an

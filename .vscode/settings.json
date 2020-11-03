@@ -1,0 +1,12 @@
+{
+  "[json,md,yaml,yml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.enabled": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "prettier.enable": true,
+  "files.associations": {
+    "*.yml": "yaml"
+  }
+}

@@ -11,21 +11,13 @@
       "not op_mini all"
     ]
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.66",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.66",
-    "classnames": "^2.2.6",
-    "core-js": "^3.6.5",
-    "mobx": "^4.15.7",
-    "npm-run-all": "^4.1.5",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "redoc": "^2.0.0-rc.45",
+    "@docusaurus/core": "2.0.0-alpha.66",
+    "@docusaurus/preset-classic": "2.0.0-alpha.66",
+    "@mdx-js/react": "^1.5.8",
+    "clsx": "^1.1.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
@@ -34,6 +26,7 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2"
   },
   "husky": {
@@ -61,18 +54,16 @@
   },
   "scripts": {
     "build": "docusaurus build",
-    "cz": "git-cz",
-    "cz:retry": "git-cz --retry",
     "deploy": "docusaurus deploy",
     "husky:lint-staged": "lint-staged",
     "husky:pre-commit": "lint-staged && npm run spellcheck",
     "lint": "eslint --ext js,ts .",
+    "lint:all": "run-p spellcheck lint",
     "lint:fix": "eslint --ext js,ts --fix .",
     "release": "docusaurus docs:version",
+    "spellcheck": "cspell \"**/*\" \".**/**\"",
     "start": "docusaurus start",
-    "swizzle": "docusaurus swizzle",
-    "lint:all": "run-p spellcheck lint",
-    "spellcheck": "cspell \"**/*\" \".**/**\""
+    "swizzle": "docusaurus swizzle"
   },
   "version": "0.0.0"
 }

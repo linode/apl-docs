@@ -15,7 +15,7 @@ For the next release (end of february) we aim to incorporate the following featu
 
 After that we see the following features on the horizon:
 
-- Hashicorp Vault integration as a store or intermediary to cloud vaults. Allowing easy injection of secrets into services vi Console (EE version only).
+- Hashicorp Vault integration as a store or intermediary to cloud vaults. Allowing easy injection of secrets into services via console (EE version only).
 - Better solution for GitOps syncing than Drone. We need periodic pulling of state to overcome temporary network glitches.
 - CI pipeline for teams: most teams already have CI, but we like Drone and GitHub and will offer various flavours of pipeline templates for both. Drone is already deployed for gitops, and GitHub will become optional.
 - Multi tenancy enhancements: Allow multiple tenants to have their own teams, allowing sharing of cluster resources bringing down costs with scale.

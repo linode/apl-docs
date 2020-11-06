@@ -16,27 +16,59 @@ docker run -e ENV_DIR=$PWD -v $PWD:$PWD otomi/core:latest bin/bootstrap.sh
 . bin/aliases
 ```
 
-This will install the demo value files, but also the needed artifacts, such as the Otomi CLI. It also imports a `README.md` with extensive instructions on initial configuration. Lastly, it sources aliases you can use, such as the otomi cli (which is an alias to the importedd `bin/otomi`)
+This will install the demo value files, but also the needed artifacts, such as the Otomi CLI. Lastly, it sources aliases you can use, such as the `otomi` cli (which is an alias to the imported `bin/otomi`)
 
-Otomi will encrypt the files with [sops](https://github.com/mozilla/sops) if it finds a `.sops.yaml` configuration file. (How to work with sops is not in scope of this documentation.) If you don't need encryption straight away please remove or rename that file and continue to [configuration](configuration). In case you also don't want to change any demo values but just want to deploy those, skip to [validating the configuration](configuration#2-validation).
+:::info otomi cli is bound to the values repo
 
-## 2. Get credentials from a Key Management Service (optional)
+This is to make sure that the version of the bootstrapped otomi image is configured from within this repo. So in case you get the "command not found: otomi" error, you have to source the aliases again from within the repo's root folder.
 
-In order to encrypt and decrypt the values, the KMS credentials needs to be provided in `.sops.yaml`. Examples are provided in `docs/.sops.yaml.sample` for the big 3 cloud KMS providers (Hashicorp Vault coming soon). Copy it, and then edit it:
+:::
+
+## 2. Configure credentials from a KMS (optional)
+
+:::note No encryption needed?
+
+If you don't need encryption straight away please continue to the [next step](#3-start-otomi-console-on-your-local-machine-optional)
+
+:::
+
+Otomi will encrypt any `secrets.*.yaml` files with [sops](https://github.com/mozilla/sops), but only if it finds a `.sops.yaml` configuration file. (How to work with sops is not in scope of this documentation.)
+
+In order to en-/decrypt the secrets in the values repo, the KMS configuration needs to be provided in `.sops.yaml`. Examples are provided in `.sops.yaml.sample` for the big 3 cloud KMS providers. Copy it, and then edit it:
 
 ```bash
-cp otomi-core/docs/.sops.yaml.sample otomi-values/.sops.yaml
+cp .sops.yaml.sample .sops.yaml
 ```
 
-Most of these KMS endpoints need credentials to access them, so we will need to create a `.secrets` file in the values repo. (Don't worry, it will be ignored by git.) In case of Google KMS add the following to it:
+These KMS endpoints also need credentials to access them, so we will need to create a `.secrets` file in the values repo. (Don't worry, it will be ignored by git.) Copy it, and then edit it:
+
+```bash
+cp .secrets.sample .secrets
+```
+
+Your AWS profile is always pointed and loaded (make sure you have loaded the correct one that has access), but in case of Google KMS add the following to the `.secrets` file:
 
 ```bash
 export GCLOUD_SERVICE_KEY="YOUR_KEY_JSON_DATA_WITHOUT_NEWLINES"
 ```
 
+The you can run `otomi bootstrap` again, which will result in the creation of `gcp-key.json`, which is needed for sops to work locally, like when doing a `git diff`.
+
+To allow `git diff` to show unencrypted values, you must register the sops diffing routine once with git. To register it:
+
+```bash
+git config diff.sopsdiffer.textconv "sops -d"
+```
+
+This only registers the sops differ, which is responsible for invoking sops. But sops still needs the credentials to the KMS service. Again, your AWS profile is always pointed and loaded, but in case of Google KMS you will need to point GOOGLE_APPLICATION_CREDENTIALS to the `gcp-key.json` file holding your account information:
+
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS=\$PWD/gcp-key.json git diff
+```
+
 ## 3 Start Otomi Console on your local machine (optional)
 
-:::info Only for Otomi Enterprise Edition users
+:::info Otomi Enterprise Edition license needed
 
 If you have a license for Otomi EE you can run the console locally for initial configuration.
 
@@ -47,10 +79,7 @@ If you have not done so already, put the pullsecret you have been given in `secr
 Then start the console
 
 ```bash
-. bin/aliases
 otomi console
 ```
 
-If you don't have a license, or need to configure settings not editable through the console, then please continue to the [Configuration](configuration) section to edit these values manually.
-
-After starting the console visit the [Otomi Console documentation](console) for detailed instructions.
+The console allows for easy configuration of many settings but not all. Please continue to the [Configuration](configuration) section to read more about this.

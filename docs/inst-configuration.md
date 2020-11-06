@@ -9,7 +9,7 @@ Assuming the setup steps are completed, you need to now configure the Otomi valu
 
 Configuration can be done most easily through the Otomi Console. So if you have a license please refer to the [Otomi Console](console) documentation.
 
-Not all configuration is (yet) exposed through the console however, so please look at the `env/*` files to edit them.
+Not all configuration is (yet) exposed through the console however, so please look at the values repo's `env/*` files to edit the configuration files.
 
 Important things to note:
 
@@ -33,14 +33,25 @@ Configuration not (yet) managed by the console:
 
 Please follow the guidance of the yaml hinting, as it has all the descriptions and example values you need to operate on these files.
 
-If you wish to be sure of your changes, you can do a `git diff`.
+:::info Otomi YAML hinting only works in vscode
+
+VSCode automatically loads the '.vscode/values-schema.yaml' schema provided. Please inspect it or wire it up manually when using another editor.
+
+:::
+
+:::caution Make sure to have working dns management credentials
+
+The most important part to get the platform deployed is having correctly set credentials for dns management. Without it no domains nor ip addresses can be registered, and certificate validation will fail.
+
+:::
+
+If you wish to be sure of your changes, you can always do a `git diff`. When you chose to use encryption and have correctly followed the corresponding instructions, then you should see a diff with the unencrypted values. That is, if you modified any ;)
 
 ## 2. Validation
 
 When you are done with the configuration you can validate the results:
 
 ```bash
-. bin aliases
 otomi validate
 ```
 

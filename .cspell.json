@@ -24,15 +24,16 @@
         "/'s\\b/"
     ],
     "ignoreWords": [
-        "hashicorp",
         "mkdir",
         "nofollow",
-        "noindex"
+        "noindex",
+        "textconv"
     ],
     "words": [
         "autocd",
         "criticals",
         "gcloud",
+        "hashicorp",
         "initalize",
         "istio",
         "kiali",
@@ -46,6 +47,8 @@
         "onprem",
         "openid",
         "otomi",
+        "postgres",
+        "unencrypted",
         "velero"
     ]
 }

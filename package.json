@@ -60,6 +60,7 @@
     "lint": "eslint --ext js,ts .",
     "lint:all": "run-p spellcheck lint",
     "lint:fix": "eslint --ext js,ts --fix .",
+    "format:fix": "prettier --write \"**/*.{json,md,yml,yaml}\"",
     "release": "docusaurus docs:version",
     "spellcheck": "cspell \"**/*\" \".**/**\"",
     "start": "docusaurus start",

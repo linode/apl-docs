@@ -25,9 +25,13 @@ To be able to target different kube contexts, kubectl needs to be installed.
 
 Otomi runs everything else from containers, so please start docker if you haven't already.
 
-### 4. Pull secret for the API (optional)
+### 4. KMS credentials to manage keys for encryption (optional)
 
-:::info Only for Otomi Enterprise Edition users
+If you would like the secrets in the values repo to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption by otomi. Please read up there on how to work with sops, as it is out of scope for these docs.
+
+### 5. Pull secret for the API (optional)
+
+:::info Otomi Enterprise Edition license needed
 
 If you have a license for Otomi EE you can run the api, unlocking self service features.
 

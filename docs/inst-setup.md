@@ -63,7 +63,9 @@ git config diff.sopsdiffer.textconv "sops -d"
 This only registers the sops differ, which is responsible for invoking sops. But sops still needs the credentials to the KMS service. Again, your AWS profile is always pointed and loaded, but in case of Google KMS you will need to point GOOGLE_APPLICATION_CREDENTIALS to the `gcp-key.json` file holding your account information:
 
 ```bash
-export GOOGLE_APPLICATION_CREDENTIALS=\$PWD/gcp-key.json git diff
+export GOOGLE_APPLICATION_CREDENTIALS=$PWD/gcp-key.json
+# now try a diff:
+git diff
 ```
 
 ## 3 Start Otomi Console on your local machine (optional)

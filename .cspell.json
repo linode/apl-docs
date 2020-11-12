@@ -1,54 +1,33 @@
 {
-    "version": "0.1",
-    "allowCompoundWords": true,
-    "enableFiletypes": [
-        "dockerfile",
-        "md",
-        "yaml"
-    ],
-    "enabledLanguageIds": [
-        "json",
-        "jsonc",
-        "markdown",
-        "yaml",
-        "yml"
-    ],
-    "ignorePaths": [
-        "./**",
-        "./.**/**",
-        "!/docs/**/**.md",
-        "!/values-schema.yaml",
-        "!/README.md"
-    ],
-    "ignoreRegExpList": [
-        "/'s\\b/"
-    ],
-    "ignoreWords": [
-        "mkdir",
-        "nofollow",
-        "noindex",
-        "textconv"
-    ],
-    "words": [
-        "autocd",
-        "criticals",
-        "gcloud",
-        "hashicorp",
-        "initalize",
-        "istio",
-        "kiali",
-        "knative",
-        "kube",
-        "kubeconfig",
-        "kubectl",
-        "kubernetes",
-        "ldap",
-        "oidc",
-        "onprem",
-        "openid",
-        "otomi",
-        "postgres",
-        "unencrypted",
-        "velero"
-    ]
+  "version": "0.1",
+  "allowCompoundWords": true,
+  "enableFiletypes": ["dockerfile", "md", "yaml"],
+  "enabledLanguageIds": ["json", "jsonc", "markdown", "yaml", "yml"],
+  "ignorePaths": ["./**", "./.**/**", "!/docs/**/**.md", "!/values-schema.yaml", "!/README.md"],
+  "ignoreRegExpList": ["/'s\\b/"],
+  "ignoreWords": ["mkdir", "nofollow", "noindex", "textconv"],
+  "words": [
+    "autocd",
+    "continously",
+    "criticals",
+    "gcloud",
+    "hashicorp",
+    "initalize",
+    "istio",
+    "kiali",
+    "knative",
+    "kube",
+    "kubeconfig",
+    "kubectl",
+    "kubernetes",
+    "Kustomize",
+    "ldap",
+    "oidc",
+    "onprem",
+    "openid",
+    "otomi",
+    "postgres",
+    "unencrypted",
+    "velero"
+  ]
 }

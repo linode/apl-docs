@@ -1,5 +1,5 @@
 ---
-slug: about-otomi
+slug: about
 title: Otomi Container Platform
 sidebar_label: Otomi
 ---
@@ -8,8 +8,13 @@ Otomi Container Platform offers an out-of-the-box enterprise container managemen
 
 This documentation is intended to provide technical, operational and background information for Otomi Container Platform.
 
+Please read the following sections to understand the reasoning and decisions made involving the development of Otomi:
+
+- [Vision](vision)
+- [Our development journey](development-journey)
+
 For developer information please visit the repositories involved:
 
-- [otomi-core](https://redkubes.com/otomi-core/): The monorepo containing all the apps and configuration.
-- [otomi-tasks](https://redkubes.com/otomi-tasks/): The tasks used by core to massage apps to adhere to the configuration.
-- [otomi-clients](https://redkubes.com/otomi-clients/): The openapi generator for the clients used by the tasks.
+- [otomi-core](https://github.com/redkubes/otomi-core/): The monorepo containing all the apps and configuration.
+- [otomi-tasks](https://github.com/redkubes/otomi-tasks/): The tasks used by core to massage apps to adhere to the configuration.
+- [otomi-clients](https://github.com/redkubes/otomi-clients/): The openapi generator for the clients used by the tasks.

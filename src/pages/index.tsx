@@ -6,7 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import styles from './styles.module.css'
 
-function Home() {
+export default function () {
   const context = useDocusaurusContext()
   const { siteConfig = {} } = context
   return (
@@ -18,7 +18,7 @@ function Home() {
           <div className={styles.buttons}>
             <Link
               className={classnames('button button--outline button--secondary button--lg', styles.getStarted)}
-              to={useBaseUrl('docs/about-otomi')}
+              to={useBaseUrl('docs/about')}
             >
               Get Started
             </Link>
@@ -29,5 +29,3 @@ function Home() {
     </Layout>
   )
 }
-
-export default Home

@@ -8,7 +8,7 @@ module.exports = {
   organizationName: 'redkubes', // Usually your GitHub org/user name.
   projectName: 'otomi', // Usually your repo name.
   themeConfig: {
-    sidebarCollapsible: false,
+    sidebarCollapsible: true,
     navbar: {
       logo: {
         alt: 'Site Logo',
@@ -18,7 +18,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/about-otomi',
+          to: 'docs/about',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',

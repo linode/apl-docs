@@ -14,35 +14,25 @@
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.66",
     "@docusaurus/preset-classic": "2.0.0-alpha.66",
-    "@mdx-js/react": "^1.5.8",
-    "@stoplight/json-schema-viewer": "^2.12.0",
-    "@stoplight/markdown-viewer": "^4.3.1",
-    "@stoplight/tree-list": "^5.0.3",
-    "@stoplight/ui-kit": "^2.17.2",
+    "@mdx-js/react": "^1.6.21",
     "classnames": "^2.2.6",
     "clsx": "^1.1.1",
     "core-js": "^3.7.0",
-    "mobx": "^6.0.3",
+    "mobx": "^6.0.4",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "redoc": "^2.0.0-rc.45",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-alpha.66",
-    "@tsconfig/docusaurus": "^1.0.2",
-    "@types/react": "^16.9.56",
-    "@types/react-helmet": "^6.1.0",
-    "@types/react-router-dom": "^5.1.6",
-    "cspell": "^5.0.1-alpha.8",
+    "cspell": "^5.0.1-alpha.12",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
-    "source-map-loader": "^1.1.2",
-    "typescript": "^4.0.5"
+    "source-map-loader": "^1.1.2"
   },
   "husky": {
     "hooks": {

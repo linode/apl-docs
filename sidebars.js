@@ -12,14 +12,14 @@ module.exports = {
       'adm-deploy-changes',
     ],
     'Lifecycle Management': ['lm-overview', 'lm-upgrades'],
-    Reference: [
-      'ref-app-suite',
-      {
-        type: 'link',
-        label: 'Values Schema',
-        href: '/otomi/schema-viewer',
-      },
-    ],
+    // Reference: [
+    //   'ref-app-suite',
+    //   {
+    //     type: 'link',
+    //     label: 'Values Schema',
+    //     href: '/otomi/schema-viewer',
+    //   },
+    // ],
     FAQ: ['faq'],
   },
 }

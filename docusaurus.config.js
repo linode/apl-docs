@@ -53,7 +53,7 @@ module.exports = {
           items: [
             {
               label: 'Red Kubes Site',
-              to: 'https://www.redkubes.com',
+              to: 'https://redkubes.com',
             },
           ],
         },

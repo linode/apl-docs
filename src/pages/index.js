@@ -47,7 +47,7 @@ function Home() {
         </div>
         <div className={clsx(styles.announcement, styles.announcementDark)}>
           <div className={styles.announcementInner}>
-            Check out our suite of <Link to={useBaseUrl('/about/app-suite')}>Industry Approved Apps</Link>.
+            Check out our suite of <Link to={useBaseUrl('/about/app-suite')}>industry approved apps</Link>.
           </div>
         </div>
       </main>

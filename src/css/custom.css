@@ -51,7 +51,7 @@
   --ifm-color-content-inverse: rgba(0, 0, 0, 0.7);
   --ifm-color-content: rgba(255, 255, 255, 0.7);
 }
-.main-wrapper > div > div {
+.main-wrapper > div > div[class^='docSidebarContainer'] {
   width: 240px !important;
   border-right: none;
 }
@@ -68,11 +68,11 @@ html[data-theme='dark'] .main-wrapper {
   background-color: var(--ifm-color-gray-bg-dark);
 }
 html[data-theme='light'] .main-wrapper .container,
-html[data-theme='light'] .main-wrapper > div > div {
+html[data-theme='light'] .main-wrapper > div > div[class^='docSidebarContainer'] {
   background-color: var(--ifm-color-background);
 }
 html[data-theme='dark'] .main-wrapper .container,
-html[data-theme='dark'] .main-wrapper > div > div {
+html[data-theme='dark'] .main-wrapper > div > div[class^='docSidebarContainer'] {
   background-color: var(--ifm-color-gray-bg-light);
 }
 html[data-theme='light'] {

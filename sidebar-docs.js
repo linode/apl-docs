@@ -1,6 +1,6 @@
 module.exports = {
   mainSidebar: {
-    Installation: ['inst-overview', 'inst-prerequisites', 'inst-setup', 'inst-configuration'],
+    Installation: ['inst-overview', 'inst-prerequisites', 'inst-setup', 'inst-configuration', 'inst-deployment'],
     'Otomi Console': [
       'adm-overview',
       'adm-configuring-apps',

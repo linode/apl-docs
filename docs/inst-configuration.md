@@ -1,6 +1,6 @@
 ---
 slug: configuration
-title: Configuration & deployment
+title: Configuration
 ---
 
 Assuming the setup steps are completed, you need to now configure the Otomi values repository. This repo is the source configuration for Otomi Container Platform. It contains drone pipeline configurations for each cluster, and each running drone will listen to updates of these values targeting the cluster it is running on. Any updated values might result in different cluster state resources, which will be applied by the Otomi image.
@@ -56,34 +56,3 @@ otomi validate
 ```
 
 If you have made an error in the format of the values this will be reported.
-
-## 3. Deployment
-
-Now that you have the repo values configured, you can do the initial deployment:
-
-```bash
-# choose your CLOUD & CLUSTER and bootstrap the environment
-export CLOUD=azure && CLUSTER=dev
-otomi bootstrap
-# deploy from the bootstrapped image version
-otomi deploy
-```
-
-## 4. GitOps syncing
-
-After initial deployment, to enable Continuous Deployment of this repo from within Drone (running in the cluster), for each cluster:
-
-1. Login to Drone and activate the values repo to sync with: https://drone.$CLUSTER_DOMAIN
-2. Choose the drone pipeline file to use: `.env/clouds/(azure|google|aws|onprem)/$CLUSTER/.drone.yml` and press save.
-
-Sync is now live, and every git change is applied by each cluster's Drone.
-
-## 5. Commit values
-
-When you are ready you can do the initial commit of the values:
-
-```bash
-otomi commit
-```
-
-This will also trigger a deployment of any configured Drone, so you can see if they are working. Of course nothing should get deployed as no changes were made since your manual deployment.

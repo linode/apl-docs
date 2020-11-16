@@ -5,11 +5,11 @@ title: Vision
 
 ## Kubernetes becoming the new foundation
 
-The container space is slowly evolving from the wild west it used to be, into a landscape of governance, security reliability and thus trust. After many years of working with Kubernetes it is not hard to imagine it becoming the foundation for (cloud native) software. That movement already started years ago. We can see that this new DIY architecture paradigm breeds a plethora of containerized solutions and suites offered. And that has become the new reality: too many (possibly good) things to choose from. But this also presents a new opportunity to us: to be able to quickly deploy and test solutions to see if they meets our needs.
+The container space is slowly evolving from the wild west it used to be, into a landscape of governance, security reliability and thus trust. After many years of working with Kubernetes it is not hard to imagine it is becoming the foundation for (cloud native) software. That movement already started years ago. We can see that this new DIY architecture paradigm breeds a plethora of containerized solutions and suites offered. And that has become the new reality: too many (possibly good) things to choose from. But this also presents a new opportunity to us: to be able to quickly deploy and test solutions to see if they meets our needs.
 
 ## What to expect from a container platform
 
-First we have to look at containerization and it's microservice way of working, as it has brought brought focus on the following areas:
+First we have to look at containerization and it's microservice way of working, as it has brought focus on the following areas:
 
 1. **Observability**: State of the (parts of the) system now and over time. Metrics and logs, preferably correlated. Hopefully AI to help us monitor and make sense of it.
 2. **Stateful storage**: Where to keep your crown jewels, and how to automate backups and failover.
@@ -40,7 +40,7 @@ Dealing with this multitude of applications and configuration it is of utmost im
 - Automate everything: input/output validation, testing, deployment, issue management. Limit errors and let developers focus on features.
 - Less integration points: Easily add core apps or wire them together, abstracting configuration away to a single repository.
 - Coding support: deliver jsonschema for validation in your favorite editor (vscode out of the box).
-- API oriented: easily create openapi clients for tasks to do rest operations on the apps, giving autocompletion while developing.
+- API oriented: easily create openapi clients for tasks to do CRUD operations on the apps, giving autocompletion while developing.
 - Sane configuration defaults: wherever possible, provide configuration for the most common use case(s).
 
 Please continue to [our development journey](development-journey) to read about !

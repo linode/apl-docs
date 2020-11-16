@@ -41,5 +41,6 @@ Dealing with this multitude of applications and configuration it is of utmost im
 - Less integration points: Easily add core apps or wire them together, abstracting configuration away to a single repository.
 - Coding support: deliver jsonschema for validation in your favorite editor (vscode out of the box).
 - API oriented: easily create openapi clients for tasks to do rest operations on the apps, giving autocompletion while developing.
+- Sane configuration defaults: wherever possible, provide configuration for the most common use case(s).
 
-Please continue to [our development journey](development-journey) to read how we solved all this!
+Please continue to [our development journey](development-journey) to read about !

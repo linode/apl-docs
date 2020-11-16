@@ -1,6 +1,5 @@
 module.exports = {
   mainSidebar: {
-    About: ['about-otomi', 'about-vision', 'about-journey', 'about-roadmap'],
     Installation: ['inst-overview', 'inst-prerequisites', 'inst-setup', 'inst-configuration'],
     'Otomi Console': [
       'adm-overview',

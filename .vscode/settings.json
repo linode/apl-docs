@@ -3,10 +3,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.enabled": true,
-  "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
-  "prettier.enable": true,
   "files.associations": {
-    "*.yml": "yaml"
-  }
+    "CODE_OF_CONDUCT": "markdown",
+    "CONTRIBUTING": "markdown"
+  },
+  "prettier.enable": true
 }

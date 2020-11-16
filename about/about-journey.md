@@ -36,9 +36,9 @@ One thing that we don't like about it: it is webhook based (push), and does not 
 
 ### Running tasks
 
-Since we are effectively configuring open source applications, we needed a way to run [tasks](https://redkubes.com/otomi-tasks/) at the right moments in the deployment lifecycle. Example: Keycloak needs to be told how applications can reach it, before any of the crucial ones actually do. Istio won't forward a request when it is told to authenticate but can't reach Keycloak.
+Since we are effectively configuring open source applications, we needed a way to run [tasks](https://github.com/redkubes/otomi-tasks/) at the right moments in the deployment lifecycle. Example: Keycloak needs to be told how applications can reach it, before any of the crucial ones actually do. Istio won't forward a request when it is told to authenticate but can't reach Keycloak.
 
-To be able to easily generate openapi typescript clients for tasks to talk to the applications, we have also created a small repo named [otomi-clients](https://redkubes.com/otomi-clients/). We were already using typescript for our NodeJS API and Console UI, so this was an easy choice for us.
+To be able to easily generate openapi typescript clients for tasks to talk to the applications, we have also created a small repo named [otomi-clients](https://github.com/redkubes/otomi-clients/). We were already using typescript for our NodeJS API and Console UI, so this was an easy choice for us.
 
 ### Test and validate everything
 

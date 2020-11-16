@@ -1,7 +1,7 @@
 ---
-slug: about
+slug: design-and-architecture
 title: Otomi Container Platform
-sidebar_label: Otomi
+sidebar_label: Introduction
 ---
 
 Otomi Container Platform offers an out-of-the-box enterprise container management platform (on top of Kubernetes) that increases developer efficiency and focuses on results rather than creating complexity. Otomi is a curated stack that integrates upstream Kubernetes with proven open source components for automated cluster operations and application lifecycle management to create a unified enterprise container management platform. Thus offering organizations maturity and speed while still supporting customization if desired. A curated list of apps like this offers a lot of benefits like governance, security and most of all speed in delivering added value to your business.
@@ -11,7 +11,8 @@ This documentation is intended to provide technical, operational and background 
 Please read the following sections to understand the reasoning and decisions made involving the development of Otomi:
 
 - [Vision](vision)
-- [Our development journey](development-journey)
+- [Development journey](development-journey)
+- [Roadmap](roadmap)
 
 For developer information please visit the repositories involved:
 

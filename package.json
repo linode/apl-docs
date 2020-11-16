@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.66",
+    "@docusaurus/plugin-content-docs": "^2.0.0-alpha.66",
+    "@docusaurus/plugin-google-gtag": "^2.0.0-alpha.66",
+    "@docusaurus/plugin-ideal-image": "^2.0.0-alpha.66",
     "@docusaurus/preset-classic": "2.0.0-alpha.66",
     "@mdx-js/react": "^1.6.21",
     "classnames": "^2.2.6",
@@ -68,7 +71,7 @@
     "format:fix": "prettier --write \"**/*.{json,md,yml,yaml}\"",
     "release": "docusaurus docs:version",
     "spellcheck": "cspell \"**/*\" \".**/**\"",
-    "start": "docusaurus start",
+    "start": "docusaurus start --port 3000",
     "swizzle": "docusaurus swizzle"
   },
   "version": "0.11.36"

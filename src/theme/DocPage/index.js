@@ -14,7 +14,7 @@ import MDXComponents from '@theme/MDXComponents'
 import NotFound from '@theme/NotFound'
 import { matchPath } from '@docusaurus/router'
 import styles from './styles.module.css'
-import { docVersionSearchTag } from '@theme/../../utils/searchUtils'
+import { docVersionSearchTag } from '../../utils/searchUtils'
 
 function DocPageContent({ currentDocRoute, versionMetadata, children }) {
   const { siteConfig, isClient } = useDocusaurusContext()

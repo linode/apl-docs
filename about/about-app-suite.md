@@ -54,7 +54,7 @@ Open Policy Agent</td>
 </tr>
 
 <tr>
-<td id="th01"><a href="https://www.openid.net/" target="_blank"><img src="/otomi/img/prometheus_logo.png)/img/openid_logo.svg" alt="Oauth2 / OpenID" width="40"/> </a><br />
+<td id="th01"><a href="https://www.openid.net/" target="_blank"><img src="/otomi/img/openid_logo.svg" alt="Oauth2 / OpenID" width="40"/> </a><br />
 Oauth2 / OpenID</td>
 <td id="th02">Authentication of users against any OIDC provider, or Active Directory / LDAP</td>
 </tr>

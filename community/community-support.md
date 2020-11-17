@@ -10,7 +10,7 @@ Before you start we would like you to read our [Code of Conduct](code-of-conduct
 
 If you would like to reach out to the community, or have any questions, you can find us here:
 
-- [Gitter](https://https://gitter.im/redkubes/community)
+- [Gitter](https://gitter.im/redkubes/community)
 
 If you would like to contribute please visit the repositories involved, and pay attention to their respective guidelines:
 

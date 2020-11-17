@@ -34,7 +34,7 @@ So we decided to keep it simple (stupid) and use good old Drone, which is trigge
 
 One thing that we don't like about it: it is webhook based (push), and does not retry when the hook is not working. We will soon have a solution that allows for periodic syncing.
 
-### Single Sign On with Keykloak
+### Single Sign On with Keycloak
 
 We were using [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) from the beginning, and were able to use it for SSO just fine, for a while. We had enabled a lot of OIDC aware applications when we started seeing the beauty of normalizing an OIDC JWT's payload. This would allow applications to just consume the provided JWT without having to run a client to talk to the IDP. That is how we chose to put [Keycloak](https://www.keycloak.org) in between oauth2-proxy and external IDPs, because it is very good at that. It has lots of knobs and settings to talk to exotic IDPs and translate incoming properties and claims.
 

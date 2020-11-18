@@ -78,18 +78,46 @@ html[data-theme='dark'] .main-wrapper > div > div[class^='docSidebarContainer'] 
 html[data-theme='light'] {
   background-color: var(--ifm-color-background);
 }
-html[data-theme='light'] .menu > .menu__list > .menu__list-item > .menu__link {
-  background-color: rgba(0, 0, 0, 0.12);
+@media (min-width: 996px) {
+  html[data-theme='light'] :not(.navbar-sidebar__items) > .menu > .menu__list > .menu__list-item > .menu__link {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+  html[data-theme='dark'] :not(.navbar-sidebar__items) > .menu > .menu__list > .menu__list-item > .menu__link {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
 }
-html[data-theme='dark'] .menu > .menu__list > .menu__list-item > .menu__link {
-  background-color: rgba(255, 255, 255, 0.12);
+
+@media (max-width: 996px) {
+  html[data-theme='light'] .menu > .menu__list > .menu__list-item .menu__link {
+    /* background-color: rgba(0, 0, 0, 0.12); */
+    color: var(--ifm-color-primary-lightest);
+  }
+  html[data-theme='dark'] .menu > .menu__list > .menu__list-item .menu__link {
+    /* background-color: rgba(255, 255, 255, 0.12); */
+    color: var(--ifm-color-primary-darkest);
+  }
+  html[data-theme='light'] .menu > .menu__list > .menu__list-item .menu__link.active {
+    /* background-color: rgba(0, 0, 0, 0.12); */
+    color: var(--ifm-color-primary-dark);
+  }
+  html[data-theme='dark'] .menu > .menu__list > .menu__list-item .menu__link.active {
+    /* background-color: rgba(255, 255, 255, 0.12); */
+    color: var(--ifm-color-primary-darkest);
+  }
 }
 
 .menu > .menu__list > .menu__list-item > .menu__list > .menu__list-item > .menu__link {
   line-height: 28px;
   padding-left: 2rem;
 }
+.navbar__toggle,
+.navbar .navbar-sidebar__items a:not(.navbar__link--active) {
+  color: var(--ifm-navbar-link-color);
+}
 
+.navbar a:active {
+  color: var(--ifm-link-color);
+}
 .navbar--fixed-top {
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
@@ -103,7 +131,8 @@ html[data-theme='dark'] .menu > .menu__list > .menu__list-item > .menu__link {
   --ifm-hero-background-color: var(--ifm-color-primary-dark);
 }
 
-.menu {
+.menu,
+.navbar-sidebar {
   width: 240px !important;
   padding: 0 !important;
   font-weight: 400;

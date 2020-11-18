@@ -25,8 +25,9 @@ function Home() {
         <div className={styles.hero}>
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
-              <img alt='Docusaurus with Keytar' className={styles.heroLogo} src={useBaseUrl('img/otomi_logo.svg')} />
-              Bootstrap <span className={styles.heroProjectKeywords}>kubernetes</span> clusters in{' '}
+              <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi_logo.svg')} />
+              Turn your <span className={styles.heroProjectKeywords}>kubernetes</span> clusters into a{' '}
+              <span className={styles.heroProjectKeywords}>real</span> container platform in{' '}
               <span className={styles.heroProjectKeywords}>minutes</span>
             </h1>
             <div className={styles.indexCtas}>

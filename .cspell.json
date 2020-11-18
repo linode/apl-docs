@@ -1,53 +1,36 @@
 {
-    "version": "0.1",
-    "allowCompoundWords": true,
-    "enableFiletypes": [
-        "dockerfile",
-        "md",
-        "yaml"
-    ],
-    "enabledLanguageIds": [
-        "json",
-        "jsonc",
-        "markdown",
-        "yaml",
-        "yml"
-    ],
-    "ignoreRegExpList": [
-        "/'s\\b/"
-    ],
-    "ignoreWords": [
-        "mkdir",
-        "nofollow",
-        "noindex",
-        "textconv"
-    ],
-    "words": [
-        "autocd",
-        "continously",
-        "criticals",
-        "gcloud",
-        "hashicorp",
-        "idps",
-        "initalize",
-        "istio",
-        "kiali",
-        "knative",
-        "kube",
-        "kubeconfig",
-        "kubectl",
-        "kubernetes",
-        "kubes",
-        "Kustomize",
-        "ldap",
-        "oidc",
-        "onprem",
-        "openid",
-        "otomi",
-        "postgres",
-        "redkubes",
-        "socio",
-        "unencrypted",
-        "velero"
-    ]
+  "version": "0.1",
+  "allowCompoundWords": true,
+  "enableFiletypes": ["dockerfile", "md", "yaml"],
+  "enabledLanguageIds": ["json", "jsonc", "markdown", "yaml", "yml"],
+  "ignorePaths": ["./**", "./.**/**", "!/**/**.md", "!/values-schema.yaml", "!/README.md"],
+  "ignoreRegExpList": ["/'s\\b/"],
+  "ignoreWords": ["mkdir", "nofollow", "noindex", "textconv"],
+  "words": [
+    "autocd",
+    "continously",
+    "criticals",
+    "gcloud",
+    "hashicorp",
+    "idps",
+    "initalize",
+    "istio",
+    "kiali",
+    "knative",
+    "kube",
+    "kubeconfig",
+    "kubectl",
+    "kubernetes",
+    "Kustomize",
+    "ldap",
+    "oidc",
+    "onprem",
+    "openid",
+    "otomi",
+    "postgres",
+    "redkubes",
+    "socio",
+    "unencrypted",
+    "velero"
+  ]
 }

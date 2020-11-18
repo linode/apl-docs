@@ -40,19 +40,13 @@ In order to en-/decrypt the secrets in the values repo, the KMS configuration ne
 cp .sops.yaml.sample .sops.yaml
 ```
 
-These KMS endpoints also need credentials to access them, so we will need to create a `.secrets` file in the values repo. (Don't worry, it will be ignored by git.) Copy it, and then edit it:
-
-```bash
-cp .secrets.sample .secrets
-```
-
-Your AWS profile is always pointed and loaded (make sure you have loaded the correct one that has access), but in case of Google KMS add the following to the `.secrets` file:
+Now, these KMS endpoints also need credentials to access them. Your AWS profile is always pointed and loaded (make sure you have loaded the correct one that has access), but in case of Google KMS add the following to the `.secrets` file:
 
 ```bash
 export GCLOUD_SERVICE_KEY="YOUR_KEY_JSON_DATA_WITHOUT_NEWLINES"
 ```
 
-The you can run `otomi bootstrap` again, which will result in the creation of `gcp-key.json`, which is needed for sops to work locally, like when doing a `git diff`.
+Then you can run `otomi bootstrap` again, which will result in the creation of `gcp-key.json`, which is needed for sops to work locally, like when doing a `git diff`.
 
 To allow `git diff` to show unencrypted values, you must register the sops diffing routine once with git. To register it:
 
@@ -64,7 +58,11 @@ This only registers the sops differ, which is responsible for invoking sops. But
 
 ```bash
 export GOOGLE_APPLICATION_CREDENTIALS=$PWD/gcp-key.json
-# now try a diff:
+```
+
+Now try a diff:
+
+```bash
 git diff
 ```
 
@@ -78,9 +76,10 @@ If you have a license for Otomi EE you can run the console locally for initial c
 
 If you have not done so already, put the pullsecret you have been given in `secrets.settings.yaml` under `otomi.pullSecret`.
 
-Then start the console
+Then bootstrap again and start the console
 
 ```bash
+otomi bootstrap
 otomi console
 ```
 

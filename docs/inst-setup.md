@@ -3,7 +3,7 @@ slug: setup
 title: Setup
 ---
 
-## 1. Initalize a values repo
+## 1. Initialize a values repo
 
 Otomi needs a git repo to store it's configuration. We call it a **_values_** repo. You can create one like this:
 

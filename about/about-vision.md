@@ -16,7 +16,7 @@ First we have to look at containerization and it's microservice way of working, 
 3. **Application configuration**: Kubernetes configuration and package management like Helm, Kustomize and others exist. We need to abstract configuration away from the solution for easier retrofitting and repeatability. Should be idempotently deployable as code (gitops).
 4. **Policy enforcement**: Are the pieces and the players operating within governable constraints?
 5. **Security**: What are the new security concerns when containerizing workloads?
-6. **Continuous Deployment**: New platforms demand a new way of continously deploying. And so does kubernetes. Think Helm charts, Knative services, GitOps push/pull.
+6. **Continuous Deployment**: New platforms demand a new way of continuously deploying. And so does kubernetes. Think Helm charts, Knative services, GitOps push/pull.
 7. **Single Sign On**: One Identity Provider could be used by a group of applications to authenticate it's users and know their roles and permissions.
 8. **Networking/service configuration**: Ingress flowing into the cluster's network. SSL termination. Routing logic and rules. Service governance.
 

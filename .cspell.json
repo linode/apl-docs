@@ -3,12 +3,10 @@
   "allowCompoundWords": true,
   "enableFiletypes": ["dockerfile", "md", "yaml"],
   "enabledLanguageIds": ["json", "jsonc", "markdown", "yaml", "yml"],
-  "ignorePaths": ["./**", "./.**/**", "!/**/**.md", "!/values-schema.yaml", "!/README.md"],
   "ignoreRegExpList": ["/'s\\b/"],
   "ignoreWords": ["mkdir", "nofollow", "noindex", "textconv"],
   "words": [
     "autocd",
-    "continously",
     "criticals",
     "gcloud",
     "hashicorp",

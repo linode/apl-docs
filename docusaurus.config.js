@@ -57,8 +57,8 @@ module.exports = {
       id: 'supportus',
       content:
         'If you like Otomi, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/redkubes/otomi-core">GitHub</a>!',
-      backgroundColor: '#a11900',
-      textColor: '#ffd700',
+      // backgroundColor: '#a11900',
+      // textColor: '#ffd700',
       backgroundColor: '#0d47a1',
       textColor: '#ffd700',
     },
@@ -66,18 +66,18 @@ module.exports = {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
     },
-    // algolia: {
-    //   apiKey: 'YOUR_API_KEY',
-    //   indexName: 'GITHUB_REDKUBES_OTOMI',
+    algolia: {
+      apiKey: '9c75393c761f1434854cef114eb80e64',
+      indexName: 'redkubes_otomi',
 
-    //   // Optional: see doc section bellow
-    //   contextualSearch: true,
+      // Optional: see doc section bellow
+      contextualSearch: true,
 
-    //   // Optional: Algolia search parameters
-    //   searchParameters: {},
+      // Optional: Algolia search parameters
+      searchParameters: {},
 
-    //   //... other Algolia params
-    // },
+      //... other Algolia params
+    },
     gtag: {
       trackingID: 'G-L2BWYL31EZ',
       // Optional fields.

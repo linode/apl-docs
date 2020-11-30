@@ -10,7 +10,7 @@ export default function () {
   const context = useDocusaurusContext()
   const { siteConfig = {} } = context
   return (
-    <Layout title={`Otomi Documentation`} description='Documentation for the Otomi Container Platform'>
+    <Layout title={`Otomi`} description='Documentation for the Otomi Container Platform'>
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className='container'>
           <h1 className={styles.heroBanner}>{siteConfig.title}</h1>

@@ -16,7 +16,9 @@ docker run -e ENV_DIR=$PWD -v $PWD:$PWD otomi/core:latest bin/bootstrap.sh
 . bin/aliases
 ```
 
-This will install the demo value files, but also the needed artifacts, such as the Otomi CLI. Lastly, it sources aliases you can use, such as the `otomi` cli (which is an alias to the imported `bin/otomi`)
+This will install the demo value files, but also the needed artifacts, such as the Otomi CLI. Lastly, it sources aliases you can use, such as the `otomi` cli (which is an alias to the imported `bin/otomi`). We recommend to prepend `./bin` to your \$PATH to always have access to `otomi` from within an otomi repo without needing to source the aliases. NOTE: the aliases still contain useful shortcuts, so you might want to inspect and/or use them. We do:)
+
+After this initialization of the repo, we recommend you commit and push it to your final remote destination. It is a prerequisite for step 3 below, [using the console locally](#3-start-otomi-console-on-your-local-machine-optional).
 
 :::info otomi cli is bound to the values repo
 
@@ -74,9 +76,18 @@ If you have a license for Otomi EE you can run the console locally for initial c
 
 :::
 
-If you have not done so already, put the pullsecret you have been given in `secrets.settings.yaml` under `otomi.pullSecret`.
+If you have not done so already, put the pullsecret you have been given in `secrets.settings.yaml` under `otomi.pullSecret`. Also make sure the git details are correctly added to `charts/*otomi-api.yaml`. Remember that some providers like GitHub need an access token when MFA/2FA is turned on, so create one (see https://github.com/settings/tokens) and provide that for `password`. At least the following values are expected:
 
-Then bootstrap again and start the console
+```yaml
+repoUrl: github.com/redkubes/otomi-values-demo.git
+email: some@secret.value
+user: somesecretvalue
+password: somesecretvalue
+```
+
+Make sure these are correct and allowing access to the above initialized and pushed repository.
+
+Then bootstrap again and start the console:
 
 ```bash
 otomi bootstrap

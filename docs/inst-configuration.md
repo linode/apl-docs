@@ -52,7 +52,13 @@ If you wish to be sure of your changes, you can always do a `git diff`. When you
 When you are done with the configuration you can validate the results:
 
 ```bash
-otomi validate
+otomi validate-values
 ```
 
 If you have made an error in the format of the values this will be reported.
+
+To check if all the output manifests are valid for the target versions, _and_ following best practices you can run another variation:
+
+```bash
+otomi validate-templates
+```

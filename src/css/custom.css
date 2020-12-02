@@ -112,6 +112,11 @@ html[data-theme='light'] {
   padding-left: 2rem;
 }
 
+.menu > .menu__list > .menu__list-item > .menu__list > .menu__list-item > .menu__list > .menu__list-item > .menu__link {
+  line-height: 28px;
+  padding-left: 4rem;
+}
+
 html[data-theme='light'] .navbar__toggle,
 html[data-theme='light'] .navbar .navbar-sidebar__items .menu > .menu__list > .menu__list-item .menu__link {
   color: var(--ifm-navbar-link-color);

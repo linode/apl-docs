@@ -89,7 +89,7 @@ otomi diff
 
 ### Need to know quirks
 
-Whenever you modify resources without using helm, it's internal bookkeeping (the versioned secrets in the namespaces) will not change, and any subsequent `otomi apply` commands will not modify anything. If you notice this, and want to overwrite with the output manifests, you can use `otomi sync`, which will skip doing a diff, and instead apply all charted manifests as a new version.
+Whenever you modify resources without using helm, its internal bookkeeping (the versioned secrets in the namespaces) will not change, and any subsequent `otomi apply` commands will not modify anything. If you notice this, and want to overwrite with the output manifests, you can use `otomi sync`, which will skip doing a diff, and instead apply all charted manifests as a new version.
 
 ## 3. GitOps syncing (optional)
 

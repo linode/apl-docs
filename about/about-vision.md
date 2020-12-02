@@ -9,7 +9,7 @@ The container space is slowly evolving from the wild west it used to be, into a 
 
 ## What to expect from a container platform
 
-First we have to look at containerization and it's microservice way of working, as it has brought focus on the following areas:
+First we have to look at containerization and its microservice way of working, as it has brought focus on the following areas:
 
 1. **Observability**: State of the (parts of the) system now and over time. Metrics and logs, preferably correlated. Hopefully AI to help us monitor and make sense of it.
 2. **Stateful storage**: Where to keep your crown jewels, and how to automate backups and failover.
@@ -17,7 +17,7 @@ First we have to look at containerization and it's microservice way of working, 
 4. **Policy enforcement**: Are the pieces and the players operating within governable constraints?
 5. **Security**: What are the new security concerns when containerizing workloads?
 6. **Continuous Deployment**: New platforms demand a new way of continuously deploying. And so does kubernetes. Think Helm charts, Knative services, GitOps push/pull.
-7. **Single Sign On**: One Identity Provider could be used by a group of applications to authenticate it's users and know their roles and permissions.
+7. **Single Sign On**: One Identity Provider could be used by a group of applications to authenticate its users and know their roles and permissions.
 8. **Networking/service configuration**: Ingress flowing into the cluster's network. SSL termination. Routing logic and rules. Service governance.
 
 When checking out a platform it makes sense to evaluate the solutions offered to the above problem spaces. Anything not handled out of the box can lead to a lot of hidden cost. And the solutions should be straightforward to use and not lock you in too much. Hot swapping solutions should be made easy.

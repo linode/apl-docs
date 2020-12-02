@@ -52,7 +52,7 @@ module.exports = {
     ],
   ],
   themeConfig: {
-    sidebarCollapsible: false,
+    sidebarCollapsible: true,
     announcementBar: {
       id: 'supportus',
       content:
@@ -98,7 +98,7 @@ module.exports = {
         },
         {
           to: 'docs/installation',
-          label: 'Installation',
+          label: 'Docs',
           position: 'left',
         },
         {

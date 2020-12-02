@@ -5,7 +5,7 @@ title: Upgrades
 
 ## Introduction
 
-Since otomi-core is a mono repo with many open source charts that are working together, it is very hard to coordinate updates to it's parts. Luckily we can rely on a lot of smart operators to take care of upgrades (we strive to only adopt operators with capability level "Seamless Upgrades"), but some scripting is always needed in this case. We strive to make upgrades as painless as possible by creating upgrade scripts for the release versions. You can find these in [otomi-core/bin/upgrades](https://github.com/redkubes/otomi-core/tree/master/bin/upgrades).
+Since otomi-core is a mono repo with many open source charts that are working together, it is very hard to coordinate updates to its parts. Luckily we can rely on a lot of smart operators to take care of upgrades (we strive to only adopt operators with capability level "Seamless Upgrades"), but some scripting is always needed in this case. We strive to make upgrades as painless as possible by creating upgrade scripts for the release versions. You can find these in [otomi-core/bin/upgrades](https://github.com/redkubes/otomi-core/tree/master/bin/upgrades).
 
 Example: in order to migrate from `v0.10.*` to `v0.11.*` you would run `bin/upgrades/v0.11.sh`. Soon the upgrade scripts can also be used to migrate from an older version, as it will apply any in between upgrade scripts successively.
 

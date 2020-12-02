@@ -465,7 +465,7 @@
               },
               "ownHost": {
                 "type": "boolean",
-                "description": "When true the service will get it's own domain by prefixing the app name to the team domain. Mostly set to true. This will probably be removed soon.",
+                "description": "When true the service will get its own domain by prefixing the app name to the team domain. Mostly set to true. This will probably be removed soon.",
                 "default": true
               },
               "ksvc": {
@@ -588,7 +588,7 @@
               },
               "isShared": {
                 "type": "boolean",
-                "description": "When true the service will get it's own domain by prefixing the app name to the cluster domain. Mostly used by core apps."
+                "description": "When true the service will get its own domain by prefixing the app name to the cluster domain. Mostly used by core apps."
               },
               "paths": {
                 "type": "array",

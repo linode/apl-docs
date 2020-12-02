@@ -5,7 +5,7 @@ title: Setup
 
 ## 1. Initialize a values repo
 
-Otomi needs a git repo to store it's configuration. We call it a **_values_** repo. You can create one like this:
+Otomi needs a git repo to store its configuration. We call it a **_values_** repo. You can create one like this:
 
 ```bash
 # initialize git repo

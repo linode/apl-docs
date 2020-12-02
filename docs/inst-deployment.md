@@ -10,7 +10,7 @@ Otomi works with versioned tooling that is compatible with the target cluster, s
 In the demo values all the clusters are disabled, except `google/demo` (which is the `id` of the cluster). In order to target it set the variables:
 
 ```bash
-CLOUD=google CLUSTER=demo
+export CLOUD=google CLUSTER=demo
 ```
 
 This will load the cluster's env file and export the variable `$K8S_CONTEXT` which represents a context in your `$KUBECONFIG` file. Make sure it is correctly set in `env/clouds/$CLOUD/$CLUSTER/.env`. In case you used our `bin/create-gke-cluster.sh` script to start a GKE cluster it will be correct and have the following:

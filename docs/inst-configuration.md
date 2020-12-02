@@ -25,7 +25,7 @@ Configuration that is currently managed by the console:
 
 Configuration not (yet) managed by the console:
 
-1. Cluster config: `env/clusters.yaml` and `env/$CLOUD/$CLUSTER.sh`
+1. Cluster config: `env/clusters.yaml` and `env/$CLOUD/$CLUSTER/.env`
 2. Otomi settings: `env/settings.yaml` and `env/secrets.settings.yaml`
 3. Charts config: `env/charts/$CHART.yaml` and `env/charts/secrets.$CHART.yaml`
 4. Cloud overrides: `env/$CLOUD/overrides.$CLOUD.yaml` and `env/secrets.overrides.$CLOUD.yaml`

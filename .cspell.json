@@ -7,6 +7,8 @@
   "ignoreWords": ["mkdir", "nofollow", "noindex", "textconv"],
   "words": [
     "autocd",
+    "crd",
+    "crds",
     "criticals",
     "gcloud",
     "hashicorp",
@@ -26,9 +28,11 @@
     "openid",
     "otomi",
     "postgres",
+    "rbac",
     "redkubes",
     "socio",
     "unencrypted",
+    "unparameterized",
     "velero"
   ]
 }

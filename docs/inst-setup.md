@@ -11,7 +11,7 @@ Otomi needs a git repo to store it's configuration. We call it a **_values_** re
 # initialize git repo
 mkdir otomi-values && cd $_ && git init .
 # and get all the files
-docker run -e ENV_DIR=$PWD -v $PWD:$PWD otomi/core:latest bin/bootstrap.sh
+docker run --rm -e ENV_DIR=$PWD -v $PWD:$PWD otomi/core:latest bin/bootstrap.sh
 # and source the aliases including the otomi cli
 . bin/aliases
 ```

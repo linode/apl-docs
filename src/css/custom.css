@@ -114,7 +114,7 @@ html[data-theme='light'] {
 
 .menu > .menu__list > .menu__list-item > .menu__list > .menu__list-item > .menu__list > .menu__list-item > .menu__link {
   line-height: 28px;
-  padding-left: 4rem;
+  padding-left: 3rem;
 }
 
 html[data-theme='light'] .navbar__toggle,

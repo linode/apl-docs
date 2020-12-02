@@ -57,7 +57,7 @@ otomi validate-values
 
 If you have made an error in the format of the values this will be reported.
 
-To check if all the output manifests are valid for the target versions, _and_ following best practices you can run another variation:
+To check if all the output manifests are valid for the target cluster's k8s version, _and_ following best practices you can run another variation:
 
 ```bash
 otomi validate-templates

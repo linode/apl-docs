@@ -95,7 +95,7 @@ Whenever you modify resources without using helm, it's internal bookkeeping (the
 
 After initial deployment, to enable Continuous Deployment of this repo from within Drone (running in the cluster), for each cluster:
 
-1. Login to Drone and activate the values repo to sync with: https://drone.$CLUSTER_DOMAIN
+1. Login to Drone and activate the values repo to sync with: https://drone.demo.gke.yourdoma.in/
 2. Choose the drone pipeline file to use: `.env/clouds/(azure|google|aws|onprem)/$CLUSTER/.drone.yml` and press save.
 3. (Optional) Configure the encryption related secrets as referred to in the [configuration](configuration) section:
    - Google KMS: Set `GCLOUD_SERVICE_KEY` with the contents of the service account json file.
@@ -114,4 +114,4 @@ otomi commit
 
 This will detect any version changes and generate new Drone pipelines, and then commit all files with a standardized message "Manual commit". (We believe all values repo configuration changes are equally meaningful and don't need explicit commit messages.) Directly doing a `git commit` is discouraged with a git hook saying so, but whenever you did not touch any versions in `env/clusters.yaml` you may bypass with `git commit -m "Manual commit" --no-verify` to save development time.
 
-This will then trigger the pipeline of any [configured Drone](https://drone.demo.yourdoma.in/) (if you followed the previous step).
+This will then trigger the pipeline of any [configured Drone](https://drone.demo.gke.yourdoma.in/) (if you followed the previous step).

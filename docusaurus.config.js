@@ -7,9 +7,9 @@
 // }
 
 // const allDocHomesPaths = [
-//   '/otomi/docs/',
-//   '/otomi/docs/next/',
-//   ...versions.slice(1).map((version) => `/otomi/docs/${version}/`),
+//   '/docs/',
+//   '/docs/next/',
+//   ...versions.slice(1).map((version) => `/docs/${version}/`),
 // ]
 
 const isBootstrapPreset = process.env.DOCUSAURUS_PRESET === 'bootstrap'
@@ -43,7 +43,7 @@ module.exports = {
       {
         id: 'community',
         path: 'community',
-        editUrl: 'https://github.com/redkubes/otomi/edit/master/',
+        editUrl: 'https://github.com/redkubes/redkubes/edit/master/',
         routeBasePath: 'community',
         sidebarPath: require.resolve('./sidebar-community.js'),
         showLastUpdateAuthor: true,
@@ -154,7 +154,7 @@ module.exports = {
           items: [
             {
               label: 'Feedback',
-              href: 'https://github.com/redkubes/otomi/issues',
+              href: 'https://github.com/redkubes/redkubes/issues',
             },
             {
               label: 'Gitter',
@@ -197,7 +197,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebar-docs.js'),
-          editUrl: 'https://github.com/redkubes/otomi/tree/master/',
+          editUrl: 'https://github.com/redkubes/redkubes/tree/master/',
           // versions: {
           //   current: {
           //     label: `${getNextVersionName()} (unreleased)`,

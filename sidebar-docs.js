@@ -17,7 +17,7 @@ module.exports = {
     //   {
     //     type: 'link',
     //     label: 'Values Schema',
-    //     href: '/otomi/schema-viewer',
+    //     href: '/schema-viewer',
     //   },
     // ],
     FAQ: ['faq'],

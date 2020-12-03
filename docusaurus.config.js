@@ -20,7 +20,7 @@ module.exports = {
   title: 'Otomi Documentation',
   tagline: 'Online documentation for Otomi Container Platform',
   url: 'https://redkubes.github.io/',
-  baseUrl: '/otomi/',
+  baseUrl: '/',
   favicon: 'img/otomi.ico',
   onBrokenLinks: isVersioningDisabled ? 'warn' : 'throw',
   organizationName: 'redkubes', // Usually your GitHub org/user name.

@@ -19,19 +19,19 @@ const isVersioningDisabled = true
 module.exports = {
   title: 'Otomi Documentation',
   tagline: 'Online documentation for Otomi Container Platform',
-  url: 'https://redkubes.github.io/',
+  url: 'https://otomi.io/',
   baseUrl: '/',
   favicon: 'img/otomi.ico',
   onBrokenLinks: isVersioningDisabled ? 'warn' : 'throw',
   organizationName: 'redkubes', // Usually your GitHub org/user name.
-  projectName: 'otomi', // Usually your repo name.
+  projectName: 'redkubes', // Usually your repo name.
   plugins: [
     [
       '@docusaurus/plugin-content-docs',
       {
         id: 'about',
         path: 'about',
-        editUrl: 'https://github.com/redkubes/otomi/edit/master/',
+        editUrl: 'https://github.com/redkubes/redkubes/edit/master/',
         routeBasePath: 'about',
         sidebarPath: require.resolve('./sidebar-about.js'),
         showLastUpdateAuthor: true,

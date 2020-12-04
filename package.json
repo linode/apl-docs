@@ -15,7 +15,6 @@
     "@docusaurus/core": "^2.0.0-alpha.69",
     "@docusaurus/plugin-content-docs": "^2.0.0-alpha.69",
     "@docusaurus/plugin-google-gtag": "^2.0.0-alpha.69",
-    "@docusaurus/plugin-ideal-image": "^2.0.0-alpha.69",
     "@docusaurus/preset-classic": "^2.0.0-alpha.69",
     "@docusaurus/theme-search-algolia": "^2.0.0-alpha.69",
     "@mdx-js/react": "^1.6.22",

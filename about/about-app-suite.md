@@ -90,13 +90,13 @@ Velero</td>
 </tr>
 
 <tr>
-<td id="th01"><a href="https://gitlab.com/" target="_blank"><img src="/img/gitlab_logo.svg" alt="Infinity icon" width="40"/> </a><br />
+<td id="th01"><a href="https://gitlab.com/" target="_blank"><img src="/img/gitlab_logo.svg" alt="GitLab" width="40"/> </a><br />
 Gitlab-CI</td>
 <td id="th02">Choose your favorite CI/CD platform</td>
 </tr>
 
 <tr>
-<td id="th01"><a href="https://drone.io/" target="_blank"><img src="/img/drone_logo.svg" alt="Infinity icon" width="40"/> </a><br />
+<td id="th01"><a href="https://drone.io/" target="_blank"><img src="/img/drone_logo.svg" alt="Drone" width="40"/> </a><br />
 Drone</td>
 <td id="th02">Choose your favorite CI/CD platform</td>
 </tr>

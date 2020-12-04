@@ -79,7 +79,7 @@ module.exports = {
       //... other Algolia params
     },
     gtag: {
-      trackingID: 'G-L2BWYL31EZ',
+      trackingID: 'G-KKV4ZVDEKQ',
       // Optional fields.
       anonymizeIP: false, // Should IPs be anonymized?
     },

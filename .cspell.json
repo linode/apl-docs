@@ -7,6 +7,7 @@
   "ignoreWords": ["mkdir", "nofollow", "noindex", "psql", "textconv"],
   "words": [
     "activity",
+    "authz",
     "autocd",
     "crd",
     "crds",
@@ -17,6 +18,7 @@
     "idps",
     "initalize",
     "istio",
+    "jwks",
     "kiali",
     "knative",
     "kube",

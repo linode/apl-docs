@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[17],{86:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"redkubes","name":"redkubes","count":1,"permalink":"/blog/tags/redkubes"}')}}]);

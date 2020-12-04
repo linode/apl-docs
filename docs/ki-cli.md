@@ -1,6 +1,6 @@
 ---
-slug: troubleshooting/cli
-title: 'Troubleshooting: Otomi CLI'
+slug: known-issues/cli
+title: 'Known Issues: Otomi CLI'
 sidebar_label: Otomi CLI
 ---
 
@@ -16,7 +16,7 @@ The `otomi (diff|apply|sync|template)` commands are delegated to `helmfile`, whi
 
 The `otomi apply` command uses helmfile's `apply` command, which combines its `diff` and `sync` commandds. So it first does a `helmfile diff` against helm's bookeeping (which resides in versioned secrets, e.g. `sh.helm.release.v1.loki.v1`). This is the most cost effective way and does not lead to a new release version being deployed when there are no changes. However, when you changed cluster resources without the otomi cli (so without using helm) this is not reflected in the secrets. `helmfile diff` will not see any changes in the secret, so it won't execute the subsequent `helmfile sync`. If you wish to overwrite the desired state on the cluster, use the `otomi sync -l name=$releaseName` command directly. Usually only for a certain release, so you don't force change all the releases, which costs a lot of time.
 
-## Deployment errors
+## Deployment errors/problems
 
 Helmfile uses Helm 3 under the hood, and it will throw errors in certain situations:
 
@@ -41,10 +41,44 @@ This may happen when you try to install a chart (usually for the first time) and
 **Solution**:
 
 - When this was the first install: destroy with `otomi hf -l name=$releaseName destroy` and then apply with `otomi apply -l name=$releaseName` again.
-- When the was successfully deployed before: remove the last versioned helm secret that is causing the blockage (e.g. `sh.helm.release.v1.loki.v3`)
+- When it was successfully deployed before: remove the last versioned helm secret that is causing the blockage (e.g. `sh.helm.release.v1.loki.v3`)
 
 ### 3. Some resources couldn't be patched
 
 `Error: UPGRADE FAILED: failed to replace object: ... field is immutable`
 
 This usually happens when a manifest is not allowed to be patched in place and needs to be replaced. Retry the borking release with `otomi apply -l name=$releaseName --extraArgs='--force=true'` which does exactly that.
+
+### 4. Timeout
+
+**Problem**: Sometimes the otomi cli will time out when operating on a Google cluster.
+
+**Cause**: This happens when the containerized kubectl binary wants to refresh an access token, but it can't find the binary that was registered to do so in the otomi docker container.
+
+**Workaround**: Retry the command. Before every invocation with the containerized `kubectl` binary, otomi cli first runs `kubectl version` with the local binary to invoke a token refresh, resulting in an up-to-date config to mount.
+
+**Background**:
+
+The otomi cli is a docker container with all the binaries it needs to deploy to these clusters. When running a command the local cloud configs are mounted. These configs may contain configuration for token refresh mechanisms, including the name of a binary to execute with certain parameters. This makes it possible to include the binaries in the image, and make them available via the known `$PATH`.
+
+However, Google Cloud SDK breaks with that approach, by tightly coupling a hard path to the local gcloud binary. Sample user section from `$KUBECONFIG`:
+
+```yaml
+- name: gke_otomi-cloud_europe-west4_otomi-gke-demo
+  user:
+    auth-provider:
+      config:
+        access-token: xxxxxxxxx
+        cmd-args: config config-helper --format=json
+        cmd-path: /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin/gcloud
+        expiry: '2020-10-29T02:15:37Z'
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+```
+
+This will not work with containerization unfortunately. We also can't predict the path on the users host computer to this binary, so we have to hope for Google to fix this some day. They are not inclined to do so it seems:
+
+https://issuetracker.google.com/issues/171493249
+
+Maybe they will start to see the importance of this after getting more feedback ;)

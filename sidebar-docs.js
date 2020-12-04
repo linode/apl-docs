@@ -10,8 +10,7 @@ module.exports = {
       'adm-settings',
       'adm-deploy-changes',
     ],
-    'Known Issues': ['ki-gke-timeout'],
-    Troubleshooting: ['ts-overview', 'ts-cli', { Apps: ['ts-harbor'] }],
+    'Known Issues': ['ki-overview', 'ki-cli', { Apps: ['ki-harbor'] }],
     'Lifecycle Management': ['lm-overview', 'lm-upgrades'],
     // Reference: [
     //   'ref-app-suite',

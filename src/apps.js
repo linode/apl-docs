@@ -1,6 +1,6 @@
 export default [
   {
-    href: 'https://www.prometheus.io/',
+    href: 'https://prometheus.io/',
     src: 'prometheus_logo.png',
     name: 'Prometheus Operator',
     desc: 'The current standard in collecting container application metrics',
@@ -12,13 +12,13 @@ export default [
     desc: 'The next standard in collecting container application logs',
   },
   {
-    href: 'https://www.grafana.com/',
+    href: 'https://grafana.com/',
     src: 'grafana_logo.png',
     name: 'Grafana',
     desc: 'The famous dashboard for viewing application traces, metrics and logs',
   },
   {
-    href: 'https://www.istio.io/',
+    href: 'https://istio.io/',
     src: 'istio_logo.png',
     name: 'Istio',
     desc: 'The service mesh framework with end to end transit encryption and much more',
@@ -30,7 +30,7 @@ export default [
     desc: 'End-to-end distributed tracing and monitor for complex distributed systems',
   },
   {
-    href: 'https://www.kiali.io/',
+    href: 'https://kiali.io/',
     src: 'kiali_logo.png',
     name: 'Kiali',
     desc: 'Observe the Istio service mesh relations and connections',
@@ -42,7 +42,7 @@ export default [
     desc: 'Policy-based control for cloud native environments',
   },
   {
-    href: 'https://www.openid.net/',
+    href: 'https://openid.net/',
     src: 'openid_logo.svg',
     name: 'Oauth2 / OpenID',
     desc: 'Authentication of users against any OIDC provider, or Active Directory / LDAP',
@@ -60,19 +60,19 @@ export default [
     desc: 'Making sure your service ips are found on the internet using hostnames',
   },
   {
-    href: 'https://www.knative.dev/',
+    href: 'https://knative.dev/',
     src: 'knative_logo.png',
     name: 'Knative',
     desc: 'Deploy and manage modern serverless workloads like functions and auto scalable container deployments',
   },
   {
-    href: 'https://www.goharbor.io/',
+    href: 'https://goharbor.io/',
     src: 'harbor_logo.png',
     name: 'Harbor',
     desc: 'Container image registry with role-based access control, image scanning and image signing',
   },
   {
-    href: 'https://www.velero.io/',
+    href: 'https://velero.io/',
     src: 'velero_logo.png',
     name: 'Velero',
     desc: 'Back up Kubernetes objects and Persistent Volumes',
@@ -94,6 +94,12 @@ export default [
     src: 'ingress_logo.png',
     name: 'Ingress Control',
     desc: 'Create and configure supporting Cloud resources for ingress',
+  },
+  {
+    href: 'https://letsencrypt.org/',
+    src: 'letsencrypt_logo.svg',
+    name: "Let's Encrypt",
+    desc: 'A nonprofit Certificate Authority providing industry recognized TLS certificates',
   },
   {
     href: 'https://www.weave.works/oss/scope/',

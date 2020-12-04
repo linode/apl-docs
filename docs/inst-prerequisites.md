@@ -11,6 +11,8 @@ Otomi needs a working kubernetes cluster to deploy on. It supports two versions 
 - AWS: `aws eks update-kubeconfig --name $CLUSTER_NAME`
 - Google: `gcloud container clusters get-credentials $CLUSTER_NAME --region europe-west4 --project xxx`
 
+Please see our troubleshooting guide on [k8s api access issues](troubleshooting-api-access).
+
 If you are not logged in with the correct credentials then re-login first:
 
 - Azure: `az login`

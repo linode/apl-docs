@@ -44,7 +44,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className={clsx(styles.announcement, styles.announcementDark)}>
+        <div id='appsuite' className={clsx(styles.announcement, styles.announcementDark)}>
           <div className={styles.announcementInner}>
             Check out our list of{' '}
             <span className={styles.heroProjectKeywords}>readily integrated open source apps</span>

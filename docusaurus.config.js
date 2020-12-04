@@ -17,8 +17,8 @@ const isBootstrapPreset = process.env.DOCUSAURUS_PRESET === 'bootstrap'
 const isVersioningDisabled = true
 
 module.exports = {
-  title: 'Otomi Documentation',
-  tagline: 'Online documentation for Otomi Container Platform',
+  title: 'Otomi',
+  tagline: 'Otomi is like OSX for Kubernetes',
   url: 'https://otomi.io/',
   baseUrl: '/',
   favicon: 'img/otomi.ico',

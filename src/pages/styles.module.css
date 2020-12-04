@@ -175,3 +175,6 @@
   font-weight: 300;
   color: var(--ifm-color-primary);
 }
+.logo {
+  border-radius: 0;
+}

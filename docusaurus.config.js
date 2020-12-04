@@ -86,7 +86,7 @@ module.exports = {
     navbar: {
       logo: {
         alt: 'Site Logo',
-        src: 'img/otomi_logo.svg',
+        src: 'img/otomi-logo.svg',
         href: '/', // Default to `siteConfig.baseUrl`.
         target: '_self', // By default, this value is calculated based on the `href` attribute (the external link will open in a new tab, all others in the current one).
       },
@@ -186,7 +186,7 @@ module.exports = {
       ],
       logo: {
         alt: 'Otomi Open Source Logo',
-        src: 'img/otomi_logo_small.svg',
+        src: 'img/otomi-logo-small.svg',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Red Kubes. Built with <a href="https://v2.docusaurus.io/">Docusaurus</a>`,
     },

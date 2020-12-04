@@ -23,7 +23,7 @@ function Home() {
         <div className={styles.hero}>
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
-              <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi_logo.svg')} />
+              <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
               Turn your <span className={styles.heroProjectKeywords}>kubernetes</span> clusters into a{' '}
               <span className={styles.heroProjectKeywords}>real</span> container platform in{' '}
               <span className={styles.heroProjectKeywords}>minutes</span>
@@ -59,7 +59,7 @@ function Home() {
                     <a href={app.href}>
                       <img
                         alt={app.name}
-                        className='avatar__photo avatar__photo--lg'
+                        className={`avatar__photo avatar__photo--lg ${clsx(styles.logo)}`}
                         src={useBaseUrl(`img/${app.src}`)}
                       />
                     </a>

@@ -52,5 +52,3 @@ Exit psql
 ```
 
 Try to login once again and observe that you are asked to confirm your username.
-
-**Note:** otomi-core creates a harbor project for each team. Each harbor project is owned by the harbor admin user. Users get access to projects by group membership provided via the groups claim in the openid scope. It may happen that a user owns another project or it is assigned directly to a project. We do not support this and do not provide known-issues guide for that case.

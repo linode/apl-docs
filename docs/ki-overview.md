@@ -12,10 +12,10 @@ We recommend using [k9s](https://k9scli.io) or [Lens](https://k8slens.dev) for d
 
 ## Issues with otomi cli
 
-Otomi uses a lot of tools under the hood, and we have [dedicated known-issues documentation for the Otomi CLI](known-issues/cli) to help you drill down into related issues.
+Otomi uses a lot of tools under the hood, and we have a [dedicated section for the Otomi CLI](known-issues/cli) to help you drill down into related issues.
 
 ## Core apps issues
 
-Otomi configures its suite of applications to work together. It expects certain conditions and dependencies to be in place. Under certain circumstances you might see problems. So far we have documented known-issues steps for the following apps:
+Otomi configures its suite of applications to work together. It expects certain conditions and dependencies to be in place. Under certain circumstances you might see problems. So far we have documented known issues for the following apps:
 
 - [Harbor](known-issues/harbor)

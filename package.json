@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.69",
+    "@docusaurus/plugin-client-redirects": "^2.0.0-alpha.69",
     "@docusaurus/plugin-content-docs": "^2.0.0-alpha.69",
     "@docusaurus/plugin-google-gtag": "^2.0.0-alpha.69",
     "@docusaurus/preset-classic": "^2.0.0-alpha.69",
@@ -69,6 +70,7 @@
     "lint:fix": "eslint --ext js,ts --fix .",
     "format:fix": "prettier --write \"**/*.{json,md,yml,yaml}\"",
     "release": "docusaurus docs:version",
+    "serve": "docusaurus serve --port 5000",
     "spellcheck": "cspell '/**/*.md' '/values-schema.yaml' '/README.md'",
     "start": "docusaurus start --port 3000",
     "swizzle": "docusaurus swizzle"

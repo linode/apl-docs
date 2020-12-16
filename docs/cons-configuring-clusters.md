@@ -1,5 +1,5 @@
 ---
-slug: configuring-clusters
+slug: console/configuring-clusters
 title: Configuring clusters
 ---
 

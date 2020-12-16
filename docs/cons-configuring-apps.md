@@ -1,5 +1,5 @@
 ---
-slug: configuring-apps
+slug: console/configuring-apps
 title: Configuring apps
 ---
 

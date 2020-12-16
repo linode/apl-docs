@@ -1,5 +1,5 @@
 ---
-slug: prerequisites
+slug: installation/prerequisites
 title: Prerequisites
 ---
 

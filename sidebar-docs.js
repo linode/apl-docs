@@ -2,13 +2,13 @@ module.exports = {
   mainSidebar: {
     Installation: ['inst-overview', 'inst-prerequisites', 'inst-setup', 'inst-configuration', 'inst-deployment'],
     'Otomi Console': [
-      'adm-overview',
-      'adm-configuring-apps',
-      'adm-configuring-clusters',
-      'adm-configuring-teams',
-      'adm-configuring-services',
-      'adm-settings',
-      'adm-deploy-changes',
+      'cons-overview',
+      'cons-configuring-apps',
+      'cons-configuring-clusters',
+      'cons-configuring-teams',
+      'cons-configuring-services',
+      'cons-settings',
+      'cons-deploy-changes',
     ],
     'Known Issues': ['ki-overview', 'ki-cli', { Apps: ['ki-harbor'] }],
     'Lifecycle Management': ['lm-overview', 'lm-upgrades'],
@@ -20,6 +20,6 @@ module.exports = {
     //     href: '/schema-viewer',
     //   },
     // ],
-    FAQ: ['faq'],
+    // FAQ: ['faq'],
   },
 }

@@ -1,5 +1,5 @@
 ---
-slug: configuring-services
+slug: console/configuring-services
 title: Configuring services
 ---
 

@@ -1,5 +1,5 @@
 ---
-slug: configuring-teams
+slug: console/configuring-teams
 title: Configuring teams
 ---
 

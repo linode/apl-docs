@@ -1,5 +1,5 @@
 ---
-slug: configuration
+slug: installation/configuration
 title: Configuration
 ---
 
@@ -7,7 +7,7 @@ Assuming the setup steps are completed, you need to now configure the Otomi valu
 
 ## 1. Configuration
 
-Configuration can be done most easily through the Otomi Console. So if you have a license please refer to the [Otomi Console](console) documentation.
+Configuration can be done most easily through the Otomi Console. So if you have a license please refer to the [Otomi Console](../console) documentation.
 
 Not all configuration is (yet) exposed through the console however, so please look at the values repo's `env/*` files to edit the configuration files.
 

@@ -1,5 +1,5 @@
 ---
-slug: setup
+slug: installation/setup
 title: Setup
 ---
 

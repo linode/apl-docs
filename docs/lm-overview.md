@@ -1,5 +1,5 @@
 ---
-slug: lifecycle-management
+slug: lifecycle-management/
 title: LM Overview
 sidebar_label: Overview
 ---

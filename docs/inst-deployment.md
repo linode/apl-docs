@@ -1,5 +1,5 @@
 ---
-slug: deployment
+slug: installation/deployment
 title: Deployment
 ---
 

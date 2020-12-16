@@ -1,5 +1,5 @@
 ---
-slug: console
+slug: console/
 title: Console Overview
 sidebar_label: Overview
 ---

@@ -1,5 +1,5 @@
 ---
-slug: intro
+slug: /
 title: Otomi Container Platform
 sidebar_label: Introduction
 ---

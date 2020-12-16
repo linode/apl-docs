@@ -1,5 +1,5 @@
 ---
-slug: installation
+slug: installation/
 title: Installation Overview
 sidebar_label: Overview
 ---

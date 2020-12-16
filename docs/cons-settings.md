@@ -1,5 +1,5 @@
 ---
-slug: settings
+slug: console/settings
 title: Settings
 ---
 

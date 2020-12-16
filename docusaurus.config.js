@@ -1,3 +1,5 @@
+const redirects = require('./redirects')
+
 // const versions = require('./versions.json')
 
 // // This probably only makes sense for the alpha phase, temporary
@@ -50,6 +52,12 @@ module.exports = {
         showLastUpdateTime: true,
       },
     ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects,
+      },
+    ],
   ],
   themeConfig: {
     sidebarCollapsible: true,
@@ -92,17 +100,17 @@ module.exports = {
       },
       items: [
         {
-          to: 'about/intro',
+          to: 'about/',
           label: 'About',
           position: 'left',
         },
         {
-          to: 'docs/installation',
+          to: 'docs/installation/',
           label: 'Docs',
           position: 'left',
         },
         {
-          to: 'docs/console',
+          to: 'docs/console/',
           label: 'Otomi Console',
           position: 'left',
         },
@@ -137,11 +145,11 @@ module.exports = {
           items: [
             {
               label: 'Introduction',
-              to: '/about/intro',
+              to: '/about/',
             },
             {
               label: 'Community Edition',
-              to: '/docs/console',
+              to: '/docs/console/',
             },
             {
               label: 'Product sheet',

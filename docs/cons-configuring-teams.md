@@ -16,11 +16,14 @@ This page is for documenting how to create a team, and how to edit a team. Both 
 
 In order to receive alerts, please choose an alerting endpoint.
 
-| Option          | Description                                                                |
-| --------------- | -------------------------------------------------------------------------- |
-| Slack           | Needs a slack webhook url that will give alerts for warnings and criticals |
-| Microsoft Teams | Needs two alerting endpoints, for both warnings as well as criticals       |
-| None            | No alerts (don't select this!)                                             |
+NOTE: When a field is left empty it will default to the global admin value for that field, if that exists.
+
+| Option          | Description                                                                      |
+| --------------- | -------------------------------------------------------------------------------- |
+| Slack           | Needs a slack webhook url that will give alerts for warnings and criticals       |
+| Microsoft Teams | Needs two alerting endpoints, for both warnings as well as criticals             |
+| Email           | You may provide a list of email addresses for both 'Non Critical' and 'Critical' |
+| None            | Global (admin) alerting endpoint configuration will be used                      |
 
 ## Azure Monitor
 

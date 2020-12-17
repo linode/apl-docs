@@ -27,18 +27,65 @@ module.exports = {
   onBrokenLinks: isVersioningDisabled ? 'warn' : 'throw',
   organizationName: 'redkubes', // Usually your GitHub org/user name.
   projectName: 'redkubes', // Usually your repo name.
-  plugins: [],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'about',
+        path: 'about',
+        editUrl: 'https://github.com/redkubes/redkubes/edit/master/',
+        routeBasePath: 'about',
+        sidebarPath: require.resolve('./sidebar-about.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'community',
+        path: 'community',
+        editUrl: 'https://github.com/redkubes/redkubes/edit/master/',
+        routeBasePath: 'community',
+        sidebarPath: require.resolve('./sidebar-community.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects,
+      },
+    ],
+  ],
   themeConfig: {
     sidebarCollapsible: true,
-    announcementBar: {},
+    announcementBar: {
+      id: 'supportus',
+      content:
+        'If you like Otomi, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/redkubes/otomi-core">GitHub</a>!',
+      // backgroundColor: '#a11900',
+      // textColor: '#ffd700',
+      backgroundColor: '#0d47a1',
+      textColor: '#ffd700',
+    },
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
     },
-    // algolia: {
-    //   apiKey: '9c75393c761f1434854cef114eb80e64',
-    //   indexName: 'redkubes_otomi',
-    // },
+    algolia: {
+      apiKey: '9c75393c761f1434854cef114eb80e64',
+      indexName: 'redkubes_otomi',
+
+      // Optional: see doc section bellow
+      contextualSearch: true,
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      //... other Algolia params
+    },
     gtag: {
       trackingID: 'G-KKV4ZVDEKQ',
       // Optional fields.
@@ -53,34 +100,40 @@ module.exports = {
       },
       items: [
         {
-          to: '/',
+          to: 'about/',
           label: 'About',
           position: 'left',
         },
         {
-          to: '/',
+          to: 'docs/installation/',
           label: 'Docs',
           position: 'left',
         },
         {
-          to: '/',
+          to: 'docs/console/',
           label: 'Otomi Console',
           position: 'left',
         },
         {
-          to: '/',
+          to: 'docs/faq',
           label: 'FAQ',
           position: 'left',
         },
         {
-          to: '/',
+          to: 'community/support',
           label: 'Community',
           position: 'left',
         },
         {
-          to: '/',
+          to: 'blog',
           label: 'Blog',
           position: 'left',
+        },
+        {
+          href: 'https://github.com/redkubes/otomi-core',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
@@ -92,11 +145,11 @@ module.exports = {
           items: [
             {
               label: 'Introduction',
-              to: '/',
+              to: '/about/',
             },
             {
               label: 'Community Edition',
-              to: '/',
+              to: '/docs/console/',
             },
             {
               label: 'Product sheet',
@@ -117,7 +170,7 @@ module.exports = {
             },
             {
               label: 'Help',
-              to: '/',
+              to: '/community/support',
             },
           ],
         },

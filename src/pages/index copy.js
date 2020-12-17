@@ -24,10 +24,24 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              <span className={styles.heroProjectKeywords}>Open Source</span> release planned for{' '}
-              <span className={styles.heroProjectKeywords}>12 januari (15:00 CET)</span>. So watch this space and{' '}
-              <span className={styles.heroProjectKeywords}>come back soon!</span>
+              Turn your <span className={styles.heroProjectKeywords}>kubernetes</span> clusters into a{' '}
+              <span className={styles.heroProjectKeywords}>real</span> container platform in{' '}
+              <span className={styles.heroProjectKeywords}>minutes</span>
             </h1>
+            <div className={styles.indexCtas}>
+              <Link className={styles.indexCtasGetStartedButton} to={useBaseUrl('docs/installation')}>
+                Get Started
+              </Link>
+              <span className={styles.indexCtasGitHubButtonWrapper}>
+                <iframe
+                  className={styles.indexCtasGitHubButton}
+                  src='https://ghbtns.com/github-btn.html?user=redkubes&amp;repo=otomi-core&amp;type=star&amp;count=true&amp;size=large'
+                  width={160}
+                  height={30}
+                  title='GitHub Stars'
+                />
+              </span>
+            </div>
           </div>
         </div>
         <div id='appsuite' className={clsx(styles.announcement, styles.announcementDark)}>

@@ -16,15 +16,14 @@ const redirects = require('./redirects')
 
 const isBootstrapPreset = process.env.DOCUSAURUS_PRESET === 'bootstrap'
 
-const isVersioningDisabled = true
-
 module.exports = {
   title: 'Otomi',
   tagline: 'Otomi is like OSX for Kubernetes',
   url: 'https://otomi.io/',
   baseUrl: '/',
   favicon: 'img/otomi.ico',
-  onBrokenLinks: isVersioningDisabled ? 'warn' : 'throw',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
   organizationName: 'redkubes', // Usually your GitHub org/user name.
   projectName: 'redkubes', // Usually your repo name.
   plugins: [],

@@ -36,6 +36,7 @@
     "rbac",
     "redkubes",
     "socio",
+    "unconfigured",
     "unencrypted",
     "unparameterized",
     "velero"

@@ -26,7 +26,20 @@ module.exports = {
   onBrokenMarkdownLinks: 'throw',
   organizationName: 'redkubes', // Usually your GitHub org/user name.
   projectName: 'redkubes', // Usually your repo name.
-  plugins: [],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'about',
+        path: 'about',
+        editUrl: 'https://github.com/redkubes/redkubes/edit/master/',
+        routeBasePath: 'about',
+        sidebarPath: require.resolve('./sidebar-about.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+  ],
   themeConfig: {
     sidebarCollapsible: true,
     announcementBar: {},
@@ -52,7 +65,7 @@ module.exports = {
       },
       items: [
         {
-          to: '/',
+          to: 'about/roadmap',
           label: 'About',
           position: 'left',
         },

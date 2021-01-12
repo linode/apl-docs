@@ -4,14 +4,14 @@
         <title>Otomi Blog</title>
         <link>https://otomi.io/blog</link>
         <description>Otomi Blog</description>
-        <lastBuildDate>Thu, 30 Apr 2020 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 12 Jan 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://otomi.io/blog/welcome</link>
             <guid>welcome</guid>
-            <pubDate>Thu, 30 Apr 2020 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 12 Jan 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[This is our initial documentation setup for Otomi Container Platform. We hope you find it useful. Please don't hesitate to give us any feedback!]]></description>
         </item>
     </channel>

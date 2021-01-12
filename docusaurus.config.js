@@ -65,10 +65,18 @@ module.exports = {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
     },
-    // algolia: {
-    //   apiKey: '9c75393c761f1434854cef114eb80e64',
-    //   indexName: 'redkubes_otomi',
-    // },
+    algolia: {
+      apiKey: '9c75393c761f1434854cef114eb80e64',
+      indexName: 'redkubes_otomi',
+
+      // Optional: see doc section bellow
+      contextualSearch: true,
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      //... other Algolia params
+    },
     gtag: {
       trackingID: 'G-KKV4ZVDEKQ',
       // Optional fields.

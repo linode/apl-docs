@@ -29,5 +29,6 @@ Learn about:
 - [Clusters](configuring-clusters)
 - [Teams](configuring-teams)
 - [Services](configuring-services)
+- [Secrets](configuring-secrets)
 - [Settings](settings)
 - [Deployment of changes](deploy-changes)

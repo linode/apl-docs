@@ -39,6 +39,24 @@ module.exports = {
         showLastUpdateTime: true,
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'community',
+        path: 'community',
+        editUrl: 'https://github.com/redkubes/redkubes/edit/master/',
+        routeBasePath: 'community',
+        sidebarPath: require.resolve('./sidebar-community.js'),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects,
+      },
+    ],
   ],
   themeConfig: {
     sidebarCollapsible: true,
@@ -65,34 +83,40 @@ module.exports = {
       },
       items: [
         {
-          to: 'about/roadmap',
+          to: 'about/',
           label: 'About',
           position: 'left',
         },
         {
-          to: '/',
+          to: 'docs/installation/',
           label: 'Docs',
           position: 'left',
         },
         {
-          to: '/',
+          to: 'docs/console/',
           label: 'Otomi Console',
           position: 'left',
         },
         {
-          to: '/',
+          to: 'docs/faq',
           label: 'FAQ',
           position: 'left',
         },
         {
-          to: '/',
+          to: 'community/support',
           label: 'Community',
           position: 'left',
         },
         {
-          to: '/',
+          to: 'blog',
           label: 'Blog',
           position: 'left',
+        },
+        {
+          href: 'https://github.com/redkubes/otomi-core',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },

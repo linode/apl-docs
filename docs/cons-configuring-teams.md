@@ -3,13 +3,17 @@ slug: console/configuring-teams
 title: Configuring teams
 ---
 
-This page is for documenting how to create a team, and how to edit a team. Both creating and editing a team use the same form.
+This page describes how to create a team, and how to edit a team. Both creating and editing a team use the same form.
+
+Screenshot (admin perspective):
+
+![Console: new team](img/console-new-team.png)
 
 | Setting | Description |
 | --- | --- |
 | Name | A name for the team (lowercase). Can not be changed afterwards! Will result in the creation of namespace `team-$NAME`. |
 | Clusters | Which clusters the team will work with |
-| [Alerting Endpoint](#alerting-endpoint) | Choose which endpoint to alert to |
+| [Alerting Endpoint](#alerting-endpoint) | Choose which endpoints to alert to. |
 | [Azure Monitor](#azure-monitor) | Configure to use an Azure Monitor endpoint |
 
 ## Alerting Endpoint

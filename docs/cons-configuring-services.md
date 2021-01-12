@@ -3,7 +3,11 @@ slug: console/configuring-services
 title: Configuring services
 ---
 
-This page is for documenting how to create a service, and how to edit a service. Both creating and editing a service use the same form.
+This page describes how to create a service, and how to edit a service. Both creating and editing a service use the same form.
+
+Screenshot:
+
+![Console: new service](img/console-new-service.png)
 
 ## Name
 

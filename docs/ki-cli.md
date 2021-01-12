@@ -40,7 +40,7 @@ This may happen when you try to install a chart (usually for the first time) and
 
 **Solution**:
 
-- When this was the first install: destroy with `otomi hf -l name=$releaseName destroy` and then apply with `otomi apply -l name=$releaseName` again.
+- When this was the first install: destroy with `otomi destroy -l name=$releaseName` and then apply with `otomi apply -l name=$releaseName` again.
 - When it was successfully deployed before: remove the last versioned helm secret that is causing the blockage (e.g. `sh.helm.release.v1.loki.v3`)
 
 ### 3. Some resources couldn't be patched

@@ -28,6 +28,15 @@ module.exports = {
   projectName: 'redkubes', // Usually your repo name.
   plugins: [
     [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects,
+        createRedirects: function (existingPath) {
+          return [`/otomi${existingPath}`]
+        },
+      },
+    ],
+    [
       '@docusaurus/plugin-content-docs',
       {
         id: 'about',
@@ -49,12 +58,6 @@ module.exports = {
         sidebarPath: require.resolve('./sidebar-community.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects,
       },
     ],
   ],

@@ -29,7 +29,7 @@ function Home() {
               <span className={styles.heroProjectKeywords}>minutes</span>
             </h1>
             <div className={styles.indexCtas}>
-              <Link className={styles.indexCtasGetStartedButton} to={useBaseUrl('docs/installation')}>
+              <Link className={styles.indexCtasGetStartedButton} to={useBaseUrl('docs/installation/')}>
                 Get Started
               </Link>
               <span className={styles.indexCtasGitHubButtonWrapper}>

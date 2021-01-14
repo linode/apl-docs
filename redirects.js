@@ -1,9 +1,5 @@
 module.exports = [
   {
-    from: ['/otomi/upgrades'],
-    to: '/docs/lifecycle-management/upgrades',
-  },
-  {
     from: ['/docs/upgrades'],
     to: '/docs/lifecycle-management/upgrades',
   },

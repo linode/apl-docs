@@ -78,7 +78,7 @@ module.exports = {
     },
     algolia: {
       apiKey: '9c75393c761f1434854cef114eb80e64',
-      indexName: 'redkubes_otomi',
+      indexName: `otomi`,
 
       // Optional: see doc section bellow
       contextualSearch: true,

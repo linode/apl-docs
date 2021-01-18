@@ -1,6 +1,6 @@
 ---
 slug: design-and-architecture
-title: Otomi Container Platform
+title: Design and Architecture
 sidebar_label: Design & Architecture
 ---
 

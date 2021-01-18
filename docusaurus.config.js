@@ -21,6 +21,10 @@ module.exports = {
   tagline: 'Otomi is like OSX for Kubernetes',
   url: 'https://otomi.io',
   baseUrl: '/',
+  customFields: {
+    description:
+      'Turn your kubernetes clusters into a real container platform in minutes. Our OSX like experience offers preconfigured industry proven applications, and gives teams self-service deployment for containerized workloads.',
+  },
   favicon: 'img/otomi.ico',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
@@ -76,6 +80,7 @@ module.exports = {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
     },
+    image: 'img/otomi-logo.svg',
     algolia: {
       apiKey: '9c75393c761f1434854cef114eb80e64',
       indexName: `redkubes_otomi`,

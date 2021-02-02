@@ -47,7 +47,7 @@ The most important part to get the platform deployed is having correctly set cre
 
 If you wish to be sure of your changes, you can always do a `git diff`. When you chose to use encryption and have correctly followed the corresponding instructions, then you should see a diff with the unencrypted values. That is, if you modified any ;)
 
-## 2. Validation
+## 3. Validation
 
 When you are done with the configuration you can validate the results:
 
@@ -62,3 +62,16 @@ To check if all the output manifests are valid for the target cluster's k8s vers
 ```bash
 otomi validate-templates
 ```
+
+## 4. Configure Dependencies
+
+### IDP
+
+In our demo files we target `CLOUD=google CLUSTER=demo` and we refer to Azure AD as IDP for Keycloak, which is a common use case. It needs to know the valid callbacks to return control to Otomi's oauth endpoints. The following callbacks needed to be in place:
+
+- https://auth.demo.gke.otomi.cloud/oauth2/callback
+- https://keycloak.demo.gke.otomi.cloud/realms/master/broker/redkubes-azure/endpoint
+- https://harbor.demo.gke.otomi.cloud/c/oidc/callback
+- https://keycloak.demo.gke.otomi.cloud
+
+This will be the same for any IDP.

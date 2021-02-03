@@ -47,7 +47,7 @@ The most important part to get the platform deployed is having correctly set cre
 
 If you wish to be sure of your changes, you can always do a `git diff`. When you chose to use encryption and have correctly followed the corresponding instructions, then you should see a diff with the unencrypted values. That is, if you modified any ;)
 
-## 3. Validation
+## 2. Validation
 
 When you are done with the configuration you can validate the results:
 
@@ -63,7 +63,7 @@ To check if all the output manifests are valid for the target cluster's k8s vers
 otomi validate-templates
 ```
 
-## 4. Configure Dependencies
+## 3. Configure Dependencies
 
 ### IDP
 

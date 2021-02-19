@@ -6,6 +6,17 @@ sidebar_label: 'Harbor'
 
 When working with Harbor you can expect to run into the following issues:
 
+## Docker login
+
+Unfortunately Harbor has not yet delivered a user friendly mechanism for users to interface with their registry via docker cli. To use docker cli one has to login with the registry EVERY time before using the cli. At the same time this fails when one is not logged into the Harbor dashboard beforehand. In order to login without issues one has to follow these steps:
+
+- ONLY ONCE: get the cli secret from the Harbor dashboard (via User Profile).
+- refresh Harbor dashboard web view (this will refresh the OIDC auth token)
+- docker login using the cli secret as password: `docker login harbor.<cluster-domain> -u < User_Name > -p <CLI secret>`
+- do your docker pull/push etc within the token TTL window (60 secs)
+
+Usually this is not a problem as team users don't pull or push these images directly. We are working on solving this, and expect to have a fix soon.
+
 ## OIDC: conflicting user
 
 **Problem:**

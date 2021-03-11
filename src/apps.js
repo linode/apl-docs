@@ -107,10 +107,4 @@ export default [
     name: 'Weave Scope',
     desc: 'Understand your application quickly by seeing it in a real time interactive display',
   },
-  {
-    href: 'https://sitespeed.io/',
-    src: 'sitespeed-logo.png',
-    name: 'Site Speed',
-    desc: 'Monitor and measure the performance of your web site',
-  },
 ]

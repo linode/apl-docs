@@ -11,7 +11,7 @@ module.exports = {
       'cons-settings',
       'cons-deploy-changes',
     ],
-    'Known Issues': ['ki-overview', 'ki-cli', { Apps: ['ki-harbor'] }],
+    'Known Issues': ['ki-overview', 'ki-cli', { Apps: ['ki-harbor', 'ki-loki'] }],
     'Lifecycle Management': ['lm-overview', 'lm-upgrades'],
     // Reference: [
     //   'ref-app-suite',

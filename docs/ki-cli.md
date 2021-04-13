@@ -83,7 +83,7 @@ https://issuetracker.google.com/issues/171493249
 
 Maybe they will start to see the importance of this after getting more feedback ;)
 
-### 4. It can't deploy when another operation is in progress
+### 5. It can't deploy when another operation is in progress
 
 **Problem**: The `otomi apply` or `otomi sync` command fails with the following error:
 
@@ -98,13 +98,13 @@ NAME      NAMESPACE    REVISION    UPDATED                 STATUS     CHART     
 keycloak    keycloak    3        2021-03-22 13:50:22.5069506 +0000 UTC  pending-upgrade keycloak-8.2.2 10.0.0
 ```
 
-**Solution**: Find helm release that is in the `pending` state:
+**Solution**: Find helm release that is in the `pending-upgrade` state:
 
 ```
 helm list -a -A | grep -i pending
 ```
 
-If there is helm release in `pending` state and it has more than one revision, then rollback to the previous revision:
+If there is a helm release in the `pending` state AND it has more than one revision, then rollback to the previous revision:
 
 ```
 helm -n <namespace> rollback <release-name> <previous revision number>

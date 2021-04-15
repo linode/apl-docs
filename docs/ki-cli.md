@@ -110,7 +110,7 @@ If there is a helm release in the `pending` state AND it has more than one revis
 helm -n <namespace> rollback <release-name> <previous revision number>
 ```
 
-Otherwise, if there is an helm release in the state `pending` AND it has only one revision, then remove that release:
+Otherwise, if there is a helm release in the state `pending` AND it has only one revision, then remove that release:
 
 ```
 helm uninstall -n <namespace> rollback <release-name>

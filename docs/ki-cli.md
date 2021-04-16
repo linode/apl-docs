@@ -82,3 +82,36 @@ This will not work with containerization unfortunately. We also can't predict th
 https://issuetracker.google.com/issues/171493249
 
 Maybe they will start to see the importance of this after getting more feedback ;)
+
+### 5. It can't deploy when another operation is in progress
+
+**Problem**: The `otomi apply` or `otomi sync` command fails with the following error:
+
+```
+Error: UPGRADE FAILED: another operation (install/upgrade/rollback) is in progress
+```
+
+**Cause**: A given helm release is in `pending-upgrade` state, e.g.:
+
+```
+NAME      NAMESPACE    REVISION    UPDATED                 STATUS     CHART      APP VERSION
+keycloak    keycloak    3        2021-03-22 13:50:22.5069506 +0000 UTC  pending-upgrade keycloak-8.2.2 10.0.0
+```
+
+**Solution**: Find helm release that is in the `pending-upgrade` state:
+
+```
+helm list -a -A | grep -i pending
+```
+
+If there is a helm release in the `pending` state AND it has more than one revision, then rollback to the previous revision:
+
+```
+helm -n <namespace> rollback <release-name> <previous revision number>
+```
+
+Otherwise, if there is a helm release in the state `pending` AND it has only one revision, then remove that release:
+
+```
+helm uninstall -n <namespace> rollback <release-name>
+```

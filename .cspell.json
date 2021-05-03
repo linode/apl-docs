@@ -4,7 +4,7 @@
   "enableFiletypes": ["dockerfile", "md", "yaml"],
   "enabledLanguageIds": ["json", "jsonc", "markdown", "yaml", "yml"],
   "ignoreRegExpList": ["/'s\\b/"],
-  "ignoreWords": ["mkdir", "nofollow", "noindex", "psql", "textconv"],
+  "ignoreWords": ["mkdir", "nofollow", "noindex", "psql", "textconv", "kubecfg"],
   "words": [
     "activity",
     "authz",

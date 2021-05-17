@@ -3,11 +3,11 @@ slug: installation/configuration
 title: Configuration
 ---
 
-Assuming the setup steps are completed, you need to now configure the Otomi values repository. This repo is the source configuration for Otomi Container Platform. It contains drone pipeline configurations for each cluster, and each running drone will listen to updates of these values targeting the cluster it is running on. Any updated values might result in different cluster state resources, which will be applied by the Otomi image.
+Assuming the setup steps are completed, you need to now configure the Otomi values repository. This repo is the source configuration for Otomi Container Platform. It contains drone pipeline configuration for listening to updates of these values targeting the cluster the drone instance is running on.
 
 ## 1. Configuration
 
-Configuration can be done most easily through the Otomi Console. So if you have a license please refer to the [Otomi Console](../console) documentation.
+Configuration can be performed much easier through the Otomi Console. So if you have a license please refer to the [Otomi Console](../console) documentation.
 
 Not all configuration is (yet) exposed through the console however, so please look at the values repo's `env/*` files to edit the configuration files.
 
@@ -21,15 +21,13 @@ Configuration that is currently managed by the console:
 
 1. Team settings: `env/teams.yaml`
 2. Team secrets: `env/teams/secrets.$TEAM.yaml`
-3. Team services: `env/$CLOUD/$CLUSTER/services.$TEAM.yaml`
+3. Team services: `env/teams/services.$TEAM.yaml`
 
 Configuration not (yet) managed by the console:
 
-1. Cluster config: `env/clusters.yaml` and `env/$CLOUD/$CLUSTER/.env`
+1. Cluster config: `env/cluster.yaml` and `env/.env`
 2. Otomi settings: `env/settings.yaml` and `env/secrets.settings.yaml`
 3. Charts config: `env/charts/$CHART.yaml` and `env/charts/secrets.$CHART.yaml`
-4. Cloud overrides: `env/$CLOUD/overrides.$CLOUD.yaml` and `env/secrets.overrides.$CLOUD.yaml`
-5. Cluster overrides: `env/$CLOUD/$CLUSTER/overrides.$CLOUD-$CLUSTER.yaml` and `env/$CLOUD/$CLUSTER/secrets.overrides.$CLOUD-$CLUSTER.yaml`
 
 Please follow the guidance of the yaml hinting, as it has all the descriptions and example values you need to operate on these files.
 
@@ -67,11 +65,11 @@ otomi validate-templates
 
 ### IDP
 
-In our demo files we target `CLOUD=google CLUSTER=demo` and we refer to Azure AD as IDP for Keycloak, which is a common use case. It needs to know the valid callbacks to return control to Otomi's oauth endpoints. The following callbacks needed to be in place:
+In our demo files we refer to Azure AD as IDP for Keycloak, which is a common use case. It needs to know the valid callbacks to return control to Otomi's oauth endpoints. The following callbacks needed to be in place (change $clusterDomain to proper one):
 
-- https://auth.demo.gke.otomi.cloud/oauth2/callback
-- https://keycloak.demo.gke.otomi.cloud/realms/master/broker/redkubes-azure/endpoint
-- https://harbor.demo.gke.otomi.cloud/c/oidc/callback
-- https://keycloak.demo.gke.otomi.cloud
+- https://auth.$clusterDomain.oauth2/callback
+- https://keycloak.$clusterDomain/realms/master/broker/redkubes-azure/endpoint
+- https://harbor.$clusterDomain/c/oidc/callback
+- https://keycloak.$clusterDomain
 
 This will be the same for any IDP.

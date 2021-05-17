@@ -5,28 +5,31 @@ title: Setup
 
 ## 1. Initialize a values repo
 
-Otomi needs a git repo to store its configuration. We call it a **_values_** repo. You can create one like this:
+Otomi needs a git repo to store its configuration. We call it a **_values_** repo.
+
+You can now bootstrap the versioned artifacts for aws/azure/google profile. In the following example values for azure
 
 ```bash
+profile='azure'
 # initialize git repo
 mkdir otomi-values && cd $_ && git init .
 # and get all the files
-docker run --rm -e ENV_DIR=$PWD -v $PWD:$PWD otomi/core:latest bin/bootstrap.sh
+docker run --rm -e ENV_DIR=$PWD -v $PWD:$PWD otomi/core:latest bin/bootstrap.sh $profile
 # and source the aliases including the otomi cli
 . bin/aliases
 ```
 
-This will install the demo value files, but also the needed artifacts, such as the Otomi CLI. Lastly, it sources aliases you can use, such as the `otomi` cli (which is an alias to the imported `bin/otomi`). We recommend to prepend `./bin` to your \$PATH to always have access to `otomi` from within an otomi repo without needing to source the aliases. NOTE: the aliases still contain useful shortcuts, so you might want to inspect and/or use them. We do:)
+This will install the value files, but also the needed artifacts, such as the Otomi CLI. Lastly, it sources aliases you can use, such as the `otomi` cli (which is an alias to the imported `bin/otomi`).
 
-After this initialization of the repo, we recommend you commit and push it to your final remote destination. It is a prerequisite for step 3 below, [using the console locally](#3-start-otomi-console-on-your-local-machine-optional).
+## 2. Customize configuration
 
-:::info otomi cli is bound to the values repo
+As you learned in the [configuration](configuration) section, the essential otomi platform configurations are stored in `env/cluster.yaml`, `env/settings.yaml` and `env/secrets.settings.yaml` files. Inspect them and customize values to much your environment.
 
-This is to make sure that the version of the bootstrapped otomi image is configured from within this repo. So in case you get the "command not found: otomi" error, you have to source the aliases again from within the repo's root folder.
+The environment variables are defined `env/.env` file, where:
 
-:::
+- `K8S_CONTEXT` indicates a kubernetes context name to be used with otomi CLI
 
-## 2. Configure credentials from a KMS (optional)
+## 3. Configure credentials from a KMS (optional)
 
 :::note No encryption needed?
 

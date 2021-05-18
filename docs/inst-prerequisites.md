@@ -17,19 +17,23 @@ If you are not logged in with the correct credentials then re-login first:
 - AWS: `aws login eks`
 - Google: `gcloud auth login`
 
-### 2. Kubectl running
+### 2. DNS zone
+
+Otomi requires credentials that allow to manage DNS zone from one of the following providers: aws/azure/google
+
+### 3. Kubectl running
 
 To be able to target different kube contexts, kubectl needs to be installed.
 
-### 3. Docker running
+### 4. Docker running
 
 Otomi runs everything else from containers, so please start docker if you haven't already.
 
-### 4. KMS credentials to manage keys for encryption (optional)
+### 5. KMS credentials to manage keys for encryption (optional)
 
 If you would like the secrets in the values repo to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption by otomi. Please read up there on how to work with sops, as it is out of scope for these docs.
 
-### 5. Pull secret for the API (optional)
+### 6. Pull secret for the API (optional)
 
 :::info Otomi Enterprise Edition license needed
 

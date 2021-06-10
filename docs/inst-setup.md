@@ -14,7 +14,7 @@ profile='azure'
 # initialize git repo
 mkdir otomi-values && cd $_ && git init .
 # and get all the files
-docker run --rm -e ENV_DIR=$PWD -v $PWD:$PWD otomi/core:latest bin/bootstrap.sh $profile
+docker run --rm -e ENV_DIR=$PWD -v $PWD:$PWD otomi/core:latest bin/bootstrap.sh --profile $profile
 # and source the aliases including the otomi cli
 . bin/aliases
 ```

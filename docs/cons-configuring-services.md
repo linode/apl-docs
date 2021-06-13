@@ -13,19 +13,19 @@ Screenshot:
 
 Name of the service. Will be used to generate hostname if `Use suggested domain` is chosen (see below)
 
-## Cluster ID
+## Port
 
-Cluster to deploy service on.
+Port of the service.
 
 ## Type
 
 What type of service to deploy/expose. Three options exist:
 
-- [1. Knative Service](#1-knative-service)
+- [1. New Knative Service](#1-knative-service)
 - [2. Existing Knative service](#2-existing-knative-service)
 - [3. Existing Kubernetes Service](#3-existing-kubernetes-service)
 
-### 1. Knative Service
+### 1. New Knative Service
 
 Deploy a new knative service.
 
@@ -34,38 +34,59 @@ Deploy a new knative service.
 | Container image repository | The full repository url of the image (i.e. `otomi/console`) |
 | Container image tag        | The image tag (i.e. `latest`)                               |
 
-### 1.1 Scale to zero
+### Pod annotations
+
+Kubernetes annotations with arbitrary metadata.
+
+### Pod security context
+
+Kubernetes pod security context.
+
+#### Run as user
+
+AKA `runAsUser`
+The User ID that the pod's containers' processes will run with.
+When `runAsNonRoot` is enforced by policies, k8s needs to be able to determine that the process user is not root. If it can't retrieve a numeric user id that check will fail. This options allows to set it. 
+
+#### Run as group
+
+AKA `runAsGroup`
+The Group ID that the pod's containers' processes will run with.
+When `runAsNonRoot` is enforced by policies, k8s needs to be able to determine that the process user is not root. If it can't retrieve a numeric user id that check will fail. This options allows to set it. 
+
+#### Run as non root
+
+AKA `runAsNonRoot`
+Informs k8s that the pod will not be needing root access.
+
+### Scale to zero
 
 Will bring down service if not accessed for 60 seconds. Will also disable probes that check to see if the service is up.
 
-### 1.2 Container image
+### Container image
 
 - repository: The image repository of the container to deploy.
 - tag: The image tag of the container to deploy. We recommend semver version tags for a sane deployment strategy. For more on that see section [AutoCD](#autocd) below.
 
-### 1.3 Environment variables
+### Environment variables
 
 Provide all the needed environment variables that are needed for your container to run.
 
-### 1.4 Pod resources
+### Pod resources
 
 Please refer to the kubernetes documentation for in depth information on how to determine the values your workload needs.
 
-### 1.4.1 Requests
+#### Requests
 
 - cpu: the guaranteed amount of CPU
 - memory: the guaranteed amount of RAM
 
-### 1.4.2 Limits
+#### Limits
 
 - cpu: the maximum amount of CPU
 - memory: the maximum amount of RAM
 
 NOTE: Limits are not guaranteed. If you need guaranteed resources, set higher [requests](#141-requests).
-
-### 1.5 Pod annotations
-
-Kubernetes annotations with arbitrary metadata.
 
 ### 2. Existing Knative Service
 
@@ -79,26 +100,33 @@ Expects a readily deployed Kubernetes service by the name given.
 
 Controls wether internet exposure should be enabled or not. Two options exist:
 
-- `Private`
-- `Public URL`
+- `Cluster`: has no internet exposure, and is only accessible in the cluster
+- `Private`: only accessible via the cluster's private network loadbalancer
+- `Public`: publicly accessible via the cluster's public network loadbalancer
 
-A private service has no internet exposure, and is only accessible in the cluster.
+### Cluster
 
-### Public URL
+If backend is a ksvc, this will expose a knative service on a local istio gateway, so other services can access it at their "$svc.$namespace" host name.
+
+(Coming soon: ability to choose endpoints to connect to, so network policies are automatically generated.)
+    
+### Public & Private
 
 A public URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are described below.
 
 | Setting | Description |
 | --- | --- |
-| Use suggested domain | The suggested domain is the team domain for which a wildcard certificate already exists |
-| Host | Choose a hostname that will be the prefix of the domain |
-| DNS Zone | Choose a dns zone that will be the suffix of the domain |
-| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IDP |
-| Already has a certificate | Don't generate certificates for this service |
-| > Certificate ARN | [AWS only] Provide the certificate arn |
+| TLS passthrough | Pass through the request as is to the backing service. |
+| Use suggested domain | The suggested domain is the team domain for which a wildcard certificate already exists. Has the team name in it. |
+| Host | Choose a hostname that will be the prefix of the domain. |
+| Forward path | Do not "terminate" the path but instead pass it to the receiving service. |
+| DNS Zone | Choose a dns zone that will be the suffix of the domain. |
+| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IDP. |
+| Already has a certificate | Don't generate certificates for this service. |
+| > Certificate ARN | [AWS only] Provide the certificate arn. |
 | > Select existing secret name | [non AWS] Provide a TLS secret name previously created under `Secrets`. Override to select name of secret not known here. |
 
-## AutoCD
+## AutoCD (coming soon!)
 
 Wether or not to allow automatic deployment of image tags that match the chosen strategy's matcher.
 

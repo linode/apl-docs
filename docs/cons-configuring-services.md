@@ -25,74 +25,76 @@ What type of service to deploy/expose. Three options exist:
 - [2. Existing Knative service](#2-existing-knative-service)
 - [3. Existing Kubernetes Service](#3-existing-kubernetes-service)
 
-### 1. New Knative Service
+### New Knative service
 
 Deploy a new knative service.
 
-| Setting                    | Description                                                 |
-| -------------------------- | ----------------------------------------------------------- |
-| Container image repository | The full repository url of the image (i.e. `otomi/console`) |
-| Container image tag        | The image tag (i.e. `latest`)                               |
-
-### Pod annotations
+#### Pod annotations
 
 Kubernetes annotations with arbitrary metadata.
 
-### Pod security context
+#### Pod security context
 
 Kubernetes pod security context.
 
-#### Run as user
+| Setting                    | Description                                                 |
+| -------------------------- | ----------------------------------------------------------- |
+| Run as user | AKA `runAsUser`. The User ID that the pod's containers' processes will run with. When `runAsNonRoot` is enforced by policies, k8s needs to be able to determine that the process user is not root. If it can't retrieve a numeric user id that check will fail. This options allows to set it. |
+| Run as group | AKA `runAsGroup`. The Group ID that the pod's containers' processes will run with. When `runAsNonRoot` is enforced by policies, k8s needs to be able to determine that the process user is not root. If it can't retrieve a numeric user id that check will fail. This options allows to set it. |
+| Run as non root | AKA `runAsNonRoot`. Informs k8s that the pod will not be needing root access. |
 
-AKA `runAsUser`
-The User ID that the pod's containers' processes will run with.
-When `runAsNonRoot` is enforced by policies, k8s needs to be able to determine that the process user is not root. If it can't retrieve a numeric user id that check will fail. This options allows to set it. 
+#### Container image
 
-#### Run as group
+| Setting                    | Description                                                 |
+| -------------------------- | ----------------------------------------------------------- |
+| repository | The full repository url of the image (i.e. `otomi/console`) |
+| tag        | The image tag (i.e. `latest`)                               |
 
-AKA `runAsGroup`
-The Group ID that the pod's containers' processes will run with.
-When `runAsNonRoot` is enforced by policies, k8s needs to be able to determine that the process user is not root. If it can't retrieve a numeric user id that check will fail. This options allows to set it. 
+#### Container resources
 
-#### Run as non root
+Please refer to [the kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) for in depth information on how to determine the values your workload needs.
 
-AKA `runAsNonRoot`
-Informs k8s that the pod will not be needing root access.
+##### Requests
 
-### Scale to zero
+| Setting                    | Description                                                 |
+| -------------------------- | ----------------------------------------------------------- |
+| cpu | The guaranteed amount of CPU |
+| memory        | the guaranteed amount of RAM                               |
 
-Will bring down service if not accessed for 60 seconds. Will also disable probes that check to see if the service is up.
+##### Limits
 
-### Container image
-
-- repository: The image repository of the container to deploy.
-- tag: The image tag of the container to deploy. We recommend semver version tags for a sane deployment strategy. For more on that see section [AutoCD](#autocd) below.
-
-### Environment variables
-
-Provide all the needed environment variables that are needed for your container to run.
-
-### Pod resources
-
-Please refer to the kubernetes documentation for in depth information on how to determine the values your workload needs.
-
-#### Requests
-
-- cpu: the guaranteed amount of CPU
-- memory: the guaranteed amount of RAM
-
-#### Limits
-
-- cpu: the maximum amount of CPU
-- memory: the maximum amount of RAM
+| Setting                    | Description                                                 |
+| -------------------------- | ----------------------------------------------------------- |
+| cpu | The maximum amount of CPU |
+| memory        | the maximum amount of RAM                               |
 
 NOTE: Limits are not guaranteed. If you need guaranteed resources, set higher [requests](#141-requests).
 
-### 2. Existing Knative Service
+#### Environment variables
+
+Provide all the needed environment variables that are needed for your container to run.
+
+#### Secrets
+
+Secrets that have been created with the console can be referenced here by name. All props from the secret will be injected as env var.
+
+#### Secret mounts
+
+Secrets that have been created with the console can be mounted on a path. All props from the secret will be added as file on the path.
+
+#### Files
+
+Files registered here as path > content pairs will be mounted in the container.
+
+#### Scale to zero
+
+Will bring down service if not accessed for 60 seconds. Will also disable probes that check to see if the service is up.
+
+### Existing Knative Service
 
 Expects a readily deployed knative service by the name given. This option will do an internal rewrite of the public url to the existing knative url.
 
-### 3. Existing Kubernetes Service
+### Existing Kubernetes Service
 
 Expects a readily deployed Kubernetes service by the name given.
 

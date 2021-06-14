@@ -12,7 +12,7 @@ You can now bootstrap the versioned artifacts for aws/azure/google profile. In t
 ```bash
 profile='azure'
 # initialize git repo
-mkdir otomi-values && cd $_ && git init .
+mkdir otomi-values && cd $_ && git init -b main .
 # and get all the files
 docker run --rm -e ENV_DIR=$PWD -v $PWD:$PWD otomi/core:latest bin/bootstrap.sh --profile $profile
 # and source the aliases including the otomi cli

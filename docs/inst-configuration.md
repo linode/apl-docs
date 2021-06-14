@@ -67,9 +67,7 @@ otomi validate-templates
 
 In our demo files we refer to Azure AD as IDP for Keycloak, which is a common use case. It needs to know the valid callbacks to return control to Otomi's oauth endpoints. The following callbacks needed to be in place (change $clusterDomain to proper one):
 
-- https://auth.$clusterDomain.oauth2/callback
 - https://keycloak.$clusterDomain/realms/master/broker/redkubes-azure/endpoint
-- https://harbor.$clusterDomain/c/oidc/callback
 - https://keycloak.$clusterDomain
 
 This will be the same for any IDP.

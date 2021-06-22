@@ -5,6 +5,8 @@ title: Configuring secrets
 
 This page describes how to create a secret, and how to edit a secret. Both creating and editing a secret use the same form.
 
+Any secret that is created here should have it's counterpart in Vault by the same name. Otomi will create kubernetes secrets from those Vault secrets. These can then be registered in services or jobs, as injected env vars, or file mounts.
+
 Screenshot:
 
 ![Console: new secret](img/console-new-secret.png)
@@ -13,11 +15,15 @@ Screenshot:
 
 What type of secret to deploy/expose. Three options exist:
 
-- [1. Docker Registry](#1-docker-registry)
-- [2. Generic](#2-generic)
+- [1. Generic](#1-generic)
+- [2. Docker Registry](#2-docker-registry)
 - [3. TLS](#3-tls)
 
-### 1. Docker Registry
+### 1. Generic
+
+Deploy a generic kubernetes secret by listing a selection of (or all) properties of a vault secret registered with the same name.
+
+### 2. Docker Registry
 
 Deploy a docker registry secret. It should exist in Vault as a secret with the same name. The vault secret should be of type "json" and have only one property `.dockerconfigjson` that is set to the value of the following command:
 ```bash
@@ -28,23 +34,12 @@ password="" # your password, can be token
 kubectl create secret docker-registry --dry-run=client regcred --docker-email=$email --docker-server=$server --docker-username=$username --docker-password=$password -ojsonpath='{.data.\.dockerconfigjson}' | base64 --decode
 ```
 
-| Setting  | Description                                                  |
-| -------- | ------------------------------------------------------------ |
-| Server   | The image registry location                                  |
-| Username | The username (for google's gcr.io use '\_json_key')          |
-| Password | The password (for google this will be an accounts json blob) |
-
-You can 
-### 2. Generic
-
-Deploy a generic kubernetes secret by adding key value pairs.
-
 ### 3. TLS
 
-Deploy a kubernetes TLS secret.
+Deploy a kubernetes TLS secret. The three fields here should correspond with the properties as named in the vault secret registered with the same name. The "ca" field is optional and can be used to provide the certicate authority (for mTLS).
 
 | Setting | Description                                    |
 | ------- | ---------------------------------------------- |
 | crt     | The PEM encoded public key certificate content |
 | key     | The private key certificate content            |
-| ca      | The CA certificate content                     |
+| ca      | The CA certificate content (optional)

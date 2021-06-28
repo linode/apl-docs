@@ -68,11 +68,11 @@ Try to login once again and observe that you are asked to confirm your username.
 
 **Problem**
 
-The Pods for helm registry is
+Kubernetes cannot schedule the `harbor-harbor-registry` Pod.
 
 **Cause**
 
-Multi-Attach error occurs for persisten volumes that support only one writer at a time.
+Multi-Attach error occurs for persistent volumes that support only one writer at a time.
 
 **Solution**
 

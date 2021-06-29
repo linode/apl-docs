@@ -1,10 +1,10 @@
 {
   "version": "0.1",
   "allowCompoundWords": true,
-  "enableFiletypes": ["dockerfile", "md", "yaml"],
   "enabledLanguageIds": ["json", "jsonc", "markdown", "yaml", "yml"],
   "ignoreRegExpList": ["/'s\\b/"],
   "ignoreWords": ["mkdir", "nofollow", "noindex", "psql", "textconv", "kubecfg"],
+  "language": "en",
   "words": [
     "activity",
     "authz",

@@ -63,3 +63,17 @@ Exit psql
 ```
 
 Try to login once again and observe that you are asked to confirm your username.
+
+## Pod multi-attach error
+
+**Problem**
+
+Kubernetes cannot schedule the `harbor-harbor-registry` Pod.
+
+**Cause**
+
+Multi-Attach error occurs for persistent volumes that support only one writer at a time.
+
+**Solution**
+
+Delete an existing harbor registry replicaset. Note that this operation makes registry temporarely unavailable.

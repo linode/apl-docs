@@ -23,7 +23,7 @@ This will install the value files, but also the needed artifacts, such as the Ot
 
 ## 2. Customize configuration
 
-As you learned in the [configuration](configuration) section, the essential otomi platform configurations are stored in `env/cluster.yaml`, `env/settings.yaml` and `env/secrets.settings.yaml` files. Inspect them and customize values to much your environment.
+The essential otomi platform configurations are stored in `env/cluster.yaml`, `env/settings.yaml` and `env/secrets.settings.yaml` files. Inspect them and customize values to much your environment.
 
 The environment variables are defined `env/.env` file, where:
 
@@ -33,7 +33,7 @@ The environment variables are defined `env/.env` file, where:
 
 :::note No encryption needed?
 
-If you don't need encryption straight away please continue to the [next step](#3-start-otomi-console-on-your-local-machine-optional)
+If you don't need encryption straight away please continue to the next step
 
 :::
 
@@ -101,7 +101,7 @@ The console allows for easy configuration of many settings but not all. Assuming
 
 ## 5. Configuration
 
-Configuration can be performed much easier through the Otomi Console. So if you have a license please refer to the [Otomi Console](../console) documentation.
+Configuration can be performed much easier through the Otomi Console. So if you have a license please refer to the [Otomi Console](/docs/ee/) documentation.
 
 Not all configuration is (yet) exposed through the console however, so please look at the values repo's `env/*` files to edit the configuration files.
 

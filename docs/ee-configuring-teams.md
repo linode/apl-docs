@@ -50,7 +50,7 @@ A uses with the `otomi-admin` and `team-admin` role can create teams and grant t
 
 ### Service
 
-Select Ingress to grant the team the permission to configure exposure for [services](/docs/ee/configuring-services#exposure).
+Select Ingress to grant the team the permission to configure exposure for [services](services).
 
 ### Team
 

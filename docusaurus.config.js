@@ -23,7 +23,7 @@ module.exports = {
   baseUrl: '/',
   customFields: {
     description:
-      'Turn your kubernetes clusters into a real container platform in minutes. Our OSX like experience offers preconfigured industry proven applications, and gives teams self-service deployment for containerized workloads.',
+      'Turn Kubernetes into a full container platform in minutes. Our OSX like experience offers preconfigured industry proven applications, and gives teams self-service deployment for containerized workloads.',
   },
   favicon: 'img/otomi.ico',
   onBrokenLinks: 'throw',
@@ -116,18 +116,18 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {
-          to: 'docs/console/',
-          label: 'Otomi Console',
-          position: 'left',
-        },
+//        {
+//          to: 'docs/console/',
+//          label: 'Otomi Console',
+//          position: 'left',
+//        },
         {
           to: 'docs/faq',
           label: 'FAQ',
           position: 'left',
         },
         {
-          to: 'community/support',
+          to: 'community/get-involved',
           label: 'Community',
           position: 'left',
         },
@@ -176,8 +176,8 @@ module.exports = {
               href: 'https://gitter.im/redkubes/community',
             },
             {
-              label: 'Help',
-              to: '/community/support',
+              label: 'Get Involved',
+              to: '/community/get-involved',
             },
           ],
         },
@@ -193,7 +193,7 @@ module.exports = {
               href: 'https://github.com/redkubes/',
             },
             {
-              label: 'LinkedIN',
+              label: 'LinkedIn',
               href: 'https://www.linkedin.com/company/red-kubes/',
             },
           ],

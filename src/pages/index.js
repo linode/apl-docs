@@ -24,9 +24,9 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              Turn your <span className={styles.heroProjectKeywords}>kubernetes</span> clusters into a{' '}
-              <span className={styles.heroProjectKeywords}>real</span> container platform in{' '}
-              <span className={styles.heroProjectKeywords}>minutes</span>
+              Turn <span className={styles.heroProjectKeywords}>Kubernetes</span> into a full blown{' '}
+              <span className={styles.heroProjectKeywords}>container platform</span> in minutes with{' '}
+              <span className={styles.heroProjectKeywords}>Otomi</span>
             </h1>
             <div className={styles.indexCtas}>
               <Link className={styles.indexCtasGetStartedButton} to={useBaseUrl('docs/installation/')}>
@@ -46,8 +46,8 @@ function Home() {
         </div>
         <div id='appsuite' className={clsx(styles.announcement, styles.announcementDark)}>
           <div className={styles.announcementInner}>
-            Check out our list of{' '}
-            <span className={styles.heroProjectKeywords}>readily integrated open source apps</span>
+            Check out the list of{' '}
+            <span className={styles.heroProjectKeywords}>pre-configured and integrated apps</span>
           </div>
         </div>
         <div className={clsx(styles.announcement)}>

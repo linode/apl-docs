@@ -1,13 +1,13 @@
 ---
-slug: console/configuring-secrets
-title: Configuring secrets
+slug: ee/secrets
+title: Secrets
 ---
 
 This page describes how to create a secret, and how to edit a secret. Both creating and editing a secret use the same form.
 
 Any secret that is created here should have it's counterpart in Vault by the same name. Otomi will create kubernetes secrets from those Vault secrets. These can then be registered in services or jobs, as injected env vars, or file mounts.
 
-Screenshot:
+Screenshot (admin role):
 
 ![Console: new secret](img/console-new-secret.png)
 
@@ -26,6 +26,7 @@ Deploy a generic kubernetes secret by listing a selection of (or all) properties
 ### 2. Docker Registry
 
 Deploy a docker registry secret. It should exist in Vault as a secret with the same name. The vault secret should be of type "json" and have only one property `.dockerconfigjson` that is set to the value of the following command:
+
 ```bash
 email="not@us.ed" # can be something else if the registry provider expects it, but usually this is ignored
 server="" # example: "https://harbor.demo.eks.otomi.cloud/"
@@ -42,4 +43,4 @@ Deploy a kubernetes TLS secret. The three fields here should correspond with the
 | ------- | ---------------------------------------------- |
 | crt     | The PEM encoded public key certificate content |
 | key     | The private key certificate content            |
-| ca      | The CA certificate content (optional)
+| ca      | The CA certificate content (optional)          |

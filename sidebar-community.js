@@ -1,5 +1,5 @@
 module.exports = {
   community: {
-    Community: ['community-support', 'code-of-conduct'],
+    Community: ['get-involved','code-of-conduct', 'development'],
   },
 }

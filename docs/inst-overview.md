@@ -9,5 +9,5 @@ We strive to make installation of the platform as easy and painless as possible.
 Learn about:
 
 1. [Prerequisites](prerequisites)
-2. [Setup](setup)
-3. [Configuration & deployment](configuration)
+2. [Helm Chart install](chart)
+3. [CLI install](cli)

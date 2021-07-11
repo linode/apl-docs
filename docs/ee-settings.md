@@ -1,11 +1,12 @@
 ---
-slug: console/settings
+slug: ee/settings
 title: Settings
 ---
 
 This page describes the Otomi patform settings available only to users with the "admin" role:
 
 - [Alerts](#alerts)
+- [Azure](#Azure)
 - [Customer](#customer)
 - [DNS](#dns)
 - [KMS](#kms)
@@ -14,6 +15,10 @@ This page describes the Otomi patform settings available only to users with the 
 - [Otomi](#otomi)
 - [Policies](#policies)
 - [SMTP](#smtp)
+
+Screenshot (admin role)
+
+![Console: settings](img/console-settings.png)
 
 ### Alerts
 
@@ -28,6 +33,20 @@ Defines alerting endpoints for alertmanager and deployment feedback. The list of
 | Email | Email address(es) for critical and non-critical alerts. |
 | Notification receivers | Select default notification channel(s) for receiving alerts. |
 | Drone notifications | Channel to be used by the deployment pipeline for failure/success notifications. Can only be delivered to Slack or MSteams (for now). |
+
+### Azure
+
+Azure specific configuration options. Will only be available when running on Azure (cloud=azure).
+
+| Setting       | Description                                                               |
+| ------------- | ------------------------------------------------------------------------- |
+| Appgw         | Select if Azure Application Gateway is used as an external Load Balancer. |
+| Azure Monitor | Turn on Azure monitor to use Azure metrics in Grafana dashboards.         |
+| Storage Types | Specify the Azure disk types used for storage classes in Otomi.           |
+
+IMPORTANT NOTES:
+
+Using an Azure Application Gateway is optional. In case an application gateway is used with a WAF, make sure that its on detection mode and not prevention, as this might deny traffic to your cluster, which can have consequences on the availability of services. For example Grafana relies heavily on queries inside the api request that might trigger OWASP rules.
 
 ### Customer
 

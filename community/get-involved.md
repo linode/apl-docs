@@ -1,16 +1,18 @@
 ---
-slug: support
-title: Support
-sidebar_label: Support
+slug: get-involved
+title: Get involved
+sidebar_label: Get involved
 ---
 
-We recently started publishing our code, and would love to get your feedback. Maybe you even want to contribute with a PR!
+We would love to get your feedback. Maybe you even want to contribute with a PR!
 
 Before you start we would like you to read our [Code of Conduct](code-of-conduct). We also have adopted the [Contributor Covenant](https://www.contributor-covenant.org) and we expect that all community members adhere to the guidelines within.
 
 If you would like to reach out to the community, or have any questions, you can find us here:
 
 - [Gitter](https://gitter.im/redkubes/community)
+- [Twitter](https://twitter.com/otomibyredkubes)
+- [Slack](https://otomi.slack.com)
 
 If you would like to contribute please visit the repositories involved, and pay attention to their respective guidelines:
 

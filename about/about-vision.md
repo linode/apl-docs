@@ -32,7 +32,7 @@ Coming from developers working with the 12-factor app methodology, Otomi was des
 
 Embracing this new era of turnkey (point) solutions we decided instead to use those apps as is, and make them aware of the bigger context they serve in: a company of teams and users that have roles and permissions to work with them. Otomi ultimately is an integration platform that strives to make these open source apps work together.
 
-### 2. Serve developers, not managers
+### 2. Serve developers
 
 Dealing with this multitude of applications and configuration it is of utmost importance to ease the developers workflow. They have to adopt this way of working, and so we aim for the following:
 

@@ -21,26 +21,26 @@ module.exports = [
   },
   {
     from: ['/docs/configuring-apps'],
-    to: '/docs/console/configuring-apps',
+    to: '/docs/ee/configuring-apps',
   },
   {
     from: ['/docs/configuring-clusters'],
-    to: '/docs/console/configuring-clusters',
+    to: '/docs/ee/configuring-clusters',
   },
   {
     from: ['/docs/configuring-services'],
-    to: '/docs/console/configuring-services',
+    to: '/docs/ee/configuring-services',
   },
   {
     from: ['/docs/configuring-teams'],
-    to: '/docs/console/configuring-teams',
+    to: '/docs/ee/configuring-teams',
   },
   {
     from: ['/docs/deploy-changes'],
-    to: '/docs/console/deploy-changes',
+    to: '/docs/ee/deploy-changes',
   },
   {
     from: ['/docs/settings'],
-    to: '/docs/console/settings',
+    to: '/docs/ee/settings',
   },
 ]

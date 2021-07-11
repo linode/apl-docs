@@ -5,23 +5,23 @@ module.exports = [
   },
   {
     from: ['/docs/prerequisites'],
-    to: '/installation/prerequisites',
+    to: '/docs/installation/prerequisites',
   },
   {
     from: ['/docs/configuring-apps'],
-    to: '/ee/configuring-apps',
+    to: '/ee/platform-apps',
   },
   {
     from: ['/docs/configuring-clusters'],
-    to: '/ee/configuring-clusters',
+    to: '/ee/clusters',
   },
   {
     from: ['/docs/configuring-services'],
-    to: '/ee/configuring-services',
+    to: '/ee/services',
   },
   {
     from: ['/docs/configuring-teams'],
-    to: '/ee/configuring-teams',
+    to: '/ee/team-apps',
   },
   {
     from: ['/docs/deploy-changes'],

@@ -237,7 +237,7 @@ Whenever you modify resources without using helm, its internal bookkeeping (the 
 After initial deployment, to enable Continuous Deployment of this repo from within Drone (running in the cluster), for each cluster:
 
 1. Login to Drone and activate the values repo to sync with: https://drone.$clusterDomain/
-2. (Optional) Configure the encryption related secrets as referred to in the [configuration](configuration) section:
+2. (Optional) Configure the encryption related secrets as referred to in the [configuration](#5-configuration) section:
    - Google KMS: Set `GCLOUD_SERVICE_KEY` with the contents of the service account json file.
    - Aws KMS: Set `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` to an account that has access.
    - Azure: provide `AZURE_TENANT_ID`, `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET` and `AZURE_ENVIRONMENT`.

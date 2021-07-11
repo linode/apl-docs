@@ -116,11 +116,11 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-//        {
-//          to: 'docs/console/',
-//          label: 'Otomi Console',
-//          position: 'left',
-//        },
+        //{
+        //  to: 'docs/console/',
+        //  label: 'Otomi Console',
+        //  position: 'left',
+        //},
         {
           to: 'docs/faq',
           label: 'FAQ',

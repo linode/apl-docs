@@ -30,6 +30,7 @@ module.exports = {
     'Otomi CLI': [
       'cli-overview'],
     'SRE': [
+      'sre-overview',
       'sre-daily',
       'sre-troubleshooting'],
     'Known Issues': [

@@ -11,8 +11,8 @@ This documentation is intended to provide technical, operational and background 
 Please read the following sections to understand the reasoning and decisions made involving the development of Otomi:
 
 - [Vision](vision)
-- [Development journey](development-journey)
-- [Design & Architecture](design-and-architecture)
+- [Development journey](journey)
+- [Architecture](architecture)
 - [Roadmap](roadmap)
 
 For developer information please visit the repositories involved:

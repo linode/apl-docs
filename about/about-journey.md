@@ -1,5 +1,5 @@
 ---
-slug: development-journey
+slug: journey
 title: Our development journey
 sidebar_label: Journey
 ---

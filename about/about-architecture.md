@@ -1,5 +1,5 @@
 ---
-slug: design-and-architecture
+slug: architecture
 title: Otomi Architecture
 sidebar_label: Architecture
 ---

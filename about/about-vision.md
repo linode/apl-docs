@@ -43,4 +43,4 @@ Dealing with this multitude of applications and configuration it is of utmost im
 - API oriented: easily create openapi clients for tasks to do CRUD operations on the apps, giving autocompletion while developing.
 - Sane configuration defaults: wherever possible, provide configuration for the most common use case(s).
 
-Please continue to [our development journey](development-journey) to read about !
+Please continue to [our development journey](journey) to read about !

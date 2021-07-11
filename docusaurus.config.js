@@ -156,7 +156,7 @@ module.exports = {
             },
             {
               label: 'Community Edition',
-              to: '/docs/console/',
+              to: '/docs/ce/',
             },
             {
               label: 'Product sheet',

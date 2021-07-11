@@ -51,5 +51,5 @@ Line 1-7 are configuration options supported in the Otomi values schema. Line 8-
 
 For SRE's we have created a couple of guides and checklist:
 
-- [Daily routine](/sre/daily)
-- [Troubleshooting](sre/troubleshooting)
+- [Daily routine](daily)
+- [Troubleshooting](troubleshooting)

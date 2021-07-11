@@ -1,0 +1,1 @@
+(self.webpackChunkotomi_docs=self.webpackChunkotomi_docs||[]).push([[9432],{8444:function(s){"use strict";s.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"redkubes","name":"redkubes","count":1,"permalink":"/blog/tags/redkubes"}')}}]);

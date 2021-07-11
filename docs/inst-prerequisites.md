@@ -68,4 +68,4 @@ If you have a license for Otomi EE you can run the api, unlocking self service f
 
 :::
 
-When you have a paid license to use the api you will have a pull secret. Please keep it handy for the [setup steps](setup).
+When you have a paid license to use the api you will have a pull secret. Please keep it handy for the [Chart](/docs/installation/chart) or [CLI](/docs/installation/cli) install.

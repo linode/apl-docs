@@ -1,6 +1,6 @@
 ---
-slug: known-issues/cli
-title: 'Known Issues: Otomi CLI'
+slug: sre/known-issues/cli
+title: 'Known Issues: Current Otomi CLI'
 sidebar_label: Otomi CLI
 ---
 

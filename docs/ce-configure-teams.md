@@ -60,8 +60,10 @@ Each file should contain:
 When using Otomi CLI, you can validate the changes in the values based on the Otomi values schema:
 
 ```bash
-otomi validate-values -v
+otomi validate-values
 ```
+
+Use -v to get more output [new CLI](/docs/cli/new) only
 
 When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
 

@@ -1,5 +1,5 @@
 ---
-slug: known-issues/harbor
+slug: sre/known-issues/harbor
 title: 'Known Issues: Harbor'
 sidebar_label: 'Harbor'
 ---

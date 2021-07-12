@@ -1,5 +1,5 @@
 ---
-slug: known-issues/istio
+slug: sre/known-issues/istio
 title: 'Known Issues: Istio'
 sidebar_label: 'Istio'
 ---

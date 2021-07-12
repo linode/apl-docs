@@ -1,5 +1,5 @@
 ---
-slug: lifecycle-management/upgrades
+slug: sre/upgrades
 title: Upgrades
 ---
 

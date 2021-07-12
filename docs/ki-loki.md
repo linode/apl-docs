@@ -1,5 +1,5 @@
 ---
-slug: known-issues/loki
+slug: sre/known-issues/loki
 title: 'Known Issues: Loki'
 sidebar_label: 'Loki'
 ---

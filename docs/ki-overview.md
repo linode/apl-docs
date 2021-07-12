@@ -1,5 +1,5 @@
 ---
-slug: known-issues/
+slug: sre/known-issues/
 title: Known Issues
 sidebar_label: Overview
 ---
@@ -20,3 +20,4 @@ Otomi configures its suite of applications to work together. It expects certain 
 
 - [Istio](istio)
 - [Harbor](harbor)
+- [Loki](loki)

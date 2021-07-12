@@ -8,7 +8,7 @@ sidebar_label: Overview
 
 :::info Otomi Enterprise Edition license needed for self service functionality
 
-If you have a license for Otomi EE you will get many more capabilities not found in the CE version.
+If you have a license for Otomi EE you will get many more capabilities not found in the CE version. See the [Red Kubes](https://redkubes.com/pricing) website for more information.
 
 :::
 

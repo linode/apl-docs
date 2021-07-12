@@ -53,3 +53,4 @@ For SRE's we have created a couple of guides and checklist:
 
 - [Daily routine](daily)
 - [Troubleshooting](troubleshooting)
+- [Upgrading Otomi](upgrades)

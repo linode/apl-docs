@@ -6,13 +6,33 @@ sidebar_label: Teams
 
 When you are running Otomi in CE mode or doing local development, you will operate on values directly and have to commit them manually:
 
+## Install Otomi CLI (optional)
+
+See [here](/docs/cli) to install Otomi CLI.
+
 ## Pull the values
 
-Pull the `otomi/values` repository from `gitea.<your.domain>/otomi/values`
+Clone the `otomi/values` repository from `gitea.<your.domain>/otomi/values` (if not already done)
+
+```bash
+git clone https://gitea.<your.domain>/otomi/values.git
+```
+
+## Bootstap the values (optional)
+
+If you would like to use the Visual Studio integration when working with Otomi values, then first bootstap the values:
+
+```bash
+otomi bootstap
+```
 
 ## Change the values
 
-To create a team, modify the `values/env/teams.yaml`:
+To create a team, follow these steps:
+
+### 1. Modify the teams.yaml
+
+Add the team to the `values/env/teams.yaml`:
 
 ```yaml
 teamConfig:
@@ -21,10 +41,41 @@ teamConfig:
       id: <team-name>
 ```
 
+### 2. Create the team files
+
+Add the following 3 files:
+
+1. `external-secrets.<team-name>.yaml`
+2. `jobs.<team-name>.yaml`
+3. `services.<team-name>.yaml`
+
+Each file should contain:
+
+```yaml
+{}
+```
+
+## validate changes (optional)
+
+When using Otomi CLI, you can validate the changes in the values based on the Otomi values schema:
+
+```bash
+otomi validate-values
+```
+
 ## Commit changes
+
+Commit and push the changes using Otomi CLI:
 
 ```bash
 otomi commit
 ```
 
-This will detect any version changes, generate Drone pipeline configuration, and then commit all files with a standardized message "Manual commit".
+or commit and push the changes using git:
+
+```bash
+git commit -m "your commit comment" --no-verify
+git push
+```
+
+A first commit will automatically generate a Drone pipeline configuration, and then commit all files with a standardized message "Manual commit".

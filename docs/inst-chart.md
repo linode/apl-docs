@@ -3,46 +3,75 @@ slug: installation/chart/
 title: Install with Chart
 ---
 
-Use Helm 3 to install Otomi.
+Use Helm 3 to install Otomi
 
-## Get Repo
+## Prerequisites
 
-```
-helm 3
-helm repo add otomi https://otomi.io/otomi-core
+- A Kubernetes cluster version 1.18+
+- [Helm 3.0+](https://helm.sh/docs/intro/install/)
+- Git
+- values.yaml that contains all configuration about kubernetes cluster and cloud provider resources like DNS or KMS. See [configuration](#configuring) below for more details.
+
+## Installing via Helm repository
+
+You can install otomi using otomi helm repository. You don't need to download the otomi source code using this method.
+
+### Adding otomi helm repository
+
+```bash
+helm repo add otomi-repo https://otomi.io/otomi-core
 helm repo update
 ```
 
-See [helm](https://helm.sh/docs/helm/helm_repo/) repo for command documentation.
+See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
-## Prepare Values
+### Installing the Chart
 
-Prepare `values.yaml` that describe kubernetes cluster and cloud provider resources like DNS or KMS. See [configuration](#configuring) below
+Now install the chart with the name my-otomi-release (a custom name that you choose) and with the prepared values.yaml file.
 
-## Install Chart
-
+```bash
+helm install -f /path/to/values.yaml my-otomi-release otomi-repo/otomi
 ```
-# helm 3
-helm install -f values.yaml otomi otomi/otomi
+
+You can also install a specific version of the chart. Visit [this page](https://github.com/redkubes/otomi-core/releases) for the list of all versions.
+
+```bash
+helm install -f /path/to/values.yaml my-otomi-release otomi-repo/otomi --version 0.1.4-rc6
 ```
 
 See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation.
 
-## Uninstall Chart
+## Installing from source
 
+As an alternative method, you can clone the otomi-core source code from the [Github](https://github.com/redkubes/otomi-core) and install otomi using the chart source code.
+
+### Downloading source
+
+```bash
+git clone https://github.com/redkubes/otomi-core.git
+cd otomi-core
 ```
-# helm 3
-helm uninstall [RELEASE_NAME]
-helm repo update
+
+### Installing from source
+
+Use the following command to install the chart with the name my-otomi-release (a custom name that you choose) and with the prepared:
+
+```bash
+helm install -f /path/to/values.yaml my-otomi-release chart/otomi
+```
+
+## Uninstalling the Chart
+
+```bash
+helm uninstall my-otomi-release
 ```
 
 ## Configuring
 
 See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). To see all configurable options with detailed comments, visit the chart's [values.yaml](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml), or run these configuration commands:
 
-```
-# helm 3
-helm inspect values otomi otomi/otomi
+```bash
+helm show values otomi-repo/otomi
 ```
 
 ### Required values

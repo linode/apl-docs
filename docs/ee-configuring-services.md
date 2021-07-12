@@ -73,7 +73,7 @@ The type of service to deploy/expose. Three options are supported:
 
 - [1. Existing Kubernetes Service](#existing-kubernetes-service)
 - [2. Existing Knative service](#existing-knative-service)
-- [3. New Knative Service](#knative-service)
+- [3. New Knative Service](#new-knative-service)
 
 ### Existing Kubernetes Service
 

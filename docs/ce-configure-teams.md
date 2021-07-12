@@ -1,10 +1,10 @@
 ---
 slug: ce/teams
-title: Configuring teams
+title: Configuring Teams in CE mode
 sidebar_label: Teams
 ---
 
-When you are running Otomi in CE mode or doing local development, you will operate on values directly and have to commit them manually:
+When you are running Otomi in CE mode or doing local development, you will operate on values directly and have to commit them manually. Before you can start creating Services, Jobs and Secrets, you first need to create a Team. Follow these steps to create a team after deploying Otomi CE:
 
 ## Install Otomi CLI (optional)
 
@@ -60,8 +60,10 @@ Each file should contain:
 When using Otomi CLI, you can validate the changes in the values based on the Otomi values schema:
 
 ```bash
-otomi validate-values
+otomi validate-values -v
 ```
+
+When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
 
 ## Commit changes
 
@@ -71,11 +73,13 @@ Commit and push the changes using Otomi CLI:
 otomi commit
 ```
 
-or commit and push the changes using git:
+or commit and push the changes manually using git:
 
 ```bash
 git commit -m "your commit comment" --no-verify
 git push
 ```
+
+Note: use the default `otomi-admin` account and the provided adminpassword (see `secrets.settings.yaml.dec`).
 
 A first commit will automatically generate a Drone pipeline configuration, and then commit all files with a standardized message "Manual commit".

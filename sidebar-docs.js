@@ -12,7 +12,7 @@ module.exports = {
       'ee-configuring-secrets',
       'ee-team-apps',
       'ee-deploy-changes'],
-    'Otomi CE': ['ce-overview', 'ce-configure-teams'],
+    'Otomi CE': ['ce-overview', 'ce-configure-teams', 'ce-configure-services'],
     'Otomi Apps': ['app-drone', 'app-harbor', 'app-keycloak', 'app-kubeapps', 'app-vault', 'app-gatekeeper'],
     'Otomi CLI': ['cli-overview'],
     SRE: ['sre-overview', 'sre-daily', 'sre-troubleshooting'],

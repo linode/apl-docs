@@ -33,7 +33,7 @@ Now install the chart with the name my-otomi-release (a custom name that you cho
 helm install -f /path/to/values.yaml my-otomi-release otomi-repo/otomi
 ```
 
-You can also install a specific version of the chart. Visit [this page](https://github.com/redkubes/otomi-core/releases) for the list of all versions.
+You can also install a specific version of the chart. See [here](https://github.com/redkubes/otomi-core/releases) for the a list of all available versions.
 
 ```bash
 helm install -f /path/to/values.yaml my-otomi-release otomi-repo/otomi --version 0.1.4-rc6
@@ -45,14 +45,14 @@ See [helm install](https://helm.sh/docs/helm/helm_install/) for command document
 
 As an alternative method, you can clone the otomi-core source code from the [Github](https://github.com/redkubes/otomi-core) and install otomi using the chart source code.
 
-### Downloading source
+### Download source
 
 ```bash
 git clone https://github.com/redkubes/otomi-core.git
 cd otomi-core
 ```
 
-### Installing from source
+### Install from source
 
 Use the following command to install the chart with the name my-otomi-release (a custom name that you choose) and with the prepared:
 
@@ -78,12 +78,10 @@ helm show values otomi-repo/otomi
 
 The following table lists the configurable parameters of Otomi chart and all required, optional and default values
 
-| Parameter | Description               | Default |
-| --------- | ------------------------- | ------- |
-| `image`   | The otomi-core image name |         |
+| Parameter          | Description               | Default       |
+| ------------------ | ------------------------- | ------------- |
+| `image.repository` | The otomi-core image name | `otomi/core`  |
+| `image.tag`        | The otomi-core image tag  | `latest`      |
+| `image.pullPolicy` | The image pull policy     | `IfNotExists` |
 
 ### Optional values
-
-| Parameter | Description               | Default |
-| --------- | ------------------------- | ------- |
-| `image`   | The otomi-core image name |         |

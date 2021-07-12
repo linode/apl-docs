@@ -47,10 +47,11 @@ charts:
 
 Line 1-7 are configuration options supported in the Otomi values schema. Line 8-11 are used to add specific (not schema supported) configuration values using overrides (rawValues).
 
-## Guides
+## Guides & checklists
 
-For SRE's we have created a couple of guides and checklist:
+For SRE's we have created a couple of guides and checklists:
 
 - [Daily routine](daily)
 - [Troubleshooting](troubleshooting)
+- [Known issues](/docs/sre/known-issues/)
 - [Upgrading Otomi](upgrades)

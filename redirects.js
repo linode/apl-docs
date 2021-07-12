@@ -1,7 +1,7 @@
 module.exports = [
   {
     from: ['/docs/upgrades'],
-    to: '/docs/lifecycle-management/upgrades',
+    to: '/docs/sre/upgrades',
   },
   {
     from: ['/docs/prerequisites'],

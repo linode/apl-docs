@@ -8,7 +8,7 @@ sidebar_label: otomi bash
 
 ## Description
 
-Run interactive bash shell in otomi-core container
+Run interactive bash shell in otomi-core container.
 
 ## Options
 

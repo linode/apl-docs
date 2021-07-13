@@ -19,7 +19,7 @@ You can install otomi using otomi helm repository. You don't need to download th
 ### Adding otomi helm repository
 
 ```bash
-helm repo add otomi-repo https://otomi.io/otomi-core
+helm repo add otomi https://otomi.io/otomi-core
 helm repo update
 ```
 
@@ -161,6 +161,6 @@ The following table lists the minimal required values
 | `image.repository`      | The otomi-core image name          | `otomi/core`  |
 | `image.tag`             | The otomi-core image tag           | `latest`      |
 | `image.pullPolicy`      | The image pull policy              | `IfNotExists` |
-| `tasksImage.repository` |                                    | `otomi/tasks` |
-| `tasksImage.tag`        |                                    | `latest`      |
+| `tasksImage.repository` | The otomi-tasks image name         | `otomi/tasks` |
+| `tasksImage.tag`        | The otomi-tasks image tag          | `latest`      |
 | `otomi.pullSecret`      | Add a pullsecret to run in EE mode | `''`          |

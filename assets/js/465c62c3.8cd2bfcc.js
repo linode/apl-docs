@@ -1,0 +1,1 @@
+(self.webpackChunkotomi_docs=self.webpackChunkotomi_docs||[]).push([[9785],{134:function(o){"use strict";o.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"opa","name":"opa","count":1,"permalink":"/blog/tags/opa"}')}}]);

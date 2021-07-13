@@ -1,0 +1,1 @@
+(self.webpackChunkotomi_docs=self.webpackChunkotomi_docs||[]).push([[6295],{7321:function(o){"use strict";o.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"keycloak","name":"keycloak","count":1,"permalink":"/blog/tags/keycloak"}')}}]);

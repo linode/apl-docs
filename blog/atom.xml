@@ -2,11 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://otomi.io/blog</id>
     <title>Otomi Blog</title>
-    <updated>2021-01-12T00:00:00.000Z</updated>
+    <updated>2021-04-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://otomi.io/blog"/>
     <subtitle>Otomi Blog</subtitle>
     <icon>https://otomi.io/img/otomi.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Integrating Harbor, KeyCloak and Istio]]></title>
+        <id>harbor-keycloak-istio</id>
+        <link href="https://otomi.io/blog/harbor-keycloak-istio"/>
+        <updated>2021-04-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This is our initial documentation setup for Otomi Container Platform. We hope you find it useful. Please don't hesitate to give us any feedback!]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Universal OPA Policies Development]]></title>
+        <id>universal-opa-policy-development</id>
+        <link href="https://otomi.io/blog/universal-opa-policy-development"/>
+        <updated>2021-03-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Introduction]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>

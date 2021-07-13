@@ -1,0 +1,1 @@
+(self.webpackChunkotomi_docs=self.webpackChunkotomi_docs||[]).push([[6863],{2485:function(o){"use strict";o.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"rego","name":"rego","count":1,"permalink":"/blog/tags/rego"}')}}]);

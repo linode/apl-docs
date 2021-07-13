@@ -1,0 +1,1 @@
+(self.webpackChunkotomi_docs=self.webpackChunkotomi_docs||[]).push([[6752],{4861:function(s){"use strict";s.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"istio","name":"istio","count":1,"permalink":"/blog/tags/istio"}')}}]);

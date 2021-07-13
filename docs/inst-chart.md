@@ -133,11 +133,26 @@ The following table lists the minimal required values
 
 #### Provider = Azure
 
-| `kms.sops.azure.tenantID` | | `''` | | `kms.sops.azure.clientID` | | `''` | | `kms.sops.azure.clientSecret` | | `''` | | `kms.sops.azure.keys` | | `''` | | `dns.provider.azure.aadClientId` | | `''` | | `dns.provider.azure.aadClientSecret` | | `''` | | `dns.provider.azure.tenantId` | | `''` | | `dns.provider.azure.subscriptionId` | | `''` |
+| Parameter                            | Description | Default |
+| ------------------------------------ | ----------- | ------- |
+| `kms.sops.azure.tenantID`            |             | `''`    |
+| `kms.sops.azure.clientID`            |             | `''`    |
+| `kms.sops.azure.clientSecret`        |             | `''`    |
+| `kms.sops.azure.keys`                |             | `''`    |
+| `dns.provider.azure.aadClientId`     |             | `''`    |
+| `dns.provider.azure.aadClientSecret` |             | `''`    |
+| `dns.provider.azure.tenantId`        |             | `''`    |
+| `dns.provider.azure.subscriptionId`  |             | `''`    |
 
 #### Provider = Google
 
-| `kms.sops.google.accountJson` | | `''` | | `kms.sops.google.project` | | `''` | | `kms.sops.google.keys` | | `''` | | `dns.provider.google.serviceAccountKey` | | `''` | | `dns.provider.google.project` | | `''` |
+| Parameter                               | Description | Default |
+| --------------------------------------- | ----------- | ------- |
+| `kms.sops.google.accountJson`           |             | `''`    |
+| `kms.sops.google.project`               |             | `''`    |
+| `kms.sops.google.keys`                  |             | `''`    |
+| `dns.provider.google.serviceAccountKey` |             | `''`    |
+| `dns.provider.google.project`           |             | `''`    |
 
 ### Optional values
 

@@ -20,11 +20,13 @@ git clone https://gitea.<your.domain>/otomi/values.git
 
 ## Bootstap the values (optional)
 
-If you would like to use the Visual Studio integration when working with Otomi values, then first bootstap the values:
+First bootstap the local values:
 
 ```bash
 otomi bootstap
 ```
+
+This will also add a .vscode folder with Otomi extentions for autocompletion.
 
 ## Change the values
 
@@ -63,23 +65,22 @@ When using Otomi CLI, you can validate the changes in the values based on the Ot
 otomi validate-values
 ```
 
-Use -v to get more output [new CLI](/docs/cli/new) only
+Use -v to get more output
 
 When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
 
-## Commit changes
+## Apply changes
 
 Commit and push the changes using Otomi CLI:
 
 ```bash
-otomi commit
+otomi apply
 ```
 
-or commit and push the changes manually using git:
+And then (optionally) commit and push the changes to git:
 
 ```bash
-git commit -m "your commit comment" --no-verify
-git push
+otomi commit -m "your commit comment" --no-verify
 ```
 
 Note: use the default `otomi-admin` account and the provided adminpassword (see `secrets.settings.yaml.dec`).

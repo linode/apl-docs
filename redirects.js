@@ -4,10 +4,6 @@ module.exports = [
     to: '/docs/sre/upgrades',
   },
   {
-    from: ['/docs/console/settings#otomi'],
-    to: '/docs/ee/settings#otomi',
-  },
-  {
     from: ['/docs/configuring-apps'],
     to: '/docs/ee/platform-apps',
   },

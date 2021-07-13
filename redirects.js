@@ -4,8 +4,8 @@ module.exports = [
     to: '/docs/sre/upgrades',
   },
   {
-    from: ['/docs/prerequisites'],
-    to: '/docs/installation/prerequisites',
+    from: ['/docs/console/settings#otomi'],
+    to: '/docs/ee/settings#otomi',
   },
   {
     from: ['/docs/configuring-apps'],

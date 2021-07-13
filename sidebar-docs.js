@@ -14,7 +14,7 @@ module.exports = {
       'ee-deploy-changes'],
     'Community Edition': ['ce-overview', 'ce-configure-teams', 'ce-configure-services'],
     'Applications': ['app-drone', 'app-harbor', 'app-keycloak', 'app-kubeapps', 'app-vault', 'app-gatekeeper'],
-    'Otomi CLI': ['cli-overview', 'cli-current','cli-new'],
+    'Otomi CLI': ['cli-overview','cli-apply', 'cli-bash', 'cli-bootstrap'],
     SRE: ['sre-overview', 'sre-daily', 'sre-troubleshooting', { 'Known Issues': ['ki-overview', 'ki-cli', 'ki-harbor', 'ki-istio', 'ki-loki'] }, 'lm-upgrades'],
     // Reference: [
     //   'ref-app-suite',

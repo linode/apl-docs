@@ -74,14 +74,78 @@ See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_h
 helm show values otomi-repo/otomi
 ```
 
-### Required values
+### Minimal required values
 
-The following table lists the configurable parameters of Otomi chart and all required, optional and default values
+The following table lists the minimal required values
 
-| Parameter          | Description               | Default       |
-| ------------------ | ------------------------- | ------------- |
-| `image.repository` | The otomi-core image name | `otomi/core`  |
-| `image.tag`        | The otomi-core image tag  | `latest`      |
-| `image.pullPolicy` | The image pull policy     | `IfNotExists` |
+| Parameter | Description | Default |
+| --- | --- | --- | --- |
+| `cluster.apiName` | The name of the cluster API | `''` |
+| `cluster.apiServer` | The URL of the cluster API | `''` |
+| `cluster.domainSuffix` |  | `''` |  |
+| `cluster.k8sVersion` | The Kubernetes version of the cluster | `''` |
+| `cluster.name` | The name of the Kubernetes cluster | `''` |  |
+| `cluster.provider` | The cloud provider where the Kubernetes cluster is running | `''` |
+| `cluster.region` | The cloud region where the Kubernetes cluster is running | `''` |
+| `kms.sops.provider` | The cloud provider where the Kubernetes cluster is running. Use `aws`, `azure` or `google` | `''` |
+| `oidc.clientID` |  | `''` |
+| `oidc.clientSecret` |  | `''` |
+| `oidc.adminGroupID` |  | `''` |
+| `oidc.authUrl` |  | `''` |
+| `oidc.issuer` |  | `''` |
+| `oidc.teamAdminGroupID` |  | `''` |
+| `oidc.tenantID` |  | `''` |
+| `oidc.tokenUrl` |  | `''` |
+| `otomi.adminPassword` | The password of the otomi-admin account | `''` |
+| `otomi.isMultitenant` | Configure Otomi to run in multi-tenant mode `true` or `false` | `true` |
+| `otomi.version` | The version should not be changed! (Consider it read only) | `APP_VERSION_PLACEHOLDER` |
+| `dns.provider` | The cloud provider where the DNS service is used. Use `aws`, `azure` or `google` |
+| `charts.cert-manager.stage` | Use `production` or `staging` | `production` |
+| `charts.gitea.postgresqlPassword` | The password used for PostgreSQL db used by Gitea | `''` |
+| `charts.gitea.enabled` | Use Gitea as a local GIT repository. Always true when deploying with chart | `true` |
+| `charts.keycloak.idp.alias` | Name shown on keycloak login page as a button | `otomi` |
+| `charts.keycloak.idp.clientID` | Azure ClientID for credentials used by the apps' clients to access keycloak in the cluster | `''` |
+| `charts.keycloak.idp.clientSecret` | Azure ClientSecret for credentials used by the apps' clients to access keycloak in the cluster | `''` |
+| `charts.keycloak.postgresqlPassword` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time | `''` |
+| `charts.loki.adminPassword` | The password used for used for splitting logs for teams | `''` |
+| `charts.nginx-ingress.private.enabled` | Enable to start a LB on the private network | `false` |
+| `charts.kubeapps.postgresqlPassword` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time | `''` |
+| `charts.oauth2-proxy.config.cookieSecret` | Needs to be set to avoid generating a new one each time | `''` |
+| `customer.name` | Organization name of Otomi user | `''` |
+| `kms.sops.vault.token` |  | `''` |
+| `charts.cert-manager.email` |  | `''` |
+| `charts.external-dns.domainFilters` |  | `''` |
+| `charts.external-dns.zoneIdFilters` |  | `[]` |
+| `charts.keycloak.enabled` | KeyCloak is always enabled | 'true' |
+| `teamConfig` |  | `{}` |
+| `alerts` |  | `{}` |
+| `services` |  | `[]` |
+
+#### Provider = AWS
+
+| Parameter                   | Description                                     | Default |
+| --------------------------- | ----------------------------------------------- | ------- |
+| `kms.sops.aws.clientID`     |                                                 | `''`    |
+| `kms.sops.aws.clientSecret` |                                                 | `''`    |
+| `kms.sops.aws.accessKey`    |                                                 | `''`    |
+| `kms.sops.aws.secretKey`    |                                                 | `''`    |
+| `dns.provider.aws.region`   | The AWS region where the Route53 zone is hosted | `''`    |
+
+#### Provider = Azure
+
+| `kms.sops.azure.tenantID` | | `''` | | `kms.sops.azure.clientID` | | `''` | | `kms.sops.azure.clientSecret` | | `''` | | `kms.sops.azure.keys` | | `''` | | `dns.provider.azure.aadClientId` | | `''` | | `dns.provider.azure.aadClientSecret` | | `''` | | `dns.provider.azure.tenantId` | | `''` | | `dns.provider.azure.subscriptionId` | | `''` |
+
+#### Provider = Google
+
+| `kms.sops.google.accountJson` | | `''` | | `kms.sops.google.project` | | `''` | | `kms.sops.google.keys` | | `''` | | `dns.provider.google.serviceAccountKey` | | `''` | | `dns.provider.google.project` | | `''` |
 
 ### Optional values
+
+| Parameter               | Description                        | Default       |
+| ----------------------- | ---------------------------------- | ------------- |
+| `image.repository`      | The otomi-core image name          | `otomi/core`  |
+| `image.tag`             | The otomi-core image tag           | `latest`      |
+| `image.pullPolicy`      | The image pull policy              | `IfNotExists` |
+| `tasksImage.repository` |                                    | `otomi/tasks` |
+| `tasksImage.tag`        |                                    | `latest`      |
+| `otomi.pullSecret`      | Add a pullsecret to run in EE mode | `''`          |

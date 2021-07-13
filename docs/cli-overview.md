@@ -55,7 +55,7 @@ bash <(wget -q -O- https://raw.githubusercontent.com/redkubes/otomi-core/otomi-z
 | `otomi bootstrap` |  | Bootstrap values repo with artifacts corresponding to the cluster's stack version |
 | `otomi check-policies` |  | Check if generated manifests adhere to defined OPA policies |
 | `otomi commit` |  | Execute wrapper for generate pipelines -> git commit changed files |
-| `otomi decrypt` [files..] |  | Decrypts file(s) given as arguments (relative to env folder), or all env/_.secrets.yaml to env/_.secrets.yaml.dec files |
+| `otomi decrypt [files..]` |  | Decrypts file(s) given as arguments (relative to env folder), or all env/_.secrets.yaml to env/_.secrets.yaml.dec files |
 | `otomi destroy` |  | Destroy all or some charts |
 | `otomi diff` |  | Diff k8s resources |
 | `otomi encrypt [files..]` |  | Encrypt file(s) given as arguments (relative to env folder), or all env/\*.secrets.yaml files |

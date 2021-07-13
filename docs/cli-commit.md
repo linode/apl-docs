@@ -1,14 +1,14 @@
 ---
-slug: cli/apply
-title: otomi apply
-sidebar_label: otomi apply
+slug: cli/commit
+title: otomi commit
+sidebar_label: otomi commit
 ---
 
 `otomi apply [options]`
 
 ## Description
 
-Apply Kubernetes resources.
+Execute wrapper for generate pipelines -> git commit changed files.
 
 ## Options
 
@@ -17,7 +17,7 @@ Apply Kubernetes resources.
 | `-l` | Helmfile option to select charts by label (format: `<label>=<value>`), e.g. `-l name=prometheus-operator` or `--label group=jobs` | `[array]` |  |
 | `-f`, `--file` | Helmfile option to select helmfiles by filename, e.g. '-f helmfile.d/helmfile-15.ingress-core.yaml' | `[array]` |  |
 | `--version` | Show version number | `[boolean]` |  |
-| `--log-level` | Specify the log level | `FATAL, ERROR, WARN, INFO, VERBOSE, DEBUG, TRACE` | `WARN` |
+| `--log-level` |  | `FATAL, ERROR, WARN, INFO, VERBOSE, DEBUG, TRACE` | `WARN` |
 | `-s`, `--skip-cleanup` |  | `[boolean]` | `false` |
 | `-c`, `--set-context` |  | `[boolean]` | `false` |
 | `-v`, `--verbose` |  |  | `count` |

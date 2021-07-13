@@ -13,12 +13,12 @@ Bootstrap values repository with artifacts corresponding to the cluster's stack 
 ## Options
 
 | Option | Description | Value Type | Default |
-| --- | --- | --- | --- | --- |
-| `-p`, `--profile` | Bootstrap selected profile | `[String]` |
+| --- | --- | --- | --- |
+| `-p`, `--profile` | Bootstrap selected profile | `[String]` |  |
 | `--version` | Show version number | `[boolean]` `[choices: "aws", "azure", "google"]` |  |
 | `--log-level` |  | `FATAL, ERROR, WARN, INFO, VERBOSE, DEBUG, TRACE` | `WARN` |
 | `-s`, `--skip-cleanup` |  | `[boolean]` | `false` |
 | `-c`, `--set-context` |  | `[boolean]` | `false` |
-| `-v`, `--verbose` |  |  | count |
+| `-v`, `--verbose` |  |  | `count` |
 | `--no-interactive`, `--ni` |  | `[boolean]` | `false` |
-| `-h`, `--help` | Show help |  | `[boolean]` |  |
+| `-h`, `--help` | Show help |  | `[boolean]` |

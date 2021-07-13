@@ -79,12 +79,12 @@ helm show values otomi-repo/otomi
 The following table lists the minimal required values
 
 | Parameter | Description | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `cluster.apiName` | The name of the cluster API | `''` |
 | `cluster.apiServer` | The URL of the cluster API | `''` |
-| `cluster.domainSuffix` |  | `''` |  |
+| `cluster.domainSuffix` |  | `''` |
 | `cluster.k8sVersion` | The Kubernetes version of the cluster | `''` |
-| `cluster.name` | The name of the Kubernetes cluster | `''` |  |
+| `cluster.name` | The name of the Kubernetes cluster | `''` |
 | `cluster.provider` | The cloud provider where the Kubernetes cluster is running | `''` |
 | `cluster.region` | The cloud region where the Kubernetes cluster is running | `''` |
 | `kms.sops.provider` | The cloud provider where the Kubernetes cluster is running. Use `aws`, `azure` or `google` | `''` |

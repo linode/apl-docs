@@ -1,5 +1,5 @@
 ---
-slug: cli/bash
+slug: cli/apply
 title: otomi apply
 sidebar_label: otomi apply
 ---

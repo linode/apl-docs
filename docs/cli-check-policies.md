@@ -4,7 +4,7 @@ title: check-policies
 sidebar_label: check-policies
 ---
 
-`otomi apply [options]`
+`otomi check-policies [options]`
 
 ## Description
 

@@ -97,10 +97,10 @@ When successful, the output will show: `otomi:validate-values:verbose Values val
 
 ## Commit changes
 
-Commit and push the changes using Otomi CLI:
+Apply the changes using Otomi CLI:
 
 ```bash
-otomi commit
+otomi apply
 ```
 
 or commit and push the changes manually using git:

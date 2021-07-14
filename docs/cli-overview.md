@@ -12,9 +12,10 @@ A new install path will soon be made available.
 
 ## Prerequisites
 
-If you are using bash version 3, then please please upgrade. Otomi CLI only supports Bash -ge version 4.
+- Docker
+- Bash v4
 
-Upgrade on Mac OS:
+Otomi CLI only supports Bash -ge version 4.Install or upgrade on Mac OS:
 
 ```bash
 brew install bash

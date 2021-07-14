@@ -174,18 +174,12 @@ Use -v to get more output
 
 When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
 
-#### Apply changes
+#### Deploy changes
 
-Commit and push the changes using Otomi CLI:
-
-```bash
-otomi apply
-```
-
-And then (optionally) commit and push the changes to git:
+Deploy the changes using Otomi CLI:
 
 ```bash
-otomi commit -m "your commit comment" --no-verify
+otomi deploy
 ```
 
 The secret is now available to be used in Otomi [Services](/docs/ce/services)

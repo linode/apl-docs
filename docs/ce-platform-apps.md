@@ -1,5 +1,5 @@
 ---
-slug: ee/platform-apps
+slug: ce/platform-apps
 title: Platform Apps
 ---
 
@@ -7,10 +7,10 @@ title: Platform Apps
 
 For each installed App there are three options/buttons
 
-- **Settings**: [COMING SOON] Change the settings for this app.
+- **Settings**: Not available in CE mode
 - **Play**: Run the app.
 - **Help**: Get more info about this app
 
 Screenshot (admin role):
 
-![Console apps](img/console-apps.png)
+![Console apps](img/ce-platform-apps.png)

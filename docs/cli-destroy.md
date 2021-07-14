@@ -1,14 +1,14 @@
 ---
-slug: cli/apply
-title: otomi apply
-sidebar_label: otomi apply
+slug: cli/destroy
+title: otomi destroy
+sidebar_label: otomi destroy
 ---
 
-`otomi apply [options]`
+`otomi destroy [options]`
 
 ## Description
 
-Apply Kubernetes resources.
+Destroy all or some charts.
 
 ## Options
 

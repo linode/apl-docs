@@ -3,7 +3,13 @@ slug: installation/chart/
 title: Install with Chart
 ---
 
-Use Helm 3 to install Otomi
+Use Helm to install Otomi
+
+:::note ATTENTION: The new Otomi Chart install is still in PREVIEW!
+
+If you encounter problems, please create an issue [here](https://github.com/redkubes/otomi-core/issues).
+
+:::
 
 ## Prerequisites
 

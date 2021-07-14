@@ -1,9 +1,10 @@
 ---
-slug: ee/settings
-title: Settings
+slug: ce/settings
+title: Changing settings in CE mode
+sidebar_label: Platform Settings
 ---
 
-This page describes the Otomi patform settings available only to users with the "admin" role:
+This page describes the Otomi patform settings.
 
 - [Alerts](#alerts)
 - [Azure](#Azure)
@@ -15,10 +16,6 @@ This page describes the Otomi patform settings available only to users with the 
 - [Otomi](#otomi)
 - [Policies](#policies)
 - [SMTP](#smtp)
-
-Screenshot (admin role)
-
-![Console: settings](img/console-settings.png)
 
 ### Alerts
 
@@ -34,34 +31,70 @@ Defines alerting endpoints for alertmanager and deployment feedback. The list of
 | Notification receivers | Select default notification channel(s) for receiving alerts. |
 | Drone notifications | Channel to be used by the deployment pipeline for failure/success notifications. Can only be delivered to Slack or MSteams (for now). |
 
+To adjust the Alerts configuration, modify the alerts section in the `/env/settings.yaml` file:
+
+```yaml
+alerts:
+  email:
+    critical: sre@redkubes.com
+  drone: slack
+  receivers:
+    - slack
+  slack:
+    channel: mon-otomi
+    channelCrit: mon-otomi
+  repeatInterval: 3h
+  groupInterval: 5m
+```
+
 ### Azure
 
 Azure specific configuration options. Will only be available when running on Azure (cloud=azure).
-
-| Setting       | Description                                                               |
-| ------------- | ------------------------------------------------------------------------- |
-| Appgw         | Select if Azure Application Gateway is used as an external Load Balancer. |
-| Azure Monitor | Turn on Azure monitor to use Azure metrics in Grafana dashboards.         |
-| Storage Types | Specify the Azure disk types used for storage classes in Otomi.           |
 
 IMPORTANT NOTES:
 
 Using an Azure Application Gateway is optional. In case an application gateway is used with a WAF, make sure that its on detection mode and not prevention, as this might deny traffic to your cluster, which can have consequences on the availability of services. For example Grafana relies heavily on queries inside the api request that might trigger OWASP rules.
 
+To adjust the Azure configuration, modify the azure section in the `/env/settings.yaml` file:
+
+```yaml
+azure:
+  resourceGroup: azure-resourcegroup-name
+  subscriptionId: azure-subscription-id
+  appgw:
+    isManaged: true # set to true when Azure App GW is installed by Azure as an add-on
+  monitor:
+    azureLogAnalyticsSameAs: true # use the above Azure resourcegroup and subscription credentials for log analytics
+```
+
+Use the Visual Studio plugin or the see the [Otomi Schema](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml) for more options.
+
 ### Customer
 
 Defines customer information. Used for naming the cluster in alerts: `$customer/$cloud/$cluster`.
 
-| Setting | Description    |
-| ------- | -------------- |
-| name    | Lowercase name |
+To adjust the customer configuration, modify the customer section in the `/env/settings.yaml` file:
+
+```yaml
+customer:
+  name: otomi # Name of your organization
+```
 
 ### DNS
 
-| Setting  | Description                                                                                     |
-| -------- | ----------------------------------------------------------------------------------------------- |
-| Zones    | Defines the dns zones accessible by the credentials given in the "Provider" section underneath. |
-| Provider | The provider hosting the dns zones. Can be AWS, Azure or Google.                                |
+The DNS configuration of the cluster.
+
+To adjust the DNS configuration, modify the dns section in the `/env/settings.yaml` file:
+
+```yaml
+dns:
+  provider:
+    azure:
+      resourceGroup: azure-resourcegroup-name # the Azure resource group of the public DNS zone
+      aadClientId: azure-ad-client-id
+      tenantId: azure-tenant-id
+      subscriptionId: azure-subscription-id
+```
 
 ### KMS
 
@@ -73,6 +106,18 @@ IMPORTANT NOTES:
 - When omitting KMS credentials for Vault, on startup it will generate its own k8s secret for sealing/unsealing, so be careful not to remove it!
 
 It is advised to provide credentials to an external stable KMS (such as from the cloud the cluster was deployed in), so that unseal keys can always be managed from one central location. The same credentials can be used for both SOPS and Vault, but that is up to you to decide.
+
+```yaml
+kms:
+  sops:
+    provider: azure # the provider used for KMS
+    azure:
+      clientId: azure-client-id # the client id used for access to the Azure Vault
+      keys: >-
+        https://otomi-vault.vault.azure.net/keys/otomi-key/$$$$$$$$$$$$$$
+
+      tenantId: azure-tenant-id
+```
 
 #### SOPS
 
@@ -98,7 +143,7 @@ Some settings are left for the case when Keycloak is not needed (it is heavy, an
 
 ### Otomi
 
-Settings and feature flags that influence the way otomi behaves.
+Change settings and feature flags that influence the way otomi behaves.
 
 | Setting | Description |
 | --- | --- |
@@ -110,9 +155,23 @@ Settings and feature flags that influence the way otomi behaves.
 | Multi-tenancy | Will separate team metrics and logs. Disabling this lets everybody be admin and see everything. Will still use team-\* namespaces for segmentation of services, but not use authorization of users. |
 | Pull secret | A pull secret that gives access to the Otomi API. Needs and enterprise license. |
 
+To adjust the Otomi configuration, modify the otomi section in the `/env/settings.yaml` file:
+
+```yaml
+otomi:
+  mode: ce
+  hasCloudLB: false
+  isMultitenant: true
+  version: master
+  additionalClusters:
+    - domainSuffix: demo.eks.otomi.cloud
+      name: demo
+      provider: aws
+```
+
 ### Policies
 
-This section allows to turn Open Policy Agent (OPA) policies on or off, and also set default parameters to be used by them.
+Otomi allows to turn Open Policy Agent (OPA) policies on or off, and also set default parameters to be used by them.
 
 | Setting | Description |
 | --- | --- |
@@ -132,6 +191,90 @@ This section allows to turn Open Policy Agent (OPA) policies on or off, and also
 
 Please see the [OPA Gatekeeper policy library](https://github.com/open-policy-agent/gatekeeper-library) as it is the source for the policies here. We made a selection of usable policies for Otomi and adapted them to be used by Conftest as well for static analysis of manifests generated by Otomi.
 
+To change the policy configuration (turn policies on/off or modify settings), modify the `/env/policies.yaml` file:
+
+```yaml
+policies:
+  container-limits:
+    enabled: false
+    cpu: '2'
+    memory: 2Gi
+  banned-image-tags:
+    enabled: false
+    tags:
+      - latest
+  psp-host-filesystem:
+    enabled: true
+    allowedHostPaths:
+      - pathPrefix: /tmp/
+        readOnly: false
+  psp-allowed-users:
+    enabled: true
+    runAsUser:
+      rule: MustRunAsNonRoot
+    runAsGroup:
+      rule: MayRunAs
+      ranges:
+        - min: 1
+          max: 65535
+    supplementalGroups:
+      rule: MayRunAs
+      ranges:
+        - min: 1
+          max: 65535
+    fsGroup:
+      rule: MayRunAs
+      ranges:
+        - min: 1
+          max: 65535
+  psp-host-security:
+    enabled: true
+  psp-host-networking-ports:
+    enabled: true
+  psp-privileged:
+    enabled: true
+  psp-capabilities:
+    enabled: false
+    allowedCapabilities:
+      - NET_BIND_SERVICE
+      - NET_RAW
+  psp-forbidden-sysctls:
+    enabled: true
+    forbiddenSysctls:
+      - kernel.*
+      - net.*
+      - abi.*
+      - fs.*
+      - sunrpc.*
+      - user.*
+      - vm.*
+  psp-apparmor:
+    enabled: true
+    allowedProfiles:
+      - runtime/default
+  psp-selinux:
+    enabled: false
+    seLinuxContext: RunAsAny
+  psp-seccomp:
+    enabled: false
+    allowedProfiles:
+      - runtime/default
+  psp-allowed-repos:
+    enabled: false
+    repos:
+      - harbor.dev.aks.otomi.cloud
+```
+
 ### SMTP
 
 Mail server settings. In case email notifications are wanted.
+
+To adjust the SMTP configuration, modify the smtp section in the `/env/settings.yaml` file:
+
+```yaml
+smtp:
+  auth_username: no-reply@otomi.cloud
+  from: no-reply@otomi.cloud
+  hello: otomi.cloud
+  smarthost: 'smtp-relay.gmail.com:587'
+```

@@ -1,6 +1,15 @@
 module.exports = {
   mainSidebar: {
     Installation: ['inst-overview', 'inst-prerequisites', 'inst-chart', 'inst-cli'],
+    'Community Edition': [
+      'ce-overview',
+      'ce-platform-apps',
+      'ce-settings',
+      'ce-clusters', 
+      'ce-team-apps',
+      'ce-configure-teams', 
+      'ce-configure-services',
+      'ce-configure-secrets'],
     'Enterprise Edition': [
       'ee-overview',
       'ee-configuring-apps',
@@ -12,13 +21,6 @@ module.exports = {
       'ee-configuring-secrets',
       'ee-team-apps',
       'ee-deploy-changes'],
-    'Community Edition': [
-      'ce-overview',
-      'ce-team-apps',
-      'ce-clusters', 
-      'ce-configure-teams', 
-      'ce-configure-services',
-      'ce-configure-secrets'],
     'Applications': [
       'app-drone', 
       'app-harbor', 
@@ -33,7 +35,9 @@ module.exports = {
       'cli-bootstrap', 
       'cli-check-policies', 
       'cli-commit',
-      'cli-diff'],
+      'cli-diff',
+      'cli-destroy',
+      'cli-validate-values'],
     SRE: [
       'sre-overview', 
       'sre-daily', 

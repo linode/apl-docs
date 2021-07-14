@@ -1,14 +1,14 @@
 ---
-slug: cli/apply
-title: otomi apply
-sidebar_label: otomi apply
+slug: cli/validate-values
+title: otomi validate-values
+sidebar_label: otomi validate-values
 ---
 
-`otomi apply [options]`
+`otomi validate-values [options]`
 
 ## Description
 
-Apply Kubernetes resources.
+Validate values for each cluster against JSON schema (takes target options).
 
 ## Options
 

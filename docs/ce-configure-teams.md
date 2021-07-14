@@ -69,20 +69,10 @@ Use -v to get more output
 
 When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
 
-## Apply changes
+## Deploy changes
 
-Commit and push the changes using Otomi CLI:
-
-```bash
-otomi apply
-```
-
-And then (optionally) commit and push the changes to git:
+Deploy the changes using Otomi CLI:
 
 ```bash
-otomi commit -m "your commit comment" --no-verify
+otomi deploy
 ```
-
-Note: use the default `otomi-admin` account and the provided adminpassword (see `secrets.settings.yaml.dec`).
-
-A first commit will automatically generate a Drone pipeline configuration, and then commit all files with a standardized message "Manual commit".

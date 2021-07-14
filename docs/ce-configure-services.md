@@ -22,7 +22,7 @@ A [Service](/about/architecture#services) in Otomi is a feature for easy deploym
 
 The examples below focus on the 3 types of services. All of these 3 services will be configured with public exposure. Fot more infomation about all the supported exposure configuration values, see the Otomi [values-schema](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml) or use the Visual Studio plugin (automatically added when using the `otomi bootstrap` CLI command)
 
-### Existing Kubernetes Service
+## Existing Kubernetes Service
 
 To create a Service for an existing (pre-deployed) Kubernetes service, open the `services.<team-name>.yaml` file in `/env/teams/`.
 
@@ -38,7 +38,7 @@ teamConfig:
           type: public
 ```
 
-### Existing Knative service
+## Existing Knative service
 
 To create a Service for an existing (pre-deployed) Knative service, open the `services.<team-name>.yaml` file in `/env/teams/`.
 
@@ -56,7 +56,7 @@ teamConfig:
           type: public
 ```
 
-### New Knative Service
+## New Knative Service
 
 To create a new Knative service, open the `services.<team-name>.yaml` file in `/env/teams/`.
 
@@ -85,7 +85,7 @@ teamConfig:
           type: public #exposure
 ```
 
-## validate changes (optional)
+### validate changes (optional)
 
 When using Otomi CLI, you can validate the changes in the values based on the Otomi values schema:
 
@@ -95,19 +95,81 @@ otomi validate-values -v
 
 When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
 
-## Commit changes
+### Deploy changes
 
-Apply the changes using Otomi CLI:
-
-```bash
-otomi apply
-```
-
-or commit and push the changes manually using git:
+Deploy the changes using Otomi CLI:
 
 ```bash
-git commit -m "your commit comment" --no-verify
-git push
+otomi deploy
 ```
 
-Note: use the default `otomi-admin` account and the provided adminpassword (see `secrets.settings.yaml.dec`).
+## More examples
+
+The following example shows the configuration of 2 services:
+
+- A new knative service using the `otomi/nodejs-helloworld` image with public exposure
+- A new knative service using the `nginx:latest` image with TLS passthrough
+
+The first service uses a generic secret that is mounted to the pod as an environment variable. The second service uses a TLS secret that is mounted in the container at the specified folder path. This service is configured with TLS passthough, meaning the TLS traffic is terminated by the pod and not by the ingress controller (with is done if exposure is set to Public).
+
+```yaml
+teamConfig:
+  teams:
+    demo:
+      services:
+        - name: hello
+          port: 80
+          ownHost: true
+          ksvc:
+            image:
+              repository: otomi/nodejs-helloworld
+              tag: v1.2.12
+            scaleToZero: false
+            resources:
+              limits:
+                cpu: 50m
+                memory: 64Mi
+              requests:
+                cpu: 50m
+                memory: 64Mi
+            secrets:
+              - mysecret-generic
+          type: public
+        - name: my-nginx
+          port: 443
+          domain: tlspass.eks.dev.otomi.cloud
+          ksvc:
+            image:
+              repository: nginx
+              tag: latest
+            scaleToZero: false
+            resources:
+              limits:
+                cpu: 50m
+                memory: 64Mi
+              requests:
+                cpu: 50m
+                memory: 64Mi
+            files:
+              /etc/nginx.conf: |
+                events {
+                }
+                http {
+                  log_format main '$remote_addr - $remote_user [$time_local]  $status '
+                  '"$request" $body_bytes_sent "$http_referer" '
+                  '"$http_user_agent" "$http_x_forwarded_for"';
+                  access_log /var/log/nginx/access.log main;
+                  error_log  /var/log/nginx/error.log;
+                  server {
+                    listen 443 ssl;
+                    root /usr/share/nginx/html;
+                    index index.html;
+                    server_name nginx.example.com;
+                    ssl_certificate /etc/nginx-server-certs/tls.crt;
+                    ssl_certificate_key /etc/nginx-server-certs/tls.key;
+                  }
+                }
+            secretMounts:
+              /etc/nginx-server-certs: mysecret-tls
+          type: tlsPass
+```

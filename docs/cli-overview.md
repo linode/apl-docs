@@ -6,7 +6,7 @@ sidebar_label: Overview
 
 :::note ATTENTION: The new Otomi CLI is still in PREVIEW!
 
-A new install path will soon be made available.
+A new install path will soon be made available. If you encounter problems, please create an issue [here](https://github.com/redkubes/otomi-core/issues).
 
 :::
 

@@ -1,7 +1,7 @@
 ---
 slug: cli/check-policies
 title: check-policies
-sidebar_label: check-policies
+sidebar_label: otomi check-policies
 ---
 
 `otomi check-policies [options]`
@@ -16,7 +16,6 @@ Check if generated manifests adhere to defined OPA policies.
 | --- | --- | --- | --- |
 | `-l, --label, --selector` | Select charts by label (format: `<label>=<value>`), e.g. `-l name=prometheus-operator` or `--label group=jobs` | `[array]` |  |
 | `-f`, `--file` | Select helmfiles by filename, e.g. `-f helmfile.d/helmfile-15.ingress-core.yaml` | `[array]` |  |
-| `--version` | Show version number | `[boolean]` |  |
 | `--log-level` |  | `FATAL, ERROR, WARN, INFO, VERBOSE, DEBUG, TRACE` | `WARN` |
 | `-s`, `--skip-cleanup` |  | `[boolean]` | `false` |
 | `-c`, `--set-context` |  | `[boolean]` | `false` |

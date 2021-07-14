@@ -1,7 +1,7 @@
 ---
 slug: cli/bash
-title: otomi bash
-sidebar_label: otomi bash
+title: otomi apply
+sidebar_label: otomi apply
 ---
 
 `otomi bash [options]`
@@ -16,7 +16,6 @@ Run interactive bash shell in otomi-core container.
 | --- | --- | --- | --- |
 | `l` | Helmfile option to select charts by label (format: `<label>=<value>`), e.g. `-l name=prometheus-operator` or `--label group=jobs` |  |  |
 | `-f`, `--file` | Helmfile option to select helmfiles by filename, e.g. '-f helmfile.d/helmfile-15.ingress-core.yaml' | `[array]` |  |
-| `--version` | Show version number | `[boolean]` |  |
 | `--log-level` |  | `FATAL, ERROR, WARN, INFO, VERBOSE, DEBUG, TRACE` | `WARN` |
 | `-s`, `--skip-cleanup` |  | `[boolean]` | `false` |
 | `-c`, `--set-context` |  | `[boolean]` | `false` |

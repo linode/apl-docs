@@ -13,9 +13,12 @@ module.exports = {
       'ee-team-apps',
       'ee-deploy-changes'],
     'Community Edition': [
-      'ce-overview', 
+      'ce-overview',
+      'ce-team-apps',
+      'ce-clusters', 
       'ce-configure-teams', 
-      'ce-configure-services'],
+      'ce-configure-services',
+      'ce-configure-secrets'],
     'Applications': [
       'app-drone', 
       'app-harbor', 
@@ -29,7 +32,8 @@ module.exports = {
       'cli-bash', 
       'cli-bootstrap', 
       'cli-check-policies', 
-      'cli-commit'],
+      'cli-commit',
+      'cli-diff'],
     SRE: [
       'sre-overview', 
       'sre-daily', 

@@ -37,7 +37,7 @@ kubectl create secret docker-registry --dry-run=client regcred --docker-email=$e
 
 ### 3. TLS
 
-Deploy a kubernetes TLS secret. The three fields here should correspond with the properties as named in the vault secret registered with the same name. The "ca" field is optional and can be used to provide the certicate authority (for mTLS).
+Deploy a kubernetes TLS secret. The three fields here should correspond with the properties as named in the vault secret registered with the same name. The "ca" field is optional and can be used to provide the certificate authority (for mTLS).
 
 | Setting | Description                                    |
 | ------- | ---------------------------------------------- |

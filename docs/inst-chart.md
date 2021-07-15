@@ -117,13 +117,13 @@ The following table lists the minimal required values
 
 #### AWS
 
-| Parameter                   | Description                                     | Default |
-| --------------------------- | ----------------------------------------------- | ------- |
-| `kms.sops.aws.clientID`     |                                                 | `''`    |
-| `kms.sops.aws.clientSecret` |                                                 | `''`    |
-| `kms.sops.aws.accessKey`    |                                                 | `''`    |
-| `kms.sops.aws.secretKey`    |                                                 | `''`    |
-| `dns.provider.aws.region`   | The AWS region where the Route53 zone is hosted | `''`    |
+| Parameter                   | Description | Default |
+| --------------------------- | ----------- | ------- |
+| `kms.sops.aws.clientID`     |             | `''`    |
+| `kms.sops.aws.clientSecret` |             | `''`    |
+| `kms.sops.aws.accessKey`    |             | `''`    |
+| `kms.sops.aws.secretKey`    |             | `''`    |
+| `dns.provider.aws.region`   |             | `''`    |
 
 #### Azure
 
@@ -151,6 +151,23 @@ The following table lists the minimal required values
 ### Optional values
 
 | Parameter | Description | Default |
-| --------- | ----------- | ------- |
-
-| `cluster.region` | The cloud region where the Kubernetes cluster is running | `''` | | `cluster.provider` | The cloud provider where the Kubernetes cluster is running | `''` | | `cluster.k8sVersion` | The Kubernetes version of the cluster | `''` | | `image.repository` | The otomi-core image name | `otomi/core` | | `image.tag` | The otomi-core image tag | `latest` | | `image.pullPolicy` | The image pull policy | `IfNotExists` | | `tasksImage.repository` | The otomi-tasks image name | `otomi/tasks` | | `tasksImage.tag` | The otomi-tasks image tag | `latest` | | `otomi.pullSecret` | Add a pullsecret to run in EE mode | `''` | | `otomi.isMultitenant` | Configure Otomi to run in multi-tenant mode `true` or `false` | `true` | | `charts.gitea.enabled` | Use Gitea as a local GIT repository. Always true when deploying with chart | `true` | | `charts.nginx-ingress.private.enabled` | Enable to start a LB on the private network | `false` | | `charts.cert-manager.email` | | `''` | | `charts.external-dns.domainFilters` | | `''` | | `charts.external-dns.zoneIdFilters` | | `[]` | | `cluster.apiName` | The name of the cluster API | `''` | | `cluster.apiServer` | The URL of the cluster API | `''` | | `charts.cert-manager.stage` | Use `production` or `staging` | `production` | | `teamConfig` | | `{}` | | `alerts` | | `{}` | | `services` | | `[]` |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `cluster.region` | The cloud region where the Kubernetes cluster is running | `''` |
+| `cluster.provider` | The cloud provider where the Kubernetes cluster is running | `''` |
+| `cluster.k8sVersion` | The Kubernetes version of the cluster | `''` |
+| `image.repository` | The otomi-core image name | `otomi/core` |
+| `image.tag` | The otomi-core image tag | `latest` |
+| `image.pullPolicy` | The image pull policy | `IfNotExists` |
+| `tasksImage.repository` | The otomi-tasks image name | `otomi/tasks` |
+| `tasksImage.tag` | The otomi-tasks image tag | `latest` |
+| `otomi.pullSecret` | Add a pullsecret to run in EE mode | `''` |
+| `otomi.isMultitenant` | Configure Otomi to run in multi-tenant mode `true` or `false` | `true` |
+| `charts.gitea.enabled` | Use Gitea as a local GIT repository. Always true when deploying with chart | `true` |
+| `charts.nginx-ingress.private.enabled` | Enable to start a LB on the private network | `false` |
+| `charts.cert-manager.email` |  | `''` |
+| `charts.external-dns.domainFilters` |  | `''` |
+| `charts.external-dns.zoneIdFilters` |  | `[]` |
+| `cluster.apiName` | The name of the cluster API | `''` |
+| `cluster.apiServer` | The URL of the cluster API | `''` |
+| `charts.cert-manager.stage` | Use `production` or `staging` | `production` |
+| `teamConfig` |  | `{}` |  | `alerts` |  | `{}` |  | `services` |  | `[]` |

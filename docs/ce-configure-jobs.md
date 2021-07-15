@@ -8,10 +8,10 @@ When you are running Otomi in CE mode, you will operate on the values directly a
 
 A [Job](/about/architecture#jobs) in Otomi is a feature for easy deployment of Jobs.
 
-3 types of Jobs are supported:
+2 types of Jobs are supported:
 
-- 1. Kubernetes [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
-- 2. [CronJobs](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
+- Kubernetes [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
+- [CronJobs](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
 
 ## Create a Job
 
@@ -83,7 +83,7 @@ teamConfig:
 Use Otomi CLI to validate the changes in the values based on the Otomi values schema:
 
 ```bash
-otomi validate-values -v
+otomi validate-values
 ```
 
 When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`

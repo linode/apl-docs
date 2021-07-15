@@ -6,11 +6,11 @@ sidebar_label: Jobs
 
 When you are running Otomi in CE mode, you will operate on the values directly and have to commit them manually. This page describes how to create a Job when running in CE mode. Before you can create a Job, make sure a [Team](/docs/ce/teams) is created first.
 
-A [Job](/about/architecture#jobs) in Otomi is a feature for easy deployment of Jobs.
+A [Job](/about/architecture#jobs) in Otomi is a feature for easy deployment of Kubernetes Jobs.
 
 2 types of Jobs are supported:
 
-- Kubernetes [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
+- [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
 - [CronJobs](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
 
 ## Create a Job

@@ -179,7 +179,7 @@ When successful, the output will show: `otomi:validate-values:verbose Values val
 Deploy the changes using Otomi CLI:
 
 ```bash
-otomi deploy
+otomi apply
 ```
 
 The secret is now available to be used in Otomi [Services](/docs/ce/services)

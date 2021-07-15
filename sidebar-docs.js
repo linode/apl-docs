@@ -9,6 +9,7 @@ module.exports = {
       'ce-team-apps',
       'ce-configure-teams', 
       'ce-configure-services',
+      'ce-configure-jobs',
       'ce-configure-secrets'],
     'Enterprise Edition': [
       'ee-overview',

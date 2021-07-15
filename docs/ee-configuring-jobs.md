@@ -26,6 +26,21 @@ Name of the Job.
 
 Select to enable the Job. If not enabled, the Job will nopt be executed.
 
+## RunPolicy
+
+| Setting      | Description                                                                    |
+| ------------ | ------------------------------------------------------------------------------ |
+| Always       | The job controller will always be re-deployed after a successful deployment    |
+| OnSpecChange | The job controller will only be re-deployed if one changes this specification. |
+
+## Script
+
+The script to be executed. May specify a non-empty string containing an executable script.
+
+## TTL After Finished
+
+Time To Live after the job is finished in seconds. Will be removed afterwards.
+
 ## Init Container
 
 Can be used to specify an init container, allowing to do preparations like checking for conditions.

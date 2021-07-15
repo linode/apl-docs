@@ -22,7 +22,7 @@ A [Service](/about/architecture#services) in Otomi is a feature for easy deploym
 
 The examples below focus on the 3 types of services. All of these 3 services will be configured with public exposure. Fot more infomation about all the supported exposure configuration values, see the Otomi [values-schema](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml) or use the Visual Studio plugin (automatically added when using the `otomi bootstrap` CLI command)
 
-## Existing Kubernetes Service
+## Add an Existing Kubernetes Service
 
 To create a Service for an existing (pre-deployed) Kubernetes service, open the `services.<team-name>.yaml` file in `/env/teams/`.
 
@@ -38,7 +38,7 @@ teamConfig:
           type: public
 ```
 
-## Existing Knative service
+## Add an Existing Knative service
 
 To create a Service for an existing (pre-deployed) Knative service, open the `services.<team-name>.yaml` file in `/env/teams/`.
 
@@ -56,7 +56,7 @@ teamConfig:
           type: public
 ```
 
-## New Knative Service
+## Add a new Knative Service
 
 To create a new Knative service, open the `services.<team-name>.yaml` file in `/env/teams/`.
 
@@ -85,17 +85,17 @@ teamConfig:
           type: public #exposure
 ```
 
-### validate changes (optional)
+## Validate changes (optional)
 
 Use Otomi CLI to validate the changes in the values based on the Otomi values schema:
 
 ```bash
-otomi validate-values -v
+otomi validate-values
 ```
 
 When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
 
-### Deploy changes
+## Deploy changes
 
 Apply the changes:
 

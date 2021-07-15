@@ -88,10 +88,9 @@ The following table lists the minimal required values
 | Parameter | Description | Default |
 | --- | --- | --- |
 | `cluster.domainSuffix` |  | `''` |
-| `cluster.k8sVersion` | The Kubernetes version of the cluster | `''` |
 | `cluster.name` | The name of the Kubernetes cluster | `''` |
-| `cluster.provider` | The cloud provider where the Kubernetes cluster is running | `''` |
-| `cluster.region` | The cloud region where the Kubernetes cluster is running | `''` |
+| `cluster.provider` |  | `''` |
+| `customer.name` | Organization name of Otomi user | `''` |
 | `kms.sops.provider` | The cloud provider where the Kubernetes cluster is running. Use `aws`, `azure` or `google`. See [providers](#providers) | `''` |
 | `oidc.clientID` |  | `''` |
 | `oidc.clientSecret` |  | `''` |
@@ -101,8 +100,8 @@ The following table lists the minimal required values
 | `oidc.teamAdminGroupID` |  | `''` |
 | `oidc.tenantID` |  | `''` |
 | `oidc.tokenUrl` |  | `''` |
-| `otomi.adminPassword` | The password of the otomi-admin account | `''` |
 | `otomi.version` | The version should not be changed! (Consider it read only) | `APP_VERSION_PLACEHOLDER` |
+| `otomi.adminPassword` | The password of the otomi-admin account | `''` |
 | `dns.provider` | The cloud provider where the DNS service is used. Use `aws`, `azure` or `google`. See [providers](#providers) |
 | `charts.gitea.postgresqlPassword` | The password used for PostgreSQL db used by Gitea | `''` |
 | `charts.keycloak.idp.alias` | Name shown on keycloak login page as a button | `otomi` |
@@ -112,11 +111,7 @@ The following table lists the minimal required values
 | `charts.loki.adminPassword` | The password used for used for splitting logs for teams | `''` |
 | `charts.kubeapps.postgresqlPassword` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time | `''` |
 | `charts.oauth2-proxy.config.cookieSecret` | Needs to be set to avoid generating a new one each time | `''` |
-| `customer.name` | Organization name of Otomi user | `''` |
 | `kms.sops.vault.token` |  | `''` |
-| `teamConfig` |  | `{}` |
-| `alerts` |  | `{}` |
-| `services` |  | `[]` |
 
 ### Providers
 
@@ -156,19 +151,6 @@ The following table lists the minimal required values
 ### Optional values
 
 | Parameter | Description | Default |
-| --- | --- | --- |
-| `image.repository` | The otomi-core image name | `otomi/core` |
-| `image.tag` | The otomi-core image tag | `latest` |
-| `image.pullPolicy` | The image pull policy | `IfNotExists` |
-| `tasksImage.repository` | The otomi-tasks image name | `otomi/tasks` |
-| `tasksImage.tag` | The otomi-tasks image tag | `latest` |
-| `otomi.pullSecret` | Add a pullsecret to run in EE mode | `''` |
-| `otomi.isMultitenant` | Configure Otomi to run in multi-tenant mode `true` or `false` | `true` |
-| `charts.gitea.enabled` | Use Gitea as a local GIT repository. Always true when deploying with chart | `true` |
-| `charts.nginx-ingress.private.enabled` | Enable to start a LB on the private network | `false` |
-| `charts.cert-manager.email` |  | `''` |
-| `charts.external-dns.domainFilters` |  | `''` |
-| `charts.external-dns.zoneIdFilters` |  | `[]` |
-| `cluster.apiName` | The name of the cluster API | `''` |
-| `cluster.apiServer` | The URL of the cluster API | `''` |
-| `charts.cert-manager.stage` | Use `production` or `staging` | `production` |
+| --------- | ----------- | ------- |
+
+| `cluster.region` | The cloud region where the Kubernetes cluster is running | `''` | | `cluster.provider` | The cloud provider where the Kubernetes cluster is running | `''` | | `cluster.k8sVersion` | The Kubernetes version of the cluster | `''` | | `image.repository` | The otomi-core image name | `otomi/core` | | `image.tag` | The otomi-core image tag | `latest` | | `image.pullPolicy` | The image pull policy | `IfNotExists` | | `tasksImage.repository` | The otomi-tasks image name | `otomi/tasks` | | `tasksImage.tag` | The otomi-tasks image tag | `latest` | | `otomi.pullSecret` | Add a pullsecret to run in EE mode | `''` | | `otomi.isMultitenant` | Configure Otomi to run in multi-tenant mode `true` or `false` | `true` | | `charts.gitea.enabled` | Use Gitea as a local GIT repository. Always true when deploying with chart | `true` | | `charts.nginx-ingress.private.enabled` | Enable to start a LB on the private network | `false` | | `charts.cert-manager.email` | | `''` | | `charts.external-dns.domainFilters` | | `''` | | `charts.external-dns.zoneIdFilters` | | `[]` | | `cluster.apiName` | The name of the cluster API | `''` | | `cluster.apiServer` | The URL of the cluster API | `''` | | `charts.cert-manager.stage` | Use `production` or `staging` | `production` | | `teamConfig` | | `{}` | | `alerts` | | `{}` | | `services` | | `[]` |

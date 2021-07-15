@@ -162,7 +162,7 @@ teamConfig:
           key: tls.key # property corresponding to the key of the secret in Vault
 ```
 
-#### validate changes (optional)
+#### Validate changes (optional)
 
 When using Otomi CLI, you can validate the changes in the values based on the Otomi values schema:
 

@@ -4,9 +4,9 @@ title: Configuring Services in CE mode
 sidebar_label: Services
 ---
 
-When you are running Otomi in CE mode, you will operate on the values directly and have to commit them manually. This page describes how to create a service, and how to edit a service when running in CE mode. Before you can create a Service, make sure a [Team](/docs/ce/teams) is created first.
+When you are running Otomi in CE mode, you will operate on the values directly and have to commit them manually. This page describes how to create a Service, and how to edit a Service when running in CE mode. Before you can create a Service, make sure a [Team](/docs/ce/teams) is created first.
 
-A [Service](/about/architecture#services) in Otomi is a feature for easy deployment of container workloads using Knative Serving and exposing (existing) services with a public URL.
+A [Service](/about/architecture#services) in Otomi is a feature for easy deployment of container workloads using Knative Serving and exposing (existing/pre-deployed) Kubernetes and Knative services with a public URL.
 
 3 types of Services are supported:
 
@@ -87,7 +87,7 @@ teamConfig:
 
 ### validate changes (optional)
 
-When using Otomi CLI, you can validate the changes in the values based on the Otomi values schema:
+Use Otomi CLI to validate the changes in the values based on the Otomi values schema:
 
 ```bash
 otomi validate-values -v
@@ -97,20 +97,30 @@ When successful, the output will show: `otomi:validate-values:verbose Values val
 
 ### Deploy changes
 
-Deploy the changes using Otomi CLI:
+Apply the changes:
 
 ```bash
 otomi apply
 ```
 
+## Automation
+
+When you create a Service, a lot is happening (and automatically done for you) behind the scenes:
+
+- Istio Virtual services are automatically generated for team services, tying a generic ingress architecture to service endpoints in a predictable way
+- Mutual TLS is automatically started between workloads that are part of the mesh
+- When creating a new Knative service, the Knative service manifest is created and deployed
+
 ## More examples
 
-The following example shows the configuration of 2 services:
+The following examples show the configuration of 2 services:
 
 - A new knative service using the `otomi/nodejs-helloworld` image with public exposure
 - A new knative service using the `nginx:latest` image with TLS passthrough
 
-The first service uses a generic secret that is mounted to the pod as an environment variable. The second service uses a TLS secret that is mounted in the container at the specified folder path. This service is configured with TLS passthough, meaning the TLS traffic is terminated by the pod and not by the ingress controller (with is done if exposure is set to Public).
+### New Knative service with public exposure
+
+The following service uses a generic secret that is mounted to the pod as an environment variable and exposes the service public based on the default host-name convention `<service-name.<team-name>.yourdomain.com>`.
 
 ```yaml
 teamConfig:
@@ -135,6 +145,17 @@ teamConfig:
             secrets:
               - mysecret-generic
           type: public
+```
+
+### New Knative service with TLS passthrough
+
+The following service uses a TLS secret that is mounted in the container at the specified folder path. This service is configured with TLS passthough, meaning the TLS traffic is terminated by the pod and not by the ingress controller (with is done if exposure is set to Public). The service is exposed based on a custom hostname `tlspass.eks.dev.otomi.cloud`.
+
+```yaml
+teamConfig:
+  teams:
+    demo:
+      services:
         - name: my-nginx
           port: 443
           domain: tlspass.eks.dev.otomi.cloud

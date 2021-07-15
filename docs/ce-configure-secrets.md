@@ -129,7 +129,7 @@ And then (optionally) commit and push the changes to git:
 otomi commit -m "your commit comment" --no-verify
 ```
 
-The pull secret can now be used by the team to pull images
+The pull secret can now be used by the team to pull images. Note: Otomi automatically creates a pull secret in the team namespace to enable pulling images from the local Harbor registry (also automatically created for the team).
 
 ## Create TLS secrets
 
@@ -170,13 +170,13 @@ When using Otomi CLI, you can validate the changes in the values based on the Ot
 otomi validate-values
 ```
 
-Use -v to get more output
+Use -v to get more output.
 
 When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
 
 #### Deploy changes
 
-Deploy the changes using Otomi CLI:
+Apply the changes:
 
 ```bash
 otomi apply

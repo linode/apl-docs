@@ -4,14 +4,14 @@ title: Configuring Jobs in CE mode
 sidebar_label: Jobs
 ---
 
-When you are running Otomi in CE mode, you will operate on the values directly and have to commit them manually. This page describes how to create a Job when running in CE mode. Before you can create a Job, make sure a [Team](/docs/ce/teams) is created first.
+When you are running Otomi in CE mode, you will operate on the values directly and have to commit them manually. This page describes how to create a Job when running in CE mode. Before you can create an Otomi Job, make sure a [Team](/docs/ce/teams) is created first.
 
 A [Job](/about/architecture#jobs) in Otomi is a feature for easy deployment of Kubernetes Jobs.
 
 2 types of Jobs are supported:
 
-- [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
-- [CronJobs](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/).
+- [Jobs](#create-a-job)
+- [CronJobs](#create-a-cronjob)
 
 ## Create a Job
 
@@ -86,7 +86,7 @@ Use Otomi CLI to validate the changes in the values based on the Otomi values sc
 otomi validate-values
 ```
 
-When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
+Use `-v` to get more output (or `-vvv` to get even more output). When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
 
 ## Deploy changes
 

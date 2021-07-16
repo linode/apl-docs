@@ -1,6 +1,6 @@
 ---
 slug: ce/settings
-title: Changing settings in CE mode
+title: Configure settings in CE mode
 sidebar_label: Platform Settings
 ---
 
@@ -115,6 +115,7 @@ kms:
       clientId: azure-client-id # the client id used for access to the Azure Vault
       keys: >-
         https://otomi-vault.vault.azure.net/keys/otomi-key/$$$$$$$$$$$$$$
+
 
       tenantId: azure-tenant-id
 ```

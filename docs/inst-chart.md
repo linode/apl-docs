@@ -103,6 +103,7 @@ The following table lists the minimal required values
 | `otomi.version` | The version should not be changed! (Consider it read only) | `APP_VERSION_PLACEHOLDER` |
 | `otomi.adminPassword` | The password of the otomi-admin account | `''` |
 | `dns.provider` | The cloud provider where the DNS service is used. Use `aws`, `azure` or `google`. See [providers](#providers) |
+| `charts.external-dns.domainFilters` |  | `''` |
 | `charts.gitea.postgresqlPassword` | The password used for PostgreSQL db used by Gitea | `''` |
 | `charts.keycloak.idp.alias` | Name shown on keycloak login page as a button | `otomi` |
 | `charts.keycloak.idp.clientID` | Azure ClientID for credentials used by the apps' clients to access keycloak in the cluster | `''` |
@@ -127,16 +128,23 @@ The following table lists the minimal required values
 
 #### Azure
 
-| Parameter                            | Description | Default |
-| ------------------------------------ | ----------- | ------- |
-| `kms.sops.azure.tenantID`            |             | `''`    |
-| `kms.sops.azure.clientID`            |             | `''`    |
-| `kms.sops.azure.clientSecret`        |             | `''`    |
-| `kms.sops.azure.keys`                |             | `''`    |
-| `dns.provider.azure.aadClientId`     |             | `''`    |
-| `dns.provider.azure.aadClientSecret` |             | `''`    |
-| `dns.provider.azure.tenantId`        |             | `''`    |
-| `dns.provider.azure.subscriptionId`  |             | `''`    |
+| Parameter | Description | Default |
+| --- | --- | --- |
+| `kms.sops.azure.tenantID` |  | `''` |
+| `kms.sops.azure.clientID` |  | `''` |
+| `kms.sops.azure.clientSecret` |  | `''` |
+| `kms.sops.azure.keys` |  | `''` |
+| `dns.provider.azure.aadClientId` | The client ID of the Service Principal used | `''` |
+| `dns.provider.azure.aadClientSecret` | The secret of the used Service Principal | `''` |
+| `dns.provider.azure.tenantId` | The tenant ID of the Azure directory of the Azure AD client | `''` |
+| `dns.provider.azure.subscriptionId` | The subscription ID of the Azure subscription containing the Azure DNS zone | `''` |
+| `dns.provider.azure.resourceGroup` | The resource group name of the Azure DNS zone | `''` |
+
+You can find the tenantId by running `az account show --query "tenantId"` or by selecting Azure Active Directory in the Azure Portal and checking the Directory ID under Properties.
+
+You can find the subscriptionId by running `az account show --query "id"` or by selecting Subscriptions in the Azure Portal.
+
+The aadClientID and aaClientSecret are associated with the required Service Principal.
 
 #### Google
 
@@ -165,7 +173,6 @@ The following table lists the minimal required values
 | `charts.gitea.enabled` | Use Gitea as a local GIT repository. Always true when deploying with chart | `true` |
 | `charts.nginx-ingress.private.enabled` | Enable to start a LB on the private network | `false` |
 | `charts.cert-manager.email` |  | `''` |
-| `charts.external-dns.domainFilters` |  | `''` |
 | `charts.external-dns.zoneIdFilters` |  | `[]` |
 | `cluster.apiName` | The name of the cluster API | `''` |
 | `cluster.apiServer` | The URL of the cluster API | `''` |

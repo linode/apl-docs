@@ -3,6 +3,12 @@ slug: installation/cli/
 title: Install with CLI
 ---
 
+:::note ATTENTION: This documentation is based on the old CLI
+
+We will soon update the install with CLI section based on the [new CLI](/docs/cli/)
+
+:::
+
 ## 1. Initialize a values repo
 
 Otomi needs a git repo to store its configuration. We call it a **_values_** repo.

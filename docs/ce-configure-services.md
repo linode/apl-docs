@@ -93,7 +93,7 @@ Use Otomi CLI to validate the changes in the values based on the Otomi values sc
 otomi validate-values
 ```
 
-When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
+Use `-v` to get more output (or `-vvv` to get even more output). When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
 
 ## Deploy changes
 

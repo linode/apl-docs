@@ -14,10 +14,9 @@ Otomi CE also includes the Otomi Console, but the self-service forms are not ava
 
 See the following pages for more details:
 
-- Platform Apps
-- Clusters
-- Switch context
-- Team Apps
+- [Platform Apps](platform-apps)
+- [Clusters](clusters)
+- [Team Apps](team-apps)
 
 ## Start configuring Otomi
 
@@ -26,4 +25,5 @@ Use the following instructions and examples to get started:
 - Create and manage [Teams](teams)
 - Create and manage [Services](services)
 - Create and manage [Secrets](secrets)
-- Create and manage Jobs
+- Create and manage [Jobs](jobs)
+- Configure [settings](settings)

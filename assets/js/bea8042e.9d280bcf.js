@@ -1,1 +1,0 @@
-(self.webpackChunkotomi_docs=self.webpackChunkotomi_docs||[]).push([[8905],{1978:function(e){"use strict";e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"gatekeeper","name":"gatekeeper","count":1,"permalink":"/blog/tags/gatekeeper"}')}}]);

@@ -19,6 +19,12 @@ If you encounter problems, please create an issue [here](https://github.com/redk
 
 ## Installing via Helm repository
 
+:::note ATTENTION: Installing Otomi via Helm repository is still in Development!
+
+Installing the latest chart release might not work because of changing configuration. Please for now install the chart [from source](#-installing-from-source)
+
+:::
+
 ### Adding otomi helm repository
 
 First add the Otomi Helm repository:
@@ -73,6 +79,10 @@ helm install -f /path/to/values.yaml my-otomi-release chart/otomi
 helm uninstall my-otomi-release
 ```
 
+## Monitoring the Chart install
+
+The chart deploys a Job (your-release-name-) in the default namespace. Use K9s (or any tool of your preference), to monitor the install.
+
 ## Configuration
 
 See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). To see all configurable options with detailed comments, visit the chart's [values.yaml](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml), or run these configuration commands:
@@ -87,24 +97,28 @@ The following table lists the minimal required values
 
 | Parameter | Description | Default |
 | --- | --- | --- |
+| `image.tag` | The otomi-core image tag | `latest` |
+| `tasksImage.tag` | The otomi-tasks image tag | `latest` |
 | `cluster.domainSuffix` |  | `''` |
 | `cluster.name` | The name of the Kubernetes cluster | `''` |
-| `cluster.provider` |  | `''` |
+| `cluster.provider` | The cloud provider where the K8s cluster is running. Use `aws`, `azure` or `google`. | `''` |
 | `customer.name` | Organization name of Otomi user | `''` |
 | `kms.sops.provider` | The cloud provider where the Kubernetes cluster is running. Use `aws`, `azure` or `google`. See [providers](#providers) | `''` |
 | `oidc.clientID` |  | `''` |
 | `oidc.clientSecret` |  | `''` |
-| `oidc.adminGroupID` |  | `''` |
+| `oidc.adminGroupID` | The ID of the Azure AD group used for the Otomi otomi-admin (platform admin) role | `''` |
 | `oidc.authUrl` |  | `''` |
 | `oidc.issuer` |  | `''` |
-| `oidc.teamAdminGroupID` |  | `''` |
-| `oidc.tenantID` |  | `''` |
+| `oidc.teamAdminGroupID` | The ID of the Azure AD group used for the Otomi team-admin role | `''` |
+| `oidc.tenantID` | The tenant ID of Azure Active Directory | `''` |
 | `oidc.tokenUrl` |  | `''` |
 | `otomi.version` | The version should not be changed! (Consider it read only) | `APP_VERSION_PLACEHOLDER` |
 | `otomi.adminPassword` | The password of the otomi-admin account | `''` |
 | `dns.provider` | The cloud provider where the DNS service is used. Use `aws`, `azure` or `google`. See [providers](#providers) |
 | `charts.external-dns.domainFilters` |  | `''` |
 | `charts.gitea.postgresqlPassword` | The password used for PostgreSQL db used by Gitea | `''` |
+| `charts.gitea.enabled` | Enable Gitea. Use `true` or `false`. | `true` |
+| `charts.keycloak.enabled` | Enable KeyCloak. Use `true` or `false`. | `true` |
 | `charts.keycloak.idp.alias` | Name shown on keycloak login page as a button | `otomi` |
 | `charts.keycloak.idp.clientID` | Azure ClientID for credentials used by the apps' clients to access keycloak in the cluster | `''` |
 | `charts.keycloak.idp.clientSecret` | Azure ClientSecret for credentials used by the apps' clients to access keycloak in the cluster | `''` |
@@ -112,7 +126,9 @@ The following table lists the minimal required values
 | `charts.loki.adminPassword` | The password used for used for splitting logs for teams | `''` |
 | `charts.kubeapps.postgresqlPassword` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time | `''` |
 | `charts.oauth2-proxy.config.cookieSecret` | Needs to be set to avoid generating a new one each time | `''` |
-| `kms.sops.vault.token` |  | `''` |
+| `alerts` |  | `{}` |
+| `teamConfig` |  | `{}` |
+| `services` |  | `[]` |
 
 ### Providers
 
@@ -164,7 +180,6 @@ The aadClientID and aaClientSecret are associated with the required Service Prin
 | `cluster.provider` | The cloud provider where the Kubernetes cluster is running | `''` |
 | `cluster.k8sVersion` | The Kubernetes version of the cluster | `''` |
 | `image.repository` | The otomi-core image name | `otomi/core` |
-| `image.tag` | The otomi-core image tag | `latest` |
 | `image.pullPolicy` | The image pull policy | `IfNotExists` |
 | `tasksImage.repository` | The otomi-tasks image name | `otomi/tasks` |
 | `tasksImage.tag` | The otomi-tasks image tag | `latest` |
@@ -178,3 +193,4 @@ The aadClientID and aaClientSecret are associated with the required Service Prin
 | `cluster.apiServer` | The URL of the cluster API | `''` |
 | `charts.cert-manager.stage` | Use `production` or `staging` | `production` |
 | `teamConfig` |  | `{}` |  | `alerts` |  | `{}` |  | `services` |  | `[]` |
+| `kms.sops.vault.token` |  | `''` |

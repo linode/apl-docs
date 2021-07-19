@@ -43,6 +43,12 @@ $ gcloud dns managed-zones create "otomi-dns-test-yourdomain-com" \
 
 ## 3. IDP
 
+:::note ATTENTION: The new Otomi Chart install now only supports Azure AD as IDP!
+
+We will soon come with an update where local accounts in KeyCloak can be used.
+
+:::
+
 The authentication of user brokered Keycloak identities through Azure AD requires a service principal with some Azure AD API permissions. An app registration needs to be created with the following API permissions:
 
 | API / Permission name       | Type      | Description                   |

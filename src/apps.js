@@ -1,5 +1,23 @@
 export default [
   {
+    href: 'https://istio.io/',
+    src: 'istio-logo.svg',
+    name: 'Istio',
+    desc: 'The service mesh framework with end to end transit encryption and much more',
+  },
+  {
+    href: 'https://knative.dev/',
+    src: 'knative-logo.svg',
+    name: 'Knative',
+    desc: 'Deploy and manage modern serverless workloads like functions and auto scalable container deployments',
+  },
+  {
+    href: 'https://www.openpolicyagent.org/',
+    src: 'opa-logo.svg',
+    name: 'OPA',
+    desc: 'Policy-based control for cloud native environments',
+  },
+  {
     href: 'https://prometheus.io/',
     src: 'prometheus-logo.svg',
     name: 'Prometheus',
@@ -18,10 +36,46 @@ export default [
     desc: 'The famous dashboard for viewing application traces, metrics and logs',
   },
   {
-    href: 'https://istio.io/',
-    src: 'istio-logo.svg',
-    name: 'Istio',
-    desc: 'The service mesh framework with end to end transit encryption and much more',
+    href: 'https://goharbor.io/',
+    src: 'harbor-logo.svg',
+    name: 'Harbor',
+    desc: 'Container image registry with role-based access control, image scanning and image signing',
+  },
+  {
+    href: 'https://www.vaultproject.io/',
+    src: 'vault-logo.svg',
+    name: "HashiCorp Vault",
+    desc: 'Manage Secrets and Protect Sensitive Data',
+  },
+  {
+    href: 'https://bitnami.com/kubernetes/kubeapps',
+    src: 'kubeapps-logo.svg',
+    name: "Bitnami Kubeapps",
+    desc: 'Web-based UI for launching and managing applications on Kubernetes',
+  },
+  {
+    href: 'https://drone.io/',
+    src: 'drone-logo.svg',
+    name: 'Drone',
+    desc: 'Drone is a self-service Continuous Integration platform for busy development teams',
+  },
+  {
+    href: 'https://gitea.io/en-us/',
+    src: 'gitea-logo.svg',
+    name: "Gitea",
+    desc: 'A painless self-hosted Git service',
+  },
+  {
+    href: 'https://www.keycloak.org/',
+    src: 'keycloak-logo.svg',
+    name: 'Keycloak',
+    desc: 'Open source Identity and Access Management for modern applications and services',
+  },
+  {
+    href: 'https://letsencrypt.org/',
+    src: 'letsencrypt-logo.svg',
+    name: "Let's Encrypt",
+    desc: 'A nonprofit Certificate Authority providing industry recognized TLS certificates',
   },
   {
     href: 'https://www.jaegertracing.io/',
@@ -36,22 +90,10 @@ export default [
     desc: 'Observe the Istio service mesh relations and connections',
   },
   {
-    href: 'https://www.openpolicyagent.org/',
-    src: 'opa-logo.svg',
-    name: 'OPA',
-    desc: 'Policy-based control for cloud native environments',
-  },
-  {
     href: 'https://openid.net/',
     src: 'openid-logo.svg',
     name: 'Oauth2 / OpenID',
     desc: 'Authentication of users against any OIDC provider, or Active Directory / LDAP',
-  },
-  {
-    href: 'https://www.keycloak.org/',
-    src: 'keycloak-logo.svg',
-    name: 'Keycloak',
-    desc: 'Open source Identity and Access Management for modern applications and services',
   },
   {
     href: 'https://github.com/helm/charts/tree/master/stable/external-dns',
@@ -60,34 +102,10 @@ export default [
     desc: 'Making sure your service ips are found on the internet using hostnames',
   },
   {
-    href: 'https://knative.dev/',
-    src: 'knative-logo.svg',
-    name: 'Knative',
-    desc: 'Deploy and manage modern serverless workloads like functions and auto scalable container deployments',
-  },
-  {
-    href: 'https://goharbor.io/',
-    src: 'harbor-logo.svg',
-    name: 'Harbor',
-    desc: 'Container image registry with role-based access control, image scanning and image signing',
-  },
-  {
     href: 'https://velero.io/',
     src: 'velero-logo.svg',
     name: 'Velero',
     desc: 'Back up Kubernetes objects and Persistent Volumes',
-  },
-  {
-    href: 'https://gitlab.com/',
-    src: 'gitlab-logo.svg',
-    name: 'GitLab',
-    desc: 'GitLab is a complete DevOps platform, delivered as a single application',
-  },
-  {
-    href: 'https://drone.io/',
-    src: 'drone-logo.svg',
-    name: 'Drone',
-    desc: 'Drone is a self-service Continuous Integration platform for busy development teams',
   },
   {
     href: 'https://kubernetes.io/docs/concepts/services-networking/ingress/',
@@ -96,15 +114,9 @@ export default [
     desc: 'Create and manage external access to the services in your clusters',
   },
   {
-    href: 'https://letsencrypt.org/',
-    src: 'letsencrypt-logo.svg',
-    name: "Let's Encrypt",
-    desc: 'A nonprofit Certificate Authority providing industry recognized TLS certificates',
-  },
-  {
-    href: 'https://weave.works/oss/scope/',
-    src: 'weave-logo.svg',
-    name: 'Weave Scope',
-    desc: 'Understand your application quickly by seeing it in a real time interactive display',
+    href: 'https://httpbin.org/',
+    src: 'httpbin-logo.svg',
+    name: 'Httpbin',
+    desc: 'A simple HTTP Request & Response Service',
   },
 ]

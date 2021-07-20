@@ -79,6 +79,8 @@ helm install -f /path/to/values.yaml my-otomi-release chart/otomi
 helm uninstall my-otomi-release
 ```
 
+Doing a Helm uninstall will only remove the job used to deploy Otomi. It will not remove all the installed components. If you would like to do a complete uninstall, we advise to first clone the `otomi/values` repository (to secure the configuration) and then uninstall using Otomi CLI.
+
 ## Monitoring the Chart install
 
 The chart deploys a Job (your-release-name-) in the default namespace. Use K9s (or any tool of your preference), to monitor the install.

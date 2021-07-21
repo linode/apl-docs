@@ -16,11 +16,10 @@ Otomi needs a git repo to store its configuration. We call it a **_values_** rep
 You can now bootstrap the versioned artifacts for aws/azure/google profile. In the following example values for azure
 
 ```bash
-profile='azure'
 # initialize git repo
 mkdir otomi-values && cd $_ && git init -b main .
 # and get all the files
-docker run --rm -e ENV_DIR=$PWD -v $PWD:$PWD otomi/core:latest bin/bootstrap.sh --profile $profile
+docker run --rm -e ENV_DIR=$PWD -v $PWD:$PWD otomi/core:latest bin/bootstrap.sh
 # and source the aliases including the otomi cli
 . bin/aliases
 ```

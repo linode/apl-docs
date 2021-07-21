@@ -41,7 +41,7 @@ See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 Now install the chart with the name `my-otomi-release` (a custom name that you choose) and with the prepared `values.yaml` file.
 
 ```bash
-helm install -f /path/to/values.yaml my-otomi-release otomi-repo/otomi
+helm install -f /path/to/values.yaml my-otomi-release otomi/otomi
 ```
 
 You can also install a specific version of the chart. See [here](https://github.com/redkubes/otomi-core/releases) for a list of all available versions.
@@ -90,7 +90,7 @@ The chart deploys a Job (your-release-name-) in the default namespace. Use K9s (
 See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). To see all configurable options with detailed comments, visit the chart's [values.yaml](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml), or run these configuration commands:
 
 ```bash
-helm show values otomi-repo/otomi
+helm show values otomi/otomi
 ```
 
 ### Minimal required values

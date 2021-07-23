@@ -26,11 +26,21 @@ Bootstap the local values:
 otomi bootstap
 ```
 
-This will also add a `.vscode` folder with Otomi extentions for autocompletion.
+Bootstrap will do the following:
 
-## Change the values
+- Add a `.vscode` folder with Otomi extentions for autocompletion
+- Add the `values-schema.yaml` for values validation
+- Decrypt the secrets files
 
-To create a team, follow these steps:
+Create a `.env` file in the `env` folder and add the following line:
+
+```bash
+export K8S_CONTEXT="<the-context-of-your-k8s-cluster>"
+```
+
+## Adding a new team to the values
+
+In the following steps we are going to create a team with the name 'demo':
 
 ### 1. Modify the teams.yaml
 
@@ -39,17 +49,24 @@ Add the team to the `values/env/teams.yaml`:
 ```yaml
 teamConfig:
   teams:
-    <team-name>:
-      id: <team-name>
+    demo:
+      id: demo
 ```
 
-### 2. Create the team files, for the Secrets, Jobs and Services of the team
+Add the team to the `secrets.teams.yaml`:
+
+```yaml
+teamConfig:
+  teams:
+    demo:
+      password: somesecretvalue
+```
 
 Add the following 3 files to the `/env/teams` folder:
 
-1. `external-secrets.<team-name>.yaml`
-2. `jobs.<team-name>.yaml`
-3. `services.<team-name>.yaml`
+1. `external-secrets.demo.yaml`
+2. `jobs.demo.yaml`
+3. `services.demo.yaml`
 
 Each file should contain:
 
@@ -59,7 +76,7 @@ Each file should contain:
 
 ## validate changes (optional)
 
-Noe validate the new values based on the Otomi values schema:
+Now validate the new values based on the Otomi values schema:
 
 ```bash
 otomi validate-values
@@ -79,7 +96,7 @@ Use `-v` to get more output (or `-vvv` to get even more output). See [here](/doc
 
 ## Automation
 
-When you create a Team, a lot is happening (and automatically done for you) behind the scenes:
+When you create a Team, a lot of configuration is done automatically for you behind the scenes:
 
 - Teams are each given a project in Harbor, allowing team users to push and pull container images and create secrets for automation
 - Two ingress gateways are automatically configured per team: one for SSO traffic and one for public exposure

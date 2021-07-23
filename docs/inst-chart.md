@@ -81,6 +81,8 @@ helm uninstall my-otomi-release
 
 Doing a Helm uninstall will only remove the job used to deploy Otomi. It will not remove all the installed components. If you would like to do a complete uninstall, we advise to first clone the `otomi/values` repository (to secure the configuration) and then uninstall using Otomi CLI.
 
+Uninstalling optional applications using the chart is possible by toggeling them on/of (by specifying enabled is true or false).
+
 ## Monitoring the Chart install
 
 The chart deploys a Job (your-release-name-) in the default namespace. Use K9s (or any tool of your preference), to monitor the install.
@@ -99,55 +101,55 @@ The following table lists the minimal required values
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| `image.tag` | `string` | `latest` | The otomi-core image tag |
-| `tasksImage.tag` | `string` | `latest` | The otomi-tasks image tag |
+| `image.tag` | `string` | `latest` | The otomi-core image tag. Use latest or choose a [release](https://github.com/redkubes/otomi-core/releases) |
+| `tasksImage.tag` | `string` | `latest` | The otomi-tasks image tag. Use latest or choose a [release](https://github.com/redkubes/otomi-tasks/releases) |
 | `cluster.domainSuffix` | `string` | `''` |  |
 | `cluster.name` | `string` | `''` | The name of the Kubernetes cluster |
 | `cluster.provider` | `string` | `''` | The cloud provider where the K8s cluster is running. Use `aws`, `azure` or `google`. |
-| `kms.sops.provider` | `string` | `''` | The cloud provider where the Kubernetes cluster is running. Use `aws`, `azure` or `google`. See [providers](#providers) |
 | `dns.provider` | `string` | `''` | The cloud provider where the DNS service is used. Use `aws`, `azure` or `google`. See [providers](#providers) |
-| `oidc.clientID` | `string` | `''` | The client ID of the Service Principal used |
-| `oidc.clientSecret` | `string` | `''` | The secret of the used Service Principal |
+| `otomi.adminPassword` | `string` | `''` | The password of the otomi-admin account |
+| `charts.external-dns.domainFilters` | `string` | `''` |  |
+| `charts.gitea.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by Gitea |
+| `charts.keycloak.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time |
+| `charts.keycloak.idp.clientSecret` | `string` | `''` | a randdom provided password |
+| `charts.keycloak.idp.clientID` | `string` | `otomi` |  |
+| `charts.loki.adminPassword` | `string` | `''` | The password used for used for splitting logs for teams |
+| `charts.kubeapps.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time |
+| `charts.oauth2-proxy.config.cookieSecret` | `string` | `''` | Needs to be set to avoid generating a new one each time |
+| `charts.cert-manager.stage` | `string` | `production` | Choose between `production` and `staging`. |
+| `alerts` | object | `{}` |  |
+| `teamConfig` | object | `{}` |  |
+| `services` | list | `[]` |  |
+
+#### OIDC
+
+At the moment, Otomi can only use Azure AD as IDP to provide SSO. We will soon provide the option to also use KeyCloak as IDP.
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `oidc.clientID` | `string` | `''` | The client ID of the Azure Service Principal used |
+| `oidc.clientSecret` | `string` | `''` | The secret of the used Azure Service Principal used |
 | `oidc.adminGroupID` | `string` | `''` | The ID of the Azure AD group used for the Otomi otomi-admin (platform admin) role |
 | `oidc.authUrl` | `string` | `''` | `https://login.microsoftonline.com/your-azure-ad-tenant-id/oauth2/authorize` |
 | `oidc.issuer` | `string` | `''` | `https://login.microsoftonline.com/your-azure-ad-tenant-id/` |
 | `oidc.teamAdminGroupID` | `string` | `''` | The ID of the Azure AD group used for the Otomi team-admin role |
 | `oidc.tenantID` | `string` | `''` | The tenant ID of Azure Active Directory |
 | `oidc.tokenUrl` | `string` | `''` | `https://login.microsoftonline.com/your-azure-ad-tenant-id/oauth2/token` |
-| `otomi.adminPassword` | `string` | `''` | The password of the otomi-admin account |
-| `charts.external-dns.domainFilters` | `string` | `''` |  |
-| `charts.gitea.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by Gitea |
-| `charts.keycloak.idp.clientID` | `string` | `''` | Azure ClientID for credentials used by the apps' clients to access keycloak in the cluster |
-| `charts.keycloak.idp.clientSecret` | `string` | `''` | Azure ClientSecret for credentials used by the apps' clients to access keycloak in the cluster |
-| `charts.keycloak.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time |
-| `charts.loki.adminPassword` | `string` | `''` | The password used for used for splitting logs for teams |
-| `charts.kubeapps.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time |
-| `charts.oauth2-proxy.config.cookieSecret` | `string` | `''` | Needs to be set to avoid generating a new one each time |
-| `charts.cert-manager.stage` | `string` | `production` | Choose between `production` and `staging' |
-| `alerts` | object | `{}` |  |
-| `teamConfig` | object | `{}` |  |
-| `services` | list | `[]` |  |
 
 #### Providers
 
+Configure these parameters based on your cloud of choice.
+
 ##### AWS
 
-| Parameter                   | Type     | Default | Description |
-| --------------------------- | -------- | ------- | ----------- |
-| `kms.sops.aws.clientID`     | `string` | `''`    |             |
-| `kms.sops.aws.clientSecret` | `string` | `''`    |             |
-| `kms.sops.aws.accessKey`    | `string` | `''`    |             |
-| `kms.sops.aws.secretKey`    | `string` | `''`    |             |
-| `dns.provider.aws.region`   | `string` | `''`    |             |
+| Parameter                 | Type     | Default | Description |
+| ------------------------- | -------- | ------- | ----------- |
+| `dns.provider.aws.region` | `string` | `''`    |             |
 
 ##### Azure
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| `kms.sops.azure.tenantID` | `string` | `''` | The tenant ID of the Azure directory |
-| `kms.sops.azure.clientID` | `string` | `''` | The client ID of the Service Principal used |
-| `kms.sops.azure.clientSecret` | `string` | `''` | The secret of the used Service Principal |
-| `kms.sops.azure.keys` | `string` | `''` | Comma separated list of one or two paths to keys as defined in Azure Vault. One if used for both enc+dec. Two if one for enc, other for dec. |
 | `dns.provider.azure.aadClientId` | `string` | `''` | The client ID of the Service Principal used |
 | `dns.provider.azure.aadClientSecret` | `string` | `''` | The secret of the used Service Principal |
 | `dns.provider.azure.tenantId` | `string` | `''` | The tenant ID of the Azure directory of the Azure AD client |
@@ -162,13 +164,45 @@ The aadClientID and aaClientSecret are associated with the required Service Prin
 
 ##### Google
 
+| Parameter                               | Type     | Default | Description |
+| --------------------------------------- | -------- | ------- | ----------- |
+| `dns.provider.google.serviceAccountKey` | `string` | `''`    |             |
+| `dns.provider.google.project`           | `string` | `''`    |             |
+
+### Optional: using SOPS
+
+#### Providers
+
+Configure these parameters based on your cloud of choice.
+
+##### AWS
+
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
+| `kms.sops.provider` | `string` | `''` | The cloud provider where the Kubernetes cluster is running. Use `aws`. |
+| `kms.sops.aws.clientID` | `string` | `''` |  |
+| `kms.sops.aws.clientSecret` | `string` | `''` |  |
+| `kms.sops.aws.accessKey` | `string` | `''` |  |
+| `kms.sops.aws.secretKey` | `string` | `''` |  |
+
+##### Azure
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `kms.sops.provider` | `string` | `''` | The cloud provider where the Kubernetes cluster is running. Use `azure`. |
+| `kms.sops.azure.tenantID` | `string` | `''` | The tenant ID of the Azure directory |
+| `kms.sops.azure.clientID` | `string` | `''` | The client ID of the Service Principal used |
+| `kms.sops.azure.clientSecret` | `string` | `''` | The secret of the used Service Principal |
+| `kms.sops.azure.keys` | `string` | `''` | Comma separated list of one or two paths to keys as defined in Azure Vault. One if used for both enc+dec. Two if one for enc, other for dec. |
+
+##### Google
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `kms.sops.provider` | `string` | `''` | The cloud provider where the Kubernetes cluster is running. Use `google`. |
 | `kms.sops.google.accountJson` | `string` | `''` |  |
 | `kms.sops.google.project` | `string` | `''` |  |
 | `kms.sops.google.keys` | `string` | `''` | Comma separated list of one or two paths to keys as defined in GCP KMS. One if used for both enc+dec. Two if one for enc, other for dec. |
-| `dns.provider.google.serviceAccountKey` | `string` | `''` |  |
-| `dns.provider.google.project` | `string` | `''` |  |
 
 ### All values
 

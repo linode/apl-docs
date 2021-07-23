@@ -19,12 +19,6 @@ If you encounter problems, please create an issue [here](https://github.com/redk
 
 ## Installing via Helm repository
 
-:::note ATTENTION: Installing Otomi via Helm repository is still in Development!
-
-Installing the latest chart release might not work because of changing configuration. Please for now install the chart [from source](#-installing-from-source)
-
-:::
-
 ### Adding otomi helm repository
 
 First add the Otomi Helm repository:
@@ -47,7 +41,7 @@ helm install -f /path/to/values.yaml my-otomi-release otomi/otomi
 You can also install a specific version of the chart. See [here](https://github.com/redkubes/otomi-core/releases) for a list of all available versions.
 
 ```bash
-helm install -f /path/to/values.yaml my-otomi-release otomi-repo/otomi --version 0.1.4-rc6
+helm install -f /path/to/values.yaml my-otomi-release otomi/otomi --version 0.1.4-rc6
 ```
 
 See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation.

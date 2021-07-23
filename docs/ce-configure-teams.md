@@ -20,10 +20,10 @@ git clone https://gitea.<your.domain>/otomi/values.git
 
 :::note ATTENTION: Are you using SOPS? Then do first do the following:
 
-- make sure you have installed the SOPS extention for VSC.
-- add your `.secrets` in the `values` folder
-- source the secrets: `source .secrets`
-- encrypt the secrets by running `otomi decrypt`
+- Make sure you have installed the SOPS extention for VSC.
+- Add your `.secrets` file to the `values` folder
+- Source the secrets: `source .secrets`
+- Decrypt the secrets by running `otomi decrypt`
 
 :::
 

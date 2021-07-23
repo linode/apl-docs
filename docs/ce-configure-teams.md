@@ -4,7 +4,7 @@ title: Configuring Teams in CE mode
 sidebar_label: Teams
 ---
 
-When you are running Otomi in CE mode or doing local development, you will operate on values directly and have to apply them manually. Before you can start creating Services, Jobs and Secrets, you first need to create a Team. Follow these steps to create a team after deploying Otomi CE:
+When you are running Otomi in CE mode or doing local development, you will operate on the values directly and have to apply them manually. Before you can start creating Services, Jobs and Secrets, you first need to create a Team. Follow these steps to create a team after deploying Otomi CE:
 
 ## Install Otomi CLI (optional)
 
@@ -18,7 +18,16 @@ Clone the `otomi/values` repository from `gitea.<your.domain>/otomi/values` (if 
 git clone https://gitea.<your.domain>/otomi/values.git
 ```
 
-## Bootstap the values (optional)
+:::note ATTENTION: Are you using SOPS? Then do first do the following:
+
+- make sure you have installed the SOPS extention for VSC.
+- add your `.secrets` in the `values` folder
+- source the secrets: `source .secrets`
+- encrypt the secrets by running `otomi decrypt`
+
+:::
+
+## Bootstap the values
 
 Bootstap the local values:
 
@@ -30,7 +39,6 @@ Bootstrap will do the following:
 
 - Add a `.vscode` folder with Otomi extentions for autocompletion
 - Add the `values-schema.yaml` for values validation
-- Decrypt the secrets files
 
 Create a `.env` file in the `env` folder and add the following line:
 
@@ -61,6 +69,8 @@ teamConfig:
     demo:
       password: somesecretvalue
 ```
+
+note: if you are using SOPS, then now run `otomi encrypt`
 
 Add the following 3 files to the `/env/teams` folder:
 
@@ -93,6 +103,8 @@ otomi apply
 ```
 
 Use `-v` to get more output (or `-vvv` to get even more output). See [here](/docs/cli/apply) for a full list of `otomi apply` command options.
+
+Note: Creating a team can take around 5 to 10 minutes to complete.
 
 ## Automation
 

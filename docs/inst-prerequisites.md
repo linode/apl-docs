@@ -84,7 +84,7 @@ Otomi runs everything from containers, so please start docker if you haven't alr
 
 ## 6. KMS credentials to manage keys for encryption (optional)
 
-If you would like the secrets in the values repo to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption by otomi. Please read up there on how to work with sops, as it is out of scope for these docs.
+If you would like the secrets in the values repo to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption by Otomi. Please read up there on how to work with sops.
 
 ## 7. Pull secret for the API (optional)
 

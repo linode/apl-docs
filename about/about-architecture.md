@@ -153,11 +153,11 @@ The following table shows all integrated applications:
 | [Hashicorp Vault](/docs/apps/vault)          |      |   X    |      |        X        |    X     |
 | [Harbor](/docs/apps/harbor)                  |      |   X    |      |        X        |    X     |
 | [Kubeapps](/docs/apps/kubeapps)              |      |   X    |      |                 |    X     |
-| [Drone](/docs/apps/drone)                    |  X   |        |      |        X        |          |
-| Gitea                                        |  X   |        |      |        X        |    X     |
+| [Drone](/docs/apps/drone)                    |  X   |        |      |        X        |    X     |
+| Gitea                                        |  X   |        |      |        X        |          |
 | Httpbin                                      |      |   X    |      |                 |    X     |
-| Jeager                                       |  X   |        |      |                 |    X     |
-| Kiali                                        |  X   |        |      |                 |    X     |
+| Jeager                                       |  X   |        |      |                 |          |
+| Kiali                                        |  X   |        |      |                 |          |
 
 ## Ingress & SSO
 

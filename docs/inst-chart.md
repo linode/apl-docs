@@ -162,7 +162,9 @@ The aadClientID and aaClientSecret are associated with the required Service Prin
 
 ### Optional: using SOPS
 
-:::note ATTENTION: Although using SOPS to encrypt all secrets is optional, we strongly recommend using it! :::
+:::note ATTENTION: Although using SOPS to encrypt all secrets is optional, we strongly recommend using it!
+
+:::
 
 #### Providers
 

@@ -29,6 +29,12 @@ git clone https://gitea.<your.domain>/otomi/values.git
 
 ## Bootstap the values
 
+First create a `.env` file in the `env` folder and add the following line:
+
+```bash
+export K8S_CONTEXT="<the-context-of-your-k8s-cluster>"
+```
+
 Bootstap the local values:
 
 ```bash
@@ -39,12 +45,6 @@ Bootstrap will do the following:
 
 - Add a `.vscode` folder with Otomi extentions for autocompletion
 - Add the `values-schema.yaml` for values validation
-
-Create a `.env` file in the `env` folder and add the following line:
-
-```bash
-export K8S_CONTEXT="<the-context-of-your-k8s-cluster>"
-```
 
 ## Adding a new team to the values
 
@@ -84,6 +84,14 @@ Each file should contain:
 {}
 ```
 
+### 2. Encrypt (when using SOPS)
+
+When using SOPS, the provided password for the new team now needs to be encrypted:
+
+```bash
+otomi encrypt
+```
+
 ## validate changes (optional)
 
 Now validate the new values based on the Otomi values schema:
@@ -105,6 +113,10 @@ otomi apply
 Use `-v` to get more output (or `-vvv` to get even more output). See [here](/docs/cli/apply) for a full list of `otomi apply` command options.
 
 Note: Creating a team can take around 5 to 10 minutes to complete.
+
+## Commit changes
+
+Now commit the changes in your local values to the Gitea repository on the cluster
 
 ## Automation
 

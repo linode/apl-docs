@@ -79,7 +79,7 @@ Uninstalling optional applications using the chart is possible by toggeling them
 
 ## Monitoring the Chart install
 
-The chart deploys a Job (your-release-name-) in the default namespace. Use K9s (or any tool of your preference), to monitor the install.
+The chart deploys a Job (your-release-name-) in the default namespace. Use K9s (or any tool of your preference), to monitor the install. After the deploy job has finished, check Gitea to see if the `otomi\vales` repo contains values. If not, uninstall the chart and install a second time.
 
 ## Configuration
 
@@ -91,18 +91,19 @@ helm show values otomi/otomi
 
 ### Minimal required values
 
-The following table lists the minimal required values
+The following table lists the minimal required values:
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| `image.tag` | `string` | `latest` | The otomi-core image tag. Use latest or choose a [release](https://github.com/redkubes/otomi-core/releases) |
-| `tasksImage.tag` | `string` | `latest` | The otomi-tasks image tag. Use latest or choose a [release](https://github.com/redkubes/otomi-tasks/releases) |
-| `cluster.domainSuffix` | `string` | `''` |  |
-| `cluster.name` | `string` | `''` | The name of the Kubernetes cluster |
+| `tasksImage.tag` | `string` | `` | The otomi-tasks image tag. Use latest or choose a [release](https://github.com/redkubes/otomi-tasks/releases) |
+| `cluster.domainSuffix` | `string` | `''` | The top-level domain for the cluster, for example: `mycluster.mydomain.com` |
+| `cluster.name` | `string` | `''` | The name of the cluster |
+| `cluster.owner` | `string` | `''` | The owner/organization of the cluster |
 | `cluster.provider` | `string` | `''` | The cloud provider where the K8s cluster is running. Use `aws`, `azure` or `google`. |
 | `dns.provider` | `string` | `''` | The cloud provider where the DNS service is used. Use `aws`, `azure` or `google`. See [providers](#providers) |
 | `otomi.adminPassword` | `string` | `''` | The password of the otomi-admin account |
-| `charts.external-dns.domainFilters` | `string` | `''` |  |
+| `otomi.version` | `string` | `''` | The otomi-core version used |
+| `charts.external-dns.domainFilters` | `string` | `''` | The name of your hosted DNS zone, for example `mydomain.com` |
 | `charts.gitea.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by Gitea |
 | `charts.keycloak.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time |
 | `charts.keycloak.idp.clientSecret` | `string` | `''` | a randdom provided password |
@@ -110,10 +111,6 @@ The following table lists the minimal required values
 | `charts.loki.adminPassword` | `string` | `''` | The password used for used for splitting logs for teams |
 | `charts.kubeapps.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time |
 | `charts.oauth2-proxy.config.cookieSecret` | `string` | `''` | Needs to be set to avoid generating a new one each time |
-| `charts.cert-manager.stage` | `string` | `production` | Choose between `production` and `staging`. |
-| `alerts` | object | `{}` |  |
-| `teamConfig` | object | `{}` |  |
-| `services` | list | `[]` |  |
 
 #### OIDC
 
@@ -164,6 +161,8 @@ The aadClientID and aaClientSecret are associated with the required Service Prin
 | `dns.provider.google.project`           | `string` | `''`    |             |
 
 ### Optional: using SOPS
+
+:::note ATTENTION: Although using SOPS to encrypt all secrets is optional, we strongly recommend using it! :::
 
 #### Providers
 

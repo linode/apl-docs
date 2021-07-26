@@ -42,7 +42,7 @@ module.exports = {
     SRE: [
       'sre-overview', 
       'sre-daily', 
-      'sre-troubleshooting', { 'Known Issues': ['ki-overview', 'ki-cli', 'ki-harbor', 'ki-istio', 'ki-loki'] }, 
+      'sre-troubleshooting', { 'Known Issues': ['ki-overview', 'ki-cli', 'ki-harbor', 'ki-istio', 'ki-loki', 'ki-staging-certs'] }, 
       'lm-upgrades'],
     // Reference: [
     //   'ref-app-suite',

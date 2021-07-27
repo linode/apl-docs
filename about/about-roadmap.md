@@ -3,7 +3,7 @@ slug: roadmap
 title: Roadmap
 ---
 
-We are currently working on the following features for the next release. We release from our **stable** channel every 2 months. We will release from **beta** channel bi-weekly, and **alpha** is nightly. This approach might change, so keep watching our blog.
+We are currently working on the following features for the next release. We release from our **stable** channel every 2 months. We will release from **beta** channel bi-weekly, and **alpha** is nightly. This approach might change, so keep watching our socials.
 
 For the next release (around september 2021) we aim to incorporate the following features:
 

@@ -59,6 +59,8 @@ teamConfig:
   teams:
     demo:
       id: demo
+      oidc:
+        groupMapping: <group-object-id>> # the id of the AD group with the team members who need access to the team
 ```
 
 Add the team to the `secrets.teams.yaml`:
@@ -70,15 +72,13 @@ teamConfig:
       password: somesecretvalue
 ```
 
-note: if you are using SOPS, then now run `otomi encrypt`
-
 Add the following 3 files to the `/env/teams` folder:
 
 1. `external-secrets.demo.yaml`
 2. `jobs.demo.yaml`
 3. `services.demo.yaml`
 
-Each file should contain:
+Each file should contain an empty object:
 
 ```yaml
 {}
@@ -116,14 +116,18 @@ Note: Creating a team can take around 5 to 10 minutes to complete.
 
 ## Commit changes
 
-Now commit the changes in your local values to the Gitea repository on the cluster
+Now commit your changes to the (otomi/values) GIT repository on the cluster.
 
 ## Automation
 
-When you create a Team, a lot of configuration is done automatically for you behind the scenes:
+When Otomi is configures for multi tenancy, Otomi will now automatically:
 
-- Teams are each given a project in Harbor, allowing team users to push and pull container images and create secrets for automation
-- Two ingress gateways are automatically configured per team: one for SSO traffic and one for public exposure
-- Nginx-ingress ingress resources are automatically generated for all integrated applications and for team services. There is also configuration exposed allowing admins to turn on special Nginx features like throttling or OWASP rule checking
-- All teams automatically get their own Prometheus, Alertmanager, and Grafana instance, allowing them to view only their own resources
-- Teams are each given a space in Vault where the team can create and manage their own secrets
+- Configure the ingress gateways: one for SSO traffic and one for public exposure
+- Generate (Istio) ingress resources for all team services
+- Provision a Prometheus, Alertmanager, and Grafana instance for the team
+- Provide access to Loki to see the logs of team applications (only team members can see logs)
+- Teams will get access to Kubeapps (if Kubeapps is enabled)
+- Create a project in Harbor (if Harbor is enabled) and provide SSO access to Harbor for team members
+- Create a robot account for the team in Harbor
+- Create a pull secret for the Harbor repository in the team namespace
+- Create a space in Vault and provide SSO access to vault for team members

@@ -21,11 +21,4 @@
         <updated>2021-03-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Introduction]]></summary>
     </entry>
-    <entry>
-        <title type="html"><![CDATA[Welcome]]></title>
-        <id>welcome</id>
-        <link href="https://otomi.io/blog/welcome"/>
-        <updated>2021-01-12T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[This is our initial documentation setup for Otomi Container Platform. We hope you find it useful. Please don't hesitate to give us any feedback!]]></summary>
-    </entry>
 </feed>

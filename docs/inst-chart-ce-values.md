@@ -3,19 +3,14 @@ slug: installation/chart/ce-values
 title: Example values.yaml for CE
 ---
 
-The following example shows the minimal values to deploy Otomi CE. In this example:
+The following `values.yam` example shows a minimal Otomi CE configuration. In this example:
 
-- Harbor is NOT enabled
-- Kubeapps is NOT enabled
-- Multi-tenancy IS enabled
+- Multi-tenancy is NOT enabled (so teams will not )
 - SOPS is NOT used
 
 ## values.yaml
 
 ```yaml
-tasksImage:
-  tag: master # use master for PoC / testing only
-  pullPolicy: Always
 cluster:
   k8sVersion: '1.19' # the K8s version used
   name: demo # name of your cluster
@@ -23,17 +18,16 @@ cluster:
   domainSuffix: demo.yourdomain.com #the domain suffix of the cluster
 oidc: # OIDC configuration for using Azure AD
   adminGroupID: 00000000-0000-0000-0000-000000000000
-  authUrl: https://login.microsoftonline.com/57a3f6ea-7e70-4260-acb4-e06ce452f695/oauth2/authorize
-  issuer: https://login.microsoftonline.com/57a3f6ea-7e70-4260-acb4-e06ce452f695/
+  authUrl: https://login.microsoftonline.com/00000000-0000-0000-0000-000000000000/oauth2/authorize
+  issuer: https://login.microsoftonline.com/00000000-0000-0000-0000-000000000000/
   teamAdminGroupID: 00000000-0000-0000-0000-000000000000
   tenantID: 00000000-0000-0000-0000-000000000000
-  tokenUrl: https://login.microsoftonline.com/57a3f6ea-7e70-4260-acb4-e06ce452f695/oauth2/token
+  tokenUrl: https://login.microsoftonline.com/00000000-0000-0000-0000-000000000000/oauth2/token
   clientID: 00000000-0000-0000-0000-000000000000
   clientSecret: theclientsecretofthespused
 otomi:
-  version: master # use master for PoC / testing only
   adminPassword: yoursecretpasswordhere # the master password for the otomi-admin account
-  isMultitenant: true # this enables creating teams with multi-tenancy (logs/alerts/metrics/secrets)
+  isMultitenant: false # this disables teams with multi-tenancy (separate logs/alerts/metrics/secrets)
 dns:
   provider:
     azure:
@@ -48,7 +42,7 @@ charts:
     stage: production
   external-dns:
     domainFilters:
-      - aks.otomi.cloud
+      - yourdomain.com
   gitea:
     postgresqlPassword: yoursecretpasswordhere
   keycloak:
@@ -57,9 +51,6 @@ charts:
       alias: my-azure
       clientID: otomi
       clientSecret: yoursecretpasswordhere
-  kubeapps:
-    enabled: false
-    postgresqlPassword: yoursecretpasswordhere
   loki:
     adminPassword: yoursecretpasswordhere
   oauth2-proxy:

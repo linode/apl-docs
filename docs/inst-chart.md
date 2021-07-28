@@ -41,7 +41,7 @@ helm install -f /path/to/values.yaml my-otomi-release otomi/otomi
 You can also install a specific version of the chart. See [here](https://github.com/redkubes/otomi-core/releases) for a list of all available versions.
 
 ```bash
-helm install -f /path/to/values.yaml my-otomi-release otomi/otomi --version 0.1.4-rc6
+helm install -f /path/to/values.yaml my-otomi-release otomi/otomi --version 0.1.6
 ```
 
 See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation.
@@ -79,7 +79,7 @@ Uninstalling optional applications using the chart is possible by toggeling them
 
 ## Monitoring the Chart install
 
-The chart deploys a Job (your-release-name-) in the default namespace. Use K9s (or any tool of your preference), to monitor the install. After the deploy job has finished, check Gitea to see if the `otomi\vales` repo contains values. If not, uninstall the chart and install a second time.
+The chart deploys a Job (`<your-release-name>-`) in the default namespace. Use K9s (or any tool of your preference), to monitor the install. After the deploy job has finished, check Gitea to see if the `otomi\values` repo contains values. If not, uninstall the chart and install a second time.
 
 ## Configuration
 
@@ -95,7 +95,7 @@ The following table lists the minimal required values:
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| `tasksImage.tag` | `string` | `` | The otomi-tasks image tag. Use latest or choose a [release](https://github.com/redkubes/otomi-tasks/releases) |
+| `tasksImage.tag` | `string` | `''` | The otomi-tasks image tag. Use latest or choose a [release](https://github.com/redkubes/otomi-tasks/releases) |
 | `cluster.domainSuffix` | `string` | `''` | The top-level domain for the cluster, for example: `mycluster.mydomain.com` |
 | `cluster.name` | `string` | `''` | The name of the cluster |
 | `cluster.owner` | `string` | `''` | The owner/organization of the cluster |

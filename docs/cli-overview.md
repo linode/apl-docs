@@ -27,9 +27,9 @@ brew install bash
 
 ```bash
 # Using wget
-wget -O- https://git.io/otomi-cli-installer-beta | bash
+wget -O- https://git.io/otomi-cli-installer | bash
 # Using curl
-curl https://git.io/otomi-cli-installer-beta | bash
+curl https://git.io/otomi-cli-installer | bash
 ```
 
 ### Manual installation
@@ -38,9 +38,9 @@ curl https://git.io/otomi-cli-installer-beta | bash
 
 ```bash
 # Using wget
-wget https://git.io/otomi-cli-beta -O otomi && chmod +x otomi
+wget https://git.io/otomi-cli -O otomi && chmod +x otomi
 # Using curl
-curl https://git.io/otomi-cli-beta -o otomi && chmod +x otomi
+curl https://git.io/otomi-cli -o otomi && chmod +x otomi
 ```
 
 This will download otomi into the current directory
@@ -52,7 +52,7 @@ This will download otomi into the current directory
 Run the following command:
 
 ```bash
- docker pull otomi/core:otomi-zx
+ docker pull otomi/core:master
 ```
 
 To make sure you are using the latest version :::
@@ -70,7 +70,7 @@ To find the options available.
 To run otomi without installing the CLI, you can run the following command:
 
 ```bash
-bash <(wget -q -O- https://git.io/otomi-cli-beta) <COMMAND HERE>
+bash <(wget -q -O- https://git.io/otomi-cli) <COMMAND HERE>
 ```
 
 ## Command Reference

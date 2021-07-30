@@ -57,6 +57,8 @@ Run the following command:
 
 To make sure you are using the latest version :::
 
+:::
+
 To use the CLI you can run:
 
 ```bash

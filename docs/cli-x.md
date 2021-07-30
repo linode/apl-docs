@@ -1,14 +1,14 @@
 ---
-slug: cli/commit
-title: otomi commit
-sidebar_label: otomi commit
+slug: cli/x
+title: otomi x
+sidebar_label: otomi x
 ---
 
-`otomi commit [options]`
+`otomi x`
 
 ## Description
 
-Generate pipelines, and commit changes to the values repository
+Execute bash command in the otomi container
 
 ## Options
 

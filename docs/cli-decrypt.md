@@ -1,14 +1,14 @@
 ---
-slug: cli/commit
-title: otomi commit
-sidebar_label: otomi commit
+slug: cli/decrypt
+title: otomi decrypt
+sidebar_label: otomi decrypt
 ---
 
-`otomi commit [options]`
+`otomi decrypt [options]`
 
 ## Description
 
-Generate pipelines, and commit changes to the values repository
+Decrypts file(s), given as arguments, or any file matching `secrets.*.yaml` in the values repository
 
 ## Options
 

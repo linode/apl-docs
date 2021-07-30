@@ -1,14 +1,14 @@
 ---
-slug: cli/diff
-title: otomi diff
-sidebar_label: otomi diff
+slug: cli/template
+title: otomi template
+sidebar_label: otomi template
 ---
 
-`otomi diff [options]`
+`otomi template [options]`
 
 ## Description
 
-Diff all, or supplied, K8S resources.
+Export all, or supplied, K8S resources
 
 ## Options
 

@@ -1,14 +1,14 @@
 ---
-slug: cli/diff
-title: otomi diff
-sidebar_label: otomi diff
+slug: cli/lint
+title: otomi lint
+sidebar_label: otomi lint
 ---
 
-`otomi diff [options]`
+`otomi lint [options]`
 
 ## Description
 
-Diff all, or supplied, K8S resources.
+Uses helmfile lint to lint the target manifests
 
 ## Options
 

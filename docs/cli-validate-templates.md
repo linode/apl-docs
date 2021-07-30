@@ -1,14 +1,14 @@
 ---
-slug: cli/diff
-title: otomi diff
-sidebar_label: otomi diff
+slug: cli/validate-template
+title: otomi validate-template
+sidebar_label: otomi validate-template
 ---
 
-`otomi diff [options]`
+`otomi validate-template [options]`
 
 ## Description
 
-Diff all, or supplied, K8S resources.
+Validate generated manifests against supported K8S versions/CRDs and best practices
 
 ## Options
 

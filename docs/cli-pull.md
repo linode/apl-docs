@@ -1,14 +1,14 @@
 ---
-slug: cli/commit
-title: otomi commit
-sidebar_label: otomi commit
+slug: cli/pull
+title: otomi pull
+sidebar_label: otomi pull
 ---
 
-`otomi commit [options]`
+`otomi pull [options]`
 
 ## Description
 
-Generate pipelines, and commit changes to the values repository
+Wrapper for `git pull` and `otomi bootstrap`. It pulls the latest values and bootstraps the missing values.
 
 ## Options
 

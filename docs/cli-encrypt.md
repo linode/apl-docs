@@ -1,14 +1,14 @@
 ---
-slug: cli/commit
-title: otomi commit
-sidebar_label: otomi commit
+slug: cli/encrypt
+title: otomi encrypt
+sidebar_label: otomi encrypt
 ---
 
-`otomi commit [options]`
+`otomi encrypt [files...] [options]`
 
 ## Description
 
-Generate pipelines, and commit changes to the values repository
+Encrypts file(s), given as arguments, or any file matching `secrets.*.yaml` in the values repository
 
 ## Options
 

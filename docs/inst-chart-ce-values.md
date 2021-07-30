@@ -13,9 +13,9 @@ The following `values.yam` example shows a minimal Otomi CE configuration. In th
 ```yaml
 cluster:
   k8sVersion: '1.19' # the K8s version used
-  name: demo # name of your cluster
+  name: my-cluster # name of your cluster
   provider: azure # the cloud where your cluster runs
-  domainSuffix: demo.yourdomain.com #the domain suffix of the cluster
+  domainSuffix: my-cluster.yourdomain.com #the domain suffix of the cluster
 oidc: # OIDC configuration for using Azure AD
   adminGroupID: 00000000-0000-0000-0000-000000000000
   authUrl: https://login.microsoftonline.com/00000000-0000-0000-0000-000000000000/oauth2/authorize

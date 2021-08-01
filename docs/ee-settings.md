@@ -1,6 +1,6 @@
 ---
 slug: ee/settings
-title: Settings
+title: Platform Settings
 ---
 
 This page describes the Otomi patform settings available only to users with the "admin" role:

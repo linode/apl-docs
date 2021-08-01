@@ -46,6 +46,14 @@ helm install -f /path/to/values.yaml my-otomi-release otomi/otomi --version 0.1.
 
 See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation.
 
+### Monitoring the Chart install
+
+The chart deploys a Job (`<your-release-name>-`) in the default namespace. Use K9s (or any tool of your preference), to monitor the install. After the deploy job has finished, check Gitea to see if the `otomi\values` repo contains values. If not, uninstall the chart and install a second time.
+
+### Next steps
+
+When Otomi is installed, first create a team. In CE mode, start [here](/docs/ce/teams).
+
 ## Installing from source
 
 As an alternative, you can also clone the otomi-core source code from the [Github](https://github.com/redkubes/otomi-core) and install otomi using the chart source code.

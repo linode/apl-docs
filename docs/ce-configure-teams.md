@@ -16,6 +16,7 @@ Clone the `otomi/values` repository from `gitea.<your.domain>/otomi/values` (if 
 
 ```bash
 git clone https://gitea.<your.domain>/otomi/values.git
+cd values
 ```
 
 :::note ATTENTION: Are you using SOPS? Then do first do the following:
@@ -32,7 +33,7 @@ git clone https://gitea.<your.domain>/otomi/values.git
 First create a `.env` file in the `env` folder and add the following line:
 
 ```bash
-export K8S_CONTEXT="<the-context-of-your-k8s-cluster>"
+echo 'export K8S_CONTEXT="<the-context-of-your-k8s-cluster>"' > .env
 ```
 
 Bootstap the local values:
@@ -40,11 +41,6 @@ Bootstap the local values:
 ```bash
 otomi bootstap
 ```
-
-Bootstrap will do the following:
-
-- Add a `.vscode` folder with Otomi extentions for autocompletion
-- Add the `values-schema.yaml` for values validation
 
 ## Adding a new team to the values
 
@@ -60,16 +56,22 @@ teamConfig:
     demo:
       id: demo
       oidc:
-        groupMapping: <group-object-id>> # the id of the AD group with the team members who need access to the team
+        groupMapping: <group-object-id> # The id of the AD group with the team members who need access to the team
 ```
 
-Add the team to the `secrets.teams.yaml`:
+Add the team to the `secrets.teams.yaml` (or `secrets.teams.yaml.dec` when using SOPS):
 
 ```yaml
 teamConfig:
   teams:
     demo:
       password: somesecretvalue
+```
+
+When using SOPS, first encrypt the team password:
+
+```bash
+otomi encrypt
 ```
 
 Add the following 3 files to the `/env/teams` folder:
@@ -82,14 +84,6 @@ Each file should contain an empty object:
 
 ```yaml
 {}
-```
-
-### 2. Encrypt (when using SOPS)
-
-When using SOPS, the provided password for the new team now needs to be encrypted:
-
-```bash
-otomi encrypt
 ```
 
 ## validate changes (optional)
@@ -116,7 +110,7 @@ Note: Creating a team can take around 5 to 10 minutes to complete.
 
 ## Commit changes
 
-Now commit your changes to the (otomi/values) GIT repository on the cluster.
+Now commit your changes to the (otomi/values) GIT repository on the cluster to store the new desired state configuration.
 
 ## Automation
 

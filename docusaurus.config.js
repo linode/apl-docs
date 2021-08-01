@@ -22,8 +22,7 @@ module.exports = {
   url: 'https://otomi.io',
   baseUrl: '/',
   customFields: {
-    description:
-      'A configurable suite of integrated applications combined with security best-pratices to support the most common DevOps/SRE use case out-of-the box',
+    description: 'Otomi turns Kubernetes into a ready-to-use and enterprise-grade platform in minutes',
   },
   favicon: 'img/otomi.ico',
   onBrokenLinks: 'throw',

@@ -24,8 +24,8 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              Turn <span className={styles.heroProjectKeywords}>Kubernetes</span> into a full blown{' '}
-              <span className={styles.heroProjectKeywords}>container platform</span> in minutes with{' '}
+              Turn <span className={styles.heroProjectKeywords}>Kubernetes</span> into a ready-to-use and enterprise-grade{' '}
+              <span className={styles.heroProjectKeywords}>platform</span> with{' '}
               <span className={styles.heroProjectKeywords}>Otomi</span>
             </h1>
             <div className={styles.indexCtas}>

@@ -1,14 +1,14 @@
 ---
-slug: cli/diff
-title: otomi diff
-sidebar_label: otomi diff
+slug: cli/sync
+title: otomi sync
+sidebar_label: otomi sync
 ---
 
-`otomi diff [options]`
+`otomi sync [options]`
 
 ## Description
 
-Diff all, or supplied, K8S resources.
+Synchronize all, or supplied, K8S resources
 
 ## Options
 

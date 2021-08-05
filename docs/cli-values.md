@@ -1,14 +1,14 @@
 ---
-slug: cli/diff
-title: otomi diff
-sidebar_label: otomi diff
+slug: cli/values
+title: otomi values
+sidebar_label: otomi values
 ---
 
-`otomi diff [options]`
+`otomi values [options]`
 
 ## Description
 
-Diff all, or supplied, K8S resources.
+Show helmfile values for target cluster
 
 ## Options
 

@@ -1,14 +1,14 @@
 ---
-slug: cli/diff
-title: otomi diff
-sidebar_label: otomi diff
+slug: cli/test
+title: otomi test
+sidebar_label: otomi test
 ---
 
-`otomi diff [options]`
+`otomi test [options]`
 
 ## Description
 
-Diff all, or supplied, K8S resources.
+Run tests against the target cluster
 
 ## Options
 

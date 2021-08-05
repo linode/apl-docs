@@ -15,7 +15,7 @@ A new install path will soon be made available. If you encounter problems, pleas
 - Docker
 - Bash v4
 
-Otomi CLI only supports Bash -ge version 4.Install or upgrade on Mac OS:
+Otomi CLI only supports bash versions greater than 4. Install or upgrade on Mac OS:
 
 ```bash
 brew install bash
@@ -23,56 +23,79 @@ brew install bash
 
 ## Install the CLI
 
+### Installer script
+
 ```bash
-wget https://raw.githubusercontent.com/redkubes/otomi-core/otomi-zx/binzx/otomi -O /usr/local/bin/otomi && chmod +x /usr/local/bin/otomi
+# Using wget
+wget -O- https://git.io/otomi-cli-installer | bash
+# Using curl
+curl https://git.io/otomi-cli-installer | bash
 ```
 
-Note: the image used is rather large, so this might take some time.
+### Manual installation
+
+#### Using wget
+
+```bash
+# Using wget
+wget https://git.io/otomi-cli -O otomi && chmod +x otomi
+# Using curl
+curl https://git.io/otomi-cli -o otomi && chmod +x otomi
+```
+
+This will download otomi into the current directory
+
+## Using the CLI
+
+:::note Note: the image used is rather large, so this might take some time.
 
 Run the following command:
 
 ```bash
- docker pull otomi/core:otomi-zx
+ docker pull otomi/core:master
 ```
 
-and then:
+To make sure you are using the latest version :::
+
+:::
+
+To use the CLI you can run:
 
 ```bash
 otomi --help
 ```
 
+To find the options available.
+
 ## Single run
 
+To run otomi without installing the CLI, you can run the following command:
+
 ```bash
-bash <(wget -q -O- https://raw.githubusercontent.com/redkubes/otomi-core/otomi-zx/binzx/otomi) <COMMANDS HERE>
+bash <(wget -q -O- https://git.io/otomi-cli) <COMMAND HERE>
 ```
 
 ## Command Reference
 
 | Command | Description |
 | --- | --- |
-| `otomi apply` | Apply K8S resources |
-| `otomi bash` | Run interactive bash shell in otomi-core container |
-| `otomi bootstrap` | Bootstrap values repo with artifacts corresponding to the cluster's stack version |
-| `otomi check-policies` | Check if generated manifests adhere to defined OPA policies |
-| `otomi commit` | Execute wrapper for generate pipelines -> git commit changed files |
-| `otomi decrypt [files..]` | Decrypts file(s) given as arguments (relative to env folder), or all env/_.secrets.yaml to env/_.secrets.yaml.dec files |
-| `otomi destroy` | Destroy all or some charts |
-| `otomi diff` | Diff k8s resources |
-| `otomi encrypt [files..]` | Encrypt file(s) given as arguments (relative to env folder), or all env/\*.secrets.yaml files |
-| `otomi gen-drone` |  |
-| `otomi gen-sops` |  |
-| `otomi hf [args..]` |  |
-| `otomi lint` |  |
-| `otomi pull` | Wrapper for git pull && otomi bootstrap |
-| `otomi regcred` |  |
-| `otomi rotate-keys` |  |
-| `otomi score-template` |  |
-| `otomi status` |  |
-| `otomi sync` | Sync k8s resources |
-| `otomi template [outDir]` | Export k8s resources |
-| `otomi test` | Run tests against the target cluster |
-| `otomi validate-templates` | Validate generated manifests against supported k8s versions/CRDs and best practices |
-| `otomi validate-values` | Validate values for each cluster against JSON schema (takes target options) |
-| `otomi values` | Show helmfile values for target cluster |
-| `otomi x` | Execute command in container |
+| [`otomi apply`](apply) | Apply all, or supplied, K8S resources |
+| [`otomi bash`](bash) | Run interactive bash shell in otomi-core container |
+| [`otomi bootstrap`](bootstrap) | Bootstrap values repo with artifacts corresponding to the cluster's stack version |
+| [`otomi check-policies`](check-policies) | Check if generated manifests adhere to defined OPA policies |
+| [`otomi commit`](commit) | Execute wrapper for generate pipelines -> git commit changed files |
+| [`otomi decrypt [files..]`](decrypt) | Decrypts file(s), given as arguments, or any file matching `secrets.*.yaml` in the values repository |
+| [`otomi destroy`](destroy) | Destroy all, or supplied, K8S resources |
+| [`otomi diff`](diff) | Diff all, or supplied, K8S resources |
+| [`otomi encrypt [files..]`](encrypt) | Encrypts file(s), given as arguments, or any file matching `secrets.*.yaml` in the values repository |
+| [`otomi lint`](lint) | Uses helmfile lint to lint the target manifests |
+| [`otomi pull`](pull) | Wrapper for git pull && otomi bootstrap |
+| [`otomi rotate-keys`](rotate-keys) | Rotate keys for all the sops secrets in the values repository |
+| [`otomi status`](status) | Show cluster status |
+| [`otomi sync`](sync) | Sync all, or supplied, K8S resources |
+| [`otomi template [outDir]`](template) | Export all, or supplied, K8S resources |
+| [`otomi test`](test) | Run tests against the target cluster |
+| [`otomi validate-templates`](validate-templates) | Validate generated manifests against supported k8s versions/CRDs and best practices |
+| [`otomi validate-values`](validate-values) | Validate values for each cluster against JSON schema (takes target options) |
+| [`otomi values`](values) | Show helmfile values for target cluster |
+| [`otomi x`](x) | Execute command in container |

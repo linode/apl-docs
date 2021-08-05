@@ -1,14 +1,14 @@
 ---
-slug: cli/commit
-title: otomi commit
-sidebar_label: otomi commit
+slug: cli/status
+title: otomi status
+sidebar_label: otomi status
 ---
 
-`otomi commit [options]`
+`otomi status [options]`
 
 ## Description
 
-Generate pipelines, and commit changes to the values repository
+Show the status of the cluster and the deployed charts
 
 ## Options
 

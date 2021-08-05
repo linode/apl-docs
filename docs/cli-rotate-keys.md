@@ -1,14 +1,14 @@
 ---
-slug: cli/commit
-title: otomi commit
-sidebar_label: otomi commit
+slug: cli/rotate-keys
+title: otomi rotate-keys
+sidebar_label: otomi rotate-keys
 ---
 
-`otomi commit [options]`
+`otomi rotate-keys [options]`
 
 ## Description
 
-Generate pipelines, and commit changes to the values repository
+Rotate keys for all the sops secrets in the values repository
 
 ## Options
 

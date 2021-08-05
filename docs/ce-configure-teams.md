@@ -4,7 +4,7 @@ title: Configuring Teams in CE mode
 sidebar_label: Teams
 ---
 
-When you are running Otomi in CE mode or doing local development, you will operate on values directly and have to apply them manually. Before you can start creating Services, Jobs and Secrets, you first need to create a Team. Follow these steps to create a team after deploying Otomi CE:
+When you are running Otomi in CE mode or doing local development, you will operate on the values directly and have to apply them manually. Before you can start creating Services, Jobs and Secrets, you first need to create a Team. Follow these steps to create a team after deploying Otomi CE:
 
 ## Install Otomi CLI (optional)
 
@@ -16,9 +16,25 @@ Clone the `otomi/values` repository from `gitea.<your.domain>/otomi/values` (if 
 
 ```bash
 git clone https://gitea.<your.domain>/otomi/values.git
+cd values
 ```
 
-## Bootstap the values (optional)
+:::note ATTENTION: Are you using SOPS? Then do first do the following:
+
+- Make sure you have installed the SOPS extention for VSC.
+- Add your `.secrets` file to the `values` folder
+- Source the secrets: `source .secrets`
+- Decrypt the secrets by running `otomi decrypt`
+
+:::
+
+## Bootstap the values
+
+First create a `.env` file in the `env` folder and add the following line:
+
+```bash
+echo 'export K8S_CONTEXT="<the-context-of-your-k8s-cluster>"' > .env
+```
 
 Bootstap the local values:
 
@@ -26,11 +42,9 @@ Bootstap the local values:
 otomi bootstap
 ```
 
-This will also add a `.vscode` folder with Otomi extentions for autocompletion.
+## Adding a new team to the values
 
-## Change the values
-
-To create a team, follow these steps:
+In the following steps we are going to create a team with the name 'demo':
 
 ### 1. Modify the teams.yaml
 
@@ -39,19 +53,34 @@ Add the team to the `values/env/teams.yaml`:
 ```yaml
 teamConfig:
   teams:
-    <team-name>:
-      id: <team-name>
+    demo:
+      id: demo
+      oidc:
+        groupMapping: <group-object-id> # The id of the AD group with the team members who need access to the team
 ```
 
-### 2. Create the team files, for the Secrets, Jobs and Services of the team
+Add the team to the `secrets.teams.yaml` (or `secrets.teams.yaml.dec` when using SOPS):
+
+```yaml
+teamConfig:
+  teams:
+    demo:
+      password: somesecretvalue
+```
+
+When using SOPS, first encrypt the team password:
+
+```bash
+otomi encrypt
+```
 
 Add the following 3 files to the `/env/teams` folder:
 
-1. `external-secrets.<team-name>.yaml`
-2. `jobs.<team-name>.yaml`
-3. `services.<team-name>.yaml`
+1. `external-secrets.demo.yaml`
+2. `jobs.demo.yaml`
+3. `services.demo.yaml`
 
-Each file should contain:
+Each file should contain an empty object:
 
 ```yaml
 {}
@@ -59,7 +88,7 @@ Each file should contain:
 
 ## validate changes (optional)
 
-Noe validate the new values based on the Otomi values schema:
+Now validate the new values based on the Otomi values schema:
 
 ```bash
 otomi validate-values
@@ -77,12 +106,22 @@ otomi apply
 
 Use `-v` to get more output (or `-vvv` to get even more output). See [here](/docs/cli/apply) for a full list of `otomi apply` command options.
 
+Note: Creating a team can take around 5 to 10 minutes to complete.
+
+## Commit changes
+
+Now commit your changes to the (otomi/values) GIT repository on the cluster to store the new desired state configuration.
+
 ## Automation
 
-When you create a Team, a lot is happening (and automatically done for you) behind the scenes:
+When Otomi is configures for multi tenancy, Otomi will now automatically:
 
-- Teams are each given a project in Harbor, allowing team users to push and pull container images and create secrets for automation
-- Two ingress gateways are automatically configured per team: one for SSO traffic and one for public exposure
-- Nginx-ingress ingress resources are automatically generated for all integrated applications and for team services. There is also configuration exposed allowing admins to turn on special Nginx features like throttling or OWASP rule checking
-- All teams automatically get their own Prometheus, Alertmanager, and Grafana instance, allowing them to view only their own resources
-- Teams are each given a space in Vault where the team can create and manage their own secrets
+- Configure the ingress gateways: one for SSO traffic and one for public exposure
+- Generate (Istio) ingress resources for all team services
+- Provision a Prometheus, Alertmanager, and Grafana instance for the team
+- Provide access to Loki to see the logs of team applications (only team members can see logs)
+- Teams will get access to Kubeapps (if Kubeapps is enabled)
+- Create a project in Harbor (if Harbor is enabled) and provide SSO access to Harbor for team members
+- Create a robot account for the team in Harbor
+- Create a pull secret for the Harbor repository in the team namespace
+- Create a space in Vault and provide SSO access to vault for team members

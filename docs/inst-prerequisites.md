@@ -17,9 +17,24 @@ If you are not logged in with the correct credentials then re-login first:
 - AWS: `aws login eks`
 - Google: `gcloud auth login`
 
+Otomi installs a complete suite of Kubernetes add-ons and applications. This requires resources. Otomi (minimal setup) requires at least:
+
+- 4 vCPU
+- 8 GiB
+- 100 GiB storage
+- Calico network policies
+
+We recommend the following setup:
+
+| Provider         | Instance Type worker nodes | Min Node count | Auto Scaling enabled |
+| ---------------- | -------------------------- | -------------- | -------------------- |
+| Azure (AKS)      | Standard_DS3_v2            | 3              | Yes                  |
+| AWS (EKS / kOPS) | c5.xlarge                  | 3              | Yes                  |
+| GCP (GKE / kOPS) | n1-standard-4              | 3              | Yes                  |
+
 ## 2. DNS zone
 
-Otomi requires credentials that allow to manage DNS zone from one of the following providers: aws/azure/google.
+Otomi requires credentials that allow to manage a DNS zone from one of the following providers: aws/azure/google.
 
 ### Azure
 
@@ -84,9 +99,11 @@ Otomi runs everything from containers, so please start docker if you haven't alr
 
 ## 6. KMS credentials to manage keys for encryption (optional)
 
-If you would like the secrets in the values repo to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption by otomi. Please read up there on how to work with sops, as it is out of scope for these docs.
+If you would like the secrets in the values repo to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption by Otomi. Please read up on how to work with sops.
 
 ## 7. Pull secret for the API (optional)
+
+Otomi CE does not offer developer self-service (to use Otomi as an Internal Developer Platform), but can only be configured by an admin.
 
 :::info Otomi Enterprise Edition license needed
 
@@ -94,4 +111,4 @@ If you have a license for Otomi EE you can run the api, unlocking self service f
 
 :::
 
-When you have a paid license to use the api you will have a pull secret. Please keep it handy for the [Chart](/docs/installation/chart) or [CLI](/docs/installation/cli) install.
+When you have a license to use the api you will have a pull secret. Please keep it handy for the [Chart](/docs/installation/chart) or [CLI](/docs/installation/cli) install.

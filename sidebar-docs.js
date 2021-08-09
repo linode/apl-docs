@@ -1,29 +1,24 @@
 module.exports = {
   mainSidebar: {
-    Installation: ['inst-overview', 'inst-prerequisites', 'inst-chart', 'inst-cli'],
-    'Community Edition': [
-      'ce-overview',
-      'ce-configure-teams', 
-      'ce-configure-services',
-      'ce-configure-jobs',
-      'ce-configure-secrets',
-      'ce-platform-apps',
-      'ce-settings',
-      'ce-clusters', 
-      'ce-team-apps'],
-    'Enterprise Edition': [
-      'ee-overview',
-      'ee-configuring-teams',
-      'ee-configuring-services',
-      'ee-configuring-jobs',
-      'ee-configuring-secrets',
-      'ee-configuring-apps',
-      'ee-settings',
-      'ee-configuring-clusters',
-      'ee-team-apps',
-      'ee-deploy-changes',
-    ],
-    Applications: ['app-drone', 'app-harbor', 'app-keycloak', 'app-kubeapps', 'app-vault', 'app-gatekeeper'],
+    Installation: ['inst-overview', 'inst-prerequisites', 'inst-chart'],
+    'Otomi (LATEST)': [
+      'overview',
+      'teams',
+      'services',
+      'jobs',
+      'secrets',
+      'platform-apps',
+      'settings',
+      'clusters',
+      'team-apps',
+      'deploy-changes'],
+    'Applications': [
+      'app-drone', 
+      'app-harbor', 
+      'app-keycloak', 
+      'app-kubeapps', 
+      'app-vault', 
+      'app-gatekeeper'],
     'Otomi CLI': [
       'cli-overview',
       {

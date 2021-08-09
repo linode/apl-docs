@@ -15,8 +15,8 @@ The following table shows the Otomi projects and the produced artifacts.
 | [otomi-core](https://github.com/redkubes/otomi-core)       | Yes         |
 | [otomi-tasks](https://github.com/redkubes/otomi-tasks)     | Yes         |
 | [otomi-clients](https://github.com/redkubes/otomi-clients) | Yes         |
-| otomi-console                                              | No          |
-| otomi-api                                                  | No          |
+| [otomi-console](https://github.com/redkubes/otomi-console) | Yes         |
+| [otomi-api](https://github.com/redkubes/otomi-api)         | Yes         |
 
 ### Otomi Core
 
@@ -61,7 +61,7 @@ Otomi Values can be bootstrapped and adjusted before initial deployment of Otomi
 
 ### Otomi API
 
-Otomi API allows for a controlled change of all Otomi Values, based on a configuration scheme. Otomi API runs as a container on each cluster running Otomi EE. Otomi API is a private GitHub repository. When Otomi is configured for EE (and a pull secret is provided) Otomi will pull the Otomi API image.
+Otomi API allows for a controlled change of all Otomi Values, based on a configuration scheme and is the brain of Otomi. Otomi API runs as a container on each cluster running.
 
 ### Otomi Console
 

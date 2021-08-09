@@ -13,7 +13,7 @@ First we have to look at containerization and its microservice way of working, a
 
 1. **Observability**: State of the (parts of the) system now and over time. Metrics and logs, preferably correlated. Hopefully AI to help us monitor and make sense of it.
 2. **Stateful storage**: Where to keep your crown jewels, and how to automate backups and failover.
-3. **Application configuration**: Kubernetes configuration and package management like Helm, Kustomize and others exist. We need to abstract configuration away from the solution for easier retrofitting and repeatability. Should be idempotently deployable as code (gitops).
+3. **Application Configuration Management**: Kubernetes configuration and package management like Helm, Kustomize and others exist. We need to abstract configuration away from the solution for easier retrofitting and repeatability. Should be idempotently deployable as code (gitops).
 4. **Policy enforcement**: Are the pieces and the players operating within governable constraints?
 5. **Security**: What are the new security concerns when containerizing workloads?
 6. **Continuous Deployment**: New platforms demand a new way of continuously deploying. And so does kubernetes. Think Helm charts, Knative services, GitOps push/pull.

@@ -10,4 +10,4 @@ Start with the prerequisites and then choose you're favorite installer:
 
 1. [Prerequisites](prerequisites)
 2. [Helm Chart install](chart)
-3. [CLI install](cli)
+3. CLI install (Comming soon!)

@@ -100,15 +100,3 @@ Otomi runs everything from containers, so please start docker if you haven't alr
 ## 6. KMS credentials to manage keys for encryption (optional)
 
 If you would like the secrets in the values repo to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption by Otomi. Please read up on how to work with sops.
-
-## 7. Pull secret for the API (optional)
-
-Otomi CE does not offer developer self-service (to use Otomi as an Internal Developer Platform), but can only be configured by an admin.
-
-:::info Otomi Enterprise Edition license needed
-
-If you have a license for Otomi EE you can run the api, unlocking self service features.
-
-:::
-
-When you have a license to use the api you will have a pull secret. Please keep it handy for the [Chart](/docs/installation/chart) or [CLI](/docs/installation/cli) install.

@@ -38,12 +38,6 @@ Now install the chart with the name `my-otomi-release` (a custom name that you c
 helm install -f /path/to/values.yaml my-otomi-release otomi/otomi
 ```
 
-You can also install a specific version of the chart. See [here](https://github.com/redkubes/otomi-core/releases) for a list of all available versions.
-
-```bash
-helm install -f /path/to/values.yaml my-otomi-release otomi/otomi --version 0.1.6
-```
-
 See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation.
 
 ### Monitoring the Chart install
@@ -52,7 +46,7 @@ The chart deploys a Job (`<your-release-name>-`) in the default namespace. Use K
 
 ### Next steps
 
-When Otomi is installed, first create a team. In CE mode, start [here](/docs/ce/teams).
+When Otomi is installed, first create a [team](/docs/otomi/teams).
 
 ## Installing from source
 

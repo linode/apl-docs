@@ -50,7 +50,7 @@ The chart deploys a Job (`<your-release-name>-`) in the default namespace. Use K
 
 ### Next steps
 
-When Otomi is installed, first create a [team](/docs/otomi/teams).
+When Otomi is installed, first create a [team](/docs/otomi-console/teams).
 
 ## Installing from source
 

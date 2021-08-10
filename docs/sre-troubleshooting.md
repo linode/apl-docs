@@ -110,7 +110,7 @@ Check available storage classes std and fast exist
 - Describe pv and pvc, check if pv's are rwo or rwx and look for conflicts
 - Check if container expects or rwx pv
 
-## Contact Red Kubes support (EE ONLY)
+## Contact support (support subscription needed)
 
 In case (after troubleshooting) the customer discovers one of the Otomi functions is not working as expected, an issue can be reported. When reporting an issue the following information needs to be provided:
 

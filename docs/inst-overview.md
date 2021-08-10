@@ -8,6 +8,6 @@ We strive to make installation of Otomi as easy and painless as possible. The wh
 
 Start with the prerequisites and then choose you're favorite installer:
 
-1. [Prerequisites](prerequisites)
-2. [Helm Chart install](chart)
-3. CLI install (Comming soon!)
+1. [Prerequisites](prerequisites).
+2. [Installing Otomi with Helm Chart](chart).
+3. [COMING SOON] Installing Otomi with CLI.

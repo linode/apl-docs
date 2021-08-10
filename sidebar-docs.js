@@ -1,14 +1,14 @@
 module.exports = {
   mainSidebar: {
-    Installation: ['inst-overview', 'inst-prerequisites', 'inst-chart'],
-    'Otomi (LATEST)': [
+    'Installing Otomi': ['inst-overview', 'inst-prerequisites', 'inst-chart'],
+    'Otomi Console': [
       'overview',
       'teams',
       'services',
       'jobs',
       'secrets',
       'platform-apps',
-      'settings',
+      { 'Settings': ['settings-alerts','settings-azure','settings-customer','settings-dns','settings-home','settings-kms','settings-oidc','settings-otomi','settings-policies','settings-smtp'] },
       'clusters',
       'team-apps',
       'deploy-changes'],
@@ -46,7 +46,7 @@ module.exports = {
         ],
       },
     ],
-    SRE: [
+    'SRE': [
       'sre-overview', 
       'sre-daily', 
       'sre-troubleshooting', { 'Known Issues': ['ki-overview', 'ki-cli', 'ki-harbor', 'ki-istio', 'ki-loki', 'ki-staging-certs'] }, 

@@ -78,24 +78,7 @@ git diff
 
 ## 4. Start Otomi Console on your local machine (optional)
 
-:::info Otomi Enterprise Edition license needed
-
-If you have a license for Otomi EE you can run the console locally for initial configuration.
-
-:::
-
-If you have not done so already, put the pullsecret you have been given in `secrets.settings.yaml` under `otomi.pullSecret`. Also make sure the git details are correctly added to `charts/*otomi-api.yaml`. Remember that some providers like GitHub need an access token when MFA/2FA is turned on, so create one (see https://github.com/settings/tokens) and provide that for `password`. At least the following values are expected:
-
-```yaml
-repoUrl: github.com/redkubes/otomi-values-demo.git
-email: some@secret.value
-user: somesecretvalue
-password: somesecretvalue
-```
-
-Make sure these are correct and allowing access to the above initialized and pushed repository.
-
-Then bootstrap again and start the console:
+Bootstrap again and start the console:
 
 ```bash
 otomi bootstrap

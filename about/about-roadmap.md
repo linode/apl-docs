@@ -9,6 +9,7 @@ For the next release (around oct/nov 2021) we aim to incorporate the following f
 
 - Continuous Deployment: semver/glob based image tags scanned in registry are deployed automatically and state is written back to values repo
 - Deploy Otomi without OIDC (and manage users in KeyCloak)
+- Create Teams and Services using the CLI
 
 For the end of 2021 we aim to release the following:
 

@@ -60,7 +60,7 @@ $ gcloud dns managed-zones create "otomi-dns-test-yourdomain-com" \
 
 :::note ATTENTION: The new Otomi Chart install now only supports Azure AD as IDP!
 
-We will soon come with an update where local accounts in KeyCloak can be used.
+We will soon come with an update to also support KeyCloak as IDP.
 
 :::
 

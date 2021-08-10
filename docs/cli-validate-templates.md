@@ -1,10 +1,10 @@
 ---
-slug: cli/validate-template
-title: otomi validate-template
-sidebar_label: otomi validate-template
+slug: cli/validate-templates
+title: otomi validate-templates
+sidebar_label: otomi validate-templates
 ---
 
-`otomi validate-template [options]`
+`otomi validate-templates [options]`
 
 ## Description
 

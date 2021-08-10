@@ -8,7 +8,7 @@ Otomi uses Gatekeeper for policy enforcement. Gatekeeper can be turned on or off
 
 The policies are provided as a best-practice security baseline. The full set of all policies can be found [here](https://github.com/redkubes/otomi-core/tree/master/policies).
 
-Customization of the policies is supported based on the Otomi [schema](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml) (or use Otomi Console in EE mode). In case of specific requirements, admins can add their own custom policies.
+Customization of the policies is supported based on the Otomi [schema](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml) (or use Otomi Console). In case of specific requirements, admins can add their own custom policies.
 
 IMPORTANT NOTES:
 
@@ -16,7 +16,7 @@ It is possible to deviate from the baseline, provided there is a substantiated r
 
 ### Enable Gatekeeper
 
-To enable Gatekeeper Operator, edit the `values/env/charts/gatekeeper-operator.yaml` file and set enabled to true:
+If not enabled during install, you can enable Gatekeeper Operator by editting the `values/env/charts/gatekeeper-operator.yaml` file and set enabled to true:
 
 ```yaml
 charts:

@@ -5,6 +5,10 @@ title: Install with Chart
 
 Use Helm to install Otomi
 
+:::caution August 9th 2021: Because of a major refactoring (using the new CLI for the chart install), the Chart install is currently not working. Expect an update in a couple of days.
+
+:::
+
 :::note ATTENTION: The new Otomi Chart install is still in PREVIEW!
 
 If you encounter problems, please create an issue [here](https://github.com/redkubes/otomi-core/issues).
@@ -103,16 +107,10 @@ The following table lists the minimal required values:
 | `cluster.owner` | `string` | `''` | The owner/organization of the cluster |
 | `cluster.provider` | `string` | `''` | The cloud provider where the K8s cluster is running. Use `aws`, `azure` or `google`. |
 | `dns.provider` | `string` | `''` | The cloud provider where the DNS service is used. Use `aws`, `azure` or `google`. See [providers](#providers) |
+| `oidc` | `string` | `''` | The cloud provider where the DNS service is used. Use `aws`, `azure` or `google`. See [providers](#providers) |
 | `otomi.adminPassword` | `string` | `''` | The password of the otomi-admin account |
 | `otomi.version` | `string` | `''` | The otomi-core version used |
 | `charts.external-dns.domainFilters` | `string` | `''` | The name of your hosted DNS zone, for example `mydomain.com` |
-| `charts.gitea.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by Gitea |
-| `charts.keycloak.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time |
-| `charts.keycloak.idp.clientSecret` | `string` | `''` | a randdom provided password |
-| `charts.keycloak.idp.clientID` | `string` | `otomi` |  |
-| `charts.loki.adminPassword` | `string` | `''` | The password used for used for splitting logs for teams |
-| `charts.kubeapps.postgresqlPassword` | `string` | `''` | The password used for PostgreSQL db used by KeyCloak. Needs to be set to avoid generating a new one each time |
-| `charts.oauth2-proxy.config.cookieSecret` | `string` | `''` | Needs to be set to avoid generating a new one each time |
 
 #### OIDC
 
@@ -164,7 +162,7 @@ The aadClientID and aaClientSecret are associated with the required Service Prin
 
 ### Optional: using SOPS
 
-:::note ATTENTION: Although using SOPS to encrypt all secrets is optional, we strongly recommend using it!
+:::caution ATTENTION: Although using SOPS to encrypt all secrets is optional, we strongly recommend using it!
 
 :::
 
@@ -642,7 +640,6 @@ Configure these parameters based on your cloud of choice.
 | `otomi.isHomeMonitored` | `boolean` | Whether this cluster is home monitored (like when under a Premium SLA). Sends criticals home. | `nil` |
 | `otomi.isManaged` | `boolean` | Whether masters are managed and not under control. Set this to false when onprem. | `true` |
 | `otomi.isMultitenant` | `boolean` | Whether to separate team metrics and logs. Disabling this lets everybody be admin and see everything. | `true` |
-| `otomi.mode` | `string` | The otomi-core edition. Either community edition (ce) or enterprise edition (ee). | `ee` |
 | `otomi.pullSecret` | `string` | The pullsecret to deploy the Otomi API and Console. Requires an Otomi license. | `nil` |
 | `otomi.version` | `string` | Best pin this to a valid release version found in the repo. | `latest` |
 | `policies.banned-image-tags.tags.[]` | `string` |  | `nil` |

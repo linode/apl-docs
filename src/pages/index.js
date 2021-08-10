@@ -24,9 +24,10 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              A ready to use<span className={styles.heroProjectKeywords}></span> {' '}
+              A <span className={styles.heroProjectKeywords}></span> {' '}
               <span className={styles.heroProjectKeywords}>Kubernetes</span>-based {' '}
-              <span className={styles.heroProjectKeywords}>Operating System</span>
+              <span className={styles.heroProjectKeywords}>Operating System</span> {'that works '}
+              <span className={styles.heroProjectKeywords}>out-of-the-box</span>
             </h1>
             <div className={styles.indexCtas}>
               <Link className={styles.indexCtasGetStartedButton} to={useBaseUrl('docs/installation/')}>
@@ -47,7 +48,7 @@ function Home() {
         <div id='appsuite' className={clsx(styles.announcement, styles.announcementDark)}>
           <div className={styles.announcementInner}>
             Check out the list of{' '}
-            <span className={styles.heroProjectKeywords}>pre-configured and integrated apps</span>
+            <span className={styles.heroProjectKeywords}>integrated and ready to use apps</span>
           </div>
         </div>
         <div className={clsx(styles.announcement)}>

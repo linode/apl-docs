@@ -5,26 +5,22 @@ module.exports = [
   },
   {
     from: ['/docs/configuring-apps'],
-    to: '/docs/ee/platform-apps',
+    to: '/docs/otomi-console/platform-apps',
   },
   {
     from: ['/docs/configuring-clusters'],
-    to: '/docs/ee/clusters',
+    to: '/docs/otomi-console/clusters',
   },
   {
     from: ['/docs/configuring-services'],
-    to: '/docs/ee/services',
+    to: '/docs/otomi-console/services',
   },
   {
     from: ['/docs/configuring-teams'],
-    to: '/docs/ee/team-apps',
+    to: '/docs/otomi-console/teams',
   },
   {
     from: ['/docs/deploy-changes'],
-    to: '/docs/ee/deploy-changes',
-  },
-  {
-    from: ['/docs/settings'],
-    to: '/docs/ee/settings',
+    to: '/docs/otomi-console/deploy-changes',
   },
 ]

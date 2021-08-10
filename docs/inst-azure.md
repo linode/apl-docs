@@ -44,4 +44,4 @@ helm install -f /path/to/values.yaml my-otomi-release otomi/otomi
 
 The chart deploys a Job with the release name in the default namespace. Use K9s (or any tool of your preference), to monitor the install.
 
-When Otomi is installed, first create a team. In CE mode, start [here](/docs/ce/teams).
+When Otomi is installed, first create a team. In CE mode, start here

@@ -89,7 +89,7 @@ The console allows for easy configuration of many settings but not all. Assuming
 
 ## 5. Configuration
 
-Configuration can be performed much easier through the Otomi Console. So if you have a license please refer to the [Otomi Console](/docs/ee/) documentation.
+Configuration can be performed much easier through the Otomi Console. So if you have a license please refer to the [Otomi Console](/docs/otomi-console/) documentation.
 
 Not all configuration is (yet) exposed through the console however, so please look at the values repo's `env/*` files to edit the configuration files.
 

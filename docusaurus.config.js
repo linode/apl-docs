@@ -154,12 +154,12 @@ module.exports = {
               to: '/about/',
             },
             {
-              label: 'Community Edition',
-              to: '/docs/ce/',
+              label: 'Installation',
+              to: '/docs/installation/',
             },
             {
-              label: 'Product sheet',
-              href: 'https://redkubes.com/otomi-container-platform-product-sheet/',
+              label: 'Using Otomi Console',
+              href: '/docs/otomi-console/',
             },
           ],
         },

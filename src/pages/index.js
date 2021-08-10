@@ -24,8 +24,8 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              A<span className={styles.heroProjectKeywords}></span> {' '}
-              <span className={styles.heroProjectKeywords}>Kubernetes-based</span> and user-oriented {' '}
+              A ready to use<span className={styles.heroProjectKeywords}></span> {' '}
+              <span className={styles.heroProjectKeywords}>Kubernetes</span>-based {' '}
               <span className={styles.heroProjectKeywords}>Operating System</span>
             </h1>
             <div className={styles.indexCtas}>

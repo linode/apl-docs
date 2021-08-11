@@ -5,7 +5,7 @@ title: Install with Chart
 
 Use Helm to install Otomi
 
-:::caution August 9th 2021: Because of a major refactoring (using the new CLI for the chart install), the Chart install is currently not working. Expect an update in a couple of days.
+:::caution Because of a major CLI refactoring (from bash to TypeScript), the Chart install is currently not working. We aim to release the new Chart install on the first of September.
 
 :::
 

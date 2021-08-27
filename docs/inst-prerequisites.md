@@ -82,9 +82,9 @@ And the following token configurations:
 | groups      | Optional formatting for group claims             | ID, Access, SAML | Default           |
 | upn         | An identifier for the user that can be used ...  | ID               | Default           |
 
-Note that the group type should be set to ‘security groups’.
+Note that the group type should be set to 'security groups'.
 
-At the ‘Authentication’ tab you should be able to set the following callback URL’s and enable that both “Access tokens” and “ID tokens” are issued and public client flows are allowed:
+At the 'Authentication' tab you should be able to set the following callback URL's and enable that both "Access tokens" and "ID tokens" are issued and public client flows are allowed:
 
 - `https://keycloak.<dns-zone-name>/realms/master/broker/<idp alias>/endpoint`
 - `https://keycloak.<dns-zone-name>`

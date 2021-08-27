@@ -23,9 +23,9 @@ function Home() {
         <div className={styles.hero}>
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
-              <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              A <span className={styles.heroProjectKeywords}></span> {' '}
-              <span className={styles.heroProjectKeywords}>Kubernetes</span>-based {' '}
+              <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />A{' '}
+              <span className={styles.heroProjectKeywords}></span>{' '}
+              <span className={styles.heroProjectKeywords}>Kubernetes</span>-based{' '}
               <span className={styles.heroProjectKeywords}>Operating System</span> {'that works '}
               <span className={styles.heroProjectKeywords}>out-of-the-box</span>
             </h1>
@@ -47,8 +47,7 @@ function Home() {
         </div>
         <div id='appsuite' className={clsx(styles.announcement, styles.announcementDark)}>
           <div className={styles.announcementInner}>
-            Check out the list of{' '}
-            <span className={styles.heroProjectKeywords}>integrated and ready to use apps</span>
+            Check out the list of <span className={styles.heroProjectKeywords}>integrated and ready to use apps</span>
           </div>
         </div>
         <div className={clsx(styles.announcement)}>

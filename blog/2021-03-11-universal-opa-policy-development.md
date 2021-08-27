@@ -10,7 +10,7 @@ tags: [otomi, opa, gatekeeper, rego, security]
 
 This is a story behind the trenches of writing **Rego** policies and how to unravel the cumbersome process of working with **Gatekeeper** vs **Conftest** for validating Kubernetes resources.
 
-Working with policy compliant Kubernetes clusters is on the radar for a lot of companies these days, especially if you’re walking the path towards popular certifications like ISO/IEC 27001 for Information Security Management.
+Working with policy compliant Kubernetes clusters is on the radar for a lot of companies these days, especially if you're walking the path towards popular certifications like ISO/IEC 27001 for Information Security Management.
 
 ## Hands-on using OPA in Otomi Container Platform
 
@@ -22,15 +22,15 @@ One of the key principles of Otomi Container Platform is that it is easy to use 
 
 ## OPA ecosystem common knowledge
 
-Decisions are handled by the means of **Admission Controllers** such as **OPA kube-mgmt** project or Gatekeeper, which I will touch upon in a minute, but also remember that we can validate things using **Rego query** language on any plain files using static analysis tools like Conftest. The list of supported Conftest formats include (but is not limited to): json, yaml, Dockerfile, INI files, XML, etc.Here’s the problem, Conftest and Gatekeeper are on the path of diverging. Although they speak the same REGO language, the two disagree on some aspects.
+Decisions are handled by the means of **Admission Controllers** such as **OPA kube-mgmt** project or Gatekeeper, which I will touch upon in a minute, but also remember that we can validate things using **Rego query** language on any plain files using static analysis tools like Conftest. The list of supported Conftest formats include (but is not limited to): json, yaml, Dockerfile, INI files, XML, etc.Here's the problem, Conftest and Gatekeeper are on the path of diverging. Although they speak the same REGO language, the two disagree on some aspects.
 
 ## In-Cluster vs Static Resources Policy Wars
 
-Working in a policy constricted environment is like having “parental controls” turned on for unprivileged users, allowing administrators to decide what kind of resources and setup are safest for their flock of Kubernetes clusters. From an application developer’s perspective, being denied access to deploy some resources means that they are not adhering to the rules imposed for that environment and should decide to find and fix the missing links in this setup.
+Working in a policy constricted environment is like having "parental controls" turned on for unprivileged users, allowing administrators to decide what kind of resources and setup are safest for their flock of Kubernetes clusters. From an application developer's perspective, being denied access to deploy some resources means that they are not adhering to the rules imposed for that environment and should decide to find and fix the missing links in this setup.
 
 Policy administrators/developers on the other hand, struggle with finding the correct enforcement strategies and adjusting policy parameters according to desired state or allowing certain exclusions for cases where policy enforcement does not make sense. For example: system namespaces, cloud vendor specific namespaces or anything that should avoid intervention by default. There is no golden rule for policy adoption and you are in charge of overcoming your own mistakes if something is not right.
 
-Let’s start with the simple use-case of running policy checks against any kind of YAML resource. Then I move forward with more details about in-cluster Kubernetes admission review objects.
+Let's start with the simple use-case of running policy checks against any kind of YAML resource. Then I move forward with more details about in-cluster Kubernetes admission review objects.
 
 ## Conftest in action
 
@@ -45,9 +45,9 @@ FAIL - Policy: container-limits - container <keycloak-test> has no resource limi
 
 The generated yaml files are streamed into Conftest and policies are tested one by one.
 
-By examining the log message, we can see that the container-limits policy is marking two resources as failures. Now all we have to do is modify the templates to provide a “sensitive” amount of resource limits to the indicated containers and our policy checks will pass successfully! Hooray
+By examining the log message, we can see that the container-limits policy is marking two resources as failures. Now all we have to do is modify the templates to provide a "sensitive" amount of resource limits to the indicated containers and our policy checks will pass successfully! Hooray
 
-This is pretty useful if you want to adopt new helm applications, but don’t want to deploy anything to the cluster unless it’s well-examined for any violations. Conftest supports passing values to the policies using the –data option, which allows policy designers to configure different settings through parameters. Parameters can help us control any aspect of creating configurable rules for resources. I will return to that in a moment.
+This is pretty useful if you want to adopt new helm applications, but don't want to deploy anything to the cluster unless it's well-examined for any violations. Conftest supports passing values to the policies using the –data option, which allows policy designers to configure different settings through parameters. Parameters can help us control any aspect of creating configurable rules for resources. I will return to that in a moment.
 
 ## Running Gatekeeper
 
@@ -122,7 +122,7 @@ parameters:
     memory: 2000Mi
 ```
 
-So far this looks pretty easy . We decide to enable this policy for all namespaces except for “gatekeeper-system” & “kube-system” and Gatekeeper will test all our containers for resource limits.
+So far this looks pretty easy . We decide to enable this policy for all namespaces except for "gatekeeper-system" & "kube-system" and Gatekeeper will test all our containers for resource limits.
 
 Hold on.. Where is the definition for this policy? Rego Rules are defined in CRD files called ConstraintTemplates and they need to be deployed prior to the Constraint instance.
 
@@ -151,7 +151,7 @@ targets:
    ...
 ```
 
-To simplify the example, we’ve cut out parts of our file, but you can also view it on the [Gatekeeper Library repo](https://github.com/open-policy-agent/gatekeeper-library/blob/master/library/general/containerlimits/template.yaml). The “rego” property is where the actual policy definition lives and any dependency libraries can be declared in the list of “libs”. We won’t go into how Rego rules for violations work now, but you can enjoy all the fun of learning a powerful query language inspired by decades old [Datalog](https://www.openpolicyagent.org/docs/latest/policy-language/).
+To simplify the example, we've cut out parts of our file, but you can also view it on the [Gatekeeper Library repo](https://github.com/open-policy-agent/gatekeeper-library/blob/master/library/general/containerlimits/template.yaml). The "rego" property is where the actual policy definition lives and any dependency libraries can be declared in the list of "libs". We won't go into how Rego rules for violations work now, but you can enjoy all the fun of learning a powerful query language inspired by decades old [Datalog](https://www.openpolicyagent.org/docs/latest/policy-language/).
 
 ## Planning for Unification
 
@@ -171,13 +171,13 @@ To echo the subject once again, we are interested in reducing the boilerplate an
 
 `[ Same Rego == different contexts ]`
 
-Working with one common set Rego policy files and using the same source code for testing “static files”, generated from CI Builds or across any “Gatekeeping context”, where objects are created via the Kubernetes api. Let’s cut to the chase, and say we already made this happen, and delivered a working solution in Otomi. By using the available community tools, lots of integration work and a lot of customization additions. We now have a rich collection of policies and utility functions defined for our Kubernetes clusters . You can browse them in the [Otomi-core repository](https://github.com/redkubes/otomi-core/tree/master/policies/).
+Working with one common set Rego policy files and using the same source code for testing "static files", generated from CI Builds or across any "Gatekeeping context", where objects are created via the Kubernetes api. Let's cut to the chase, and say we already made this happen, and delivered a working solution in Otomi. By using the available community tools, lots of integration work and a lot of customization additions. We now have a rich collection of policies and utility functions defined for our Kubernetes clusters . You can browse them in the [Otomi-core repository](https://github.com/redkubes/otomi-core/tree/master/policies/).
 
 ## How Istio is Mutating Objects in the Background
 
 So by now, we understand all the nitty gritty details about Rego policies and Gatekeeper — but there will always be external factors, changing the state of the world and you can find yourself in a closed box situation, nowhere to go.
 
-This situation becomes a nightmare when using Istio mesh for networking. In reality Istio is creating a “subspace” of resources by injecting a Sidecar container to all the pods in namespaces where service mesh communication is enabled. This kind of container is sometimes interfering with the security constraints design strategy.
+This situation becomes a nightmare when using Istio mesh for networking. In reality Istio is creating a "subspace" of resources by injecting a Sidecar container to all the pods in namespaces where service mesh communication is enabled. This kind of container is sometimes interfering with the security constraints design strategy.
 
 ## Otomi Policy Features
 

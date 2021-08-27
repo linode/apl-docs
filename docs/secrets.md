@@ -9,9 +9,9 @@ Any secret that is created here should have it's counterpart in Vault by the sam
 
 Otomi supports 3 types of secrets:
 
-- [1. Generic](#create-a-generic-secret)
-- [2. Docker Registry](#create-a-docker-registry-secret)
-- [3. TLS](#create-a-tls-secret)
+- [Create a Generic secret](#create-a-generic-secret)
+- [Create a Docker Registry secret](#create-a-docker-registry-secret)
+- [Create a TLS secret](#create-a-tls-secret)
 
 ### Create a Generic secret
 
@@ -26,7 +26,7 @@ email="not@us.ed" # can be something else if the registry provider expects it, b
 server="" # example: "https://harbor.demo.eks.otomi.cloud/"
 username="" # your username
 password="" # your password, can be token
-kubectl create secret docker-registry --dry-run=client regcred --docker-email=$email --docker-server=$server --docker-username=$username --docker-password=$password -ojsonpath='{.data.\.dockerconfigjson}' | base64 --decode
+kubectl create secret docker-registry --dry-run=client regcred --docker-email=$email --docker-server=$server --docker-username=$username --docker-password=$password -o jsonpath='{.data.\.dockerconfigjson}' | base64 --decode
 ```
 
 ### Create a TLS secret

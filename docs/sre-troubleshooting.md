@@ -73,7 +73,7 @@ Network policies or Istio policies can deny pods from communicating, note that D
 
 ## Istio issues
 
-Istio sidecars manipulate the container’s network to reroute traffic. A namespace can have an Istio sidecar policy indicated by a label, the same is valid for a deployment or pod. Make sure you see Istio sidecars running when applicable (indicated by the 3/3 Ready status).
+Istio sidecars manipulate the container's network to reroute traffic. A namespace can have an Istio sidecar policy indicated by a label, the same is valid for a deployment or pod. Make sure you see Istio sidecars running when applicable (indicated by the 3/3 Ready status).
 
 - Check if istio-operator is working
 - Check logs for istiod pods
@@ -85,7 +85,7 @@ Istio sidecars manipulate the container’s network to reroute traffic. A namesp
 
 - Is the correct service account configured?
 - Is Istio mTLS enabled and configured correctly?
-- Turn on logging for a context of an istio sidecar: `ksh exec -it otomi-console-d5b48fd7f-znhmg -c istio-proxy -- sh -c 'curl -k -X POST localhost:15000/logging?jwt=debug'`
+- Turn on logging for a context of an istio sidecar: `ksh exec -it $container_id -c istio-proxy -- sh -c 'curl -k -X POST localhost:15000/logging?jwt=debug'`
 
 ## DNS issues
 

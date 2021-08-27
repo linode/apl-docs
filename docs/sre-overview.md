@@ -15,7 +15,7 @@ Otomi provides a reference configuration (Otomi Values) that can be used as a qu
 - Standard, using the Otomi values schema to modify the configuration
 - Advanced, customization using overrides
 
-Let’s take a closer look at both options.
+Let's take a closer look at both options.
 
 ### Standard
 

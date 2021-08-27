@@ -102,7 +102,7 @@ The following table lists the minimal required values:
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | `tasksImage.tag` | `string` | `''` | The otomi-tasks image tag. Use latest or choose a [release](https://github.com/redkubes/otomi-tasks/releases) |
-| `cluster.domainSuffix` | `string` | `''` | The top-level domain for the cluster, for example: `mycluster.mydomain.com` |
+| `cluster.domainSuffix` | `string` | `''` | The top-level domain for the cluster, for example: `my-cluster.my-domain.com` |
 | `cluster.name` | `string` | `''` | The name of the cluster |
 | `cluster.owner` | `string` | `''` | The owner/organization of the cluster |
 | `cluster.provider` | `string` | `''` | The cloud provider where the K8s cluster is running. Use `aws`, `azure` or `google`. |
@@ -110,7 +110,7 @@ The following table lists the minimal required values:
 | `oidc` | `string` | `''` | The cloud provider where the DNS service is used. Use `aws`, `azure` or `google`. See [providers](#providers) |
 | `otomi.adminPassword` | `string` | `''` | The password of the otomi-admin account |
 | `otomi.version` | `string` | `''` | The otomi-core version used |
-| `charts.external-dns.domainFilters` | `string` | `''` | The name of your hosted DNS zone, for example `mydomain.com` |
+| `charts.external-dns.domainFilters` | `string` | `''` | The name of your hosted DNS zone, for example `my-domain.com` |
 
 #### OIDC
 
@@ -230,7 +230,7 @@ Configure these parameters based on your cloud of choice.
 | `azure.monitor.tenantId` | `string` | An Azure tenant id. | `nil` |
 | `cloud.skipStorageClasses.[]` | `string` |  | `nil` |
 | `charts.cert-manager.email` | `string` |  | `nil` |
-| `charts.cert-manager.stage` | `string` | The Let’s Encrypt environment that is used for issuing certificates. The 'production' environment issues trusted certificates but has narrow rate limits, whereas the 'staging' environment issues untrusted certificates but provides broader rate limits. Read more about rate limits: https://letsencrypt.org/docs/rate-limits/. | `staging` |
+| `charts.cert-manager.stage` | `string` | The Let's Encrypt environment that is used for issuing certificates. The 'production' environment issues trusted certificates but has narrow rate limits, whereas the 'staging' environment issues untrusted certificates but provides broader rate limits. Read more about rate limits: https://letsencrypt.org/docs/rate-limits/. | `staging` |
 | `charts.cluster-overprovisioner.cpu` | `string` | Amount of cores, or slice of cpu in millis. | `nil` |
 | `charts.cluster-overprovisioner.enabled` | `boolean` |  | `nil` |
 | `charts.cluster-overprovisioner.memory` | `string` | Amount of memory. Valid units are E\|P\|T\|G\|M\|K\|Ei\|Pi\|Ti\|Gi\|Mi\|Ki. | `nil` |
@@ -631,7 +631,7 @@ Configure these parameters based on your cloud of choice.
 | `otomi.additionalClusters.[].provider` | `string` |  | `nil` |
 | `otomi.additionalClusters.[].region` | `string` | Dependent on provider. | `nil` |
 | `otomi.additionalClusters.[].vpcID` | `string` | AWS only. If provided will override autodiscovery from metadata. | `nil` |
-| `otomi.adminPassword` | `string` |  | `bladibla` |
+| `otomi.adminPassword` | `string` |  | `generated string` |
 | `otomi.globalPullSecret.username` | `string` |  | `nil` |
 | `otomi.globalPullSecret.password` | `string` |  | `nil` |
 | `otomi.globalPullSecret.email` | `string` |  | `not@us.ed` |

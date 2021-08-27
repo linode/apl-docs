@@ -55,7 +55,7 @@ Run the following command:
  docker pull otomi/core:master
 ```
 
-To make sure you are using the latest version :::
+To make sure you are using the latest version.$$
 
 :::
 

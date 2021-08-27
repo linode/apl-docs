@@ -8,17 +8,25 @@ module.exports = {
       'jobs',
       'secrets',
       'platform-apps',
-      { 'Settings': ['settings-alerts','settings-azure','settings-customer','settings-dns','settings-home','settings-kms','settings-oidc','settings-otomi','settings-policies','settings-smtp'] },
+      {
+        Settings: [
+          'settings-alerts',
+          'settings-azure',
+          'settings-customer',
+          'settings-dns',
+          'settings-home',
+          'settings-kms',
+          'settings-oidc',
+          'settings-otomi',
+          'settings-policies',
+          'settings-smtp',
+        ],
+      },
       'clusters',
       'team-apps',
-      'deploy-changes'],
-    'Applications': [
-      'app-drone', 
-      'app-harbor', 
-      'app-keycloak', 
-      'app-kubeapps', 
-      'app-vault', 
-      'app-gatekeeper'],
+      'deploy-changes',
+    ],
+    Applications: ['app-drone', 'app-harbor', 'app-keycloak', 'app-kubeapps', 'app-vault', 'app-gatekeeper'],
     'Otomi CLI': [
       'cli-overview',
       {
@@ -46,11 +54,13 @@ module.exports = {
         ],
       },
     ],
-    'SRE': [
-      'sre-overview', 
-      'sre-daily', 
-      'sre-troubleshooting', { 'Known Issues': ['ki-overview', 'ki-cli', 'ki-harbor', 'ki-istio', 'ki-loki', 'ki-staging-certs'] }, 
-      'lm-upgrades'],
+    SRE: [
+      'sre-overview',
+      'sre-daily',
+      'sre-troubleshooting',
+      { 'Known Issues': ['ki-overview', 'ki-cli', 'ki-harbor', 'ki-istio', 'ki-loki', 'ki-staging-certs'] },
+      'lm-upgrades',
+    ],
     // Reference: [
     //   'ref-app-suite',
     //   {

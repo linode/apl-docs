@@ -14,7 +14,7 @@ This is my story is about building a multi-tenant Kubernetes environment that fa
 
 Harbor provides a container image registry, vulnerability scanning, container image signature and validation, OIDC based authentication and authorization. The fully-featured version is composed of ten micro-services. It is also CNCF graduated OSS.
 
-In Harbor, a [project](https://goharbor.io/docs/2.2.0/working-with-projects/create-projects/) represents a container image registry, exposed under a unique URL, For example, **“harbor.otomi.io/team-demo/”**, where **team-demo** is a project name.
+In Harbor, a [project](https://goharbor.io/docs/2.2.0/working-with-projects/create-projects/) represents a container image registry, exposed under a unique URL, For example, **"harbor.otomi.io/team-demo/"**, where **team-demo** is a project name.
 
 By creating projects you can achieve a multi-tenant container image repository for workloads in your Kubernetes cluster.
 
@@ -32,20 +32,17 @@ The following code snippet present an ID token with a groups claim:
 
 ```json
 {
- “iss”: “https://keycloak.otomi.io/realms/master“,
- “sub”: “xyz”,
- “name”: “Joe Doe”,
- “groups”: [
- “team-dev”,
- “team-demo”,
- ],
- “given_name”: “Joe”,
- “family_name”: “Doe”,
- “email”: “joe.doe@otomi.io“
+  "iss": "https://keycloak.otomi.io/realms/master",
+  "sub": "xyz",
+  "name": "Joe Doe",
+  "groups": ["team-dev", "team-demo"],
+  "given_name": "Joe",
+  "family_name": "Doe",
+  "email": "joe.doe@otomi.io"
 }
 ```
 
-There is a “Joe Doe” user that belongs to team-dev and team-demo groups, which in Harbor can be matched to predefined OIDC groups. The ID token is issued by the Keycloak (iss property) that is running in the same Kubernetes cluster. Harbor can be configured to leverage ID tokens by specifying a set of authentication parameters.
+There is a "Joe Doe" user that belongs to team-dev and team-demo groups, which in Harbor can be matched to predefined OIDC groups. The ID token is issued by the Keycloak (iss property) that is running in the same Kubernetes cluster. Harbor can be configured to leverage ID tokens by specifying a set of authentication parameters.
 
 There is an OIDC endpoint URL, which is matched against iss property from the ID token. Next, OIDC Client ID with OIDC client secret is used by Harbor to authenticate with a client at Keycloak. The group claim name is crucial for enabling Harbor OIDC group matching.
 
@@ -72,7 +69,7 @@ Harbor is composed of ten microservices:
 - Trivy
 - Notary
 
-The [Harbor Helm chart](https://github.com/goharbor/harbor-helm) provides also Nginx as a reverse server proxy service. You don’t need it, instead, you can deploy the following Istio [VirtualService](https://istio.io/latest/docs/reference/config/networking/virtual-service/):
+The [Harbor Helm chart](https://github.com/goharbor/harbor-helm) provides also Nginx as a reverse server proxy service. You don't need it, instead, you can deploy the following Istio [VirtualService](https://istio.io/latest/docs/reference/config/networking/virtual-service/):
 
 ```yaml
 apiVersion: networking.istio.io/v1beta1
@@ -85,17 +82,17 @@ spec:
  http:
    – match:
        – uri:
-           prefix: ‘/api/’
+           prefix: '/api/'
        – uri:
-           prefix: ‘/c/’
+           prefix: '/c/'
        – uri:
-           prefix: ‘/chartrepo/’
+           prefix: '/chartrepo/'
        – uri:
-           prefix: ‘/service/’
+           prefix: '/service/'
        – uri:
-           prefix: ‘/v1/’
+           prefix: '/v1/'
        – uri:
-           prefix: ‘/v2/’
+           prefix: '/v2/'
      route:
        – destination:
            host: harbor-harbor-core.harbor.svc.cluster.local
@@ -135,7 +132,7 @@ With Otomi, we strive to integrate best of breed Open-Source projects and provid
 
 Multi-tenancy is challenging and requires configuration automation to ensure scalability.
 
-Part of Otomi’s automation is to configure applications, so they are aware of each other. We do it either by using a declarative approach when that is possible, or else by interacting with their (REST) APIs directly.
+Part of Otomi's automation is to configure applications, so they are aware of each other. We do it either by using a declarative approach when that is possible, or else by interacting with their (REST) APIs directly.
 
 We have generated REST API clients based on the open API specification for Harbor and Keycloak. You are welcome to use [our factory](https://github.com/redkubes/otomi-clients)
 
@@ -149,17 +146,17 @@ Each OSS project has its own goals and milestones, thus it may be challenging to
 
 ## Harbor
 
-The container image registry, provided by Harbor, and Docker CLI do not support the OIDC protocol. Instead, it uses a username/password-based authentication. It means that whenever you perform Docker Login/push/pull commands, the HTTPS traffic from a docker client to the container registry does not carry JWT. Make sure to exclude /v1/, /v2/ and /service/ Harbor URI paths from the JWT verification. Otherwise, you won’t be able to use the registry.
+The container image registry, provided by Harbor, and Docker CLI do not support the OIDC protocol. Instead, it uses a username/password-based authentication. It means that whenever you perform Docker Login/push/pull commands, the HTTPS traffic from a docker client to the container registry does not carry JWT. Make sure to exclude /v1/, /v2/ and /service/ Harbor URI paths from the JWT verification. Otherwise, you won't be able to use the registry.
 
 Next, OIDC users may experience issues with their Docker credentials (CLI secrets) that suddenly are invalidated. The [CLI secret](https://goharbor.io/docs/1.10/administration/configure-authentication/oidc-auth/) depends on the validity of the ID token, which has nothing in common with the container registry. This hybrid security solution is something that a regular docker user does not expect and can be a source of many misunderstandings.
 
 Follow [this](https://github.com/goharbor/harbor/issues/14172) thread to get more insights.
 
-The good news is that if you are an automation freak like me, you don’t actually need CLI secrets. Instead, you can use [Harbor robot accounts](https://goharbor.io/docs/1.10/working-with-projects/project-configuration/create-robot-accounts/) that do not depend on OIDC authentication.
+The good news is that if you are an automation freak like me, you don't actually need CLI secrets. Instead, you can use [Harbor robot accounts](https://goharbor.io/docs/1.10/working-with-projects/project-configuration/create-robot-accounts/) that do not depend on OIDC authentication.
 
 ## Keycloak Or Other Identity Provider
 
-If your organization decides to migrate users to another identity provider you may experience a duplicated user error: “Conflict, the user with the same username or email has been onboarded”.
+If your organization decides to migrate users to another identity provider you may experience a duplicated user error: "Conflict, the user with the same username or email has been onboarded".
 
 It is because **sub** and/or **iss** scopes from ID token may change, so the same user trying to login to the harbor dashboard will be treated as a new one. The onboarding process starts but fails because Harbor requires each user to have a unique email address. I ended up removing existing OIDC users from Harbor and allowing them to onboard once again. Interestingly the community of Harbor users is having a broad debate about using OIDC protocol and could not agree on a final solution so far. I encourage you to take a look [here](https://github.com/goharbor/harbor/issues/14172) for a very insightful conversation about it.
 
@@ -184,18 +181,18 @@ spec:
  targetPort: 8080
 ```
 
-If the **service port name** does not follow the Istio convention, Harbor core service is not able to communicate with the Harbor registry service in Istio service mesh. Attempting to login into the Docker registry will end up with an “authentication required” error.
+If the **service port name** does not follow the Istio convention, Harbor core service is not able to communicate with the Harbor registry service in Istio service mesh. Attempting to login into the Docker registry will end up with an "authentication required" error.
 
 ## Takeaways
 
 - Harbor is a suitable solution for deploying a self-hosted container image repository in a multi-tenant Kubernetes cluster. Nevertheless, the lack of configuration automation makes it hard to maintain it in a constantly changing environment
-- Using the OIDC group’s claim can be used for granting users default role and access to Harbor project(s)
+- Using the OIDC group's claim can be used for granting users default role and access to Harbor project(s)
 - While working with Istio, do not mess up with named ports
 - Stay in touch with open-source communities for projects that you are using, as they are a true treasure trove of information
 
 I hope that this article provides you a good insight into more advanced Harbor integration in the Kubernetes cluster.
 
-Part of Otomi’s automation is to configure applications, so they are aware of each other. We do it either by using a declarative approach when that is possible, or else by interacting with their (REST) APIs directly.
+Part of Otomi's automation is to configure applications, so they are aware of each other. We do it either by using a declarative approach when that is possible, or else by interacting with their (REST) APIs directly.
 
 We have generated REST API clients based on the open API specification for Harbor and Keycloak. You are welcome to use our [factory](https://github.com/redkubes/otomi-clients) for building and publishing open API clients.
 

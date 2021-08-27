@@ -28,7 +28,7 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   organizationName: 'redkubes', // Usually your GitHub org/user name.
-  projectName: 'redkubes', // Usually your repo name.
+  projectName: 'redkubes.github.io', // Usually your repo name.
   plugins: [
     [
       '@docusaurus/plugin-client-redirects',
@@ -44,7 +44,7 @@ module.exports = {
       {
         id: 'about',
         path: 'about',
-        editUrl: 'https://github.com/redkubes/redkubes/edit/master/',
+        editUrl: 'https://github.com/redkubes/redkubes.github.io/edit/master/',
         routeBasePath: 'about',
         sidebarPath: require.resolve('./sidebar-about.js'),
         showLastUpdateAuthor: true,
@@ -56,7 +56,7 @@ module.exports = {
       {
         id: 'community',
         path: 'community',
-        editUrl: 'https://github.com/redkubes/redkubes/edit/master/',
+        editUrl: 'https://github.com/redkubes/redkubes.github.io/edit/master/',
         routeBasePath: 'community',
         sidebarPath: require.resolve('./sidebar-community.js'),
         showLastUpdateAuthor: true,
@@ -168,7 +168,7 @@ module.exports = {
           items: [
             {
               label: 'Feedback',
-              href: 'https://github.com/redkubes/redkubes/issues',
+              href: 'https://github.com/redkubes/redkubes.github.io/issues',
             },
             {
               label: 'Gitter',
@@ -211,7 +211,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebar-docs.js'),
-          editUrl: 'https://github.com/redkubes/redkubes/tree/master/',
+          editUrl: 'https://github.com/redkubes/redkubes.github.io/tree/master/',
           // versions: {
           //   current: {
           //     label: `${getNextVersionName()} (unreleased)`,

@@ -5,11 +5,7 @@ title: Install with Chart
 
 Use Helm to install Otomi
 
-:::caution Because of a major CLI refactoring (from bash to TypeScript), the Chart install is currently not working. We aim to release the new Chart install on the first of September.
-
-:::
-
-:::note ATTENTION: The new Otomi Chart install is still in PREVIEW!
+:::note ATTENTION: The new Otomi Chart install is now in PREVIEW!
 
 If you encounter problems, please create an issue [here](https://github.com/redkubes/otomi-core/issues).
 
@@ -85,7 +81,7 @@ Uninstalling optional applications using the chart is possible by toggeling them
 
 ## Monitoring the Chart install
 
-The chart deploys a Job (`<your-release-name>-`) in the default namespace. Use K9s (or any tool of your preference), to monitor the install. After the deploy job has finished, check Gitea to see if the `otomi\values` repo contains values. If not, uninstall the chart and install a second time.
+The chart deploys a Job (`<your-release-name>-`) in the default namespace. Use K9s (or any tool of your preference), to monitor the install. After the deploy job has finished, check Gitea to see if the `otomi\values` repo contains values. Note that after logging in into Gitea with OIDC, it takes a couple minutes before you can see the repo. When the values repo is available, log in into Drone to activate the repository.
 
 ## Configuration
 
@@ -101,7 +97,6 @@ The following table lists the minimal required values:
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| `tasksImage.tag` | `string` | `''` | The otomi-tasks image tag. Use latest or choose a [release](https://github.com/redkubes/otomi-tasks/releases) |
 | `cluster.domainSuffix` | `string` | `''` | The top-level domain for the cluster, for example: `my-cluster.my-domain.com` |
 | `cluster.name` | `string` | `''` | The name of the cluster |
 | `cluster.owner` | `string` | `''` | The owner/organization of the cluster |
@@ -111,7 +106,8 @@ The following table lists the minimal required values:
 | `otomi.adminPassword` | `string` | `''` | The password of the otomi-admin account |
 | `otomi.version` | `string` | `''` | The otomi-core version used |
 | `charts.external-dns.domainFilters` | `string` | `''` | The name of your hosted DNS zone, for example `my-domain.com` |
-
+| `charts.cert-manager.email` | `string` | `''` | Choose between staging or production Let's Encrypt certificates. Otomi requires production for fill functionality |
+| `charts.cert-manager.stage` | `string` | `''` | An email address |
 #### OIDC
 
 At the moment, Otomi can only use Azure AD as IDP to provide SSO. We will soon provide the option to also use KeyCloak as IDP.

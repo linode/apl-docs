@@ -17,14 +17,7 @@ If you are not logged in with the correct credentials then re-login first:
 - AWS: `aws login eks`
 - Google: `gcloud auth login`
 
-Otomi installs a complete suite of Kubernetes add-ons and applications. This requires resources. Otomi (minimal setup) requires at least:
-
-- 4 vCPU
-- 8 GiB
-- 100 GiB storage
-- Calico network policies
-
-We recommend the following setup:
+Otomi installs a complete suite of Kubernetes add-ons and applications. We recommend the following minimal setup:
 
 | Provider         | Instance Type worker nodes | Min Node count | Auto Scaling enabled |
 | ---------------- | -------------------------- | -------------- | -------------------- |
@@ -86,8 +79,17 @@ Note that the group type should be set to 'security groups'.
 
 At the 'Authentication' tab you should be able to set the following callback URL's and enable that both "Access tokens" and "ID tokens" are issued and public client flows are allowed:
 
-- `https://keycloak.<dns-zone-name>/realms/master/broker/<idp alias>/endpoint`
+- `https://keycloak.<dns-zone-name>/realms/master/broker/otomi-idp/endpoint`
 - `https://keycloak.<dns-zone-name>`
+
+`otomi-idp` is the default KeyCloak alias. To use another alias, add the following to the chart values:
+
+```yaml
+charts:
+  keycloak:
+    idp:
+       alias: <your-alias>
+```
 
 ## 4. Kubectl running
 

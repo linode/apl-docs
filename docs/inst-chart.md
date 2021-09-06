@@ -104,7 +104,7 @@ The following table lists the minimal required values:
 | `dns.provider` | `string` | `''` | The cloud provider where the DNS service is used. Use `aws`, `azure` or `google`. See [providers](#providers) |
 | `oidc` | `string` | `''` | The cloud provider where the DNS service is used. Use `aws`, `azure` or `google`. See [providers](#providers) |
 | `otomi.adminPassword` | `string` | `''` | The password of the otomi-admin account |
-| `otomi.version` | `string` | `''` | The otomi-core version used |
+| `otomi.version` | `string` | `''` | The otomi-core version used. Use the latest release `v0.14.6` |
 | `charts.external-dns.domainFilters` | `string` | `''` | The name of your hosted DNS zone, for example `my-domain.com` |
 | `charts.cert-manager.email` | `string` | `''` | Choose between staging or production Let's Encrypt certificates. Otomi requires production for fill functionality |
 | `charts.cert-manager.stage` | `string` | `''` | An email address |

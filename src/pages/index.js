@@ -24,9 +24,10 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')}/>
-              <span className={styles.heroProjectKeywords}></span> The complete{' '}
-              <span className={styles.heroProjectKeywords}>DevOps</span> {''}
-              <span className={styles.heroProjectKeywords}></span> experience for {' '}
+              <span className={styles.heroProjectKeywords}></span> A{' '}
+              <span className={styles.heroProjectKeywords}>cloud-agnostic</span> {''}
+              <span className={styles.heroProjectKeywords}></span> platform{' '}
+              <span className={styles.heroProjectKeywords}></span> on top of{' '}
               <span className={styles.heroProjectKeywords}>Kubernetes</span> {''}
             </h1>
             <div className={styles.indexCtas}>

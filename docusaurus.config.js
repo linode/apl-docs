@@ -22,7 +22,7 @@ module.exports = {
   url: 'https://otomi.io',
   baseUrl: '/',
   customFields: {
-    description: 'Otomi, the first and only Kubernetes-based Operating System.',
+    description: 'A cloud-agnostic platform to run on top of Kubernetes',
   },
   favicon: 'img/otomi.ico',
   onBrokenLinks: 'throw',

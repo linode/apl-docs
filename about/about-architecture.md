@@ -135,7 +135,8 @@ Otomi contains four types of applications:
 
 - Core applications; applications that operate on the platform-level
 - Shared applications; applications that are shared between teams. Shared applications can be user- and role-aware or not (user is anonymous)
-- Team applications; applications with a dedicated instance per team Optional applications; applications that can be turned on or off
+- Team applications; applications with a dedicated instance per team
+- Optional applications; applications that can be turned on or off
 
 The following table shows all integrated applications:
 

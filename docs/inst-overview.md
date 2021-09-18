@@ -6,8 +6,6 @@ sidebar_label: Overview
 
 We strive to make installation of Otomi as easy and painless as possible. The whole procedure involves many moving parts and input configuration. In order to guarantee exact outcomes we strongly advise to follow the steps described.
 
-Start with the prerequisites and then choose you're favorite installer:
-
-1. [Prerequisites](prerequisites).
-2. [Installing Otomi with Helm Chart](chart).
-3. [COMING SOON] Installing Otomi with CLI.
+1. Learn more [about](/about) Otomi
+2. Read the [Prerequisites](prerequisites)
+3. [Install Otomi with Helm Chart](chart) or [COMING SOON] installing Otomi using the CLI

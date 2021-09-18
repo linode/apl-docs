@@ -24,11 +24,10 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')}/>
-              <span className={styles.heroProjectKeywords}></span> A{' '}
-              <span className={styles.heroProjectKeywords}>cloud-agnostic</span> {''}
-              <span className={styles.heroProjectKeywords}></span> platform{' '}
-              <span className={styles.heroProjectKeywords}></span> on top of{' '}
-              <span className={styles.heroProjectKeywords}>Kubernetes</span> {''}
+              <span className={styles.heroProjectKeywords}></span> An instant{' '}
+              <span className={styles.heroProjectKeywords}>Kubernetes-based</span> {''}
+              <span className={styles.heroProjectKeywords}></span> platform for the {' '}
+              <span className={styles.heroProjectKeywords}>cloud</span> {''}
             </h1>
             <div className={styles.indexCtas}>
               <Link className={styles.indexCtasGetStartedButton} to={useBaseUrl('docs/installation/')}>
@@ -48,7 +47,8 @@ function Home() {
         </div>
         <div id='appsuite' className={clsx(styles.announcement, styles.announcementDark)}>
           <div className={styles.announcementInner}>
-            Check out the list of <span className={styles.heroProjectKeywords}>integrated and ready to use apps</span>
+            Check out the list of <span className={styles.heroProjectKeywords}>pre-configured</span> and {' '}
+            <span className={styles.heroProjectKeywords}>ready to use</span> apps
           </div>
         </div>
         <div className={clsx(styles.announcement)}>

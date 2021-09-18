@@ -167,16 +167,16 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Feedback',
-              href: 'https://github.com/redkubes/redkubes.github.io/issues',
+              label: 'Slack',
+              href: 'https://join.slack.com/t/otomi/shared_invite/zt-vourf7og-de4CmvthgfJlsuDQHsK8yQ',
             },
             {
               label: 'Gitter',
               href: 'https://gitter.im/redkubes/community',
             },
             {
-              label: 'Get Involved',
-              to: '/community/get-involved',
+              label: 'Community page',
+              to: 'https://redkubes.com/community/',
             },
           ],
         },

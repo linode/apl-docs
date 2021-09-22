@@ -20,7 +20,7 @@ module.exports = [
     to: '/docs/console/teams',
   },
   {
-    from: ['/docs/configuring-secrets'],
+    from: ['/docs/console/configuring-secrets'],
     to: '/docs/console/secrets',
   },
 ]

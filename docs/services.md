@@ -26,7 +26,7 @@ Exposure controls wether internet exposure should be enabled or not. Three optio
 
 ### Cluster
 
-If backend is a Knative service, this will expose a Knative service on a local Istio gateway, so other services can access it at their "$svc.$namespace" host name.
+If backend is a Knative service, this will expose a Knative service on a local Istio gateway, so other services can access it at their `$svc.$namespace` host name.
 
 :::note Notes
 

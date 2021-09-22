@@ -121,7 +121,7 @@ module.exports = {
         //  position: 'left',
         //},
         {
-          to: 'docs/faq',
+          to: 'faq',
           label: 'FAQ',
           position: 'left',
         },

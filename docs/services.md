@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/services
+slug: console/services
 title: Services
 ---
 

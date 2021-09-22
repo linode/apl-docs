@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/teams
+slug: console/teams
 title: Teams
 ---
 

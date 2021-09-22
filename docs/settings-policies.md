@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/settings/policies
+slug: console/settings/policies
 title: Policies
 ---
 

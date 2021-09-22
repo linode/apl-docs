@@ -159,7 +159,7 @@ module.exports = {
             },
             {
               label: 'Using Otomi Console',
-              href: '/docs/otomi-console/',
+              href: '/docs/console/',
             },
           ],
         },

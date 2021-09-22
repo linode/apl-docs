@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/deploy-changes
+slug: console/deploy-changes
 title: Deploy changes
 ---
 

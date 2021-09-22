@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/settings/customer
+slug: console/settings/customer
 title: Customer
 ---
 

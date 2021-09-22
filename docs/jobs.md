@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/jobs
+slug: console/jobs
 title: Jobs
 ---
 

@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/settings/kms
+slug: console/settings/kms
 title: KMS
 ---
 

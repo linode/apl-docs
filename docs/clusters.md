@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/clusters
+slug: console/clusters
 title: Clusters
 ---
 

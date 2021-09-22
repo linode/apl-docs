@@ -46,7 +46,7 @@ The chart deploys a Job (`<your-release-name>-`) in the default namespace. Use K
 
 ### Next steps
 
-When Otomi is installed, first create a [team](/docs/otomi-console/teams).
+When Otomi is installed, first create a [team](/docs/console/teams).
 
 ## Installing from source
 
@@ -108,6 +108,7 @@ The following table lists the minimal required values:
 | `charts.external-dns.domainFilters` | `string` | `''` | The name of your hosted DNS zone, for example `my-domain.com` |
 | `charts.cert-manager.email` | `string` | `''` | Choose between staging or production Let's Encrypt certificates. Otomi requires production for fill functionality |
 | `charts.cert-manager.stage` | `string` | `''` | An email address |
+
 #### OIDC
 
 At the moment, Otomi can only use Azure AD as IDP to provide SSO. We will soon provide the option to also use KeyCloak as IDP.

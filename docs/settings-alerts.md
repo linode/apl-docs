@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/settings/alerts
+slug: console/settings/alerts
 title: Alerts
 ---
 

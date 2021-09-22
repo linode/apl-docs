@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/settings/smtp
+slug: console/settings/smtp
 title: SMTP
 ---
 

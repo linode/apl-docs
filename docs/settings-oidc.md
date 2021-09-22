@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/settings/oidc
+slug: console/settings/oidc
 title: OIDC
 ---
 

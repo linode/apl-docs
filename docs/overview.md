@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/
+slug: console/
 title: Overview
 sidebar_label: Overview
 ---

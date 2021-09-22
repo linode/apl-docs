@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/settings/home
+slug: console/settings/home
 title: Home
 ---
 

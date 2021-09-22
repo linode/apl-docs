@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/platform-apps
+slug: console/platform-apps
 title: Platform Apps
 ---
 

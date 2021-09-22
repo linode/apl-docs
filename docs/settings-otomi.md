@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/settings/otomi
+slug: console/settings/otomi
 title: Otomi
 ---
 

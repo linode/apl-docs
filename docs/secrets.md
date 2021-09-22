@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/secrets
+slug: console/secrets
 title: Secrets
 ---
 

@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/settings/dns
+slug: console/settings/dns
 title: DNS
 ---
 

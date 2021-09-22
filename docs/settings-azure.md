@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/settings/azure
+slug: console/settings/azure
 title: Azure
 ---
 

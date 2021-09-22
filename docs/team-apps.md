@@ -1,5 +1,5 @@
 ---
-slug: otomi-console/team-apps
+slug: console/team-apps
 title: Team Apps
 ---
 

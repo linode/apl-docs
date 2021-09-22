@@ -33,8 +33,8 @@ kubectl create secret docker-registry --dry-run=client regcred --docker-email=$e
 
 To create a TLS secret, the fields should correspond with the properties as named in the Vault secret registered with the same name. The "ca" field is optional and can be used to provide the certificate authority (for mTLS).
 
-| Setting | Description                                    |
-| ------- | ---------------------------------------------- |
-| crt     | The PEM encoded public key certificate content |
-| key     | The private key certificate content            |
-| ca      | The CA certificate content (optional)          |
+| Setting | Description                                                                   | Default |
+| ------- | ----------------------------------------------------------------------------- | ------- |
+| crt     | The property name pointing to the PEM encoded public key certificate in Vault | tls.crt |
+| key     | The property name pointing to the private key certificate content in Vault    | tls.key |
+| ca      | The property name pointing to the CA certificate content in Vault (optional)  | ca.crt  |

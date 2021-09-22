@@ -1,14 +1,8 @@
 ---
 slug: cli/
-title: Working with Otomi CLI
+title: Working with the Otomi CLI
 sidebar_label: Overview
 ---
-
-:::note ATTENTION: The new Otomi CLI is still in PREVIEW!
-
-A new install path will soon be made available. If you encounter problems, please create an issue [here](https://github.com/redkubes/otomi-core/issues).
-
-:::
 
 ## Prerequisites
 

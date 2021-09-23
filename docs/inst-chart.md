@@ -11,11 +11,10 @@ If you encounter problems, please create an issue [here](https://github.com/redk
 
 :::
 
-## Prerequisites
+## Before you begin
 
-- See all the prerequisites [here](/docs/installation/prerequisites)
-- [Helm 3.0](https://helm.sh/docs/intro/install/)
-- A values.yaml. See [configuration](#configuration) below for more details.
+- Verify if you have met the [prerequisites](/docs/installation/prerequisites)
+- A valid `values.yaml` that contains See [configuration](#configuration) below for more details.
 
 ## Installing via Helm repository
 
@@ -42,7 +41,11 @@ See [helm install](https://helm.sh/docs/helm/helm_install/) for command document
 
 ### Monitoring the Chart install
 
-The chart deploys a Job (`<your-release-name>-`) in the default namespace. Use K9s (or any tool of your preference), to monitor the install. After the deploy job has finished, check Gitea to see if the `otomi\values` repo contains values. If not, uninstall the chart and install a second time.
+The chart deploys a Job (`<your-release-name>`) in the `default` namespace. Monitor the chart install using [K9s](https://k9scli.io/) or any other tool of your choice.
+
+<!---
+check Gitea to see if the `otomi\values` repo contains values. If not, uninstall the chart and install a second time.
+-->
 
 ### Next steps
 
@@ -81,7 +84,7 @@ Uninstalling optional applications using the chart is possible by toggeling them
 
 ## Monitoring the Chart install
 
-The chart deploys a Job (`<your-release-name>-`) in the default namespace. Use K9s (or any tool of your preference), to monitor the install. After the deploy job has finished, check Gitea to see if the `otomi\values` repo contains values. Note that after logging in into Gitea with OIDC, it takes a couple minutes before you can see the repo. When the values repo is available, log in into Drone to activate the repository.
+The chart deploys a Job (`<your-release-name>`) in the default namespace. Use K9s (or any tool of your preference), to monitor the install. After the deploy job has finished, check Gitea to see if the `otomi\values` repo contains values. Note that after logging in into Gitea with OIDC, it takes a couple minutes before you can see the repo. When the values repo is available, log in into Drone to activate the repository.
 
 ## Configuration
 

@@ -1,4 +1,4 @@
 ---
 slug: installation/aws/
-title: Install on Azure
+title: Install on AWS
 ---

@@ -1,6 +1,6 @@
 ---
 slug: /
-title: What is Otomi
+title: What is Otomi?
 sidebar_label: Introduction
 ---
 

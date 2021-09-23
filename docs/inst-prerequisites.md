@@ -88,17 +88,21 @@ At the 'Authentication' tab you should be able to set the following callback URL
 charts:
   keycloak:
     idp:
-       alias: <your-alias>
+      alias: <your-alias>
 ```
 
-## 4. Kubectl running
+## 4. Kubectl
 
-To be able to target different kube contexts, kubectl needs to be installed.
+To be able to target different kube contexts, [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) needs to be installed.
 
-## 5. Docker running
+## 5. Docker
 
-Otomi runs everything from containers, so please start docker if you haven't already.
+Otomi is a containerized platform, so [docker](https://www.docker.com/) must be installed and running.
 
 ## 6. KMS credentials to manage keys for encryption (optional)
 
 If you would like the secrets in the values repo to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption by Otomi. Please read up on how to work with sops.
+
+## 7. Helm
+
+[Helm 3.0](https://helm.sh/docs/intro/install/) is necessary for an easy installation of the otomi.

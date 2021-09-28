@@ -3,7 +3,7 @@ slug: console/settings/oidc
 title: OIDC
 ---
 
-The KMS settings section offers configuration options to connect with an external Identity Provider (Bring Your Own IDP). This allows to map IDP group names to the following Otomi roles:
+The OIDC settings section offers configuration options to connect with an external Identity Provider (Bring Your Own IDP). This allows to map IDP group names to the following Otomi roles:
 
 - Otomi admins (`adminGroupID`)
 - Team admins (`teamAdminGroupID`)

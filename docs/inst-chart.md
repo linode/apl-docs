@@ -14,13 +14,15 @@ If you encounter problems, please create an issue [here](https://github.com/redk
 ## Before you begin
 
 - Verify if you have met the [prerequisites](/docs/installation/prerequisites)
-- A valid `values.yaml` that contains See [configuration](#configuration) below for more details.
+- A valid [`values.yaml`](/docs/installation/values) file that contains the minimum values you need to install otomi on a K8s cluster
 
-## Installing via Helm repository
+**NOTE:** The `values.yaml` file provided above is a default template. In the [configuration](#chart-configuration) section below, one can find all the parameters that can be used to configure the _otomi_ chart.
 
-### Adding otomi helm repository
+---
 
-First add the Otomi Helm repository:
+## Installing with Helm chart
+
+#### Add the Otomi Helm repository
 
 ```bash
 helm repo add otomi https://otomi.io/otomi-core
@@ -29,19 +31,28 @@ helm repo update
 
 See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
-### Installing the Chart
+#### Installing the Chart
 
-Now install the chart with the name `my-otomi-release` (a custom name that you choose) and with the prepared `values.yaml` file.
+Now install the chart with the name `<your-release-name>` (a custom name that you choose) along with the configured `values.yaml` file.
 
 ```bash
-helm install -f /path/to/values.yaml my-otomi-release otomi/otomi
+helm install -f </path/to/values.yaml> <your-release-name> otomi/otomi
 ```
 
 See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation.
 
-### Monitoring the Chart install
+#### Monitoring the Chart install
 
-The chart deploys a Job (`<your-release-name>`) in the `default` namespace. Monitor the chart install using [K9s](https://k9scli.io/) or any other tool of your choice.
+The chart deploys a Job (`<your-release-name>`) in the `default` namespace.
+
+```bash
+# Monitor the chart install using `kubectl`
+kubectl get job <your-release-name> -w
+```
+
+Once the chart is installed, you are ready to dive in to the console.
+
+**Pro Tip:** We recommend [K9s](https://k9scli.io/) for cluster interactions.
 
 <!---
 check Gitea to see if the `otomi\values` repo contains values. If not, uninstall the chart and install a second time.
@@ -49,13 +60,13 @@ check Gitea to see if the `otomi\values` repo contains values. If not, uninstall
 
 ### Next steps
 
-When Otomi is installed, first create a [team](/docs/console/teams).
+Once _Otomi_ is installed, visit [Post Installation](/docs/postinstallation/) page where we provide a step-by-step guide to using Otomi.
 
-## Installing from source
+<!-- ## Installing from source
 
-As an alternative, you can also clone the otomi-core source code from the [Github](https://github.com/redkubes/otomi-core) and install otomi using the chart source code.
+As an alternative, you can also clone the otomi-core source code from the [Github](https://github.com/redkubes/otomi-core) and install otomi using the chart source code. -->
 
-### Download source
+<!-- ### Download source
 
 ```bash
 git clone https://github.com/redkubes/otomi-core.git
@@ -70,8 +81,8 @@ Use the following command to install the chart with the name `my-otomi-release` 
 
 ```bash
 helm install -f /path/to/values.yaml my-otomi-release chart/otomi
-```
-
+``` -->
+<!--
 ## Uninstalling the Chart
 
 ```bash
@@ -84,11 +95,13 @@ Uninstalling optional applications using the chart is possible by toggeling them
 
 ## Monitoring the Chart install
 
-The chart deploys a Job (`<your-release-name>`) in the default namespace. Use K9s (or any tool of your preference), to monitor the install. After the deploy job has finished, check Gitea to see if the `otomi\values` repo contains values. Note that after logging in into Gitea with OIDC, it takes a couple minutes before you can see the repo. When the values repo is available, log in into Drone to activate the repository.
+The chart deploys a Job (`<your-release-name>`) in the default namespace. Use K9s (or any tool of your preference), to monitor the install. After the deploy job has finished, check Gitea to see if the `otomi\values` repo contains values. Note that after logging in into Gitea with OIDC, it takes a couple minutes before you can see the repo. When the values repo is available, log in into Drone to activate the repository. -->
 
-## Configuration
+### Chart Configuration
 
-See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). To see all configurable options with detailed comments, visit the chart's [values.yaml](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml), or run these configuration commands:
+Visit [customizing the chart](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing) page for more details.
+
+To view all configurable options with detailed comments, visit the chart's [values.yaml](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml), or run these configuration commands:
 
 ```bash
 helm show values otomi/otomi
@@ -230,7 +243,7 @@ Configure these parameters based on your cloud of choice.
 | `azure.monitor.tenantId` | `string` | An Azure tenant id. | `nil` |
 | `cloud.skipStorageClasses.[]` | `string` |  | `nil` |
 | `charts.cert-manager.email` | `string` |  | `nil` |
-| `charts.cert-manager.stage` | `string` | The Let's Encrypt environment that is used for issuing certificates. The 'production' environment issues trusted certificates but has narrow rate limits, whereas the 'staging' environment issues untrusted certificates but provides broader rate limits. Read more about rate limits: https://letsencrypt.org/docs/rate-limits/. | `staging` |
+| `charts.cert-manager.stage` | `string` | The Let's Encrypt environment that is used for issuing certificates. The 'production' environment issues trusted certificates but has narrow rate limits, whereas the 'staging' environment issues untrusted certificates but provides broader rate limits. Read more about rate limits: <https://letsencrypt.org/docs/rate-limits/>. | `staging` |
 | `charts.cluster-overprovisioner.cpu` | `string` | Amount of cores, or slice of cpu in millis. | `nil` |
 | `charts.cluster-overprovisioner.enabled` | `boolean` |  | `nil` |
 | `charts.cluster-overprovisioner.memory` | `string` | Amount of memory. Valid units are E\|P\|T\|G\|M\|K\|Ei\|Pi\|Ti\|Gi\|Mi\|Ki. | `nil` |
@@ -445,7 +458,7 @@ Configure these parameters based on your cloud of choice.
 | `charts.loki.adminPassword` | `string` |  | `nil` |
 | `charts.loki.persistence.size` | `string` |  | `20Gi` |
 | `charts.loki.retention.duration` | `string` |  | `24h` |
-| `charts.loki.retention.period` | `string` | Should be a multiple of 24h. See https://grafana.com/docs/loki/latest/operations/storage/boltdb-shipper/. | `24h` |
+| `charts.loki.retention.period` | `string` | Should be a multiple of 24h. See <https://grafana.com/docs/loki/latest/operations/storage/boltdb-shipper/>. | `24h` |
 | `charts.loki.azure.account_key` | `string` |  | `nil` |
 | `charts.loki.azure.account_name` | `string` |  | `nil` |
 | `charts.loki.azure.container_name` | `string` |  | `nil` |

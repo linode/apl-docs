@@ -18,6 +18,12 @@ If you encounter problems, please create an issue [here](https://github.com/redk
 
 **NOTE:** The `values.yaml` file provided above is a default template. In the [configuration](#chart-configuration) section below, one can find all the parameters that can be used to configure the _otomi_ chart.
 
+If your K8s cluster(s) are running on one of these cloud providers(Azure, AWS, GCP), you can use the sample values.yaml from the list below,
+
+- [azure-values.yaml](/docs/installation/azure)
+- [aws-values.yaml](/docs/installation/aws)
+- [gcp-values.yaml](/docs/installation/google)
+
 ---
 
 ## Installing with Helm chart

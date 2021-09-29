@@ -12,7 +12,6 @@ module.exports = {
         Settings: [
           'settings-alerts',
           'settings-azure',
-          'settings-customer',
           'settings-dns',
           'settings-home',
           'settings-kms',

@@ -16,7 +16,7 @@ It is possible to deviate from the baseline, provided there is a substantiated r
 
 ### Enable Gatekeeper
 
-If not enabled during install, you can enable Gatekeeper Operator by editting the `values/env/charts/gatekeeper-operator.yaml` file and set enabled to true:
+If not enabled during install, you can enable Gatekeeper Operator by editing the `values/env/charts/gatekeeper-operator.yaml` file and set enabled to true:
 
 ```yaml
 charts:

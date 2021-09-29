@@ -38,7 +38,7 @@ After you have successfully logged in, you will arrive at the **Otomi Dashboard*
 
 ### Gitea and Drone Activation
 
-Gitea and Drone are oa integral part of how otomi cluster configurations are stored and updated. We need to first activate and enable the _Gitea-Drone_ integration.
+[Gitea](https://gitea.io/en-us/) and [Drone](https://www.drone.io/) are an integral part of how otomi cluster configurations are stored and updated. Now let's go ahead and activate the _Gitea-Drone_ pipeline.
 
 ![console-apps](img/console-apps.png)
 

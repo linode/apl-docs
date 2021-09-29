@@ -82,7 +82,7 @@ To deploy everything in the stack:
 # target your cluster
 export CLOUD=google && CLUSTER=demo
 # and deploy
-otomi deploy
+otomi apply
 ```
 
 NOTICE: when on GKE this may sometimes result in an access token refresh error as the full path to the `gcloud` binary is referenced from GKE's token refresh mechanism in `.kube/config`, which is mounted from the host, but inaccessible from within the container. (See bug report: https://issuetracker.google.com/issues/171493249). Retrying the command usuall works, so do that to work around it for now.

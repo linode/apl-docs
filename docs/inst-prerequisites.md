@@ -3,92 +3,74 @@ slug: installation/prerequisites
 title: Prerequisites
 ---
 
-## Working Kubernetes(K8s) Clusters
+## Client binaries
 
-_Otomi_ requires
+Please make sure the following client binaries exist:
 
-- A working kubernetes cluster to deploy on
-- `K8s versions`: `1.17` up to `1.20` are supported
-- Access to the clusters through `kubectl`
-- Cloud credentials that manage a `DNS Zone`
+- [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to access the cluster.
+- [docker](https://www.docker.com/) must be installed and running, as Otomi runs in a container.
+- [helm](https://helm.sh/docs/intro/install/) (optional) for helm chart installation of Otomi.
+- [otomi](/docs/cli/) (optional) for helm chart installation of Otomi.
 
-Find below the specific configurations for most common cloud-providers(Azure, GCP, AWS)
+## Cloud services
 
-### Azure
+Finally make sure to have configured the following cloud services:
 
-- **Recommended cluster configuration**
+### Kubernetes cluster with a DNS zone
 
-| Provider    | Instance Type worker nodes | Min Node count | Auto Scaling enabled |
-| ----------- | -------------------------- | -------------- | -------------------- |
-| Azure (AKS) | Standard_DS3_v2            | 3              | Yes                  |
+Kubernetes versions `1.18` up to `1.20` are supported.
 
-- **Access to the cluster**
+Find below the specific configurations for most common cloud-providers: Aws, Azure, Google.
 
-```bash
-az aks get-credentials --resource-group $RG --name $CLUSTER_NAME --admin
-```
+#### AWS
 
-- **DNS Zone**
-  - [Create a DNS zone](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md#creating-an-azure-dns-zone)
-  - [Set permissions to modify the DNS zone](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md#permissions-to-modify-dns-zone)
+Setting up a cluster on AWS' EKS is documented here: https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html
 
----
-
-### GCP
-
-- **Recommended cluster configuration**
-
-| Provider         | Instance Type worker nodes | Min Node count | Auto Scaling enabled |
-| ---------------- | -------------------------- | -------------- | -------------------- |
-| GCP (GKE / kOPS) | n1-standard-4              | 3              | Yes                  |
-
-- **Access to the cluster**
-
-```bash
-gcloud container clusters get-credentials $CLUSTER_NAME --region europe-west4 \
---project xxx
-```
-
-- **DNS Zone**
-
-```bash
-# Create a DNS zone which will contain the managed DNS records
-$ gcloud dns managed-zones create "otomi-dns-test-yourdomain-com" \
-    --dns-name "otomi-dns-test.yourdomain.com." \
-    --description "Automatically managed zone by otomi"
-```
-
----
-
-### AWS
-
-- **Recommended cluster configuration**
-
-| Provider         | Instance Type worker nodes | Min Node count | Auto Scaling enabled |
-| ---------------- | -------------------------- | -------------- | -------------------- |
-| AWS (EKS / kOPS) | c5.xlarge                  | 3              | Yes                  |
-
-- **Access to the cluster**
+Get access to the cluster with kubectl:
 
 ```bash
 aws eks update-kubeconfig --name $CLUSTER_NAME
 ```
 
-- **DNS Zone**
-  - [Create an IAM policy](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md#iam-policy)
-  - [Create an IAM role](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md#create-iam-role)
+Setting up external DNS: https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md
 
----
+#### Azure (AKS)
 
-## IDP
+Setting up an azure cluster through the portal is documented here: https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal
 
-:::note ATTENTION: The new Otomi Chart install now only supports Azure AD as IDP!
+Get access to the cluster with kubectl:
 
-We will soon come with an update to also support KeyCloak as IDP.
+```bash
+az aks get-credentials --resource-group <resource-group> --name <cluster-name> --admin
+```
+
+Setting up external DNS: https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md
+
+#### Google (GKE)
+
+Setting up an azure cluster through the portal is documented here: https://cloud.google.com/kubernetes-engine/docs/how-to
+
+Get access to the cluster with kubectl:
+
+```bash
+gcloud container clusters get-credentials <cluster-name> --region <region> --project <project>
+```
+
+Setting up external DNS: https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/gke.md
+
+### Identity Provider (IDP)
+
+:::note ATTENTION: The new Otomi Chart install now only supports an external IDP!
+
+We will soon come with an update to also support the provided KeyCloak as IDP.
 
 :::
 
-The authentication of user brokered Keycloak identities through Azure AD requires a service principal with some Azure AD API permissions. An app registration needs to be created with the following API permissions:
+Below you can find detailed instructions on how to set up Azure AD as an external IDP. We will soon add more instructions for other IDPs, such as Amazon Incognito, Google Identity, and Okta.
+
+#### Azure AD
+
+The authentication of brokered identities through Azure AD requires a service principal with certain Azure AD API permissions. An app registration needs to be created with the following API permissions:
 
 | API / Permission name       | Type      | Description                   |
 | --------------------------- | --------- | ----------------------------- |
@@ -108,12 +90,14 @@ And the following token configurations:
 
 Note that the group type should be set to 'security groups'.
 
-At the 'Authentication' tab you should be able to set the following callback URL's and enable that both "Access tokens" and "ID tokens" are issued and public client flows are allowed:
+At the 'Authentication' tab you should be able to set the following callback URL§s and enable that both "Access tokens" and "ID tokens" are issued and public client flows are allowed:
 
 - `https://keycloak.<dns-zone-name>/realms/master/broker/otomi-idp/endpoint`
 - `https://keycloak.<dns-zone-name>`
 
-`otomi-idp` is the default KeyCloak alias. To use another alias, add the following to the chart values:
+:::note
+
+`otomi-idp` is the default KeyCloak alias (shown as login title). To use another alias, add the following to the chart values:
 
 ```yaml
 charts:
@@ -122,20 +106,16 @@ charts:
       alias: <your-alias>
 ```
 
-## Kubectl
+:::
 
-[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) needs to be installed, in order to target different kube contexts
+### KMS credentials to manage keys for encryption (optional)
 
-## Docker
+If you would like the secrets in the `values` repository to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption.
 
-[Docker](https://www.docker.com/) must be installed and running, as otomi is a containerized platform.
+Find quickstart documentation below on how to setup KMS access per supported provider:
 
-## Helm
+- [AWS KMS](https://aws.amazon.com/kms/getting-started/)
+- [Azure Vault](https://azure.microsoft.com/en-us/services/key-vault/#getting-started)
+- [Google KMS](https://cloud.google.com/kms/docs/quickstart)
 
-[Helm 3.0](https://helm.sh/docs/intro/install/) is necessary for an easy installation of the otomi.
-
-## KMS credentials to manage keys for encryption (optional)
-
-<!-- Add this point in the doc, no one knows what values repo is -->
-
-If you would like the secrets in the `values` repository to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption by Otomi. Please read up on how to work with sops.
+Follow the instructions of the provider of your choosing and jot down the credentials obtained for the next steps.

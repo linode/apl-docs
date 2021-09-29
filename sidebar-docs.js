@@ -1,11 +1,6 @@
 module.exports = {
   mainSidebar: {
-    'Installing Otomi': [
-      'inst-overview',
-      'inst-prerequisites',
-      { 'Install with Chart': ['inst-chart', 'inst-azure', 'inst-aws', 'inst-gcp', 'inst-all-values'] },
-      'inst-cli', 'post-install',
-    ],
+    'Installing Otomi': ['inst-overview', 'inst-prerequisites', 'inst-chart', 'inst-cli', 'post-install'],
     'Otomi Console': [
       'overview',
       'teams',

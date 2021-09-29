@@ -1,6 +1,6 @@
 ---
 slug: /
-title: What is Otomi?
+title: About Otomi
 sidebar_label: Introduction
 ---
 
@@ -31,12 +31,12 @@ Otomi offers an Operating System like experience, using Kubernetes as its kernel
 <!-->Perhaps a reference to our demo or whitepaper for more explanation-->
 <!-- This documentation is intended to provide technical, operational and background information for Otomi. -->
 
-<!-- Check out the following sections to understand the reasoning and decisions made involving the development of Otomi:
+Check out the following sections to understand the reasoning and decisions made involving the development of Otomi:
 
 - [Vision](/about/vision)
 - [Development journey](/about/journey)
 - [Architecture](/about/architecture)
-- [Roadmap](/about/roadmap) -->
+- [Roadmap](/about/roadmap)
 
 <!---
 For developer information please visit the repositories involved:

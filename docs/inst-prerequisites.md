@@ -8,7 +8,7 @@ title: Prerequisites
 _Otomi_ requires
 
 - A working kubernetes cluster to deploy on
-- `K8s versions`: `1.17` up to `1.19` is supported
+- `K8s versions`: `1.17` up to `1.20` are supported
 - Access to the clusters through `kubectl`
 - Cloud credentials that manage a `DNS Zone`
 
@@ -26,8 +26,6 @@ Find below the specific configurations for most common cloud-providers(Azure, GC
 
 ```bash
 az aks get-credentials --resource-group $RG --name $CLUSTER_NAME --admin
-# login
-az login
 ```
 
 - **DNS Zone**
@@ -49,8 +47,6 @@ az login
 ```bash
 gcloud container clusters get-credentials $CLUSTER_NAME --region europe-west4 \
 --project xxx
-# login
-gcloud auth login
 ```
 
 - **DNS Zone**
@@ -76,8 +72,6 @@ $ gcloud dns managed-zones create "otomi-dns-test-yourdomain-com" \
 
 ```bash
 aws eks update-kubeconfig --name $CLUSTER_NAME
-# login
-aws login eks
 ```
 
 - **DNS Zone**

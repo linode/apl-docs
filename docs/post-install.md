@@ -1,62 +1,39 @@
 ---
-slug: postinstallation/
-title: Overview
+slug: installation/post-install-actions/
+title: Post install actions
 ---
 
-This guide provides the next steps required to start using _Otomi_
+After installing Otomi, a couple of post install configuration actions are required. Follow these instructions:
 
-## Otomi Console: First Steps
+### Sign in to the Otomi Console
 
-At this point, you should have _otomi_ successfully installed on the cluster.
+Open the url in the browser of your choice `https://otomi.<domainSuffix>`. The `domainSuffix` can be found in the `values.yaml` that was provided during installation.
 
-**Time to enter the Otomi world!**
-
-### For Otomi Admins
-
-- Open the url in the browser of your choice `https://otomi.<domainSuffix>` as `Admin`
-
-  - the `domainSuffix` can be found in the `values.yaml` that was used in the installation of the otomi chart
-
-  ```yaml
-  # This is an example
-  cluster:
-  owner: redkubes
-  apiServer: ''
-  k8sVersion: '1.19'
-  name: otomise
-  provider: aws
-  domainSuffix: otomise.eks.otomi.cloud
-  ```
-
-The login url in this case would be **`https://otomi.otomise.eks.otomi.cloud`**
+If Otomi is configured with OIDC (using Azure AD as an IDP), click on the right button (redkubes-azure in the example below). If you did not configure OIDC, log in with the default `otomi-admin` account and the password provided during installation.
 
 ![console-login](img/console-login.png)
 
-After you have successfully logged in, you will arrive at the **Otomi Dashboard.** To get an overview of the cosole and it's layout, checkout [Otomi Console](/docs/console)
+After you have successfully logged in, you will see the **Otomi Dashboard.**. To learn more about using Otomi Console, checkout [Otomi Console](/docs/console)
 
 ![console-lading-page](img/console-landing-page.png)
 
-### Gitea and Drone Activation
-
-[Gitea](https://gitea.io/en-us/) and [Drone](https://www.drone.io/) are an integral part of how otomi cluster configurations are stored and updated. Now let's go ahead and activate the _Gitea-Drone_ pipeline.
-
 ![console-apps](img/console-apps.png)
 
-Click on the **Gitea** app on the console and it should redirect you to gitea repo as shown below,
+### Activate Drone
+
+[Gitea](https://gitea.io/en-us/) and [Drone](https://www.drone.io/) are an integral part of how Otomi cluster configurations are stored and updated. Click on the **Gitea** app (under Platform/Otomi Apps) in the console. It will open a new browser tab and show the sign in page of Gitea. Sign in into with the default `otomi-admin` account.
 
 ![gitea-login](img/gitea-login.png)
 
-Log in with your _credentials_,
+After sign in, it can take a couple of minutes before the `otomi/values` repository becomes visible.
 
 ![gitea-values](img/gitea-values.png)
 
-The **_otomi/values_** repository holds the otomi cluster configuration and is updated whenever new changes occur through the console.
-
-Now head back to the console to activate Drone.
+The **_otomi/values_** repository holds the otomi cluster configuration and is updated whenever new changes occur through the console. Now head back to the console to activate Drone.
 
 ![console-apps](img/console-apps.png)
 
-Click on the **Drone** app on the console and it should redirect you to Drone-CI as shown below,
+Click on the **Drone** app and it should open a new tab as shown below,
 
 ![drone-landing](img/drone-landing.png)
 
@@ -64,6 +41,8 @@ Select `Activate` -> `ACTIVATE REPOSITORY`
 
 ![drone-activate](img/drone-activate.png)
 
-Save the changes and you are good to go, ![drone-save](img/drone-save.png)
+Save the changes and you are good to go.
 
-Let's head to the **[Teams](/docs/console/teams)** page to start creating them.
+![drone-save](img/drone-save.png)
+
+Now the final step is to create a Team. See the **[Teams](/docs/console/teams)** page for more information.

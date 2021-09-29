@@ -11,13 +11,6 @@ cluster:
   name: # the K8s cluster name
   owner: # your company name (or any other name)
   provider: azure
-oidc:
-  adminGroupID: # The group ID of the Azure AD group used for the Otomi platform admin role
-  clientID: # The client ID of the Service Principal with sufficient access rights
-  clientSecret: # The client secret of the SP used (will be encrypted in the values)
-  issuer: # Use this format: https://login.microsoftonline.com/<tenantID>/
-  teamAdminGroupID: # The group ID of the Azure AD group used for the Otomi team admin role
-  tenantID: # The ID of the Azure tenant used
 otomi:
   adminPassword: # provide a password for the build-in otomi-admin account.
   globalPullSecret: # fill in your own pull secret if your using more then 100 pulls per day
@@ -38,12 +31,21 @@ charts:
     enabled: # true by default. Set to false to disable
   httpbin:
     enabled: # true by default. Set to false to disable
+# The following 2 sections have external dependencies. Check the prerequisites!
+oidc:
+  adminGroupID: # The group ID of the Azure AD group used for the Otomi platform admin role
+  clientID: # The client ID of the Service Principal with sufficient access rights
+  clientSecret: # The client secret of the SP used (will be encrypted in the values)
+  issuer: # Use this format: https://login.microsoftonline.com/<tenantID>/
+  teamAdminGroupID: # The group ID of the Azure AD group used for the Otomi team admin role
+  tenantID: # The ID of the Azure tenant used
 dns:
   provider:
     azure:
       resourceGroup: #Azure Resource Group
       aadClientId: # Azure Application Client Id
       aadClientSecret: # Azure Application Client Secret
+# Using KMS for encryption of secrets is optional but recommended.
 kms:
   sops:
     provider: azure

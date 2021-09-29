@@ -1,6 +1,6 @@
 ---
-slug: installation/chartconfig/
-title: Otomi Chart Configuration
+slug: installation/all-values/
+title: Chart Configuration
 ---
 
 ### Chart Configuration

@@ -66,6 +66,8 @@ Once the chart is installed, you are ready to dive in to the console.
 
 **Pro Tip:** We recommend [K9s](https://k9scli.io/) for cluster interactions.
 
+_Here is a sneak peak into how we use K9s to monitor the chart install_: ![monitor-chart](img/monitor-install.gif)
+
 <!---
 check Gitea to see if the `otomi\values` repo contains values. If not, uninstall the chart and install a second time.
 -->

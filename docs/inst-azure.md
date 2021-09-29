@@ -3,7 +3,7 @@ slug: installation/chart/azure/
 title: Install on Azure
 ---
 
-The following example shows the minimal values to deploy Otomi (with all apps) on a Kubernetes cluster in Azure.
+The following example shows the minimal chart values to deploy Otomi (with all apps) on a Kubernetes cluster in Azure.
 
 ```yaml
 cluster:

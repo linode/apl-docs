@@ -3,7 +3,7 @@ slug: installation/chart/aws/
 title: Install on AWS
 ---
 
-The following example shows the minimal values to deploy Otomi (with all apps) on a Kubernetes cluster in AWS.
+The following example shows the minimal chart values to deploy Otomi (with all apps) on a Kubernetes cluster in AWS.
 
 ```yaml
 cluster:

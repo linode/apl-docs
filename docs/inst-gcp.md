@@ -3,7 +3,7 @@ slug: installation/chart/google/
 title: Install on GCP
 ---
 
-The following example shows the minimal values to deploy Otomi (with all apps) on a Kubernetes cluster in GCP.
+The following example shows the minimal chart values to deploy Otomi (with all apps) on a Kubernetes cluster in GCP.
 
 ```yaml
 cluster:

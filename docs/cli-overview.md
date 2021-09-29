@@ -1,6 +1,6 @@
 ---
 slug: cli/
-title: Working with the Otomi CLI
+title: Installing and using Otomi CLI
 sidebar_label: Overview
 ---
 

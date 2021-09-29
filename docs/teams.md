@@ -5,14 +5,16 @@ title: Teams
 
 ![Console: new team](img/console-new-team.png)
 
-Teams are tenants on the platform to support Development/DevOps teams, projects or even DTAP. A team will get access to Otomi Console, providing access to all the tools needed for complete observability. Teams can choose to receive alerts in Microsoft Teams, Slack or email and each team will get access to a project in Harbor and a space in Vault.
+- Teams are tenants on the platform to support Development/DevOps teams, projects or even DTAP
+- A team will get access to Otomi Console, providing access to all the tools needed for complete observability
+- Teams can choose to receive alerts in Microsoft Teams, Slack or email and each team will get access to a project in Harbor and a space in Vault
 
 ## Creating Teams
 
-1. Login with a user who is a member of the otomi-admin or team-admin role.
-2. Provide a name for the team (lowercase). The teamname can not be changed afterwards! Creating a team will result in the creation of namespace `team-$NAME`.
-3. Provide a OIDC group name/id granting for granting access to team. Only members of the group will get access to the team.
-4. In order to receive alerts, please choose an alerting endpoint:
+- Login with a user who is a member of the otomi-admin or team-admin role
+- Provide a name for the team (lowercase). The teamname can not be changed afterwards! Creating a team will result in the creation of namespace `team-$NAME`
+- Provide a OIDC group name/id granting for granting access to team. Only members of the group will get access to the team
+- In order to receive alerts, please choose an alerting endpoint:
 
 :::note Notes
 
@@ -27,7 +29,7 @@ When a field is left empty it will default to the global admin value for that fi
 | Email           | You may provide a list of email addresses for both 'Non Critical' and 'Critical' |
 | None            | Global (admin) alerting endpoint configuration will be used                      |
 
-5. Add Resource Quotas
+- Add Resource Quotas
 
 When required, add resource quota for the team. The resource quota should adhere to the "spec.hard" format as described [here](https://kubernetes.io/docs/concepts/policy/resource-quotas/).
 
@@ -37,7 +39,7 @@ There is no validation as there is no schema published. Add/change resource quot
 
 :::
 
-6. Configure Azure Monitor (on Azure only).
+- Configure Azure Monitor (on Azure only)
 
 Azure Monitor is the platform service that provides a single source for monitoring Azure resources.
 
@@ -47,7 +49,7 @@ Azure Monitor is the platform service that provides a single source for monitori
 | Azure monitoring with global settings | Takes on the global settings  |
 | Azure monitoring with custom settings | Overrides any global settings |
 
-7. Add Team self service flags.
+- Add Team self service flags
 
 A uses with the `otomi-admin` and `team-admin` role can create teams and grant the team permissions to modify certain configuration parameters.
 

@@ -3,53 +3,84 @@ slug: installation/prerequisites
 title: Prerequisites
 ---
 
-## 1. Working k8s cluster(s)
+## Working Kubernetes(K8s) Clusters
 
-Otomi needs a working kubernetes cluster to deploy on. It supports two versions down from 1.19, so at a minimum 1.17 is required. If you don't have access with kubectl to your cluster, you may have to pull the credentials from the cloud first:
+_Otomi_ requires
 
-- Azure: `az aks get-credentials --resource-group $RG --name $CLUSTER_NAME --admin`
-- AWS: `aws eks update-kubeconfig --name $CLUSTER_NAME`
-- Google: `gcloud container clusters get-credentials $CLUSTER_NAME --region europe-west4 --project xxx`
+- A working kubernetes cluster to deploy on
+- `K8s versions`: `1.17` up to `1.20` are supported
+- Access to the clusters through `kubectl`
+- Cloud credentials that manage a `DNS Zone`
 
-If you are not logged in with the correct credentials then re-login first:
-
-- Azure: `az login`
-- AWS: `aws login eks`
-- Google: `gcloud auth login`
-
-Otomi installs a complete suite of Kubernetes add-ons and applications. We recommend the following minimal setup:
-
-| Provider         | Instance Type worker nodes | Min Node count | Auto Scaling enabled |
-| ---------------- | -------------------------- | -------------- | -------------------- |
-| Azure (AKS)      | Standard_DS3_v2            | 3              | Yes                  |
-| AWS (EKS / kOPS) | c5.xlarge                  | 3              | Yes                  |
-| GCP (GKE / kOPS) | n1-standard-4              | 3              | Yes                  |
-
-## 2. DNS zone
-
-Otomi requires credentials that allow to manage a DNS zone from one of the following providers: aws/azure/google.
+Find below the specific configurations for most common cloud-providers(Azure, GCP, AWS)
 
 ### Azure
 
-1. [Create a DNS zone](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md#creating-an-azure-dns-zone)
-2. [Set permissions to modify the DNS zone](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md#permissions-to-modify-dns-zone)
+- **Recommended cluster configuration**
 
-### Google
+| Provider    | Instance Type worker nodes | Min Node count | Auto Scaling enabled |
+| ----------- | -------------------------- | -------------- | -------------------- |
+| Azure (AKS) | Standard_DS3_v2            | 3              | Yes                  |
 
-Create a DNS zone which will contain the managed DNS records.
+- **Access to the cluster**
 
-```console
+```bash
+az aks get-credentials --resource-group $RG --name $CLUSTER_NAME --admin
+```
+
+- **DNS Zone**
+  - [Create a DNS zone](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md#creating-an-azure-dns-zone)
+  - [Set permissions to modify the DNS zone](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md#permissions-to-modify-dns-zone)
+
+---
+
+### GCP
+
+- **Recommended cluster configuration**
+
+| Provider         | Instance Type worker nodes | Min Node count | Auto Scaling enabled |
+| ---------------- | -------------------------- | -------------- | -------------------- |
+| GCP (GKE / kOPS) | n1-standard-4              | 3              | Yes                  |
+
+- **Access to the cluster**
+
+```bash
+gcloud container clusters get-credentials $CLUSTER_NAME --region europe-west4 \
+--project xxx
+```
+
+- **DNS Zone**
+
+```bash
+# Create a DNS zone which will contain the managed DNS records
 $ gcloud dns managed-zones create "otomi-dns-test-yourdomain-com" \
     --dns-name "otomi-dns-test.yourdomain.com." \
     --description "Automatically managed zone by otomi"
 ```
 
+---
+
 ### AWS
 
-1. [Create an IAM policy](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md#iam-policy)
-2. [Create an IAM role](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md#create-iam-role)
+- **Recommended cluster configuration**
 
-## 3. IDP
+| Provider         | Instance Type worker nodes | Min Node count | Auto Scaling enabled |
+| ---------------- | -------------------------- | -------------- | -------------------- |
+| AWS (EKS / kOPS) | c5.xlarge                  | 3              | Yes                  |
+
+- **Access to the cluster**
+
+```bash
+aws eks update-kubeconfig --name $CLUSTER_NAME
+```
+
+- **DNS Zone**
+  - [Create an IAM policy](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md#iam-policy)
+  - [Create an IAM role](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md#create-iam-role)
+
+---
+
+## IDP
 
 :::note ATTENTION: The new Otomi Chart install now only supports Azure AD as IDP!
 
@@ -88,17 +119,23 @@ At the 'Authentication' tab you should be able to set the following callback URL
 charts:
   keycloak:
     idp:
-       alias: <your-alias>
+      alias: <your-alias>
 ```
 
-## 4. Kubectl running
+## Kubectl
 
-To be able to target different kube contexts, kubectl needs to be installed.
+[kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) needs to be installed, in order to target different kube contexts
 
-## 5. Docker running
+## Docker
 
-Otomi runs everything from containers, so please start docker if you haven't already.
+[Docker](https://www.docker.com/) must be installed and running, as otomi is a containerized platform.
 
-## 6. KMS credentials to manage keys for encryption (optional)
+## Helm
 
-If you would like the secrets in the values repo to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption by Otomi. Please read up on how to work with sops.
+[Helm 3.0](https://helm.sh/docs/intro/install/) is necessary for an easy installation of the otomi.
+
+## KMS credentials to manage keys for encryption (optional)
+
+<!-- Add this point in the doc, no one knows what values repo is -->
+
+If you would like the secrets in the `values` repository to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption by Otomi. Please read up on how to work with sops.

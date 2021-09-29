@@ -1,6 +1,11 @@
 module.exports = {
   mainSidebar: {
-    'Installing Otomi': ['inst-overview', 'inst-prerequisites', 'inst-chart'],
+    'Installing Otomi': [
+      'inst-overview',
+      'inst-prerequisites',
+      { 'Install with Chart': ['inst-chart', 'inst-azure', 'inst-aws', 'inst-gcp', 'inst-all-values'] },
+      'inst-cli', 'post-install',
+    ],
     'Otomi Console': [
       'overview',
       'teams',
@@ -29,6 +34,7 @@ module.exports = {
     Applications: ['app-drone', 'app-harbor', 'app-keycloak', 'app-kubeapps', 'app-vault', 'app-gatekeeper'],
     'Otomi CLI': [
       'cli-overview',
+      'cli-working-with',
       {
         'CLI Commands': [
           'cli-apply',

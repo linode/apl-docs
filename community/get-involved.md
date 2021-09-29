@@ -4,18 +4,18 @@ title: Get involved
 sidebar_label: Get involved
 ---
 
-We would love to get your feedback. Maybe you even want to contribute with a PR!
+## Join Our Community
 
-Before you start we would like you to read our [Code of Conduct](code-of-conduct). We also have adopted the [Contributor Covenant](https://www.contributor-covenant.org) and we expect that all community members adhere to the guidelines within.
+We are excited that you are here and we can't wait to hear what you have to say!
 
-If you would like to reach out to the community, or have any questions, you can find us here:
+Feel free to reach out to us through our [community portal.](https://redkubes.com/community/)
 
-- [Gitter](https://gitter.im/redkubes/community)
-- [Twitter](https://twitter.com/otomibyredkubes)
-- [Slack](https://otomi.slack.com)
+## Developer Contributions
 
-If you would like to contribute please visit the repositories involved, and pay attention to their respective guidelines:
+Everyone in our community must abide by the [Code of Conduct](code-of-conduct), the [Contributor Covenant](https://www.contributor-covenant.org) and respect the guidelines within.
 
-- [otomi-core](https://github.com/redkubes/otomi-core/): The heart of Otomi, a monorepo containing all the apps and configuration.
-- [otomi-tasks](https://github.com/redkubes/otomi-tasks/): The tasks used by core to massage apps to adhere to the configuration.
-- [otomi-clients](https://github.com/redkubes/otomi-clients/): The openapi generator for the clients used by the tasks.
+If you would like to contribute, please visit the repositories involved
+
+- [otomi-core](https://github.com/redkubes/otomi-core/): The heart of Otomi, a monorepo containing all the apps and configurations
+- [otomi-tasks](https://github.com/redkubes/otomi-tasks/): The tasks used by core to massage apps to adhere to the configurations
+- [otomi-clients](https://github.com/redkubes/otomi-clients/): The openapi generator for the clients used by the tasks

@@ -49,7 +49,7 @@ helm install -f </path/to/values.yaml> <your-release-name> otomi/otomi
 
 See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation.
 
-Here is a short terminal cast (TODO: perhaps a youtube link?):
+A terminal walkthrough on how `otomi chart install` looks like:
 
 ![install](img/helm-install.gif)
 
@@ -66,7 +66,9 @@ Once the chart is installed, you are ready to dive in to the console.
 
 **Pro Tip:** We recommend [K9s](https://k9scli.io/) for cluster interactions.
 
-_Here is a sneak peak into how we use K9s to monitor the chart install_: ![monitor-chart](img/monitor-install.gif)
+Here is a sneak peak into how we use `K9s to monitor the chart install`:
+
+![monitor-chart](img/monitor-install.gif)
 
 <!---
 check Gitea to see if the `otomi\values` repo contains values. If not, uninstall the chart and install a second time.
@@ -74,7 +76,7 @@ check Gitea to see if the `otomi\values` repo contains values. If not, uninstall
 
 ### Next steps
 
-Once _Otomi_ is installed, visit [Post Installation](/docs/postinstallation/) page where we provide a step-by-step guide to using Otomi.
+Once _Otomi_ is installed, visit the [Post Installation](/docs/postinstallation/) page where we provide you a step-by-step guide to using Otomi.
 
 <!-- ## Installing from source
 

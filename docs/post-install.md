@@ -32,7 +32,7 @@ The login url in this case would be **`https://otomi.otomise.eks.otomi.cloud`**
 
 ![console-login](img/console-login.png)
 
-After you have successfully logged in, you will arrive at the **Otomi Dashboard**
+After you have successfully logged in, you will arrive at the **Otomi Dashboard.** To get an overview of the cosole and it's layout, checkout [Otomi Console](/docs/console)
 
 ![console-lading-page](img/console-landing-page.png)
 
@@ -52,10 +52,6 @@ Log in with your _credentials_,
 
 The **_otomi/values_** repository holds the otomi cluster configuration and is updated whenever new changes occur through the console.
 
-:::note Note: You need to checkout this repository on to your pc as we need it to perform few activities using the _Otomi CLI_
-
-This will be dealt in the later [chapter](/docs/cli) :::
-
 Now head back to the console to activate Drone.
 
 ![console-apps](img/console-apps.png)
@@ -69,3 +65,5 @@ Select `Activate` -> `ACTIVATE REPOSITORY`
 ![drone-activate](img/drone-activate.png)
 
 Save the changes and you are good to go, ![drone-save](img/drone-save.png)
+
+Let's head to the **[Teams](/docs/console/teams)** page to start creating them.

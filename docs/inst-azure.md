@@ -48,7 +48,6 @@ kms:
   sops:
     provider: azure
     azure:
-      tenantId: # The ID of the Azure tenant of the Azure Vault used
       clientId: # The client ID of the Service Principal with sufficient access rights the Azure Vault
       clientSecret: # The client secret of the SP used (will be encrypted in the values)
       keys: # The Azure Vault key. Should be this format: 'https://<Vault URI>/keys/<key-name>/<key-version>'

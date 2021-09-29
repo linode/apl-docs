@@ -35,6 +35,7 @@ module.exports = {
     Applications: ['app-drone', 'app-harbor', 'app-keycloak', 'app-kubeapps', 'app-vault', 'app-gatekeeper'],
     'Otomi CLI': [
       'cli-overview',
+      'cli-working-with',
       {
         'CLI Commands': [
           'cli-apply',

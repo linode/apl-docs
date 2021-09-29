@@ -1,5 +1,5 @@
 ---
-slug: installation/google/
+slug: installation/chart/google/
 title: Install on Google Cloud
 ---
 

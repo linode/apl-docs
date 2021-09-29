@@ -1,5 +1,5 @@
 ---
-slug: installation/aws/
+slug: installation/chart/aws/
 title: Install on AWS
 ---
 

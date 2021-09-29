@@ -1,5 +1,5 @@
 ---
-slug: installation/azure/
+slug: installation/chart/azure/
 title: Install on Azure
 ---
 

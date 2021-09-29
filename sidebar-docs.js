@@ -3,11 +3,10 @@ module.exports = {
     'Installing Otomi': [
       'inst-overview',
       'inst-prerequisites',
-      {
-        Installation: ['inst-chart', 'inst-cli'],
-      },
+      'inst-cli',
+      { 'Install with chart': ['inst-chart', 'inst-azure', 'inst-aws', 'inst-gcp'] },
+      { 'Post Installation': ['post-install'] },
     ],
-    'Post Installation': ['post-install'],
     'Otomi Console': [
       'overview',
       'teams',

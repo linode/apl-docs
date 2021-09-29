@@ -1,7 +1,7 @@
 ---
 slug: cli/working-with
 title: Working with Otomi CLI
-sidebar_label: Using Otomi CLI
+sidebar_label: Working with Otomi CLI
 ---
 
 When you would like to do local development, you will operate on the values directly and have to apply them manually.

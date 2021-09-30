@@ -13,4 +13,3 @@ The Otomi settings section offers configuration options for Otomi and feature fl
 | Home monitored | When this is turned on alerts will also be sent to the endpoints configured in the "Home" settings. |
 | Managed masters | Whether masters are managed and not under control. Set this to false when onprem. |
 | Multi-tenancy | Will separate team metrics and logs. Disabling this lets everybody be admin and see everything. Will still use team-\* namespaces for segmentation of services, but not use authorization of users. |
-| Pull secret | A pull secret that gives access to the Otomi API. Needs and enterprise license. |

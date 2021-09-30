@@ -51,7 +51,7 @@ kubectl get job otomi -w
 watch helm list -Aa
 ```
 
-Or view detailed info about kubernetes resources with[k9s](https://k9scli.io)
+Or view detailed info about kubernetes resources with [k9s](https://k9scli.io)
 
 For more detailed instructions on monitoring and other SRE tasks, visit the [SRE section](/docs/sre/).
 

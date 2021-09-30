@@ -44,13 +44,13 @@ export default [
   {
     href: 'https://www.vaultproject.io/',
     src: 'vault-logo.svg',
-    name: "HashiCorp Vault",
+    name: 'HashiCorp Vault',
     desc: 'Manage Secrets and Protect Sensitive Data',
   },
   {
     href: 'https://bitnami.com/kubernetes/kubeapps',
     src: 'kubeapps-logo.svg',
-    name: "Bitnami Kubeapps",
+    name: 'Bitnami Kubeapps',
     desc: 'Web-based UI for launching and managing applications on Kubernetes',
   },
   {
@@ -62,7 +62,7 @@ export default [
   {
     href: 'https://gitea.io/en-us/',
     src: 'gitea-logo.svg',
-    name: "Gitea",
+    name: 'Gitea',
     desc: 'A painless self-hosted Git service',
   },
   {

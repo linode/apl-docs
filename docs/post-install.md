@@ -29,15 +29,15 @@ After sign in, it can take a couple of minutes before the `otomi/values` reposit
 
 ![gitea-values](img/gitea-values.png)
 
-The **_otomi/values_** repository holds the otomi cluster configuration and is updated whenever new changes occur through the console. Now head back to the console to activate Drone.
+The `otomi/values` repository holds the otomi cluster configuration and is updated whenever new changes occur through the console. Now head back to the console to activate Drone.
 
 ![console-apps](img/console-apps.png)
 
-Click on the **Drone** app and it should open a new tab as shown below,
+Click on the Drone app and it should open a new tab as shown below,
 
 ![drone-landing](img/drone-landing.png)
 
-Select `Activate` -> `ACTIVATE REPOSITORY`
+Select `Activate`, and then `ACTIVATE REPOSITORY`
 
 ![drone-activate](img/drone-activate.png)
 

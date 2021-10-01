@@ -200,7 +200,7 @@ module.exports = {
       ],
       logo: {
         alt: 'Otomi Open Source Logo',
-        src: 'img/otomi-logo-small.svg',
+        src: 'img/otomi-logo.svg',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Red Kubes. Built with <a href="https://v2.docusaurus.io/">Docusaurus</a>`,
     },

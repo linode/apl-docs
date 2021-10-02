@@ -8,10 +8,13 @@ Otomi is an open-source cloud-agnostic platform to run on top of Kubernetes to s
 
 ## Highlights
 
-- Otomi is Free and Open-Source Software
+- Otomi is Open Source
 - Easy to install
-- Intuitive desktop-like UI
-- Ready to use pre-configured built-in [applications](/#appsuite) that is delivered out-of-the-box
+- Comes with an intuitive desktop-like UI
+- Comes with ready to use, pre-configured and built-in [applications](/#appsuite)
+- Works out-of-the-box
+
+Just as you would expect from your favorite Linux distribution. After installing Otomi on Kubernetes, you can sign in and immediately start deploying applications.
 
 ## Why Otomi?
 
@@ -19,14 +22,14 @@ Otomi is an open-source cloud-agnostic platform to run on top of Kubernetes to s
 Take inspiration from https://rancher.com/why-rancher/rancher-strengthens-kubernetes/
 -->
 
-Otomi offers an Operating System like experience, using Kubernetes as its kernel.
+Otomi offers an Operating System like experience, using Kubernetes as its kernel. Why Otomi?
 
-- Otomi is completely open source, allowing customization and also extensibility
-- Integrates upstream Kubernetes with proven open source applications and add-ons
-- Single deployable package with curated industry proven applications and policies for better governance and security
-- Create your enterprise-grade container platform/internal developer platform to increase developer efficiency
-- Carefully crafted sane defaults that minimizes configuration effort and time to market
-- Incorporating open source standards and best practices
+- Otomi is completely open source, allowing customization and extensibility
+- Otomi integrates upstream Kubernetes with proven open source applications and add-ons
+- Otomi is a single deployable package with curated industry proven applications and policies for better governance and security
+- Use Otomi to create your enterprise-grade container platform or internal developer platform to increase developer efficiency
+- Otomi offers carefully crafted sane defaults to minimize configuration effort and time to market
+- Otomi incorporates open source standards and best practices
 
 <!-->Perhaps a reference to our demo or whitepaper for more explanation-->
 <!-- This documentation is intended to provide technical, operational and background information for Otomi. -->

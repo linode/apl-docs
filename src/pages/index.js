@@ -24,7 +24,7 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              <span className={styles.heroProjectKeywords}></span> An instant{' '}
+              <span className={styles.heroProjectKeywords}></span> A {' '}
               <span className={styles.heroProjectKeywords}>Kubernetes-based</span> {''}
               <span className={styles.heroProjectKeywords}></span> platform for the{' '}
               <span className={styles.heroProjectKeywords}>cloud</span> {''}

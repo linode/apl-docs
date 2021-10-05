@@ -9,5 +9,5 @@ We strive to make installation of Otomi as easy and smooth as possible. The whol
 - Learn more about [Otomi](/about)
 - Read the [minimal requirements](prerequisites)
 - Check the [optional configuration](optional) options
-- Install Otomi using the [Helm chart](chart) or [Otomi CLI](cli)
+- Install Otomi using the [Helm chart](chart)
 - Perform the [post-installation actions](post-install-actions)

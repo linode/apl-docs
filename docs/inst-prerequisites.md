@@ -39,8 +39,6 @@ Setting up external DNS: https://github.com/kubernetes-sigs/external-dns/blob/ma
 
 Set up an AKS cluster on Azure: https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal
 
-Make sure to use the Azure Network CNI and Calico network policies. 
-
 Get access to the cluster with kubectl:
 
 ```bash

@@ -27,8 +27,11 @@ After installation, sign in to the Keycloak administration console with the defa
 3. Login with username: `admin` and the password `<otomi.adminPassword>` provided in your values.
 4. Select the `Otomi` realm
 5. Click on `Users` then `Add user` 
-6. Fill in a user name in the Username field and click on `Save`
-7. Click on the `Credentials` tab and then fill in a password for this user in the `Password` and `Password Confirmation` fields
-8. Click on `Set Password` 
-9. Go to the `Groups` tab 
-10. Select the desired group and then select `Join`
+6. Fill in a user name in the Username field
+7. Fill in your email address in the Email field
+8. Select the `otomi-admin` group
+9. Click on `Save`
+10. Click on the `Credentials` tab and then fill in a password for this user in the `Password` and `Password Confirmation` fields
+11. Click on `Set Password`
+
+You can also create users and add them to the `team-admin` group. When you create a team, Otomi will automatically create a new group for the team, called `team-teamname`.

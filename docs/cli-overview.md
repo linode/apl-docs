@@ -23,7 +23,7 @@ brew install bash
 # Using wget
 wget -O- https://git.io/otomi-cli-installer | bash
 # Using curl
-curl https://git.io/otomi-cli-installer | bash
+curl -L https://git.io/otomi-cli-installer | bash
 ```
 
 ### Manual installation

@@ -34,7 +34,7 @@ Please check up on this link when this problem occurs, because a fix might alrea
 Connect to the database service
 
 ```
-kh exec harbor-harbor-database-0 -it -- psql -U postgres
+kh exec harbor-database-0 -it -- psql -U postgres
 ```
 
 Select the `registry` database

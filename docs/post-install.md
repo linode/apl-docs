@@ -9,7 +9,7 @@ After installing Otomi, a couple of post install configuration actions are requi
 
 Open the url in the browser of your choice `https://otomi.<domainSuffix>`. The `domainSuffix` can be found in the `values.yaml` that was provided during installation.
 
-If Otomi is configured with OIDC (using Azure AD as an IDP), click on the right button (redkubes-azure in the example below). If you did not configure OIDC, then first [create a user in Keycloak](/docs/apps/keycloak#create-users). and add this user to the `otomi-admin` group.
+If Otomi is configured with OIDC (using Azure AD as an IDP), click on the right button (redkubes-azure in the example below). If you did not configure OIDC, then first [create a user in Keycloak](/docs/tutorials/create-keycloak-users#create-users). and add this user to the `otomi-admin` group.
 
 
 

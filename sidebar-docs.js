@@ -25,7 +25,7 @@ module.exports = {
       'team-apps',
       'deploy-changes',
     ],
-    Applications: ['app-drone', 'app-harbor', 'app-keycloak', 'app-kubeapps', 'app-vault', 'app-gatekeeper'],
+    'Otomi Apps': ['app-drone', 'app-harbor', 'app-keycloak', 'app-kubeapps', 'app-vault', 'app-gatekeeper'],
     'Otomi CLI': [
       'cli-overview',
       'cli-working-with',
@@ -54,6 +54,7 @@ module.exports = {
         ],
       },
     ],
+    Tutorials: ['tutorial-overview', 'tutorial-0', 'tutorial-1', 'tutorial-2', 'tutorial-3'],
     SRE: [
       'sre-overview',
       'sre-daily',

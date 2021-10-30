@@ -13,6 +13,10 @@ In this tutorial section, we try to provide as many tutorials as possible about 
 - [Publicly expose an existing Kubernetes service](expose-service)
 - [Create a Knative service](create-knative-svc)
 - [Publicly expose an existing Knative service](expose-ksvc)
+- [Create a secret in Hashicorp Vault](create-secret-vault)
+- [Add a secret created in vault to Kubernetes](add-secret)
+- [Use secrets in Kubernetes](use-secret)
+- [Creating Knative services using Otomi Console](create-ksvc-otomi)
 
 To be able to do the tutorials, please make sure you have:
 

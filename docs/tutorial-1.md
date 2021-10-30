@@ -1,7 +1,7 @@
 ---
 slug: tutorials/build-tag-push
 title: Build, tag and push an image to Harbor
-sidebar_label: Using harbor
+sidebar_label: Push an image to harbor
 ---
 
 In this tutorial, you are going to:

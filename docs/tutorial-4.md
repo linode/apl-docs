@@ -23,10 +23,7 @@ spec:
         autoscaling.knative.dev/minScale: '1'
     spec:
       containers:
-        - env:
-            - name: TARGET
-              value: "People"
-          image: harbor.your-domain.com/team-demo/hello-world:latest
+        - image: harbor.your-domain.com/team-demo/hello-world:latest
           securityContext:
             runAsUser: 1001
       imagePullSecrets: 

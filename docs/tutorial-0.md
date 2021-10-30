@@ -4,9 +4,9 @@ title: Creating and managing users when using Keycloak as IDP
 sidebar_label: Creating users in Keycloak
 ---
 
-When you did not provide `oidc` in your values to configure an external identity provider, then you need to manually add new users and add them to groups.
+When you did not provide `oidc` in your values to configure an external identity provider, then you need to manually create new users and add them to groups.
 
-In this tutorial, you are going to create a new user in Keycloak and add the user to a group.
+In this tutorial, you are going to create a new user in Keycloak and add the new user to a group.
 
 ## Create users
 

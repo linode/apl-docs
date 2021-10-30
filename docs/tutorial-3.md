@@ -1,6 +1,6 @@
 ---
 slug: tutorials/expose-service
-title: Publicly expose an existing Kubernetes service
+title: Publicly expose an existing Kubernetes service with Otomi
 sidebar_label: Expose a K8s service
 ---
 

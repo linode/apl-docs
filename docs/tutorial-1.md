@@ -10,17 +10,6 @@ In this tutorial, you are going to:
 2. Create a Kubernetes Deployment and Service
 3. Publicly expose the Hello World app using Otomi
 
-## Assumptions
-
-- Otomi is installed on your K8s cluster
-- Docker (or an alternative) is installed on your machine
-- Git client is installed on your machine
-- Visual Studio Code code (or any other text editor) is installed on you machine (in this tutorial we'll use VSC)
-- A team has been created in Otomi
-- You have signed in to Otomi as a user who is a member of the group that has access to the team
-
-If you haven't already, first create a user in Keycloak
-
 ## Build an image and push it to Harbor
 
 When you created a Team in Otomi, Otomi has automatically created a project for the team in Harbor. In this tutorial we'll assume you have created a team called `demo`.

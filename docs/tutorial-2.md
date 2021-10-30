@@ -1,6 +1,6 @@
 ---
-slug: tutorials/create-deployment
-title: Create a deployment
+slug: tutorials/create-k8s-svc
+title: Create a Kubernetes service
 sidebar_label: Create a K8s service
 ---
 
@@ -8,25 +8,27 @@ In this tutorial, we are going to deploy the image we build , tagged and pushed 
 
 ## Create a Kubernetes Deployment and Service
 
-Create a `hello.yaml` file and copy/paste the following 2 Kubernetes manifests:
+Create a `hello-svc.yaml` file and copy/paste the following 2 Kubernetes manifests:
 
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello
+  name: hello-svc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello
+      app: hello-svc
   template:
     metadata:
+      annotations:
+        policy.otomi.io/ignore-sidecar: container-limits,psp-allowed-users
       labels:
-        app: hello
+        app: hello-svc
     spec:
       containers:
-      - name: hello
+      - name: hello-svc
         image: harbor.your-domain.com/team-demo/hello-world:latest
         resources:
           limits:
@@ -35,23 +37,23 @@ spec:
         securityContext:
           runAsUser: 1001
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
       imagePullSecrets: 
       - name: "harbor-pullsecret" 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello
+  name: hello-svc
 spec:
   selector:
-    app: hello
+    app: hello-svc
   ports:
   - port: 80
-    targetPort: 3000
+    targetPort: 8080
 ```
 
-### Set kubectl context
+### Create the deployment and service
 
 In Otomi console, select team `demo` in the top bar. On the bottom of the left panel, click on `download KUBECFG`.
 
@@ -64,14 +66,14 @@ export KUBECONFIG=$path-to-your-kubeconfig.yaml
 And apply the manifest to Kubernetes:
 
 ```
-kubectl apply -f hello.yaml
+kubectl apply -f hello-svc.yaml
 ```
 
-Check if the deployment and service have been created:
+Check to see if the pod is running and the service has been created:
 
 ```
-kubectl get deployment hello
+kubectl get pod
 ```
 ```
-kubectl get svc hello -n team-demo
+kubectl describe svc hello
 ```

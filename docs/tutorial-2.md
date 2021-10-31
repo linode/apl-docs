@@ -37,9 +37,7 @@ spec:
         securityContext:
           runAsUser: 1001
         ports:
-        - containerPort: 8080
-      imagePullSecrets: 
-      - name: "harbor-pullsecret" 
+        - containerPort: 8080 
 ---
 apiVersion: v1
 kind: Service

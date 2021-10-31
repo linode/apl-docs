@@ -26,8 +26,6 @@ spec:
         - image: harbor.your-domain.com/team-demo/hello-world:latest
           securityContext:
             runAsUser: 1001
-      imagePullSecrets: 
-        - name: "harbor-pullsecret" 
 ```
 
 ### Create the knative service

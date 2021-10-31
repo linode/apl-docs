@@ -41,54 +41,9 @@ Bootstap the local values:
 ```bash
 otomi bootstap
 ```
-
-## Adding a new team to the values
-
-In the following steps we are going to create a team with the name 'demo':
-
-### 1. Modify the teams.yaml
-
-Add the team to the `values/env/teams.yaml`:
-
-```yaml
-teamConfig:
-  teams:
-    demo:
-      id: demo
-      oidc:
-        groupMapping: <group-object-id> # The id of the AD group with the team members who need access to the team
-```
-
-Add the team to the `secrets.teams.yaml` (or `secrets.teams.yaml.dec` when using SOPS):
-
-```yaml
-teamConfig:
-  teams:
-    demo:
-      password: somesecretvalue
-```
-
-When using SOPS, first encrypt the team password:
-
-```bash
-otomi encrypt
-```
-
-Add the following 3 files to the `/env/teams` folder:
-
-1. `external-secrets.demo.yaml`
-2. `jobs.demo.yaml`
-3. `services.demo.yaml`
-
-Each file should contain an empty object:
-
-```yaml
-{}
-```
-
 ## validate changes (optional)
 
-Now validate the new values based on the Otomi values schema:
+Validate the configuration after making changes:
 
 ```bash
 otomi validate-values
@@ -98,7 +53,7 @@ Use `-v` to get more output (or `-vvv` to get even more output). See [here](/doc
 
 ## Deploy changes
 
-Deploy the changes using Otomi CLI:
+Deploy the changes:
 
 ```bash
 otomi apply
@@ -111,3 +66,7 @@ Note: Creating a team can take around 5 to 10 minutes to complete.
 ## Commit changes
 
 Now commit your changes to the (otomi/values) GIT repository on the cluster to store the new desired state configuration.
+
+```bash
+otomi commit
+```

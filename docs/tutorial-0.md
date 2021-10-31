@@ -1,6 +1,6 @@
 ---
 slug: tutorials/create-keycloak-users
-title: Creating and managing users when using Keycloak as IDP
+title: Creating users in Keycloak when using Keycloak as IDP
 sidebar_label: Creating users in Keycloak
 ---
 

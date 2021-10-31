@@ -11,3 +11,5 @@ We strive to make installation of Otomi as easy and smooth as possible. The whol
 - Check the [optional configuration](optional) options
 - Install Otomi using the [Helm chart](chart)
 - Perform the [post-installation actions](post-install-actions)
+
+To learn how to work with Otomi, we created a set of [tutorials](/docs/tutorials/).

@@ -24,10 +24,10 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              <span className={styles.heroProjectKeywords}></span> A {' '}
-              <span className={styles.heroProjectKeywords}>Kubernetes-based</span> {''}
-              <span className={styles.heroProjectKeywords}></span> platform for the{' '}
-              <span className={styles.heroProjectKeywords}>cloud</span> {''}
+              <span className={styles.heroProjectKeywords}></span> A complete {' '}
+              <span className={styles.heroProjectKeywords}>platforn experience</span> {''}
+              <span className={styles.heroProjectKeywords}></span> on top of{' '}
+              <span className={styles.heroProjectKeywords}>Kubernetes</span> {''}
             </h1>
             <div className={styles.indexCtas}>
               <Link className={styles.indexCtasGetStartedButton} to={useBaseUrl('docs/installation/')}>

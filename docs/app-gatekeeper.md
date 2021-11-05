@@ -22,18 +22,34 @@ The same policies are upheld by OPA's Gatekeeper on the cluster during runtime, 
 
 ## Gatekeeper
 
-Gatekeeper can be turned on or off. When turned on, individual policies can be switched on or off. 
+Otomi supports 3 modes:
+
+1. Enforcing
+2. Permissive (default)
+3. Disabled
+
+In both Enforcing and Permissive mode, individual policies can be switched on or off. By default gatekeeper is enabled in permissive mode (logging & non-blocking)
 
 Customization of the policies is supported based on the Otomi [schema](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml) (or use Otomi Console). In case of specific requirements, admins can add their own custom policies.
 
-### Enable Gatekeeper
+### Change mode
 
-If not enabled during install, you can enable Gatekeeper Operator by editing the `values/env/charts/gatekeeper-operator.yaml` file and set enabled to true:
+Gatekeeper can be set to enforcing mode or disabled mode by editing the `values/env/charts/gatekeeper-operator.yaml` file:
+
+### Switch to Enforcing mode
 
 ```yaml
 charts:
   gatekeeper-operator:
-    enabled: true
+    disableValidatingWebhook: false
+```
+
+### Switch to Disabled mode
+
+```yaml
+charts:
+  gatekeeper-operator:
+    enabled: false
 ```
 
 ### Using annotations to bypass policy checks

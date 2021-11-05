@@ -8,12 +8,16 @@ In this tutorial, you are going to install Otomi with the following features:
 
 - KMS to encrypt sensitive information in the values repository
 - Use Azure Active Directory as IDP
-- Use a hosted DNS zone
+- Use a public DNS zone
+- Use LetsEncrypt as a CA for certificates
 
 For this tutorial, we assume you have:
 
-- A running AKS cluster
+- Access to an Azure subscription
 - A public DNS zone
-- Azure Active Directory
-- Azure Key Vault
+- Azure Active Directory for user management
+
+## Set up AKS
+
+
 

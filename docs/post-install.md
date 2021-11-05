@@ -1,6 +1,6 @@
 ---
-slug: installation/post-install-actions/
-title: Post install instructions
+slug: installation/post-install/
+title: Post installation steps
 ---
 
 After installing Otomi, a couple of post install configuration actions are required. Follow these instructions:

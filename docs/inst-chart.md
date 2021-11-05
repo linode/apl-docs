@@ -59,7 +59,7 @@ Once the chart is installed, you are ready to dive in to the [console](/docs/con
 
 ### Next steps
 
-Once Otomi is installed, visit the [Post Installation](/docs/installation/post-install-actions) page to finish setting up Otomi.
+Once Otomi is installed, follow the [Post Installation steps](/docs/installation/post-install) to get ready to use Otomi.
 
 ## Installing from source
 

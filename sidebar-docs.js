@@ -25,7 +25,15 @@ module.exports = {
       'team-apps',
       'deploy-changes',
     ],
-    'Otomi Apps': ['app-drone', 'app-harbor', 'app-keycloak', 'app-kubeapps', 'app-vault', 'app-gatekeeper'],
+    'Otomi Apps': [
+      'app-drone',
+      'app-harbor',
+      'app-keycloak',
+      'app-kubeapps',
+      'app-vault',
+      'app-gatekeeper',
+      'app-nginx-ingress',
+    ],
     'Otomi CLI': [
       'cli-overview',
       'cli-working-with',

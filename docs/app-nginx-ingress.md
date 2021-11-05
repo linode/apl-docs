@@ -4,7 +4,7 @@ title: Working with Nginx Ingress
 sidebar_label: Nginx-ingress
 ---
 
-Otomi integrated Nginx Ingress into an advanced [ingress architecture](about/architecture#ingress--sso).
+Otomi integrated Nginx Ingress into an advanced [ingress architecture](/about/architecture#ingress--sso).
 
 ## ModSecurity with OWASP rule set
 

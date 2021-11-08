@@ -7,25 +7,25 @@ After Otomi is installed, a couple of post install configuration steps are requi
 
 ## When Otomi is installed without optional configuration
 
-Follow these instructions when Otomi is installed without DNS and without bringing your own IDP (like Azure AD):
+Follow these instructions when Otomi is installed without DNS (`otomi.hasExternalDNS=false`) and without 3rd party IdP (`otomi.hasExternalIDP=false`).
 
 ### Get the log output of the installer job
 
-When Otomi is installed without optional configuration, first get the Keycloak URL and the auto generated password for the Keycloak `admin` user provided at the end of the logs of the Otomi installer job:
+When Otomi is installed without any optional configuration, passwords and public URLs are automatically derived. The `Keycloak` app acts an IdP, which is used to define users of the otomi containers platform. Some usefoul information like `Otomi Console` and `Keycloak` public URL with admin credentials can be found at the end of the installer log.
+
+Use the following command to access the log output.
 
 ```bash
 kubectl logs jobs/otomi -n default
 ```
 
-When `otomi:adminPassword` was filled in the values.yaml, then use that password to sign in into Keycloak.
-
 ### Create a user in Keycloak
 
-1. Go to Keycloak admin console using the following url: `keycloak.<your-ip.nip.io>`
+1. Navigate to Keycloak app (using the URL provided in the installer log)
 2. Click on `Administration Console`
-3. Login with username: `admin` and the provided password
+3. Login with admin credentials (using admin and password provided in the installer log)
 4. Select the `Otomi` realm
-5. Click on `Users` then `Add user` 
+5. Click on `Users` then `Add user`
 6. Fill in a user name in the Username field
 7. Fill in your email address in the Email field
 8. Select the `otomi-admin` group
@@ -33,9 +33,7 @@ When `otomi:adminPassword` was filled in the values.yaml, then use that password
 10. Click on the `Credentials` tab and then fill in a password for this user in the `Password` and `Password Confirmation` fields
 11. Click on `Set Password`
 
-:::info
-When a password for the Keycloak admin is not provided in the values.yaml (but automatically generated), it is advised to first change the password the password.
-:::
+:::info It is advised to change keycloak admin password.:::
 
 ### Sign in to the console
 
@@ -46,7 +44,6 @@ After you have successfully logged in, you will see the Otomi Admin Dashboard. C
 ![console-lading-page](img/console-landing-page.png)
 
 ![console-apps](img/console-apps.png)
-
 
 ### Add the auto generated CA to your keychain (optional)
 
@@ -61,9 +58,9 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 
 ### Activate Drone
 
-[Gitea](https://gitea.io/en-us/) and [Drone](https://www.drone.io/) are an integral part of how Otomi cluster configurations are stored and updated. 
+[Gitea](https://gitea.io/en-us/) and [Drone](https://www.drone.io/) are an integral part of how Otomi cluster configurations are stored and updated.
 
-1. Click on the **Gitea** app (under Platform/Otomi Apps) in the console. 
+1. Click on the **Gitea** app (under Platform/Otomi Apps) in the console.
 2. In the top right, click on `Sign In`
 3. Sign in using `OpenID`
 4. Use the pre-filled values for the `Username` and `Email Address` and click `Complete Account`
@@ -92,7 +89,7 @@ Now the final step is to create a Team. See the **[Teams](/docs/console/teams)**
 
 ### Sign in to the console
 
-If Otomi is configured with OIDC (using Azure AD as an IDP), click on the right button (redkubes-azure in the example below). 
+If Otomi is configured with OIDC (using Azure AD as an IDP), click on the right button (redkubes-azure in the example below).
 
 ![console-login](img/console-login.png)
 

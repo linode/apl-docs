@@ -17,11 +17,13 @@ When Otomi is installed without optional configuration, first get the Keycloak U
 kubectl logs jobs/otomi -n default
 ```
 
+When `otomi:adminPassword` was filled in the values.yaml, then use that password to sign in into Keycloak.
+
 ### Create a user in Keycloak
 
-1. Go to Keycloak admin console using the following url: `keycloak.<your domainSuffix>`
+1. Go to Keycloak admin console using the following url: `keycloak.<your-ip.nip.io>`
 2. Click on `Administration Console`
-3. Login with username: `admin` and the password `<otomi.adminPassword>` provided in your values.
+3. Login with username: `admin` and the provided password
 4. Select the `Otomi` realm
 5. Click on `Users` then `Add user` 
 6. Fill in a user name in the Username field

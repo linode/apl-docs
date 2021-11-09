@@ -66,11 +66,12 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 When you see this message: 'Jwks doesn't have key to match kid or alg from Jwt' Drone is not yet ready. Please wait for a couple of minutes and try again.
 :::
 
+2. Sign in with `OpenID Connent`
+
 :::info
-When Otomi is installed with an auto-generated CA or when using LetsEncrypt staging certificates, sign in with user `otomi-admin`. To get the password, go to Platform / Settings / Otomi in the console.
+When sign-in with OpenID Connect does not work, then first restart the gitea pod.
 :::
 
-2. Sign in with `OpenID Connent`
 3. Use the pre-filled values for the `Username` and `Email Address` and click `Complete Account`
 4. Select `Activate`
 

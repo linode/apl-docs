@@ -34,10 +34,14 @@ git clone https://github.com/redkubes/nodejs-helloworld.git
 
 ### Login to Harbor
 
-Login with username `robot$team-demo+hello` & password: `token`
+:::info
+When running Otomi without DNS, make sure to add the CA to your Keychain as described [here](/docs/installation/post-install/#add-the-auto-generated-ca-to-your-keychain-optional) and restart your Docker client.
+:::
+
+Login with username `robot-team-demo+hello` & password: `token`
 
 ```
-docker login -u 'robot$team-demo+hello' -p '$token' harbor.your-domain.com
+docker login -u 'robot-team-demo+hello' -p '$token' harbor.your-domain.com
 ```
 
 ### Build, tag and push the image

@@ -35,7 +35,7 @@ git clone https://github.com/redkubes/nodejs-helloworld.git
 ### Login to Harbor
 
 :::info
-When running Otomi without DNS, make sure to add the CA to your Keychain as described [here](/docs/installation/post-install/#add-the-auto-generated-ca-to-your-keychain-optional) and restart your Docker client.
+When running Otomi without DNS, make sure to add the CA to your Keychain as described [here](/docs/installation/post-install/#add-the-auto-generated-ca-to-your-keychain-optional) and you need to restart Docker Desktop after making any changes to the keychain directory in order for the changes to take effect.
 :::
 
 Login with username `robot-team-demo+hello` & password: `token`
@@ -58,4 +58,4 @@ Push the image to Harbor:
 docker push harbor.your-domain.com/hello-world
 ```
 
-Now go to the team-demo project and verify that the hello-world repository is there. 
+Now go to the team-demo project and verify that the hello-world repository has been created. 

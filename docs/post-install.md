@@ -34,7 +34,7 @@ When `otomi:adminPassword` was filled in the values.yaml, then use that password
 11. Click on `Set Password`
 
 :::info
-When a password for the Keycloak admin is not provided in the values.yaml (but automatically generated), it is advised to first change the password the password.
+When a password for the Keycloak admin is not provided in the values.yaml (but automatically generated), it is advised to first change the password.
 :::
 
 ### Sign in to the console

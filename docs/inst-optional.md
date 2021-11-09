@@ -3,9 +3,9 @@ slug: installation/optional
 title: Optional configuration
 ---
 
-You can optionally configure Otomi to use an external IDP (Azure AD) and use an external Key Management Service (KMS) provider for SOPS. Below you can find detailed instructions on how to set up Azure AD as an external IDP and configure KMS. We will soon add more instructions for other IDPs, such as Amazon Incognito, Google Identity, and Okta.
+You can optionally configure Otomi to use an external IdP (Azure AD) and use an external Key Management Service (KMS) provider for SOPS. Below you can find detailed instructions on how to set up Azure AD as an external IdP and configure KMS. We will soon add more instructions for other IdPs, such as Amazon Incognito, Google Identity, and Okta.
 
-## Use Azure AD as IDP
+## Use Azure AD as IdP
 
 The authentication of brokered identities through Azure AD requires a service principal with certain Azure AD API permissions. An app registration needs to be created with the following API permissions:
 

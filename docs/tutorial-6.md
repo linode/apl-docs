@@ -6,6 +6,11 @@ sidebar_label: Create a secret in Vault
 
 In his tutorial, you are going to create a secret Hashicorp Vault
 
+:::info
+When Otomi is installed with an auto-generated CA or when using LetsEncrypt staging certificates, OIDC access to Vault does not work. A fix for this is coming soon.
+It is possible to sign in using a token. Check [here](/docs/apps/vault) for instructions.
+:::
+
 ## Create a secret in Vault
 
 - In the left panel under the Team demo, click `Otomi Apps` then click on `Vault`

@@ -4,7 +4,7 @@ title: Working with Keycloak
 sidebar_label: Keycloak
 ---
 
-The SSO login page for Otomi is served by Keycloak. It is used as an identity broker _or_ provider for all Otomi integrated applications. Keycloak is configured with mappers that normalize incoming identities from an IDP to have predictable claims format to be used by Otomi applications.
+The SSO login page for Otomi is served by Keycloak. It is used as an identity broker _or_ provider for all Otomi integrated applications. Keycloak is configured with mappers that normalize incoming identities from an IdP to have predictable claims format to be used by Otomi applications.
 
 Keycloak is automatically configured with 3 roles:
 

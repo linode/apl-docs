@@ -61,6 +61,15 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 [Gitea](https://gitea.io/en-us/) and [Drone](https://www.drone.io/) are an integral part of how Otomi cluster configurations are stored and updated.
 
 1. Click on the **Drone** app (under Platform/Otomi Apps) in the console.
+
+:::info
+When you see this message: 'Jwks doesn't have key to match kid or alg from Jwt' Drone is not yet ready. Please wait for a couple of minutes and try again.
+:::
+
+:::info
+When Otomi is installed with an auto-generated CA or when using LetsEncrypt staging certificates, sign in with user `otomi-admin`. To get the password, go to Platform / Settings / Otomi in the console.
+:::
+
 2. Sign in with `OpenID Connent`
 3. Use the pre-filled values for the `Username` and `Email Address` and click `Complete Account`
 4. Select `Activate`
@@ -81,7 +90,7 @@ Now the final step is to create a Team. See the **[Teams](/docs/console/teams)**
 
 ### Sign in to the console
 
-If Otomi is configured with OIDC (using Azure AD as an IDP), click on the right button (redkubes-azure in the example below).
+If Otomi is configured with OIDC (using Azure AD as an IdP), click on the right button (redkubes-azure in the example below).
 
 ![console-login](img/console-login.png)
 

@@ -170,7 +170,7 @@ The ingress & SSO architecture explained (shortly):
 
 - (optional) an external gateway is used for termination of external traffic (e.g. an Azure Application Gateway or an AWS Application Load Balancer).
 - 2 nginx ingress controllers are deployed, one for public access and one for authenticated access
-- Authenticated (SSO) access is handled by an oauth2 proxy and KeyCloak. The user logs in using the Otomi custom KeyCloak login page. - KeyCloak is configured with an external IDP (optional) or uses local accounts. After authentication, KeyCloak provides a normalized JWT token. The JWT token is used by integrated core applications (providing user and role information) and team services configured with SSO
+- Authenticated (SSO) access is handled by an oauth2 proxy and KeyCloak. The user logs in using the Otomi custom KeyCloak login page. - KeyCloak is configured with an external IdP (optional) or uses local accounts. After authentication, KeyCloak provides a normalized JWT token. The JWT token is used by integrated core applications (providing user and role information) and team services configured with SSO
 - 4 Istio (ingress) gateways are provisioned: 1) a public gateway for routing public (non authenticated traffic to a service, 2) an authentication gateway to route authenticated traffic to a service, 3) a local gateway (for local cluster routing), 4) a Knative gateway to route traffic to Knative services
 - For each service a Istio virtual service is configured
 - One egress gateway is provisioned for all egress traffic (network policies allow all egress traffic)

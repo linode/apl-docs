@@ -33,13 +33,9 @@ kubectl logs jobs/otomi -n default
 10. Click on the `Credentials` tab and then fill in a password for this user in the `Password` and `Password Confirmation` fields
 11. Click on `Set Password`
 
-<<<<<<< HEAD
 :::info
 When a password for the Keycloak admin is not provided in the values.yaml (but automatically generated), it is advised to first change the password.
 :::
-=======
-:::info It is advised to change keycloak admin password.:::
->>>>>>> ed23b2fa996e64cc5c2d37ed352fd1268d9386b0
 
 ### Sign in to the console
 
@@ -48,8 +44,6 @@ Open the Otomi console (using the URL provided in the installer logs), and sign 
 After you have successfully logged in, you will see the Otomi Admin Dashboard. Click [here](/docs/console) to learn more about using Otomi Console.
 
 ![console-lading-page](img/console-landing-page.png)
-
-![console-apps](img/console-apps.png)
 
 ### Add the auto generated CA to your keychain (optional)
 
@@ -66,26 +60,18 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 
 [Gitea](https://gitea.io/en-us/) and [Drone](https://www.drone.io/) are an integral part of how Otomi cluster configurations are stored and updated.
 
-1. Click on the **Gitea** app (under Platform/Otomi Apps) in the console.
-2. In the top right, click on `Sign In`
-3. Sign in using `OpenID`
-4. Use the pre-filled values for the `Username` and `Email Address` and click `Complete Account`
-
-It could take a couple of minutes before the values repository becomes visible. The `otomi/values` repository holds the otomi cluster configuration and is updated whenever new changes occur through the console.
-
-![gitea-values](img/gitea-values.png)
-
-Now head back to the console to activate Drone.
-
-1. Click on the Drone app and it should open a new tab as shown below
+1. Click on the **Drone** app (under Platform/Otomi Apps) in the console.
+2. Sign in with `OpenID Connent`
+3. Use the pre-filled values for the `Username` and `Email Address` and click `Complete Account`
+4. Select `Activate`
 
 ![drone-landing](img/drone-landing.png)
 
-2. Select `Activate`, and then `ACTIVATE REPOSITORY`
+5. Click on `ACTIVATE REPOSITORY`
 
 ![drone-activate](img/drone-activate.png)
 
-3. Save the changes and you are good to go.
+6. Save the changes and you are good to go.
 
 ![drone-save](img/drone-save.png)
 

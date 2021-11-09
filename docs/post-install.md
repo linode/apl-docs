@@ -69,7 +69,7 @@ When you see this message: 'Jwks doesn't have key to match kid or alg from Jwt' 
 2. Sign in with `OpenID Connent`
 
 :::info
-When sign-in with OpenID Connect does not work, then first restart the gitea pod.
+When sign-in with OpenID Connect does not work, then first remove the `gitea-0` pod in the `gitea` namespace.
 :::
 
 3. Use the pre-filled values for the `Username` and `Email Address` and click `Complete Account`

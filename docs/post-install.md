@@ -7,11 +7,11 @@ After Otomi is installed, a couple of post install configuration steps are requi
 
 ## When Otomi is installed without optional configuration
 
-Follow these instructions when Otomi is installed without DNS (`otomi.hasExternalDNS=false`) and without 3rd party IdP (`otomi.hasExternalIDP=false`).
+Follow these instructions when Otomi is installed without DNS (`otomi.hasExternalDNS=false`) and without 3rd party IDP (`otomi.hasExternalIDP=false`).
 
 ### Get the log output of the installer job
 
-When Otomi is installed without any optional configuration, passwords and public URLs are automatically derived. The `Keycloak` app acts an IdP, which is used to define users of the otomi containers platform. Some usefoul information like `Otomi Console` and `Keycloak` public URL with admin credentials can be found at the end of the installer log.
+When Otomi is installed without any optional configuration, passwords and public URLs are automatically generated (based on nip.io). When `hasExternalIDP=false` is chosen, the Keycloak app is configured as an Identity Provider (IDP), in which one has to define users of the otomi container platform. To be able to access the public URL of Otomi Console and Keycloak and view the admin credentials, one has to view the end of the installer log.
 
 Use the following command to access the log output.
 
@@ -22,16 +22,16 @@ kubectl logs jobs/otomi -n default
 ### Create a user in Keycloak
 
 1. Navigate to Keycloak app (using the URL provided in the installer log)
-2. Click on `Administration Console`
+2. Click on "Administration Console"
 3. Login with admin credentials (using admin and password provided in the installer log)
-4. Select the `Otomi` realm
-5. Click on `Users` then `Add user`
-6. Fill in a user name in the Username field
-7. Fill in your email address in the Email field
-8. Select the `otomi-admin` group
-9. Click on `Save`
-10. Click on the `Credentials` tab and then fill in a password for this user in the `Password` and `Password Confirmation` fields
-11. Click on `Set Password`
+4. Select the "Otomi" realm
+5. Click on "Users" then "Add user"
+6. Fill in a user name in the "Username" field
+7. Fill in your email address in the "Email" field
+8. Select the "otomi-admin" group
+9. Click on "Save"
+10. Choose the "Credentials" tab and then fill in a password for this user
+11. Click on "Set Password"
 
 :::info
 When a password for the Keycloak admin is not provided in the values.yaml (but automatically generated), it is advised to first change the password.
@@ -49,7 +49,7 @@ After you have successfully logged in, you will see the Otomi Admin Dashboard. C
 
 When Otomi is installed without DNS and with an auto generated CA, add the CA to you keychain:
 
-1. In the left pane of the console, click on `download CA`
+1. In the left pane of the console, click on "Download CA"
 2. Add the CA to your keychain:
 
 ```
@@ -58,7 +58,7 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 
 ### Activate Drone
 
-[Gitea](https://gitea.io/en-us/) and [Drone](https://www.drone.io/) are an integral part of how Otomi cluster configurations are stored and updated.
+[Drone](https://www.drone.io/)is an integral part of how Otomi cluster configuration is stored and updated.
 
 1. Click on the **Drone** app (under Platform/Otomi Apps) in the console.
 
@@ -66,11 +66,10 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 When you see this message: 'Jwks doesn't have key to match kid or alg from Jwt' Drone is not yet ready. Please wait for a couple of minutes and try again.
 :::
 
-2. Sign in with `OpenID Connent`
+2. Sign in
 
-:::info
-When sign-in with OpenID Connect does not work, then first remove the `gitea-0` pod in the `gitea` namespace.
-:::
+Gitea provides an oauth2 app connection for Drone to work with it's git values. It will popup when drone is accessed the first time.
+You may sign in with "OpenID Connect", which registers the login as a new user, or with the Gitea admin credentials (username: "otomi-admin", password: `$otomi.adminPassword`). A job runs every 3 minutes promoting users with "admin" role to become co-owner of the otomi-values repo. When logging in with the admin user no waiting is necessary.
 
 3. Use the pre-filled values for the `Username` and `Email Address` and click `Complete Account`
 4. Select `Activate`
@@ -85,14 +84,14 @@ When sign-in with OpenID Connect does not work, then first remove the `gitea-0` 
 
 ![drone-save](img/drone-save.png)
 
-Now the final step is to create a Team. See the **[Teams](/docs/console/teams)** page for more information.
+Now the final step is to create a team. See the [Teams](/docs/console/teams) page for more information.
 
 ## When Otomi is installed with optional configuration
 
 ### Sign in to the console
 
-If Otomi is configured with OIDC (using Azure AD as an IdP), click on the right button (redkubes-azure in the example below).
+If Otomi is configured with `hasExternalIDP=true` and `oidc` settings have been provided for an external IDP, click on the right button ("redkubes-azure" in the example below).
 
 ![console-login](img/console-login.png)
 
-When OIDC is configured, an Active Directory user needs to be a member of the otomi-admin group. Now follow the same steps as described above to activate Drone.
+When OIDC is configured, an external IDP user needs to be a member of the "otomi-admin" group. Now follow the same steps as described above to activate Drone.

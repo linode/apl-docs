@@ -72,6 +72,10 @@ When you see this message: 'Jwks doesn't have key to match kid or alg from Jwt' 
 When sign-in with OpenID Connect does not work, then first remove the `gitea-0` pod in the `gitea` namespace.
 :::
 
+:::info
+It can take a couple of minutes before you will see the repository. Otomi first need to add your user to Gitea. 
+:::
+
 3. Use the pre-filled values for the `Username` and `Email Address` and click `Complete Account`
 4. Select `Activate`
 

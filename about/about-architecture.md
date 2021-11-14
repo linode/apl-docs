@@ -6,7 +6,7 @@ sidebar_label: Architecture
 
 ## Components
 
-Otomi is not a single application, but consists of multiple components. Each component has its own (GitHub) code repository, most of them public (open source), some private (for Enterprise Edition features).
+Otomi consists out of multiple components all working together. Each component has its own (GitHub) code repository, most of them public (open source)..
 
 The following table shows the Otomi projects and the produced artifacts.
 

@@ -4,11 +4,9 @@ title: Otomi Architecture
 sidebar_label: Architecture
 ---
 
-## Components
+## Projects
 
-Otomi consists out of multiple components all working together. Each component has its own (GitHub) code repository, most of them public (open source)..
-
-The following table shows the Otomi projects and the produced artifacts.
+Otomi consists out of multiple projects:
 
 | Project                                                    | open source |
 | ---------------------------------------------------------- | ----------- |
@@ -18,6 +16,14 @@ The following table shows the Otomi projects and the produced artifacts.
 | [otomi-console](https://github.com/redkubes/otomi-console) | Yes         |
 | [otomi-api](https://github.com/redkubes/otomi-api)         | Yes         |
 
+
+## Overview
+
+Otomi is a single package that combines multiple open-source projects with (developer) self-service and Kubernetes application configuration management.
+
+![img/architecture](/img/architecture.png)
+
+## Components
 ### Otomi Core
 
 Otomi Core is the heart of Otomi and contains a set of about (currently) 47 Helm Charts. Most of these charts are optimized charts from open source projects, others are developed by [Red Kubes](https://redkubes.com). Otomi Core is made available (per release) as a container image. For more information, see the public repository [here](https://github.com/redkubes/otomi-core) (and star ;)
@@ -154,10 +160,10 @@ The following table shows all integrated applications:
 | [Hashicorp Vault](/docs/apps/vault)          |      |   X    |      |        X        |    X     |
 | [Harbor](/docs/apps/harbor)                  |      |   X    |      |        X        |    X     |
 | [Kubeapps](/docs/apps/kubeapps)              |      |   X    |      |                 |    X     |
-| [Drone](/docs/apps/drone)                    |  X   |        |      |        X        |    X     |
-| Gitea                                        |  X   |        |      |        X        |          |
+| [Drone](/docs/apps/drone)                    |  X   |        |      |        X        |          |
+| Gitea                                        |  X   |        |      |        X        |    X     |
 | Httpbin                                      |      |   X    |      |                 |    X     |
-| Jeager                                       |  X   |        |      |                 |          |
+| Jeager                                       |  X   |        |      |                 |    X     |
 | Kiali                                        |  X   |        |      |                 |          |
 
 ## Ingress & SSO

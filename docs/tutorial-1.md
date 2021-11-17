@@ -55,7 +55,7 @@ docker build -t harbor.your-domain.com/team-demo/hello-world .
 Push the image to Harbor:
 
 ```
-docker push harbor.your-domain.com/hello-world
+docker push harbor.your-domain.com/team-demo/hello-world
 ```
 
 Now go to the team-demo project and verify that the hello-world repository has been created. 

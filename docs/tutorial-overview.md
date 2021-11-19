@@ -20,7 +20,7 @@ In this tutorial section, we try to provide as many tutorials as possible about 
 
 To be able to do the tutorials, please make sure you have:
 
-- Otomi installed on your K8s cluster
+- Otomi installed on your K8s cluster with `hasExternalIDP=true` (using an external DNS zone) and `charts:certmanager:issuer=letsencrypt`
 - Docker (or an alternative) installed on your machine
 - A Git client installed on your machine
 - Visual Studio Code code (or any other text editor) installed on you machine (in this tutorial we'll use VSC)

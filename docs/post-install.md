@@ -58,7 +58,7 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 1. Click on the **Drone** app (under Platform/Otomi Apps) in the console.
 
 :::info
-When you see this message: 'Jwks doesn't have key to match kid or alg from Jwt' Drone is not yet ready. Please wait for a couple of minutes and try again. Also see [this](/docs/sre/known-issues/istio) issue.
+When you see this message: 'Jwks doesn't have key to match kid or alg from Jwt' Drone is not yet ready. Please wait for a couple of minutes and try again.
 :::
 
 2. Sign in

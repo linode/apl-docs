@@ -5,7 +5,7 @@ sidebar_label: Overview
 ---
 
 :::info
-When Otomi is installed with minimal values (using the quickstarts), you can not use all the tutorials. Make sure to first install Otomi with `hasExternalDNS=true`.
+When Otomi is installed with minimal values (using the quickstarts), you can not use all the tutorials unless you add the auto generated CA to all worker nodes. To prevent adding the CA to all worker nodes, install Otomi with `hasExternalDNS=true`.
 :::
 
 This section contains tutorials to learn using Otomi and all the integrated apps.

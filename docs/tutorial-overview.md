@@ -4,9 +4,13 @@ title: Tutorial Overview
 sidebar_label: Overview
 ---
 
-In this tutorial section, we try to provide as many tutorials as possible about working with Otomi and all the integrated apps.
+:::info
+When Otomi is installed with minimal values (using the quickstarts), you can not use all the tutorials. Make sure to first install Otomi with `hasExternalDNS=true`.
+:::
 
-<!-- - [Install Otomi with all options on AKS](full-install-azure) - work in progress -->
+This section contains tutorials to learn using Otomi and all the integrated apps.
+
+- [Install Otomi with external DNS](full-install-for-tutorial)
 - [Creating and managing users when using Keycloak as IdP](create-keycloak-users)
 - [Build, tag and push an image to Harbor](build-tag-push)
 - [Create a Kubernetes service](create-k8s-svc)
@@ -20,11 +24,11 @@ In this tutorial section, we try to provide as many tutorials as possible about 
 
 To be able to do the tutorials, please make sure you have:
 
-- Otomi installed on your K8s cluster with `hasExternalIDP=true` (using an external DNS zone) and `charts:certmanager:issuer=letsencrypt`
+- A running Kubernetes cluster
 - Docker (or an alternative) installed on your machine
 - A Git client installed on your machine
-- Visual Studio Code code (or any other text editor) installed on you machine (in this tutorial we'll use VSC)
+- Visual Studio Code code (or any other text editor) installed on you machine (in the tutorials we'll use VSC)
 - Created a Team in Otomi. In the tutorials we'll use a team called `demo`
 - Signed in to Otomi as a user who is a member of the `team-demo` group
 
-If you haven't already, first [create a user in Keycloak](create-keycloak-users)
+If you haven't already, first install Otomi.

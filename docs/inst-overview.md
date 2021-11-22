@@ -6,9 +6,13 @@ sidebar_label: Overview
 
 ## Experimentation & evaluation
 
-For experimentation and evaluation purposes, use the quickstart for Azure, Google Cloud Platform and AWS. Go to the [quickstart](https://github.com/redkubes/quickstart) repository on Github to get started.
+For experimentation and evaluation purposes, use the quickstart for Azure, Google Cloud Platform and AWS to deploy a Kubernetes cluster in your cloud of choice and install Otomi with minimal values. Go to the [quickstart](https://github.com/redkubes/quickstart) repository on Github to get started.
 
-After installing Otomi, perform the [post-installation steps](post-install). To learn how to work with Otomi, start with the [tutorials](/docs/tutorials/).
+After installing Otomi, perform the [post-installation steps](post-install).
+
+:::note
+When installing Otomi with minimal values (using the quickstarts) you can not use the tutorials.
+:::
 
 ## Advanced
 

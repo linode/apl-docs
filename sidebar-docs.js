@@ -64,6 +64,7 @@ module.exports = {
     ],
     Tutorials: [
       'tutorial-overview',
+      'tutorial-0-1',
       'tutorial-0',
       'tutorial-1',
       'tutorial-2',

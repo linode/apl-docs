@@ -1,23 +1,68 @@
 ---
-slug: tutorials/full-install-azure
-title: Installing Otomi with all options
-sidebar_label: Full Otomi install in Azure
+slug: tutorials/full-install-for-tutorial
+title: Installing Otomi with external DNS
+sidebar_label: Install Otomi
 ---
 
-In this tutorial, you are going to install Otomi with the following features:
+To go through the tutorials, you first need to install Otomi with `otomi.hasExternalDNS=true` on a running Kubernetes cluster.
 
-- KMS to encrypt sensitive information in the values repository
-- Use Azure Active Directory as IdP
-- Use a public DNS zone
-- Use LetsEncrypt as a CA for certificates
+1. Follow the instructions [here](/docs/installation/optional) for setting up external DNS
 
-For this tutorial, we assume you have:
+2. Create a values.yaml to deploy Otomi using Helm
 
-- Access to an Azure subscription
-- A public DNS zone
-- Azure Active Directory for user management
+```yaml
+cluster:
+  domainSuffix: ''
+  k8sVersion: '1.20'
+  name: 'dev'
+  owner: ''
+  provider: '' # provider can be one of aws|azure|google|onprem
+otomi:
+  adminPassword: ''
+  hasExternalDNS: true
+charts:
+  cert-manager:
+    issuer: letsencrypt 
+    email: ''
+    stage: production
+  external-dns:
+    domainFilters:
+      - ''
+dns:
+  provider: # provider can be one of aws|azure|google
+#   aws:
+#     # next two keys are optional for explicit access with an iam role
+#     # (if no metadata exists with implicit role access to manage dns)
+#     accessKeySecret: ''
+#     secretAccessKey: ''
+#     # region is always needed
+#     region: eu-central-1
+#     role: '' # optional ARN, may be set explicitly if no metadata can be accessed
+#   azure:
+#     aadClientId: ''
+#     aadClientSecret: ''
+#     tenantId: '' # optional
+#     subscriptionId: '' # optional
+#   google:
+#     serviceAccountKey: ''
+#     project: ''
+```
 
-## Set up AKS
+3. Install the chart
 
+Add the Otomi repository:
+
+```bash
+helm repo add otomi https://otomi.io/otomi-core
+helm repo update
+```
+
+Install the chart:
+
+```bash
+helm install -f values.yaml otomi otomi/otomi
+```
+
+4. Follow the [post installation steps](/docs/installation/post-install/)
 
 

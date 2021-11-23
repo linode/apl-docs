@@ -4,44 +4,66 @@ title: Working with Otomi CLI
 sidebar_label: Working with Otomi CLI
 ---
 
-When you would like to do local development, you will operate on the values directly and have to apply them manually.
+When you would like to:
 
-## Install Otomi CLI
+- Create a new values repo locally and operate on a cluster
+- Clone a cluster: copy a values repo, make modifications and deploy to new k8s context
+- Edit values not yet under management by the console, such as chart settings
+- Do local development
 
-If you haven't deployed Otomi with the CLI, install the Otomi CLI first. See [here](/docs/cli) to install Otomi CLI.
+Then you will have to create/edit a local values repo and perform operations with the CLI. If you haven't yet, [install the Otomi CLI](/docs/cli/) first, and then follow the steps below.
 
-## Pull the values
+At any time you may ask for an overview of the available commands and their options, so please don't hesitate to run `otomi help`. In order for any command to show more output use `-v` (or `-vvv` to get even more output).
 
-Clone the `otomi/values` repository from `gitea.<your.domain>/otomi/values` (if not already done) to work with the values locally.
+## Bootstrap a values repo
+
+Pick the scenario you are interested in:
+
+### 1. Bootstrap a new (empty) values repo to deploy otomi with the CLI
+
+Running:
 
 ```bash
-git clone https://gitea.<your.domain>/otomi/values.git
-cd values
+export ENV_DIR=$PWD/otomi-values
+otomi bootstrap
 ```
 
-:::note ATTENTION: Are you using SOPS? Then do first do the following:
+Will create a folder named `otomi-values` in your cwd which contains all the files necessary to start editing. The minimal values that need to be provided are found in `env/cluster.yaml`, but more may be configured to your liking. Any cluster operations afterwards expect a correct `cluster.k8sContext`, so be sure to set it.
 
-- Make sure you have installed the SOPS extention for VSC.
-- Add your `.secrets` file to the `values` folder
+Running `otomi validate-values` immediately afterwards will show you errors for the missing minimal values. So go ahead and fill them in. If you are using VSCode yaml hinting is active and can be invoked with CTRL-SPACE. Keep running `validate-values` until your input is correct.
+
+Now you can continue with doing [cluster operations](#cluster-operations).
+
+### 2. Bootstrap the values from a values repo deployed by chart
+
+Clone the `otomi/values` repository from `gitea.<your.domain>/otomi/values` to work with the values locally.
+
+```bash
+git clone https://gitea.<your.domain>/otomi/values.git otomi-values
+cd otomi-values
+```
+
+:::note ATTENTION: Are you using SOPS? Now make sure to:
+
+- Have installed the SOPS extention for VSCode
+- Create and edit the secrets file in the `otomi-values` folder: `cp .secrets.sample .secrets`
 - Source the secrets: `source .secrets`
-- Decrypt the secrets by running `otomi decrypt`
 
 :::
 
-## Bootstap the values
+Now continue with the next step.
 
-First create a `.env` file in the `env` folder and add the following line:
+## Bootstrap the repo locally before doing cluster operations
 
-```bash
-echo 'export K8S_CONTEXT="<the-context-of-your-k8s-cluster>"' > .env
-```
-
-Bootstap the local values:
+A local repo always needs to be bootstrapped at least once to have all it's working files in place. However, whenever the `otomi.version` value has changed, it's corresponding artifacts need to be pulled and unpacked again. It can never hurt to run the bootstrap procedure as it is fast and idempotent:
 
 ```bash
-otomi bootstap
+otomi bootstrap
 ```
-## validate changes (optional)
+
+This will make sure that the correct files are unpacked from the versioned otomi container, and other necessary files are generated.
+
+## Validate changes (optional)
 
 Validate the configuration after making changes:
 
@@ -49,17 +71,23 @@ Validate the configuration after making changes:
 otomi validate-values
 ```
 
-Use `-v` to get more output (or `-vvv` to get even more output). See [here](/docs/cli/validate-values) for a full list of `otomi validate` command options. When successful, the output will show: `otomi:validate-values:verbose Values validation SUCCESSFUL`
+When successful, the output will show: `Values validation SUCCESSFUL`
 
 ## Deploy changes
 
-Deploy the changes:
+:::note Diff output is logged in stderr!
+
+Helmfile decided to output diff information to stderr to circumvent template output pollution. Don't be worried to see such output prefixed with `error:`.
+
+:::
+
+Note: To see the diff in manifest output created by the changed values, run `otomi diff` first.
+
+Now deploy changes with:
 
 ```bash
 otomi apply
 ```
-
-Use `-v` to get more output (or `-vvv` to get even more output). See [here](/docs/cli/apply) for a full list of `otomi apply` command options.
 
 Note: Creating a team can take around 5 to 10 minutes to complete.
 
@@ -70,3 +98,5 @@ Now commit your changes to the (otomi/values) GIT repository on the cluster to s
 ```bash
 otomi commit
 ```
+
+When bringing your own git repo you will be asked to push the values as a last step yourself. (The myriad of git auth mechanisms out there we simply can't afford to support ;)

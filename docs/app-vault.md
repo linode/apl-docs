@@ -17,8 +17,9 @@ If you would like to sign in into Vault with full access (and not with limited a
 1. Get the token
 
 ```
-kubectl get secret -n vault  vault-unseal-keys -ojsonpath='{.data.vault-root}' | base64 -d | pbcopy
+kubectl get secret -n vault vault-unseal-keys -o jsonpath='{.data.vault-root}' | base64 -d | pbcopy
 ```
- 2. Open Vault and sign in with method `token`
 
- 3. Paste the token generated in step 1.
+2.  Open Vault and sign in with method `token`
+
+3.  Paste the token generated in step 1.

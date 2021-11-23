@@ -4,14 +4,12 @@ title: Tutorial Overview
 sidebar_label: Overview
 ---
 
-:::info
-When Otomi is installed with minimal values (using the quickstarts), you can not use all the tutorials unless you add the auto generated CA to all worker nodes. To prevent adding the CA to all worker nodes, install Otomi with `hasExternalDNS=true`.
-:::
+:::info When Otomi is installed with minimal values (using the quickstarts), you can not use all the tutorials unless you add the auto generated CA to all worker nodes. To prevent adding the CA to all worker nodes, install Otomi with `hasExternalDNS=true`. :::
 
 This section contains tutorials to learn using Otomi and all the integrated apps.
 
 - [Install Otomi with external DNS](full-install-for-tutorial)
-- [Creating and managing users when using Keycloak as IdP](create-keycloak-users)
+- [Creating and managing users when using Keycloak as IDP](create-keycloak-users)
 - [Build, tag and push an image to Harbor](build-tag-push)
 - [Create a Kubernetes service](create-k8s-svc)
 - [Publicly expose an existing Kubernetes service using Otomi Console](expose-service)

@@ -1,6 +1,6 @@
 ---
 slug: tutorials/create-keycloak-users
-title: Creating users in Keycloak when using Keycloak as IdP
+title: Creating users in Keycloak when using Keycloak as IDP
 sidebar_label: Creating users in Keycloak
 ---
 
@@ -16,7 +16,7 @@ Sign in to the Keycloak administration console with the default `admin` user acc
 2. Click on `Administration Console`
 3. Login with username: `admin` and the password `<otomi.adminPassword>` provided in your values.
 4. Select the `Otomi` realm
-5. Click on `Users` then `Add user` 
+5. Click on `Users` then `Add user`
 6. Fill in a user name in the Username field
 7. Fill in your email address in the Email field
 8. Select the `otomi-admin` group

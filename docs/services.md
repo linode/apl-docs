@@ -47,7 +47,7 @@ A private URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Opti
 | Host | Choose a hostname that will be the prefix of the domain. |
 | Forward path | Do not "terminate" the path but instead pass it to the receiving service. |
 | DNS Zone | Choose a dns zone that will be the suffix of the domain. |
-| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IdP. |
+| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IDP. |
 | Already has a certificate | Don't generate certificates for this service. |
 | > Certificate ARN | [AWS only] Provide the certificate arn. |
 | > Select existing secret name | [non AWS] Provide a TLS secret name previously created under `Secrets`. Override to select name of secret not known here. |
@@ -71,7 +71,7 @@ A public URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Optio
 | Host | Choose a hostname that will be the prefix of the domain. |
 | Forward path | Do not "terminate" the path but instead pass it to the receiving service. |
 | DNS Zone | Choose a dns zone that will be the suffix of the domain. |
-| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IdP. |
+| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IDP. |
 | Already has a certificate | Don't generate certificates for this service. |
 | > Certificate ARN | [AWS only] Provide the certificate arn. |
 | > Select existing secret name | [non AWS] Provide a TLS secret name previously created under `Secrets`. Override to select name of secret not known here. |

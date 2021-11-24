@@ -43,11 +43,16 @@ git clone https://gitea.<your.domain>/otomi/values.git otomi-values
 cd otomi-values
 ```
 
-:::note ATTENTION: Are you using SOPS? Now make sure to:
+:::note Are you using SOPS?
 
-- Have installed the SOPS extention for VSCode
+Then, for automatic en-/encryption, provide the credentials:
+
 - Create and edit the secrets file in the `otomi-values` folder: `cp .secrets.sample .secrets`
-- Source the secrets: `source .secrets`
+
+Optionally, in order for VSCode to provide on the fly en-/encryption:
+
+- Install the SOPS extention for VSCode (as is automatically suggested from the config provided)
+- Source the secrets: `source .secrets` before opening the values project, so the plugin has access.
 
 :::
 

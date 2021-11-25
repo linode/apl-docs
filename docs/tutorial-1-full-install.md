@@ -22,23 +22,23 @@ Copy the output of `helm show values otomi/otomi` to `values.yaml` and make sure
 ```yaml
 dns:
   # choose one of aws|azure|google
-  provider: ''
-  # aws:
-  #   # next two keys are optional for explicit access with an iam role
-  #   # (if no metadata exists with implicit role access to manage dns)
-  #   accessKeySecret: ''
-  #   secretAccessKey: ''
-  #   # region is always needed
-  #   region: eu-central-1
-  #   role: '' # optional ARN, may be set explicitly if no metadata can be accessed
-  # azure:
-  #   aadClientId: ''
-  #   aadClientSecret: ''
-  #   tenantId: '' # optional
-  #   subscriptionId: '' # optional
-  # google:
-  #   serviceAccountKey: ''
-  #   project: ''
+  provider:
+    # aws:
+    #   # next two keys are optional for explicit access with an iam role
+    #   # (if no metadata exists with implicit role access to manage dns)
+    #   accessKeySecret: ''
+    #   secretAccessKey: ''
+    #   # region is always needed
+    #   region: eu-central-1
+    #   role: '' # optional ARN, may be set explicitly if no metadata can be accessed
+    # azure:
+    #   aadClientId: ''
+    #   aadClientSecret: ''
+    #   tenantId: '' # optional
+    #   subscriptionId: '' # optional
+    # google:
+    #   serviceAccountKey: ''
+    #   project: ''
 otomi:
   hasExternalDNS: true
 charts:

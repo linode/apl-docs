@@ -10,8 +10,6 @@ In this tutorial, you are going to:
 2. Create a Kubernetes Deployment and Service
 3. Publicly expose the Hello World app using Otomi
 
-## Build an image and push it to Harbor
-
 When you created a Team in Otomi, Otomi has automatically created a project for the team in Harbor. In this tutorial we'll assume you have created a team called `demo`.
 
 ### Create a robot account in Harbor
@@ -45,13 +43,13 @@ docker login -u 'otomi-team-demo+hello' -p '$token' harbor.your-domain.com
 Build and tag the image:
 
 ```
-docker build -t harbor.your-domain.com/team-demo/hello-world .
+docker build -t harbor.your-domain.com/team-demo/hello-world:demo .
 ```
 
 Push the image to Harbor:
 
 ```
-docker push harbor.your-domain.com/team-demo/hello-world
+docker push harbor.your-domain.com/team-demo/hello-world:demo
 ```
 
 Now go to the team-demo project and verify that the hello-world repository has been created.

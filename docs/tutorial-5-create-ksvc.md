@@ -1,12 +1,12 @@
 ---
-slug: tutorials/create-knative-svc
+slug: tutorials/create-knative-service
 title: Create a Knative service
 sidebar_label: Create a Knative service
 ---
 
 In this tutorial, you are going to deploy the image you build, tagged and pushed to harbor in the previous tutorial by creating a Knative service.
 
-## Create a Knative service
+### Create a Knative Service
 
 Create a `hello-ksvc.yaml` file and copy/paste the following Kubernetes manifests:
 
@@ -19,16 +19,16 @@ spec:
   template:
     metadata:
       annotations:
-        policy.otomi.io/ignore-sidecar: container-limits,psp-allowed-users
         autoscaling.knative.dev/minScale: '1'
+        policy.otomi.io/ignore-sidecar: container-limits,psp-allowed-users
     spec:
       containers:
-        - image: harbor.your-domain.com/team-demo/hello-world:latest
+        - image: harbor.your-domain.com/team-demo/hello-world:demo
           securityContext:
             runAsUser: 1001
 ```
 
-### Create the knative service
+### Deploy the Knative Service
 
 If you haven't done already, first set your kubectl context:
 

@@ -8,8 +8,6 @@ When you did not provide `oidc` in your values to configure an external identity
 
 In this tutorial, you are going to create a new user in Keycloak and add the new user to a group.
 
-## Create users
-
 Sign in to the Keycloak administration console with the default `admin` user account, create additional users and add them to groups. You may follow these instructions:
 
 1. Go to Keycloak admin console using the following url: `keycloak.<your domainSuffix>`

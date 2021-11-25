@@ -4,9 +4,7 @@ title: Create a secret in Hashicorp Vault
 sidebar_label: Create a secret in Vault
 ---
 
-In his tutorial, you are going to create a secret Hashicorp Vault
-
-## Create a secret in Vault
+In his tutorial, you are going to create a secret in Hashicorp Vault.
 
 - In the left panel under the Team demo, click `Otomi Apps` then click on `Vault`
 - Sign in with Method `OIDC`, skip role and click on `Sign in with OIDC Provider`
@@ -19,4 +17,4 @@ You are now automatically redirected to the team space `teams/team-demo/`created
 - In the value field, fill in `party people`
 - Click on `save`
 
-The secret is now created in vault. In the next tutorial, you are going to 'map' the secret in the Otomi configuration.
+The secret is now created in vault. In the next tutorial, you are going to "inject" the secret in the Otomi service configuration.

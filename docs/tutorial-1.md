@@ -37,7 +37,7 @@ git clone https://github.com/redkubes/nodejs-helloworld.git
 Login with username `otomi-team-demo+hello` & password: `token`
 
 ```
-docker login -u 'robot-team-demo+hello' -p '$token' harbor.your-domain.com
+docker login -u 'otomi-team-demo+hello' -p '$token' harbor.your-domain.com
 ```
 
 ### Build, tag and push the image
@@ -54,4 +54,4 @@ Push the image to Harbor:
 docker push harbor.your-domain.com/team-demo/hello-world
 ```
 
-Now go to the team-demo project and verify that the hello-world repository has been created. 
+Now go to the team-demo project and verify that the hello-world repository has been created.

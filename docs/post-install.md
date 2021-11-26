@@ -27,7 +27,9 @@ When Otomi is installed with minimal values, passwords and public URLs (based on
 10. Choose the "Credentials" tab and then fill in a password for this user
 11. Click on "Set Password"
 
-:::info When a password for the Keycloak admin is not provided in the values.yaml (but automatically generated), it is advised to first change the password. :::
+:::info 
+When a password for the Keycloak admin is not provided in the values.yaml (but automatically generated), it is advised to first change the password. 
+:::
 
 ### Sign in to the console
 
@@ -46,7 +48,9 @@ After you have successfully logged in, you will see the Otomi Admin Dashboard. C
 sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/Downloads/ca.crt
 ```
 
-:::Note To be able to log in to Harbor, restart the Docker service after adding the CA to your keychain. To be able to pull images from Harbor, add the CA to all cluster nodes. :::
+:::Note 
+To be able to log in to Harbor, restart the Docker service after adding the CA to your keychain. To be able to pull images from Harbor, add the CA to all cluster nodes. 
+:::
 
 ### Activate Drone
 
@@ -54,13 +58,17 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 
 1. Click on the **Drone** app (under Platform/Otomi Apps) in the console.
 
-:::info When you see this message: 'Jwks doesn't have key to match kid or alg from Jwt' Drone is not yet ready. Please wait for a couple of minutes and try again. :::
+:::info 
+When you see this message: 'Jwks doesn't have key to match kid or alg from Jwt' Drone is not yet ready. Please wait for a couple of minutes and try again. 
+:::
 
 2. Sign in
 
-Gitea provides an oauth2 app connection for Drone to work with it's git values. It will popup when drone is accessed the first time. You can sign in with "OpenID Connect", which registers the login as a new user, or with the Gitea admin credentials (username: "otomi-admin", password: `$otomi.adminPassword`). A job runs every 3 minutes promoting users with "admin" role to become co-owner of the otomi-values repo. When logging in with the admin user no waiting is necessary.
+Gitea provides an oauth2 app connection for Drone to work with it's git values. It will popup when drone is accessed the first time. You can sign in with "OpenID Connect", which registers the login as a new user, or with the Gitea admin credentials (username: "otomi-admin", password: `$otomi.adminPassword`). A job runs every 3 minutes promoting users with "admin" role to become co-owner of the otomi-values repo. When logging in with the `otomi-admin` user no waiting is necessary.
 
-:::info It can take a couple of minutes before you will see the repository. Otomi first needs to add your user to Gitea. :::
+:::info 
+It can take a couple of minutes before you will see the repository. Otomi first needs to add your user to Gitea. 
+:::
 
 3. Use the pre-filled values for the `Username` and `Email Address` and click `Complete Account`
 4. Select `Activate`

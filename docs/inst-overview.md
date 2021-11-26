@@ -10,10 +10,6 @@ For experimentation and evaluation purposes, use the quickstart for Azure, Googl
 
 After installing Otomi, perform the [post-installation steps](post-install).
 
-:::note
-When installing Otomi with minimal values (using the quickstarts) you can not use the tutorials.
-:::
-
 ## Advanced
 
 We strive to make installation of Otomi as easy and smooth as possible. The whole procedure involves several moving parts and input configurations. In order to guarantee exact outcomes, we strongly advise to follow the these steps:

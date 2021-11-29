@@ -8,7 +8,18 @@ Otomi integrated Nginx Ingress into an advanced [ingress architecture](/about/ar
 
 ## ModSecurity with OWASP rule set
 
-By deafault, ModSecurity is enabled in Nginx and configured with an OWASP rule set in a non-blocking mode. Teams can see ModSecurity warning messages in the Grafana/OWASP dashboard in the Otomi Apps.
+By deafault, ModSecurity with OWASP filtering is not enabled in Nginx.
+
+To turn on ModSecurity with OWASP filtering change the nginx-ingress configuration in the Otomi values repository: (`/env/charts/nginx-ingress.yaml`) as follows:
+
+```yaml
+charts:
+    nginx-ingress:
+        modsecurity:
+            enabled: true
+```
+
+When enabled, ModSecurity is by default configured in non-blocking mode. Teams can see ModSecurity warning messages in the Grafana/OWASP dashboard in the Otomi Apps.
 
 To configure ModSecurity in blocking mode, change the nginx-ingress configuration in the Otomi values repository: (`/env/charts/nginx-ingress.yaml`) as follows:
 
@@ -16,5 +27,6 @@ To configure ModSecurity in blocking mode, change the nginx-ingress configuratio
 charts:
     nginx-ingress:
         modsecurity:
+            enabled: true
             block: true
 ```

@@ -18,7 +18,6 @@ Validate values for each cluster against JSON schema (takes target options).
 | `-f`, `--file` | Helmfile option to select helmfiles by filename, e.g. '-f helmfile.d/helmfile-15.ingress-core.yaml' | `[array]` |  |
 | `--log-level` |  | `fatal, error, warn, info, verbose, debug, trace` | `warn` |
 | `-s`, `--skip-cleanup` |  | `[boolean]` | `false` |
-| `-c`, `--set-context` |  | `[boolean]` | `false` |
 | `-v`, `--verbose` |  |  | `count` |
-| `--ni`, `--non-interactive` |  | `[boolean]` | `false` |
-| `-h`, `--help` | Show help |  | `[boolean]` |
+| `--ni`, `--non-interactive` | Same as setting env.CI | `[boolean]` | `false` |
+| `-h`, `--help` | Show help |  |  |

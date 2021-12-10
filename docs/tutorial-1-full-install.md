@@ -48,10 +48,13 @@ charts:
     email: ''
     stage: production
   external-dns:
-    # if your dns credentials are allowed to manage everything on a root domain (i.e. *.example.com)
-    # you can limit the scope to a list of sub domains here (i.e. test.example.com)
+    # list one or more domains that the credentials under dns give access to
     domainFilters:
       - ''
+    # if your dns credentials give authorization to manage to manage everything on a root domain (i.e. *.example.com)
+    # you can limit the scope to a list of zones that only operate on some subdomains here (i.e. test.example.com)
+    # zoneIdFilters:
+    #   - ''
 ```
 
 3. Install the chart

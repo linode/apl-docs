@@ -11,7 +11,7 @@ When working with Istio you can expect to run into the following issues:
 **Problem**
 
 ```
-`Jwks doesn't have key to match kid or alg from Jwt`
+Jwks doesn't have key to match kid or alg from Jwt
 ```
 
 **Cause** The istio-proxy sidecar caches JWKS with a TTL of 20 minutes. The TTL is a hardcoded parameter (`JwtPubKeyRefreshInterval`) and cannot be configured. By redeploing keycloak `kid` or `alg` can change, thus JWKS that is cached by istio-proxy sidecar is not valid anymore.

@@ -3,12 +3,6 @@ slug: installation/cli/
 title: Install with CLI
 ---
 
-:::note ATTENTION: This documentation is based on the old CLI
-
-We will soon update the install with CLI section based on the [new CLI](/docs/cli/)
-
-:::
-
 ## 1. Initialize a values repo
 
 Otomi needs a git repo to store its configuration. We call it a **_values_** repo.
@@ -178,6 +172,7 @@ Let's do a diff of all the charts that are enabled:
 ```bash
 otomi diff
 ```
+
 ### Need to know quirks
 
 Whenever you modify resources without using helm, its internal bookkeeping (the versioned secrets in the namespaces) will not change, and any subsequent `otomi apply` commands will not modify anything. If you notice this, and want to overwrite with the output manifests, you can use `otomi sync`, which will skip doing a diff, and instead apply all charted manifests as a new version.

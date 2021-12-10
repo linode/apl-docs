@@ -58,7 +58,7 @@ DELETE FROM harbor_user WHERE user_id = <userid>;
 
 Exit psql
 
-```
+```sql
 \q
 ```
 

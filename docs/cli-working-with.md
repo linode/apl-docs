@@ -80,7 +80,7 @@ When successful, the output will show: `Values validation SUCCESSFUL`
 
 ## Deploy changes
 
-:::note Diff output is logged in stderr!
+:::info Diff output is logged in stderr!
 
 Helmfile decided to output diff information to stderr to circumvent template output pollution. Don't be worried to see such output prefixed with `error:`.
 
@@ -105,3 +105,17 @@ otomi commit
 ```
 
 When bringing your own git repo you will be asked to push the values as a last step yourself. (The myriad of git auth mechanisms out there we simply can't afford to support ;)
+
+Lastly, after seeing the new values in your remote git repo, one thing remains: restarting the otomi-api container. Why? The otomi-api container needs to re-inflate itself with the new values, and otomi does not (yet) detect such changes. (The drone runner does, however, and will immediately apply the changes in the values to the cluster.)
+
+:::caution
+
+If the container does not get restarted and changes are deployed via the Otomi console, the api will run into a merge conflict and any user input will be lost.
+
+:::
+
+To restart the otomi-api containers:
+
+```bash
+kubectl -n otomi delete po -l app.kubernetes.io/name=otomi-api
+```

@@ -36,18 +36,18 @@ In Otomi console, select team `demo` in the top bar. On the bottom of the left p
 
 Now export the KUBECFG to set the kubectl context:
 
-```
+```bash
 export KUBECONFIG=$path-to-your-kubeconfig.yaml
 ```
 
 And apply the manifest to Kubernetes:
 
-```
+```bash
 kubectl apply -f hello-ksvc.yaml
 ```
 
 Check if the Knative service has been created:
 
-```
+```bash
 kubectl describe ksvc hello-ksvc
 ```

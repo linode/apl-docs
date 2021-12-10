@@ -26,7 +26,7 @@ When you created a Team in Otomi, Otomi has automatically created a project for 
 
 Clone the repo used for this tutorial:
 
-```
+```bash
 git clone https://github.com/redkubes/nodejs-helloworld.git
 ```
 
@@ -34,7 +34,7 @@ git clone https://github.com/redkubes/nodejs-helloworld.git
 
 Login with username `otomi-team-demo+hello` & password: `token`
 
-```
+```bash
 docker login -u 'otomi-team-demo+hello' -p '$token' harbor.your-domain.com
 ```
 
@@ -42,13 +42,13 @@ docker login -u 'otomi-team-demo+hello' -p '$token' harbor.your-domain.com
 
 Build and tag the image:
 
-```
+```bash
 docker build -t harbor.your-domain.com/team-demo/hello-world:demo .
 ```
 
 Push the image to Harbor:
 
-```
+```bash
 docker push harbor.your-domain.com/team-demo/hello-world:demo
 ```
 

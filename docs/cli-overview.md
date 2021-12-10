@@ -41,15 +41,11 @@ This will download otomi into the current directory
 
 ## Using the CLI
 
-:::note Note: the image used is rather large, so this might take some time.
+Running any `otomi` command will pull the values' `otomi.version` image tag.
 
-Run the following command:
+:::note The image used is rather large, so this might take some time.
 
-```bash
- docker pull otomi/core:master
-```
-
-To make sure you are using the latest version.$$
+The total compressed size of the base image with all the tools in use is close to 1Gi, and shows close to 2Gi uncompressed.
 
 :::
 

@@ -19,8 +19,8 @@ env:
 
 And apply the manifest to Kubernetes:
 
-```
-kubectl apply -f hello-svc.yaml
+bash kubectl apply -f hello-svc.yaml
+
 ```
 
 Go to https://hello.team-demo.your-domain.com/
@@ -28,3 +28,4 @@ Go to https://hello.team-demo.your-domain.com/
 As you can see, the text on the page now shows the value `party people` of the secret you created in Vault.
 
 You can do the same for the Knative service `hello-ksvc`.
+```

@@ -7,7 +7,7 @@ export default [
   },
   {
     href: 'https://knative.dev/',
-    src: 'knative-logo.svg',
+    src: 'knative.png',
     name: 'Knative',
     desc: 'Deploy and manage modern serverless workloads like functions and auto scalable container deployments',
   },
@@ -49,9 +49,21 @@ export default [
   },
   {
     href: 'https://bitnami.com/kubernetes/kubeapps',
-    src: 'kubeapps-logo.svg',
+    src: 'kubeapps.png',
     name: 'Bitnami Kubeapps',
     desc: 'Web-based UI for launching and managing applications on Kubernetes',
+  },
+  {
+    href: 'https://cert-manager.io/',
+    src: 'cert-manager.svg',
+    name: 'Certmanager',
+    desc: 'Securely provide certificates to applications working within your cluster',
+  },
+  {
+    href: 'https://github.com/helm/charts/tree/master/stable/external-dns',
+    src: 'dns-logo.svg',
+    name: 'External DNS',
+    desc: 'Making sure your service ips are found on the internet using hostnames',
   },
   {
     href: 'https://drone.io/',
@@ -93,13 +105,7 @@ export default [
     href: 'https://openid.net/',
     src: 'openid-logo.svg',
     name: 'Oauth2 / OpenID',
-    desc: 'Authentication of users against any OIDC provider, or Active Directory / LDAP',
-  },
-  {
-    href: 'https://github.com/helm/charts/tree/master/stable/external-dns',
-    src: 'dns-logo.svg',
-    name: 'External DNS',
-    desc: 'Making sure your service ips are found on the internet using hostnames',
+    desc: 'Authenticate users against any OIDC provider',
   },
   {
     href: 'https://velero.io/',
@@ -108,15 +114,9 @@ export default [
     desc: 'Back up Kubernetes objects and Persistent Volumes',
   },
   {
-    href: 'https://kubernetes.io/docs/concepts/services-networking/ingress/',
-    src: 'ingress-logo.svg',
-    name: 'Ingress Control',
+    href: 'https://github.com/kubernetes/ingress-nginx',
+    src: 'nginx.png',
+    name: 'Nginx Ingress Controller',
     desc: 'Create and manage external access to the services in your clusters',
-  },
-  {
-    href: 'https://httpbin.org/',
-    src: 'httpbin-logo.svg',
-    name: 'Httpbin',
-    desc: 'A simple HTTP Request & Response Service',
   },
 ]

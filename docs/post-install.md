@@ -9,11 +9,11 @@ After Otomi is installed, a couple of post install configuration steps are requi
 
 Follow these instructions when Otomi is installed without DNS (`otomi.hasExternalDNS=false`) and without a 3rd party IDP (`otomi.hasExternalIDP=false`).
 
-### Get the log output of the installer job
+### Step 1: Get the log output of the installer job
 
 When Otomi is installed with minimal values, passwords and public URLs (based on nip.io) are automatically generated and Keycloak is configured as an Identity Provider (IDP), in which one has to define Otomi users. The public URL of Otomi Console, the public URL of Keycloak and the admin credentials can be retrieved from the installer log. The installer job runs in the default namespace. In case the installer failed in the first run, the installer will automatically restart. Make sure to get the logs of the installer job with status `Completed`.
 
-### Create a user in Keycloak
+### Step 2: Create a user in Keycloak
 
 1. Navigate to Keycloak app (using the URL provided in the installer log)
 2. Click on "Administration Console"
@@ -33,7 +33,7 @@ When a password for the Keycloak admin is not provided in the initial values.yam
 
 :::
 
-### Sign in to the console
+### Step 3: Sign in to the console
 
 Open the Otomi console (using the URL provided in the installer logs), and sign in with the new user.
 
@@ -41,7 +41,7 @@ After you have successfully logged in, you will see the Otomi Admin Dashboard. C
 
 ![console-lading-page](img/console-landing-page.png)
 
-### Add the auto generated CA to your keychain
+### Step 4: Add the auto generated CA to your keychain
 
 1. In the left pane of the console, click on "Download CA"
 2. Add the CA to your keychain:
@@ -56,21 +56,15 @@ To be able to log in to Harbor, restart the Docker service after adding the CA t
 
 :::
 
-### Activate Drone
+### Step 5: Activate Drone
 
 [Drone](https://www.drone.io/) is an integral part in the deployment of Otomi cluster configuration.
 
 1. Click on the **Drone** app (under Platform/Otomi Apps) in the console.
 
-:::note
-
-When you see this message: `Jwks doesn't have key to match kid or alg from Jwt` Drone is not yet ready. Please wait for a couple of minutes and try again.
-
-:::
-
 2. Sign in
 
-Gitea provides an oauth2 app connection for Drone to work with it's git values. It will popup when drone is accessed the first time. You can sign in with "OpenID Connect", which registers the login as a new user, or with the Gitea admin credentials (username: "otomi-admin", password: `$otomi.adminPassword`). A job runs every 3 minutes promoting users with "admin" role to become co-owner of the otomi-values repo. When logging in with the `otomi-admin` user no waiting is necessary.
+Gitea provides an oauth2 app connection for Drone to work with it's git values. It will popup when drone is accessed the first time. You can sign in with "OpenID Connect", which registers the login as a new user, or use the Gitea admin credentials (username: "otomi-admin", password: `$otomi.adminPassword`). A job runs every 3 minutes promoting users with "admin" role to become co-owner of the otomi-values repo. When logging in with the Gitea `otomi-admin` user, no waiting is necessary.
 
 :::info
 

@@ -25,7 +25,7 @@ function Home() {
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
               <span className={styles.heroProjectKeywords}></span> GitOps powered {' '}
-              <span className={styles.heroProjectKeywords}>K8s app stack</span> {''}
+              <span className={styles.heroProjectKeywords}>K8s app suite</span> {''}
               <span className={styles.heroProjectKeywords}></span> with{' '}
               <span className={styles.heroProjectKeywords}>developer self-service</span> {''}
             </h1>

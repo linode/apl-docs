@@ -116,7 +116,7 @@ export default [
   {
     href: 'https://github.com/kubernetes/ingress-nginx',
     src: 'nginx.png',
-    name: 'Nginx Ingress Controller',
+    name: 'Nginx Ingress',
     desc: 'Create and manage external access to the services in your clusters',
   },
 ]

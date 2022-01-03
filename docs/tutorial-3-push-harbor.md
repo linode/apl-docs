@@ -4,6 +4,12 @@ title: Build, tag and push an image to Harbor
 sidebar_label: Push an image to harbor
 ---
 
+:::note
+
+When Otomi is installed with minimal values, make sure to download the CA.crt, add it to your Keychain and restart Docker. See [here](/docs/installation/post-install/#step-4-add-the-auto-generated-ca-to-your-keychain) for more information 
+
+:::
+
 In this tutorial, you are going to:
 
 1. Build an image and push it to Harbor in Otomi
@@ -14,13 +20,23 @@ When you created a Team in Otomi, Otomi has automatically created a project for 
 
 ### Create a robot account in Harbor
 
+:::note
+
+Robot accounts for teams can only be created by users with the `otomi-admin` role
+
+:::
+
 - Go to `https://harbor.<your domainSuffix>`
 - Click 'Login with OIDC Provider'
-- In projects page, click on `team-demo`
-- on the team-demo page, click on `Robot Accounts`
-- Click on `New Robot Account`
-- Set `Name=hello`, `Expiration Time=Never` and then click on `Add`
-- Copy the generated Token
+- Fill in your user name and click save
+- Under `Administration`, click `Robot Accounts`
+- Click on `+ New Robot account`
+- Provide a name for the new robot account: `team-demo-push`
+- Set an Expiration time
+- Select `team-demo` and optionally change the permissions
+- Click `Add`
+- Copy the generated token
+
 
 ### Download the demo application used in this tutorial
 
@@ -32,10 +48,10 @@ git clone https://github.com/redkubes/nodejs-helloworld.git
 
 ### Login to Harbor
 
-Login with username `otomi-team-demo+hello` & password: `token`
+Login with username `otomi-team-demo-push` & password: `token`
 
 ```bash
-docker login -u 'otomi-team-demo+hello' -p '$token' harbor.your-domain.com
+docker login -u 'otomi-team-demo-push' -p '$token' harbor.your-domain.com
 ```
 
 ### Build, tag and push the image
@@ -43,13 +59,13 @@ docker login -u 'otomi-team-demo+hello' -p '$token' harbor.your-domain.com
 Build and tag the image:
 
 ```bash
-docker build -t harbor.your-domain.com/team-demo/hello-world:demo .
+docker build -t harbor.your-domain.com/team-demo/hello-world:latest .
 ```
 
 Push the image to Harbor:
 
 ```bash
-docker push harbor.your-domain.com/team-demo/hello-world:demo
+docker push harbor.your-domain.com/team-demo/hello-world:latest
 ```
 
 Now go to the team-demo project and verify that the hello-world repository has been created.

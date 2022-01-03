@@ -4,6 +4,12 @@ title: Create and expose a Knative service with Otomi
 sidebar_label: Knative with Otomi
 ---
 
+:::info
+
+When Otomi is installed with minimal values, a CA is automatically generated and added to the worker nodes. When using Azure AKS version 1.19 and up, the CA can not be automatically added to the worker nodes and pulling images from a Harbor registry is not possible. See [this](/docs/sre/known-issues/custom-ca) known issue for more information.
+
+:::
+
 In his tutorial, we are going to create a Knative service with Otomi Console and publicly expose it.
 
 - In the top bar in Otomi Console, select team demo

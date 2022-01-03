@@ -79,7 +79,7 @@ module.exports = {
       'sre-overview',
       'sre-daily',
       'sre-troubleshooting',
-      { 'Known Issues': ['ki-overview', 'ki-cli', 'ki-harbor', 'ki-istio', 'ki-loki', 'ki-staging-certs'] },
+      { 'Known Issues': ['ki-overview', 'ki-custom-ca', 'ki-cli', 'ki-harbor', 'ki-istio', 'ki-loki', 'ki-staging-certs',] },
       'lm-upgrades',
     ],
     // Reference: [

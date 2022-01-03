@@ -17,7 +17,7 @@ When Otomi is installed with minimal values, passwords and public URLs (based on
 
 1. Navigate to Keycloak app (using the URL provided in the installer log)
 2. Click on "Administration Console"
-3. Login with admin credentials (using admin and password provided in the installer log).
+3. Login with admin credentials (using `admin` user and password provided in the installer log or the `otomi.adminPassword` provided in the initial values)
 4. Select the "Otomi" realm
 5. Click on "Users" then "Add user"
 6. Fill in a user name in the "Username" field
@@ -27,63 +27,37 @@ When Otomi is installed with minimal values, passwords and public URLs (based on
 10. Choose the "Credentials" tab and then fill in a password for this user
 11. Click on "Set Password"
 
-:::info
-
-When a password for the Keycloak admin is not provided in the initial values.yaml, the one that is generated for `otomi.adminPassword` will be used.
-
-:::
-
 ### Step 3: Sign in to the console
 
 Open the Otomi console (using the URL provided in the installer logs), and sign in with the new user.
 
-After you have successfully logged in, you will see the Otomi Admin Dashboard. Click [here](/docs/console) to learn more about using Otomi Console.
-
-![console-lading-page](img/console-landing-page.png)
+Click [here](/docs/console) to learn more about using Otomi Console.
 
 ### Step 4: Add the auto generated CA to your keychain
 
 1. In the left pane of the console, click on "Download CA"
-2. Add the CA to your keychain:
+2. Double click the downloaded CA.crt or add the CA to your keychain using the following command:
 
 ```bash
 sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/Downloads/ca.crt
 ```
-
-:::note
-
-To be able to log in to Harbor, restart the Docker service after adding the CA to your keychain. To be able to pull images from Harbor, add the CA to all cluster nodes.
-
-:::
+3. Optional: Restart Docker (to support pushing images to Harbor)
 
 ### Step 5: Activate Drone
 
 [Drone](https://www.drone.io/) is an integral part in the deployment of Otomi cluster configuration.
 
 1. Click on the **Drone** app (under Platform/Otomi Apps) in the console.
+2. Click on `Continue` on the Welcome to Drone page
+3. Sign in
 
-2. Sign in
+Sign in using the Gitea admin credentials (username: "otomi-admin", and password: `$otomi.adminPassword` or the auto-generated password provided in the logs of the installer job).
 
-Gitea provides an oauth2 app connection for Drone to work with it's git values. It will popup when drone is accessed the first time. You can sign in with "OpenID Connect", which registers the login as a new user, or use the Gitea admin credentials (username: "otomi-admin", password: `$otomi.adminPassword`). A job runs every 3 minutes promoting users with "admin" role to become co-owner of the otomi-values repo. When logging in with the Gitea `otomi-admin` user, no waiting is necessary.
-
-:::info
-
-It can take a couple of minutes before you will see the repository. Otomi first needs to add your user to Gitea.
-
-:::
-
-3. Use the pre-filled values for the `Username` and `Email Address` and click `Complete Account`
-4. Select `Activate`
-
-![drone-landing](img/drone-landing.png)
-
-5. Click on `ACTIVATE REPOSITORY`
-
-![drone-activate](img/drone-activate.png)
-
-6. Save the changes and you are good to go.
-
-![drone-save](img/drone-save.png)
+4. Click on `Authorize Application`
+5. Click on `Submit on the Complete your Drone Registration page. You don't need to fill in your Email, Full Name or Company Name
+6. Click on the `otomi/values` repository
+7. Click on `+ Activate Repository`
+8. Click on `Save Changes`
 
 Now the final step is to create a team. See the [Teams](/docs/console/teams) page for more information.
 

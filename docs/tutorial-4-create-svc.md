@@ -3,6 +3,11 @@ slug: tutorials/create-k8s-service
 title: Create a Kubernetes service
 sidebar_label: Create a K8s service
 ---
+:::info
+
+When Otomi is installed with minimal values, a CA is automatically generated and added to the worker nodes. When using Azure AKS version 1.19 and up, the CA can not be automatically added to the worker nodes and pulling images from a Harbor registry is not possible. See [this](/docs/sre/known-issues/custom-ca) known issue for more information.
+
+:::
 
 In this tutorial, we are going to deploy the image we pushed to harbor in the previous tutorial, by creating a Kubernetes Deployment and Service.
 
@@ -29,7 +34,7 @@ spec:
     spec:
       containers:
         - name: hello-svc
-          image: harbor.your-domain.com/team-demo/hello-world:demo
+          image: harbor.your-domain.com/team-demo/hello-world:latest
           resources:
             limits:
               memory: '128Mi'

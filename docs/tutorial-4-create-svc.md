@@ -69,6 +69,11 @@ Now export the KUBECFG to set the kubectl context:
 export KUBECONFIG=$path-to-your-kubeconfig.yaml
 ```
 
+Check the namespace that you are locates in the *team-demo* namespace using the following command: 
+```bash
+kubectl config view --minify --output 'jsonpath={..namespace}'; echo
+```
+
 And apply the manifest to Kubernetes:
 
 ```bash

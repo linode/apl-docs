@@ -6,7 +6,7 @@ title: FAQ
 
 **What are the K8s cluster requirements to install Otomi?**
 
-Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` with at least `3 worker nodes` (using General Purpose instance types with at least `4 vCPU` and `12 GiB memory`) in AWS, Azure, Google Cloud Platform.
+Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` using General Purpose instance types with at least `12 vCPU` and `12 GiB memory`) in AWS, Azure, Google Cloud Platform.
 
 Running Otomi on an `on-prem` cluster is also supported.
 
@@ -31,7 +31,8 @@ The [otomi-core/values-schema.yaml](https://github.com/redkubes/otomi-core/blob/
 
 **Can we disable applications such as `Vault` and `Harbor` if we want to?**
 
-Yes, it is possible to disable applications. One can do so in the [values.yaml](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml) that is used in the Otomi chart install.
+Yes, it is possible to disable certain applications. One can do so in the [values.yaml](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml) that is used in the Otomi chart install.
+Checkout the [values-schema.yaml](The [otomi-core/values-schema.yaml](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml)) to check which applications can be `disabled`.
 
 ```yaml
 # values.yaml configuration

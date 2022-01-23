@@ -24,10 +24,10 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              <span className={styles.heroProjectKeywords}></span> GitOps powered {' '}
-              <span className={styles.heroProjectKeywords}>K8s app suite</span> {''}
-              <span className={styles.heroProjectKeywords}></span> with{' '}
-              <span className={styles.heroProjectKeywords}>developer self-service</span> {''}
+              <span className={styles.heroProjectKeywords}></span> A Productivity Suite for {' '}
+              <span className={styles.heroProjectKeywords}>Kubernetes</span> {''}
+              <span className={styles.heroProjectKeywords}></span> with pre-configured{' '}
+              <span className={styles.heroProjectKeywords}>apps & self-service tasks</span> {''}
             </h1>
             <div className={styles.indexCtas}>
               <Link className={styles.indexCtasGetStartedButton} to={useBaseUrl('docs/installation/')}>
@@ -47,7 +47,7 @@ function Home() {
         </div>
         <div id='appsuite' className={clsx(styles.announcement, styles.announcementDark)}>
           <div className={styles.announcementInner}>
-            Check out the list of all <span className={styles.heroProjectKeywords}>integrated</span> and{' '}
+            Check out the list of all <span className={styles.heroProjectKeywords}>pre-configured</span> and{' '}
             <span className={styles.heroProjectKeywords}>ready-to-use</span> apps
           </div>
         </div>

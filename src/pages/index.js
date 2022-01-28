@@ -26,8 +26,8 @@ function Home() {
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
               <span className={styles.heroProjectKeywords}></span> Productivity suite for {' '}
               <span className={styles.heroProjectKeywords}>Kubernetes</span> {''}
-              <span className={styles.heroProjectKeywords}></span> with pre-configured{' '}
-              <span className={styles.heroProjectKeywords}>apps & developer self-service</span> {''}
+              <span className={styles.heroProjectKeywords}></span> with pre-configured apps &{' '}
+              <span className={styles.heroProjectKeywords}>developer self-service</span> {''}
             </h1>
             <div className={styles.indexCtas}>
               <Link className={styles.indexCtasGetStartedButton} to={useBaseUrl('docs/installation/')}>

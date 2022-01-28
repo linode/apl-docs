@@ -24,10 +24,10 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              <span className={styles.heroProjectKeywords}></span> A Productivity Suite for {' '}
+              <span className={styles.heroProjectKeywords}></span> Productivity suite for {' '}
               <span className={styles.heroProjectKeywords}>Kubernetes</span> {''}
               <span className={styles.heroProjectKeywords}></span> with pre-configured{' '}
-              <span className={styles.heroProjectKeywords}>apps & self-service tasks</span> {''}
+              <span className={styles.heroProjectKeywords}>apps & developer self-service</span> {''}
             </h1>
             <div className={styles.indexCtas}>
               <Link className={styles.indexCtasGetStartedButton} to={useBaseUrl('docs/installation/')}>

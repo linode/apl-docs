@@ -14,7 +14,11 @@ Please make sure the following client binaries exist:
 
 ## Kubernetes
 
-Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` with at least 3 worker nodes (using General Purpose instance types with at least 4 vCPU and 12 GiB memory) in AWS, Azure, Google Cloud Platform. Running Otomi on an onprem cluster is also supported.
+Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` with at least 3 worker nodes (using General Purpose instance types with at least 4 vCPU and 12 GiB memory) in AWS, Azure, Google Cloud Platform. 
+
+Running Otomi on an onprem cluster is also supported. More information about installing Otomi on your own hardware can be found [here](https://github.com/redkubes/quickstart/tree/main/onprem)
+
+To use the network policies feature in Otomi, make sure to install the Calico CNI (or any other CNI that supports Kubernetes network polices).
 
 Follow the instructions below to set up a Kubernetes cluster in your the cloud of your choice:
 

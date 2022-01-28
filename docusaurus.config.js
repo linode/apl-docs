@@ -168,7 +168,7 @@ module.exports = {
           items: [
             {
               label: 'Slack',
-              href: 'https://join.slack.com/t/otomi/shared_invite/zt-vourf7og-de4CmvthgfJlsuDQHsK8yQ',
+              href: 'https://join.slack.com/t/otomi/shared_invite/zt-12h11e8aa-6po4NWhhpMXxT~nffDsYqA',
             },
             {
               label: 'Gitter',

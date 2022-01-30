@@ -3,7 +3,7 @@ slug: console/services
 title: Services
 ---
 
-![Console: new service](img/console-new-service.png)
+![Console: new service](img/team-services.png)
 
 A service in Otomi Container Platform is a feature for easy deployment of (serverless) container workloads and exposing these and pre-deployed services with a public URL. Otomi will automatically create and configure all ingress resources needed, including Istio Virtual Services and Gateways, certificates, DNS records and Oauth2 proxy for Single Sign On.
 
@@ -15,66 +15,6 @@ A service in Otomi Container Platform is a feature for easy deployment of (serve
 After providing a name and a port number, you can now configure ingress for the existing Kubernetes service and optionally select a different service type.
 
 If the defaults (cluster/private) apply, you can now click 'Submit'.
-
-## Configuring exposure (ingress)
-
-Exposure controls wether internet exposure should be enabled or not. Three options exist:
-
-- `Cluster`: has no internet exposure, and is only accessible in the cluster
-- `Private`: only accessible via the cluster's private network loadbalancer
-- `Public`: publicly accessible via the cluster's public network loadbalancer
-
-### Cluster
-
-If backend is a Knative service, this will expose a Knative service on a local Istio gateway, so other services can access it at their `$svc.$namespace` host name.
-
-:::note Notes
-
-Coming soon: the ability to choose endpoints to connect to, so network policies are automatically generated.
-
-:::
-
-### Private
-
-Will only accept traffic coming from the private-network loadbalancer.
-
-A private URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are described below.
-
-| Setting | Description |
-| --- | --- |
-| TLS passthrough | Pass through the request as is to the backing service. |
-| Use suggested domain | The suggested domain is the team domain for which a wildcard certificate already exists. Has the team name in it. |
-| Host | Choose a hostname that will be the prefix of the domain. |
-| Forward path | Do not "terminate" the path but instead pass it to the receiving service. |
-| DNS Zone | Choose a dns zone that will be the suffix of the domain. |
-| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IDP. |
-| Already has a certificate | Don't generate certificates for this service. |
-| > Certificate ARN | [AWS only] Provide the certificate arn. |
-| > Select existing secret name | [non AWS] Provide a TLS secret name previously created under `Secrets`. Override to select name of secret not known here. |
-
-:::note Notes
-
-The private exposure option is currently not working, but is comming soon.
-
-:::
-
-### Public
-
-Use Public exposure to expose a service with a public URL and certificate.
-
-A public URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are described below.
-
-| Setting | Description |
-| --- | --- |
-| TLS passthrough | Pass through the request as is to the backing service. |
-| Use suggested domain | The suggested domain is the team domain for which a wildcard certificate already exists. Has the team name in it. |
-| Host | Choose a hostname that will be the prefix of the domain. |
-| Forward path | Do not "terminate" the path but instead pass it to the receiving service. |
-| DNS Zone | Choose a dns zone that will be the suffix of the domain. |
-| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IDP. |
-| Already has a certificate | Don't generate certificates for this service. |
-| > Certificate ARN | [AWS only] Provide the certificate arn. |
-| > Select existing secret name | [non AWS] Provide a TLS secret name previously created under `Secrets`. Override to select name of secret not known here. |
 
 ## Configuring the Service Type
 
@@ -160,12 +100,67 @@ Container port the knative pod will connect with. Leaving this empty will let kn
 
 Will bring down service if not accessed for 60 seconds. Will also disable probes that check to see if the service is up.
 
-#### Continuous Delivery (coming soon!)
+## Configuring exposure (ingress)
 
-Wether or not to allow automatic deployment of image tags that match the chosen strategy's matcher.
+Exposure controls wether internet exposure should be enabled or not. Three options exist:
+
+- `Cluster`: has no internet exposure, and is only accessible in the cluster
+- `Private`: only accessible via the cluster's private network loadbalancer (comming soon)
+- `Public`: publicly accessible via the cluster's public network loadbalancer
+
+### Cluster
+
+If backend is a Knative service, this will expose a Knative service on a local Istio gateway, so other services can access it at their `$svc.$namespace` host name.
+
+:::note Notes
+
+Coming soon: the ability to choose endpoints to connect to, so network policies are automatically generated.
+
+:::
+
+### Private (comming soon)
+
+Will only accept traffic coming from the private-network loadbalancer.
+
+A private URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are described below.
 
 | Setting | Description |
 | --- | --- |
-| Off | No automatic continuous deployment |
-| Semver versioning | Semver version pattern. Use this filter if your images tags follow semantic versioning rules (MAJOR.MINOR.PATCH). E.g.: PATCH only: "~1.1", MINOR and PATCH only "~1", ALL "\*" |
-| Glob pattern matching | Glob string pattern. Use this filter if you want to make simple non-standard patterns. E.g.: "master-v1._._" |
+| TLS passthrough | Pass through the request as is to the backing service. |
+| Use suggested domain | The suggested domain is the team domain for which a wildcard certificate already exists. Has the team name in it. |
+| Host | Choose a hostname that will be the prefix of the domain. |
+| Forward path | Do not "terminate" the path but instead pass it to the receiving service. |
+| DNS Zone | Choose a dns zone that will be the suffix of the domain. |
+| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IDP. |
+| Already has a certificate | Don't generate certificates for this service. |
+| > Certificate ARN | [AWS only] Provide the certificate arn. |
+| > Select existing secret name | [non AWS] Provide a TLS secret name previously created under `Secrets`. Override to select name of secret not known here. |
+
+:::note Notes
+
+The private exposure option is currently not working, but is comming soon.
+
+:::
+
+### Public
+
+Use Public exposure to expose a service with a public URL and certificate.
+
+A public URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are described below.
+
+| Setting | Description |
+| --- | --- |
+| TLS passthrough | Pass through the request as is to the backing service. |
+| Use suggested domain | The suggested domain is the team domain for which a wildcard certificate already exists. Has the team name in it. |
+| Host | Choose a hostname that will be the prefix of the domain. |
+| Forward path | Do not "terminate" the path but instead pass it to the receiving service. |
+| DNS Zone | Choose a dns zone that will be the suffix of the domain. |
+| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IDP. |
+| Already has a certificate | Don't generate certificates for this service. |
+| > Certificate ARN | [AWS only] Provide the certificate arn. |
+| > Select existing secret name | [non AWS] Provide a TLS secret name previously created under `Secrets`. Override to select name of secret not known here. |
+
+## Configure network policies
+
+Traffic to the service (from other services within the team and from services in other teams) is by default denied. To allow other services to access the service, select `Allow traffic from selected team services` and specify the Team and Service name of the services that is allowed to access the service. It is also possible to allow traffic from all Team Services. In this case select `Allow traffic from all team services`.
+

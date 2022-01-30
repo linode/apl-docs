@@ -1,7 +1,9 @@
 ---
-slug: console/settings/policies
+slug: console/policies
 title: Policies
 ---
+
+![Policies](img/policies.png)
 
 This section allows to turn Open Policy Agent (OPA) policies on or off, and also set default parameters to be used by the policies.
 

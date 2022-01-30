@@ -3,11 +3,12 @@ slug: console/teams
 title: Teams
 ---
 
-![Console: new team](img/console-new-team.png)
+![Console: new team](img/teams.png)
 
 - Teams are tenants on the platform to support Development/DevOps teams, projects or even DTAP
-- A team will get access to Otomi Console, providing access to all the tools needed for complete observability
-- Teams can choose to receive alerts in Microsoft Teams, Slack or email and each team will get access to a project in Harbor and a space in Vault
+- A team will get access to Otomi Console, providing access to all the shared tools
+- Teams can choose to receive alerts in Microsoft Teams, Slack or email and each team will get access to a project in Harbor and a space in Vault to manage secrets
+- Teams can be allowed self-service features like configure ingress, configure a notification receiver for alerts, change the OIDC group mapping and download the KubeConfig.
 
 ## Creating Teams
 
@@ -27,7 +28,7 @@ When a field is left empty it will default to the global admin value for that fi
 | Slack           | Needs a slack webhook url that will give alerts for warnings and criticals       |
 | Microsoft Teams | Needs two alerting endpoints, for both warnings as well as criticals             |
 | Email           | You may provide a list of email addresses for both 'Non Critical' and 'Critical' |
-| None            | Global (admin) alerting endpoint configuration will be used                      |
+| If none selected            | Global (admin) alerting endpoint configuration will be used                      |
 
 - Add Resource Quotas
 
@@ -59,3 +60,4 @@ A uses with the `otomi-admin` and `team-admin` role can create teams and grant t
 | Team / Alerts        | Select to grant the team the permission to configure Alerts for the team.               |
 | Team / OIDC          | Select to grant the team the permission to configure OIDC for the team.                 |
 | Team / resourceQuota | Select to grant the team the permission to configure Resource Quota for the team.       |
+| Team / downloadKubeConfig | Select to grant the team the permission to download the KubeConfig file            |

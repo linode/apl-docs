@@ -3,7 +3,7 @@ slug: console/jobs
 title: Jobs
 ---
 
-![Console: new job](img/console-new-job.png)
+![Console: new job](img/team-jobs.png)
 
 This page describes how to create a job, and how to edit a job. Both creating and editing a job use the same form. A Job creates one or more Pods and will continue to retry execution of the Pods until a specified number of them successfully terminate. Otomi also supports creating CronJobs. CronJobs are useful for creating periodic and recurring tasks, like running backups or sending emails. CronJobs can also schedule individual tasks for a specific time, such as scheduling a Job for when your cluster is likely to be idle.
 

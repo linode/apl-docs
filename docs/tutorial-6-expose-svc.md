@@ -13,8 +13,9 @@ First navigate to the right form:
 - Fill in the form with these values:
 
 1. Name: hello (the name of the service we created in the previous tutorials)
-2. Exposure: Public
-3. Service type: Choose one of `Existing Kubernetes service` or `Existing Knative service`, depending on the previous step you just took.
+2. Service type: Choose one of `Existing Kubernetes service` or `Existing Knative service`, depending on the previous step you just took.
+3. Exposure: Public
+
 
 - Click on `Submit`
 - Click on `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit)

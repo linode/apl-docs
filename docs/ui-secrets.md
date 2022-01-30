@@ -3,7 +3,7 @@ slug: console/secrets
 title: Secrets
 ---
 
-![Console: new secret](img/console-new-secret.png)
+![Console: new secret](img/team-secrets.png)
 
 Any secret that is created here should have it's counterpart in Vault by the same name. Otomi will create kubernetes secrets from those Vault secrets. These can then be used in Otomi Services and Otomi Jobs, as injected env vars, or as file mounts.
 

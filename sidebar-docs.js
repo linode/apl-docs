@@ -2,28 +2,10 @@ module.exports = {
   mainSidebar: {
     'Installing Otomi': ['inst-overview', 'inst-prerequisites', 'inst-optional', 'inst-chart', 'post-install'],
     'Otomi Console': [
-      'overview',
-      'teams',
-      'services',
-      'jobs',
-      'secrets',
-      'platform-apps',
-      {
-        Settings: [
-          'settings-alerts',
-          'settings-azure',
-          'settings-dns',
-          'settings-home',
-          'settings-kms',
-          'settings-oidc',
-          'settings-otomi',
-          'settings-policies',
-          'settings-smtp',
-        ],
-      },
-      'clusters',
-      'team-apps',
+      'ui-overview',
+      { Enterprise: [ 'ui-platform-apps', 'ui-clusters', 'ui-policies', 'ui-teams', 'ui-platform-services', 'ui-platform-jobs', 'ui-settings' ], },
       'deploy-changes',
+      { Team: [ 'ui-team-apps', 'ui-services', 'ui-jobs', 'ui-secrets', 'ui-team-settings' ],},
     ],
     'Otomi Apps': [
       'app-drone',

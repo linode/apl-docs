@@ -6,7 +6,7 @@ title: FAQ
 
 **What are the minimal requirements to install Otomi?**
 
-Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` using a Node pool with at least `12 vCPU` and `12 GiB memory` in AWS, Azure, or Google Cloud Platform. Otomi can also be installed using the `on-prem` provider. See the [Quickstart](https://github.com/redkubes/quickstart/tree/main/onprem) for more information about installing Otomi on your own hardware.
+Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` using a Node pool with at least `12 vCPU` and `16 GiB memory` in AWS, Azure, or Google Cloud Platform. Otomi can also be installed using the `on-prem` provider. See the [Quickstart](https://github.com/redkubes/quickstart/tree/main/onprem) for more information about installing Otomi on your own hardware.
 
 ---
 **Is the Quickstart the only way to install Otomi?**
@@ -17,6 +17,11 @@ No. The [otomi-quickstart](https://github.com/redkubes/quickstart) uses Terrafor
 **Where can I find all possible configuration options for the Otomi?**
 
 The [otomi-core/values-schema.yaml](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml) contains all the possible Otomi chart install configuration parameters.
+
+---
+**Can Otomi be deployed on an existing cluster?**
+
+Yes, Otomi can be installed on an exciting cluster as long as there are no namespaces that are also created by Otomi.
 
 ---
 ## Otomi Configuration

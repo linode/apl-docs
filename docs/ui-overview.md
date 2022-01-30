@@ -4,7 +4,7 @@ title: Overview
 sidebar_label: Overview
 ---
 
-![Console apps](img/console-apps.png)
+![Console apps](img/platform-apps.png)
 
 ## Otomi Console
 

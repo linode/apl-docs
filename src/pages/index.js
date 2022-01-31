@@ -24,9 +24,9 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              <span className={styles.heroProjectKeywords}></span> Productivity suite for {' '}
+              <span className={styles.heroProjectKeywords}></span> Application configuration framework for {' '}
               <span className={styles.heroProjectKeywords}>Kubernetes</span> {''}
-              <span className={styles.heroProjectKeywords}></span> with pre-configured apps &{' '}
+              <span className={styles.heroProjectKeywords}></span> with{' '}
               <span className={styles.heroProjectKeywords}>developer self-service</span> {''}
             </h1>
             <div className={styles.indexCtas}>

@@ -24,7 +24,7 @@ function Home() {
           <div className={styles.heroInner}>
             <h1 className={styles.heroProjectTagline}>
               <img alt='Otomi logo' className={styles.heroLogo} src={useBaseUrl('img/otomi-logo.svg')} />
-              <span className={styles.heroProjectKeywords}></span> Application configuration framework for {' '}
+              <span className={styles.heroProjectKeywords}></span> A suite of pre-configured apps for{' '}
               <span className={styles.heroProjectKeywords}>Kubernetes</span> {''}
               <span className={styles.heroProjectKeywords}></span> with{' '}
               <span className={styles.heroProjectKeywords}>developer self-service</span> {''}

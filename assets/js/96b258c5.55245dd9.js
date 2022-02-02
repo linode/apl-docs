@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[6863],{3322:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/rego","name":"rego","count":1,"permalink":"/blog/tags/rego"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[2535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Integrating Harbor, KeyCloak and Istio","permalink":"/blog/harbor-keycloak-istio"},{"title":"Universal OPA Policies Development","permalink":"/blog/universal-opa-policy-development"}]}')}}]);

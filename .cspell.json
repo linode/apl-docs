@@ -4,6 +4,7 @@
   "enabledLanguageIds": ["json", "jsonc", "markdown", "yaml", "yml"],
   "ignoreRegExpList": ["/'s\\b/"],
   "ignoreWords": [
+    "aspinu",
     "Alin",
     "APIV",
     "appgw",
@@ -14,6 +15,8 @@
     "istioctl",
     "istiod",
     "Jehoszafat",
+    "jsonnet",
+    "jzimnowoda",
     "keyid",
     "keyid",
     "ksvc",

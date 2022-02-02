@@ -15,6 +15,7 @@
     "@docusaurus/core": "2.0.0-beta.15",
     "@docusaurus/plugin-client-redirects": "^2.0.0-beta.15",
     "@docusaurus/preset-classic": "2.0.0-beta.15",
+    "@material-ui/icons": "^4.11.2",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
     "prism-react-renderer": "^1.2.1",
@@ -29,7 +30,7 @@
     "husky": "^7.0.4",
     "typescript": "^4.5.2"
   },
-  "name": "redkubes-github-io-2",
+  "name": "redkubes-github-io",
   "private": true,
   "scripts": {
     "build": "docusaurus build",

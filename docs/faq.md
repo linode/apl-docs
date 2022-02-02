@@ -17,16 +17,16 @@ No. The [otomi-quickstart](https://github.com/redkubes/quickstart) uses Terrafor
 </details>
 
 <details>
-  <summary>Where can I find all possible configuration options for the Otomi?</summary>
+  <summary>Where can I find all possible configuration options for Otomi?</summary>
 
-The [otomi-core/values-schema.yaml](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml) contains all the possible Otomi chart install configuration parameters.
+When installing Otomi with the helm chart you can find its `values.schema.json` inside, which contains all the possible install configuration parameters. It is generated from [otomi-core/values-schema.yaml](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml).
 
 </details>
 
 <details>
   <summary>Can Otomi be deployed on an existing cluster?</summary>
 
-Yes, Otomi can be installed on an exciting cluster as long as there are no namespaces that are also created by Otomi.
+Yes, Otomi can be installed on any cluster as long as there are no namespaces that are also created by Otomi.
 
 </details>
 

@@ -31,16 +31,12 @@ function Home() {
                 className={styles.heroLogo}
                 src={useBaseUrl("img/otomi-logo.svg")}
               />
-              <span className={styles.heroProjectKeywords}></span> A
-              Productivity Suite for{" "}
-              <span className={styles.heroProjectKeywords}>Kubernetes</span>{" "}
-              {""}
-              <span className={styles.heroProjectKeywords}></span> with
-              pre-configured{" "}
+              A suite of pre-configured apps for{" "}
+              <span className={styles.heroProjectKeywords}>Kubernetes</span>
+              {" "}with{" "}
               <span className={styles.heroProjectKeywords}>
-                apps & self-service tasks
-              </span>{" "}
-              {""}
+                developer self-service
+              </span>
             </h1>
             <div className={styles.indexCtas}>
               <Link

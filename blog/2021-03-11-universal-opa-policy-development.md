@@ -1,8 +1,7 @@
 ---
 slug: universal-opa-policy-development
 title: Universal OPA Policies Development
-author: Alin Spinu
-author_title: Developer @ Red Kubes
+authors: aspinu
 tags: [otomi, opa, gatekeeper, rego, security]
 ---
 

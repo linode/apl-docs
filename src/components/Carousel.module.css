@@ -1,0 +1,22 @@
+.carousel {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 996px) {
+  /* .carousel {
+    height: 640px;
+    width: 960px;
+    margin-bottom: 40px;
+  } */
+
+  .img {
+    height: 405px;
+    width: 720px;
+  }
+}
+
+@media (max-width: 996px) {
+  .carousel {
+    display: none;
+  }
+}

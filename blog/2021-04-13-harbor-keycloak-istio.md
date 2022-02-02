@@ -1,8 +1,7 @@
 ---
 slug: harbor-keycloak-istio
 title: Integrating Harbor, KeyCloak and Istio
-author: Jehoszafat Zimnowoda
-author_title: Developer @ Red Kubes
+authors: jzimnowoda
 tags: [harbor, otomi, istio, keycloak]
 ---
 

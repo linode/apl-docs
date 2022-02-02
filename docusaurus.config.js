@@ -1,4 +1,4 @@
-const redirects = require('./redirects')
+const redirects = require("./redirects");
 
 // const versions = require('./versions.json')
 
@@ -14,74 +14,76 @@ const redirects = require('./redirects')
 //   ...versions.slice(1).map((version) => `/docs/${version}/`),
 // ]
 
-const isBootstrapPreset = process.env.DOCUSAURUS_PRESET === 'bootstrap'
+const isBootstrapPreset = process.env.DOCUSAURUS_PRESET === "bootstrap";
 
 module.exports = {
-  title: 'Otomi',
-  tagline: 'Get started with Otomi',
-  url: 'https://otomi.io',
-  baseUrl: '/',
+  title: "Otomi",
+  tagline: "Get started with Otomi",
+  url: "https://otomi.io",
+  baseUrl: "/",
   customFields: {
-    description: 'A cloud-agnostic platform to run on top of Kubernetes',
+    description: "A cloud-agnostic platform to run on top of Kubernetes",
   },
-  favicon: 'img/otomi.ico',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
-  organizationName: 'redkubes', // Usually your GitHub org/user name.
-  projectName: 'redkubes.github.io', // Usually your repo name.
+  favicon: "img/otomi.ico",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
+  organizationName: "redkubes", // Usually your GitHub org/user name.
+  projectName: "redkubes.github.io", // Usually your repo name.
   plugins: [
     [
-      '@docusaurus/plugin-client-redirects',
+      "@docusaurus/plugin-client-redirects",
       {
-        redirects: redirects.concat(redirects.map((r) => ({ from: `/otomi${r.from}`, to: r.to }))),
+        redirects: redirects.concat(
+          redirects.map((r) => ({ from: `/otomi${r.from}`, to: r.to }))
+        ),
         createRedirects(existingPath) {
-          return [`/otomi${existingPath}`]
+          return [`/otomi${existingPath}`];
         },
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'about',
-        path: 'about',
-        editUrl: 'https://github.com/redkubes/redkubes.github.io/edit/master/',
-        routeBasePath: 'about',
-        sidebarPath: require.resolve('./sidebar-about.js'),
+        id: "about",
+        path: "about",
+        editUrl: "https://github.com/redkubes/redkubes.github.io/edit/master/",
+        routeBasePath: "about",
+        sidebarPath: require.resolve("./sidebar-about.js"),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'community',
-        path: 'community',
-        editUrl: 'https://github.com/redkubes/redkubes.github.io/edit/master/',
-        routeBasePath: 'community',
-        sidebarPath: require.resolve('./sidebar-community.js'),
+        id: "community",
+        path: "community",
+        editUrl: "https://github.com/redkubes/redkubes.github.io/edit/master/",
+        routeBasePath: "community",
+        sidebarPath: require.resolve("./sidebar-community.js"),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        sidebarCollapsible: true,
       },
     ],
   ],
   themeConfig: {
-    sidebarCollapsible: true,
     announcementBar: {
-      id: 'supportus',
+      id: "supportus",
       content:
         'If you like Otomi, give it a ⭐️ on <a target="_blank" rel="noopener noreferrer" href="https://github.com/redkubes/otomi-core">GitHub</a>!',
       // backgroundColor: '#a11900',
       // textColor: '#ffd700',
-      backgroundColor: '#0d47a1',
-      textColor: '#ffd700',
+      backgroundColor: "#0d47a1",
+      textColor: "#ffd700",
     },
     prism: {
-      theme: require('prism-react-renderer/themes/github'),
-      darkTheme: require('prism-react-renderer/themes/dracula'),
+      theme: require("prism-react-renderer/themes/github"),
+      darkTheme: require("prism-react-renderer/themes/dracula"),
     },
-    image: 'img/otomi-logo.svg',
+    image: "img/otomi-logo.svg",
     algolia: {
-      apiKey: '9c75393c761f1434854cef114eb80e64',
+      apiKey: "9c75393c761f1434854cef114eb80e64",
       indexName: `redkubes_otomi`,
 
       // Optional: see doc section bellow
@@ -92,28 +94,23 @@ module.exports = {
 
       //... other Algolia params
     },
-    gtag: {
-      trackingID: 'G-KKV4ZVDEKQ',
-      // Optional fields.
-      anonymizeIP: false, // Should IPs be anonymized?
-    },
     navbar: {
       logo: {
-        alt: 'Site Logo',
-        src: 'img/otomi-logo.svg',
-        href: '/', // Default to `siteConfig.baseUrl`.
-        target: '_self', // By default, this value is calculated based on the `href` attribute (the external link will open in a new tab, all others in the current one).
+        alt: "Site Logo",
+        src: "img/otomi-logo.svg",
+        href: "/", // Default to `siteConfig.baseUrl`.
+        target: "_self", // By default, this value is calculated based on the `href` attribute (the external link will open in a new tab, all others in the current one).
       },
       items: [
         {
-          to: 'about/',
-          label: 'About',
-          position: 'left',
+          to: "about/",
+          label: "About",
+          position: "left",
         },
         {
-          to: 'docs/installation/',
-          label: 'Docs',
-          position: 'left',
+          to: "docs/installation/",
+          label: "Docs",
+          position: "left",
         },
         //{
         //  to: 'docs/console/',
@@ -121,97 +118,100 @@ module.exports = {
         //  position: 'left',
         //},
         {
-          to: 'docs/faq',
-          label: 'FAQ',
-          position: 'left',
+          to: "docs/faq",
+          label: "FAQ",
+          position: "left",
         },
         {
-          to: 'community/get-involved',
-          label: 'Community',
-          position: 'left',
+          to: "community/get-involved",
+          label: "Community",
+          position: "left",
         },
         {
-          to: 'blog',
-          label: 'Blog',
-          position: 'left',
+          to: "blog",
+          label: "Blog",
+          position: "left",
         },
         {
-          href: 'https://github.com/redkubes/otomi-core',
-          position: 'right',
-          className: 'header-github-link',
-          'aria-label': 'GitHub repository',
+          href: "https://github.com/redkubes/otomi-core",
+          position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Otomi',
+          title: "Otomi",
           items: [
             {
-              label: 'Introduction',
-              to: '/about/',
+              label: "Introduction",
+              to: "/about/",
             },
             {
-              label: 'Installation',
-              to: '/docs/installation/',
+              label: "Installation",
+              to: "/docs/installation/",
             },
             {
-              label: 'Using Otomi Console',
-              href: '/docs/console/',
+              label: "Using Otomi Console",
+              href: "/docs/console/",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'Slack',
-              href: 'https://join.slack.com/t/otomi/shared_invite/zt-12h11e8aa-6po4NWhhpMXxT~nffDsYqA',
+              label: "Slack",
+              href: "https://otomi.slack.com/join/shared_invite/zt-12h11e8aa-6po4NWhhpMXxT~nffDsYqA#/shared-invite/email",
             },
             {
-              label: 'Gitter',
-              href: 'https://gitter.im/redkubes/community',
+              label: "Gitter",
+              href: "https://gitter.im/redkubes/community",
             },
             {
-              label: 'Community page',
-              to: 'https://redkubes.com/community/',
+              label: "Community page",
+              to: "community/get-involved",
             },
           ],
         },
         {
-          title: 'Red Kubes',
+          title: "Red Kubes",
           items: [
             {
-              label: 'Website',
-              href: 'https://redkubes.com',
+              label: "Website",
+              href: "https://redkubes.com",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/redkubes/',
+              label: "GitHub",
+              href: "https://github.com/redkubes/",
             },
             {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/red-kubes/',
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/company/red-kubes/",
             },
           ],
         },
       ],
       logo: {
-        alt: 'Otomi Open Source Logo',
-        src: 'img/otomi-logo.svg',
+        alt: "Otomi Open Source Logo",
+        src: "img/otomi-logo.svg",
       },
       copyright: `Copyright © ${new Date().getFullYear()} Red Kubes. Built with <a href="https://v2.docusaurus.io/">Docusaurus</a>`,
     },
   },
   presets: [
     [
-      isBootstrapPreset ? '@docusaurus/preset-bootstrap' : '@docusaurus/preset-classic',
+      isBootstrapPreset
+        ? "@docusaurus/preset-bootstrap"
+        : "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve('./sidebar-docs.js'),
-          editUrl: 'https://github.com/redkubes/redkubes.github.io/tree/master/',
+          sidebarPath: require.resolve("./sidebar-docs.js"),
+          editUrl:
+            "https://github.com/redkubes/redkubes.github.io/tree/master/",
           // versions: {
           //   current: {
           //     label: `${getNextVersionName()} (unreleased)`,
@@ -219,9 +219,14 @@ module.exports = {
           // },
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+        gtag: {
+          trackingID: "G-KKV4ZVDEKQ",
+          // Optional fields.
+          anonymizeIP: false, // Should IPs be anonymized?
         },
       },
     ],
   ],
-}
+};

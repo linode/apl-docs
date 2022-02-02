@@ -23,7 +23,7 @@ Out-of-the-box, Otomi comes with an extensive values schema (see here). Most of 
 
 ### Advanced
 
-For advanced use-cases, configuration values of all integrated open source applications can be customized. Together with the fully integrated observability suite, SRE can pro-actively monitor the resource usage of the integrated open source applications (like Istio and Nginx ingress) and optimize the configuration when needed.
+For advanced use-cases, configuration values of all integrated open source applications can be customized. Together with the fully integrated observability suite, SRE can pro-actively monitor the resource usage of the integrated open source applications (like Istio and Ingress NGINX) and optimize the configuration when needed.
 
 The Otomi values schema, in this case, can be overridden by custom configuration values. Custom configuration values can be all values supported by the charts of the integrated open source applications in Otomi Core.
 

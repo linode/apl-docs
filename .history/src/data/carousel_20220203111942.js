@@ -1,6 +1,6 @@
 export default [
   {
-    name: "One UI to access all apps and self-service features",
+    name: "One UI to access apps and self-service features",
     // description: '',
     img: "carousel/platform-apps.png",
   },

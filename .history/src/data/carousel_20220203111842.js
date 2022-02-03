@@ -1,6 +1,6 @@
 export default [
   {
-    name: "One UI to access all apps and self-service features",
+    name: "Intuitive web UI to access apps and self-service features",
     // description: '',
     img: "carousel/platform-apps.png",
   },
@@ -25,7 +25,7 @@ export default [
     img: "carousel/secrets.png",
   },
   {
-    name: "Manage security policies",
+    name: "E",
     // description: '',
     img: "carousel/secrets.png",
   },

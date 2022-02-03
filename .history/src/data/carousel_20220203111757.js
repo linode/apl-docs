@@ -1,6 +1,6 @@
 export default [
   {
-    name: "One UI to access all apps and self-service features",
+    name: "Intuitive web UI to access apps and self-service features",
     // description: '',
     img: "carousel/platform-apps.png",
   },
@@ -17,16 +17,11 @@ export default [
   {
     name: "Create Jos and CronJobs",
     // description: '',
-    img: "carousel/jobs.png",
+    img: "carousel/services.png",
   },
   {
-    name: "Map secrets managed in HashiCorp vault",
+    name: "Map secrets ",
     // description: '',
-    img: "carousel/secrets.png",
-  },
-  {
-    name: "Manage security policies",
-    // description: '',
-    img: "carousel/secrets.png",
+    img: "carousel/services.png",
   },
 ];

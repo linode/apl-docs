@@ -15,7 +15,12 @@ export default [
     img: "carousel/services.png",
   },
   {
-    name: "Create Jos and CronJobs",
+    name: "Configure network policies",
+    // description: '',
+    img: "carousel/network-policies.png",
+  },
+  {
+    name: "Create Kubernetes Jobs and CronJobs",
     // description: '',
     img: "carousel/jobs.png",
   },

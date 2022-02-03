@@ -31,9 +31,11 @@ function Home() {
                 className={styles.heroLogo}
                 src={useBaseUrl("img/otomi-logo.svg")}
               />
-              A suite of pre-configured apps for{" "}
-              <span className={styles.heroProjectKeywords}>Kubernetes</span>
-              {" "}with{" "}
+              A suite of{" "}
+              <span className={styles.heroProjectKeywords}>pre-configured</span>{" "}
+              apps for{" "}
+              <span className={styles.heroProjectKeywords}>Kubernetes</span>{" "}
+              with{" "}
               <span className={styles.heroProjectKeywords}>
                 developer self-service
               </span>
@@ -57,16 +59,18 @@ function Home() {
             </div>
           </div>
         </div>
-        <div
-          id="appsuite"
-          className={clsx(styles.announcement, styles.announcementDark)}
-        >
+        <div className={clsx(styles.announcement, styles.announcementDark)}>
           <div className={styles.announcementInner}>
             <Carousel items={carouselItems} />
-            Check out all{" "}
-            <span className={styles.heroProjectKeywords}>
-              pre-configured
-            </span>{" "}
+          </div>
+        </div>
+        <div
+          id="appsuite"
+          className={clsx(styles.announcement, styles.announcementGrey)}
+        >
+          <div className={styles.announcementInner}>
+            Check out our list of{" "}
+            <span className={styles.heroProjectKeywords}>pre-configured</span>{" "}
             and <span className={styles.heroProjectKeywords}>ready-to-use</span>{" "}
             apps:
           </div>

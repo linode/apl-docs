@@ -63,7 +63,7 @@ function Home() {
         >
           <div className={styles.announcementInner}>
             <Carousel items={carouselItems} />
-            Check out all{" "}
+            Check out all {" "}
             <span className={styles.heroProjectKeywords}>
               pre-configured
             </span>{" "}

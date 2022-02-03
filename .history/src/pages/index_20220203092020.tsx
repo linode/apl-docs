@@ -63,7 +63,7 @@ function Home() {
         >
           <div className={styles.announcementInner}>
             <Carousel items={carouselItems} />
-            Check out all{" "}
+            Check out our list of{" "}
             <span className={styles.heroProjectKeywords}>
               pre-configured
             </span>{" "}

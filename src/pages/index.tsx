@@ -59,7 +59,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className={clsx(styles.announcement, styles.announcementDark)}>
+        <div id="carousel" className={clsx(styles.announcement, styles.announcementDark)}>
           <div className={styles.announcementInner}>
             <Carousel items={carouselItems} />
           </div>

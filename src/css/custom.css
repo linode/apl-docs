@@ -326,3 +326,12 @@ html[data-theme="dark"] .header-github-link:before {
     font-size: 0.85rem !important;
   }
 }
+
+@media (max-width: 996px) {
+  div#carousel {
+    display: none;
+  }
+  div#appsuite {
+    display: none;
+  }
+}

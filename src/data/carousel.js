@@ -5,7 +5,7 @@ export default [
     img: "carousel/platform-apps.png",
   },
   {
-    name: "Create teams in an advanced mutlti-tenant setup",
+    name: "Create teams in an advanced multi-tenant setup",
     // description: '',
     img: "carousel/teams.png",
   },

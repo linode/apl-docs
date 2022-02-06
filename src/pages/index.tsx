@@ -31,10 +31,8 @@ function Home() {
                 className={styles.heroLogo}
                 src={useBaseUrl("img/otomi-logo.svg")}
               />
-              A suite of{" "}
-              <span className={styles.heroProjectKeywords}>pre-configured</span>{" "}
-              apps for{" "}
               <span className={styles.heroProjectKeywords}>Kubernetes</span>{" "}
+              Application Configuration Platform{" "}
               with{" "}
               <span className={styles.heroProjectKeywords}>
                 developer self-service

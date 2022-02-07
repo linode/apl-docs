@@ -32,7 +32,7 @@ function Home() {
                 src={useBaseUrl("img/otomi-logo.svg")}
               />
               <span className={styles.heroProjectKeywords}>Kubernetes</span>{" "}
-              Application Configuration Platform{" "}
+              Application Configuration & Automation Platform{" "}
               with{" "}
               <span className={styles.heroProjectKeywords}>
                 developer self-service

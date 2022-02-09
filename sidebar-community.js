@@ -1,5 +1,16 @@
 module.exports = {
   community: {
-    Community: ["get-involved", "code-of-conduct"],
+    Community: [
+      "get-involved",
+      "values",
+      {
+        Contributing: [
+          "contributing",
+          "contributing-expectations",
+          "contributing-pull-requests",
+        ],
+      },
+      "code-of-conduct",
+    ],
   },
 };

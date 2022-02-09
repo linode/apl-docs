@@ -2,6 +2,7 @@
 slug: /
 title: About Otomi
 sidebar_label: Introduction
+tags: [About, philosophy]
 ---
 
 Otomi is an open source and cloud-agnostic platform to run on top of Kubernetes to securely deploy, run and manage applications.

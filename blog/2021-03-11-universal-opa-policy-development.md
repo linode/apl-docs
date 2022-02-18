@@ -11,13 +11,13 @@ This is a story behind the trenches of writing **Rego** policies and how to unra
 
 Working with policy compliant Kubernetes clusters is on the radar for a lot of companies these days, especially if you're walking the path towards popular certifications like ISO/IEC 27001 for Information Security Management.
 
-## Hands-on using OPA in Otomi Container Platform
+## Hands-on using OPA in Otomi
 
 As some of you probably already know, the Kubernetes native PodSecurityPolicy resource is going to be deprecated, see [Github](https://github.com/kubernetes/kubernetes/pull/97171) and [Google docs](https://docs.google.com/document/d/1VKqjUlpU888OYtIrBwidL43FOLhbmOD5tesYwmjzO4E/edit#) — this leaves way for external projects like Open Policy Agent to be used as the new standard for developing and enforcing policy rules.
 
 Otomi is using OPA as the standard for providing policy enforcement because of the popularity and commitment to the Kubernetes community, ease of use and also for the future project development plans.
 
-One of the key principles of Otomi Container Platform is that it is easy to use and provide clarity for integrations, allowing developers to easily extend any platform feature and provide integrated security for everything from the ground up.
+One of the key principles of Otomi is that it is easy to use and provides clarity for integrations, allowing developers to easily extend any platform feature and provide integrated security for everything from the ground up.
 
 ## OPA ecosystem common knowledge
 

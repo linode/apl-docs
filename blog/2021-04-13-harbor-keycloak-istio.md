@@ -5,8 +5,6 @@ authors: jzimnowoda
 tags: [harbor, otomi, istio, keycloak]
 ---
 
-This is our initial documentation setup for Otomi Container Platform. We hope you find it useful. Please don't hesitate to give us any [feedback](https://github.com/redkubes/redkubes.github.io/issues)!
-
 This is my story about building a multi-tenant Kubernetes environment that facilitates various DevOps teams (tenants) with their own Kubernetes namespace and private container registry (Harbor v2.1.0) with Single-Sign-On On (Keycloak v10.0.0) and service mesh (Istio 1.6.14) included.
 
 ## Harbor, A Fat But Versatile Container Registry

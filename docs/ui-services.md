@@ -5,7 +5,7 @@ title: Services
 
 ![Console: new service](img/team-services.png)
 
-A service in Otomi Container Platform is a feature for easy deployment of (serverless) container workloads and exposing these and pre-deployed services with a public URL. Otomi will automatically create and configure all ingress resources needed, including Istio Virtual Services and Gateways, certificates, DNS records and Oauth2 proxy for Single Sign On.
+A service in Otomi is a self-service feature for easy deployment of (serverless) container workloads and exposing these and pre-deployed services with a public URL. Otomi will automatically create and configure all ingress resources needed, including Istio Virtual Services and Gateways, certificates, DNS records and Oauth2 proxy for Single Sign On.
 
 ## Create a Service
 

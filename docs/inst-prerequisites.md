@@ -14,7 +14,13 @@ Please make sure the following client binaries exist:
 
 ## Kubernetes
 
-Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` with a node pool with at least **12 CPU** threads and **16GB+ RAM** in AWS, Azure, Google Cloud Platform.
+Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` with a node pool with at least **12 vCPU** threads and **32GB+ RAM** in AWS, Azure, Google Cloud Platform.
+
+For testing and experimentation, we advise to use the following machine/instance types:
+
+Azure: 3 x DS3_v2 (4 vCPU / 14 GiB RAM)
+AWS: 3 x t2.xlarge (4 vCPU / 16 GiB RAM)
+GCP: 3 x e2-highmem-4 (4 vCPU / 32 GiB RAM)
 
 Running Otomi on an onprem cluster is also supported. More information about installing Otomi on your own hardware can be found [here](https://github.com/redkubes/quickstart/tree/main/onprem)
 

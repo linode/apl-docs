@@ -7,7 +7,7 @@ title: Vision
 
 The container space is slowly evolving from the wild west it used to be, into a landscape of governance, security reliability and thus trust. After many years of working with Kubernetes it is not hard to imagine it is becoming the foundation for (cloud native) software. That movement already started years ago. We can see that this new DIY architecture paradigm breeds a plethora of containerized solutions and suites offered. And that has become the new reality: too many (possibly good) things to choose from. But this also presents a new opportunity to us: to be able to quickly deploy and test solutions to see if they meets our needs.
 
-## What to expect from a container platform
+## What to expect from a PaaS container service
 
 First we have to look at containerization and its microservice way of working, as it has brought focus on the following areas:
 

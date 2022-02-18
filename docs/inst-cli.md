@@ -71,7 +71,7 @@ otomi bootstrap
 otomi console
 ```
 
-The console allows for easy configuration of many settings but not all. Assuming the setup steps are completed, you need to now configure the Otomi values repository. This repo is the source configuration for Otomi Container Platform. It contains drone pipeline configuration for listening to updates of these values targeting the cluster the drone instance is running on.
+The console allows for easy configuration of many settings but not all. Assuming the setup steps are completed, you need to now configure the Otomi values repository. This repo is the source configuration for Otomi. It contains Drone pipeline configuration for listening to updates of these values targeting the cluster the Drone instance is running on.
 
 ## 5. Configuration
 

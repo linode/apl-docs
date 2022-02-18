@@ -6,7 +6,6 @@ module.exports = {
       'about-journey',
       'about-architecture',
       'about-roadmap',
-      { type: 'link', label: 'App Suite', href: '/#appsuite' },
     ],
   },
 }

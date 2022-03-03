@@ -18,13 +18,13 @@ Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` with 
 
 For testing and experimentation, we advise to use the following machine/instance types:
 
-Azure: 3 x DS3_v2 (4 vCPU / 14 GiB RAM)
-AWS: 3 x t2.xlarge (4 vCPU / 16 GiB RAM)
-GCP: 3 x e2-highmem-4 (4 vCPU / 32 GiB RAM)
+- Azure: 3 x DS3_v2 (4 vCPU / 14 GiB RAM)
+- AWS: 3 x t2.xlarge (4 vCPU / 16 GiB RAM)
+- GCP: 3 x e2-standard-4 (4 vCPU / 16 GiB RAM)
 
 Running Otomi on an onprem cluster is also supported. More information about installing Otomi on your own hardware can be found [here](https://github.com/redkubes/quickstart/tree/main/onprem)
 
-To use the network policies feature in Otomi, make sure to install the Calico CNI (or any other CNI that supports Kubernetes network polices).
+To use the network policies feature in Otomi, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI (or any other CNI that supports Kubernetes network polices).
 
 Follow the instructions below to set up a Kubernetes cluster in your the cloud of your choice:
 

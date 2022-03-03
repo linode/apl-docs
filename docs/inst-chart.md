@@ -18,7 +18,18 @@ helm repo update
 
 See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
-## Create and test the values file
+## Minimal Values
+
+
+
+```yaml
+cluster:
+  k8sVersion: '1.21' # currently 1.18, 1.19, 1.20 and 1.21 are supported
+  name: # the name of your cluster
+  provider: # choose between aws, azure, google
+```
+
+## Custom values
 
 To view the required `values.yaml` file with detailed comments, view and download the chart's latest [values.yaml](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml). Run the following command to view _all_ the values (which might be overwhelming):
 
@@ -52,10 +63,6 @@ watch helm list -Aa
 ```
 
 Or view detailed info about kubernetes resources with [k9s](https://k9scli.io)
-
-For more detailed instructions on monitoring and other SRE tasks, visit the [SRE section](/docs/sre/).
-
-Once the chart is installed, you are ready to dive in to the [console](/docs/console/).
 
 ### Next steps
 

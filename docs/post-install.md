@@ -13,6 +13,11 @@ Follow these instructions when Otomi is installed without DNS (`otomi.hasExterna
 
 When Otomi is installed with minimal values, passwords and public URLs (based on nip.io) are automatically generated and Keycloak is configured as an Identity Provider (IDP), in which one has to define Otomi users. The public URL of Otomi Console, the public URL of Keycloak and the admin credentials can be retrieved from the installer log. The installer job runs in the default namespace. In case the installer failed in the first run, the installer will automatically restart. Make sure to get the logs of the installer job with status `Completed`.
 
+Use the following command to get the logs of the installer job:
+```
+kubectl logs jobs/otomi -n default -f
+```
+
 ### Step 2: Create a user in Keycloak
 
 1. Navigate to Keycloak app (using the URL provided in the installer log)

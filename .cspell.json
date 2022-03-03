@@ -5,6 +5,8 @@
   "ignoreRegExpList": ["/'s\\b/"],
   "ignoreWords": [
     "aspinu",
+    "minikube",
+    "srodenhuis",
     "Alin",
     "APIV",
     "appgw",

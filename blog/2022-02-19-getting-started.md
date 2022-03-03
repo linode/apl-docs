@@ -50,7 +50,7 @@ cluster:
 To lower the initial footprint, you can turn off Harbor. To turn off harbor, add the following to your `values.yaml`:
 
 ```yaml
-apps:
+charts:
   harbor:
     enabled: false
 ```

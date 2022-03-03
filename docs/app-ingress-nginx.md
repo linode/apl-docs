@@ -1,7 +1,7 @@
 ---
 slug: apps/ingress-nginx
 title: Working with Ingress NGINX
-sidebar_label: ingress-nginx
+sidebar_label: Ingress-NGINX
 ---
 
 Otomi integrated Ingress NGINX into an advanced [ingress architecture](/about/architecture#ingress--sso).
@@ -13,7 +13,7 @@ By deafault, ModSecurity with OWASP filtering is not enabled in Nginx.
 To turn on ModSecurity with OWASP filtering change the ingress-nginx configuration in the Otomi values repository: (`/env/charts/ingress-nginx.yaml`) as follows:
 
 ```yaml
-apps:
+charts:
   ingress-nginx:
     modsecurity:
       enabled: true
@@ -24,7 +24,7 @@ When enabled, ModSecurity is by default configured in non-blocking mode. Teams c
 To configure ModSecurity in blocking mode, change the ingress-nginx configuration in the Otomi values repository: (`/env/charts/ingress-nginx.yaml`) as follows:
 
 ```yaml
-apps:
+charts:
   ingress-nginx:
     modsecurity:
       enabled: true

@@ -8,7 +8,7 @@ module.exports = [
     to: "/docs/console/apps",
   },
   {
-    from: ["/docs/console/apps"],
+    from: ["/docs/console/platform-apps"],
     to: "/docs/console/apps",
   },
   {

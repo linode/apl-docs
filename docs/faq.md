@@ -85,7 +85,7 @@ See the following example to enable/disable optional apps when installing Otomi 
 # values.yaml configuration
 otomi:
 # Disabling apps such as Harbor, Vault
-apps:
+charts:
   harbor:
     enabled: false
   vault:

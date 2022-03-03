@@ -1,7 +1,7 @@
 ---
-slug: apps/certmanager
-title: Working with CertManager
-sidebar_label: CertManager
+slug: apps/external-dns
+title: Working with ExternalDNS
+sidebar_label: ExternalDNS
 ---
 
 ExternalDNS is required to make public service domains accessible by registering them with Otomi's front loadbalancer CNAME or IP address.

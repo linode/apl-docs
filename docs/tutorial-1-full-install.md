@@ -41,7 +41,7 @@ dns:
     #   project: ''
 otomi:
   hasExternalDNS: true
-apps:
+charts:
   cert-manager:
     issuer: letsencrypt
     # change:

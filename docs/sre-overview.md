@@ -32,7 +32,7 @@ SRE can use Otomi Console to change configuration settings (like security polici
 The following code shows the configuration values of the ingress-nginx chart.
 
 ```yaml
-apps:
+charts:
   ingress-nginx:
     private:
       enabled: false

@@ -32,8 +32,7 @@ function Home() {
                 src={useBaseUrl("img/otomi-logo.svg")}
               />
               <span className={styles.heroProjectKeywords}>Kubernetes</span>{" "}
-              Application Configuration & Automation Platform{" "}
-              with{" "}
+              Application Configuration & Automation Platform with{" "}
               <span className={styles.heroProjectKeywords}>
                 developer self-service
               </span>
@@ -57,7 +56,10 @@ function Home() {
             </div>
           </div>
         </div>
-        <div id="carousel" className={clsx(styles.announcement, styles.announcementDark)}>
+        <div
+          id="carousel"
+          className={clsx(styles.announcement, styles.announcementDark)}
+        >
           <div className={styles.announcementInner}>
             <Carousel items={carouselItems} />
           </div>
@@ -70,7 +72,7 @@ function Home() {
             Check out our list of{" "}
             <span className={styles.heroProjectKeywords}>pre-configured</span>{" "}
             and <span className={styles.heroProjectKeywords}>ready-to-use</span>{" "}
-            apps:
+            charts:
           </div>
         </div>
         <div className={clsx(styles.announcement)}>

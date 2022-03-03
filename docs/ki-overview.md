@@ -16,7 +16,7 @@ Otomi uses a lot of tools under the hood, and we have a [dedicated section for t
 
 ## Core apps issues
 
-Otomi configures its suite of applications to work together. It expects certain conditions and dependencies to be in place. Under certain circumstances you might see problems. So far we have documented known issues for the following apps:
+Otomi configures its suite of applications to work together. It expects certain conditions and dependencies to be in place. Under certain circumstances you might see problems. So far we have documented known issues for the following charts:
 
 - [Istio](istio)
 - [Harbor](harbor)

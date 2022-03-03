@@ -4,17 +4,16 @@ title: Installation Overview
 sidebar_label: Overview
 ---
 
-## Experimentation & evaluation
+## Terraform Quick Start
 
-For experimentation and evaluation purposes, use the quickstart for Azure, Google Cloud Platform and AWS to deploy a Kubernetes cluster in your cloud of choice and install Otomi with minimal values. Go to the [quickstart](https://github.com/redkubes/quickstart) repository on Github to get started.
+For experimentation and evaluation purposes, use the quickstart for Azure, Google Cloud Platform and AWS to deploy a Managed Kubernetes cluster in your cloud of choice and install Otomi with minimal values. Go to the [quickstart](https://github.com/redkubes/quickstart) repository on Github to get started.
 
 After installing Otomi, perform the [post-installation steps](post-install).
 
-## Advanced
+## Helm Chart install
 
-We strive to make installation of Otomi as easy and smooth as possible. The whole procedure involves several moving parts and input configurations. In order to guarantee exact outcomes, we strongly advise to follow the these steps:
+Use the Otomi Helm Chart to install Otomi on an already running AKS, EKS or GKE cluster. In order to guarantee exact outcomes, we strongly advise to follow the these steps:
 
-- First learn more about [Otomi](/about)
 - Read the [minimal requirements](prerequisites)
 - Check the [optional configuration](optional) options
 - Install Otomi using the [Helm chart](chart)

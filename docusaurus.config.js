@@ -83,7 +83,8 @@ module.exports = {
     },
     image: "img/otomi-logo.svg",
     algolia: {
-      apiKey: "9c75393c761f1434854cef114eb80e64",
+      appId: "U3MTGFO19C",
+      apiKey: "e0ead7a6f8c98c140b3fca21e9eb5381",
       indexName: `redkubes_otomi`,
 
       // Optional: see doc section bellow

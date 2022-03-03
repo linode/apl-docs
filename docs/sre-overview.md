@@ -29,11 +29,11 @@ The Otomi values schema, in this case, can be overridden by custom configuration
 
 SRE can use Otomi Console to change configuration settings (like security policies), but can also change the Otomi Values directly using the Otomi values schema and by using overrides. In all cases, the configuration is stored in code (the otomi-values repository).
 
-The following code shows the configuration values of the nginx-ingress chart.
+The following code shows the configuration values of the ingress-nginx chart.
 
 ```yaml
-charts:
-  nginx-ingress:
+apps:
+  ingress-nginx:
     private:
       enabled: false
     modsecurity:

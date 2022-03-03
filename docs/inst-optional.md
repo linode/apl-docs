@@ -45,7 +45,7 @@ At the 'Authentication' tab you should be able to set the following callback URL
 `otomi-idp` is the default KeyCloak alias (shown as login title). To use another alias, add the following to the chart values:
 
 ```yaml
-charts:
+apps:
   keycloak:
     idp:
       alias: <your-alias>

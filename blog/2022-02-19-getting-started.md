@@ -50,7 +50,7 @@ cluster:
 To lower the initial footprint, you can turn off Harbor. To turn off harbor, add the following to your `values.yaml`:
 
 ```yaml
-charts:
+apps:
   harbor:
     enabled: false
 ```
@@ -103,12 +103,3 @@ Otomi can (for now) only successfully install when there is no namespace conflic
 We'll soon add the option to install Otomi independent of your current setup, automatically avoiding any namespace conflicts.
 
 :::
-
-
-
-
-
-
-
-
-

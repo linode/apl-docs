@@ -45,7 +45,7 @@
     "release": "docusaurus docs:version",
     "serve": "docusaurus serve",
     "spellcheck": "cspell '/**/*.md' '/README.md' --must-find-files",
-    "start": "docusaurus start",
+    "start": "docusaurus start -p 3001",
     "swizzle": "docusaurus swizzle",
     "typecheck": "tsc",
     "write-heading-ids": "docusaurus write-heading-ids",

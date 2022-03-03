@@ -3,7 +3,7 @@ slug: console/clusters
 title: Clusters
 ---
 
-![Console clusters](img/platform-clusters.png)
+![Console clusters](img/clusters.png)
 
 All known Otomi clusters are listed on this page. Clusters can be sorted based on:
 

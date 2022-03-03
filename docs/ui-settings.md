@@ -1,5 +1,5 @@
 ---
-slug: console/settings/alerts
+slug: console/settings
 title: Settings
 ---
 
@@ -9,15 +9,15 @@ title: Settings
 
 The alerts settings section offers configuration options to define alerting endpoints for alert manager and deployment feedback. The list of providers selected in `Notification receivers` should reflect their configuration. I.e. when receiver "slack" is selected, the slack configuration needs to be defined. Teams can also configure additional endpoints for the alerts spawning from their team namespace.
 
-| Setting | Description |
-| --- | --- |
-| Repeat interval | Indicates waiting time before sending a notification again after it was sent successfully for an alert. (Usually ~3h or more). |
-| Group interval | How long to wait before sending a notification about new alerts that are added to a group of alerts for which an initial notification has already been sent. (Usually ~5m or more.) |
-| Slack | Slack webhook url and channels for critical and non-critical alerts. |
-| MSteams | Microsoft Teams webhook urls for critical (high prio) and non-critical alerts (low prio). |
-| Email | Email address(es) for critical and non-critical alerts. |
-| Notification receivers | Select default notification channel(s) for receiving alerts. |
-| Drone notifications | Channel to be used by the deployment pipeline for failure/success notifications. Can only be delivered to Slack or MSteams (for now). |
+| Setting                | Description                                                                                                                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Repeat interval        | Indicates waiting time before sending a notification again after it was sent successfully for an alert. (Usually ~3h or more).                                                      |
+| Group interval         | How long to wait before sending a notification about new alerts that are added to a group of alerts for which an initial notification has already been sent. (Usually ~5m or more.) |
+| Slack                  | Slack webhook url and channels for critical and non-critical alerts.                                                                                                                |
+| MSteams                | Microsoft Teams webhook urls for critical (high prio) and non-critical alerts (low prio).                                                                                           |
+| Email                  | Email address(es) for critical and non-critical alerts.                                                                                                                             |
+| Notification receivers | Select default notification channel(s) for receiving alerts.                                                                                                                        |
+| Drone notifications    | Channel to be used by the deployment pipeline for failure/success notifications. Can only be delivered to Slack or MSteams (for now).                                               |
 
 ## Home alerts
 
@@ -56,7 +56,7 @@ The DNS settings section offers configuration options for DNS.
 
 ![KMS](img/settings-kms.png)
 
-The KMS settings section offers configuration options for the Key Management Service information needed to seal and unseal secrets used by Otomi. Otomi needs at least one key. It needs one for encrypting/decrypting the `otomi-values` repo), and another one for sealing/unsealing Vault storage.
+The KMS settings section offers configuration options for the Key Management Service information needed to seal and unseal secrets used by Otomi. Otomi needs at least one key. It needs one for encrypting/decrypting the `otomi-values` repo), and one for sealing/unsealing Vault storage.
 
 IMPORTANT NOTES:
 
@@ -65,13 +65,7 @@ IMPORTANT NOTES:
 
 It is advised to provide credentials to an external stable KMS (such as from the cloud the cluster was deployed in), so that unseal keys can always be managed from one central location. The same credentials can be used for both SOPS and Vault, but that is up to you to decide.
 
-### SOPS
-
-Credentials to a KMS used by SOPS. For now it expects the `.sops.yaml` file in the root of the `otomi/values` repo to have the configuration pointing to the keys in use there. (Soon this file will be generated from key configuration gathered here.)
-
-### Vault
-
-Settings for Vault can be found under `charts.vault` in the Otomi values repository, but will be added to this section soon.
+Settings for Vault can be found under `apps.vault` in the Otomi values repository, but will be added to this section soon.
 
 ## OIDC
 
@@ -94,19 +88,17 @@ Some settings are left in case Keycloak is not needed (it is heavy, and small te
 
 The Otomi settings section offers configuration options for Otomi and feature flags that influence the way Otomi behaves.
 
-| Setting | Description |
-| --- | --- |
-| Admin password | Default admin password for all Otomi apps. Handy for quick rotation ;) |
-| Additional Clusters | A list of additional clusters to select in the Otomi console. |
+| Setting                | Description                                                                                                                                                                                                                                                                                                                          |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Admin password         | Default admin password for all Otomi apps. Handy for quick rotation ;)                                                                                                                                                                                                                                                               |
+| Additional Clusters    | A list of additional clusters to select in the Otomi console.                                                                                                                                                                                                                                                                        |
 | External load balancer | Set this to true when an external load balancer exists (Azure AppGW, Google Apigee) or needs to be started (AWS ALB). This will then be configured through ingress controllers. Expects existing LBs to terminate https. Currently this is only working correctly for Azure, and not for AWS and Google. AWS is close to completion. |
-| Home monitored | When this is turned on alerts will also be sent to the endpoints configured in the "Home" settings. |
-| Managed masters | Whether masters are managed and not under control. Set this to false when onprem. |
-| Multi-tenancy | Will separate team metrics and logs. Disabling this lets everybody be admin and see everything. Will still use team-\* namespaces for segmentation of services, but not use authorization of users. |
+| Home monitored         | When this is turned on alerts will also be sent to the endpoints configured in the "Home" settings.                                                                                                                                                                                                                                  |
+| Managed masters        | Whether masters are managed and not under control. Set this to false when onprem.                                                                                                                                                                                                                                                    |
+| Multi-tenancy          | Will separate team metrics and logs. Disabling this lets everybody be admin and see everything. Will still use team-\* namespaces for segmentation of services, but not use authorization of users.                                                                                                                                  |
 
 ## SMTP
 
 ![SMTP](img/settings-smtp.png)
 
 The alerts settings section offers configuration options to define for Mail server settings. A mail server needs to be configured in case email notifications are used.
-
-

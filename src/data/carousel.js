@@ -2,7 +2,7 @@ export default [
   {
     name: "One UI to access all apps and self-service features",
     // description: '',
-    img: "carousel/platform-apps.png",
+    img: "carousel/apps.png",
   },
   {
     name: "Create teams in an advanced multi-tenant setup",

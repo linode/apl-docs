@@ -3,7 +3,7 @@ slug: console/team-settings
 title: Team Settings
 ---
 
-![Team settings](img/team-apps.png)
+![Team settings](img/team-settings.png)
 
 Based on the configured self-service flags, team members can change the settings of their team.
 
@@ -11,17 +11,16 @@ Based on the configured self-service flags, team members can change the settings
 
 Change the OIDC group-mapping to allow access to the team based on group membership.
 
-
 ## Configure alert settings
 
 Change the alert settings and preferred notification receivers.
 
-| Option          | Description                                                                      |
-| --------------- | -------------------------------------------------------------------------------- |
-| Slack           | Needs a slack webhook url that will give alerts for warnings and criticals       |
-| Microsoft Teams | Needs two alerting endpoints, for both warnings as well as criticals             |
-| Email           | You may provide a list of email addresses for both 'Non Critical' and 'Critical' |
-| If none selected            | Global (admin) alerting endpoint configuration will be used                      |
+| Option           | Description                                                                      |
+| ---------------- | -------------------------------------------------------------------------------- |
+| Slack            | Needs a slack webhook url that will give alerts for warnings and criticals       |
+| Microsoft Teams  | Needs two alerting endpoints, for both warnings as well as criticals             |
+| Email            | You may provide a list of email addresses for both 'Non Critical' and 'Critical' |
+| If none selected | Global (admin) alerting endpoint configuration will be used                      |
 
 ## Configure Resource Quotas
 
@@ -42,4 +41,3 @@ Azure Monitor is the platform service that provides a single source for monitori
 | No Azure monitoring                   | -                             |
 | Azure monitoring with global settings | Takes on the global settings  |
 | Azure monitoring with custom settings | Overrides any global settings |
-

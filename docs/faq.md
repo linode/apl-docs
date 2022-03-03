@@ -2,18 +2,21 @@
 slug: faq/
 title: FAQ
 ---
+
 ## Setup and Installation
 
 <details>
   <summary>What are the minimal requirements to install Otomi?</summary>
 
 Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` using a Node pool with at least `12 vCPU` and `16 GiB memory` in AWS, Azure, or Google Cloud Platform. Otomi can also be installed using the `on-prem` provider. See the [Quickstart](https://github.com/redkubes/quickstart/tree/main/onprem) for more information about installing Otomi on your own hardware.
+
 </details>
 
 <details>
   <summary>Is the Quickstart the only way to install Otomi?</summary>
 
 No. The [otomi-quickstart](https://github.com/redkubes/quickstart) uses Terraform to provision a three-node Kubernetes cluster in AWS, Azure, or GCP and installs Otomi. You can also provision up a Kubernetes cluster yourself and install Otomi using the Helm chart. Check [chart-install](https://otomi.io/docs/installation/chart) for more details.
+
 </details>
 
 <details>
@@ -43,12 +46,13 @@ See the following example to enable/disable optional apps when installing Otomi 
 # values.yaml configuration
 otomi:
 # Disabling apps such as Harbor, Vault
-charts:
+apps:
   harbor:
     enabled: false
   vault:
     enabled: false
 ```
+
 </details>
 
 ## Other

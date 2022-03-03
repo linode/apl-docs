@@ -39,16 +39,16 @@ Gatekeeper can be set to enforcing mode or disabled mode by editing the `values/
 ### Switch to Enforcing mode
 
 ```yaml
-charts:
-  gatekeeper-operator:
+apps:
+  gatekeeper:
     disableValidatingWebhook: false
 ```
 
 ### Switch to Disabled mode
 
 ```yaml
-charts:
-  gatekeeper-operator:
+apps:
+  gatekeeper:
     enabled: false
 ```
 

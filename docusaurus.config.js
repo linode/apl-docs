@@ -210,6 +210,7 @@ module.exports = {
         : "@docusaurus/preset-classic",
       {
         docs: {
+          breadcrumbs: false,
           sidebarPath: require.resolve("./sidebar-docs.js"),
           editUrl:
             "https://github.com/redkubes/redkubes.github.io/tree/master/",

@@ -31,10 +31,10 @@ function Home() {
                 className={styles.heroLogo}
                 src={useBaseUrl("img/otomi-logo.svg")}
               />
-              <span className={styles.heroProjectKeywords}>Kubernetes</span>{" "}
-              Application Configuration & Automation Platform with{" "}
+              <span className={styles.heroProjectKeywords}>Self-hosted</span>{" "}
+              PaaS{" "}
               <span className={styles.heroProjectKeywords}>
-                developer self-service
+                for Kubernetes
               </span>
             </h1>
             <div className={styles.indexCtas}>

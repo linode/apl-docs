@@ -7,7 +7,7 @@ tags: [About, philosophy]
 
 Otomi is an open source and cloud-agnostic Kubernetes applications & configurations platform to run on top of your own Kubernetes cluster to securely deploy, run and manage applications.
 
-Otomi is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. A PaaS attempts to connect many of the technologies found in the CNCF landscape in a way that provides direct value to developers. Otomi is a private PaaS service based on BYO Kubernetes cluster.
+Otomi is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. A PaaS attempts to connect many of the technologies found in the CNCF landscape in a way that provides direct value to developers. Otomi is a self-hosted PaaS for Kubernetes.
 
 ## Highlights
 

@@ -17,18 +17,18 @@ This approach might change, so keep watching our socials.
 
 - [x] Internal ingress network policies: Controlling network traffic between team services
 - [x] Outbound egress control: Specify the FQDNs or IPs that services need to be able to access
-- [x] Add self-service delegation for network policies (ingress/egress)
-- [ ] App configuration options: Modify the configuration of integrated apps using Otomi Console
-- [ ] Automated post installation actions: Directly sign in to the Console and start creating Teams
-- [ ] Support for Kubernetes 1.22
-- [ ] Install with minimal footprint: Get a minimal set of installed apps to lower the initial footprint. Activate more apps after initial install
+- [x] Add self-service for network policies (ingress/egress)
+- [ ] Modify the configuration of integrated apps using Otomi Console
+- [ ] Get a minimal set of installed apps to lower the initial footprint. Activate more apps after initial install
+- [ ] Add the option to use more ingress controllers allowing to group services on a dedicated controller for segmentation
 
 ### For the second quater of 2022 we aim to incorporate the following features
 
-- [ ] Add Velero for backing up Otomi platform apps (like Harbor and Keycloak)
+- [ ] Support for Kubernetes 1.22
+- [ ] Add Velero for backing up Otomi platform apps (like Harbor, Keycloak, Gitea and Kubeapps Postgresql databases)
 - [ ] Add the option to backup Team apps
-- [ ] Add the option to use more ingress controllers for additional DNS zones (allowing to group services on a dedicated controller)
-- [ ] Bring GitOps (Flux) to teams: Add a GitOps controller to each team and let teams specify their code repositories
+- [ ] Automated deployment of container images using Flux CD
+- [ ] Add Falco and Kubei for runtime security monitoring
 ### After that we see the following features on the horizon
 
 - Multi tenancy enhancements: Allow teams to create and manage namespaces

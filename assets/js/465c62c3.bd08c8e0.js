@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[9785],{6444:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","name":"opa","count":1,"permalink":"/blog/tags/opa"}')}}]);

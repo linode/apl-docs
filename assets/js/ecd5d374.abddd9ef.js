@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[6295],{8114:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","name":"keycloak","count":1,"permalink":"/blog/tags/keycloak"}')}}]);

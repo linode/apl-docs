@@ -33,9 +33,7 @@ function Home() {
               />
               <span className={styles.heroProjectKeywords}>Self-hosted</span>{" "}
               PaaS{" "}
-              <span className={styles.heroProjectKeywords}>
-                for Kubernetes
-              </span>
+              <span className={styles.heroProjectKeywords}>for Kubernetes</span>
             </h1>
             <div className={styles.indexCtas}>
               <Link

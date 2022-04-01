@@ -52,7 +52,7 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 
 [Drone](https://www.drone.io/) is an integral part in the deployment of Otomi cluster configuration.
 
-1. Click on the **Drone** app (under Platform/Otomi Apps) in the console.
+1. Click on the **Drone** app (under Platform/Otomi Apps) in the console
 2. Click on `Continue` on the Welcome to Drone page
 3. Sign in
 

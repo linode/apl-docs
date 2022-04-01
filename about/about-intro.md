@@ -5,9 +5,7 @@ sidebar_label: Introduction
 tags: [About, philosophy]
 ---
 
-Otomi is an open source and cloud-agnostic Kubernetes applications & configurations platform to run on top of your own Kubernetes cluster to securely deploy, run and manage applications.
-
-Otomi is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. A PaaS attempts to connect many of the technologies found in the CNCF landscape in a way that provides direct value to developers. Otomi is a self-hosted PaaS for Kubernetes.
+Otomi is an open source self-hosted PaaS to run on top of Kubernetes and is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. A PaaS attempts to connect many of the technologies found in the CNCF landscape in a way that provides direct value to developers.
 
 ## Highlights
 
@@ -30,21 +28,14 @@ After installing Otomi on Kubernetes, you can sign in and immediately start depl
 
 ## Why Otomi?
 
-<!--Just like you would expect from your favorite Linux distribution. After installing Otomi on Kubernetes, you can log in and immediately start deploying and use all the built-in applications.
-Take inspiration from https://rancher.com/why-rancher/rancher-strengthens-kubernetes/
--->
-
-Otomi empowers developers and lowers the burden on IT operations. Otomi provides opinions and choices around how to piece/glue together the various open source tools needed to run applications, and:
+Otomi empowers developers and lowers the burden on IT operations. Otomi provides opinions and choices around how to piece/glue together the various open source tools needed to run applications. Otomi:
 
 - Allows for customization and extensibility
 - Comes with with curated industry proven applications and policies for better governance and security
-- Offers an enterprise-grade container service experience out-of-the-box
+- Offers an enterprise-grade platform experience out-of-the-box
 - Increases developer efficiency and makes developers self-serving
 - Offers carefully crafted sane defaults to minimize configuration effort and speed up time to market
 - Incorporates the 12-factor app methodology and Kubernetes best-practices
-
-<!-->Perhaps a reference to our demo or whitepaper for more explanation-->
-<!-- This documentation is intended to provide technical, operational and background information for Otomi. -->
 
 Check out the following sections to understand the reasoning and decisions made involving the development of Otomi:
 

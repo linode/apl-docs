@@ -22,7 +22,7 @@ module.exports = {
   url: "https://otomi.io",
   baseUrl: "/",
   customFields: {
-    description: "A cloud-agnostic platform to run on top of Kubernetes",
+    description: "Self-hosted PaaS for Kubernetes",
   },
   favicon: "img/otomi.ico",
   onBrokenLinks: "throw",

@@ -1,6 +1,7 @@
 ---
 slug: console/team-jobs
-title: Jobs
+title: Team Jobs
+sidebar_label: Jobs
 ---
 
 <!-- ![Console: new job](img/team-jobs.png) -->

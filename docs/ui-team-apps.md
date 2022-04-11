@@ -1,6 +1,7 @@
 ---
 slug: console/team-apps
-title: Apps
+title: Team Apps
+sidebar_label: Apps
 ---
 
 ![Team apps](img/team-apps.png)

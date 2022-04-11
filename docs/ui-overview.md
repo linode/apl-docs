@@ -22,8 +22,8 @@ The "Platform" section in the left menu provides access to:
 - [Clusters](clusters): A list of all known Kubernetes clusters running Otomi 
 - [Policies](policies): A list of all available security policies and their configuration for this platform
 - [Teams](teams): A list of all Teams using this platform
-- [Services](all-services): A list of all services running on this platform
-- [Jobs](all-jobs): A list of all Jobs running on this platform
+- [Services](services): A list of all services running on this platform
+- [Jobs](jobs): A list of all Jobs running on this platform
 - [Settings](settings): Specific configuration of this platform
 
 ### Team section
@@ -31,10 +31,10 @@ The "Platform" section in the left menu provides access to:
 The "Team `$name`" section gives access to:
 
 - [Apps](team-apps): All the apps available to the team on this platform
-- [Shortcuts](shortcuts): All shortcuts available to the team on this platform
-- [Services](services): Services managed by the team on this platform
-- [Jobs](jobs): Jobs managed by the team on this platform
-- [Secrets](secrets): Secrets managed by the team on this platform
+- [Shortcuts](team-shortcuts): All shortcuts available to the team on this platform
+- [Services](team-services): Services managed by the team on this platform
+- [Jobs](team-jobs): Jobs managed by the team on this platform
+- [Secrets](team-secrets): Secrets managed by the team on this platform
 - [Settings](team-settings): Specific Team configuration options
 
 ### Cluster section

@@ -1,5 +1,5 @@
 ---
-slug: console/all-services
+slug: console/services
 title: Platform - Services
 sidebar_label: Services
 ---

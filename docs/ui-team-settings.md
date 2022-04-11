@@ -1,6 +1,7 @@
 ---
 slug: console/team-settings
-title: Settings
+title: Team Settings
+sidebar_label: Settings
 ---
 
 Based on the configured self-service flags, team members can change the settings of their team.

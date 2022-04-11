@@ -1,6 +1,7 @@
 ---
-slug: console/secrets
-title: Secrets
+slug: console/team-secrets
+title: Team Secrets
+sidebar_label: Secrets
 ---
 
 <!-- ![Console: new secret](img/team-secrets.png) -->

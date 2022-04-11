@@ -1,5 +1,5 @@
 ---
-slug: console/all-jobs
+slug: console/jobs
 title: Platform - Jobs
 sidebar_label: Jobs
 ---

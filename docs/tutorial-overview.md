@@ -7,15 +7,14 @@ sidebar_label: Overview
 This section contains tutorials to learn using Otomi and all the integrated apps.
 
 1. [Install Otomi](basic-install-for-tutorial)
-2. [Creating and managing users when using Keycloak as IDP](create-keycloak-users)
-3. [Build, tag and push an image to Harbor](build-tag-push)
-4. [Create a Kubernetes service](create-k8s-service)
-5. [Create a Knative service](create-knative-service)
-6. [Publicly expose an existing service using Otomi Console](expose-service)
-7. [Create a secret in Hashicorp Vault](create-secret-vault)
-8. [Add a secret created in vault to Kubernetes](add-secret)
-9. [Use secrets in Kubernetes](use-secret)
-10. [Creating Knative services using Otomi Console](create-ksvc-otomi)
+2. [Build, tag and push an image to Harbor](build-tag-push)
+3. [Create a Kubernetes service](create-k8s-service)
+4. [Create a Knative service](create-knative-service)
+5. [Publicly expose an existing service using Otomi Console](expose-service)
+6. [Create a secret in Hashicorp Vault](create-secret-vault)
+7. [Add a secret created in vault to Kubernetes](add-secret)
+8. [Use secrets in Kubernetes](use-secret)
+9.  [Creating Knative services using Otomi Console](create-ksvc-otomi)
 
 To be able to do the tutorials, please make sure you have:
 

@@ -1,6 +1,7 @@
 ---
-slug: console/services
-title: Services
+slug: console/team-services
+title: Team Services
+sidebar_label: Services
 ---
 
 <!-- ![Console: new service](img/team-services.png) -->

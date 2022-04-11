@@ -28,7 +28,7 @@ module.exports = {
           "ui-team-shortcuts",
           "ui-team-services",
           "ui-team-jobs",
-          "ui-secrets",
+          "ui-team-secrets",
           "ui-team-settings",
         ],
       },

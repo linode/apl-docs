@@ -18,15 +18,14 @@ helm repo update
 
 See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
-## Minimal Values
-
+## Default install
 
 
 ```yaml
 cluster:
-  k8sVersion: '1.21' # currently 1.18, 1.19, 1.20 and 1.21 are supported
+  k8sVersion: '1.21' # currently 1.18, 1.19, 1.20, 1.21, 1.22 and 1.23 are supported
   name: # the name of your cluster
-  provider: # choose between aws, azure, google
+  provider: # choose between aws, azure, google, custom or local
 ```
 
 ## Custom values
@@ -66,7 +65,7 @@ Or view detailed info about kubernetes resources with [k9s](https://k9scli.io)
 
 ### Next steps
 
-Once Otomi is installed, follow the [Post Installation steps](/docs/installation/post-install) to get ready to use Otomi.
+Once Otomi is installed, follow the [activation steps](activation) to get ready to use Otomi.
 
 ## Installing from source
 

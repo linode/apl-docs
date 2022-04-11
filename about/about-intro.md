@@ -5,7 +5,7 @@ sidebar_label: Introduction
 tags: [About, philosophy]
 ---
 
-Otomi is an open source self-hosted PaaS to run on top of Kubernetes and is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. A PaaS attempts to connect many of the technologies found in the CNCF landscape in a way that provides direct value to developers.
+Otomi is an open source self-hosted PaaS to run on top of Kubernetes and is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. A PaaS attempts to connect many of the technologies found in the CNCF landscape in a way to provide direct value to developers.
 
 ## Highlights
 

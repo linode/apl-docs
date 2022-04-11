@@ -1,11 +1,15 @@
 ---
 slug: console/settings
-title: Settings
+title: Platform - Settings
+sidebar_label: Settings
 ---
 
 ## Alerts
 
-![Alerts](img/settings-alerts.png)
+:::note
+
+Alerts settings will only be active when Alertmanager is active.
+:::
 
 The alerts settings section offers configuration options to define alerting endpoints for alert manager and deployment feedback. The list of providers selected in `Notification receivers` should reflect their configuration. I.e. when receiver "slack" is selected, the slack configuration needs to be defined. Teams can also configure additional endpoints for the alerts spawning from their team namespace.
 
@@ -21,13 +25,19 @@ The alerts settings section offers configuration options to define alerting endp
 
 ## Home alerts
 
-![Home Alerts](img/settings-home-alerts.png)
+:::note
+
+Home alerts settings will only be active when Alertmanager is active.
+:::
 
 The Home alerts section is similar to the [Alerts](#alerts) section, but with a different intent: the configuration here is meant to target "Home" alerting endpoints. Those will become active when `otomi.isHomeMonitored` is turned on. This allows for a 3rd party to also monitor the system. This comes in handy when setting up Otomi as a managed service for clients that want to receive notifications themselves. We consider "Home" to be the managing party, and the regular "Alerts" section should then only contain endpoints for the client. Of course teams can still configure their own endpoints for the alerts spawning from their team namespace.
 
 ## Azure
 
-![Azure](img/settings-azure.png)
+:::note
+
+Azure settings will only be active when `cluster.provider=azure`.
+:::
 
 The Azure settings section offers specific configuration options when running Otomi on a Kubernetes cluster in Azure. Note that this section will only be available when running on Azure (cloud=azure).
 
@@ -43,7 +53,10 @@ Using an Azure Application Gateway is optional. In case an application gateway i
 
 ## DNS
 
-![DNS](img/settings-dns.png)
+:::note
+
+DNS settings will only be active when `otomi.hasExternalDNS=true`.
+:::
 
 The DNS settings section offers configuration options for DNS.
 
@@ -53,8 +66,6 @@ The DNS settings section offers configuration options for DNS.
 | Provider | The provider hosting the dns zones. Can be AWS, Azure or Google.                                |
 
 ## KMS
-
-![KMS](img/settings-kms.png)
 
 The KMS settings section offers configuration options for the Key Management Service information needed to seal and unseal secrets used by Otomi. Otomi needs at least one key. It needs one for encrypting/decrypting the `otomi-values` repo), and one for sealing/unsealing Vault storage.
 
@@ -69,7 +80,10 @@ Settings for Vault can be found under `apps.vault` in the Otomi values repositor
 
 ## OIDC
 
-![OIDC](img/settings-oidc.png)
+:::note
+
+OIDC settings will only be active when `otomi.hasExternalIDP=true`
+:::
 
 The OIDC settings section offers configuration options to connect with an external Identity Provider (Bring Your Own IDP). This allows to map IDP group names to the following Otomi roles:
 
@@ -84,21 +98,26 @@ Some settings are left in case Keycloak is not needed (it is heavy, and small te
 
 ## Otomi
 
-![Otomi](img/settings-otomi.png)
-
 The Otomi settings section offers configuration options for Otomi and feature flags that influence the way Otomi behaves.
 
-| Setting                | Description                                                                                                                                                                                                                                                                                                                          |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Admin password         | Default admin password for all Otomi apps. Handy for quick rotation ;)                                                                                                                                                                                                                                                               |
-| Additional Clusters    | A list of additional clusters to select in the Otomi console.                                                                                                                                                                                                                                                                        |
+| Setting                | Description   |
+| ---------------------- | ------------------------ |
+| Admin password         | Default admin password for all Otomi apps. The default admin password can not be changed. |
+| Additional Clusters    | A list of additional clusters to select in the Otomi console. |
+| Global pull secrets    | Add you Dockerhub pull secret. Will be connected to each "default" service account in all otomi app namespaces. Handy for authenticating with DockerHub to avoid rate limiting. Also useful when pulling all otomi images from a private repo. |
 | External load balancer | Set this to true when an external load balancer exists (Azure AppGW, Google Apigee) or needs to be started (AWS ALB). This will then be configured through ingress controllers. Expects existing LBs to terminate https. Currently this is only working correctly for Azure, and not for AWS and Google. AWS is close to completion. |
-| Home monitored         | When this is turned on alerts will also be sent to the endpoints configured in the "Home" settings.                                                                                                                                                                                                                                  |
-| Managed masters        | Whether masters are managed and not under control. Set this to false when onprem.                                                                                                                                                                                                                                                    |
-| Multi-tenancy          | Will separate team metrics and logs. Disabling this lets everybody be admin and see everything. Will still use team-\* namespaces for segmentation of services, but not use authorization of users.                                                                                                                                  |
+| External DNS  | Set this to true when an external DNS zone is available to manage DNS records. (Expects required `dns:` fields to be set.) |
+| External IdP | Set this to true when bringing your own external IDP such as Azure AD. (Expects required `oidc:` fields to be set.)  |
+| Home monitored         | When this is turned on alerts will also be sent to the endpoints configured in the "Home" settings. |
+| Managed masters        | Whether masters are managed and not under control. Set this to false when onprem. |
+| Multi-tenancy          | When turned on, team metrics and logs will be separated. Disabling this let everybody be admin and see everything. Will still use team-\* namespaces for segmentation and network isolation of services. |
+| Version | The installed version of Otomi. Change to a new valid release to upgrade |
 
 ## SMTP
 
-![SMTP](img/settings-smtp.png)
+:::note
+
+SMTP settings will only be active when Alertmanager is active.
+:::
 
 The alerts settings section offers configuration options to define for Mail server settings. A mail server needs to be configured in case email notifications are used.

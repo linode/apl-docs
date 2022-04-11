@@ -1,9 +1,10 @@
 ---
 slug: console/policies
-title: Policies
+title: Platform - Policies
+sidebar_label: Policies
 ---
 
-![Policies](img/policies.png)
+![Policies](img/platform-policies.png)
 
 This section allows to turn Open Policy Agent (OPA) policies on or off, and also set default parameters to be used by the policies.
 

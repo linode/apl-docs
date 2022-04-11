@@ -1,60 +1,50 @@
 ---
 slug: installation/prerequisites
-title: Minimal requirements
+title: Prerequisites
 ---
 
 ## Client binaries
 
-Please make sure the following client binaries exist:
+When installing Otomi using the chart, make sure the following client binaries exist:
 
-- [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to access the cluster.
-- [Docker](https://www.docker.com/) must be installed and running, as Otomi runs in a container.
-- [Helm](https://helm.sh/docs/intro/install/) for helm chart installation of Otomi.
-- Optional: [Otomi CLI](/docs/cli/)
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to access the cluster
+- [Helm](https://helm.sh/docs/intro/install/) for helm chart installation of Otomi
 
-## Kubernetes
+## Providers
 
-Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` with a node pool with at least **12 vCPU** threads and **32GB+ RAM** in AWS, Azure, Google Cloud Platform.
+### AWS, Azure and Google
 
-For testing and experimentation, we advise to use the following machine/instance types:
+Otomi supports 3 cloud provides. The `aws`, `azure` and `google` providers include creating optimized storage classes and optional integration with L7 load balancers (like an ALB in AWS and a Application Gateway in Azure).
 
-- Azure: 3 x DS3_v2 (4 vCPU / 14 GiB RAM)
-- AWS: 3 x t2.xlarge (4 vCPU / 16 GiB RAM)
-- GCP: 3 x e2-standard-4 (4 vCPU / 16 GiB RAM)
+### Other clouds and on-prem
 
-Running Otomi on an onprem cluster is also supported. More information about installing Otomi on your own hardware can be found [here](https://github.com/redkubes/quickstart/tree/main/onprem)
+Use the `custom` provider for all other clouds and when running Kubernetes on your own hardware. The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that obtains an external accessible IP.
 
-To use the network policies feature in Otomi, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI (or any other CNI that supports Kubernetes network polices).
+### Local machine
 
-Follow the instructions below to set up a Kubernetes cluster in your the cloud of your choice:
+Use the `local` provider when installing Otomi on your labtop. Note that when running installing Otomi on your local machine (using minikube for instance), the K8s Loadbalancer Service needs to obtain an external accessible IP and using `127.0.0.1` is not supported.
 
-### AWS
+## Kubernetes versions
 
-Set up an EKS cluster on AWS: https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html
+Otomi currently supports the following Kubernetes versions:
 
-Get access to the cluster with kubectl:
+- 1.18
+- 1.19
+- 1.20
+- 1.21
+- 1.22
+- 1.23
 
-```bash
-aws eks update-kubeconfig --name $CLUSTER_NAME
-```
+## Minimal compute resource requirements
 
-### Azure (AKS)
+Otomi requires a node pool with at least **6 vCPU** threads and **8GiB+ RAM**. Note that this is the requirements for a minimal (default) install. When activating more apps, you'll probably need more resources.
 
-Set up an AKS cluster on Azure: https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal
+:::info ATTENTION
 
-Get access to the cluster with kubectl:
+The minimal resource requirement to run Otomi is based on running Core Apps only! The core apps provide an advanced ingress architecture based on Nginx, Istio, Keycloak, Oaut2 Proxy and Certmanager. Activating optional apps will require more compute resources. We advise to have a node pool available with 12 vCPU and 36 GiB memory.
 
-```bash
-az aks get-credentials --resource-group <resource-group> --name <cluster-name> --admin
-```
+:::
 
-### Google (GKE)
+## CNI
 
-Set up a GKE cluster on Google Cloud Platform: https://cloud.google.com/kubernetes-engine/docs/how-to
-
-Get access to the cluster with kubectl:
-
-```bash
-gcloud container clusters get-credentials <cluster-name> --region <region> --project <project>
-```
-
+To use the network policies feature in Otomi, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI or any other CNI that supports Kubernetes network polices.

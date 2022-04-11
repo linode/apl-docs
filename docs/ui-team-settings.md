@@ -1,9 +1,7 @@
 ---
 slug: console/team-settings
-title: Team Settings
+title: Settings
 ---
-
-![Team settings](img/team-settings.png)
 
 Based on the configured self-service flags, team members can change the settings of their team.
 
@@ -12,6 +10,11 @@ Based on the configured self-service flags, team members can change the settings
 Change the OIDC group-mapping to allow access to the team based on group membership.
 
 ## Configure alert settings
+
+:::note
+
+Alerts settings will only be active when Alertmanager is active and multi tenancy is enabled.
+:::
 
 Change the alert settings and preferred notification receivers.
 
@@ -32,7 +35,12 @@ There is no validation as there is no schema published. Add/change resource quot
 
 :::
 
-## Configure Azure Monitor (Azure only)
+## Configure Azure Monitor
+
+:::note
+
+Configuring Azure Monitor settings will only be active when  `cluster.provider=azure`) and when multi-tenancy is enabled.
+:::
 
 Azure Monitor is the platform service that provides a single source for monitoring Azure resources.
 
@@ -41,3 +49,10 @@ Azure Monitor is the platform service that provides a single source for monitori
 | No Azure monitoring                   | -                             |
 | Azure monitoring with global settings | Takes on the global settings  |
 | Azure monitoring with custom settings | Overrides any global settings |
+
+## Configure Network Policies
+
+| Option                              | Description                   |
+| ------------------------------------- | ----------------------------- |
+| Network policies                   | When enabled team services will be bound by (ingress) network policies |
+| Egress control                  | When enabled team service egress traffic will be limited to pre-defined endpoints only |

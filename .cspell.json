@@ -37,7 +37,9 @@
     "sunrpc",
     "textconv",
     "xsrf",
-    "Zimnowoda"
+    "Zimnowoda",
+    "visable",
+    "devided"
   ],
   "language": "en",
   "words": [
@@ -104,6 +106,8 @@
     "velero",
     "xlarge",
     "kubei",
-    "falco"
+    "falco",
+    "certutil",
+    "oaut2"
   ]
 }

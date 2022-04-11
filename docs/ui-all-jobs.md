@@ -1,9 +1,10 @@
 ---
-slug: console/jobs
-title: Jobs
+slug: console/all-jobs
+title: Platform - Jobs
+sidebar_label: Jobs
 ---
 
-![All Jobs](img/all-jobs.png)
+<!-- ![All Jobs](img/all-jobs.png) -->
 
 All known Jobs on the platform are listed here. Jobs can be sorted based on:
 
@@ -15,4 +16,4 @@ All known Jobs on the platform are listed here. Jobs can be sorted based on:
 | Schedule   | The configured schedule (only if type is CronJob)   |
 | Team       | The team that owns the service                      |
 
-The `Create Job` button will only become active when a team is selected.
+The `Create Job` button will only become active when a team is selected in the top bar.

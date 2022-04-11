@@ -1,6 +1,6 @@
 ---
 slug: installation/cli/
-title: Install with CLI
+title: Installing with CLI
 ---
 
 ## 1. Initialize a values repo

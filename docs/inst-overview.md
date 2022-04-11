@@ -1,22 +1,22 @@
 ---
 slug: installation/
-title: Installation Overview
-sidebar_label: Overview
+title: Getting started with Otomi
+sidebar_label: Get started
 ---
 
 ## Terraform Quick Start
 
-For experimentation and evaluation purposes, use the quickstart for Azure, Google Cloud Platform and AWS to deploy a Managed Kubernetes cluster in your cloud of choice and install Otomi with minimal values. Go to the [quickstart](https://github.com/redkubes/quickstart) repository on Github to get started.
+For experimentation and evaluation purposes, use the quickstarts for Azure, Google Cloud Platform and AWS to deploy a Managed Kubernetes cluster and install Otomi. Go to the [quickstart](https://github.com/redkubes/quickstart) repository on Github to get started.
 
-After installing Otomi, perform the [post-installation steps](post-install).
+After installing Otomi, follow the [activation steps](activation).
 
-## Helm Chart install
+## Install Otomi with Helm
 
-Use the Otomi Helm Chart to install Otomi on an already running AKS, EKS or GKE cluster. In order to guarantee exact outcomes, we strongly advise to follow the these steps:
+Use the Otomi Helm chart to install Otomi. In order to guarantee exact outcomes, we strongly advise to follow the these steps:
 
-- Read the [minimal requirements](prerequisites)
-- Check the [optional configuration](optional) options
-- Install Otomi using the [Helm chart](chart)
-- Perform the [post-installation steps](post-install)
+1. Read the [minimal requirements](prerequisites)
+2. Check the [optional configuration](optional) options
+3. Install Otomi using the [Helm chart](chart)
+4. Follow the [activation steps](activation).
 
 To learn how to work with Otomi, start with the [tutorials](/docs/tutorials/).

@@ -6,7 +6,7 @@ sidebar_label: Overview
 
 This section contains tutorials to learn using Otomi and all the integrated apps.
 
-1. [Install Otomi with external DNS](full-install-for-tutorial)
+1. [Install Otomi](basic-install-for-tutorial)
 2. [Creating and managing users when using Keycloak as IDP](create-keycloak-users)
 3. [Build, tag and push an image to Harbor](build-tag-push)
 4. [Create a Kubernetes service](create-k8s-service)
@@ -27,3 +27,9 @@ To be able to do the tutorials, please make sure you have:
 - Signed in to Otomi as a user who is a member of the `team-demo` group
 
 If you haven't already, first install Otomi.
+
+## More
+
+There are also lab exercises available on in the [Azure Kubernetes-hackfest](https://github.com/Azure/kubernetes-hackfest/tree/master/labs/paas/otomi) repository.
+
+We will soon add more tutorials here on otomi.io.

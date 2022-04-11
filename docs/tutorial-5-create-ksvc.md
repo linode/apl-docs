@@ -4,13 +4,11 @@ title: Create a Knative service
 sidebar_label: Create a Knative service
 ---
 
-:::info
-
-When Otomi is installed with minimal values, a CA is automatically generated and added to the worker nodes. When using Azure AKS version 1.19 and up, the CA can not be automatically added to the worker nodes and pulling images from a Harbor registry is not possible. See [this](/docs/sre/known-issues/custom-ca) known issue for more information.
-
-:::
-
 In this tutorial, you are going to deploy the image you build, tagged and pushed to harbor in the previous tutorial by creating a Knative service.
+
+### Activate Knative
+
+Go to `Apps` under the `Platform` section in the side menu and Drag and Drop `Knative` from the `Disabled apps` to the `Enabled apps` and click on `Deploy Changes` in the left menu.
 
 ### Create a Knative Service
 
@@ -29,7 +27,7 @@ spec:
         policy.otomi.io/ignore-sidecar: container-limits,psp-allowed-users
     spec:
       containers:
-        - image: harbor.your-domain.com/team-demo/hello-world:demo
+        - image: harbor.<your-ip>.nip.io/team-demo/hello-world:demo
           securityContext:
             runAsUser: 1001
 ```

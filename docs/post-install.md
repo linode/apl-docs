@@ -50,7 +50,7 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 
 ### Step 5: Activate Drone
 
-[Drone](https://www.drone.io/) is an integral part in the deployment of Otomi cluster configuration.
+<!-- [Drone](https://www.drone.io/) is an integral part in the deployment of Otomi cluster configuration. -->
 
 1. Click on the **Drone** app (under Platform/Otomi Apps) in the console
 2. Click on `Continue` on the Welcome to Drone page
@@ -72,6 +72,6 @@ Now the final step is to create a team. See the [Teams](/docs/console/teams) pag
 
 If Otomi is configured with `hasExternalIDP=true` and `oidc` settings have been provided for an external IDP, click on the right button ("redkubes-azure" in the example below).
 
-![console-login](img/console-login.png)
+<!-- ![console-login](img/console-login.png) -->
 
 When OIDC is configured, an external IDP user needs to be a member of the "otomi-admin" group. Now follow the same steps as described above to activate Drone.

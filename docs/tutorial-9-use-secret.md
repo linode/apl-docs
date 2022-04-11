@@ -23,7 +23,7 @@ bash kubectl apply -f hello-svc.yaml
 
 ```
 
-Go to https://hello.team-demo.your-domain.com/
+Go to https://hello.team-demo.<your-ip>.nip.io/
 
 As you can see, the text on the page now shows the value `party people` of the secret you created in Vault.
 

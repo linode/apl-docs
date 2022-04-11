@@ -26,7 +26,7 @@ We can imagine when looking at the list of all pre-configured and ready-to-use a
 <details>
   <summary>What are the minimal requirements to install Otomi?</summary>
 
-Otomi requires a running Kubernetes cluster of version `1.18` up to `1.21` using a Node pool with at least `12 vCPU` and `16 GiB memory` in AWS, Azure, or Google Cloud Platform. Otomi can also be installed using the `on-prem` provider. See the [Quickstart](https://github.com/redkubes/quickstart/tree/main/onprem) for more information about installing Otomi on your own hardware.
+Otomi requires a running Kubernetes cluster of version `1.18` up to `1.23` using a Node pool with at least `6 vCPU` and `8 GiB memory`. When using the `custom` provider (when installing Kubernetes on any other provider then azure, aws or google), make sure Otomi can create a K8s LoadBalancer Service that is accessible from your machine (not using 127.0.0.1).
 
 </details>
 
@@ -68,29 +68,7 @@ Yes, using an external IdP like Azure AD is optional. When installing Otomi with
 <details>
   <summary>Can I install Otomi on my laptop using Minikube?</summary>
 
-Yes. You can use the Otomi `onprem` provider to install Otomi on Kubernetes running on your own hardware, including Minikube. Note that Otomi requires sufficient resources and that Otomi does not support ARM CPU architecture. We will soon publish more documentation on how to install Otomi using the onprem provider.
-
-</details>
-
-## Otomi Configuration
-
-<details>
-  <summary>Can I disable applications such as `Vault` and `Harbor` if I want to?</summary>
-
-Yes, it is possible to disable certain applications. See the [values.yaml](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml) for all options. Also checkout the [values-schema.yaml](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml) to check which applications can be `disabled`. We will soon come with a new release that will by default install the minimal set of applications and where you can use Otomi Console to enable optional applications.
-
-See the following example to enable/disable optional apps when installing Otomi using the Helm Chart:
-
-```yaml
-# values.yaml configuration
-otomi:
-# Disabling apps such as Harbor, Vault
-charts:
-  harbor:
-    enabled: false
-  vault:
-    enabled: false
-```
+Yes. You can use the Otomi `custom` provider to install Otomi on Kubernetes running on your own hardware, including Minikube. Note that Otomi needs to be able to create a Kubernetes LoadBalancer service and the IP needs to be accessible for pods running in the cluster and for your local browser. `127.0.0.1` can not be used, so running minikube with the Docker provider is not supported. Use the [Hyperkit driver](https://minikube.sigs.k8s.io/docs/drivers/hyperkit/) instead. 
 
 </details>
 

@@ -70,7 +70,7 @@ Otomi contains four types of applications:
 - Core applications; applications that operate on the platform-level
 - Shared applications; applications that are shared between teams. Shared applications can be user- and role-aware or not (user is anonymous)
 - Team applications; applications with a dedicated instance per team
-- Optional applications; applications that can be turned on or off
+- Optional applications; applications that can additionally be activated
 
 The following table shows all integrated applications:
 
@@ -78,21 +78,21 @@ The following table shows all integrated applications:
 | :------------------------------------------- | :--: | :----: | :--: | :-------------: | :------: |
 | Istio                                        |  X   |        |      |                 |          |
 | Ingress NGINX Controller                     |  X   |        |      |                 |          |
-| Knative                                      |  X   |        |      |                 |    X     |
+| Knative                                      |      |        |      |                 |    X     |
 | [KeyCloak](/docs/apps/keycloak)              |  X   |        |      |        X        |          |
-| Prometheus Server                            |  X   |        |  X   |                 |          |
-| Prometheus kube state metrics                |  X   |        |  X   |                 |          |
-| Alertmanager                                 |  X   |        |  X   |                 |    X     |
-| Grafana/Loki                                 |  X   |   X    |      |        X        |    X     |
-| [Gatekeeper Operator](/docs/apps/gatekeeper) |  X   |        |      |                 |    X     |
+| Prometheus Server                            |      |        |  X   |                 |    X     |
+| Prometheus kube state metrics                |      |        |  X   |                 |    X     |
+| Alertmanager                                 |      |        |  X   |                 |    X     |
+| Grafana/Loki                                 |      |   X    |      |        X        |    X     |
+| [Gatekeeper Operator](/docs/apps/gatekeeper) |      |        |      |                 |    X     |
 | [Hashicorp Vault](/docs/apps/vault)          |      |   X    |      |        X        |    X     |
 | [Harbor](/docs/apps/harbor)                  |      |   X    |      |        X        |    X     |
 | [Kubeapps](/docs/apps/kubeapps)              |      |   X    |      |                 |    X     |
 | [Drone](/docs/apps/drone)                    |  X   |        |      |        X        |          |
 | Gitea                                        |  X   |        |      |        X        |    X     |
 | Httpbin                                      |      |   X    |      |                 |    X     |
-| Jeager                                       |  X   |        |      |                 |    X     |
-| Kiali                                        |  X   |        |      |                 |    X     |
+| Jeager                                       |      |        |      |                 |    X     |
+| Kiali                                        |      |        |      |                 |    X     |
 
 ## Ingress & SSO
 

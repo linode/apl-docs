@@ -70,7 +70,7 @@ function Home() {
             Check out our list of{" "}
             <span className={styles.heroProjectKeywords}>pre-configured</span>{" "}
             and <span className={styles.heroProjectKeywords}>ready-to-use</span>{" "}
-            charts:
+            apps:
           </div>
         </div>
         <div className={clsx(styles.announcement)}>

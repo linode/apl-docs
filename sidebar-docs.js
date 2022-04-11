@@ -5,13 +5,14 @@ module.exports = {
       "inst-prerequisites",
       "inst-optional",
       "inst-chart",
-      "post-install",
+      "activation",
     ],
     "Otomi Console": [
       "ui-overview",
       {
-        Enterprise: [
+        Platform: [
           "ui-apps",
+          "ui-shortcuts",
           "ui-clusters",
           "ui-policies",
           "ui-teams",
@@ -20,10 +21,11 @@ module.exports = {
           "ui-settings",
         ],
       },
-      "deploy-changes",
+      "ui-deploy-changes",
       {
         Team: [
           "ui-team-apps",
+          "ui-team-shortcuts",
           "ui-team-services",
           "ui-team-jobs",
           "ui-secrets",
@@ -51,6 +53,7 @@ module.exports = {
     "Otomi CLI": [
       "cli-overview",
       "cli-working-with",
+      "inst-cli",
       {
         "CLI Commands": [
           "cli-apply",
@@ -78,8 +81,7 @@ module.exports = {
     ],
     Tutorials: [
       "tutorial-overview",
-      "tutorial-1-full-install",
-      "tutorial-2-keycloak",
+      "tutorial-1-basic-install",
       "tutorial-3-push-harbor",
       "tutorial-4-create-svc",
       "tutorial-5-create-ksvc",
@@ -96,12 +98,10 @@ module.exports = {
       {
         "Known Issues": [
           "ki-overview",
-          "ki-custom-ca",
           "ki-cli",
           "ki-harbor",
           "ki-istio",
           "ki-loki",
-          "ki-staging-certs",
         ],
       },
       "lm-upgrades",

@@ -32,25 +32,13 @@ In both Enforcing and Permissive mode, individual policies can be switched on or
 
 Customization of the policies is supported based on the Otomi [schema](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml) (or use Otomi Console). In case of specific requirements, admins can add their own custom policies.
 
-### Change mode
+### Switching modes
 
-Gatekeeper can be set to enforcing mode or disabled mode by editing the `values/env/charts/gatekeeper-operator.yaml` file:
+Gatekeeper by default is disabled. To turn on Gatekeeper by dragging Gatekeeper from the disabled apps section (under Platform/Apps) to the enabled aps section and click on `Deploy Changes`.
 
-### Switch to Enforcing mode
+By default Gatekeeper now runs in Permissive mode (the `Disable validating webhook` is active). To switch to blocking mode, uncheck the Disable validating webhook option:
 
-```yaml
-charts:
-  gatekeeper:
-    disableValidatingWebhook: false
-```
-
-### Switch to Disabled mode
-
-```yaml
-charts:
-  gatekeeper:
-    enabled: false
-```
+![Gatekeeper modes](img/gatekeeper-modes.png)
 
 ### Using annotations to bypass policy checks
 

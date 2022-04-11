@@ -17,7 +17,7 @@ module.exports = [
   },
   {
     from: ["/docs/configuring-services"],
-    to: "/docs/console/services",
+    to: "/docs/console/team-services",
   },
   {
     from: ["/docs/configuring-teams"],
@@ -25,7 +25,7 @@ module.exports = [
   },
   {
     from: ["/docs/console/configuring-secrets"],
-    to: "/docs/console/secrets",
+    to: "/docs/console/team-secrets",
   },
   {
     from: ["/docs/apps/nginx-ingress"],

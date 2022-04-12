@@ -18,11 +18,7 @@ Otomi supports 3 cloud provides. The `aws`, `azure` and `google` providers inclu
 
 ### Other clouds and on-prem
 
-Use the `custom` provider for all other clouds and when running Kubernetes on your own hardware. The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that obtains an external accessible IP.
-
-### Local machine
-
-Use the `local` provider when installing Otomi on your labtop. Note that when running installing Otomi on your local machine (using minikube for instance), the K8s Loadbalancer Service needs to obtain an external accessible IP and using `127.0.0.1` is not supported.
+Use the `custom` provider for all other clouds and when running Kubernetes on your own hardware (including Minikube and Kind on your local machine). The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that obtains an external accessible IP.
 
 ## Kubernetes versions
 

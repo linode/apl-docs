@@ -7,7 +7,7 @@ title: Installing with CLI
 
 Otomi needs a git repo to store its configuration. We call it a **_values_** repo.
 
-In order to quickly get up and running it is advised to download the [chart values](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml) and fill in the values.
+In order to quickly get up and running it is advised to download the [chart values](https://github.com/redkubes/otomi-core/blob/main/chart/otomi/values.yaml) and fill in the values.
 
 The following commands bootstrap the values repo:
 
@@ -26,7 +26,7 @@ The essential otomi platform configurations is stored in `env/cluster.yaml`, `en
 
 :::note
 
-The minimum required input is found in the [chart values](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml).
+The minimum required input is found in the [chart values](https://github.com/redkubes/otomi-core/blob/main/chart/otomi/values.yaml).
 
 :::
 

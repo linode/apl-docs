@@ -32,7 +32,7 @@ Create shortcuts to open the app at a target path. Created shortcuts will also b
 
 ### Values
 
-Here you will see the Otomi default (chart) values for the app as specified in the Otomi values [schema](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml). Click on a value to see the defaults. You can change the defaults to customize the configuration.
+Here you will see the Otomi default (chart) values for the app as specified in the Otomi values [schema](https://github.com/redkubes/otomi-core/blob/main/values-schema.yaml). Click on a value to see the defaults. You can change the defaults to customize the configuration.
 
 ### Raw values
 
@@ -41,7 +41,3 @@ In the Raw values, all values of the app chart that are not part of the Otomi va
 ### Open the app
 
 When the apps has a UI, click on the `play` icon in the right of the app bar.
-
-
-
-

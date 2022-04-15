@@ -46,7 +46,7 @@ module.exports = {
       {
         id: "about",
         path: "about",
-        editUrl: "https://github.com/redkubes/redkubes.github.io/edit/master/",
+        editUrl: "https://github.com/redkubes/redkubes.github.io/edit/main/",
         routeBasePath: "about",
         sidebarPath: require.resolve("./sidebar-about.js"),
         showLastUpdateAuthor: true,
@@ -58,7 +58,7 @@ module.exports = {
       {
         id: "community",
         path: "community",
-        editUrl: "https://github.com/redkubes/redkubes.github.io/edit/master/",
+        editUrl: "https://github.com/redkubes/redkubes.github.io/edit/main/",
         routeBasePath: "community",
         sidebarPath: require.resolve("./sidebar-community.js"),
         showLastUpdateAuthor: true,
@@ -212,8 +212,7 @@ module.exports = {
         docs: {
           breadcrumbs: false,
           sidebarPath: require.resolve("./sidebar-docs.js"),
-          editUrl:
-            "https://github.com/redkubes/redkubes.github.io/tree/master/",
+          editUrl: "https://github.com/redkubes/redkubes.github.io/tree/main/",
           // versions: {
           //   current: {
           //     label: `${getNextVersionName()} (unreleased)`,

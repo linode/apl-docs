@@ -20,17 +20,16 @@ See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
 ## Default install
 
-
 ```yaml
 cluster:
-  k8sVersion: '1.21' # currently 1.18, 1.19, 1.20, 1.21, 1.22 and 1.23 are supported
+  k8sVersion: "1.21" # currently 1.18, 1.19, 1.20, 1.21, 1.22 and 1.23 are supported
   name: # the name of your cluster
   provider: # choose between aws, azure, google, custom or local
 ```
 
 ## Custom values
 
-To view the required `values.yaml` file with detailed comments, view and download the chart's latest [values.yaml](https://github.com/redkubes/otomi-core/blob/master/chart/otomi/values.yaml). Run the following command to view _all_ the values (which might be overwhelming):
+To view the required `values.yaml` file with detailed comments, view and download the chart's latest [values.yaml](https://github.com/redkubes/otomi-core/blob/main/chart/otomi/values.yaml). Run the following command to view _all_ the values (which might be overwhelming):
 
 ```bash
 helm show values otomi/otomi

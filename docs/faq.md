@@ -40,7 +40,7 @@ No. The [otomi-quickstart](https://github.com/redkubes/quickstart) uses Terrafor
 <details>
   <summary>Where can I find all possible configuration options for Otomi?</summary>
 
-When installing Otomi with the helm chart you can find its `values.schema.json` inside, which contains all the possible install configuration parameters. It is generated from [otomi-core/values-schema.yaml](https://github.com/redkubes/otomi-core/blob/master/values-schema.yaml).
+When installing Otomi with the helm chart you can find its `values.schema.json` inside, which contains all the possible install configuration parameters. It is generated from [otomi-core/values-schema.yaml](https://github.com/redkubes/otomi-core/blob/main/values-schema.yaml).
 
 </details>
 
@@ -68,7 +68,7 @@ Yes, using an external IdP like Azure AD is optional. When installing Otomi with
 <details>
   <summary>Can I install Otomi on my laptop using Minikube?</summary>
 
-Yes. You can use the Otomi `custom` provider to install Otomi on Kubernetes running on your own hardware, including Minikube. Note that Otomi needs to be able to create a Kubernetes LoadBalancer service and the IP needs to be accessible for pods running in the cluster and for your local browser. `127.0.0.1` can not be used, so running minikube with the Docker provider is not supported. Use the [Hyperkit driver](https://minikube.sigs.k8s.io/docs/drivers/hyperkit/) instead. 
+Yes. You can use the Otomi `custom` provider to install Otomi on Kubernetes running on your own hardware, including Minikube. Note that Otomi needs to be able to create a Kubernetes LoadBalancer service and the IP needs to be accessible for pods running in the cluster and for your local browser. `127.0.0.1` can not be used, so running minikube with the Docker provider is not supported. Use the [Hyperkit driver](https://minikube.sigs.k8s.io/docs/drivers/hyperkit/) instead.
 
 </details>
 

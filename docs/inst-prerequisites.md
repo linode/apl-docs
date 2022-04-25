@@ -24,12 +24,13 @@ Use the `custom` provider for all other clouds and when running Kubernetes on yo
 
 Otomi currently supports the following Kubernetes versions:
 
-- 1.18
-- 1.19
-- 1.20
-- 1.21
-- 1.22
-- 1.23
+- `1.18`
+- `1.19`
+- `1.20`
+- `1.21`
+- `1.22`
+
+Support for `1.23` is coming soon.
 
 ## Minimal compute resource requirements
 

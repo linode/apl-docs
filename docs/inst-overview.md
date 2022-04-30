@@ -19,4 +19,4 @@ Use the Otomi Helm chart to install Otomi. In order to guarantee exact outcomes,
 3. Install Otomi using the [Helm chart](chart)
 4. Follow the [activation steps](activation).
 
-To learn how to work with Otomi, start with the [tutorials](/docs/tutorials/).
+To learn using Otomi, start with the labs in the [workshops](https://github.com/redkubes/workshops) repository.

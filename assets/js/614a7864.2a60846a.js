@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[6790],{7797:function(e){e.exports=JSON.parse('{"label":"otomi","permalink":"/blog/tags/otomi","allTagsPath":"/blog/tags","count":4}')}}]);

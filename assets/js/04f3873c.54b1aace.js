@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[469],{7707:function(e){e.exports=JSON.parse('{"label":"security","permalink":"/blog/tags/security","allTagsPath":"/blog/tags","count":1}')}}]);

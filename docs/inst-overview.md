@@ -3,20 +3,26 @@ slug: installation/
 title: Getting started with Otomi
 sidebar_label: Get started
 ---
+## Provision a Kubernetes cluster
 
-## Terraform Quick Start
+To get started with Otomi, first provision a Kubernetes cluster. Read the [minimal requirements](prerequisites) to make sure your cluster is ready to install Otomi.
 
-For experimentation and evaluation purposes, use the quickstarts for Azure, Google Cloud Platform and AWS to deploy a Managed Kubernetes cluster and install Otomi. Go to the [quickstart](https://github.com/redkubes/quickstart) repository on Github to get started.
+We have created [quickstarts](https://github.com/redkubes/quickstart) for Azure, GCP, AWS, Linode, Digital Ocean and Minikube to help you spin-up a Kubernetes cluster.
 
-After installing Otomi, follow the [activation steps](activation).
+:::info NOTE
 
-## Install Otomi with Helm
+When using Minikube, only Otomi Core apps can be used! Activating more apps will require more compute resources. We advise to have a node pool available with at least 12 vCPU and 32 GiB memory.
 
-Use the Otomi Helm chart to install Otomi. In order to guarantee exact outcomes, we strongly advise to follow the these steps:
+:::
 
-1. Read the [minimal requirements](prerequisites)
-2. Check the [optional configuration](optional) options
-3. Install Otomi using the [Helm chart](chart)
-4. Follow the [activation steps](activation).
+## Install Otomi
 
-To learn using Otomi, start with the labs in the [workshops](https://github.com/redkubes/workshops) repository.
+Use the Otomi Helm chart to install Otomi on your Kubernetes cluster. In order to guarantee exact outcomes, we strongly advise to follow the these steps:
+
+- Check the [optional configuration](optional) options
+- Install Otomi using the [Helm chart](chart)
+- Follow the [activation steps](activation)
+
+## Explore Otomi
+
+To help you start using Otomi, we have prepared a comprehensive set of hands-on labs to get a good understanding/overview of Otomi. Go to the [workshops](https://github.com/redkubes/workshops) repository to get started.

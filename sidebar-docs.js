@@ -34,6 +34,7 @@ module.exports = {
       },
     ],
     "Otomi Apps": [
+      "app-argocd",
       "app-alertmanager",
       "app-certmanager",
       "app-drone",

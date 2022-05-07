@@ -1,15 +1,21 @@
 export default [
   {
+    href: "https://argo-cd.readthedocs.io/",
+    src: "argo-cd.svg",
+    name: "Argo CD",
+    desc: "A declarative, GitOps continuous delivery tool for Kubernetes",
+  },
+  {
     href: "https://istio.io/",
     src: "istio-logo.svg",
     name: "Istio",
-    desc: "The service mesh framework with end to end transit encryption and much more",
+    desc: "The service mesh framework with end-to-end transit encryption",
   },
   {
     href: "https://knative.dev/",
     src: "knative.png",
     name: "Knative",
-    desc: "Deploy and manage modern serverless workloads like functions and auto scalable container deployments",
+    desc: "Deploy and manage modern serverless workloads like functions",
   },
   {
     href: "https://www.openpolicyagent.org/",
@@ -107,12 +113,12 @@ export default [
     name: "Oauth2 / OpenID",
     desc: "Authenticate users against any OIDC provider",
   },
-  {
-    href: "https://velero.io/",
-    src: "velero-logo.svg",
-    name: "Velero",
-    desc: "Back up Kubernetes objects and Persistent Volumes",
-  },
+  // {
+  //   href: "https://velero.io/",
+  //   src: "velero-logo.svg",
+  //   name: "Velero",
+  //   desc: "Back up Kubernetes objects and Persistent Volumes",
+  // },
   {
     href: "https://github.com/kubernetes/ingress-nginx",
     src: "nginx-logo.svg",

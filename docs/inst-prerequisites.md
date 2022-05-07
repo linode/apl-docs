@@ -16,9 +16,13 @@ When installing Otomi using the chart, make sure the following client binaries e
 
 Otomi supports 3 cloud provides. The `aws`, `azure` and `google` providers include creating optimized storage classes and optional integration with L7 load balancers (like an ALB in AWS and a Application Gateway in Azure).
 
-### Other clouds and on-prem
+### Digital Ocean
 
-Use the `custom` provider for all other clouds and when running Kubernetes on your own hardware (including Minikube and Kind on your local machine). The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that obtains an external accessible IP.
+Install Otomi on a Kubernetes cluster in Digital Ocean, use the `digitalocean` provider.
+
+### All others
+
+Use the `custom` provider for all other clouds and when running Kubernetes on your own hardware (including Minikube on your local machine). The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that obtains an external accessible IP.
 
 ## Kubernetes versions
 
@@ -29,8 +33,7 @@ Otomi currently supports the following Kubernetes versions:
 - `1.20`
 - `1.21`
 - `1.22`
-
-Support for `1.23` is coming soon.
+- `1.23`
 
 ## Minimal compute resource requirements
 
@@ -38,7 +41,7 @@ Otomi requires a node pool with at least **6 vCPU** threads and **8GiB+ RAM**. N
 
 :::info ATTENTION
 
-The minimal resource requirement to run Otomi is based on running Core Apps only! The core apps provide an advanced ingress architecture based on Nginx, Istio, Keycloak, Oaut2 Proxy and Certmanager. Activating optional apps will require more compute resources. We advise to have a node pool available with 12 vCPU and 36 GiB memory.
+The minimal resource requirement to run Otomi is based on running Core Apps only! The core apps provide an advanced ingress architecture based on Nginx, Istio, Keycloak, Oaut2 Proxy and Certmanager. Activating optional apps will require more compute resources. We advise to have a node pool available with 12 vCPU and 32 GiB memory.
 
 :::
 

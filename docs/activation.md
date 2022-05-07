@@ -65,3 +65,17 @@ We strongly advise to not use the default `otomi-admin` account after activation
 :::
 
 [Create a new user account in Keycloak](/docs/apps/keycloak#step-2-create-a-user-in-keycloak) and add the new user to the `otomi-admin` and `team-admin`.
+
+### (Optional) Add the URL of the Kubernetes API
+
+:::info NOTE
+
+Adding the URL of the K8s cluster API is required by teams to be able to download the KUBECONFIG
+
+:::
+
+- Under `Platform` in Otomi Console, click on `Settings`
+- Click on `Cluster`
+- Add the full URL of the API server
+- Click on `Submit`
+- Click on `Deploy Changes`

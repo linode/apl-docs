@@ -10,7 +10,7 @@ export default [
     img: "carousel/item-5.png",
   },
   {
-    name: "Configure public exposure with one click",
+    name: "Configure public exposure in just a few clicks",
     // description: '',
     img: "carousel/item-2.png",
   },
@@ -20,7 +20,7 @@ export default [
     img: "carousel/item-6.png",
   },
   {
-    name: "Create Kubernetes Jobs and CronJobs",
+    name: "Create Kubernetes Jobs and CronJobs without writing any YAML",
     // description: '',
     img: "carousel/item-3.png",
   },

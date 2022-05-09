@@ -23,7 +23,7 @@ This approach might change, so keep watching our socials.
 - [x] Activate more apps after initial install
 - [x] Support for Kubernetes 1.22 and 1.23
 
-### For the second quater of 2022 we aim to incorporate the following features
+### For the second quarter of 2022 we aim to incorporate the following features
 
 - [x] Add the option to use more ingress controllers allowing to group services on a dedicated controller for segmentation
 - [ ] Add Velero for automatic backup up Otomi platform apps (like Harbor, Keycloak, Gitea and Kubeapps Postgresql databases)

@@ -25,11 +25,14 @@ This approach might change, so keep watching our socials.
 
 ### For the second quarter of 2022 we aim to incorporate the following features
 
-- [x] Add the option to use more ingress controllers allowing to group services on a dedicated controller for segmentation
+- [ ] Add the option to use more ingress controllers allowing to group services on a dedicated controller for segmentation
+- [ ] Offer option to expose all Otomi platform services privately (LB in private subnet)
 - [ ] Add Velero for automatic backup up Otomi platform apps (like Harbor, Keycloak, Gitea and Kubeapps Postgresql databases)
 - [ ] Add the option to backup Team PVCs
-- [ ] Automated deployment of container images using ArgoCD
-- [ ] Add Falco and Kubei for runtime security monitoring
+- [ ] Add [Glasnostic](https://glasnostic.com/)
+- [x] Add Argo CD for team GitOps
+- [ ] Add [Kubeclarity](https://github.com/openclarity/kubeclarity) for runtime container security scanning
+- [ ] Add Falco
 ### After that we see the following features on the horizon
 
 - [ ] Multi tenancy enhancements: Allow teams to create and manage their own namespaces

@@ -169,8 +169,8 @@ module.exports = {
               href: "https://otomi.slack.com/join/shared_invite/zt-12h11e8aa-6po4NWhhpMXxT~nffDsYqA#/shared-invite/email",
             },
             {
-              label: "Gitter",
-              href: "https://gitter.im/redkubes/community",
+              label: "Facebook",
+              href: "https://www.facebook.com/groups/otomiusers",
             },
             {
               label: "Community page",

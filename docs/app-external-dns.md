@@ -4,5 +4,6 @@ title: Working with ExternalDNS
 sidebar_label: ExternalDNS
 ---
 
-ExternalDNS is required to make public service domains accessible by registering them with Otomi's front loadbalancer CNAME or IP address.
-When it is not enabled (default) Otomi will instead rely on [nip.io](https://nip.io) to create host names for the services.
+## Introduction
+
+ExternalDNS is required to make public service domains accessible by registering them with Otomi's front loadbalancer CNAME or IP address. When it is not enabled (default) Otomi will instead rely on [nip.io](https://nip.io) to create host names for all services.

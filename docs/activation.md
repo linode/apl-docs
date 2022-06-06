@@ -56,4 +56,26 @@ alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 6. Click on the `otomi/values` repository
 7. Click on `+ Activate Repository`
 
-Now you can start using Otomi. The first step will be to create a [Team](/docs/console/teams).
+### Step 4: Create a new admin user
+
+:::info ATTENTION
+
+We strongly advise to not use the default `otomi-admin` account after activation and to not change the password. Store it somewhere save and only use it in case absolutely required.
+
+:::
+
+[Create a new user account in Keycloak](/docs/apps/keycloak#step-2-create-a-user-in-keycloak) and add the new user to the `otomi-admin` and `team-admin`.
+
+### (Optional) Add the URL of the Kubernetes API
+
+:::info NOTE
+
+Adding the URL of the K8s cluster API is required by teams to be able to download the KUBECONFIG
+
+:::
+
+- Under `Platform` in Otomi Console, click on `Settings`
+- Click on `Cluster`
+- Add the full URL of the API server
+- Click on `Submit`
+- Click on `Deploy Changes`

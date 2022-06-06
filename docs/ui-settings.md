@@ -4,6 +4,15 @@ title: Platform - Settings
 sidebar_label: Settings
 ---
 
+## Cluster
+
+The Cluster section provides information about the cluster running Otomi. Only 2 settings can be changed:
+
+| Setting       | Description                                                               |
+| ------------- | ------------------------------------------------------------------------- |
+| API Server    | Add the full url of the kubernetes API server. This is used to generate the KUBECONFIG for local API access. |
+| Owner | A cluster owner. Used in alerts/reports to distinguish between resources for different customers.         |
+
 ## Alerts
 
 :::note

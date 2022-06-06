@@ -29,7 +29,7 @@ This approach might change, so keep watching our socials.
 - [x] Offer option to expose all Otomi platform services privately (LB in private subnet)
 - [x] Adding Argo CD for team GitOps
 - [x] Adding [Kubeclarity](https://github.com/openclarity/kubeclarity) for runtime container security scanning
-- [ ] Adding Velero for automatic backup of Otomi platform apps (Harbor, Keycloak, Gitea, Kubeapps and Kubeclarity Postgresql databases)
+- [ ] Adding Velero for automatic backup of Otomi platform databases
 - [ ] Add the option to backup Team PVCs
 - [ ] Change DNS using Otomi Console after initial install
 

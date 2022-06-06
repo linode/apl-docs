@@ -23,22 +23,19 @@ This approach might change, so keep watching our socials.
 - [x] Activate more apps after initial install
 - [x] Support for Kubernetes 1.22 and 1.23
 
-### For the second quarter of 2022 we aim to incorporate the following features
+### For Q2 2022 we aim to incorporate the following features
 
-- [ ] Add the option to use more ingress controllers allowing to group services on a dedicated controller for segmentation
-- [ ] Offer option to expose all Otomi platform services privately (LB in private subnet)
-- [ ] Add Velero for automatic backup up Otomi platform apps (like Harbor, Keycloak, Gitea and Kubeapps Postgresql databases)
+- [x] Add the option to use more ingress controllers allowing to group services on a dedicated controller for segmentation
+- [x] Offer option to expose all Otomi platform services privately (LB in private subnet)
+- [x] Adding Argo CD for team GitOps
+- [x] Adding [Kubeclarity](https://github.com/openclarity/kubeclarity) for runtime container security scanning
+- [ ] Adding Velero for automatic backup of Otomi platform apps (Harbor, Keycloak, Gitea, Kubeapps and Kubeclarity Postgresql databases)
 - [ ] Add the option to backup Team PVCs
-- [ ] Add [Glasnostic](https://glasnostic.com/)
-- [x] Add Argo CD for team GitOps
-- [ ] Add [Kubeclarity](https://github.com/openclarity/kubeclarity) for runtime container security scanning
-- [ ] Add Falco
-### After that we see the following features on the horizon
+- [ ] Change DNS using Otomi Console after initial install
 
-- [ ] Multi tenancy enhancements: Allow teams to create and manage their own namespaces
-- [ ] Kubernetes operators: Expect a growing catalog of curated mature operators with at least capability level 2 (seamless upgrades).
-- [ ] Bring Message Queue options to the stack: We would like to settle for one that we can use in the stack internally (we now rely waiting on jobs for conditions)
-- [ ] Streaming tools for real time inspection and tagging of traffic
-- [ ] A Market place to choose preconfigured apps from, but also unconfigured apps (akin to chart repositories)
-- [ ] A Catalog with preconfigured flavours of stateful applications: First arrivals are likely to be MySQL, Redis, Postgres and Mongo. Expect knobs for availability vs affordability to meet current needs
-- [ ] Adding buildpack
+### For Q3 2022 we aim to incorporate the following features
+
+- [ ] Make Otomi fully compliant to the [NSA hardening guide](https://media.defense.gov/2021/Aug/03/2002820425/-1/-1/0/CTR_Kubernetes_Hardening_Guidance_1.1_20220315.PDF)
+- [ ] Multi tenancy enhancements: When running Otomi in multi-tenant mode, shared apps will be private for teams
+- [ ] Support for Kubernetes 1.24
+- [ ] Adding Falco

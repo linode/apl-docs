@@ -5,14 +5,6 @@ title: Roadmap
 
 We are currently working on the following features for the next release.
 
-**Release Cycle**
-
-- Release from our **stable** channel every 3 months
-- Release from **beta** channel bi-weekly
-- Release from **alpha** is nightly
-
-This approach might change, so keep watching our socials.
-
 ### In the first quarter of 2022 we added the following features
 
 - [x] Internal ingress network policies: Controlling network traffic between team services

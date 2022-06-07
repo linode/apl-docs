@@ -17,5 +17,8 @@
     "CODE_OF_CONDUCT": "markdown",
     "CONTRIBUTING": "markdown"
   },
-  "prettier.enable": true
+  "prettier.enable": true,
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow": "/.github/workflows/**/*.yml"
+  }
 }

@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Deploy
-        uses: redkubes/docusaurus-deploy-action@v1.2
+        uses: redkubes/docusaurus-deploy-action@v1
         with:
           source-folder: "."
           git-user: redkubesbot

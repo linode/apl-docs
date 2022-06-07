@@ -15,7 +15,7 @@ export default [
     href: "https://knative.dev/",
     src: "knative.png",
     name: "Knative",
-    desc: "Deploy and manage modern serverless workloads like functions",
+    desc: "Deploy and manage Serverless and Event Driven Applications",
   },
   {
     href: "https://www.openpolicyagent.org/",

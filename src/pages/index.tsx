@@ -21,7 +21,7 @@ function Home() {
   const { siteConfig: { customFields, tagline } = {} } = context;
   const description = customFields.description as string;
   return (
-    <Layout permalink="/" title={tagline} description={description}>
+    <Layout title={tagline} description={description}>
       <main>
         <div className={styles.hero}>
           <div className={styles.heroInner}>

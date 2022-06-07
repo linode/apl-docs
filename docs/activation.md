@@ -10,6 +10,7 @@ After Otomi is installed, Drone needs to be activated. Follow the instructions b
 When the installer job (in the default namespace) has finished, copy the URL and the generated password from the bottom of the logs, sign in to the console with the provided URL, username and password.
 
 Use the following command to get the logs of the installer job:
+
 ```
 kubectl logs jobs/otomi -n default -f
 ```
@@ -22,18 +23,20 @@ Otomi by default automatically generates a CA. The generated CA is of course not
 2. Double click the downloaded CA.crt or add the CA to your keychain on Mac using the following command:
 
 ```bash
-sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/Downloads/ca.crt  
-```  
+sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/Downloads/ca.crt
+```
 
 On Windows, use PowerShell (running as Administrator) with the Certutil:
+
 ```powershell
 certutil.exe -addstore root <downloaded cert path>
 ```
+
 Or:
 
 ```powershell
 Import-Certificate -FilePath "<downloaded cert path>" -CertStoreLocation Cert:\LocalMachine\Root
-# Restart the browser 
+# Restart the browser
 ```
 
 But you could also run Chrome in insecure mode:
@@ -60,7 +63,7 @@ alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 
 :::info ATTENTION
 
-We strongly advise to not use the default `otomi-admin` account after activation and to not change the password. Store it somewhere save and only use it in case absolutely required.
+We strongly advise to not use the default `otomi-admin` account after activation and to not change the password. Store it somewhere safe and only use it in case absolutely required.
 
 :::
 

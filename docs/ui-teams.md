@@ -11,7 +11,16 @@ sidebar_label: Teams
 - Teams can choose to receive alerts in Microsoft Teams, Slack or email and each team will get access to a project in Harbor and a space in Vault to manage secrets
 - Teams can be allowed self-service features like configure ingress, configure a notification receiver for alerts, change the OIDC group mapping and download the KubeConfig.
 
-## Creating Teams
+## Team Admin
+
+By default, Otomi creates a team called Team Admin. Admins can use this team to expose any service in the team-admin namespace, but also in other namespaces.
+
+see [Team Services](docs/console/team-services) for more info about how to create Services in Otomi and how to configure ingress. The only difference here is that when creating Services in Team Admin, the admin can also select the namespace of the service.
+
+Another difference between the Team Admin and user created Teams is that Team Admin does not have apps and it is not possible to configure any settings for the team-admin namespace.
+
+
+## Creating new Teams
 
 1. Login with a user who is a member of the `otomi-admin` or `team-admin` role
   

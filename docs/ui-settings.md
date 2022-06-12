@@ -74,6 +74,18 @@ The DNS settings section offers configuration options for DNS.
 | Zones    | Defines the dns zones accessible by the credentials given in the "Provider" section underneath. |
 | Provider | The provider hosting the dns zones. Can be AWS, Azure or Google.                                |
 
+
+## Ingress
+
+By default (after installing Otomi), one ingress controller (ingress-nginx-platform) is deployed and is used to publicly expose both platform and user created services. In the settings for ingress, an admin can:
+
+1. Configure the platform ingress class to be private (using a private load balancer)
+2. Add additional ingress classes to expose user created services
+
+By changing the platform ingress class from public to private, all platform services (like Otomi Console, the Keycloak platform instance and all other platform end-points) will only be accessible from the private network.
+
+By adding additional ingress classes, each class will get a dedicated ingress controller and a dedicated cloud load balancer. This allows grouping of services and exposing them to differend networks.
+
 ## KMS
 
 The KMS settings section offers configuration options for the Key Management Service information needed to seal and unseal secrets used by Otomi. Otomi needs at least one key. It needs one for encrypting/decrypting the `otomi-values` repo), and one for sealing/unsealing Vault storage.

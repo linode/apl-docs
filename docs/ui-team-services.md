@@ -21,7 +21,7 @@ After providing a name and a port number, you can now configure ingress for the 
 
 If the defaults (cluster/private) apply, you can now click 'Submit'.
 
-## Configuring the Service Type
+## Choosing the Service Type
 
 The Service type is the type of service to deploy/expose. 
 
@@ -122,8 +122,7 @@ Will bring down service if not accessed for 60 seconds. Will also disable probes
 Exposure controls wether internet exposure should be enabled or not. Three options exist:
 
 - `Cluster`: has no internet exposure, and is only accessible in the cluster
-- `Private`: only accessible via the cluster's private network loadbalancer (comming soon)
-- `Public`: publicly accessible via the cluster's public network loadbalancer
+- `Ingress`: choose the ingress class where to expose the service (can be public or private)
 
 ### Cluster
 
@@ -135,38 +134,16 @@ Coming soon: the ability to choose endpoints to connect to, so network policies 
 
 :::
 
-### Private
 
-Will only accept traffic coming from the private-network loadbalancer.
+### Ingress
 
-A private URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are described below.
-
-| Setting | Description |
-| --- | --- |
-| TLS passthrough | Pass through the request as is to the backing service. |
-| Use suggested domain | The suggested domain is the team domain for which a wildcard certificate already exists. Has the team name in it. |
-| Host | Choose a hostname that will be the prefix of the domain. |
-| Forward path | Do not "terminate" the path but instead pass it to the receiving service. |
-| DNS Zone | Choose a dns zone that will be the suffix of the domain. |
-| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IDP. |
-| Already has a certificate | Don't generate certificates for this service. |
-| > Certificate ARN | [AWS only] Provide the certificate arn. |
-| > Select existing secret name | [non AWS] Provide a TLS secret name previously created under `Secrets`. Override to select name of secret not known here. |
-
-:::note Notes
-
-The private exposure option is currently not working, but is comming soon.
-
-:::
-
-### Public
-
-Use Public exposure to expose a service with a public URL and certificate.
+Use Ingress to expose a service with a domain name and a certificate on a private or public network (based on the selected ingress)
 
 A public URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are described below.
 
 | Setting | Description |
 | --- | --- |
+| Ingress class name | The ingress class to assing this service to. |
 | TLS passthrough | Pass through the request as is to the backing service. |
 | Use suggested domain | The suggested domain is the team domain for which a wildcard certificate already exists. Has the team name in it. |
 | Host | Choose a hostname that will be the prefix of the domain. |

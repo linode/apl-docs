@@ -3,9 +3,7 @@ slug: roadmap
 title: Roadmap
 ---
 
-We are currently working on the following features for the next release.
-
-### In the first quarter of 2022 we added the following features
+## In the first quarter of 2022 we added the following features
 
 - [x] Internal ingress network policies: Controlling network traffic between team services
 - [x] Outbound egress control: Specify the FQDNs or IPs that services need to be able to access
@@ -15,7 +13,7 @@ We are currently working on the following features for the next release.
 - [x] Activate more apps after initial install
 - [x] Support for Kubernetes 1.22 and 1.23
 
-### For Q2 2022 we aim to incorporate the following features
+## For Q2 2022 we aim to incorporate the following features
 
 - [x] Add the option to use more ingress controllers allowing to group services on a dedicated controller for segmentation
 - [x] Offer option to expose all Otomi platform services privately (LB in private subnet)
@@ -25,9 +23,10 @@ We are currently working on the following features for the next release.
 - [ ] Add the option to backup Team PVCs
 - [ ] Change DNS using Otomi Console after initial install
 
-### For Q3 2022 we aim to incorporate the following features
+## For Q3 2022 we aim to incorporate the following features
 
 - [ ] Make Otomi fully compliant to the [NSA hardening guide](https://media.defense.gov/2021/Aug/03/2002820425/-1/-1/0/CTR_Kubernetes_Hardening_Guidance_1.1_20220315.PDF)
 - [ ] Multi tenancy enhancements: When running Otomi in multi-tenant mode, shared apps will be private for teams
 - [ ] Support for Kubernetes 1.24
 - [ ] Adding Falco
+- [ ] Introducing otomi.cloud: Use the wizard to generate advanced install scripts, calculate resource requirements and activate Otomi installs

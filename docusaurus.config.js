@@ -166,7 +166,7 @@ module.exports = {
           items: [
             {
               label: "Slack",
-              href: "https://otomi.slack.com/join/shared_invite/zt-12h11e8aa-6po4NWhhpMXxT~nffDsYqA#/shared-invite/email",
+              href: "https://join.slack.com/t/otomi/shared_invite/zt-1axa4vima-E~LHN36nbLR~ay5r5pGq9A",
             },
             {
               label: "Facebook",

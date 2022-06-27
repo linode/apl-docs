@@ -6,6 +6,7 @@ module.exports = {
       "inst-optional",
       "inst-chart",
       "activation",
+      "inst-switch-to-dns",
     ],
     "Otomi Console": [
       "ui-overview",

@@ -6,9 +6,7 @@ sidebar_label: Getting started
 
 ## Welcome
 
-So you might be interested in contributing to Otomi, awesome! This guide will help you understand the overall organization of the project, and direct you to the best places to get started contributing. You'll be able to pick up issues, write code to fix them, and get your work reviewed and merged.
-
-All feedback is welcome!
+So you might be interested in contributing to Otomi, awesome! This guide will help you understand the overall organization of the project, and direct you to the best places to get started contributing. You'll be able to pick up issues, write code to fix them, and get your work reviewed and merged. All feedback is welcome!
 
 This document is the single source of truth for how to contribute to the following code bases:
 
@@ -22,12 +20,15 @@ Before submitting code to Otomi, you should first complete the following prerequ
 
 ### Code of Conduct
 
-Please make sure to read and observe the [Code of Conduct] and
-[Community Values]
+Please make sure to read and observe the [Code of Conduct](code-of-conduct) and
+[Community Values](values)
 
+### Developer guid
+
+Effective development starts with an understanding the code structure and the relationship between different components of the system. Read the [Code development guide](https://github.com/redkubes/otomi-core/blob/main/docs/development.md) to learn how to develop on Otomi.
 ### Setting up your development environment
 
-It is not required to set up a developer environment in order to contribute to Otomi, but if you do plan to contribute code changes, follow the readme of the respective `redkubes/otomi-*` repo of interest for how to set up your environment.
+It is not required to set up a developer environment in order to contribute to Otomi, but if you do plan to contribute code changes, follow the instructions in the Developer Docs on how to [Set up your development environment](https://github.com/redkubes/otomi-core/blob/main/docs/setup.md).
 
 ### Community Expectations and Roles
 
@@ -37,25 +38,4 @@ Please read and review the [Community Expectations] for an understanding of code
 
 ## Community
 
-Otomi is just starting its open-source community. As many open source projects often do, it depends on new people becoming members and regular code contributors. Please consider joining Otomi!
-
-### Communication
-
-We use the following channels for communication:
-
-- [Slack]
-- [Discord] (needs the Discord client)
-- [Gitter] (doesn't need a client, just a browser and your github login)
-
-### Events and meetups
-
-Otomi participates in KubeCon and other events and meetups (mostly online nowadays) all over the world. Information about these and other
-community events is available on the [Redkubes community] page.
-
-[code of conduct]: code-of-conduct
-[community values]: values
-[community expectations]: contributing/expectations
-[slack]: https://otomi.slack.com/join/shared_invite/zt-12h11e8aa-6po4NWhhpMXxT~nffDsYqA#/shared-invite/email
-[discord]: https://discord.gg/96aXY7gHe9
-[gitter]: https://gitter.im/redkubes/community
-[redkubes community]: https://redkubes.com/community/
+Otomi is just starting its open-source community. As many open source projects often do, it depends on new people becoming members and regular code contributors. Please consider joining the Otomi community!

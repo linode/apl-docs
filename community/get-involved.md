@@ -7,15 +7,13 @@ title: Get involved
 
 We are excited that you are here and we can't wait to hear what you have to say!
 
-Feel free to reach out to us through our [community portal](https://redkubes.com/community/).
-
 ## Community Values
 
 Please get acquainted with our [Community Values](values)
 
 ## Developer Contributions
 
-Follow these [docs to start contributing to Otomi](contributing).
+Follow these [docs](contributing) to start contributing to Otomi.
 
 ## Code of conduct
 

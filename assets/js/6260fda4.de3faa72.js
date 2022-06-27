@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[4484],{2150:e=>{e.exports=JSON.parse('[{"label":"About","permalink":"/about/tags/about","count":1},{"label":"philosophy","permalink":"/about/tags/philosophy","count":1}]')}}]);

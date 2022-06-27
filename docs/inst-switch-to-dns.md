@@ -49,7 +49,7 @@ Let's encrypt requires a DNS zone. So if you would like to start using Let's Enc
 - Use `Production` or `Staging`
 - Click on `Submit`
 
-## Deploy Changes
+## Step 6: Deploy Changes
 
 In the left menu, click on `Deploy Changes`
 
@@ -60,7 +60,7 @@ kubectl get pod -n drone-pipelines -w
 ```
 
 
-## Step 6: Adjust the web hook in Gitea
+## Step 7: Adjust the web hook in Gitea
 
 Open Gitea and follow these steps:
 
@@ -77,7 +77,7 @@ First sign in to the Otomi Console using the new domain name: `https://otomi.<yo
 - Click `Update Webhook`
 
 
-## Step 6: Restart the Drone server and agent
+## Step 8: Restart the Drone server and agent
 
 Then run the following kubectl command:
 

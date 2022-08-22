@@ -3,6 +3,7 @@ slug: installation/
 title: Getting started with Otomi
 sidebar_label: Get started
 ---
+
 ## Provision a Kubernetes cluster
 
 To get started with Otomi, first provision a Kubernetes cluster. Read the [minimal requirements](prerequisites) to make sure your cluster is ready to install Otomi.
@@ -17,7 +18,7 @@ When using Minikube, only Otomi Core apps can be used! Activating more apps will
 
 ## Install Otomi
 
-Use the Otomi Helm chart to install Otomi on your Kubernetes cluster. In order to guarantee exact outcomes, we strongly advise to follow the these steps:
+Use the Otomi Helm chart to install Otomi on your Kubernetes cluster. In order to guarantee exact outcomes, we strongly advise to follow these steps:
 
 - Check the [optional configuration](optional) options
 - Install Otomi using the [Helm chart](chart)

@@ -1,16 +1,16 @@
 ---
 slug: apps/ingress-nginx
-title: Working with Ingress NGINX
-sidebar_label: Ingress-NGINX
+title: Working with ingress-NGINX Controller for Kubernetes
+sidebar_label: Ingress-nginx
 ---
 
-Otomi integrated Ingress NGINX into an advanced [ingress architecture](/about/architecture#ingress--sso).
+Otomi integrated NGINX Ingress Controller into an advanced [ingress architecture](/about/architecture#ingress--sso).
 
 ## ModSecurity with OWASP rule set
 
 By deafault, ModSecurity with OWASP filtering is not enabled in Nginx.
 
-To turn on ModSecurity with OWASP filtering, click on the `Ingress-NGINX` app in the apps section under Platform en then click on `Values`. Here you can change the ingress-nginx configuration:
+To turn on ModSecurity with OWASP filtering, click on the `NGINX-ingress` app in the apps section under Platform en then click on `Values`. Here you can change the ingress-nginx configuration:
 
 ![NGINX Modsecurity](img/mod-security.png)
 

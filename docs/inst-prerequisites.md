@@ -12,17 +12,33 @@ When installing Otomi using the chart, make sure the following client binaries e
 
 ## Providers
 
-### AWS, Azure and Google
+### Azure (AKS)
 
-Otomi supports 3 cloud provides. The `aws`, `azure` and `google` providers include creating optimized storage classes and optional integration with L7 load balancers (like an ALB in AWS and a Application Gateway in Azure).
+To install Otomi on a AKS cluster in Azure, use the `azure` provider. The `azure` provider includes creating optimized storage classes and optional integration with the  a Application Gateway Ingress Controller add-on.
+
+### Amazon Web Services (EKS)
+
+To install Otomi on a EKS cluster in AWS, use the `aws` provider.
+
+### Google Cloud Platform (GKE)
+
+To install Otomi on a GKE cluster in GCP, use the `google` provider.
 
 ### Digital Ocean
 
-Install Otomi on a Kubernetes cluster in Digital Ocean, use the `digitalocean` provider.
+To install Otomi on a Kubernetes cluster in Digital Ocean, use the `digitalocean` provider. Otomi is also available in the Digital Ocean [marketplace](https://marketplace.digitalocean.com/apps/otomi?refcode=476bfcac9ec9&action=deploy).
+
+### OVHcloud
+
+To install Otomi on a  OVHcloud [Managed Kubernetes Service](https://www.ovhcloud.com/en-gb/public-cloud/kubernetes/), use the `ovh` provider.
+
+### Vultr (VKE)
+
+To install Otomi on a [Vultr Kubernetes Engine (VKE)](https://www.vultr.com/docs/vultr-kubernetes-engine/) cluster, use the `vultr` provider.
 
 ### All others
 
-Use the `custom` provider for all other clouds and when running Kubernetes on your own hardware (including Minikube on your local machine). The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that obtains an external accessible IP.
+Use the `custom` provider for all other clouds, and when running Kubernetes on your own hardware (including Minikube on your local machine). The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that obtains an external accessible IP.
 
 ## Kubernetes versions
 

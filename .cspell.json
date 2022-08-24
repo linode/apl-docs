@@ -5,6 +5,8 @@
   "ignoreRegExpList": ["/'s\\b/"],
   "ignoreWords": [
     "aspinu",
+    "vultr",
+    "OVHcloud",
     "minikube",
     "srodenhuis",
     "Alin",

@@ -32,8 +32,6 @@ Will create a folder named `otomi-values` in your cwd which contains all the fil
 
 Running `otomi validate-values` immediately afterwards will show you errors for the missing minimal values. So go ahead and fill them in. If you are using VSCode yaml hinting is active and can be invoked with CTRL-SPACE. Keep running `validate-values` until your input is correct.
 
-Now you can continue with doing [cluster operations](#cluster-operations).
-
 ### 2. Bootstrap the values from a values repo deployed by chart
 
 Clone the `otomi/values` repository from `gitea.<your.domain>/otomi/values` to work with the values locally.
@@ -58,7 +56,7 @@ Optionally, in order for VSCode to provide on the fly en-/encryption:
 
 Now continue with the next step.
 
-## Bootstrap the repo locally before doing cluster operations
+## Bootstrap the repo locally
 
 A local repo always needs to be bootstrapped at least once to have all it's working files in place. However, whenever the `otomi.version` value has changed, it's corresponding artifacts need to be pulled and unpacked again. It can never hurt to run the bootstrap procedure as it is fast and idempotent:
 
@@ -66,7 +64,18 @@ A local repo always needs to be bootstrapped at least once to have all it's work
 otomi bootstrap
 ```
 
-This will make sure that the correct files are unpacked from the versioned otomi container, and other necessary files are generated.
+This will make sure that the correct files are unpacked from the versioned Otomi container, and other necessary files are generated.
+
+## Adjust the initial values
+
+Go to the `$ENV_DIR/env/cluster.yaml` file, and fill in the following minimal required values:
+
+```yaml
+cluster:
+    name: 'dev' # The name of your cluster
+    k8sVersion: '1.22' # The Kubernetes version of the cluster
+    provider: 'custom' # Use azure|aws|google|digitalocean|ovh|vultr|custom
+```
 
 ## Validate changes (optional)
 

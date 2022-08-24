@@ -132,6 +132,7 @@ The Otomi settings section offers configuration options for Otomi and feature fl
 | Home monitored         | When this is turned on alerts will also be sent to the endpoints configured in the "Home" settings. |
 | Managed masters        | Whether masters are managed and not under control. Set this to false when onprem. |
 | Multi-tenancy          | When turned on, team metrics and logs will be separated. Disabling this let everybody be admin and see everything. Will still use team-\* namespaces for segmentation and network isolation of services. |
+| Node Selector | When a label/value pair is added, all Otomi platform workloads will be scheduled on the nodes with this label/value pair |
 | Version | The installed version of Otomi. Change to a new valid release to upgrade |
 
 ## SMTP

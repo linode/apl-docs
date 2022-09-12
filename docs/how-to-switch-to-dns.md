@@ -1,6 +1,6 @@
 ---
 slug: installation/switch-to-dns
-title: Switch to DNS
+title: Switch to use DNS
 ---
 
 When Otomi is installed with minimal values, a custom CA is generated and Otomi uses nip.io for host names. It is possible to switch from nip.io to using a DNS zone after installing Otomi initially without DNS. To switch from nip.io to a DNS zone, follow the instructions as described below.

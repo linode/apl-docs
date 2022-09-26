@@ -64,7 +64,7 @@ Sign in using the Gitea admin credentials (username: "otomi-admin", and password
 7. Click on `+ Activate Repository`
 8. Click on `Save Changes`
 
-Now the final step is to create a team. See the [Teams](/docs/console/teams) page for more information.
+Now the final step is to create a team. See the [Teams](/docs/for-ops/console/teams) page for more information.
 
 ## When Otomi is installed with optional configuration
 

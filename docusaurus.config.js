@@ -128,11 +128,6 @@ module.exports = {
           label: "Community",
           position: "left",
         },
-        // {
-        //   to: "blog",
-        //   label: "Blog",
-        //   position: "left",
-        // },
         {
           href: "https://github.com/redkubes/otomi-core",
           position: "right",
@@ -157,7 +152,7 @@ module.exports = {
             },
             {
               label: "Using Otomi Console",
-              href: "/docs/console/",
+              href: "/docs/for-ops/console/overview",
             },
           ],
         },

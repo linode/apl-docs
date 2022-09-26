@@ -1,5 +1,5 @@
 ---
-slug: apps/velero
+slug: velero
 title: Working with Velero
 sidebar_label: Velero
 ---

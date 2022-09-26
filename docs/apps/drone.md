@@ -1,5 +1,5 @@
 ---
-slug: apps/drone
+slug: drone
 title: Working with Drone
 sidebar_label: Drone
 ---

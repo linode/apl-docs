@@ -1,5 +1,5 @@
 ---
-slug: apps/alertmanager
+slug: alertmanager
 title: Working with Alertmanager
 sidebar_label: Alertmanager
 ---

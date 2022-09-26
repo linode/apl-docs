@@ -1,5 +1,5 @@
 ---
-slug: apps/vault
+slug: vault
 title: Working with Hashicorp Vault
 sidebar_label: Hashicorp Vault
 ---

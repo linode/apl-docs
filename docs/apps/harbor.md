@@ -1,5 +1,5 @@
 ---
-slug: apps/harbor
+slug: harbor
 title: Working with Harbor
 sidebar_label: Harbor
 ---

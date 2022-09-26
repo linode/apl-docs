@@ -1,5 +1,5 @@
 ---
-slug: apps/kubeapps
+slug: kubeapps
 title: Working with Kubeapps
 sidebar_label: Kubeapps
 ---

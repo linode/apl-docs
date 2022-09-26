@@ -1,5 +1,5 @@
 ---
-slug: apps/jaeger
+slug: jaeger
 title: Working with Jaeger
 sidebar_label: Jaeger
 ---

@@ -1,5 +1,5 @@
 ---
-slug: apps/gatekeeper
+slug: gatekeeper
 title: Working with Gatekeeper
 sidebar_label: Gatekeeper
 ---

@@ -1,5 +1,5 @@
 ---
-slug: apps/kiali
+slug: kiali
 title: Working with Kiali
 sidebar_label: Kiali
 ---

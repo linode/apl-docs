@@ -1,5 +1,5 @@
 ---
-slug: apps/istio
+slug: istio
 title: Working with Istio
 sidebar_label: Istio
 ---

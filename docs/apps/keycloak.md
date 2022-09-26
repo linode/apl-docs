@@ -1,5 +1,5 @@
 ---
-slug: apps/keycloak
+slug: keycloak
 title: Working with Keycloak
 sidebar_label: Keycloak
 ---

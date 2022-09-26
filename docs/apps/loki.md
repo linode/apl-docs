@@ -1,5 +1,5 @@
 ---
-slug: apps/loki
+slug: loki
 title: Working with Loki
 sidebar_label: Loki
 ---

@@ -1,5 +1,5 @@
 ---
-slug: apps/ingress-nginx
+slug: ingress-nginx
 title: Working with ingress-NGINX Controller for Kubernetes
 sidebar_label: Ingress-nginx
 ---

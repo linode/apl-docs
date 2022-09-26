@@ -1,5 +1,5 @@
 ---
-slug: apps/certmanager
+slug: certmanager
 title: Working with CertManager
 sidebar_label: Cert-Manager
 ---

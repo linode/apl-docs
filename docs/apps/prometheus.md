@@ -1,5 +1,5 @@
 ---
-slug: apps/prometheus
+slug: prometheus
 title: Working with Prometheus
 sidebar_label: Prometheus
 ---

@@ -1,5 +1,5 @@
 ---
-slug: apps/external-dns
+slug: external-dns
 title: Working with ExternalDNS
 sidebar_label: ExternalDNS
 ---

@@ -1,31 +1,31 @@
 module.exports = [
   {
     from: ["/docs/upgrades"],
-    to: "/docs/sre/upgrades",
+    to: "/docs/for-opssre/upgrades",
   },
   {
     from: ["/docs/configuring-apps"],
-    to: "/docs/console/apps",
+    to: "/docs/for-ops/console/apps",
   },
   {
     from: ["/docs/console/platform-apps"],
-    to: "/docs/console/apps",
+    to: "/docs/for-ops/console/apps",
   },
   {
     from: ["/docs/configuring-clusters"],
-    to: "/docs/console/clusters",
+    to: "/docs/for-ops/console/settings/clusters",
   },
   {
     from: ["/docs/configuring-services"],
-    to: "/docs/console/team-services",
+    to: "/docs/for-ops/console/services",
   },
   {
     from: ["/docs/configuring-teams"],
-    to: "/docs/console/teams",
+    to: "/docs/for-ops/console/teams",
   },
   {
     from: ["/docs/console/configuring-secrets"],
-    to: "/docs/console/team-secrets",
+    to: "/docs/for-devs/console/secrets",
   },
   {
     from: ["/docs/apps/nginx-ingress"],

@@ -1,5 +1,5 @@
 ---
-slug: apps/knative
+slug: knative
 title: Working with Knative
 sidebar_label: Knative
 ---

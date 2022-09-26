@@ -1,5 +1,5 @@
 ---
-slug: apps/argocd
+slug: argocd
 title: Working with Argo CD
 sidebar_label: Argo CD
 ---

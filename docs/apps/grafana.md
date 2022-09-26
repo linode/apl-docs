@@ -1,5 +1,5 @@
 ---
-slug: apps/grafana
+slug: grafana
 title: Working with Grafana
 sidebar_label: Grafana
 ---

@@ -1,5 +1,5 @@
 ---
-slug: apps/gitea
+slug: gitea
 title: Working with Gitea
 sidebar_label: Gitea
 ---

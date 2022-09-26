@@ -24,7 +24,7 @@ The Platform section in the left menu provides access to:
 - [Teams](teams): A list of all Teams using this platform
 - [Services](services): A list of all services running on this platform
 - [Jobs](jobs): A list of all Jobs running on this platform
-- [Settings](settings): Specific configuration of this platform
+- [Settings](settings/alerts): Specific configuration of the platform
 
 ### Team section
 

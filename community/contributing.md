@@ -21,7 +21,7 @@ Before submitting code to Otomi, you should first complete the following prerequ
 ### Code of Conduct
 
 Please make sure to read and observe the [Code of Conduct](code-of-conduct) and
-[Community Values](values)
+[Community Values](community-values)
 
 ### Developer guid
 

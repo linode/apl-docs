@@ -9,7 +9,7 @@ We are excited that you are here and we can't wait to hear what you have to say!
 
 ## Community Values
 
-Please get acquainted with our [Community Values](values)
+Please get acquainted with our [Community Values](community-values)
 
 ## Developer Contributions
 

@@ -53,5 +53,5 @@ For SRE's we have created a couple of guides and checklists:
 
 - [Daily routine](daily)
 - [Troubleshooting](troubleshooting)
-- [Known issues](/docs/sre/known-issues/)
+- [Known issues](known-issues/overview)
 - [Upgrading Otomi](upgrades)

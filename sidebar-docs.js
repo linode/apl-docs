@@ -78,15 +78,15 @@ module.exports = {
           "for-ops/sre/daily",
           "for-ops/sre/upgrades",
           "for-ops/sre/troubleshooting",
-          {
-            "Known Issues": [
-              "for-ops/known-issues/overview",
-              "for-ops/known-issues/cli",
-              "for-ops/known-issues/harbor",
-              "for-ops/known-issues/istio",
-              "for-ops/known-issues/loki",
-            ],
-          },
+        ],
+      },
+      {
+        "Known Issues": [
+          "for-ops/known-issues/overview",
+          "for-ops/known-issues/cli",
+          "for-ops/known-issues/harbor",
+          "for-ops/known-issues/istio",
+          "for-ops/known-issues/loki",
         ],
       },
     ],

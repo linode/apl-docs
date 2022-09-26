@@ -11,7 +11,7 @@ When you would like to:
 - Edit values not yet under management by the console, such as chart settings
 - Do local development
 
-Then you will have to create/edit a local values repo and perform operations with the CLI. If you haven't yet, [install the Otomi CLI](/docs/cli/) first, and then follow the steps below.
+Then you will have to create/edit a local values repo and perform operations with the CLI. If you haven't yet, [install Otomi CLI](overview#install-the-cli) first, and then follow the steps below.
 
 At any time you may ask for an overview of the available commands and their options, so please don't hesitate to run `otomi help`. In order for any command to show more output use `-v` (or `-vvv` to get even more output).
 

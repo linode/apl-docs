@@ -8,16 +8,16 @@ title: FAQ
 <details>
   <summary>Is Otomi some lightweight version of Rancher or OpenShift</summary>
 
-We understand that solutions like Rancher and OpenShift all propagate that their solutions ship with integrated tools, but we take the term integrated a little different. Within Otomi, integrated means that the application is pre-configured with Otomi base configuration values, the application has been adjusted to comply with all Otomi security policies, and all applications have been made user-aware and multi-tenant.
+We understand that solutions like Rancher and OpenShift all propagate that their solutions ship with integrated tools, but we take the term integrated a little more serious. Within Otomi, integrated means that the application is pre-configured with Otomi base configuration values, the application has been adjusted to comply with all Otomi security policies, and all applications have been made user-aware (using OIDC) and multi-tenant.
 
-Otomi can NOT be used to provision and manage Kubernetes clusters. Otomi is a layer on top of Kubernetes that can be installed in one run and offers a complete suite of integrated and pre-configured applications combined with automation and developer self-service.
+Otomi can NOT be used to provision and manage Kubernetes clusters. Otomi is an application framework on top of Kubernetes that can be installed in one run and offers a complete suite of integrated and pre-configured applications combined with automation and developer self-service.
 
 </details>
 
 <details>
   <summary>Is Otomi some kind of Kubeapps</summary>
 
-We can imagine when looking at the list of all pre-configured and ready-to-use apps, you might get the impression that Otomi is some kind of apps catalog. But the opposite is true. When you install Otomi, you will get all of these apps and they’re already configured for you. You can then use the web UI or values repository to adjust the configuration of these apps based on your own requirements.
+We can imagine when looking at the list of all pre-configured and ready-to-use apps, you might get the impression that Otomi is some kind of apps catalog for Kubernetes. But the opposite is true. When you install Otomi, you will get all of these apps and they’re already configured for you and they work ou-of-the-box. You can then use the web UI or values repository to adjust the configuration of these apps based on your own requirements.
 
 </details>
 
@@ -26,7 +26,7 @@ We can imagine when looking at the list of all pre-configured and ready-to-use a
 <details>
   <summary>What are the minimal requirements to install Otomi?</summary>
 
-Otomi requires a running Kubernetes cluster of version `1.18` up to `1.23` using a Node pool with at least `6 vCPU` and `8 GiB memory`. When using the `custom` provider (when installing Kubernetes on any other provider then azure, aws or google), make sure Otomi can create a K8s LoadBalancer Service that is accessible from your machine (not using 127.0.0.1).
+Otomi requires a running Kubernetes cluster of version `1.18` up to `1.23` using a Node pool with at least `6 vCPU` and `8 GiB memory`, but more is recommended. When using the `custom` provider (when installing Kubernetes on a not supported provider), make sure Otomi can create a K8s LoadBalancer Service that is accessible from your machine (but not using 127.0.0.1).
 
 </details>
 

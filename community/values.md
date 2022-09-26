@@ -1,6 +1,6 @@
 ---
-title: "Otomi Community Values"
-slug: values
+title: Otomi Community Values
+slug: community-values
 sidebar_label: Values
 ---
 

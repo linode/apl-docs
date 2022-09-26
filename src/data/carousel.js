@@ -20,21 +20,6 @@ export default [
     img: "carousel/item-6.png",
   },
   {
-    name: "Create Kubernetes Jobs and CronJobs without writing any YAML",
-    // description: '',
-    img: "carousel/item-3.png",
-  },
-  {
-    name: "Map secrets managed in HashiCorp vault",
-    // description: '',
-    img: "carousel/item-8.png",
-  },
-  {
-    name: "Create new Knative services without writing any YAML",
-    // description: '',
-    img: "carousel/item-7.png",
-  },
-  {
     name: "Manage Pod Security Policies",
     // description: '',
     img: "carousel/item-4.png",

@@ -113,12 +113,18 @@ export default [
     name: "Oauth2 / OpenID",
     desc: "Authenticate users against any OIDC provider",
   },
-  // {
-  //   href: "https://velero.io/",
-  //   src: "velero-logo.svg",
-  //   name: "Velero",
-  //   desc: "Back up Kubernetes objects and Persistent Volumes",
-  // },
+  {
+    href: "https://velero.io/",
+    src: "velero-logo.svg",
+    name: "Velero",
+    desc: "Back up Kubernetes objects and Persistent Volumes",
+  },
+  {
+    href: "https://github.com/openclarity/kubeclarity",
+    src: "kubeclarity-logo.svg",
+    name: "Kubeclarity",
+    desc: "Scan container images on vulnerabilities",
+  },
   {
     href: "https://github.com/kubernetes/ingress-nginx",
     src: "nginx-logo.svg",

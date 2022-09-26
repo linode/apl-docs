@@ -109,7 +109,7 @@ module.exports = {
           position: "left",
         },
         {
-          to: "docs/installation/",
+          to: "docs/installation/get-started",
           label: "Docs",
           position: "left",
         },
@@ -153,7 +153,7 @@ module.exports = {
             },
             {
               label: "Installation",
-              to: "/docs/installation/",
+              to: "/docs/installation/get-started",
             },
             {
               label: "Using Otomi Console",

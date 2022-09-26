@@ -1,5 +1,5 @@
 ---
-slug: sre/daily
+slug: daily
 title: SRE Daily Routine
 sidebar_label: Daily Routine
 ---

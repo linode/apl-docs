@@ -1,5 +1,5 @@
 ---
-slug: sre/
+slug: overview
 title: SRE Overview
 sidebar_label: Overview
 ---

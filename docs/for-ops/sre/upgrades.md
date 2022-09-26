@@ -1,5 +1,5 @@
 ---
-slug: sre/upgrades
+slug: upgrades
 title: Upgrades
 ---
 

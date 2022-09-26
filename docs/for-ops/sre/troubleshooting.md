@@ -1,5 +1,5 @@
 ---
-slug: sre/troubleshooting
+slug: troubleshooting
 title: SRE Troubleshooting Checklist
 sidebar_label: Troubleshooting
 ---

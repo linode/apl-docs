@@ -1,7 +1,7 @@
 module.exports = [
   {
     from: ["/docs/upgrades"],
-    to: "/docs/for-opssre/upgrades",
+    to: "/docs/for-ops/sre/upgrades",
   },
   {
     from: ["/docs/configuring-apps"],
@@ -13,7 +13,7 @@ module.exports = [
   },
   {
     from: ["/docs/configuring-clusters"],
-    to: "/docs/for-ops/console/settings/clusters",
+    to: "/docs/for-ops/console/settings/cluster",
   },
   {
     from: ["/docs/configuring-services"],

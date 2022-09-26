@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[9667],{6372:e=>{e.exports=JSON.parse('{"label":"documentation","permalink":"/blog/tags/documentation","allTagsPath":"/blog/tags","count":2}')}}]);

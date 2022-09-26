@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[6752],{393:s=>{s.exports=JSON.parse('{"label":"istio","permalink":"/blog/tags/istio","allTagsPath":"/blog/tags","count":1}')}}]);

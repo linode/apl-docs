@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[8905],{8963:e=>{e.exports=JSON.parse('{"label":"gatekeeper","permalink":"/blog/tags/gatekeeper","allTagsPath":"/blog/tags","count":1}')}}]);

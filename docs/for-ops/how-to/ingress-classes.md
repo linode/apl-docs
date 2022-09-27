@@ -1,5 +1,5 @@
 ---
-slug: ingress-classes/
+slug: ingress-classes
 title: Use private ingress class
 ---
 

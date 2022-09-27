@@ -100,6 +100,15 @@ module.exports = {
           "for-devs/console/secrets",
           "for-devs/console/settings",
         ],
+        "Get started": [
+          "for-devs/get-started/intro",
+          "for-devs/get-started/part-1",
+          "for-devs/get-started/part-2",
+          "for-devs/get-started/part-3",
+          "for-devs/get-started/part-4",
+          "for-devs/get-started/part-5",
+
+        ],
       },
     ],
     "For CISOs": [

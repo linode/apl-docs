@@ -11,13 +11,14 @@ Welcome to Otomi! If you are a developer and are going to use Otomi Platform, th
 - Part 3: [Push your container images](part-3)
 - Part 4: [Deploy your application](part-4)
 - Part 5: [Publicly expose your application](part-5)
+- Part 6: [Create secrets](part-6)
 
-Comming soon!
+Comming soon:
 
-- Part 6: Create secrets
 - Part 7: View container logs
 - Part 8: Monitor your application
 - Part 9: Create service monitors
 - Part 10: Setting up alerts
 - Part 11: Using Argo CD
-- Part 12: Create a CI pipeline using Drone
+- Part 12: Create a private GIT repo
+- Part 13: Create a CI (build) pipeline

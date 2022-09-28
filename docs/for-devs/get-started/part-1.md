@@ -15,7 +15,7 @@ We assume the platform administrator has onboarded your team and you as a team m
 Normally you will log in via a username and a password of your organization's Identity Provider, such as Azure Active Directory.
 :::
 
-## install required software
+## Install required software
 
 Make sure you have installed the following minimal software:
 

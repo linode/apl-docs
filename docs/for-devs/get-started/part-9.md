@@ -20,4 +20,4 @@ But after a couple of minutes the state will be `UP`:
 
 ![kubecfg](../../img/target-up.png)
 
-When alertmanager is enabled, and alert notification receivers are configured, you will automatically receive an alert when your service is down.
+When alertmanager is enabled, and an alert notification receiver is configured, you will automatically receive an alert when your service is down.

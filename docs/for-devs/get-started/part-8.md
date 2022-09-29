@@ -1,50 +1,46 @@
 ---
 slug: part-8
-title: View container metrics
+title: View container logs
 sidebar_label: Part 8
 ---
 
-When your application is deployed, you would of course like to be able to see container metrics for debugging purposes. Prometheus is used in Otomi for metrics. When Prometheus is enabled, you'll see the Prometheus app in your apps.
+When your application is deployed, you would of course like to be able to see container logs for debugging purposes. Grafana Loki is used in Otomi for log aggregation. When Grafana Loki is enabled, you'll see the Loki app in your apps.
 
 :::info
-When Otomi is configured in multi-tenant mode, each team will get a dedicated Prometheus and Grafana instance. Container metrics are provided by the platform Prometheus and you can use the dedicated team Prometheus to collect custom application metrics.
+Only when Otomi is configured in multi-tenant mode, container logs of teams are split up between teams. This means you can only see the logs of your own team. If multi-tenancy is not enabled, you can see the logs of all containers running on the cluster. If you don't want other teams to see your logs, ask the administrator to enable the Otomi multi-tenancy feature.
 :::
 
-## View container metrics (no multi-tenancy)
+## View container logs
 
-- Open the Grafana app in your team apps
+- Open the Loki app in your team apps
 
-![kubecfg](../../img/prometheus-teams.png)
+![kubecfg](../../img/loki-teams.png)
 
-- Grafana will open the default Welcome to Grafana page. On the right, click on `Dashboards`
+In Grafana, you are directed to the `Explore` section. Otomi already added a query for you, showing the logs of all containers running in your team namespace
 
-![kubecfg](../../img/grafana-dashboards.png)
+![kubecfg](../../img/grafana-loki.png)
 
+Adjust the query to your own needs. Loki uses LogQL as a query language. Learn more about LOgQL [here](https://grafana.com/docs/loki/latest/logql/)
 
-Here you will see a long list of dashboards that are added by Otomi. 
+## Creating shortcuts
 
-- Select the `Kubernetes / Compute Resources / Namespace (Pods)` dashboard
+When you created a custom query that you would like to use more often, or would like to share with the team, you can create a shortcut in Otomi.
 
-![kubecfg](../../img/dashboard-1.png)
+- Copy the absolute path of your query
+- In the apps section, click on the `Settings` icon of the Loki app
 
-- Select your team namespace
+![kubecfg](../../img/loki-settings.png)
 
-![kubecfg](../../img/dashboard-2.png)
+- Click on the `Shortcuts` tab
 
+![kubecfg](../../img/loki-shortcuts.png)
 
-## View container metrics (in multi-tenancy mode)
+- Click `edit`
+- Fill in the `Title`, `Description` and the `Path` for the shortcut
 
-When Otomi runs in multi-tenant mode, using Grafana for Prometheus is a little different. If you go to the dashboards, you'll only see 2 dashboards:
+![kubecfg](../../img/new-loki-shortcut.png)
 
-1. Kubernetes / deployment
-2. Kubernetes / Pods
+- Click `submit` and then click `Deploy Changes`
 
-- Click on the Kubernetes / Pods dashboard. 
-  
-Note that you will not see any data. This is because the dedicated team Prometheus is used as a datasource, but the team Prometheus instance does not collect container metrics.
+Now click on the Shortcuts item in the left menu. Your shortcut is now available for everyone in the team to use.
 
-- Select the `Prometheus-platform` data source
-
-![kubecfg](../../img/prometheus-platform.png)
-
-Now you will see metrics of containers running in your team namespace.

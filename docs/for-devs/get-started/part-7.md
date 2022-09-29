@@ -1,46 +1,61 @@
 ---
 slug: part-7
-title: View container logs
+title: Create secrets
 sidebar_label: Part 7
 ---
 
-When your application is deployed, you would of course like to be able to see container logs for debugging purposes. Grafana Loki is used in Otomi for log aggregation. When Grafana Loki is enabled, you'll see the Loki app in your apps.
+When the platform administrator has enabled Vault, you can use Vault to store and manage secrets. Secrets in Vault can be synchronized to your team namespace as Kubernetes secrets. In this part we'll first create a secret in Vault and then sync the secret to your team namespace using the Secrets option in Otomi Console.
+
+## Create a secret in Vault
+
+- Open the Vault app in your team apps
+
+![kubecfg](../../img/team-vault.png)
+
+- Sign in with Method `OIDC`, click on `Sign in with OIDC Provider` and leave role blank
+
+![kubecfg](../../img/vault-oidc.png)
+
+You are now automatically redirected to your team space (secrets/teams/team-demo) in the example below) in Vault.
+
+![kubecfg](../../img/first-login-vault.png)
 
 :::info
-Only when Otomi is configured in multi-tenant mode, container logs of teams are split up between teams. This means you can only see the logs of your own team. If multi-tenancy is not enabled, you can see the logs of all containers running on the cluster. If you don't want other teams to see your logs, ask the administrator to enable the Otomi multi-tenancy feature.
+
+In your team space in Vault you will see 2 secrets: 1) `mysecret-generic` and `otomi-welcome`. Do NOT remove these secrets. If you do, the team space in Vault will be removed.
+
 :::
 
-## View container logs
+- Click on Create secret
 
-- Open the Loki app in your team apps
+![kubecfg](../../img/create-secret-vault.png)
 
-![kubecfg](../../img/loki-teams.png)
+- Provide a name for the secret. We'll use the name hello. The name of the secret in this case will be: `teams/team-demo/hello`
+- Fill in a `Key` (TARGET in the example below) and a `value`
+- Click on save
 
-In Grafana, you are directed to the `Explore` section. Otomi already added a query for you, showing the logs of all containers running in your team namespace
+![kubecfg](../../img/create-secret-vault-2.png)
 
-![kubecfg](../../img/grafana-loki.png)
+The secret is now created in vault. Now we need to synchronize the secret in Vault to Kubernetes so the secret can be used in workloads.
 
-Adjust the query to your own needs. Loki uses LogQL as a query language. Learn more about LOgQL [here](https://grafana.com/docs/loki/latest/logql/)
+## Create a secret in Otomi
 
-## Creating shortcuts
+- In the left menu under the Team demo, click Secrets
+- Click on Create secret
+- Provide a name for the secret. The name should match the name of the secret in Vault
+- Select the secret type (Generic in this case)
+- Under Entries fill in the `keys` (the keys of the secret in Vault)
+- Click submit
 
-When you created a custom query that you would like to use more often, or would like to share with the team, you can create a shortcut in Otomi.
+![kubecfg](../../img/otomi-secret.png)
 
-- Copy the absolute path of your query
-- In the apps section, click on the `Settings` icon of the Loki app
+- Now click on `Deploy Changes` on top of the left menu
 
-![kubecfg](../../img/loki-settings.png)
 
-- Click on the `Shortcuts` tab
+The secret in Vault will now be synchronized to Kubernetes and can be used by the team in any workload. Otomi Console makes this easy by offering a secret selector during the creation of services.
 
-![kubecfg](../../img/loki-shortcuts.png)
+:::info
 
-- Click `edit`
-- Fill in the `Title`, `Description` and the `Path` for the shortcut
-
-![kubecfg](../../img/new-loki-shortcut.png)
-
-- Click `submit` and then click `Deploy Changes`
-
-Now click on the Shortcuts item in the left menu. Your shortcut is now available for everyone in the team to use.
+In this part we only covered using generic secrets. See [here](../console/secrets) to see how you can create TLS and pull secrets
+:::
 

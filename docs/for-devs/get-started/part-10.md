@@ -1,40 +1,23 @@
 ---
 slug: part-10
-title: Create a private Git repo
+title: Monitoring applications
 sidebar_label: Part 10
 ---
 
-As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like Gitlab, or use Github. But if you don't, Otomi has you covered. Otomi includes a complete Git solution called Gitea.
+When your application is deployed, you would of course like to get an alert when you application (service) is not available anymore. To automatically monitor you applications for availability, Otomi automatically configures a prope to monitor your service.
 
-As a team member, you can create and manage your own repositories.
+## Monitor your application for availability
 
-## Create a private repository
+- [Create a Service](part-5) for your app in Otomi. The service can have an Exposure ingress of type `Cluster` or `Ingress`
+- Open the Prometheus app in your apps
+- In Prometheus, Go to `Status` and click on `Targets`
 
-In the apps section in Otomi console, you'll see an app called Gitea. Click on it.
+You will see the `prope-service-<team-name>` endpoint. First in an `UNKNOWN` state:
 
-![kubecfg](../../img/team-app-gitea.png)
+![kubecfg](../../img/target-unknown.png)
 
-Now follow these steps:
+But after a couple of minutes the state will be `UP`:
 
-- Click on `Sign In` with OpenID
+![kubecfg](../../img/target-up.png)
 
-![kubecfg](../../img/gitea-openid.png)
-
-- Click on `+ New Repository`
-
-![kubecfg](../../img/new-gitea-repo.png)
-
-- Fill in a Repository Name
-- Optional: Enable `Initialize Repository`
-- Optional: Make Repository Private
-- Click on `Create Repository`
-
-Your repo is now ready to be used!
-
-![kubecfg](../../img/new-gitea-repo-ready.png)
-
-:::info
-
-Note that you as a user are now the owner of this repo and can add other team members to collaborate. Otomi does not create a group in Gitea that contains all the team member. Team members first have to sign in to Gitea (using OpenID) before they can be added to an existing repo.
-
-:::
+When alertmanager is enabled, and an alert notification receiver is configured, you will automatically receive an alert when your service is down.

@@ -1,82 +1,71 @@
 ---
 slug: part-12
-title: Deploy apps with Argo CD
+title: Create a CI (build) pipeline
 sidebar_label: Part 12
 ---
 
-Deploying your applications by doing `kubectl apply -f` is not ideal. You as a developer would like to automatically deploy and update your application after a new build. Otomi integrated Argo CD to provide an out-of-the-box gitops solution.
+Kubernetes is a container orchestrator, so we need to create container images that we can deploy. Next to providing a Git service. Otomi also has a complete CI solution called Drone integrated. You can use Drone to create and run CI pipelines to build images and push them to your private image registry (Harbor).
+
+## Prerequisites
+
+Before you can use Drone to run CI pipelines, you will need to have:
+
+1. A Git repository
+2. Credentials to push images to the registry (your private registry on the platform)
+
+## Creating a build pipeline in Drone
+
+In the apps section in Otomi console, you'll see an app called Drone. Click on it.
+
+![kubecfg](../../img/team-app-drone.png)
+
+- Go to the Drone dashboard, and click on ‘SYNC’. You will now see your repo pop up in the REPOSITORIES list.
+
+![kubecfg](../../img/repo-sync.png)
+
+- Click on the new repo and then click ‘ACTIVATE’.
+
+![kubecfg](../../img/drone-activate-repo.png)
 
 
+Now we’ll need to add the credentials of the robot account as secrets toDrone:
 
-## Using Argo CD to deploy manifests and charts
-
-In the apps section in Otomi console, you'll see an app called Argo CD. Click on it.
-
-![kubecfg](../../img/team-app-argo.png)
-
-In Argo CD you'll see that an Argo app has already been created for your team. This app is configured to synchronize any manifest that is in the created repo in Gitea for Argo.
-
-![kubecfg](../../img/argo-team-app.png)
-
-If you click on the app and then click on `APP DETAILS`, you'll see the `REPO URL` and also that the `SYNC POLICY` is set to `ENABLE AUTO-SYNC`.
-
-Go back to the console and click on the Gitea app in the apps section. In the list of repo's you'll now see a new repo called `otomi/team-<name>-argocd`.
-
-![kubecfg](../../img/argo-team-repo.png)
-
-To show the power of Argo CD, let's add a manifest to the repo and see what happens.
-
-- Create a new file in the repo called `deploy-nginx.yaml` 
-- Add the following contents to the file:
+- Click on your repository.
+- Under Settings, Click on secrets
+- Add the following 2 secrets:
 
 ```
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      annotations:
-        policy.otomi.io/ignore-sidecar: container-limits,psp-allowed-users
-      labels:
-        app: nginx
-    spec:
-      containers:
-        - name: nginx
-          image: nginxinc/nginx-unprivileged:stable
-          resources:
-            limits:
-              memory: '128Mi'
-              cpu: '200m'
-            requests:
-              memory: '64Mi'
-              cpu: '100m'
-          securityContext:
-            runAsUser: 1001
-          ports:
-            - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx
-spec:
-  selector:
-    app: nginx
-  ports:
-    - port: 80
-      targetPort: 8080
+REGISTRY_USERNAME = <harbor-robot-account-name.
+REGISTRY_PASSWORD = <the-token-of-the-robot-account>
 ```
 
-- Commit Changes
+Now you'll need to add a Drone pipeline definition to our repo.
 
-Now go back to the Argo app and click on the `team<name>` application. You can see that all the Kubernetes resources have been created.
+- Add a `.drone.yml` file to your repo. This is an example you can use:
 
-![kubecfg](../../img/argo-team-sync.png)
+```
+kind: pipeline
+type: kubernetes
+name: default
+steps:
+  - name: build-push
+    image: plugins/docker
+    settings:
+      registry: harbor.<yourdomain>
+      repo: harbor.<your-ip>.nip.io/team-demo/hello
+      insecure: true
+      username:
+        from_secret: REGISTRY_USERNAME
+      password:
+        from_secret: REGISTRY_PASSWORD
+      tags:
+        - ${DRONE_BRANCH}
+```
 
+Make sure to adjust the registry and repo name in the .drone.yml file
 
+In Drone, you will see the pipeline has automatically started building and then pushing the new image to Harbor.
+
+![kubecfg](../../img/drone-pipeline.png)
+
+If you use Harbor as a private registry, check to see if the repo has been created. You can now also use Trivy to scan your image(s) for vulnerabilities.

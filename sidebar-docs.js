@@ -114,6 +114,10 @@ module.exports = {
           "for-devs/get-started/part-10",
           "for-devs/get-started/part-11",
           "for-devs/get-started/part-12",
+          "for-devs/get-started/part-13",
+          "for-devs/get-started/part-14",
+          "for-devs/get-started/part-15",
+          "for-devs/get-started/part-16",
 
         ],
       },

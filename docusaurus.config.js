@@ -68,6 +68,7 @@ module.exports = {
     ],
   ],
   themeConfig: {
+    metadata: [{name: 'keywords', content: 'kubernetes, kubernetes ingress, k8s, istio, grafana, loki, kubernetes dashboard, kubernetes platform'}],
     announcementBar: {
       id: "supportus",
       content:

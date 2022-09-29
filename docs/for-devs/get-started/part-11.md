@@ -1,71 +1,40 @@
 ---
 slug: part-11
-title: Create a CI (build) pipeline
+title: Create a private Git repo
 sidebar_label: Part 11
 ---
 
-Kubernetes is a container orchestrator, so we need to create container images that we can deploy. Next to providing a Git service. Otomi also has a complete CI solution called Drone integrated. You can use Drone to create and run CI pipelines to build images and push them to your private image registry (Harbor).
+As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like Gitlab, or use Github. But if you don't, Otomi has you covered. Otomi includes a complete Git solution called Gitea.
 
-## Prerequisites
+As a team member, you can create and manage your own repositories.
 
-Before you can use Drone to run CI pipelines, you will need to have:
+## Create a private repository
 
-1. A Git repository
-2. Credentials to push images to the registry (your private registry on the platform)
+In the apps section in Otomi console, you'll see an app called Gitea. Click on it.
 
-## Creating a build pipeline in Drone
+![kubecfg](../../img/team-app-gitea.png)
 
-In the apps section in Otomi console, you'll see an app called Drone. Click on it.
+Now follow these steps:
 
-![kubecfg](../../img/team-app-drone.png)
+- Click on `Sign In` with OpenID
 
-- Go to the Drone dashboard, and click on ‘SYNC’. You will now see your repo pop up in the REPOSITORIES list.
+![kubecfg](../../img/gitea-openid.png)
 
-![kubecfg](../../img/repo-sync.png)
+- Click on `+ New Repository`
 
-- Click on the new repo and then click ‘ACTIVATE’.
+![kubecfg](../../img/new-gitea-repo.png)
 
-![kubecfg](../../img/drone-activate-repo.png)
+- Fill in a Repository Name
+- Optional: Enable `Initialize Repository`
+- Optional: Make Repository Private
+- Click on `Create Repository`
 
+Your repo is now ready to be used!
 
-Now we’ll need to add the credentials of the robot account as secrets toDrone:
+![kubecfg](../../img/new-gitea-repo-ready.png)
 
-- Click on your repository.
-- Under Settings, Click on secrets
-- Add the following 2 secrets:
+:::info
 
-```
-REGISTRY_USERNAME = <harbor-robot-account-name.
-REGISTRY_PASSWORD = <the-token-of-the-robot-account>
-```
+Note that you as a user are now the owner of this repo and can add other team members to collaborate. Otomi does not create a group in Gitea that contains all the team member. Team members first have to sign in to Gitea (using OpenID) before they can be added to an existing repo.
 
-Now you'll need to add a Drone pipeline definition to our repo.
-
-- Add a `.drone.yml` file to your repo. This is an example you can use:
-
-```
-kind: pipeline
-type: kubernetes
-name: default
-steps:
-  - name: build-push
-    image: plugins/docker
-    settings:
-      registry: harbor.<yourdomain>
-      repo: harbor.<your-ip>.nip.io/team-demo/hello
-      insecure: true
-      username:
-        from_secret: REGISTRY_USERNAME
-      password:
-        from_secret: REGISTRY_PASSWORD
-      tags:
-        - ${DRONE_BRANCH}
-```
-
-Make sure to adjust the registry and repo name in the .drone.yml file
-
-In Drone, you will see the pipeline has automatically started building and then pushing the new image to Harbor.
-
-![kubecfg](../../img/drone-pipeline.png)
-
-If you use Harbor as a private registry, check to see if the repo has been created. You can now also use Trivy to scan your image(s) for vulnerabilities.
+:::

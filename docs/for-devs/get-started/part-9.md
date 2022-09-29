@@ -1,23 +1,50 @@
 ---
 slug: part-9
-title: Monitoring applications
+title: View container metrics
 sidebar_label: Part 9
 ---
 
-When your application is deployed, you would of course like to get an alert when you application (service) is not available anymore. To automatically monitor you applications for availability, Otomi automatically configures a prope to monitor your service.
+When your application is deployed, you would of course like to be able to see container metrics for debugging purposes. Prometheus is used in Otomi for metrics. When Prometheus is enabled, you'll see the Prometheus app in your apps.
 
-## Monitor your application for availability
+:::info
+When Otomi is configured in multi-tenant mode, each team will get a dedicated Prometheus and Grafana instance. Container metrics are provided by the platform Prometheus and you can use the dedicated team Prometheus to collect custom application metrics.
+:::
 
-- [Create a Service](part-5) for your app in Otomi. The service can have an Exposure ingress of type `Cluster` or `Ingress`
-- Open the Prometheus app in your apps
-- In Prometheus, Go to `Status` and click on `Targets`
+## View container metrics (no multi-tenancy)
 
-You will see the `prope-service-<team-name>` endpoint. First in an `UNKNOWN` state:
+- Open the Grafana app in your team apps
 
-![kubecfg](../../img/target-unknown.png)
+![kubecfg](../../img/prometheus-teams.png)
 
-But after a couple of minutes the state will be `UP`:
+- Grafana will open the default Welcome to Grafana page. On the right, click on `Dashboards`
 
-![kubecfg](../../img/target-up.png)
+![kubecfg](../../img/grafana-dashboards.png)
 
-When alertmanager is enabled, and an alert notification receiver is configured, you will automatically receive an alert when your service is down.
+
+Here you will see a long list of dashboards that are added by Otomi. 
+
+- Select the `Kubernetes / Compute Resources / Namespace (Pods)` dashboard
+
+![kubecfg](../../img/dashboard-1.png)
+
+- Select your team namespace
+
+![kubecfg](../../img/dashboard-2.png)
+
+
+## View container metrics (in multi-tenancy mode)
+
+When Otomi runs in multi-tenant mode, using Grafana for Prometheus is a little different. If you go to the dashboards, you'll only see 2 dashboards:
+
+1. Kubernetes / deployment
+2. Kubernetes / Pods
+
+- Click on the Kubernetes / Pods dashboard. 
+  
+Note that you will not see any data. This is because the dedicated team Prometheus is used as a datasource, but the team Prometheus instance does not collect container metrics.
+
+- Select the `Prometheus-platform` data source
+
+![kubecfg](../../img/prometheus-platform.png)
+
+Now you will see metrics of containers running in your team namespace.

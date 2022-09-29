@@ -13,7 +13,7 @@ Before you can use Drone to run CI pipelines, you will need to have:
 1. A Git repository
 2. Credentials to push images to the registry (your private registry on the platform)
 
-## CReating a build pipeline in Drone
+## Creating a build pipeline in Drone
 
 In the apps section in Otomi console, you'll see an app called Drone. Click on it.
 

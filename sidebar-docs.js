@@ -100,7 +100,7 @@ module.exports = {
           "for-devs/console/secrets",
           "for-devs/console/settings",
         ],
-        "Get started": [
+        "Get started with Otomi": [
           "for-devs/get-started/intro",
           "for-devs/get-started/part-1",
           "for-devs/get-started/part-2",

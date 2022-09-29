@@ -25,6 +25,6 @@ Welcome to Otomi! If you are a developer and are going to use Otomi Platform, th
 
 Comming soon:
 
-- Part 16: Create custom service monitors
-- Part 17: Create custom alerts
-- Part 18: Create Knative services
+- Part 17: Create service monitors
+- Part 18: Create alert rules
+- Part 19: Create Knative services

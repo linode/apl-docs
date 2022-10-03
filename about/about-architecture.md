@@ -16,13 +16,6 @@ Otomi consists out of multiple projects:
 | [otomi-console](https://github.com/redkubes/otomi-console) | No          |
 | [otomi-api](https://github.com/redkubes/otomi-api)         | No          |
 
-## Overview
-
-Otomi is a single package that combines multiple open-source projects with (developer) self-service and Kubernetes application configuration management.
-
-![img/architecture](/img/architecture.png)
-
-## Components
 
 ### Otomi Core
 
@@ -59,18 +52,14 @@ Otomi API allows for a controlled change of all Otomi Values, based on a configu
 
 Otomi Console is the User Interface of Otomi. Otomi Console communicates with Otomi API for reading and changing Otomi Values configuration. Otomi Console also offers (via the Otomi Apps option) shortcuts to the UI of the various integrated applications.
 
-### Role based access
-
-Otomi supports role based access control for Otomi Console and all user and tenant aware applications. See [KeyCloak](/docs/apps/keycloak) for more information.
-
 ## Integrated Applications
 
 Otomi contains four types of applications:
 
-- Core applications; applications that operate on the platform-level
-- Shared applications; applications that are shared between teams. Shared applications can be user- and role-aware or not (user is anonymous)
-- Team applications; applications with a dedicated instance per team
-- Optional applications; applications that can additionally be activated
+- Core applications: applications that are activated by default
+- Shared applications: applications that are shared between teams. Shared applications are user-, and role-aware or not (user is anonymous)
+- Team applications: applications with a dedicated instance per team
+- Optional applications: applications that are optional and can be activated by the platform admin
 
 The following table shows all integrated applications:
 
@@ -93,6 +82,8 @@ The following table shows all integrated applications:
 | Httpbin                                      |      |   X    |      |                 |    X     |
 | Jeager                                       |      |        |      |                 |    X     |
 | Kiali                                        |      |        |      |                 |    X     |
+| KubeClarity                                  |      |        |      |                 |    X     |
+| Velero                                       |      |        |      |                 |    X     |
 
 ## Ingress & SSO
 

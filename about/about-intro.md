@@ -5,42 +5,34 @@ sidebar_label: Introduction
 tags: [About, philosophy]
 ---
 
-Otomi is an open source self-hosted PaaS to run on top of Kubernetes and is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. A PaaS attempts to connect many of the technologies found in the CNCF landscape in a way to provide direct value to developers.
+Otomi is an open source self-hosted PaaS to run on top of any Kubernetes cluster and is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. A PaaS attempts to connect many of the technologies found in the CNCF landscape in a way to provide direct value.
 
-## Highlights
+## Otomi helps 
 
-- Easy to install
-- Works out-of-the-box
-- Comes with ready-to-use, pre-configured and built-in [applications](/#appsuite)
-- Install all your favorite Kubernetes apps in one run
-- Unified user experience (web UI)
-- All apps are pre-configured based on sane defaults
-- Turn apps on/off to create your ideal suite of apps
-- Developer Self-service features
-- Delegation of control
-- Advanced Multi-tenancy
-- Adjust the configuration of apps based on Configuration as Code
-- One UI to access all apps and self-service features
-- Kubernetes-native: Install Otomi on any Kubernetes cluster in any cloud or your private (on-premises) infrastructure
-- Over 20 pre-configured and integrated apps for Kubernetes
+1 . **Developers** - To focus on their apps only
+* Deploy containerized apps with a few click without writing any K8s YAML manifests
+* Get access to logs and metrics of deployed apps
+* Store charts and images in a private registry
+* Build and run custom CI pipelines
+* Enable declarative end-to-end app lifecycle management
+* Configure ingress for apps with a single click
+* Manage your own secrets
 
-After installing Otomi on Kubernetes, you can sign in and immediately start deploying applications.
+2. **Platform & Operations teams** - To setup and manage production-ready Kubernetes-based platforms
+* Onboard development teams on shared clusters in a comprehensive multi-tenant setup
+* Get all the required observability tools in an integrated way
+* Ensure governance with security policies
+* Implement zero-trust networking with east-west and north-south network controll within K8s
+* Provide self-service features to development teams
+* Change the desired state of the platform based on configuration-as-code
 
-## Why Otomi?
+3. **DevOps teams** - To take full controll and responsibility over the complete stack
+* Get all the tools needed to build, deploy and run apps on K8s
 
-Otomi empowers developers and lowers the burden on IT operations. Otomi provides opinions and choices around how to piece/glue together the various open source tools needed to run applications. Otomi:
-
-- Allows for customization and extensibility
-- Comes with with curated industry proven applications and policies for better governance and security
-- Offers an enterprise-grade platform experience out-of-the-box
-- Increases developer efficiency and makes developers self-serving
-- Offers carefully crafted sane defaults to minimize configuration effort and speed up time to market
-- Incorporates the 12-factor app methodology and Kubernetes best-practices
+## Read more
 
 Check out the following sections to understand the reasoning and decisions made involving the development of Otomi:
 
-- [Vision](/about/vision)
-- [Development journey](/about/journey)
 - [Architecture](/about/architecture)
 - [Roadmap](/about/roadmap)
 

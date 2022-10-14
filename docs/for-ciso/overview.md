@@ -6,7 +6,7 @@ sidebar_label: Overview
 
 :::info INFO
 
-Comming soon
+Coming soon
 
 :::
 

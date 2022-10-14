@@ -23,7 +23,7 @@ Welcome to Otomi! If you are a developer and are going to use Otomi Platform, th
 - Part 15: [Scan your images for vulnerabilities](part-15)
 - Part 16: [Scan your running containers for vulnerabilities](part-16)
 
-Comming soon:
+Coming soon:
 
 - Part 17: Create service monitors
 - Part 18: Create alert rules

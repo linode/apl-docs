@@ -14,7 +14,7 @@ Change the OIDC group-mapping to allow access to the team based on group members
 
 :::note
 
-Alerts settings will only be active when Alertmanager is active and multi tenancy is enabled.
+Alerts settings will only be active when Alertmanager is active.
 :::
 
 Change the alert settings and preferred notification receivers.
@@ -30,7 +30,7 @@ Change the alert settings and preferred notification receivers.
 
 When required, add resource quota for the team. The resource quota should adhere to the "spec.hard" format as described [here](https://kubernetes.io/docs/concepts/policy/resource-quotas/).
 
-:::note Notes
+:::note Note
 
 There is no validation as there is no schema published. Add/change resource quota at your own risk.
 
@@ -40,7 +40,7 @@ There is no validation as there is no schema published. Add/change resource quot
 
 :::note
 
-Configuring Azure Monitor settings will only be active when  `cluster.provider=azure`) and when multi-tenancy is enabled.
+Configuring Azure Monitor settings will only be active when `cluster.provider=azure`) and when multi-tenancy is enabled.
 :::
 
 Azure Monitor is the platform service that provides a single source for monitoring Azure resources.
@@ -53,10 +53,10 @@ Azure Monitor is the platform service that provides a single source for monitori
 
 ## Configure Network Policies
 
-| Option                              | Description                   |
-| ------------------------------------- | ----------------------------- |
-| Network policies                   | When enabled team services will be bound by (ingress) network policies |
-| Egress control                  | When enabled team service egress traffic will be limited to pre-defined endpoints only |
+| Option           | Description                                                                            |
+| ---------------- | -------------------------------------------------------------------------------------- |
+| Network policies | When enabled team services will be bound by (ingress) network policies                 |
+| Egress control   | When enabled team service egress traffic will be limited to pre-defined endpoints only |
 
 ## Team self service flags
 

@@ -19,30 +19,27 @@ see [Team Services](../../for-devs/console/services) for more info about how to 
 
 Another difference between the Team Admin and user created Teams is that Team Admin does not have apps and it is not possible to configure any settings for the team-admin namespace.
 
-
 ## Creating new Teams
 
 1. Login with a user who is a member of the `otomi-admin` or `team-admin` role
-  
+
 2. Provide a name for the team (lowercase). The teamname can not be changed afterwards! Creating a team will result in the creation of namespace `team-$NAME`
-   
 3. Optional: Provide a OIDC group name/id granting for granting access to team. Only members of the group will get access to the team
-  
+
 4. Optional (only when `multi-tenancy` is enabled): In order to receive alerts, please choose an alerting endpoint:
 
-
-| Option          | Description                                                                      |
-| --------------- | -------------------------------------------------------------------------------- |
-| Slack           | Needs a slack webhook url that will give alerts for warnings and criticals       |
-| Microsoft Teams | Needs two alerting endpoints, for both warnings as well as criticals             |
-| Email           | You may provide a list of email addresses for both 'Non Critical' and 'Critical' |
-| If none selected            | Global (admin) alerting endpoint configuration will be used                      |
+| Option           | Description                                                                      |
+| ---------------- | -------------------------------------------------------------------------------- |
+| Slack            | Needs a slack webhook url that will give alerts for warnings and criticals       |
+| Microsoft Teams  | Needs two alerting endpoints, for both warnings as well as criticals             |
+| Email            | You may provide a list of email addresses for both 'Non Critical' and 'Critical' |
+| If none selected | Global (admin) alerting endpoint configuration will be used                      |
 
 5. Add Resource Quotas
 
 When required, add resource quota for the team. The resource quota should adhere to the "spec.hard" format as described [here](https://kubernetes.io/docs/concepts/policy/resource-quotas/).
 
-:::note Notes
+:::note Note
 
 There is no validation as there is no schema published. Add/change resource quota at your own risk.
 
@@ -52,7 +49,7 @@ There is no validation as there is no schema published. Add/change resource quot
 
 :::note
 
-Configuring Azure Monitor settings will only be active when  `cluster.provider=azure`) and multi tenancy is enabled.
+Configuring Azure Monitor settings will only be active when `cluster.provider=azure`).
 :::
 
 Azure Monitor is the platform service that provides a single source for monitoring Azure resources.
@@ -65,23 +62,23 @@ Azure Monitor is the platform service that provides a single source for monitori
 
 1. Turn Network Policy On/Off for the team
 
-| Option                              | Description                   |
-| ------------------------------------- | ----------------------------- |
-| Network policies                   | When enabled team services will be bound by (ingress) network policies |
-| Egress control                  | When enabled team service egress traffic will be limited to pre-defined endpoints only |
+| Option           | Description                                                                            |
+| ---------------- | -------------------------------------------------------------------------------------- |
+| Network policies | When enabled team services will be bound by (ingress) network policies                 |
+| Egress control   | When enabled team service egress traffic will be limited to pre-defined endpoints only |
 
 8. Add Team self service flags
 
 A user with the `otomi-admin` and `team-admin` role can delegate permissions to modify certain configuration parameters to the team.
 
-| Section | Option | Description |
-| ------- | ------ | ----------- |
-| Service | Ingress | Select to grant the team the permission to configure exposure for Services |
-| Service | Network policy | Select to grant the team the permission to configure network polices |
-| Team | Alerts | Select to grant the team the permission to configure Alerts for the team |
-| Team | Oidc | Select to grant the team the permission to configure OIDC for the team |
-| Team | Resource quota | Select to grant the team the permission to configure Resource Quota for the team |
-| Team | Download kube config | Select to grant the team the permission to download the KubeConfig file |
-| Team | Network Policy | Select to grant the team the permission to turn on/off network policies |
-| Apps | ArgoCD | Select to provide team members access to the teams' Gitops repository in Gitea  |
-| Apps | Gitea | Select to provide team members access to Gitea |
+| Section | Option               | Description                                                                      |
+| ------- | -------------------- | -------------------------------------------------------------------------------- |
+| Service | Ingress              | Select to grant the team the permission to configure exposure for Services       |
+| Service | Network policy       | Select to grant the team the permission to configure network polices             |
+| Team    | Alerts               | Select to grant the team the permission to configure Alerts for the team         |
+| Team    | Oidc                 | Select to grant the team the permission to configure OIDC for the team           |
+| Team    | Resource quota       | Select to grant the team the permission to configure Resource Quota for the team |
+| Team    | Download kube config | Select to grant the team the permission to download the KubeConfig file          |
+| Team    | Network Policy       | Select to grant the team the permission to turn on/off network policies          |
+| Apps    | ArgoCD               | Select to provide team members access to the teams' Gitops repository in Gitea   |
+| Apps    | Gitea                | Select to provide team members access to Gitea                                   |

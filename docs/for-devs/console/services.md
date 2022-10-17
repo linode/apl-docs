@@ -23,7 +23,7 @@ If the defaults (cluster/private) apply, you can now click 'Submit'.
 
 ## Choosing the Service Type
 
-The Service type is the type of service to deploy/expose. 
+The Service type is the type of service to deploy/expose.
 
 Three options are supported:
 
@@ -128,12 +128,11 @@ Exposure controls wether internet exposure should be enabled or not. Three optio
 
 If backend is a Knative service, this will expose a Knative service on a local Istio gateway, so other services can access it at their `$svc.$namespace` host name.
 
-:::note Notes
+:::note Note
 
 Coming soon: the ability to choose endpoints to connect to, so network policies are automatically generated.
 
 :::
-
 
 ### Ingress
 
@@ -141,18 +140,18 @@ Use Ingress to expose a service with a domain name and a certificate on a privat
 
 A public URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are described below.
 
-| Setting | Description |
-| --- | --- |
-| Ingress class name | The ingress class to assing this service to. |
-| TLS passthrough | Pass through the request as is to the backing service. |
-| Use suggested domain | The suggested domain is the team domain for which a wildcard certificate already exists. Has the team name in it. |
-| Host | Choose a hostname that will be the prefix of the domain. |
-| Forward path | Do not "terminate" the path but instead pass it to the receiving service. |
-| DNS Zone | Choose a dns zone that will be the suffix of the domain. |
-| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IDP. |
-| Already has a certificate | Don't generate certificates for this service. |
-| > Certificate ARN | [AWS only] Provide the certificate arn. |
-| > Select existing secret name | [non AWS] Provide a TLS secret name previously created under `Secrets`. Override to select name of secret not known here. |
+| Setting                          | Description                                                                                                               |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Ingress class name               | The ingress class to assing this service to.                                                                              |
+| TLS passthrough                  | Pass through the request as is to the backing service.                                                                    |
+| Use suggested domain             | The suggested domain is the team domain for which a wildcard certificate already exists. Has the team name in it.         |
+| Host                             | Choose a hostname that will be the prefix of the domain.                                                                  |
+| Forward path                     | Do not "terminate" the path but instead pass it to the receiving service.                                                 |
+| DNS Zone                         | Choose a dns zone that will be the suffix of the domain.                                                                  |
+| Authenticate with Single Sign On | Forwards any unauthenticated traffic to the Keycloak login page, which might forward to an external IDP.                  |
+| Already has a certificate        | Don't generate certificates for this service.                                                                             |
+| > Certificate ARN                | [AWS only] Provide the certificate arn.                                                                                   |
+| > Select existing secret name    | [non AWS] Provide a TLS secret name previously created under `Secrets`. Override to select name of secret not known here. |
 
 ## Configure network policies
 

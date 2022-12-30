@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[3237],{9754:(e,s,t)=>{t.r(s),t.d(s,{default:()=>c});var u=t(7294),b=t(6775);const c=()=>u.createElement(b.l_,{to:"/docs"})}}]);

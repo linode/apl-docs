@@ -144,6 +144,7 @@ module.exports = {
       "apps/kubeclarity",
       "apps/loki",
       "apps/prometheus",
+      "apps/thanos",
       "apps/vault",
       "apps/velero",
     ],

@@ -1,11 +1,10 @@
 module.exports = {
   mainSidebar: {
-    "Installation": [
-      "installation/get-started",
-      "installation/prerequisites",
-      "installation/optional",
-      "installation/chart",
-      "installation/activation",
+    "Getting Started": [
+      "get-started/introduction",
+      "get-started/installation",
+      "get-started/architecture",
+      "faq",
     ],
    "For Ops": [
       {
@@ -147,6 +146,12 @@ module.exports = {
       "apps/thanos",
       "apps/vault",
       "apps/velero",
+    ],
+    "Contributing": [
+      "contributing/contributing",
+      "contributing/expectations",
+      "contributing/code-of-conduct",
+      "contributing/values",
     ],
   },
 };

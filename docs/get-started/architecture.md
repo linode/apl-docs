@@ -6,7 +6,7 @@ sidebar_label: Architecture
 
 ## Projects
 
-Otomi consists out of multiple projects:
+Otomi consists out of the following projects:
 
 | Project                                                    | open source |
 | ---------------------------------------------------------- | ----------- |
@@ -19,7 +19,7 @@ Otomi consists out of multiple projects:
 
 ### Otomi Core
 
-Otomi Core is the heart of Otomi and contains a set of about (currently) 47 Helm Charts. Most of these charts are optimized charts from open source projects, others are developed by [Red Kubes](https://redkubes.com). Otomi Core is made available (per release) as a container image. For more information, see the public repository [here](https://github.com/redkubes/otomi-core) (and star ;)
+Otomi Core is the heart of Otomi and contains a set of about (currently) 47 Helm Charts. Most of these charts are optimized charts from open source projects, others are developed by [Red Kubes](https://redkubes.com). Otomi Core is made available (per release) as a container image.
 
 Otomi Core also contains the source code for Otomi CLI. Otomi CLI is a custom developed Command Line Interface for Otomi. Otomi CLI can be used for advanced initial configuration (bootstrapping), deployment, sync, push, template validation, and much more.
 
@@ -84,6 +84,7 @@ The following table shows all integrated applications:
 | Kiali                                        |      |        |      |                 |    X     |
 | KubeClarity                                  |      |        |      |                 |    X     |
 | Velero                                       |      |        |      |                 |    X     |
+| Minio                                        |      |        |      |                 |    X     |
 
 ## Ingress & SSO
 

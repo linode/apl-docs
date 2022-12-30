@@ -41,31 +41,31 @@ module.exports = {
         },
       },
     ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "about",
-        path: "about",
-        editUrl: "https://github.com/redkubes/redkubes.github.io/edit/main/",
-        routeBasePath: "about",
-        sidebarPath: require.resolve("./sidebar-about.js"),
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "community",
-        path: "community",
-        editUrl: "https://github.com/redkubes/redkubes.github.io/edit/main/",
-        routeBasePath: "community",
-        sidebarPath: require.resolve("./sidebar-community.js"),
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-        sidebarCollapsible: true,
-      },
-    ],
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "about",
+    //     path: "about",
+    //     editUrl: "https://github.com/redkubes/redkubes.github.io/edit/main/",
+    //     routeBasePath: "about",
+    //     sidebarPath: require.resolve("./sidebar-about.js"),
+    //     showLastUpdateAuthor: true,
+    //     showLastUpdateTime: true,
+    //   },
+    // ],
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "community",
+    //     path: "community",
+    //     editUrl: "https://github.com/redkubes/redkubes.github.io/edit/main/",
+    //     routeBasePath: "community",
+    //     sidebarPath: require.resolve("./sidebar-community.js"),
+    //     showLastUpdateAuthor: true,
+    //     showLastUpdateTime: true,
+    //     sidebarCollapsible: true,
+    //   },
+    // ],
   ],
   themeConfig: {
     metadata: [{name: 'keywords', content: 'kubernetes, kubernetes ingress, k8s, istio, grafana, loki, kubernetes dashboard, kubernetes platform'}],
@@ -100,35 +100,35 @@ module.exports = {
       logo: {
         alt: "Site Logo",
         src: "img/otomi-logo.svg",
-        href: "/", // Default to `siteConfig.baseUrl`.
+        href: "/docs", // Default to `siteConfig.baseUrl`.
         target: "_self", // By default, this value is calculated based on the `href` attribute (the external link will open in a new tab, all others in the current one).
       },
       items: [
-        {
-          to: "about/",
-          label: "About",
-          position: "left",
-        },
-        {
-          to: "docs/installation/get-started",
-          label: "Docs",
-          position: "left",
-        },
+        // {
+        //   to: "about/",
+        //   label: "About",
+        //   position: "left",
+        // },
+        // {
+        //   to: "docs",
+        //   label: "Docs",
+        //   position: "left",
+        // },
         //{
         //  to: 'docs/console/',
         //  label: 'Otomi Console',
         //  position: 'left',
         //},
-        {
-          to: "docs/faq",
-          label: "FAQ",
-          position: "left",
-        },
-        {
-          to: "community/get-involved",
-          label: "Community",
-          position: "left",
-        },
+        // {
+        //   to: "docs/faq",
+        //   label: "FAQ",
+        //   position: "left",
+        // },
+        // {
+        //   to: "community/get-involved",
+        //   label: "Community",
+        //   position: "left",
+        // },
         {
           href: "https://github.com/redkubes/otomi-core",
           position: "right",
@@ -145,15 +145,15 @@ module.exports = {
           items: [
             {
               label: "Introduction",
-              to: "/about/",
+              to: "/docs",
             },
             {
               label: "Installation",
-              to: "/docs/installation/get-started",
+              to: "/docs/get-started/installation",
             },
             {
-              label: "Using Otomi Console",
-              href: "/docs/for-ops/console/overview",
+              label: "Get started for Devs",
+              href: "/docs/for-devs/get-started/overview",
             },
           ],
         },
@@ -169,8 +169,8 @@ module.exports = {
               href: "https://www.facebook.com/groups/otomiusers",
             },
             {
-              label: "Community page",
-              to: "community/get-involved",
+              label: "Conitributing",
+              to: "/docs/contributing/contributing",
             },
           ],
         },
@@ -192,11 +192,6 @@ module.exports = {
           ],
         },
       ],
-      logo: {
-        alt: "Otomi Open Source Logo",
-        src: "img/otomi-logo.svg",
-      },
-      copyright: `Copyright © ${new Date().getFullYear()} Red Kubes. Built with <a href="https://v2.docusaurus.io/">Docusaurus</a>`,
     },
   },
   presets: [
@@ -215,13 +210,13 @@ module.exports = {
           //   },
           // },
         },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
         gtag: {
           trackingID: "G-KKV4ZVDEKQ",
           // Optional fields.
           anonymizeIP: false, // Should IPs be anonymized?
+        },
+        theme: {
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],

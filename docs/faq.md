@@ -6,18 +6,18 @@ title: FAQ
 ## More about Otomi
 
 <details>
-  <summary>Is Otomi some lightweight version of Rancher or OpenShift</summary>
+  <summary>Is Otomi a lightweight version of Rancher or OpenShift</summary>
 
-We understand that solutions like Rancher and OpenShift all propagate that their solutions ship with integrated tools, but we take the term integrated a little more serious. Within Otomi, integrated means that the application is pre-configured with Otomi base configuration values, the application has been adjusted to comply with all Otomi security policies, and all applications have been made user-aware (using OIDC) and multi-tenant.
+We understand that solutions like Rancher and OpenShift all propagate that their products ship with integrated tools, but we take the term integrated a little more serious. Within Otomi, integrated means applications are pre-configured with Otomi default configuration values, applications have been adjusted to comply with all Otomi security policies, and applications have been made user-aware (using OIDC) and multi-tenant.
 
-Otomi can NOT be used to provision and manage Kubernetes clusters. Otomi is an application framework on top of Kubernetes that can be installed in one run and offers a complete suite of integrated and pre-configured applications combined with automation and developer self-service.
+Otomi can NOT be used to provision and manage Kubernetes clusters. Otomi is an application stack on top of Kubernetes that can be installed with one Helm chart, and offers a complete suite of integrated and pre-configured applications combined with automation and developer self-service.
 
 </details>
 
 <details>
   <summary>Is Otomi some kind of Kubeapps</summary>
 
-We can imagine when looking at the list of all pre-configured and ready-to-use apps, you might get the impression that Otomi is some kind of apps catalog for Kubernetes. But the opposite is true. When you install Otomi, you will get all of these apps and they’re already configured for you and they work ou-of-the-box. You can then use the web UI or values repository to adjust the configuration of these apps based on your own requirements.
+We can imagine when looking at the list of all pre-configured and ready-to-use apps, you might get the impression that Otomi is some kind of application catalog for Kubernetes. But the opposite is true. When you install Otomi, you will get all of these apps and they’re already configured for you, and they will work ou-of-the-box. You can then use the web UI or values repository to adjust the configuration of these apps based on your own requirements.
 
 </details>
 
@@ -33,14 +33,14 @@ Otomi requires a running Kubernetes cluster of version `1.18` up to `1.23` using
 <details>
   <summary>Is the Quickstart the only way to install Otomi?</summary>
 
-No. The [otomi-quickstart](https://github.com/redkubes/quickstart) uses Terraform to provision a three-node Kubernetes cluster in AWS, Azure, or GCP and installs Otomi. You can also provision up a Kubernetes cluster yourself and install Otomi using the Helm chart. Check [chart-install](https://otomi.io/docs/installation/chart) for more details.
+No. The [otomi-quickstart](https://github.com/redkubes/quickstart) uses Terraform to provision a three-node Kubernetes cluster in AWS, Azure, or GCP and installs Otomi. You can also provision a Kubernetes cluster yourself and install Otomi using the Helm chart. Check [chart-install](/docs/get-started/installation#install-otomi-with-helm) for more details.
 
 </details>
 
 <details>
   <summary>Where can I find all possible configuration options for Otomi?</summary>
 
-When installing Otomi with the helm chart you can find its `values.schema.json` inside, which contains all the possible install configuration parameters. It is generated from [otomi-core/values-schema.yaml](https://github.com/redkubes/otomi-core/blob/main/values-schema.yaml).
+When installing Otomi with the helm chart you can find its `values-schema.json` inside, which contains all the possible configuration parameters. It is generated from [otomi-core/values-schema.yaml](https://github.com/redkubes/otomi-core/blob/main/values-schema.yaml).
 
 </details>
 

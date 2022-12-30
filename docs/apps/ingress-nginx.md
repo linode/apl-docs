@@ -4,7 +4,7 @@ title: Working with ingress-NGINX Controller for Kubernetes
 sidebar_label: Ingress-nginx
 ---
 
-Otomi integrated NGINX Ingress Controller into an advanced [ingress architecture](/about/architecture#ingress--sso).
+Otomi integrated NGINX Ingress Controller into an advanced [ingress architecture](/docs/get-started/architecture#ingress--sso).
 
 ## Using ModSecurity
 

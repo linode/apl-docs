@@ -25,7 +25,7 @@ Consequently, as a community we expect that all active participants in the commu
 
 ## Expectations of reviewers: Review comments
 
-Because reviewers are often the first points of contact between new members of the community and can significantly impact the first impression of the Otomi community, reviewers are especially important in shaping the Otomi community. Reviewers are highly encouraged to not only abide by the [code of conduct](../code-of-conduct) but are strongly encouraged to go above and beyond the code of conduct to promote a collaborative, respectful Otomi community.
+Because reviewers are often the first points of contact between new members of the community and can significantly impact the first impression of the Otomi community, reviewers are especially important in shaping the Otomi community. Reviewers are highly encouraged to not only abide by the [code of conduct](code-of-conduct) but are strongly encouraged to go above and beyond the code of conduct to promote a collaborative, respectful Otomi community.
 
 ## Expectations of reviewers: Review latency
 

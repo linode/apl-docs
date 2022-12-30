@@ -12,5 +12,3 @@ Alertmanager is configured by Otomi to use the global values found under setting
 
 A team may decide to override some or all of them, in order to have alerts sent to their own endpoints. Self-service rights to alerting must be enabled for that team (enabled by default for all teams).
 
-## Usefull resources
-

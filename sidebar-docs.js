@@ -3,10 +3,13 @@ module.exports = {
     "Getting Started": [
       "get-started/introduction",
       "get-started/installation",
-      "get-started/architecture",
-      "faq",
     ],
-   "For Ops": [
+    "Product": [
+      "product/architecture",
+      "product/roadmap",
+      "product/faq",
+    ],
+    "For Ops": [
       {
         "Otomi Console": [
           "for-ops/console/overview",

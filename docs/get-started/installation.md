@@ -360,7 +360,7 @@ alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 6. Click on the `otomi/values` repository
 7. Click on `+ Activate Repository`
 
-### Step 4: Create a new admin user
+### Step 4 (Optional): Create a new admin user
 
 :::info ATTENTION
 
@@ -370,7 +370,7 @@ We strongly advise to not use the default `otomi-admin` account after activation
 
 [Create a new user account in Keycloak](/docs/apps/keycloak#step-2-create-a-user-in-keycloak) and add the new user to the `otomi-admin` and `team-admin`.
 
-### (Optional) Add the URL of the Kubernetes API
+### Step 5 (Optional): Add the URL of the Kubernetes API
 
 :::info NOTE
 

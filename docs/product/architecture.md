@@ -19,7 +19,31 @@ Otomi consists out of the following projects:
 
 ### Otomi Core
 
-Otomi Core is the heart of Otomi and contains a set of about (currently) 47 Helm Charts. Most of these charts are optimized charts from open source projects, others are developed by [Red Kubes](https://redkubes.com). Otomi Core is made available (per release) as a container image.
+Otomi Core is the heart of Otomi and contains a suite of the following integrated Kubernetes applications:
+
+- [Istio](https://github.com/istio/istio): The service mesh framework with end-to-end transit encryption
+- [Velero](https://github.com/vmware-tanzu/velero): Back up and restore your Kubernetes cluster resources and persistent volumes
+- [Argo CD](https://github.com/argoproj/argo-cd): Declarative continuous deployment
+- [KubeClarity](https://github.com/openclarity/kubeclarity): Detect vulnerabilities of container images
+- [Knative](https://github.com/knative/serving): Deploy and manage serverless workloads
+- [Prometheus](https://github.com/prometheus/prometheus): Collecting container application metrics
+- [Loki](https://github.com/grafana/loki): Collecting container application logs
+- [Harbor](https://github.com/goharbor/harbor): Container image registry with role-based access control, image scanning, and image signing
+- [HashiCorp Vault](https://github.com/hashicorp/vault): Manage Secrets and Protect Sensitive Data
+- [Kubeapps](https://github.com/vmware-tanzu/kubeapps): Launching and managing applications on Kubernetes
+- [Keycloak](https://github.com/keycloak/keycloak): Identity and access management for modern applications and services
+- [OPA](https://github.com/open-policy-agent/opa): Policy-based control for cloud-native environments
+- [Let's Encrypt](https://letsencrypt.org/): A nonprofit Certificate Authority providing industry-recognized TLS certificates
+- [Jaeger](https://github.com/jaegertracing/jaeger): End-to-end distributed tracing and monitor for complex distributed systems
+- [Kiali](https://github.com/kiali/kiali): Observe Istio service mesh relations and connections
+- [External DNS](https://github.com/kubernetes-sigs/external-dns): Synchronize exposed ingresses with DNS providers
+- [Drone](https://github.com/harness/drone): Continuous integration platform built on Docker
+- [Gitea](https://github.com/go-gitea/gitea): Self-hosted Git service
+- [Nginx Ingress Controller](https://github.com/kubernetes/ingress-nginx): Ingress controller for Kubernetes
+- [Minio](https://github.com/minio/minio): High performance Object Storage compatible with Amazon S3 cloud storage service
+
+
+Otomi Core is made available (per release) as a container image.
 
 Otomi Core also contains the source code for Otomi CLI. Otomi CLI is a custom developed Command Line Interface for Otomi. Otomi CLI can be used for advanced initial configuration (bootstrapping), deployment, sync, push, template validation, and much more.
 
@@ -33,6 +57,7 @@ Otomi Tasks is currently used to configure the following applications:
 - Harbor
 - Gitea
 - Drone
+- Otomi (copy-certs and wait-for)
 
 ### Otomi Clients
 
@@ -86,17 +111,22 @@ The following table shows all integrated applications:
 | Velero                                       |      |        |      |                 |    X     |
 | Minio                                        |      |        |      |                 |    X     |
 
-## Ingress & SSO
+## Ingress architecture
 
 Otomi installs and configures an advanced ingress architecture. Ingress for a service can be configured using Otomi Services. The following figure shows the ingress and SSO architecture.
 
 ![img/ingress-overview](/img/ingress-overview.svg)
 
-The ingress & SSO architecture explained (shortly):
+The ingress & SSO architecture overview explained:
 
 - (optional) an external gateway is used for termination of external traffic (e.g. an Azure Application Gateway or an AWS Application Load Balancer).
-- 2 Ingress NGINX controllers are deployed, one for public access and one for authenticated access
-- Authenticated (SSO) access is handled by an oauth2 proxy and KeyCloak. The user logs in using the Otomi custom KeyCloak login page. - KeyCloak is configured with an external IDP (optional) or uses local accounts. After authentication, KeyCloak provides a normalized JWT token. The JWT token is used by integrated core applications (providing user and role information) and team services configured with SSO
-- 4 Istio (ingress) gateways are provisioned: 1) a public gateway for routing public (non authenticated traffic to a service, 2) an authentication gateway to route authenticated traffic to a service, 3) a local gateway (for local cluster routing), 4) a Knative gateway to route traffic to Knative services
-- For each service a Istio virtual service is configured
-- One egress gateway is provisioned for all egress traffic (network policies allow all egress traffic)
+- 2 Ingress NGINX controllers are deployed, one for public access and one for authenticated access.
+- Authenticated (SSO) access is handled by an oauth2 proxy and KeyCloak. The user logs in using the Otomi custom KeyCloak login page. 
+- KeyCloak is configured with an external IDP (optional) or uses local accounts. After authentication, KeyCloak provides a normalized JWT token. The JWT token is used by integrated core applications (providing user and role information) and team services configured with SSO
+- 4 Istio (ingress) gateways are provisioned: 
+1.  a public gateway for routing public (non authenticated traffic to a service
+2.  an authentication gateway to route authenticated traffic to a service
+3.  a local gateway (for local cluster routing)
+4.  a Knative gateway to route traffic to Knative services
+- For each service a Istio virtual service is configured.
+- One egress gateway is provisioned for all egress traffic (network policies allow all egress traffic).

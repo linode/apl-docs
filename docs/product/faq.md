@@ -17,7 +17,7 @@ Otomi can NOT be used to provision and manage Kubernetes clusters. Otomi is an a
 <details>
   <summary>Is Otomi some kind of Kubeapps</summary>
 
-We can imagine when looking at the list of all pre-configured and ready-to-use apps, you might get the impression that Otomi is some kind of application catalog for Kubernetes. But the opposite is true. When you install Otomi, you will get all of these apps and they’re already configured for you, and they will work ou-of-the-box. You can then use the web UI or values repository to adjust the configuration of these apps based on your own requirements.
+We can imagine when looking at the list of all pre-configured and ready-to-use apps, you might get the impression that Otomi is some kind of application catalog for Kubernetes. But the opposite is true. When you install Otomi, you will get all of these apps and they’re already configured for you, and they will work out-of-the-box. You can then use the web UI or values repository to adjust the configuration of these apps based on your own requirements.
 
 </details>
 

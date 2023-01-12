@@ -103,12 +103,12 @@ The external-dns service is registering DNS names to makes sure that the service
 
 ## Storage issues
 
-Check available storage classes std and fast exist
+Check available storage classes `std` and `fast` exist
 
 ### Advanced
 
-- Describe pv and pvc, check if pv's are rwo or rwx and look for conflicts
-- Check if container expects or rwx pv
+- Describe pv and pvc, check if pv's are `rwo` or `rwx` and look for conflicts
+- Check if container expects or `rwx` pv
 
 ## Contact support (support subscription needed)
 

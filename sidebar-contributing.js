@@ -1,3 +1,3 @@
 module.exports = {
-  mainSidebar: ["get-started", "values", "expectations"],
+  mainSidebar: ["get-started", "values", "code-of-conduct", "expectations"],
 };

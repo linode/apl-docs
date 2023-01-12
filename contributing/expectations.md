@@ -19,19 +19,18 @@ As a community we believe in the value of code review for all contributions.
 Code review increases both the quality and readability of our codebase, which
 in turn produces high quality software.
 
-See the [pull request documentation](pull-requests) for more information on code review.
-
 Consequently, as a community we expect that all active participants in the community will also be active reviewers.
 
-## Expectations of reviewers: Review comments
+## Expectations of reviewers
+
+### Review comments
 
 Because reviewers are often the first points of contact between new members of the community and can significantly impact the first impression of the Otomi community, reviewers are especially important in shaping the Otomi community. Reviewers are highly encouraged to not only abide by the [code of conduct](code-of-conduct) but are strongly encouraged to go above and beyond the code of conduct to promote a collaborative, respectful Otomi community.
 
-## Expectations of reviewers: Review latency
+### Review latency
 
 Reviewers are expected to respond in a timely fashion to PRs that are assigned to them. Reviewers are expected to respond to an _active_ PRs with reasonable latency, and if reviewers fail to respond, those PRs may be assigned to other reviewers.
 
-## Thanks
+## Thank you
 
-Many thanks in advance to everyone who contributes their time and effort to making Otomi both a successful endeavour as well as a successful community.
-The strength of our software shines in the strengths of each individual community member. Thanks!
+We want to thank everyone who contributes their time and effort to making Otomi both a successful endeavour as well as a successful community. The strength of our software lies in the combined strengths of each individual community member. Thanks!

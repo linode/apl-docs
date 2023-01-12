@@ -1,6 +1,7 @@
 ---
-slug: cli
-title: Installing with CLI
+slug: deploying
+title: Deploying apps with CLI
+sidebar_label: Deploying apps
 ---
 
 ## 1. Initialize a values repo

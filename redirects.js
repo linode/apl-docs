@@ -31,4 +31,24 @@ module.exports = [
     from: ["/docs/apps/nginx-ingress"],
     to: "/docs/apps/ingress-nginx",
   },
+  {
+    from: ["/docs/installation/chart"],
+    to: "/docs/installation/get-started",
+  },
+  {
+    from: ["/docs/installation/cli"],
+    to: "/docs/for-ops/cli/installation",
+  },
+  {
+    from: ["/docs/installation/optional"],
+    to: "/docs/installation/get-started",
+  },
+  {
+    from: ["/docs/installation/post-install"],
+    to: "/docs/installation/get-started",
+  },
+  {
+    from: ["/docs/installation/prerequisites"],
+    to: "/docs/installation/get-started",
+  },
 ];

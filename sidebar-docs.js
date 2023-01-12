@@ -1,14 +1,6 @@
 module.exports = {
-  mainSidebar: {
-    "Getting Started": [
-      "get-started/introduction",
-      "get-started/installation",
-    ],
-    "Product": [
-      "product/architecture",
-      "product/roadmap",
-      "product/faq",
-    ],
+  docs: {
+    Installation: ["installation/get-started"],
     "For Ops": [
       {
         "Otomi Console": [
@@ -21,7 +13,7 @@ module.exports = {
           "for-ops/console/services",
           "for-ops/console/jobs",
           {
-            "Settings": [
+            Settings: [
               "for-ops/console/settings/cluster",
               "for-ops/console/settings/otomi",
               "for-ops/console/settings/key-management",
@@ -75,7 +67,7 @@ module.exports = {
         ],
       },
       {
-        "SRE": [
+        SRE: [
           "for-ops/sre/overview",
           "for-ops/sre/daily",
           "for-ops/sre/upgrades",
@@ -120,13 +112,10 @@ module.exports = {
           "for-devs/get-started/part-14",
           "for-devs/get-started/part-15",
           "for-devs/get-started/part-16",
-
         ],
       },
     ],
-    "For CISOs": [
-      "for-ciso/overview",
-    ],
+    "For CISOs": ["for-ciso/overview"],
     "Otomi Apps": [
       "apps/alertmanager",
       "apps/argocd",
@@ -149,12 +138,6 @@ module.exports = {
       "apps/thanos",
       "apps/vault",
       "apps/velero",
-    ],
-    "Contributing": [
-      "contributing/contributing",
-      "contributing/expectations",
-      "contributing/code-of-conduct",
-      "contributing/values",
     ],
   },
 };

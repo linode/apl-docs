@@ -1,5 +1,5 @@
 ---
-slug: /
+slug: introduction
 title: Introduction
 sidebar_label: Introduction
 ---
@@ -34,7 +34,6 @@ Otomi is an open source self-hosted PaaS to run on top of any Kubernetes cluster
 **DevOps teams** - To take full control and responsibility over the complete stack
 
 - Get all the tools needed to build, deploy, run and manage apps on Kubernetes
-
 
 <!---
 For developer information please visit the repositories involved:

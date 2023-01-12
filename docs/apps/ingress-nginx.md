@@ -4,7 +4,7 @@ title: Working with ingress-NGINX Controller for Kubernetes
 sidebar_label: Ingress-nginx
 ---
 
-Otomi integrated NGINX Ingress Controller into an advanced [ingress architecture](/docs/product/architecture#ingress--sso).
+Otomi integrated NGINX Ingress Controller into an advanced [ingress architecture](/product/architecture#ingress--sso).
 
 ## Using ModSecurity
 
@@ -28,11 +28,11 @@ modsecurity-snippet: |
     SecRequestBodyLimit 1073741824
     SecRuleRemoveById 920350
 ```
-To change the modsecurity configuration, use `Raw values`. [Here](https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#Configuration_Directives) is an overview of all the configuration directives.
+
+To change the modsecurity configuration, use `Raw values`. [Here](<https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#Configuration_Directives>) is an overview of all the configuration directives.
 
 ## Using the OWASP rule set
 
 The OWASP ModSecurity Core Rule Set (CRS) is a set of generic attack detection rules for use with ModSecurity or compatible web application firewalls. The CRS aims to protect web applications from a wide range of attacks, including the OWASP Top Ten, with a minimum of false alerts. The CRS provides protection against many common attack categories, including SQL Injection, Cross Site Scripting, Local File Inclusion, etc.
 
 The OWASP rule set can only be enabled when ModSecurity is enabled. Read more about the OWASP rule set [here](https://owasp.org/www-project-modsecurity-core-rule-set/)
-

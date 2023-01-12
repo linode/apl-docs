@@ -1,5 +1,5 @@
 ---
-slug: faq/
+slug: faq
 title: FAQ
 ---
 
@@ -33,7 +33,7 @@ Otomi requires a running Kubernetes cluster of version `1.18` up to `1.23` using
 <details>
   <summary>Is the Quickstart the only way to install Otomi?</summary>
 
-No. The [otomi-quickstart](https://github.com/redkubes/quickstart) uses Terraform to provision a three-node Kubernetes cluster in AWS, Azure, or GCP and installs Otomi. You can also provision a Kubernetes cluster yourself and install Otomi using the Helm chart. Check [chart-install](/docs/get-started/installation#install-otomi-with-helm) for more details.
+No. The [otomi-quickstart](https://github.com/redkubes/quickstart) uses Terraform to provision a three-node Kubernetes cluster in AWS, Azure, or GCP and installs Otomi. You can also provision a Kubernetes cluster yourself and install Otomi using the Helm chart. Check [chart-install](/docs/installation/get-started#install-otomi-with-helm) for more details.
 
 </details>
 

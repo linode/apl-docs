@@ -143,7 +143,7 @@ module.exports = {
           items: [
             {
               label: "Installation",
-              to: "/docs/installation/get-started",
+              to: "/docs/get-started/installation",
             },
             {
               label: "Get started for Devs",

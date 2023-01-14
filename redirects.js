@@ -33,7 +33,7 @@ module.exports = [
   },
   {
     from: ["/docs/installation/chart"],
-    to: "/docs/installation/get-started",
+    to: "/docs/get-started/installation",
   },
   {
     from: ["/docs/installation/cli"],
@@ -41,14 +41,14 @@ module.exports = [
   },
   {
     from: ["/docs/installation/optional"],
-    to: "/docs/installation/get-started",
+    to: "/docs/get-started/installation",
   },
   {
     from: ["/docs/installation/post-install"],
-    to: "/docs/installation/get-started",
+    to: "/docs/get-started/installation",
   },
   {
     from: ["/docs/installation/prerequisites"],
-    to: "/docs/installation/get-started",
+    to: "/docs/get-started/installation",
   },
 ];

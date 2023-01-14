@@ -41,34 +41,42 @@ module.exports = {
         },
       },
     ],
-    // [
-    //   "@docusaurus/plugin-content-docs",
-    //   {
-    //     id: "about",
-    //     path: "about",
-    //     editUrl: "https://github.com/redkubes/redkubes.github.io/edit/main/",
-    //     routeBasePath: "about",
-    //     sidebarPath: require.resolve("./sidebar-about.js"),
-    //     showLastUpdateAuthor: true,
-    //     showLastUpdateTime: true,
-    //   },
-    // ],
-    // [
-    //   "@docusaurus/plugin-content-docs",
-    //   {
-    //     id: "community",
-    //     path: "community",
-    //     editUrl: "https://github.com/redkubes/redkubes.github.io/edit/main/",
-    //     routeBasePath: "community",
-    //     sidebarPath: require.resolve("./sidebar-community.js"),
-    //     showLastUpdateAuthor: true,
-    //     showLastUpdateTime: true,
-    //     sidebarCollapsible: true,
-    //   },
-    // ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "product",
+        path: "product",
+        breadcrumbs: false,
+        editUrl: "https://github.com/redkubes/redkubes.github.io/edit/main/",
+        routeBasePath: "product",
+        sidebarPath: require.resolve("./sidebar-product.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "contributing",
+        path: "contributing",
+        breadcrumbs: false,
+        editUrl: "https://github.com/redkubes/redkubes.github.io/edit/main/",
+        routeBasePath: "contributing",
+        sidebarPath: require.resolve("./sidebar-contributing.js"),
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        sidebarCollapsible: true,
+      },
+    ],
   ],
   themeConfig: {
-    metadata: [{name: 'keywords', content: 'kubernetes, kubernetes ingress, k8s, istio, grafana, loki, kubernetes dashboard, kubernetes platform'}],
+    metadata: [
+      {
+        name: "keywords",
+        content:
+          "kubernetes, kubernetes ingress, k8s, istio, grafana, loki, kubernetes dashboard, kubernetes platform",
+      },
+    ],
     announcementBar: {
       id: "supportus",
       content:
@@ -100,35 +108,25 @@ module.exports = {
       logo: {
         alt: "Site Logo",
         src: "img/otomi-logo.svg",
-        href: "/docs/", // Default to `siteConfig.baseUrl`.
+        href: "/", // Default to `siteConfig.baseUrl`.
         target: "_self", // By default, this value is calculated based on the `href` attribute (the external link will open in a new tab, all others in the current one).
       },
       items: [
-        // {
-        //   to: "about/",
-        //   label: "About",
-        //   position: "left",
-        // },
-        // {
-        //   to: "docs",
-        //   label: "Docs",
-        //   position: "left",
-        // },
-        //{
-        //  to: 'docs/console/',
-        //  label: 'Otomi Console',
-        //  position: 'left',
-        //},
-        // {
-        //   to: "docs/faq",
-        //   label: "FAQ",
-        //   position: "left",
-        // },
-        // {
-        //   to: "community/get-involved",
-        //   label: "Community",
-        //   position: "left",
-        // },
+        {
+          to: "product/introduction",
+          label: "Product",
+          position: "left",
+        },
+        {
+          to: "docs/get-started/installation",
+          label: "Docs",
+          position: "left",
+        },
+        {
+          to: "contributing/get-started",
+          label: "Contributing",
+          position: "left",
+        },
         {
           href: "https://github.com/redkubes/otomi-core",
           position: "right",
@@ -143,10 +141,6 @@ module.exports = {
         {
           title: "Otomi",
           items: [
-            {
-              label: "Introduction",
-              to: "/docs",
-            },
             {
               label: "Installation",
               to: "/docs/get-started/installation",
@@ -169,8 +163,8 @@ module.exports = {
               href: "https://www.facebook.com/groups/otomiusers",
             },
             {
-              label: "Conitributing",
-              to: "/docs/contributing/contributing",
+              label: "Contributing",
+              to: "/contributing/get-started",
             },
           ],
         },

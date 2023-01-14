@@ -40,19 +40,14 @@
   text-align: center;
 }
 
-.announcementDark {
-  padding: 32px 32px 4px 32px;
-  background-color: #20232a;
-  color: #fff;
-}
-.announcementGrey {
+.announcementBanner {
   padding: 12px;
-  background-color: #42464b;
-  color: #fff;
+  background-color: var(--ifm-color-primary-dark);
+  color: var(--ifm-color-secondary);
 }
-.announcementLight {
-  background-color: var(--ifm-background-color);
-  color: #fff;
+
+.announcementList {
+  padding: 32px 12px;
 }
 
 .announcementInner {
@@ -61,7 +56,6 @@
 }
 
 .hero {
-  background-color: #42464b;
   padding: 48px;
 }
 
@@ -72,13 +66,100 @@
 }
 
 .heroProjectTagline {
-  color: #fff;
   font-size: 60px;
   margin: 0;
 }
 
 .heroProjectKeywords {
   color: var(--ifm-color-primary);
+}
+
+.heroLogo {
+  animation-duration: 2s;
+  animation-name: jackInTheBox;
+  float: right;
+  margin-top: 20px;
+  padding: 0 20px 20px;
+  width: 16vw;
+  height: 16vw;
+}
+
+.logo {
+  border-radius: 0;
+}
+
+.indexCtas {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.indexCtasGetStartedButton {
+  border: 2px solid var(--ifm-color-primary);
+  line-height: 1.2em;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 18px 36px;
+}
+
+.indexCtasGitHubButtonWrapper {
+  display: flex;
+}
+
+.indexCtasGitHubButton {
+  border: none;
+  margin-left: 24px;
+  overflow: hidden;
+}
+
+
+.appsContainer {
+  max-width: var(--ifm-container-width);
+  margin: 0 auto;
+  padding: 0 var(--ifm-spacing-horizontal);
+  width: 100%;
+}
+
+.appDescription {
+  font-size: var(--ifm-h5-font-size);
+  font-weight: 300;
+  /* color: var(--ifm-color-primary); */
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .heroInner {
+    padding: 0;
+  }
+
+  .heroProjectTagline {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .heroLogo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    width: 44vw;
+    height: 44vw;
+  }
+
+  .indexCtas {
+    justify-content: center;
+  }
+
+  .indexCtasGitHubButton {
+    display: none;
+  }
 }
 
 @keyframes jackInTheBox {
@@ -102,87 +183,3 @@
   }
 }
 
-.heroLogo {
-  animation-duration: 2s;
-  animation-name: jackInTheBox;
-  float: right;
-  margin-top: 20px;
-  padding: 0 20px 20px;
-  width: 16vw;
-  height: 16vw;
-}
-
-.indexCtas {
-  display: flex;
-  align-items: center;
-  margin-top: 24px;
-}
-
-.indexCtasGetStartedButton {
-  border: 2px solid var(--ifm-color-primary);
-  line-height: 1.2em;
-  text-decoration: none !important;
-  text-transform: uppercase;
-  transition: background 0.3s, color 0.3s;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-  padding: 18px 36px;
-}
-
-.indexCtasGitHubButtonWrapper {
-  display: flex;
-}
-
-.indexCtasGitHubButton {
-  border: none;
-  margin-left: 24px;
-  overflow: hidden;
-}
-
-@media only screen and (max-width: 768px) {
-  .hero {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .heroInner {
-    padding: 0;
-  }
-
-  .heroProjectTagline {
-    font-size: 36px;
-    text-align: center;
-  }
-
-  .heroLogo {
-    display: block;
-    float: none;
-    margin: 0 auto;
-  }
-
-  .indexCtas {
-    justify-content: center;
-  }
-
-  .indexCtasGitHubButton {
-    display: none;
-  }
-}
-
-.appsContainer {
-  max-width: var(--ifm-container-width);
-  margin: 0 auto;
-  padding: 0 var(--ifm-spacing-horizontal);
-  width: 100%;
-}
-
-.appDescription {
-  font-size: var(--ifm-h5-font-size);
-  font-weight: 300;
-  color: var(--ifm-color-primary);
-}
-.logo {
-  border-radius: 0;
-}

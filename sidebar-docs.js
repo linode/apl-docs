@@ -1,13 +1,9 @@
 module.exports = {
   mainSidebar: {
     "Getting Started": [
-      "get-started/introduction",
+      "get-started/prerequisites",
       "get-started/installation",
-    ],
-    "Product": [
-      "product/architecture",
-      "product/roadmap",
-      "product/faq",
+      "get-started/activation",
     ],
     "For Ops": [
       {
@@ -21,7 +17,7 @@ module.exports = {
           "for-ops/console/services",
           "for-ops/console/jobs",
           {
-            "Settings": [
+            Settings: [
               "for-ops/console/settings/cluster",
               "for-ops/console/settings/otomi",
               "for-ops/console/settings/key-management",
@@ -45,9 +41,8 @@ module.exports = {
       },
       {
         "Otomi CLI": [
-          "for-ops/cli/overview",
-          "for-ops/cli/working-with",
-          "installation/cli",
+          "for-ops/cli/installation",
+          "for-ops/cli/deploying",
           {
             "CLI Commands": [
               "for-ops/cli/apply",
@@ -75,7 +70,7 @@ module.exports = {
         ],
       },
       {
-        "SRE": [
+        SRE: [
           "for-ops/sre/overview",
           "for-ops/sre/daily",
           "for-ops/sre/upgrades",
@@ -120,13 +115,10 @@ module.exports = {
           "for-devs/get-started/part-14",
           "for-devs/get-started/part-15",
           "for-devs/get-started/part-16",
-
         ],
       },
     ],
-    "For CISOs": [
-      "for-ciso/overview",
-    ],
+    "For CISOs": ["for-ciso/overview"],
     "Otomi Apps": [
       "apps/alertmanager",
       "apps/argocd",
@@ -149,12 +141,6 @@ module.exports = {
       "apps/thanos",
       "apps/vault",
       "apps/velero",
-    ],
-    "Contributing": [
-      "contributing/contributing",
-      "contributing/expectations",
-      "contributing/code-of-conduct",
-      "contributing/values",
     ],
   },
 };

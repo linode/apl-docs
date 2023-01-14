@@ -4,82 +4,6 @@ title: Installation
 sidebar_label: Installation
 ---
 
-## Prerequisites
-
-### Client binaries
-
-When installing Otomi using the chart, make sure the following client binaries exist:
-
-- [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to access the cluster
-- [Helm](https://helm.sh/docs/intro/install/) for helm chart installation of Otomi
-
-### Supported Providers
-
-:::info
-We have created [quickstarts](https://github.com/redkubes/quickstart) for Azure, GCP, AWS, Linode, Digital Ocean and Minikube to help you spin-up a Kubernetes cluster.
-:::
-
-#### Azure (AKS)
-
-To install Otomi on a AKS cluster in Azure, use the `azure` provider. The `azure` provider includes creating optimized storage classes and optional integration with the  a Application Gateway Ingress Controller add-on.
-
-#### Amazon Web Services (EKS)
-
-To install Otomi on a EKS cluster in AWS, use the `aws` provider.
-
-#### Google Cloud Platform (GKE)
-
-To install Otomi on a GKE cluster in GCP, use the `google` provider.
-
-#### Digital Ocean
-
-To install Otomi on a Kubernetes cluster in Digital Ocean, use the `digitalocean` provider. Otomi is also available in the Digital Ocean [marketplace](https://marketplace.digitalocean.com/apps/otomi?refcode=476bfcac9ec9&action=deploy).
-
-#### OVHcloud
-
-To install Otomi on a  OVHcloud [Managed Kubernetes Service](https://www.ovhcloud.com/en-gb/public-cloud/kubernetes/), use the `ovh` provider.
-
-#### Vultr (VKE)
-
-To install Otomi on a [Vultr Kubernetes Engine (VKE)](https://www.vultr.com/docs/vultr-kubernetes-engine/) cluster, use the `vultr` provider.
-
-#### All others
-
-Use the `custom` provider for all other clouds, and when running Kubernetes on your own hardware (including Minikube on your local machine). The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that obtains an external accessible IP.
-
-:::info NOTE
-
-When using Minikube, only Otomi Core apps can be used! Activating more apps will require more compute resources. We advise to have a node pool available with at least 12 vCPU and 32 GiB memory.
-
-:::
-
-### Kubernetes versions
-
-Otomi currently supports the following Kubernetes versions:
-
-- `1.18`
-- `1.19`
-- `1.20`
-- `1.21`
-- `1.22`
-- `1.23`
-
-### Minimal compute resource requirements
-
-Otomi requires a node pool with at least **6 vCPU** threads and **8GiB+ RAM**. Note that this is the requirements for a minimal (default) install. When activating more apps, you'll probably need more resources.
-
-:::info ATTENTION
-
-The minimal resource requirement to run Otomi is based on running Core Apps only! The core apps provide an advanced ingress architecture based on Nginx, Istio, Keycloak, Oaut2 Proxy and Certmanager. Activating optional apps will require more compute resources. We advise to have a node pool available with 12 vCPU and 32 GiB memory.
-
-:::
-
-### CNI
-
-To use the network policies feature in Otomi, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI or any other CNI that supports Kubernetes network polices.
-
-## Installation
-
 ### Install Otomi with Helm
 
 #### Add the Otomi repository
@@ -91,7 +15,7 @@ helm repo update
 
 See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
-#### Minimal configuration**
+#### Minimal configuration\*\*
 
 ```yaml
 cluster:
@@ -242,13 +166,13 @@ To install Otomi with Azure Active Directory as IdP instead of (default) Keycloa
 
 ```yaml
 oidc:
-  clientID: ''
-  clientSecret: ''
-  issuer: ''
+  clientID: ""
+  clientSecret: ""
+  issuer: ""
   # IDP group id used to identify global admin
-  adminGroupID: ''
+  adminGroupID: ""
   # IDP group id used to identify team admin
-  teamAdminGroupID: ''
+  teamAdminGroupID: ""
 ```
 
 :::note
@@ -281,7 +205,7 @@ To install Otomi with SOPS/KMS, use the following values:
 ```yaml
 kms:
   sops:
-    provider: '' # provider can be one of aws|azure|google|vault
+    provider: "" # provider can be one of aws|azure|google|vault
 #     aws:
 #       keys: ''
 #       accessKey: ''
@@ -301,87 +225,3 @@ kms:
 ```
 
 But you can also enable SOPS/KMS after installing Otomi using Otomi Console.
-
-## Activation
-
-After Otomi is installed, Drone needs to be activated. Follow the instructions below:
-
-### Step 1: Get the log output of the installer job
-
-When the installer job (in the default namespace) has finished, copy the URL and the generated password from the bottom of the logs, sign in to the console with the provided URL, username and password.
-
-Use the following command to get the logs of the installer job:
-
-```
-kubectl logs jobs/otomi -n default -f
-```
-
-### Step 2 (optional): Add the auto generated CA to your keychain
-
-Otomi by default automatically generates a CA. The generated CA is of course not trusted on your local machine. Here are some options to prevent you from clicking away lots of security warning in your browser:
-
-1. In the left menu of the console, click on "Download CA"
-2. Double click the downloaded CA.crt or add the CA to your keychain on Mac using the following command:
-
-```bash
-sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/Downloads/ca.crt
-```
-
-On Windows, use PowerShell (running as Administrator) with the Certutil:
-
-```powershell
-certutil.exe -addstore root <downloaded cert path>
-```
-
-Or:
-
-```powershell
-Import-Certificate -FilePath "<downloaded cert path>" -CertStoreLocation Cert:\LocalMachine\Root
-# Restart the browser
-```
-
-But you could also run Chrome in insecure mode:
-
-```bash
-alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors --ignore-urlfetcher-cert-requests &> /dev/null'
-```
-
-3. Optional: Restart Docker (to support pushing images to Harbor)
-
-### Step 3: Activate Drone
-
-[Drone](https://www.drone.io/) is an integral part in the deployment of Otomi cluster configuration.
-
-1. In the side menu of Otomi Console under `platform` click on the **Drone** app
-2. Click on the `play` button in the top right. A new tab will open for Drone
-3. Sign in locally with as `otomi-admin` and the password provided in the logs of the installer job.
-4. Click on `Authorize Application`
-5. Click on `Submit on the Complete your Drone Registration page. You don't need to fill in your Email, Full Name or Company Name if you don't want to
-6. Click on the `otomi/values` repository
-7. Click on `+ Activate Repository`
-
-### Step 4 (Optional): Create a new admin user
-
-:::info ATTENTION
-
-We strongly advise to not use the default `otomi-admin` account after activation and to not change the password. Store it somewhere safe and only use it in case absolutely required.
-
-:::
-
-[Create a new user account in Keycloak](/docs/apps/keycloak#step-2-create-a-user-in-keycloak) and add the new user to the `otomi-admin` and `team-admin`.
-
-### Step 5 (Optional): Add the URL of the Kubernetes API
-
-:::info NOTE
-
-Adding the URL of the K8s cluster API is required by teams to be able to download the KUBECONFIG
-
-:::
-
-- Under `Platform` in Otomi Console, click on `Settings`
-- Click on `Cluster`
-- Add the full URL of the API server
-- Click on `Submit`
-- Click on `Deploy Changes`
-
-

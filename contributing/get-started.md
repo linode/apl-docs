@@ -1,6 +1,6 @@
 ---
 title: Get started with contributing
-slug: contributing
+slug: get-started
 sidebar_label: Getting started
 ---
 
@@ -23,9 +23,10 @@ Before submitting code to Otomi, you should first complete the following prerequ
 Please make sure to read and observe the [Code of Conduct](code-of-conduct) and
 [Community Values](community-values)
 
-### Developer guid
+### Developer guide
 
 Effective development starts with an understanding the code structure and the relationship between different components of the system. Read the [Code development guide](https://github.com/redkubes/otomi-core/blob/main/docs/development.md) to learn how to develop on Otomi.
+
 ### Setting up your development environment
 
 It is not required to set up a developer environment in order to contribute to Otomi, but if you do plan to contribute code changes, follow the instructions in the Developer Docs on how to [Set up your development environment](https://github.com/redkubes/otomi-core/blob/main/docs/setup.md).
@@ -34,8 +35,4 @@ It is not required to set up a developer environment in order to contribute to O
 
 Otomi is a community project. Consequently, it is wholly dependent on its community to provide a productive, friendly and collaborative environment.
 
-Please read and review the [Community Expectations] for an understanding of code and review expectations.
-
-## Community
-
-Otomi is just starting its open-source community. As many open source projects often do, it depends on new people becoming members and regular code contributors. Please consider joining the Otomi community!
+Please read and review the [Contribution Expectations](expectations) for an understanding of code and review expectations.

@@ -40,7 +40,7 @@ function Home() {
             <div className={styles.indexCtas}>
               <Link
                 className={styles.indexCtasGetStartedButton}
-                to={useBaseUrl("docs/installation/get-started")}
+                to={useBaseUrl("docs/get-started/installation")}
               >
                 Get Started
               </Link>
@@ -58,7 +58,7 @@ function Home() {
         </div>
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
-            Otomi pre-configures and integrates with leading apps:
+            One console to rule them all 
           </div>
         </div>
         <div className={clsx(styles.announcement, styles.announcementList)}>

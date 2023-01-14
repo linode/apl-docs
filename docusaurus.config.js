@@ -118,7 +118,7 @@ module.exports = {
           position: "left",
         },
         {
-          to: "docs/installation/get-started",
+          to: "docs/get-started/installation",
           label: "Docs",
           position: "left",
         },

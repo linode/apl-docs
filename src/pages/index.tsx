@@ -58,7 +58,7 @@ function Home() {
         </div>
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
-            One console to rule them all 
+            One schema to rule them all 
           </div>
         </div>
         <div className={clsx(styles.announcement, styles.announcementList)}>

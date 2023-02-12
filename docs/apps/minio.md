@@ -1,7 +1,7 @@
 ---
-slug: thanos
-title: Thanos
-sidebar_label: Thanos
+slug: minio
+title: Minio
+sidebar_label: Minio
 ---
 
 ## Introduction

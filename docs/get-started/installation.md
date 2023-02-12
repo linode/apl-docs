@@ -116,13 +116,11 @@ apps:
 dns:
 #   domainFilters: []
 #   zoneIdFilters: []
-#   provider: # provide one of the following below: aws|azure|google
+#   provider: # provide one of the following: aws|azure|google|digitalocean|azure-private-dns|cloudflare|other
 #     aws:
-#       # next two keys are optional for explicit access with an iam role
-#       # (if no metadata exists with implicit role access to manage dns)
-#       accessKeySecret: ''
-#       secretAccessKey: ''
-#       # region is always needed
+#       credentials:
+#         secretKey: ''
+#         accessKey: ''
 #       region: eu-central-1
 #       role: '' # optional ARN, may be set explicitly if no metadata can be accessed
 #     azure:

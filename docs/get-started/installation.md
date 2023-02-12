@@ -19,7 +19,7 @@ See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
 ```yaml
 cluster:
-  k8sVersion: "1.23" # currently 1.18, 1.19, 1.20, 1.21, 1.22 and 1.23 are supported
+  k8sVersion: "1.23" # currently 1.20, 1.21, 1.22 and 1.23 are supported
   name: # the name of your cluster
   provider: # choose between aws, azure, google, digitalocean or custom
 ```

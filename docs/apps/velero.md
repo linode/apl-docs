@@ -1,15 +1,31 @@
 ---
 slug: velero
-title: Working with Velero
+title: Velero
 sidebar_label: Velero
 ---
 
-:::note
 
-Velero is only supported on Azure and AWS. Support for more providers is coming soon.
-:::
+## Introduction
 
-Velero is an optional app for backup and restores. To start using Velero, follow these steps:
+Velero can be activated for creating backups of PVC's and Kubernetes resources.
+
+## Configuration
+
+### Azure
+
+Velero in Otomi uses the Velero plugin for Microsoft Azure. To setup Velero in Azure, follow the instructions [here](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure). Note that Otomi only supports the use of Service Principals.
+
+### AWS
+
+Velero in Otomi uses the Velero plugin for AWS. To setup Velero in AWS, follow the instructions [here](https://github.com/vmware-tanzu/velero-plugin-for-aws).
+
+## Automation
+
+## Integrations
+
+## Instructions
+
+ To start using Velero, follow these steps:
 
 1. Activate the Velero app by dragging the app to the activated apps section.
 2. Click on the app en go to the `Values` tab
@@ -22,12 +38,3 @@ Velero is an optional app for backup and restores. To start using Velero, follow
 Velero will now be installed and the backup schedules will be created. Check the cloud storage endpoint to see if the backups have been created.
 
 Optionally install the Velero [cli](https://velero.io/docs/v1.9/velero-install/).
-
-## Azure
-
-Velero in Otomi uses the Velero plugin for Microsoft Azure. To setup Velero in Azure, follow the instructions [here](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure). Note that Otomi only supports the use of Service Principals.
-
-
-## AWS
-
-Velero in Otomi uses the Velero plugin for AWS. To setup Velero in AWS, follow the instructions [here](https://github.com/vmware-tanzu/velero-plugin-for-aws).

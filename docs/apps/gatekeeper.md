@@ -1,12 +1,14 @@
 ---
 slug: gatekeeper
-title: Working with Gatekeeper
+title: Gatekeeper
 sidebar_label: Gatekeeper
 ---
 
 ## Introduction
 
 Otomi offers Kubernetes security best practices through security constraints defined as OPA policies and enforced by Gatekeeper.
+
+## Configuration
 
 ### Security in-depth
 
@@ -20,7 +22,7 @@ Otomi's generated resources are statically evaluated by Conftest before deployme
 
 The same policies are upheld by OPA's Gatekeeper on the cluster during runtime, making sure all deployed resources are approved by it's admission hook.
 
-## Gatekeeper
+### Modes
 
 Otomi supports 3 modes:
 
@@ -32,6 +34,8 @@ In both Enforcing and Permissive mode, individual policies can be switched on or
 
 Customization of the policies is supported based on the Otomi [schema](https://github.com/redkubes/otomi-core/blob/main/values-schema.yaml) (or use Otomi Console). In case of specific requirements, admins can add their own custom policies.
 
+
+## Instructions
 ### Switching modes
 
 Gatekeeper by default is disabled. To turn on Gatekeeper by dragging Gatekeeper from the disabled apps section (under Platform/Apps) to the enabled aps section and click on `Deploy Changes`.

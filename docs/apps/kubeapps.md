@@ -1,8 +1,10 @@
 ---
 slug: kubeapps
-title: Working with Kubeapps
+title: Kubeapps
 sidebar_label: Kubeapps
 ---
+
+## Introduction
 
 Kubeapps is a web-based UI for deploying and managing applications in Kubernetes clusters. Kubeapps allows you to:
 
@@ -11,6 +13,14 @@ Kubeapps is a web-based UI for deploying and managing applications in Kubernetes
 - Add custom and private chart repositories
 - Browse and deploy Kubernetes Operators
 
+## Configuration
+
+## Automation
+
+## Integrations
+
 Kubeapps is not yet user- and tenant aware. Teams can login to Kubeapps using the generated token that is provided when downloading the KUBECFG (through Otomi Console).
 
 Take notice: Most of the public charts do not comply with the Otomi security policy baseline.
+
+## Instructions

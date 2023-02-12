@@ -1,16 +1,32 @@
 ---
 slug: ingress-nginx
-title: Working with ingress-NGINX Controller for Kubernetes
+title: NGINX Ingress
 sidebar_label: Ingress-nginx
 ---
 
+## Introduction
+
+## Configuration
+
+### Using the OWASP rule set
+
+The OWASP ModSecurity Core Rule Set (CRS) is a set of generic attack detection rules for use with ModSecurity or compatible web application firewalls. The CRS aims to protect web applications from a wide range of attacks, including the OWASP Top Ten, with a minimum of false alerts. The CRS provides protection against many common attack categories, including SQL Injection, Cross Site Scripting, Local File Inclusion, etc.
+
+The OWASP rule set can only be enabled when ModSecurity is enabled. Read more about the OWASP rule set [here](https://owasp.org/www-project-modsecurity-core-rule-set/)
+
+## Automation
+
+Teams will be be automatically given a git repository in Gitea named `team-$teamId-argocd`, and ArgoCD is automatically configured to access the repository and sync. All that is left to do is for a team-admin (or team member with self-service rights) to fill their repository with intended state and commit.
+
+## Integrations
+
 Otomi integrated NGINX Ingress Controller into an advanced [ingress architecture](/product/architecture#ingress--sso).
 
-## Using ModSecurity
+## Instructions
 
-By default, ModSecurity is not enabled in Nginx.
+### Using ModSecurity
 
-To turn on ModSecurity, go to the values tab of the app. Under `Mod security` click `enabled`.
+By default, ModSecurity is not enabled in Nginx. To turn on ModSecurity, go to the values tab of the app. Under `Mod security` click `enabled`.
 
 <!-- ![NGINX Modsecurity](../img/mod-security.png) -->
 
@@ -30,9 +46,3 @@ modsecurity-snippet: |
 ```
 
 To change the modsecurity configuration, use `Raw values`. [Here](<https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#Configuration_Directives>) is an overview of all the configuration directives.
-
-## Using the OWASP rule set
-
-The OWASP ModSecurity Core Rule Set (CRS) is a set of generic attack detection rules for use with ModSecurity or compatible web application firewalls. The CRS aims to protect web applications from a wide range of attacks, including the OWASP Top Ten, with a minimum of false alerts. The CRS provides protection against many common attack categories, including SQL Injection, Cross Site Scripting, Local File Inclusion, etc.
-
-The OWASP rule set can only be enabled when ModSecurity is enabled. Read more about the OWASP rule set [here](https://owasp.org/www-project-modsecurity-core-rule-set/)

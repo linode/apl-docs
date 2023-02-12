@@ -1,8 +1,12 @@
 ---
 slug: keycloak
-title: Working with Keycloak
+title: Keycloak
 sidebar_label: Keycloak
 ---
+
+## Introduction
+
+## Configuration
 
 The SSO login page for Otomi is served by Keycloak. It is used as an identity broker or provider for all Otomi integrated applications. Keycloak is configured with mappers that normalize incoming identities from an IDP to have predictable claims format to be used by Otomi applications.
 
@@ -16,11 +20,12 @@ Group (team) membership is reflected in the user's 'groups' claim. When this aut
 
 When there are different requirements to use Keycloak for business applications, Keycloak's designated "master" and "otomi" realms may not be used, and an additional realm needs to be created. We refer to the keycloak docs for any custom configuration targeting business applications.
 
-## Default admin account
+## Automation
 
-## Creating users
+## Integrations
 
-### Step 2: Create a user in Keycloak
+## Instructions
+### Create a user in Keycloak
 
 To create users in Keycloak, follow these steps:
 

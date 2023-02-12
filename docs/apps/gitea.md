@@ -1,6 +1,6 @@
 ---
 slug: gitea
-title: Working with Gitea
+title: Gitea
 sidebar_label: Gitea
 ---
 
@@ -10,10 +10,18 @@ Gitea is a community managed lightweight code hosting solution written in Go. Be
 
 Gitea may be used for other purposes, and is especially useful in combination with Drone as a CI/CD solution. Just like Otomi uses it.
 
-## Gitea for GitOps
+## Configuration
+
+### Role based access
+
+Currently Gitea only supports a single role in combination with OIDC. To sign in to Gitea, a user needs to be a member of the `team-admin` group. Team members by default do not have access to Gitea.
+
+## Automation
 
 When Argo CD is enabled, Otomi will automatically create a GitOps repository for each Team in Gitea.
 
-## Role based access
+## Integrations
 
-Currently Gitea only supports a single role in combination with OIDC. To sign in to Gitea, a user needs to be a member of the `team-admin` group. Team members will not have access to Gitea.
+## Instructions
+
+

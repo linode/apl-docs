@@ -1,7 +1,7 @@
 ---
-slug: thanos
-title: Thanos
-sidebar_label: Thanos
+slug: trivy
+title: Trivy Operator
+sidebar_label: Trivy Operator
 ---
 
 ## Introduction

@@ -108,10 +108,10 @@ export default [
     desc: "Observe the Istio service mesh relations and connections",
   },
   {
-    href: "https://openid.net/",
-    src: "openid-logo.svg",
-    name: "Oauth2 / OpenID",
-    desc: "Authenticate users against any OIDC provider",
+    href: "https://min.io/",
+    src: "minio-logo.svg",
+    name: "Minio",
+    desc: "Multi-Cloud Object Storage",
   },
   {
     href: "https://velero.io/",
@@ -130,5 +130,17 @@ export default [
     src: "nginx-logo.svg",
     name: "Ingress NGINX",
     desc: "Create and manage external access to the services in your clusters",
+  },
+  {
+    href: "https://thanos.io",
+    src: "thanos-logo.svg",
+    name: "Thanos",
+    desc: "HA Prometheus setup with long term storage capabilities",
+  },
+  {
+    href: "https://aquasecurity.github.io/trivy-operator/v0.11.0/",
+    src: "trivy-logo.svg",
+    name: "Trivy",
+    desc: "Kubernetes-native security toolkit",
   },
 ];

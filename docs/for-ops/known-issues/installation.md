@@ -10,9 +10,7 @@ Otomi can be installed on any Kubernetes cluster. But there are always infrastru
 
 **Problem**
 
-```
 Metrics server will not start when installing on a K8s cluster (like on Minikube or a cluster created with Kubeadm) with Kube API using self-signed certificates
-```
 
 **Solution** 
 

@@ -23,6 +23,8 @@
     "istioctl",
     "istiod",
     "thanos",
+    "kubelet",
+    "kubeadm",
     "Jehoszafat",
     "jsonnet",
     "jzimnowoda",

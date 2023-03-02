@@ -83,6 +83,7 @@ module.exports = {
           "for-ops/known-issues/cli",
           "for-ops/known-issues/harbor",
           "for-ops/known-issues/istio",
+          "for-ops/known-issues/installation",
           "for-ops/known-issues/loki",
         ],
       },

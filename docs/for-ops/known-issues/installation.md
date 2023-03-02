@@ -1,5 +1,5 @@
 ---
-slug: istio
+slug: installation
 title: 'Known Issues: Installation'
 sidebar_label: 'Installation'
 ---

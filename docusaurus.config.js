@@ -176,8 +176,8 @@ module.exports = {
               href: "https://www.facebook.com/groups/otomiusers",
             },
             {
-              label: "community",
-              to: "/community/get-started",
+              label: "Start contributing",
+              to: "/community/welcome",
             },
           ],
         },

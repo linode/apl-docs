@@ -86,11 +86,15 @@ helm install -f values.yaml my-otomi-release chart/otomi
 helm uninstall my-otomi-release
 ```
 
-Doing a Helm uninstall will only remove the job used to deploy Otomi. It will not remove all the installed components. If you would like to do a complete uninstall, we advise to first clone the `otomi/values` repository (to secure the configuration) and then uninstall using Otomi CLI.
+Doing a Helm uninstall will remove all Helm releases deployed by Otomi. After uninstalling, some namespaces created by Otomi can stay in a Terminating status. To remove all namespaces in a Terminating status, run the following command:
+
+```
+for ns in $(kubectl get ns --field-selector status.phase=Terminating -o jsonpath='{.items[*].metadata.name}'); do kubectl get ns $ns -ojson | jq '.spec.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/$ns/finalize" -f -; done
+```
 
 ## Optional Configuration
 
-You can optionally configure Otomi to use an external IDP (Azure AD), use an external Key Management Service (KMS) provider for SOPS and use a DNS zone in combination with LetsEncrpt certificates. Below you can find detailed instructions on how to set up Azure AD as an external IDP and configure KMS. We will soon add more instructions for other IDPs, such as Amazon Incognito, Google Identity, and Okta.
+You can optionally configure Otomi to use an external IDP (Azure AD), use an external Key Management Service (KMS) for SOPS and use a DNS zone in combination with LetsEncrpt certificates or a custom CA. Below you can find detailed instructions on how to set up Azure AD as an external IDP and configure KMS. We will soon add more instructions for other IDPs, such as Amazon Incognito, Google Identity, and Okta.
 
 ### Use DNS and Let's Encrypt
 
@@ -160,7 +164,7 @@ At the 'Authentication' tab you should be able to set the following callback URL
 - `https://keycloak.<dns-zone-name>/realms/master/broker/otomi-idp/endpoint`
 - `https://keycloak.<dns-zone-name>`
 
-To install Otomi with Azure Active Directory as IdP instead of (default) Keycloak, use the following values:
+To install Otomi with Azure Active Directory as an IdP instead of (default) using Keycloak as an IdP, use the following values:
 
 ```yaml
 oidc:
@@ -183,7 +187,6 @@ apps:
     idp:
       alias: <your-alias>
 ```
-
 :::
 
 ### Use KMS to manage keys for encryption
@@ -221,5 +224,3 @@ kms:
 #     vault:
 #       token: ''
 ```
-
-But you can also enable SOPS/KMS after installing Otomi using Otomi Console.

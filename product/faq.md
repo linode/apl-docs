@@ -8,9 +8,9 @@ title: FAQ
 <details>
   <summary>Is Otomi a lightweight version of Rancher or OpenShift</summary>
 
-We understand that solutions like Rancher and OpenShift all propagate that their products ship with integrated tools, but we take the term integrated a little more serious. Within Otomi, integrated means applications are pre-configured with Otomi default configuration values, applications have been adjusted to comply with all Otomi security policies, and applications have been made user-aware (using OIDC) and multi-tenant.
+We understand that products like Rancher and OpenShift all propagate that they ship with integrated tools, but we take the term integrated a little more serious. Within Otomi, integrated means applications are pre-configured with Otomi default configuration values, applications have been adjusted to comply with all Otomi security policies, and applications have been made user-aware (using OIDC) and multi-tenant.
 
-Otomi can NOT be used to provision and manage Kubernetes clusters. Otomi is an application stack on top of Kubernetes that can be installed with one Helm chart, and offers a complete suite of integrated and pre-configured applications combined with automation and developer self-service.
+Otomi can NOT be used to provision and manage Kubernetes clusters. Otomi is an application stack on top of Kubernetes that can be installed with a Helm chart, and offers a complete suite of integrated and pre-configured applications combined with automation and developer self-service. Another huge difference compared to OpenShift and Rancher is that everything in Otomi is reflected in code and stored in Git.
 
 </details>
 
@@ -26,7 +26,7 @@ We can imagine when looking at the list of all pre-configured and ready-to-use a
 <details>
   <summary>What are the minimal requirements to install Otomi?</summary>
 
-Otomi requires a running Kubernetes cluster of version `1.18` up to `1.23` using a Node pool with at least `6 vCPU` and `8 GiB memory`, but more is recommended. When using the `custom` provider (when installing Kubernetes on a not supported provider), make sure Otomi can create a K8s LoadBalancer Service that is accessible from your machine (but not using 127.0.0.1).
+Otomi requires a running Kubernetes cluster of version `1.20` up to `1.23` using a Node pool with at least `6 vCPU` and `8 GiB memory`, but more is recommended. When using the `custom` provider (when installing Kubernetes on a unsupported provider), make sure Otomi can create a K8s LoadBalancer Service that is accessible from your machine (but not using 127.0.0.1).
 
 </details>
 

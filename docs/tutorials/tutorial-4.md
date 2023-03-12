@@ -1,13 +1,11 @@
 ---
-slug: tutorials/build-tag-push
+slug: tutorial-4
 title: Build, tag and push an image to Harbor
 sidebar_label: Push an image to harbor
 ---
 
 :::note
-
-When Otomi is installed without using Let's Encrypt production certificates, make sure you download the CA.crt, added it to your Keychain and restarted Docker.
-
+When Otomi is installed without using Let's Encrypt production certificates, make sure you download the CA.crt, add it to your Keychain and restarted Docker.
 :::
 
 In this tutorial, you are going to:
@@ -19,16 +17,16 @@ In this tutorial, you are going to:
 
 When you created a Team in Otomi, Otomi will automatically create a project for the team in Harbor. In this tutorial we'll assume you have created a team called `demo`.
 
-### Activate Harbor
+## Instructions
+
+1. Activate Harbor
 
 Go to `Apps` under the `Platform` section in the side menu and Drag and Drop `Harbor` from the `Disabled apps` to the `Enabled apps`.
 
-### Create a robot account in Harbor
+2. Create a robot account in Harbor
 
 :::note
-
 Robot accounts for teams can only be created by users with the `otomi-admin` role
-
 :::
 
 - Go to `https://harbor.<your-ip>.nip.io`
@@ -43,7 +41,7 @@ Robot accounts for teams can only be created by users with the `otomi-admin` rol
 - Copy the generated token
 
 
-### Download the demo application used in this tutorial
+3. Download the demo application used in this tutorial
 
 Clone the repo used for this tutorial:
 
@@ -51,7 +49,7 @@ Clone the repo used for this tutorial:
 git clone https://github.com/redkubes/nodejs-helloworld.git
 ```
 
-### Login to Harbor
+4. Login to Harbor
 
 Login with username `otomi-team-demo-push` & password: `token`
 
@@ -59,7 +57,7 @@ Login with username `otomi-team-demo-push` & password: `token`
 docker login -u 'otomi-team-demo-push' -p '$token' harbor.<your-ip>.nip.io
 ```
 
-### Build, tag and push the image
+5. Build, tag and push the image
 
 Build and tag the image:
 

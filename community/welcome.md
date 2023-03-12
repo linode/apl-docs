@@ -1,12 +1,10 @@
 ---
-title: Get started with contributing
-slug: get-started
-sidebar_label: Getting started
+title: Welcome to our community
+slug: welcome
+sidebar_label: Welcome
 ---
 
-## Welcome
-
-So you might be interested in contributing to Otomi, awesome! This guide will help you understand the overall organization of the project, and direct you to the best places to get started contributing. You'll be able to pick up issues, write code to fix them, and get your work reviewed and merged. All feedback is welcome!
+So you are interested to get involved with Otomi? Awesome! This guide will help you understand the overall organization of the project, and direct you to the best places to get started. You'll be able to pick up issues, write code to fix them, and get your work reviewed and merged. All feedback is welcome!
 
 This document is the single source of truth for how to contribute to the following code bases:
 

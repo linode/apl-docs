@@ -14,6 +14,7 @@ module.exports = {
           "for-ops/console/clusters",
           "for-ops/console/policies",
           "for-ops/console/teams",
+          "for-ops/console/workloads",
           "for-ops/console/services",
           "for-ops/console/jobs",
           {
@@ -93,6 +94,7 @@ module.exports = {
         "Otomi Console": [
           "for-devs/console/apps",
           "for-devs/console/shortcuts",
+          "for-devs/console/workloads",
           "for-devs/console/services",
           "for-devs/console/jobs",
           "for-devs/console/secrets",
@@ -120,7 +122,7 @@ module.exports = {
       },
     ],
     "For CISOs": ["for-ciso/overview"],
-    "Otomi Apps": [
+    "Otomi Tools": [
       "apps/alertmanager",
       "apps/argocd",
       "apps/certmanager",
@@ -144,6 +146,19 @@ module.exports = {
       "apps/trivy",
       "apps/vault",
       "apps/velero",
+    ],
+    "Tutorials": [
+      "tutorials/overview",
+      "tutorials/tutorial-1",
+      "tutorials/tutorial-2",
+      "tutorials/tutorial-3",
+      "tutorials/tutorial-4",
+      "tutorials/tutorial-5",
+      "tutorials/tutorial-6",
+      "tutorials/tutorial-7",
+      "tutorials/tutorial-8",
+      "tutorials/tutorial-9",
+      "tutorials/tutorial-10",
     ],
   },
 };

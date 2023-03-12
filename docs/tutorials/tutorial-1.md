@@ -1,12 +1,12 @@
 ---
-slug: tutorials/basic-install-for-tutorial
+slug: tutorial-1
 title: Installing Otomi
 sidebar_label: Install Otomi
 ---
 
 To go through the tutorials, you first need to install Otomi on a running Kubernetes cluster.
 
-In this lab, we'll be installing [Otomi](https://github.com/redkubes/otomi-core) using `helm`.
+In this first tutorial, we'll be installing [Otomi](https://github.com/redkubes/otomi-core) using `helm`.
 
 ## Instructions
 
@@ -21,7 +21,7 @@ In this lab, we'll be installing [Otomi](https://github.com/redkubes/otomi-core)
 
     ```bash
     helm install otomi otomi/otomi \
-    --set cluster.k8sVersion="1.21" \
+    --set cluster.k8sVersion="1.23" \
     --set cluster.name=$CLUSTERNAME \
     --set cluster.provider=$PROVIDER
     ```
@@ -36,7 +36,7 @@ In this lab, we'll be installing [Otomi](https://github.com/redkubes/otomi-core)
     watch helm list -Aa
     ```
 
-4. When the installer job has finished, go to the end of the logs
+4. When the installer job is finished, go to the end of the logs
 
     ```bash
     kubectl logs jobs/otomi -n default -f
@@ -46,11 +46,11 @@ In this lab, we'll be installing [Otomi](https://github.com/redkubes/otomi-core)
 
     ```bash
     2022-04-01T10:01:59.239Z otomi:cmd:commit:commit:info                                                                                            
-    ######################################################################################## #                                                                                                                       
-    #  To start using Otomi, go to https://<your-ip>.nip.io and sign in to the web console 
-    #  with username "otomi-admin" and password "password".
-    #  Then activate Drone. For more information see: https://otomi.io/docs/installation/activation/
-    ########################################################################################
+    ################################################################################################
+    #  To start using Otomi, go to https://<your-ip>.nip.io and sign in to the web console         #
+    #  with username "otomi-admin" and password "password".                                        #
+    #  Then activate Drone. For more information see: https://otomi.io/docs/get-started/activation #
+    ################################################################################################
     ```
 
 5. Sign in to the web UI (Otomi Console)
@@ -87,10 +87,9 @@ In this lab, we'll be installing [Otomi](https://github.com/redkubes/otomi-core)
 
 8. Activate Drone:
 
-- In the side menu of Otomi Console under `platform` click on the `Drone` app
-- Click on the `play` button in the top right. A new tab will open for Drone
-- Sign in locally with as `otomi-admin` and the password provided in the logs of the installer job.
+- In the side menu of Otomi Console under `platform` click on `apps` and then on the `Drone` app
+- Sign in locally with as `otomi-admin` and the password provided in the logs of the installer job
 - Click on `Authorize Application`
-- Click on `Submit on the Complete your Drone Registration page. You don't need to fill in your Email, Full Name or Company Name if you don't want to
+- Click on `Submit` on the Complete your Drone Registration page. You don't need to fill in your Email, Full Name or Company Name if you don't want to
 - Click on the `otomi/values` repository
 - Click on `+ Activate Repository`

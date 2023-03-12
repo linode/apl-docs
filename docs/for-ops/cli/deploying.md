@@ -1,7 +1,7 @@
 ---
 slug: deploying
-title: Deploying apps with CLI
-sidebar_label: Deploying apps
+title: Using Otomi CLI
+sidebar_label: Using Otomi CLI
 ---
 
 ## 1. Initialize a values repo

@@ -1,43 +1,54 @@
 ---
 slug: introduction
-title: Introduction
-sidebar_label: Introduction
+title: Why Otomi
+sidebar_label: Why Otomi
 ---
 
-Otomi is an open source self-hosted PaaS to run on top of any Kubernetes cluster and is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. Otomi attempts to connect many of the technologies found in the CNCF landscape in a way to provide direct value. Otomi can be installed on any Kubernetes cluster, offering a multi and hybrid platform experience out-of-the-box. No more re-inventing the wheel when building and maintaining your own Kubernetes based (internal developer) platform or bespoke stack.
+## The vision
+Kubernetes has been called The Operating System of the Cloud. In our opinion, Kubernetes is only the Kernel of the Operating System of the Cloud. The Operating System (or Kubernetes-based Platform) is something you'll need to build yourself. And this is what organizations are now doing when using Kubernetes. All reinventing the wheel.
 
-## Goals
+Building a Kubernetes-based platform requires a huge investment and requires skilled engineers. But why would you invest in building and maintaining a custom platform? Why can't you just install everyting you need to turn Kubernetes into a full platform, just like you can download a Linux distribution? Any infrastructure, one install, all the tools you need in an integrated and automated way, easy self-service, Git-based.
 
-**Developers** - To focus on their apps only
+## What is Otomi
 
-- Deploy containerized apps without writing any YAML manifests
-- Get a standardized set of observability tools
-- Store charts and images in a private registry
-- Build and run custom CI pipelines
-- Enable declarative end-to-end app lifecycle management
-- Configure ingress for apps with a single click
-- Manage secrets
+Otomi is a self-hosted PaaS and adds developer- and operations-centric tools, automation and self-service on top of Kubernetes offering a multi and hybrid platform experience out-of-the-box. Otomi is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. Otomi attempts to connect many of the technologies found in the CNCF landscape in a way to provide direct value. No more re-inventing the wheel when building and maintaining your own Kubernetes based (developer) platform or bespoke stack.
 
-**Platform & Operations teams** - To setup and manage production-ready Kubernetes-based platforms
+## Otomi for developers
+**Developers, focus on your application, not on writing Kubernetes manifests! Kubernetes is great for running containers, but it's complex. Wouldn't it be awesome if you didn't need to worry about understanding Kubernetes objects and writing YAML manifests?**
 
-- Skip the Day-0 and Day-1 effort and minimize Day-2 operations
-- Avoid creating and maintaining multiple bespoke Kubernetes stacks
-- Onboard development teams on shared clusters in a comprehensive multi-tenant setup
-- Get all the required observability tools in an integrated way
-- Ensure governance with security policies
-- Implement zero-trust networking with east-west and north-south network control within K8s
-- Provide self-service features to development teams
-- Change the desired state of the platform based on configuration-as-code
-- Support multi and hybrid cloud use cases
-- Offer a standardized set of tools to all development teams
+This is how Otomi helps developers:
 
-**DevOps teams** - To take full control and responsibility over the complete stack
+### Removing the complexity
+As a Developer, you want to focus on your code and don’t be bothered with Kubernetes internals. With Otomi, you can deploy your apps on Kubernetes without needing to understand or learn Kubernetes. Just build your image, push it to a registry in Otomi and use the Web Console to deploy your app in just a couple of minutes. Otomi makes Kubernetes easy!
 
-- Get all the tools needed to build, deploy, run and manage apps on Kubernetes
+### All the tools you need
+Otomi provides developers with all the tools they need. After deploying your app you can directly see all the container logs and metrics. Next to logs and metrics, you will also get access to tools like Kubeapps to quickly deploy apps from a catalog and Hashicorp Vault to store and manage secrets. Secrets stored in Vault can directly be used in your deployments. You will also get access to a project in Harbor and can directly see possible vulnerabilities in container images.
 
-<!---
-For developer information please visit the repositories involved:
+### Best practices
+Otomi offers you the ability to immediately start deploying applications on Kubernetes and configure public exposure. This will give you a jump start to get apps running on Kubernetes. But in time you will probably learn more about Kubernetes and start trying out things yourself. Otomi does not force you to use the Web Console. You can just as easily download the KubeConfig for your team and create and deploy manifests yourself. But Otomi will always force you to adhere to the configured safeguards and best practices.
 
- [otomi-core](https://github.com/redkubes/otomi-core/): The monorepo containing all the apps and configuration
-- [otomi-tasks](https://github.com/redkubes/otomi-tasks/): The tasks used by core to massage apps to adhere to the configuration
-- [otomi-clients](https://github.com/redkubes/otomi-clients/): The openapi generator for the clients used by the tasks-->
+### Self-Serving
+As a developer, you don’t like to go to the Ops team asking for help. Otomi provides full developer self-service. Developers can spin up new virtual environments, download pull secrets, create Kubernetes secrets, deploy workloads, create jobs and configure public exposure. And all of these features are accessible through just one Web Console. Now you can deliver code completely autonomously.
+
+## Otomi for Platform Teams
+**If you can’t scale beyond a handful of teams you're going to lose speed. Speed is everything to bring new products and applications to market. No one wants to slow down developers. Empower developers, ensure quality, compliance, and governance, avoid lock-in, and lower the operational burden. These are some of the challenges platform teams have to deal with and where Otomi can help out.**
+
+### Avoid Cloud Lock-In
+Are you worried that you can’t adopt cloud-native technology without becoming completely reliant on one cloud provider? One way that organizations outsource management for Kubernetes is to use one of the cloud provider’s Kubernetes versions in conjunction with a variety of cloud provider native services. This is often faster than using vanilla Kubernetes and managing integrations and infrastructure in-house, but it also completely locks the organization into the cloud provider and often becomes very expensive.
+
+This approach also takes away the flexibility to change cloud providers in the future while increasing the financial risks. With Otomi, you don’t have to lock yourself into any cloud provider or risk rapidly increasing cloud service bills in order to get the fastest possible platform to deploy containerized applications.
+
+### Make Developers Self Serving
+Free developers from worrying about the underlying platform setup while still enforcing standards and best practices so they can focus on delivering code. With Otomi, developers can be fully self-serving. They can spin up new namespaces, get access to all the tools they need, create secrets, deploy workloads, create jobs, configure public exposure, add service monitors, and much more. And all of these features are accessible through just one web UI.
+
+Platform administrators have access to all the platform applications. Team administrators can create team spaces for development teams and team members can create multiple namespaces within their team space(s).
+
+### Lower The Operational Burden
+Choosing the DIY platform engineering approach can be time-consuming and complex. On average, Platform teams need at least 6 months to build an initial setup. And the ongoing maintenance and hardening afterwards can become an operational nightmare. Otomi helps Platform teams to lower the operational burden by taking over the application management of everything running on top of Kubernetes, including the lifecycle management of all the integrated K8s applications.
+
+This enables platform teams to focus on another very important aspect: Kubernetes cluster infrastructure management and cloud security. Now you have time to focus on other important aspects instead of building a custom (internal) developer platform solution.
+
+### Prevent Kubernetes Cluster Sprawl
+As companies look to further harness the power of cloud-native, they are adopting container technologies at rapid speed, increasing the number of clusters and workloads. As the number of Kubernetes clusters grows, this is creating increased work for Platform teams. When it comes to patching security vulnerabilities or upgrading clusters, teams are doing five times the amount of work.
+
+With Otomi you can support (soft) multi-tenancy, allowing multiple development teams to work independently of each other on the same cluster, while sharing all the tools. Now you only have to deploy a single dev or staging cluster to support multiple development teams. This prevents you from Kubernetes cluster sprawl.

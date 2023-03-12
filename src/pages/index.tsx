@@ -19,6 +19,8 @@ import Layout from "@theme/Layout";
 import clsx from "clsx";
 import styles from "./index.module.css";
 import apps from "../data/apps";
+import carouselItems from "../data/carousel";
+import Carousel from "../components/Carousel";
 
 function Home() {
   const context = useDocusaurusContext();
@@ -37,6 +39,7 @@ function Home() {
               />
               Self hosted PaaS for Kubernetes
             </h1>
+            <h2>Add developer- and operations-centric tools, <br></br>automation and self-service on top of Kubernetes</h2>
             <div className={styles.indexCtas}>
               <Link
                 className={styles.indexCtasGetStartedButton}
@@ -58,7 +61,37 @@ function Home() {
         </div>
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
-            One schema to rule them all 
+            <h1>DEMO</h1> <h4>Install Otomi and deploy your app in just a couple of minutes</h4>
+          </div>
+        </div>
+        <div
+          id="demo"
+          className={clsx(styles.announcement, styles.announcementDark)}
+        >
+          <div className={`${clsx(styles.appsContainer)}`}>
+            <br></br>
+          <iframe width="996" height="550" src="https://www.youtube.com/embed/tijsJK0fPZo" title="Otomi DEMO" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+          </div>
+          <br></br>
+        </div>
+        {/* <div className={clsx(styles.announcement, styles.announcementBanner)}>
+          <div className={styles.announcementInner}>
+            <h1>FEATURE OVERVIEW</h1> <h4>Install Otomi and deploy your app in just a couple of minutes</h4>
+          </div>
+        </div>
+        <div
+          id="carousel"
+          className={clsx(styles.announcement, styles.announcementDark)}
+        >
+          <div className={styles.announcementInner}>
+            <Carousel items={carouselItems} />
+          </div>
+        </div> */}
+        <div className={clsx(styles.announcement, styles.announcementBanner)}>
+          <div className={styles.announcementInner}>
+          <div className={styles.announcementInner}>
+            <h1>INTEGRATED TOOLS</h1> <h4>Drag and drop to create your own suite of pre-configured and auttomated tools</h4>
+          </div>
           </div>
         </div>
         <div className={clsx(styles.announcement, styles.announcementList)}>

@@ -57,12 +57,12 @@ module.exports = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "contributing",
-        path: "contributing",
+        id: "community",
+        path: "community",
         breadcrumbs: false,
         editUrl: "https://github.com/redkubes/redkubes.github.io/edit/main/",
-        routeBasePath: "contributing",
-        sidebarPath: require.resolve("./sidebar-contributing.js"),
+        routeBasePath: "community",
+        sidebarPath: require.resolve("./sidebar-community.js"),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
         sidebarCollapsible: true,
@@ -123,10 +123,15 @@ module.exports = {
           position: "left",
         },
         {
-          to: "contributing/get-started",
-          label: "Contributing",
+          to: "community/welcome",
+          label: "Community",
           position: "left",
         },
+        // {
+        //   to: "https://redkubes.com",
+        //   label: "Pricing",
+        //   position: "left",
+        // },
         {
           href: "https://github.com/redkubes/otomi-core",
           position: "right",
@@ -149,6 +154,10 @@ module.exports = {
               label: "Get started for Devs",
               href: "/docs/for-devs/get-started/overview",
             },
+            {
+              label: "Tutorials",
+              href: "/docs/tutorials/overview/",
+            },
           ],
         },
         {
@@ -159,12 +168,16 @@ module.exports = {
               href: "https://join.slack.com/t/otomi/shared_invite/zt-1axa4vima-E~LHN36nbLR~ay5r5pGq9A",
             },
             {
+              label: "YouTube",
+              href: "https://www.youtube.com/channel/UCarOB4QW6lTqKG17XUT2uaA",
+            },
+            {
               label: "Facebook",
               href: "https://www.facebook.com/groups/otomiusers",
             },
             {
-              label: "Contributing",
-              to: "/contributing/get-started",
+              label: "community",
+              to: "/community/get-started",
             },
           ],
         },

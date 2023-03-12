@@ -51,4 +51,8 @@ module.exports = [
     from: ["/docs/installation/prerequisites"],
     to: "/docs/get-started/installation",
   },
+  {
+    from: ["/docs/installation/activation"],
+    to: "/docs/get-started/activation",
+  },
 ];

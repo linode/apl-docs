@@ -18,6 +18,7 @@ To install Otomi with DNS and Let's Encrypt, use the following values:
 ```yaml
 otomi:
   hasExternalDNS: true
+  adminPassword: yourpassword # required when instaling with DNS
 
 # Configure cert-manager
 apps:

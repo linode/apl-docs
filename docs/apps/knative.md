@@ -10,7 +10,6 @@ Knative can be activated in Otomi to deliver Container-as-a-Service (CaaS) funct
 
 ## Configuration
 
-Otomi offers an on-the-fly Knative Service deployment when configuring a service, making it very easy to deploy containerized services without the hassle of providing all the supporting resources involved with Helm charts.
 
 ## Automation
 

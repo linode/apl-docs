@@ -16,8 +16,6 @@ When you have deployed your app, you will propably like to expose it publicly. Y
 
 ![harbor-projects](../../img/svc-name.png)
 
-- Select the Service type. Choose one of `Existing Kubernetes service` or `Existing Knative service`, depending on the service/type you would like to expose. The `Existing Knative service` option is only available when Knative is enabled.
-
 - Under `Exposure Ingress`, select `Ingress` and use the default configuration
 
 ![harbor-projects](../../img/ingress.png)

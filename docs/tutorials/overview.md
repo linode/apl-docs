@@ -15,7 +15,6 @@ This section contains tutorials to learn using Otomi.
 7. [Using Knative](tutorial-7)
 8. [Creating Secrets](tutorial-8)
 9. [Configuring network policies](tutorial-9)
-10. [Creating a micro service architecture](tutorial-10)
 
 To be able to do the tutorials, please make sure you have:
 

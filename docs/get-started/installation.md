@@ -98,17 +98,12 @@ You can optionally configure Otomi to use an external IDP (Azure AD), use an ext
 
 ### Use DNS and Let's Encrypt
 
-By default, Otomi uses the public IP address of the load balancer for nameresolving using [nip.io](http://nip.io). To use DNS with LetsEncrypt, follow these instructions:
-
-- [Setting up external DNS in AWS](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md)
-- [Setting up external DNS in Azure](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md)
-- [Setting up external DNS in Google](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/gke.md)
-
-To install Otomi with DNS and Let's Encrypt, use the following values:
+By default, Otomi uses the public IP address of the load balancer for nameresolving using [nip.io](http://nip.io). To install Otomi with DNS and Let's Encrypt, use the following values:
 
 ```yaml
 otomi:
   hasExternalDNS: true
+  adminPassword: yourpassword
 
 # Configure cert-manager
 apps:
@@ -223,4 +218,78 @@ kms:
 #       project: ''
 #     vault:
 #       token: ''
+```
+
+## Known issues
+
+### Metrics server with untrusted Kube API certificates
+
+**Problem**
+
+Metrics server will not start when installing on a K8s cluster (like on Minikube or a cluster created with Kubeadm) with Kube API using self-signed certificates
+
+**Solution** 
+
+Add extra args to the metrics-service by using the following values when installing Otomi with Helm chart:
+
+```
+apps:
+  metrics-server:
+    enabled: true
+    _rawValues:
+      extraArgs:
+        kubelet-preferred-address-types: InternalIP
+        kubelet-insecure-tls: true
+```
+
+### Uninstalling Otomi
+
+**Problem**
+
+When uninstalling Otomi using the `helm unistall` cmd, all Otomi namespaces get stuck in a terminating state.
+
+**Solution** 
+
+The work around for now is to delete all namespaces using this cmd:
+
+```
+for ns in $(kubectl get ns --field-selector status.phase=Terminating -o jsonpath='{.items[*].metadata.name}'); do  kubectl get ns $ns -ojson | jq '.spec.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/$ns/finalize" -f -; done
+```
+
+### Installing Otomi with Cloudflare DNS
+
+**Problem**
+
+When installing Otomi with `otomi.hasExternalDNS=true` and `apps.cert-manager.issuer=letsencrypt` with `apps.cert-manager.stage=staging`, activating Drone is not possible because of the following error:
+
+```
+Post "https://gitea.d3-otomi.net/login/oauth/access_token": x509: certificate signed by unknown authority
+```
+
+**Solution** 
+
+1. Install with `apps.cert-manager.stage=production`
+
+or 
+
+1. In Cloudflare, set the `A-record` for Gitea to proxy status = `DNS Only`. Also make sure your SSL/TLS encryption mode is set to `Full`
+
+### Installing Otomi with DNS fails due to failed authentication for gitea
+
+**Problem**
+
+When installing Otomi with DNS fails with the following error:
+
+```
+otomi:cmd:commit:commitAndPush:error remote: Unauthorized
+fatal: Authentication failed for 'https://gitea.otomi.example.com/otomi/values.git/'
+```
+
+**Solution**
+
+Provide a custom password:
+
+```
+otomi:
+  adminPassword: yourpassword
 ```

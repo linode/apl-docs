@@ -16,6 +16,10 @@ A Workload in Otomi is a self-service feature for:
 - Automatically create the ArgoCD resources to deploy the workload in a GitOps way
 - Manage the custom values of the workloads in Git
 
+:::info
+The first phase of the workloads feature only supports deploying statefull and stateless application using a provided Helm chart. In the second phase, Otomi will generate the Helm chart for all workload types.
+:::
+
 ## Create a Workload
 
 1. Enter a name for the workload

@@ -27,4 +27,5 @@ Coming soon:
 
 - Part 17: Create service monitors
 - Part 18: Create alert rules
-- Part 19: Create Knative services
+- Part 19: Create workloads
+- Part 20: Serverless apps

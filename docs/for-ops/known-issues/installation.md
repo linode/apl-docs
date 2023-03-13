@@ -25,3 +25,17 @@ apps:
         kubelet-preferred-address-types: InternalIP
         kubelet-insecure-tls: true
 ```
+
+### Uninstalling Otomi
+
+**Problem**
+
+When uninstalling Otomi using the `helm unistall` cmd, all Otomi namespaces get stuck in a terminating state.
+
+**Solution** 
+
+The work around for now is to delete all namespaces using this cmd:
+
+```
+for ns in $(kubectl get ns --field-selector status.phase=Terminating -o jsonpath='{.items[*].metadata.name}'); do  kubectl get ns $ns -ojson | jq '.spec.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/$ns/finalize" -f -; done
+```

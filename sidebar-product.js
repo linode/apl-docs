@@ -1,5 +1,5 @@
 module.exports = {
-  mainSidebar: ["introduction", "architecture", "roadmap", "faq"],
+  mainSidebar: ["introduction", "architecture", "roadmap", "release-plan", "faq"],
 };
 
 

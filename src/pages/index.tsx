@@ -19,8 +19,6 @@ import Layout from "@theme/Layout";
 import clsx from "clsx";
 import styles from "./index.module.css";
 import apps from "../data/apps";
-import carouselItems from "../data/carousel";
-import Carousel from "../components/Carousel";
 
 function Home() {
   const context = useDocusaurusContext();
@@ -39,7 +37,7 @@ function Home() {
               />
               Self hosted PaaS for Kubernetes
             </h1>
-            <h2>Add developer- and operations-centric tools, <br></br>automation and self-service on top of Kubernetes</h2>
+            <h2 className={styles.heroProjectSubLine}>Add developer- and operations-centric tools, <br></br>automation and self-service on top of Kubernetes</h2>
             <div className={styles.indexCtas}>
               <Link
                 className={styles.indexCtasGetStartedButton}
@@ -70,7 +68,10 @@ function Home() {
         >
           <div className={`${clsx(styles.appsContainer)}`}>
             <br></br>
-          <iframe width="996" height="550" src="https://www.youtube.com/embed/tijsJK0fPZo" title="Otomi DEMO" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+          <div className={styles.iframeWrapper}>
+          <iframe width="100%" height="550" className={styles.iframeVideo} src="https://www.youtube.com/embed/tijsJK0fPZo" title="Otomi DEMO"  allow="fullscreen;"></iframe> 
+          </div>
+
           </div>
           <br></br>
         </div>

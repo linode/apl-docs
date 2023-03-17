@@ -7,7 +7,9 @@ sidebar_label: Why Otomi
 ## The vision
 Kubernetes has been called The Operating System of the Cloud. In our opinion, Kubernetes is only the Kernel of the Operating System of the Cloud. The Operating System (or Kubernetes-based Platform) is something you'll need to build yourself. And this is what organizations are now doing when using Kubernetes. All reinventing the wheel.
 
-Building a Kubernetes-based platform requires a huge investment and requires skilled engineers. But why would you invest in building and maintaining a custom platform? Why can't you just install everyting you need to turn Kubernetes into a full platform, just like you can download a Linux distribution? Any infrastructure, one install, all the tools you need in an integrated and automated way, easy self-service, Git-based.
+Building a Kubernetes-based platform requires a huge investment and requires skilled engineers. But why would you invest in building and maintaining a custom platform? Why can't you just install everyting you need to turn Kubernetes into a full platform, just like you can download a Linux distribution? 
+
+This is what we indended when we created Otomi. Any infrastructure, any K8s, one install, all the tools you need in an integrated and automated way, easy self-service, 100% Git-based.
 
 ## What is Otomi
 

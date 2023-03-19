@@ -14,5 +14,5 @@ Otomi adds developer- and operations-centric tools, automation and self-service 
 - [Serverless](serverless.md): Use Otomi as a landing zone for serverless applications
 - [CD/CD](ci-cd.md): Use the CI and CD capabilities of Otomi
 
-The usage of Otomi is certainly not limited to these 5 described use cases. Combine use cases to create your ideal setup.
+The usage of Otomi is not limited to these 5 described use cases. Combine use cases to create your ideal setup.
 

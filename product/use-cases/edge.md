@@ -81,11 +81,11 @@ teamConfig:
 
 
 
-If Otomi is installed with these values using the Helm chart, Otomi will install and configure
+If Otomi is installed with these values using the Helm chart, Otomi will install and configure:
 
 1. Nginx ingress with ModSecurity
 2. Ingress resources
-3. Istio (inclusing the virtual services for public exposed services)
+3. Istio (including the virtual services for public exposed services with HTTP response headers)
 4. Network policies
 5. Cert-manager
 6. ArgoCD and ArgoCD applications to automatically deploy the front-end and api workloads

@@ -59,6 +59,13 @@ teamConfig:
         ownHost: true
         port: 8080
         type: public
+        headers:
+          response:
+            set:
+              - name: Cache-Control
+                value: no-store
+              - name: Pragma
+                value: no-cache
     services:
       - name: api
         networkPolicy:

@@ -127,11 +127,11 @@ module.exports = {
           label: "Community",
           position: "left",
         },
-        // {
-        //   to: "https://redkubes.com",
-        //   label: "Pricing",
-        //   position: "left",
-        // },
+        {
+          to: "https://redkubes.com/pricing-otomi-subscriptions/",
+          label: "Pricing",
+          position: "left",
+        },
         {
           href: "https://github.com/redkubes/otomi-core",
           position: "right",

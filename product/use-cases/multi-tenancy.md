@@ -12,7 +12,7 @@ Multi-tenant Kubernetes clusters are shared by multiple users and/or workloads w
 
 Otomi goes a step higher up in the stack. Otomi does not only provide multi-tenancy on the K8s API level, but also for shared tools on the cluster. 
 
-![kubecfg](../img/multi-tenancy.png)
+![kmulti-tenancy](../img/multi-tenancy.png)
 
 When multi-tenany in Otomi is activated (which is optional), Otomi will support the following features:
 

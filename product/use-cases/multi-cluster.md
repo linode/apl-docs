@@ -16,7 +16,7 @@ But from a technical perspective, managing multiple Kubernetes clusters is more 
 
 ## Multi-cluster observability with Otomi
 
-![kubecfg](../img/multi-cluster-observability.png)
+![multi-cluster](../img/multi-cluster-observability.png)
 
 Otomi supports multi-cluster observability by providing:
 

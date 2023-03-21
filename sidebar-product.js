@@ -8,6 +8,7 @@ module.exports = {
     {
       "Use Cases": [
         "use-cases/overview",
+        "use-cases/adoption-framework",
         "use-cases/multi-tenancy",
         "use-cases/multi-cluster",
         "use-cases/edge",

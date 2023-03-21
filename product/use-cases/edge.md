@@ -23,7 +23,7 @@ Let's explain this with an example:
 
 Suppose you have 2 application workloads that you would like to run on multiple Kubernetes clusters in multiple geographic regions, using different public cloud providers (AWS, Azure, GCP) and different Kubernetes versions (1.22 and 1.23). Next to the 2 workloads, you also would like to use Istio for mTLS, cert-manager for certificates, ingress/egress network policies for isolation and HTTP response headers. Because you can not afford using L7 load balancers with WAF features in the different clouds, you would like to implement Nginx ingress with Modsecurity and OWASP filtering. The following picture shows the desired situation:
 
-![kubecfg](../img/edge.png)
+![edge](../img/edge.png)
 
 For this example, you could create the following Otomi values profile and deploy it to all clusters:
 

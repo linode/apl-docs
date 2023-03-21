@@ -25,7 +25,7 @@ Otomi will soon provide Helm chart templates to create a Kubernetes Deployment (
 
 A great way to migrate AWS Lambda functions to Kubernetes/Knative is to use [Triggermesh KLR](https://github.com/triggermesh/knative-lambda-runtime). KLR (pronounced clear) are Tekton Tasks that can be used to run an AWS Lambda function in a Kubernetes cluster installed with Knative.
 
-![kubecfg](../img/knative.png)
+![serverless](../img/knative.png)
 
 Steps:
 

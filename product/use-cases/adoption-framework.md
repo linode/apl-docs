@@ -30,7 +30,7 @@ Organizations quickly lose control of their engineering expenses because they do
 1. Standardized For Multi-Tenancy
 In a multi-tenant architecture, standardizing tenancy allows you to enforce policies to a group of users. It helps you set up different security profiles and provide access to shared tools with users having specific privileges.
 
-## What are the capabilities included into an adoption framework?
+## What are the capabilities of an adoption framework for Kubernetes?
 
 The following picture shows all the required capabilities for a Kubernetes adoption framework, which are all incorporated into Otomi:
 

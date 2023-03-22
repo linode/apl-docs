@@ -51,8 +51,8 @@ teamConfig:
       egressPublic: true
       ingressPrivate: true
     services:
-      - ingressClassName: platform
-        name: front-end
+      - name: front-end
+        ingressClassName: platform
         networkPolicy:
             ingressPrivate:
                 mode: DenyAll
@@ -66,7 +66,6 @@ teamConfig:
                 value: no-store
               - name: Pragma
                 value: no-cache
-    services:
       - name: api
         networkPolicy:
             ingressPrivate:

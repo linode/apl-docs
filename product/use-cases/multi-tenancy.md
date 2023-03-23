@@ -23,18 +23,18 @@ Otomi goes a step higher up in the stack. Otomi does not only provide multi-tena
 
 ![multi-tenancy](../img/multi-tenancy.png)
 
-When multi-tenany in Otomi is activated (which is optional), Otomi will support the following features:
+When multi-tenancy in Otomi is activated (which is optional), Otomi will support the following features:
 
 1. Teams are provided with a dedicated Prometheus instance for custom metrics (for metrics that should not be accessible for other tenants)
-2. Teams are provided with a dedicated Grafana instance configured with authorization, alowing only authenticated tenant members to access dashboards
-3. Container logs are separated in Loki combined with authorization, alowing only authenticated tenant members access to the tenants container logs
-4. When Harbor is enabled, tenants will get access to a tenant project, alowing only authenticated tenant members to access tenant registries
-5. When Vault is enabled, tenant will get access to a space in Vault, alowing only authenticated tenant members access to tenant secrets
+2. Teams are provided with a dedicated Grafana instance configured with authorization, allowing only authenticated tenant members to access dashboards
+3. Container logs are separated in Loki combined with authorization, allowing only authenticated tenant members access to the tenants container logs
+4. When Harbor is enabled, tenants will get access to a tenant project, allowing only authenticated tenant members to access tenant registries
+5. When Vault is enabled, tenant will get access to a space in Vault, allowing only authenticated tenant members access to tenant secrets
 6. When ArgoCD is enabled, tenants can only see the tenants ArgoCD applications created by Otomi
 7. Tenants will get access to Gitea and can create their own Git repositories
 8. Tenant namespaces are by default isolated for ingress and egress network traffic
 9. Tenants can allow other tenants to access to their services
-10. Tenant services that are publicly exposed can be configured with OIDC, only allowing tentants members to access the exposed services
+10. Tenant services that are publicly exposed can be configured with OIDC, only allowing tenant members to access the exposed services
 
 ## When to enable multi-tenancy in Otomi?
 

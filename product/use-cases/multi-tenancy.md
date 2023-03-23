@@ -6,7 +6,16 @@ sidebar_label: Multi-tenancy
 
 ## Introduction
 
-Multi-tenant Kubernetes clusters are shared by multiple users and/or workloads which are referred to as "tenants". Operators most commonly implement resource isolation in Kubernetes, using namespaces and resource quota. Probably the most known multi-tenant tool is [Capsule](https://github.com/clastix/capsule). But Capsule implements multi-tenancy on cluster API level only.
+Multi-tenant Kubernetes clusters are shared by multiple users and/or workloads which are referred to as "tenants". Operators most commonly implement resource isolation in Kubernetes, using namespaces and resource quota.
+
+The most common use cases for implementing multi-tenancy are:
+
+- [Multiple teams](https://kubernetes.io/docs/concepts/security/multi-tenancy/#multiple-teams) (within an organization) share a single cluster
+- [Multiple customers](https://kubernetes.io/docs/concepts/security/multi-tenancy/#multiple-customers) share a single cluster
+
+Probably the most known tools to implement multi-tenancy are [Capsule](https://github.com/clastix/capsule) and [Kiosk](https://github.com/loft-sh/kiosk). But these tools only implement multi-tenancy on cluster API level. What they don't offer is multi-tenant and role based access to shared tools on the cluster like Harbor, Vault, Git, and ArgoCD. They also don't provide isolation for container logs and custom metrics.
+
+So what if you would like to offer teams or customers not only access to the Kubernetes API, but also to (automatically provisioned) access to a Git repo, a private docker registry, a space in Vault to create and manage secrets, ArgoCD, a private Prometheus instance, isolated log aggregation? This is where Otomi steps in.
 
 ## Multi-tenancy in Otomi
 

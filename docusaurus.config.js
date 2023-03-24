@@ -129,7 +129,7 @@ module.exports = {
         },
         {
           to: "https://redkubes.com/pricing-otomi-subscriptions/",
-          label: "Pricing",
+          label: "Support",
           position: "left",
         },
         {

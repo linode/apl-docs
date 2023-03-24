@@ -130,7 +130,7 @@ Otomi Clients is currently used to generate openapi clients for the following ap
 Otomi API allows for a controlled change of all Otomi Values, based on a configuration scheme and is the brain of Otomi. Otomi API runs as a container on each cluster running.
 
 :::info
-Otomi API is not open source. When installing Otomi, a FREE Community Edition version is installed. Contact [Red Kubes](https://redkubes.com/) for details on pricing for a full featured version.
+Otomi API is not open source. When installing Otomi, a FREE Community Edition version is installed. Contact [Red Kubes](https://redkubes.com/) for details on support and pricing for a full featured version.
 :::
 
 ## Otomi Console
@@ -138,5 +138,5 @@ Otomi API is not open source. When installing Otomi, a FREE Community Edition ve
 Otomi Console is the User Interface of Otomi. Otomi Console communicates with Otomi API for reading and changing Otomi Values configuration. Otomi Console also offers (via the Otomi Apps option) shortcuts to the UI of the various integrated applications.
 
 :::info
-Otomi Console is not open source. When installing Otomi, a FREE Community Edition version is installed. Contact [Red Kubes](https://redkubes.com/) for details on pricing for a full featured version.
+Otomi Console is not open source. When installing Otomi, a FREE Community Edition version is installed. Contact [Red Kubes](https://redkubes.com/) for details on support and pricing for a full featured version.
 :::

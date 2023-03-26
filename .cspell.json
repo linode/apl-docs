@@ -49,6 +49,8 @@
     "sunrpc",
     "textconv",
     "xsrf",
+    "DOCKERCFG",
+    "dcfg",
     "Zimnowoda",
     "visable",
     "devided",

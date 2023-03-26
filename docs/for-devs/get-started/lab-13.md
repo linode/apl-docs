@@ -8,7 +8,7 @@ When your application is deployed, you would of course like to get an alert when
 
 ## Monitor your application for availability
 
-- [Create a Service](part-5) for your app in Otomi. The service can have an Exposure ingress of type `Cluster` or `Ingress`
+- [Create a Service](lab-7) for your app in Otomi. The service can have an Exposure ingress of type `Cluster` or `Ingress`
 - Open the Prometheus app in your apps
 - In Prometheus, Go to `Status` and click on `Targets`
 

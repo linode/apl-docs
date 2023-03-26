@@ -1,7 +1,7 @@
 ---
-slug: part-14
+slug: lab-16
 title: Configure Argo CD image updater
-sidebar_label: Part 14
+sidebar_label: Lab 16
 ---
 
 In the previous part, you have seen how to use Argo CD to automatically deploy applications by adding the Kubernetes manifests in to the gitops repo in Gitea. You can also use Argo CD to deploy Helm charts and automatically update the version of the deployed image.

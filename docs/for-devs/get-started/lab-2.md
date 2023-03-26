@@ -1,7 +1,7 @@
 ---
-slug: part-2
+slug: lab-2
 title: Access Otomi Console and download the KUBECFG
-sidebar_label: Part 2
+sidebar_label: Lab 2
 ---
 
 When you have received the URL of the web UI of Otomi Platform and have a username/password with access permissions, then it's time to sign-in

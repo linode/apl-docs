@@ -1,10 +1,10 @@
 ---
-slug: part-16
+slug: lab-18
 title: Scan your running containers for vulnerabilities
-sidebar_label: Part 16
+sidebar_label: Lab 18
 ---
 
-So now you know that you can scan images when pushed to Harbor. But what if you have long running versions of containers? When new vulnerabilities are identified after you scanned the image, you wil only see them when you update your image. For this scenario, Otomi offers 2 realtime container scanning tools:
+So now you know how to scan container images when pushed to Harbor. But what if you have long running versions of containers? When new vulnerabilities are identified after you scanned the image, you wil only see them when you update your image. For this scenario, Otomi offers 2 realtime container scanning tools:
 
 - KubeClarity for adhoc scanning of containers
 - Trivy Operator for automatic daily scanning of containers in all Teams
@@ -34,3 +34,10 @@ When Trivy is enabled by the platform admin and Otomi runs in multi-tenant mode,
 - In the right menu, click on `apps`
 - Click on `Grafana`
 - Open the Trivy scan results dashboard
+
+In the dashboard you can see all identified vulnerabilities per container:
+
+![kubecfg](../../img/trivy-dashboard.png)
+
+
+

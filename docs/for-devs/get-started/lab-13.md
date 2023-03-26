@@ -1,7 +1,7 @@
 ---
-slug: part-10
-title: Monitoring applications
-sidebar_label: Part 10
+slug: lab-13
+title: Monitoring service availability
+sidebar_label: Lab 13
 ---
 
 When your application is deployed, you would of course like to get an alert when you application (service) is not available anymore. To automatically monitor you applications for availability, Otomi automatically configures a prope to monitor your service.

@@ -1,7 +1,7 @@
 ---
-slug: part-4
+slug: lab-4
 title: Deploy your application
-sidebar_label: Part 4
+sidebar_label: Lab 4
 ---
 
 Now that you have access to the team namespace and have pushed your image to Harbor, you can now deploy your application.

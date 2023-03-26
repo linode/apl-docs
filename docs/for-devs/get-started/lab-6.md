@@ -1,22 +1,10 @@
 ---
-slug: workloads
-title: Team Workloads
-sidebar_label: Workloads
+slug: lab-6
+title: Deploy workloads using Otomi
+sidebar_label: Lab 6
 ---
 
-<!-- ![Console: new service](img/team-services.png) -->
-
-A Workload in Otomi is a self-service feature for:
-
-- Deploying Kubernetes workloads
-  * A regular Kubernetes deployment with HPA
-  * A Knative service
-- Automatically create the ArgoCD resources to deploy the workload in a GitOps way
-- Manage the custom values of the workloads in Git
-
-:::info
-The first phase of the workloads feature only supports deploying workloads using a provided Helm chart. In the second phase, you can also use Otomi chart templates to deploy different workload types.
-:::
+In the previous 2 parts we have explained how to deploy a workload with a BYO manifest using Kubectl and how to deploy a workload with a BTO manifest using ArgoCD in Otomi. In this part we'll deploy a workload using the Otomi Workloads feature.
 
 ## Create a Workload
 
@@ -38,4 +26,3 @@ Now click on `Deploy Changes`
 After a few minutes, Otomi will have created all the needed ArgoCD resources to deploy your workload. In the workloads list, click on the `Application` link of your workload to see the status of your workload.
 
 The values of a workload can be changed at any time. Changes will automatically be deployed.
-

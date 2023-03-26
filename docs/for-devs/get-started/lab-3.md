@@ -1,7 +1,7 @@
 ---
-slug: part-3
+slug: lab-3
 title: Push your container images
-sidebar_label: Part 3
+sidebar_label: Lab 3
 ---
 
 Now that you have kubectl access to your team namespace, you are ready to deploy your first container. When the platform administrator created your team, a private container registry has been automatically created for your team in Harbor and a pull secret has been added to your team namespace. To be able to push container images to your private repository, you'll first need to create a robot-account in your Harbor project with push access rights.
@@ -27,11 +27,11 @@ In the apps section in Otomi console, you'll see an app called Harbor. Click on 
 
 ## Login to Harbor
 
-To be able to push images to Harbor, you'll need a robot account with push permissions. At the moment Harbor does not allow the `Developer` role permissions to create robot accounts. So for now you will need to ask the platform administrator to create one for you. In the near future we will add the option to download the Docker login credentials in Otomi Console.
+To be able to push images to Harbor, you'll need a robot account with push permissions. Otomi offers teams with a self-service option to download the Docker config for their team's private registry in Harbor. In the left menu you will see the option `Download DOCKERCFG`. Click on it to download the credentials.
 
-When you have received the username and token of the created robot account, then you can:
+![harbor-projects](../../img/download-dcfg.png)
 
-- login
+When you have downloaded the docker config then run `docker login`:
 
 ```
 docker login -u 'otomi-<team-name>-push' -p <token> harbor.<your-domain>

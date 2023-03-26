@@ -1,7 +1,7 @@
 ---
-slug: part-12
+slug: lab-15
 title: Create a CI (build) pipeline
-sidebar_label: Part 12
+sidebar_label: lab 15
 ---
 
 Kubernetes is a container orchestrator, so we need to create container images that we can deploy. Next to providing a Git service. Otomi also has a complete CI solution called Drone integrated. You can use Drone to create and run CI pipelines to build images and push them to your private image registry (Harbor).

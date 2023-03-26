@@ -1,7 +1,7 @@
 ---
-slug: part-1
+slug: lab-1
 title: Prerequisites for getting started
-sidebar_label: Part 1
+sidebar_label: Lab 1
 ---
 
 Welcome to Otomi! If you are a developer and are going to use Otomi Platform, this getting started guide is for you. In this first part we are going to make sure everything is ready to get started.

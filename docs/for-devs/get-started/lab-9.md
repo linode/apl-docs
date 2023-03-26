@@ -1,7 +1,7 @@
 ---
-slug: part-7
+slug: lab-9
 title: Create secrets
-sidebar_label: Part 7
+sidebar_label: lab 9
 ---
 
 When the platform administrator has enabled Vault, you can use Vault to store and manage secrets. Secrets in Vault can be synchronized to your team namespace as Kubernetes secrets. In this part we'll first create a secret in Vault and then sync the secret to your team namespace using the Secrets option in Otomi Console.

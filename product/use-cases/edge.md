@@ -94,7 +94,7 @@ If Otomi is installed with these values using the Helm chart, Otomi will install
 3. Istio (including the virtual services for public exposed services with HTTP response headers)
 4. Network policies
 5. Cert-manager
-6. ArgoCD and ArgoCD applications to automatically deploy the front-end and api workloads
+6. ArgoCD and ArgoCD application sets to automatically deploy the front-end and api workloads
 
 
 

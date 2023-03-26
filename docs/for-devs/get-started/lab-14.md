@@ -1,7 +1,7 @@
 ---
-slug: part-11
+slug: lab-14
 title: Create a private Git repo
-sidebar_label: Part 11
+sidebar_label: Lab 14
 ---
 
 As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like Gitlab, or use Github. But if you don't, Otomi has you covered. Otomi includes a complete Git solution called Gitea.

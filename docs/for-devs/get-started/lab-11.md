@@ -1,7 +1,7 @@
 ---
-slug: part-9
+slug: lab-11
 title: View container metrics
-sidebar_label: Part 9
+sidebar_label: Lab 11
 ---
 
 When your application is deployed, you would of course like to be able to see container metrics for debugging purposes. Prometheus is used in Otomi for metrics. When Prometheus is enabled, you'll see the Prometheus app in your apps.

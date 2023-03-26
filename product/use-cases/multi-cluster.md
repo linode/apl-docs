@@ -16,14 +16,19 @@ But from a technical perspective, managing multiple Kubernetes clusters is more 
 
 ## Multi-cluster observability with Otomi
 
-![multi-cluster](../img/multi-cluster-observability.png)
+The following image shows a multi-cluster observability setup using Otomi:
 
-Otomi supports multi-cluster observability by providing:
+![multi-cluster](../img/multi-cluster.png)
 
-1. Automated installation of all required observability tools and their configuration on multiple clusters from a single source of truth
-2. Aggregation of metrics from multiple clusters for Prometheus high availability
-3. Multi-cluster log aggregation
-4. Preconfigured multi-cluster dashboards
-5. Multi-cluster alerting
+1. Aggregation of metrics from workload clusters for Prometheus high availability and single pane of glass
+2. Multi-cluster log aggregation
+3. Preconfigured multi-cluster dashboards
+4. Multi-cluster alerting
+
+This multi-cluster setup can be expanded with:
+
+- Running Harbor on the management cluster to provide image and chart registries for the workload clusters
+- Replicate workload cluster Git repositories to the management cluster Git repository
+- Deploy multiple application clusters based on a single cluster profile
 
 

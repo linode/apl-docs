@@ -1,7 +1,7 @@
 ---
-slug: part-6
+slug: lab-8
 title: Configuring network policies
-sidebar_label: Part 6
+sidebar_label: Lab 8
 ---
 
 In some cases you want to explicitly allow access to your application. This can be done by creating network policies. Otomi supports 2 types of network policies:

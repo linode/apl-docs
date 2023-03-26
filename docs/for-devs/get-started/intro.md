@@ -4,28 +4,24 @@ title: Get started with Otomi for Developers
 sidebar_label: Overview
 ---
 
-Welcome to Otomi! If you are a developer and are going to use Otomi Platform, this getting started guide is for you. Step by step we'll guide you in using Otomi to deploy and manage your containerized applications. This getting started guide contains the following sections:
+Welcome to Otomi! If you are a developer and are going to use Otomi Platform, these getting started labs are for you. Step by step we'll guide you in using Otomi to deploy and manage your containerized applications. The The getting started with Otomi for developers contains the following labs:
 
-- Part 1: [The prerequisites](part-1)
-- Part 2: [Access Otomi Console, download the Kubecfg and use Kubectl](part-2)
-- Part 3: [Push your container images](part-3)
-- Part 4: [Deploy your application](part-4)
-- Part 5: [Publicly expose your application](part-5)
-- Part 6: [Configuring network policies](part-6)
-- Part 7: [Create secrets](part-7)
-- Part 8: [View container logs](part-8)
-- Part 9: [View container metrics](part-9)
-- Part 10: [Monitoring applications](part-10)
-- Part 11: [Create a private Git repo](part-11)
-- Part 12: [Create a CI (build) pipeline](part-12)
-- Part 13: [Deploy apps with Argo CD](part-13)
-- Part 14: [Configure Argo CD image updater](part-14)
-- Part 15: [Scan your images for vulnerabilities](part-15)
-- Part 16: [Scan your running containers for vulnerabilities](part-16)
-
-Coming soon:
-
-- Part 17: Create service monitors
-- Part 18: Create alert rules
-- Part 19: Create workloads
-- Part 20: Serverless apps
+- Lab 1: [The prerequisites](lab-1)
+- Lab 2: [Access Otomi Console, download the Kubecfg and use Kubectl](lab-2)
+- Lab 3: [Push container images to your private repo](lab-3)
+- Lab 4: [BYO manifest to deploy a workload using Kubectl](lab-4)
+- Lab 5: [BYO manifest to deploy a workload with Argo CD](lab-5)
+- Lab 6: [Deploy workloads using Otomi](lab-6)
+- Lab 7: [Publicly expose a service](lab-7)
+- Lab 8: [Configuring network policies](lab-8)
+- Lab 9: [Create secrets](lab-9)
+- Lab 10: [View container logs](lab-10)
+- Lab 11: [View container metrics](lab-11)
+- Lab 12: [Monitor custom metrics](lab-12)
+- Lab 13: [Monitoring service availability](lab-13)
+- Lab 14: [Create a private Git repo](lab-14)
+- Lab 15: [Create a CI (build) pipeline](lab-15)
+- Lab 16: [Configure ArgoCD image updater](lab-16)
+- Lab 17: [Scan your images for vulnerabilities](lab-17)
+- Lab 18: [Scan your running containers for vulnerabilities](lab-18)
+- lab 19: [Deploy Serverless workloads]

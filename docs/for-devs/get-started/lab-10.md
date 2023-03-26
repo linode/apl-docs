@@ -1,7 +1,7 @@
 ---
-slug: part-8
+slug: lab-10
 title: View container logs
-sidebar_label: Part 8
+sidebar_label: Lab 10
 ---
 
 When your application is deployed, you would of course like to be able to see container logs for debugging purposes. Grafana Loki is used in Otomi for log aggregation. When Grafana Loki is enabled, you'll see the Loki app in your apps.

@@ -9,6 +9,10 @@ In some cases you want to explicitly allow access to your application. This can 
 - Policies for ingress traffic inside the cluster
 - Policies for egress traffic to go outside of the cluster (to access external FQDNs)
 
+## Prerequisites
+
+Before you can configure network policies, first make sure to add the  `otomi.io/app: <service name>` label to all pods belonging to the service.
+
 ## configuring network policies for internal ingress
 
 The internal ingress network policies alllow you to:

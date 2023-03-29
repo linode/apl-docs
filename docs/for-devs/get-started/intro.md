@@ -4,7 +4,12 @@ title: Get started with Otomi for Developers
 sidebar_label: Overview
 ---
 
-Welcome to Otomi! If you are a developer and are going to use Otomi Platform, these getting started labs are for you. Step by step we'll guide you in using Otomi to deploy and manage your containerized applications. The The getting started with Otomi for developers contains the following labs:
+Welcome to Otomi! If you are a developer and are going to use Otomi Platform, these getting started labs are for you. Step by step we'll guide you in using Otomi to deploy and manage your containerized applications. The getting started with Otomi for developers contains a set of labs to cover all the activities in the following developer workflow:
+
+![dev-workflow](../../img/dev-workflow.png)
+
+We are workking on more labs to cover the complete workflow.
+
 
 - Lab 1: [The prerequisites](lab-1)
 - Lab 2: [Access Otomi Console, download the Kubecfg and use Kubectl](lab-2)

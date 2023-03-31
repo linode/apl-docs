@@ -55,10 +55,13 @@ When using Minikube, only Otomi Core apps can be used! Activating more apps will
 
 Otomi currently supports the following Kubernetes versions:
 
-- `1.20`
-- `1.21`
 - `1.22`
 - `1.23`
+- `1.24`
+
+:::info
+As of version [0.20.0](https://github.com/redkubes/otomi-core/releases/tag/v0.20.0) Otomi does not support Kubernetes versions `1.20` and `1.21`
+:::
 
 ### Minimal compute resource requirements
 

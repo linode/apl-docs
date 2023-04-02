@@ -119,6 +119,7 @@ module.exports = {
           "for-devs/get-started/lab-16",
           "for-devs/get-started/lab-17",
           "for-devs/get-started/lab-18",
+          "for-devs/get-started/lab-19",
         ],
       },
     ],

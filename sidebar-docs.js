@@ -151,14 +151,6 @@ module.exports = {
     "Tutorials": [
       "tutorials/overview",
       "tutorials/tutorial-1",
-      "tutorials/tutorial-2",
-      "tutorials/tutorial-3",
-      "tutorials/tutorial-4",
-      "tutorials/tutorial-5",
-      "tutorials/tutorial-6",
-      "tutorials/tutorial-7",
-      "tutorials/tutorial-8",
-      "tutorials/tutorial-9",
     ],
   },
 };

@@ -4,21 +4,11 @@ title: Tutorial Overview
 sidebar_label: Overview
 ---
 
-This section contains tutorials to learn using Otomi.
+This section contains tutorials for more advanced installation scenario's. 
 
-1. [Install and activate Otomi](tutorial-1)
-2. [Create Teams](tutorial-2)
-3. [Activate tools](tutorial-3)
-4. [Build, tag and push an image to Harbor](tutorial-4)
-5. [Create a Workload](tutorial-5)
-6. [Create a Service](tutorial-6)
-7. [Using Knative](tutorial-7)
-8. [Creating Secrets](tutorial-8)
-9. [Configuring network policies](tutorial-9)
+1. [Install and activate Otomi with minimal vales](tutorial-1)
 
-To be able to do the tutorials, please make sure you have:
+We'll soon add tutorials for:
 
-- A running Kubernetes cluster on one of the [supported providers](/docs/get-started/prerequisites#supported-providers)
-- Docker installed on your machine
-
-If you haven't already, first [install Otomi](tutorial-1).
+- Install Otomi on EKS using Route53 for DNS and AWS Customer managed keys for encrypting otomi-vales
+- Install Otomi on Azure AKS using a public DNS zone

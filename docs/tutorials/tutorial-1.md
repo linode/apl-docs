@@ -6,7 +6,12 @@ sidebar_label: Install Otomi
 
 To go through the tutorials, you first need to install Otomi on a running Kubernetes cluster.
 
-In this first tutorial, we'll be installing [Otomi](https://github.com/redkubes/otomi-core) using `helm`.
+In this first tutorial, we'll be installing [Otomi](https://github.com/redkubes/otomi-core) using `helm` with minimal values.
+
+## Prerequisites
+
+- A running Kubernetes cluster on one of the [supported providers](/docs/get-started/prerequisites#supported-providers)
+- Helm installed
 
 ## Instructions
 

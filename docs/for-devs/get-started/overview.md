@@ -29,4 +29,4 @@ We are workking on more labs to cover the complete workflow.
 - Lab 16: [Configure ArgoCD image updater](lab-16)
 - Lab 17: [Scan your images for vulnerabilities](lab-17)
 - Lab 18: [Scan your running containers for vulnerabilities](lab-18)
-- lab 19: [Deploy Serverless workloads]
+- lab 19: [Deploy Serverless workloads](lab-19)

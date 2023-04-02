@@ -4,7 +4,7 @@ title: Deploy serverless workloads
 sidebar_label: Lab 19
 ---
 
-Otomi uses Knative serving for serverless (or Funtion as a Service) support.
+Otomi uses Knative serving for serverless (or Function as a Service) support.
 
 As a developer, you'll have the following options to deploy serverless workloads:
 

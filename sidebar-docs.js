@@ -38,6 +38,7 @@ module.exports = {
         "How to": [
           "for-ops/how-to/ingress-classes",
           "for-ops/how-to/switch-to-dns",
+          "for-ops/how-to/use-team-admin",
         ],
       },
       {

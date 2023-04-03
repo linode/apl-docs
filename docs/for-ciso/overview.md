@@ -11,10 +11,10 @@ This section is for the Chief Information Security Officer (CISO) to provide ins
 ### Controls list
 
 :::info
-Some controls cannot be implemented by Otomi
+Comming soon!
 :::
 
-| Section | Control | In Compliance | Implementation |
+<!-- | Section | Control | In Compliance | Implementation |
 | ------- | ------ | ------ | ------ |
 | A9 | Access control |  |  |
-| A9 | Access control |  |  |
+| A9 | Access control |  |  | -->

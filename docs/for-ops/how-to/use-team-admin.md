@@ -80,12 +80,16 @@ Let's now configure public exposure for the workload we deployed in the namespac
 
 2. Fill in the name of the Kubernetes service (hello-deploy) that you already deployed
 
-3. Fill in the namespace where the service is deployed (my-namespace in this case)
+3. Fill in the namespace where the service is deployed (my-namespace in this example)
 
 4. Fill in the port of the service (8080 in this case)
 
-5. Under `Exposure Ingress`, select `Ingress` and use the default configuration
+5. Under `Exposure Ingress`, select `Ingress`
 
-6.  Click on `Submit`
+6. Turn off `Use team domain` and fill in the name of the service as the hostname (hello-deploy in this example)
 
-7. Click on `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).
+7.  Click on `Submit`
+
+8. Click on `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).
+
+Your service and URL will now show up in the list of Services.

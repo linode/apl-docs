@@ -4,6 +4,7 @@ module.exports = {
       "get-started/prerequisites",
       "get-started/installation",
       "get-started/activation",
+      "for-devs/get-started/overview",
     ],
     "For Ops": [
       {
@@ -35,7 +36,7 @@ module.exports = {
         ],
       },
       {
-        "How to": [
+        "How To": [
           "for-ops/how-to/ingress-classes",
           "for-ops/how-to/switch-to-dns",
           "for-ops/how-to/use-team-admin",
@@ -100,7 +101,7 @@ module.exports = {
           "for-devs/console/secrets",
           "for-devs/console/settings",
         ],
-        "Get started with Otomi": [
+        "Get Started With Otomi": [
           "for-devs/get-started/overview",
           "for-devs/get-started/lab-1",
           "for-devs/get-started/lab-2",
@@ -125,7 +126,7 @@ module.exports = {
       },
     ],
     "For CISOs": ["for-ciso/overview"],
-    "Otomi Tools": [
+    "Otomi Applications": [
       "apps/alertmanager",
       "apps/argocd",
       "apps/certmanager",

@@ -69,7 +69,7 @@ function Home() {
           <div className={`${clsx(styles.appsContainer)}`}>
             <br></br>
           <div className={styles.iframeWrapper}>
-          <iframe width="100%" height="550" className={styles.iframeVideo} src="https://www.youtube.com/embed/tijsJK0fPZo" title="Otomi DEMO"  allow="fullscreen;"></iframe> 
+          <iframe width="100%" height="550" className={styles.iframeVideo} src="https://www.youtube.com/watch?v=EA7vLvWb3_Q" title="Otomi v0.21.0 preview"  allow="fullscreen;"></iframe> 
           </div>
 
           </div>

@@ -69,7 +69,7 @@ function Home() {
           <div className={`${clsx(styles.appsContainer)}`}>
             <br></br>
           <div className={styles.iframeWrapper}>
-          <iframe width="100%" height="550" className={styles.iframeVideo} src="https://www.youtube.com/watch?v=EA7vLvWb3_Q" title="Otomi v0.21.0 preview"  allow="fullscreen;"></iframe> 
+          <iframe width="100%" height="550" className={styles.iframeVideo} src="https://www.youtube.com/embed/EA7vLvWb3_Q" title="Otomi v0.21.0 preview"  allow="fullscreen;"></iframe> 
           </div>
 
           </div>
@@ -91,7 +91,7 @@ function Home() {
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
           <div className={styles.announcementInner}>
-            <h1>INTEGRATED TOOLS</h1> <h4>Drag and drop to create your own suite of pre-configured and auttomated tools</h4>
+            <h1>INTEGRATED TOOLS</h1> <h4>Create your own suite of pre-configured and auttomated tools</h4>
           </div>
           </div>
         </div>

@@ -22,8 +22,10 @@ The Platform section in the left menu provides access to:
 - [Clusters](clusters): A list of all known Kubernetes clusters running Otomi 
 - [Policies](policies): A list of all available security policies and their configuration for this platform
 - [Teams](teams): A list of all Teams using this platform
+- [Builds](builds): A list of all builds created on this platform
+- [Secrets](secrets): A list of all secrets created on this platform
+- [Workloads](workloads): A list of all workloads running on this platform
 - [Services](services): A list of all services running on this platform
-- [Jobs](jobs): A list of all Jobs running on this platform
 - [Settings](settings/alerts): Specific configuration of the platform
 
 ### Team section
@@ -32,10 +34,11 @@ The Team `$name` section gives access to:
 
 - [Apps](../../for-devs/console/apps): All the apps available to the team on this platform
 - [Shortcuts](../../for-devs/console/shortcuts): All shortcuts available to the team on this platform
-- [Services](../../for-devs/console/services): Services managed by the team on this platform
-- [Jobs](../../for-devs/console/jobs): Jobs managed by the team on this platform
-- [Secrets](../../for-devs/console/secrets): Secrets managed by the team on this platform
-- [Settings](../../for-devs/console/settings): Specific Team configuration options
+- [Builds](../../for-devs/console/builds): A list of all builds created by the team
+- [Secrets](../../for-devs/console/secrets): A list of all secrets created by the team
+- [Workloads](../../for-devs/console/workloads): A list of all team workloads
+- [Services](../../for-devs/console/services): A list of all team services
+- [Settings](../../for-devs/console/settings): Specific team configuration options
 
 ### Cluster section
 

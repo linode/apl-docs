@@ -30,7 +30,7 @@ Otomi provides developers with all the tools they need. After deploying your app
 Otomi offers you the ability to immediately start deploying applications on Kubernetes and configure public exposure. This will give you a jump start to get apps running on Kubernetes. But in time you will probably learn more about Kubernetes and start trying out things yourself. Otomi does not force you to use the Web Console. You can just as easily download the KubeConfig for your team and create and deploy manifests yourself. But Otomi will always force you to adhere to the configured safeguards and best practices.
 
 ### Self-Serving
-As a developer, you don’t like to go to the Ops team asking for help. Otomi provides full developer self-service. Developers can spin up new virtual environments, download pull secrets, create Kubernetes secrets, deploy workloads, create jobs and configure public exposure. And all of these features are accessible through just one Web Console. Now you can deliver code completely autonomously.
+As a developer, you don’t like to go to the Ops team asking for help. Otomi provides full developer self-service. Developers can spin up new virtual environments, download pull secrets, create Kubernetes secrets, build images from source code, deploy workloads and configure public exposure. And all of these features are accessible through just one Web Console. Now you can deliver code completely autonomously.
 
 ## Otomi for Platform Teams
 **If you can’t scale beyond a handful of teams you're going to lose speed. Speed is everything to bring new products and applications to market. No one wants to slow down developers. Empower developers, ensure quality, compliance, and governance, avoid lock-in, and lower the operational burden. These are some of the challenges platform teams have to deal with and where Otomi can help out.**
@@ -41,7 +41,7 @@ Are you worried that you can’t adopt cloud-native technology without becoming 
 This approach also takes away the flexibility to change cloud providers in the future while increasing the financial risks. With Otomi, you don’t have to lock yourself into any cloud provider or risk rapidly increasing cloud service bills in order to get the fastest possible platform to deploy containerized applications.
 
 ### Make Developers Self Serving
-Free developers from worrying about the underlying platform setup while still enforcing standards and best practices so they can focus on delivering code. With Otomi, developers can be fully self-serving. They can spin up new namespaces, get access to all the tools they need, create secrets, deploy workloads, create jobs, configure public exposure, add service monitors, and much more. And all of these features are accessible through just one web UI.
+Free developers from worrying about the underlying platform setup while still enforcing standards and best practices so they can focus on delivering code. With Otomi, developers can be fully self-serving. They can spin up new namespaces, get access to all the tools they need, build images from source code, create secrets, deploy workloads, configure public exposure, add service monitors, and much more. And all of these features are accessible through just one web UI.
 
 Platform administrators have access to all the platform applications. Team administrators can create team spaces for development teams and team members can create multiple namespaces within their team space(s).
 

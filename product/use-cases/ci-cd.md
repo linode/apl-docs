@@ -14,11 +14,9 @@ Users on the platform can get access to an organization in Gitea. See [here](htt
 
 ## CD with Otomi
 
-The most common workflow when using Otomi starts when an artifact (image) has been build. Using the workloads feature in Otomi, images can be used in 4 supported types of workloads:
+The most common workflow when using Otomi starts when an artifact (image) has been build. Using the workloads feature in Otomi, images can be used in 2 supported types of workloads:
 
-1. A Kubernetes [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/), combined with an [HPA](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) (Horizontal Pod Autoscaler)
-2. A Kubernetes [StatefullSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
-3. A Kubernetes [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
-4. (if Knative enabled) A [Knative service](https://github.com/knative/specs/blob/main/specs/serving/knative-api-specification-1.0.md#service)
+1. A Kubernetes [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/), combined with an [HPA](https://kubernetes.io/docs/tasks/
+2. (if Knative enabled) A [Knative service](https://github.com/knative/specs/blob/main/specs/serving/knative-api-specification-1.0.md#service)
 
 Otomi uses the `otomi-charts` repository that contains a library of curated Helm charts that are used to deploy the supported workload types. When a workload specification (a combination of a Helm chart with custom values) has been created, Otomi automatically creates an ArgoCD application that deploys the configured chart. A workload can also be configured with the [Argo CD Image Updater](https://argocd-image-updater.readthedocs.io/en/stable/) that can check for new versions of the container images that are deployed with the workload and automatically update the workload to the latest allowed version.

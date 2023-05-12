@@ -4,7 +4,7 @@ title: Team Apps
 sidebar_label: Apps
 ---
 
-![Team apps](../../img/team-apps.png)
+<!-- ![Team apps](../../img/team-apps.png) -->
 
 The team apps are shared apps on the platform available for teams to use. Click on the app to open the app, or click on the configuration icon to go to the app details:
 

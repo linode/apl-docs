@@ -16,7 +16,19 @@ Use the following command to get the logs of the installer job:
 kubectl logs jobs/otomi -n default -f
 ```
 
-### Step 2 (optional): Add the auto generated CA to your keychain
+### Step 2: Create an API key for using Otomi Console and Otomi API
+
+If you would like to use the Otomi Console (Web UI) and Otomi API (for code validation and creation), then you will first need to create a Community Edition API key in [Otomi Cloud](https://portal.otomi.cloud). Follow these instructions to create an API key:
+
+- Go to [Otomi Cloud](https://portal.otomi.cloud)
+- Create an account
+- Click on `Register Cluster`
+- Agree with the [EULA](../../product/eula/v1)
+- Copy the API Key and click `Continue`
+- Log in to Otomi Console. You can find the link in the logs of the installer (see step 1)
+- Add the API key to Otomi Console
+
+### Step 3 (optional): Add the auto generated CA to your keychain
 
 Otomi by default automatically generates a CA. The generated CA is of course not trusted on your local machine. Here are some options to prevent you from clicking away lots of security warning in your browser:
 
@@ -48,7 +60,7 @@ alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 
 3. Optional: Restart Docker (to support pushing images to Harbor)
 
-### Step 3: Activate Drone
+### Step 4: Activate Drone
 
 [Drone](https://www.drone.io/) is an integral part in the deployment of Otomi cluster configuration.
 
@@ -60,22 +72,18 @@ alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 6. Click on the `otomi/values` repository
 7. Click on `+ Activate Repository`
 
-### Step 4 (Optional): Create a new admin user
+### Step 5 (Optional): Create a new admin user
 
 :::info ATTENTION
-
 We strongly advise to not use the default `otomi-admin` account after activation and to not change the password. Store it somewhere safe and only use it in case absolutely required.
-
 :::
 
 [Create a new user account in Keycloak](/docs/apps/keycloak#step-2-create-a-user-in-keycloak) and add the new user to the `otomi-admin` and `team-admin`.
 
-### Step 5 (Optional): Add the URL of the Kubernetes API
+### Step 6 (Optional): Add the URL of the Kubernetes API
 
 :::info NOTE
-
 Adding the URL of the K8s cluster API is required by teams to be able to download the KUBECONFIG
-
 :::
 
 - Under `Platform` in Otomi Console, click on `Settings`

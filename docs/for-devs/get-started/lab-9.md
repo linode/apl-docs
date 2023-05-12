@@ -1,61 +1,82 @@
 ---
 slug: lab-9
-title: Create secrets
-sidebar_label: lab 9
+title: Deploy your application
+sidebar_label: Lab 9
 ---
 
-When the platform administrator has enabled Vault, you can use Vault to store and manage secrets. Secrets in Vault can be synchronized to your team namespace as Kubernetes secrets. In this part we'll first create a secret in Vault and then sync the secret to your team namespace using the Secrets option in Otomi Console.
+Now that you have access to the team namespace and have pushed your image to Harbor, you can now deploy your application.
 
-## Create a secret in Vault
+In this case we'll use a demo app called hello. If you like you can clone the repo
 
-- Open the Vault app in your team apps
+```bash
+git clone https://github.com/redkubes/nodejs-helloworld.git
+```
 
-![kubecfg](../../img/team-vault.png)
+And then tag and build the image as you have done in [lab 3](lab-3).
 
-- Sign in with Method `OIDC`, click on `Sign in with OIDC Provider` and leave role blank
+## Create a Deployment and Service
 
-![kubecfg](../../img/vault-oidc.png)
+Create a `hello-svc.yaml` file and copy/paste the following 2 Kubernetes manifests:
 
-You are now automatically redirected to your team space (secrets/teams/team-demo) in the example below) in Vault.
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-svc
+  template:
+    metadata:
+      labels:
+        app: hello-svc
+    spec:
+      containers:
+        - name: hello-svc
+          image: harbor.<your-domain>/<team-name>/<image-name>:<tag>
+          resources:
+            limits:
+              memory: '128Mi'
+              cpu: '200m'
+            requests:
+              memory: '64Mi'
+              cpu: '100m'
+          securityContext:
+            runAsUser: 1001
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-svc
+spec:
+  selector:
+    app: hello-svc
+  ports:
+    - port: 80
+      targetPort: 8080
+```
 
-![kubecfg](../../img/first-login-vault.png)
 
-:::info
+Now apply the manifest to Kubernetes:
 
-In your team space in Vault you will see 2 secrets: 1) `mysecret-generic` and `otomi-welcome`. Do NOT remove these secrets. If you do, the team space in Vault will be removed.
+```bash
+kubectl apply -f hello-svc.yaml
+```
 
+Check to see if the pod is running and the service has been created:
+
+```bash
+kubectl get pod
+```
+
+```bash
+kubectl describe svc hello
+```
+
+:::note
+The example here is only a very simplified one. You can dive into the world of Kubernetes deployments, or you can ask your platform administrator to enable Knative Serving. Knative will then take care of auto scaling for you. We will also soon release a new feature that will help to remove the struggle of creating and managing Kubernetes manifests. Stay tuned!
 :::
-
-- Click on Create secret
-
-![kubecfg](../../img/create-secret-vault.png)
-
-- Provide a name for the secret. We'll use the name hello. The name of the secret in this case will be: `teams/team-demo/hello`
-- Fill in a `Key` (TARGET in the example below) and a `value`
-- Click on save
-
-![kubecfg](../../img/create-secret-vault-2.png)
-
-The secret is now created in vault. Now we need to synchronize the secret in Vault to Kubernetes so the secret can be used in workloads.
-
-## Create a secret in Otomi
-
-- In the left menu under the Team demo, click Secrets
-- Click on Create secret
-- Provide a name for the secret. The name should match the name of the secret in Vault
-- Select the secret type (Generic in this case)
-- Under Entries fill in the `keys` (the keys of the secret in Vault)
-- Click submit
-
-![kubecfg](../../img/otomi-secret.png)
-
-- Now click on `Deploy Changes` on top of the left menu
-
-
-The secret in Vault will now be synchronized to Kubernetes and can be used by the team in any workload. Otomi Console makes this easy by offering a secret selector during the creation of services.
-
-:::info
-
-In this part we only covered using generic secrets. See [here](../console/secrets) to see how you can create TLS and pull secrets
-:::
-

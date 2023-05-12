@@ -1,56 +1,61 @@
 ---
 slug: lab-8
-title: Configuring network policies
-sidebar_label: Lab 8
+title: Create secrets
+sidebar_label: lab 8
 ---
 
-In some cases you want to explicitly allow access to your application. This can be done by creating network policies. Otomi supports 2 types of network policies:
+When the platform administrator has enabled Vault, you can use Vault to store and manage secrets. Secrets in Vault can be synchronized to your team namespace as Kubernetes secrets. In this part we'll first create a secret in Vault and then sync the secret to your team namespace using the Secrets option in Otomi Console.
 
-- Policies for ingress traffic inside the cluster
-- Policies for egress traffic to go outside of the cluster (to access external FQDNs)
+## Create a secret in Vault
 
-## Prerequisites
+- Open the Vault app in your team apps
 
-Before you can configure network policies, first make sure to add the  `otomi.io/app: <service name>` label to all pods belonging to the service.
+![kubecfg](../../img/team-vault.png)
 
-## configuring network policies for internal ingress
+- Sign in with Method `OIDC`, click on `Sign in with OIDC Provider` and leave role blank
 
-The internal ingress network policies alllow you to:
+![kubecfg](../../img/vault-oidc.png)
 
-- Deny all traffic to your application
-- Allow selected applications running on the cluster to access your application
+You are now automatically redirected to your team space (secrets/teams/team-demo) in the example below) in Vault.
 
-`Deny all` and `Allow all` we don't need to explain right?
+![kubecfg](../../img/first-login-vault.png)
 
-To allow other applications running on the cluster to access your application, do the following:
+:::info
 
-- Register the Kubernetes ClusterIP service of your app as a Service in Otomi. If no public ingress is required, then just use the `Cluster` ingress option
+In your team space in Vault you will see 2 secrets: 1) `mysecret-generic` and `otomi-welcome`. Do NOT remove these secrets. If you do, the team space in Vault will be removed.
 
-- In the `Ingress traffic inside the cluster` block in the `Network policies` section of the Service, select `Allow selected`
-- Add the team name and the service name (a service also registered in Otomi)
+:::
 
-In the example below, you are part of the team backend and you would like to allow the service frontend running in team frontend to be able to access your service:
+- Click on Create secret
 
-![harbor-projects](../../img/netpols-example.png)
+![kubecfg](../../img/create-secret-vault.png)
 
-- Click `Submit` and then `Deploy Changes`
+- Provide a name for the secret. We'll use the name hello. The name of the secret in this case will be: `teams/team-demo/hello`
+- Fill in a `Key` (TARGET in the example below) and a `value`
+- Click on save
 
-## Configuring network policies for external egress
+![kubecfg](../../img/create-secret-vault-2.png)
 
-The external egress policies allow you to:
+The secret is now created in vault. Now we need to synchronize the secret in Vault to Kubernetes so the secret can be used in workloads.
 
-- Allow your application to access resources outside of the cluster
+## Create a secret in Otomi
 
-By default this is not allowed.
+- In the left menu under the Team demo, click Secrets
+- Click on Create secret
+- Provide a name for the secret. The name should match the name of the secret in Vault
+- Select the secret type (Generic in this case)
+- Under Entries fill in the `keys` (the keys of the secret in Vault)
+- Click submit
 
-To allow your application to access resources outside of the cluster, do the following:
+![kubecfg](../../img/otomi-secret.png)
 
-- In the `External egress filtering` block in the `Network policies` section of the Service, click on `Add item`
-- Add the Fully Qualified Domain Name (FQDN) or the IP address of the resource your application needs to access
-- Add the port number
-- Select the protocol
+- Now click on `Deploy Changes` on top of the left menu
 
-![harbor-projects](../../img/netpols-example-2.png)
 
-- Click `Submit` and then `Deploy Changes`
+The secret in Vault will now be synchronized to Kubernetes and can be used by the team in any workload. Otomi Console makes this easy by offering a secret selector during the creation of services.
+
+:::info
+
+In this part we only covered using generic secrets. See [here](../console/secrets) to see how you can create TLS and pull secrets
+:::
 

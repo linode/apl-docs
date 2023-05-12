@@ -1,7 +1,7 @@
 ---
-slug: lab-12
+slug: lab-22
 title: Monitor custom metrics
-sidebar_label: Lab 12
+sidebar_label: Lab 22
 ---
 
 ## What are custom metrics

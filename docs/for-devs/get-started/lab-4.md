@@ -1,82 +1,71 @@
 ---
 slug: lab-4
-title: Deploy your application
-sidebar_label: Lab 4
+title: Create a CI (build) pipeline
+sidebar_label: lab 4
 ---
 
-Now that you have access to the team namespace and have pushed your image to Harbor, you can now deploy your application.
+Kubernetes is a container orchestrator, so we need to create container images that we can deploy. Next to providing a Git service. Otomi also has a complete CI solution called Drone integrated. You can use Drone to create and run CI pipelines to build images and push them to your private image registry (Harbor).
 
-In this case we'll use a demo app called hello. If you like you can clone the repo
+## Prerequisites
 
-```bash
-git clone https://github.com/redkubes/nodejs-helloworld.git
+Before you can use Drone to run CI pipelines, you will need to have:
+
+1. A Git repository
+2. Credentials to push images to the registry (your private registry on the platform)
+
+## Creating a build pipeline in Drone
+
+In the apps section in Otomi console, you'll see an app called Drone. Click on it.
+
+![kubecfg](../../img/team-app-drone.png)
+
+- Go to the Drone dashboard, and click on ‘SYNC’. You will now see your repo pop up in the REPOSITORIES list.
+
+![kubecfg](../../img/repo-sync.png)
+
+- Click on the new repo and then click ‘ACTIVATE’.
+
+![kubecfg](../../img/drone-activate-repo.png)
+
+
+Now we’ll need to add the credentials of the robot account as secrets toDrone:
+
+- Click on your repository.
+- Under Settings, Click on secrets
+- Add the following 2 secrets:
+
+```
+REGISTRY_USERNAME = <harbor-robot-account-name.
+REGISTRY_PASSWORD = <the-token-of-the-robot-account>
 ```
 
-And then tag and build the image as you have done in [lab 3](lab-3).
+Now you'll need to add a Drone pipeline definition to our repo.
 
-## Create a Deployment and Service
+- Add a `.drone.yml` file to your repo. This is an example you can use:
 
-Create a `hello-svc.yaml` file and copy/paste the following 2 Kubernetes manifests:
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: hello-svc
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: hello-svc
-  template:
-    metadata:
-      labels:
-        app: hello-svc
-    spec:
-      containers:
-        - name: hello-svc
-          image: harbor.<your-domain>/<team-name>/<image-name>:<tag>
-          resources:
-            limits:
-              memory: '128Mi'
-              cpu: '200m'
-            requests:
-              memory: '64Mi'
-              cpu: '100m'
-          securityContext:
-            runAsUser: 1001
-          ports:
-            - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: hello-svc
-spec:
-  selector:
-    app: hello-svc
-  ports:
-    - port: 80
-      targetPort: 8080
+```
+kind: pipeline
+type: kubernetes
+name: default
+steps:
+  - name: build-push
+    image: plugins/docker
+    settings:
+      registry: harbor.<yourdomain>
+      repo: harbor.<your-ip>.nip.io/team-demo/hello
+      insecure: true
+      username:
+        from_secret: REGISTRY_USERNAME
+      password:
+        from_secret: REGISTRY_PASSWORD
+      tags:
+        - ${DRONE_BRANCH}
 ```
 
+Make sure to adjust the registry and repo name in the .drone.yml file
 
-Now apply the manifest to Kubernetes:
+In Drone, you will see the pipeline has automatically started building and then pushing the new image to Harbor.
 
-```bash
-kubectl apply -f hello-svc.yaml
-```
+![kubecfg](../../img/drone-pipeline.png)
 
-Check to see if the pod is running and the service has been created:
-
-```bash
-kubectl get pod
-```
-
-```bash
-kubectl describe svc hello
-```
-
-:::note
-The example here is only a very simplified one. You can dive into the world of Kubernetes deployments, or you can ask your platform administrator to enable Knative Serving. Knative will then take care of auto scaling for you. We will also soon release a new feature that will help to remove the struggle of creating and managing Kubernetes manifests. Stay tuned!
-:::
+If you use Harbor as a private registry, check to see if the repo has been created. You can now also use Trivy to scan your image(s) for vulnerabilities.

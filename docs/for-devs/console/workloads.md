@@ -9,29 +9,60 @@ sidebar_label: Workloads
 A Workload in Otomi is a self-service feature for:
 
 - Deploying Kubernetes workloads
-  * A regular Kubernetes deployment with HPA
+  * A regular Kubernetes deployment with a HPA (Horizontal Pod Autoscaler)
   * A Knative service
 - Automatically create the ArgoCD resources to deploy the workload in a GitOps way
 - Manage the custom values of the workloads in Git
 
 :::info
-The first phase of the workloads feature only supports deploying workloads using a provided Helm chart. In the second phase, you can also use Otomi chart templates to deploy different workload types.
+Ask you platform administrator to activate Argo CD to be able to use this feature.
 :::
 
+:::info
+Ask you platform administrator to activate Knative to be able to create Function as a Service workloads.
+:::
+
+
 ## Create a Workload
+
+1. Select the workload type
+
+- Regular application: will use the [Otomi deployment Helm chart](https://github.com/redkubes/otomi-charts)
+- Function as a Service: will use the [Otomi Knative service Helm chart](https://github.com/redkubes/otomi-charts)
+- Bring your own Helm chart: use your own (custom) Helm chart
+
+## Regular application
+
+1. Enter a name for the workload
+2. Fill in the image name of the image the workload will deploy
+3. Fill in the tag of the image
+4. (optionally) Adjust the port
+5. (optionally) Adjust the required CPU and memory resources
+6. (optionally) Adjust the Min and Max instances. This will be used to auto-scale the application based on a Kubernetes HPA
+7. Click `Next`
+8. Review the Values used to install the chart. Optionally add more values. See [here](https://github.com/redkubes/otomi-charts) for all supported values
+
+## Function as a Service
+
+1. Enter a name for the workload
+2. Fill in the image name of the image the workload will deploy
+3. Fill in the tag of the image
+4. (optionally) Adjust the port
+5. (optionally) Adjust the required CPU and memory resources
+6. (optionally) Adjust the Min and Max instances. This will be used by Knative to auto scale the application. By default the Min count is set to `0`. This means that the workload will scale to zero. The application container in this case will start when a request is received.
+7. Click `Next`
+8. Review the Values used to install the chart. Optionally add more values. See [here](https://github.com/redkubes/otomi-charts) for all supported values
+
+## BYO Helm chart
 
 1. Enter a name for the workload
 2. Enter the URL to the Git repo containing the Helm Chart or a Helm repository
 3. Optionally (only when using a Git repo) add the relative directory path within the Git repository. Absolute paths cause errors.
 4. Optionally (only when using a Chart registry) add the name of the Helm chart
 5. Enter the revision. In case of using a Git repo, this can be commit, tag, or branch. If omitted, will equal to HEAD. In case of using a Chart repository, this is a semver tag for the Chart's version
-6. Click `Submit`
-
-After submitting the new workload specs, the values editor will be shown. Here you can edit the chart values.
-
-1. Click on `Edit`
-2. Add your values (or leave empty to use chart default values)
-3. Click `Submit`
+6. Click `Next`
+7. Review the Values used to install the chart
+8. Click `Submit`
 
 Now click on `Deploy Changes`
 

@@ -24,6 +24,7 @@ Another difference between the Team Admin and user created Teams is that Team Ad
 1. Login with a user who is a member of the `otomi-admin` or `team-admin` role
 
 2. Provide a name for the team (lowercase). The teamname can not be changed afterwards! Creating a team will result in the creation of namespace `team-$NAME`
+
 3. Optional: Provide a OIDC group name/id granting for granting access to team. Only members of the group will get access to the team
 
 4. Optional (only when `multi-tenancy` is enabled): In order to receive alerts, please choose an alerting endpoint:
@@ -35,7 +36,7 @@ Another difference between the Team Admin and user created Teams is that Team Ad
 | Email            | You may provide a list of email addresses for both 'Non Critical' and 'Critical' |
 | If none selected | Global (admin) alerting endpoint configuration will be used                      |
 
-5. Add Resource Quotas
+5. Optional: Add Resource Quotas
 
 When required, add resource quota for the team. The resource quota should adhere to the "spec.hard" format as described [here](https://kubernetes.io/docs/concepts/policy/resource-quotas/).
 
@@ -45,7 +46,7 @@ There is no validation as there is no schema published. Add/change resource quot
 
 :::
 
-1. Configure Azure Monitor
+6. Optional: Configure Azure Monitor
 
 :::note
 
@@ -60,7 +61,7 @@ Azure Monitor is the platform service that provides a single source for monitori
 | Azure monitoring with global settings | Takes on the global settings  |
 | Azure monitoring with custom settings | Overrides any global settings |
 
-1. Turn Network Policy On/Off for the team
+7. Turn Network Policy On/Off for the team
 
 | Option           | Description                                                                            |
 | ---------------- | -------------------------------------------------------------------------------------- |

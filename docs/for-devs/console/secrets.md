@@ -14,6 +14,10 @@ Otomi supports 3 types of secrets:
 - [Create a Docker Registry secret](#create-a-docker-registry-secret)
 - [Create a TLS secret](#create-a-tls-secret)
 
+:::info
+Ask you platform administrator to activate Hashicorp Vault to be able to use this feature.
+:::
+
 ### Create a Generic secret
 
 Create a generic kubernetes secret by listing a selection of (or all) properties of a Vault secret registered with the same name.

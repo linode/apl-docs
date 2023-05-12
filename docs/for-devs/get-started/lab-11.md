@@ -1,50 +1,70 @@
 ---
 slug: lab-11
-title: View container metrics
+title: Configure Argo CD image updater
 sidebar_label: Lab 11
 ---
 
-When your application is deployed, you would of course like to be able to see container metrics for debugging purposes. Prometheus is used in Otomi for metrics. When Prometheus is enabled, you'll see the Prometheus app in your apps.
+In the previous part, you have seen how to use Argo CD to automatically deploy applications by adding the Kubernetes manifests in to the gitops repo in Gitea. You can also use Argo CD to deploy Helm charts and automatically update the version of the deployed image.
 
 :::info
-When Otomi is configured in multi-tenant mode, each team will get a dedicated Prometheus and Grafana instance. Container metrics are provided by the platform Prometheus and you can use the dedicated team Prometheus to collect custom application metrics.
+Argo CD currently only supports the image update feature in combination with a Helm chart.
 :::
 
-## View container metrics (no multi-tenancy)
+## Upload a Helm chart to Harbor
 
-- Open the Grafana app in your team apps
+You can do this in the Harbor UI, or directly with the helm CLI:
 
-![kubecfg](../../img/prometheus-teams.png)
+- Login to the team's OCI registry first, by using the push credentials for your team provided by the platform administrator.
 
-- Grafana will open the default Welcome to Grafana page. On the right, click on `Dashboards`
+```
+helm registry login -u 'otomi-team-demo-push' -p $token harbor.<your-domain>
+```
 
-![kubecfg](../../img/grafana-dashboards.png)
+- Upload the chart:
 
+```
+helm push <chart-name>.tgz oci://harbor.<your-domain>/library/<chart-name>
+```
 
-Here you will see a long list of dashboards that are added by Otomi. 
+## Connect the repo in Argo CD
 
-- Select the `Kubernetes / Compute Resources / Namespace (Pods)` dashboard
+- In the apps section in Otomi console, click on the Argo CD app
+- Open `Settings` > `Repositories`
+- Choose `Connect Repo using https`
+- Fill in the following:
+   - `Type: Helm`
+   - `Name: Harbor`
+   - `Project: <team-name>`
+   - `Repository URL: https://harbor.<your-domain>/chartrepo/library`
+- Click `Connect`
 
-![kubecfg](../../img/dashboard-1.png)
+## Create a new Argo CD application
 
-- Select your team namespace
+- Select `Applications`, and click on `Create`
+- Fill in the following:
+   - `Application Name: <your-app-name>`
+   - `Project: <team-name>`
+   - `Sync Policy: Automatic`
+   - `Repository URL: harbor.<your-domain>/chartrepo/library`
+   - `Chart: <chart-name>`
+   - `Version: <version>`
+   - `Cluster URL: https://kubernetes.default.svc`
+   - `Namespace: <team-name>`
+- Click on `Create`
 
-![kubecfg](../../img/dashboard-2.png)
+You'll see that the chart is now automatically deployed.
 
+## Configure Argo CD Image Updater
 
-## View container metrics (in multi-tenancy mode)
+- In Argo CD, go to applications and click on the new created application
+- Click on `App Details` and then `edit`
+- Under `Annotations`, add the following annotation (example):
 
-When Otomi runs in multi-tenant mode, using Grafana for Prometheus is a little different. If you go to the dashboards, you'll only see 2 dashboards:
+```yaml
+argocd-image-updater.argoproj.io/image-list: "otomi/nodejs-helloworld:~1.2"
+```
 
-1. Kubernetes / deployment
-2. Kubernetes / Pods
+- Now click `Save`
 
-- Click on the Kubernetes / Pods dashboard. 
-  
-Note that you will not see any data. This is because the dedicated team Prometheus is used as a datasource, but the team Prometheus instance does not collect container metrics.
+In the example above, we used the `semver` update strategy. Read more about the supported update strategies [here](https://argocd-image-updater.readthedocs.io/en/stable/basics/update-strategies/)
 
-- Select the `Prometheus-platform` data source
-
-![kubecfg](../../img/prometheus-platform.png)
-
-Now you will see metrics of containers running in your team namespace.

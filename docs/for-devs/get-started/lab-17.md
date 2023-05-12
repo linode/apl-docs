@@ -1,19 +1,43 @@
 ---
 slug: lab-17
-title: Scan your images for vulnerabilities
+title: Scan your running containers for vulnerabilities
 sidebar_label: Lab 17
 ---
 
-When your team is using Harbor for private image registries, you can use Trivy to automatically scan your images on push. This is not enabled by default. Ask your platform administrator to turn this on for your project in Harbor. When enabled, you can see the results of the scans by following these steps:
+So now you know how to scan container images when pushed to Harbor. But what if you have long running versions of containers? When new vulnerabilities are identified after you scanned the image, you wil only see them when you update your image. For this scenario, Otomi offers 2 realtime container scanning tools:
 
-- In the apps section in Otomi console, click on Harbor
-- Click on your project. You will only see the projects of the Teams that you are a member of
-- You will now see a list of the teams repositories
-- Click on the repository that contains the artifact (image) that you would like to investigate
-- In the list of artifacts, you can see a summary of the scan results
+- KubeClarity for adhoc scanning of containers
+- Trivy Operator for automatic daily scanning of containers in all Teams
 
-![kubecfg](../../img/trivy-scan-sum.png)
+## Scan running containers with Kubeclarity
 
-When you click on the scanned artifact, you'll see a more detailed report on all the vulnerabilities:
+:::info
+KubeClarity is NOT configured for multi-tenancy. This means everyone can scan any container running on the platform.
+:::
 
-![kubecfg](../../img/trivy-scan-details.png)
+In the apps section in Otomi console, you'll see an app called KubeClarity. Click on it.
+
+![kubecfg](../../img/team-app-kubeclarity.png)
+
+- In the right menu, click on `Runtime Scan`
+- Select your team's namespace for the scan to target
+- Click `Start Scan`
+
+When the scan is completed, you'll see
+
+![kubecfg](../../img/kubeclarity-scan-results.png)
+
+## See Trivy scan results
+
+When Trivy is enabled by the platform admin and Otomi runs in multi-tenant mode, then each team will see the Trivy scan results for all containers deployed within the Team, in a Trivy dashboard in Grafana.
+
+- In the right menu, click on `apps`
+- Click on `Grafana`
+- Open the Trivy scan results dashboard
+
+In the dashboard you can see all identified vulnerabilities per container:
+
+![kubecfg](../../img/trivy-dashboard.png)
+
+
+

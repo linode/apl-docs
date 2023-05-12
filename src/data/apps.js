@@ -143,4 +143,28 @@ export default [
     name: "Trivy",
     desc: "Kubernetes-native security toolkit",
   },
+  {
+    href: "https://github.com/paketo-buildpacks",
+    src: "paketo-logo.png",
+    name: "Paketo",
+    desc: "Cloud Native Buildpack ",
+  },
+  {
+    href: "https://github.com/tektoncd/pipeline",
+    src: "tekton-logo.png",
+    name: "Tekton",
+    desc: "Declarative CI/CD pipelines",
+  },
+  {
+    href: "https://buildpacks.io",
+    src: "buildpacks-logo.png",
+    name: "Buildpacks",
+    desc: "Build images from application code",
+  },
+  {
+    href: "https://github.com/opencost/opencost",
+    src: "opencost-logo.svg",
+    name: "Opencost",
+    desc: "Cost monitoring for Kubernetes",
+  },
 ];

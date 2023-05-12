@@ -41,10 +41,8 @@ apps:
     modsecurity:
       enabled: true
       owasp: true
-  cert-manager:
-    issuer: custom-ca
 teamConfig:
-  myapp:
+  demo:
     password: ${somePassword}
     id: myapp
     networkPolicy:
@@ -83,9 +81,18 @@ teamConfig:
         url: https://myrepo.git
         path: api
         revision: HEAD
+files:
+  env/teams/workloads/demo/front-end.yaml: |
+    values: |
+      image:
+        repository: otomi/nodejs-helloworld
+        tag: v1.2.13
+  env/teams/workloads/demo/front-end.yaml: |
+    values: |
+      image:
+        repository: otomi/nodejs-helloworld-api
+        tag: v1.2.13
 ```
-
-
 
 If Otomi is installed with these values using the Helm chart, Otomi will install and configure:
 
@@ -93,8 +100,7 @@ If Otomi is installed with these values using the Helm chart, Otomi will install
 2. Ingress resources
 3. Istio (including the virtual services for public exposed services with HTTP response headers)
 4. Network policies
-5. Cert-manager
-6. ArgoCD and ArgoCD application sets to automatically deploy the front-end and api workloads
+5. ArgoCD and ArgoCD application sets to automatically deploy the front-end and api workloads
 
 
 

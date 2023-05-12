@@ -15,7 +15,8 @@ module.exports = {
         "use-cases/ci-cd",
         "use-cases/serverless",
       ]
-    }
+    },
+    "eula/v1",
   ],
 };
 

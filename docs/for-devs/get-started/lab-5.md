@@ -1,81 +1,56 @@
 ---
 slug: lab-5
-title: BYO manifest to deploy a workload with Argo CD
+title: Push your container images
 sidebar_label: Lab 5
 ---
 
-Deploying your applications by doing `kubectl apply -f` is not ideal. You as a developer would like to automatically deploy and update your application after a new build. Otomi integrated Argo CD to provide an out-of-the-box gitops solution.
+Now that you have kubectl access to your team namespace, you are ready to deploy your first container. When the platform administrator created your team, a private container registry has been automatically created for your team in Harbor and a pull secret has been added to your team namespace. To be able to push container images to your private registries, you'll first need to create a robot-account in your Harbor project with push access rights.
+
+## Access Harbor UI
+
+In the apps section in Otomi console, you'll see an app called Harbor. Click on it and follow these steps:
+
+- Choose `Login via OIDC provider`
+
+![oidc](../../img/harbor-oidc.png)
+
+- Set your OIDC user name
+
+![harbor-oidc](../../img/harbor-user-name.png)
 
 
-## Using Argo CD to deploy manifests and charts
+- In Harbor you'll see all the projects of the teams that you are a member of
 
-In the apps section in Otomi console, you'll see an app called Argo CD. Click on it.
+![harbor-projects](../../img/harbor-projects.png)
 
-![kubecfg](../../img/team-app-argo.png)
+- Click on the project of your team. Here you will see all the registries of the team
 
-In Argo CD you'll see that an Argo app has already been created for your team. This app is configured to synchronize any manifest that is in the created repo in Gitea for Argo.
+## Login to Harbor
 
-![kubecfg](../../img/argo-team-app.png)
+To be able to push images to Harbor, you'll need a robot account with push permissions. Otomi offers teams with a self-service option to download the Docker config for their team's private registry in Harbor. In the left menu you will see the option `Download DOCKERCFG`. Click on it to download the credentials.
 
-If you click on the app and then click on `APP DETAILS`, you'll see the `REPO URL` and also that the `SYNC POLICY` is set to `ENABLE AUTO-SYNC`.
+![harbor-projects](../../img/download-dcfg.png)
 
-Go back to the console and click on the Gitea app in the apps section. In the list of repo's you'll now see a new repo called `otomi/team-<name>-argocd`.
-
-![kubecfg](../../img/argo-team-repo.png)
-
-To show the power of Argo CD, let's add a manifest to the repo and see what happens.
-
-- Create a new file in the repo called `deploy-nginx.yaml` 
-- Add the following contents to the file:
+When you have downloaded the docker config then run `docker login`:
 
 ```
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      annotations:
-        policy.otomi.io/ignore-sidecar: container-limits,psp-allowed-users
-      labels:
-        app: nginx
-    spec:
-      containers:
-        - name: nginx
-          image: nginxinc/nginx-unprivileged:stable
-          resources:
-            limits:
-              memory: '128Mi'
-              cpu: '200m'
-            requests:
-              memory: '64Mi'
-              cpu: '100m'
-          securityContext:
-            runAsUser: 1001
-          ports:
-            - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx
-spec:
-  selector:
-    app: nginx
-  ports:
-    - port: 80
-      targetPort: 8080
+docker login -u 'otomi-team-<team-name>-push' -p <token> harbor.<your-domain>
 ```
 
-- Commit Changes
+:::note
+If Docker refuses to connect with an error
+`x509: certificate signed by unknown authority`, go to the Otomi Console,
+and click `Download CA` (if you have not done so already); then copy the
+obtained file to `~/.docker/ca.crt` or restart docker desktop.
+:::
 
-Now go back to the Argo app and click on the `team<name>` application. You can see that all the Kubernetes resources have been created.
+- Build and tag your image
 
-![kubecfg](../../img/argo-team-sync.png)
+```
+docker build -t harbor.<your-domain>/<team-name>/<image-name>:<tag> .
+```
 
+- Push the image to Harbor
 
+```
+docker push harbor.<your-domain>/<team-name>/<image-name>:<tag>

@@ -4,7 +4,7 @@ title: Platform - Apps
 sidebar_label: Apps
 ---
 
-![Console apps](../../img/platform-apps.png)
+<!-- ![Console apps](../../img/platform-apps.png) -->
 
 The apps section lists all apps available to the otomi-admin role. The apps section is devided into 2 parts:
 

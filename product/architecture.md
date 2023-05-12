@@ -75,11 +75,14 @@ The following table shows all integrated applications:
 | [Drone](/docs/apps/drone)                    |  X   |        |      |        X        |          |
 | Gitea                                        |  X   |        |      |        X        |    X     |
 | Httpbin                                      |      |   X    |      |                 |    X     |
-| Jeager                                       |      |        |      |                 |    X     |
+| Jeager                                       |      |   X    |      |                 |    X     |
 | Kiali                                        |      |        |      |                 |    X     |
 | KubeClarity                                  |      |        |      |                 |    X     |
 | Velero                                       |      |        |      |                 |    X     |
 | Minio                                        |      |        |      |                 |    X     |
+| Opencost                                     |      |        |      |                 |    X     |
+| Tekton Pipeline                              |      |        |      |                 |    X     |
+| Trivy Operator                               |      |        |      |                 |    X     |
 
 
 ### Advanced ingress architecture as its core

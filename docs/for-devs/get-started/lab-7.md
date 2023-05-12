@@ -1,28 +1,19 @@
 ---
 slug: lab-7
-title: Publicly expose your application
+title: Scan your images for vulnerabilities
 sidebar_label: Lab 7
 ---
 
-When you have deployed your app, you will propably like to expose it publicly. You propably noticed that in the previous part, we created a Kubernetes service of type `ClusterIP` and not `LoadBalancer` and also that the Pod(s) created by the deployment have an Istio sidecar. All Pods created in your team will automatically be added to the service mesh. In this part we'll create a Service in Otomi to expose your app publicly. When you create a Service, Otomi will then create the Istio virtual service and configure ingress for your application.
+When your team is using Harbor for private image registries, you can use Trivy to automatically scan your images on push. This is not enabled by default. Ask your platform administrator to turn this on for your project in Harbor. When enabled, you can see the results of the scans by following these steps:
 
-## Create a Service
+- In the apps section in Otomi console, click on Harbor
+- Click on your project. You will only see the projects of the Teams that you are a member of
+- You will now see a list of the teams repositories
+- Click on the repository that contains the artifact (image) that you would like to investigate
+- In the list of artifacts, you can see a summary of the scan results
 
-- In the left menu panel under click `Services` then click on `Create Service`
+![kubecfg](../../img/trivy-scan-sum.png)
 
-![harbor-projects](../../img/create-svc.png)
+When you click on the scanned artifact, you'll see a more detailed report on all the vulnerabilities:
 
-- Fill in the name of the Kubernetes service (hello-svc) that you already deployed:
-
-![harbor-projects](../../img/svc-name.png)
-
-- Under `Exposure Ingress`, select `Ingress` and use the default configuration
-
-![harbor-projects](../../img/ingress.png)
-
-
-- Click on `Submit`
-- Click on `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).
-
-
-Deploying changes in Otomi usually takes just a couple of minutes depending on the amount of resources available on your cluster. You will see your service in the list of Services. Click on the URL and see your application.
+![kubecfg](../../img/trivy-scan-details.png)

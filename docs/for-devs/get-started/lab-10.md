@@ -1,46 +1,81 @@
 ---
 slug: lab-10
-title: View container logs
+title: BYO manifest to deploy a workload with Argo CD
 sidebar_label: Lab 10
 ---
 
-When your application is deployed, you would of course like to be able to see container logs for debugging purposes. Grafana Loki is used in Otomi for log aggregation. When Grafana Loki is enabled, you'll see the Loki app in your apps.
+Deploying your applications by doing `kubectl apply -f` is not ideal. You as a developer would like to automatically deploy and update your application after a new build. Otomi integrated Argo CD to provide an out-of-the-box gitops solution.
 
-:::info
-Only when Otomi is configured in multi-tenant mode, container logs of teams are split up between teams. This means you can only see the logs of your own team. If multi-tenancy is not enabled, you can see the logs of all containers running on the cluster. If you don't want other teams to see your logs, ask the administrator to enable the Otomi multi-tenancy feature.
-:::
 
-## View container logs
+## Using Argo CD to deploy manifests and charts
 
-- Open the Loki app in your team apps
+In the apps section in Otomi console, you'll see an app called Argo CD. Click on it.
 
-![kubecfg](../../img/loki-teams.png)
+![kubecfg](../../img/team-app-argo.png)
 
-In Grafana, you are directed to the `Explore` section. Otomi already added a query for you, showing the logs of all containers running in your team namespace
+In Argo CD you'll see that an Argo app has already been created for your team. This app is configured to synchronize any manifest that is in the created repo in Gitea for Argo.
 
-![kubecfg](../../img/grafana-loki.png)
+![kubecfg](../../img/argo-team-app.png)
 
-Adjust the query to your own needs. Loki uses LogQL as a query language. Learn more about LOgQL [here](https://grafana.com/docs/loki/latest/logql/)
+If you click on the app and then click on `APP DETAILS`, you'll see the `REPO URL` and also that the `SYNC POLICY` is set to `ENABLE AUTO-SYNC`.
 
-## Creating shortcuts
+Go back to the console and click on the Gitea app in the apps section. In the list of repo's you'll now see a new repo called `otomi/team-<name>-argocd`.
 
-When you created a custom query that you would like to use more often, or would like to share with the team, you can create a shortcut in Otomi.
+![kubecfg](../../img/argo-team-repo.png)
 
-- Copy the absolute path of your query
-- In the apps section, click on the `Settings` icon of the Loki app
+To show the power of Argo CD, let's add a manifest to the repo and see what happens.
 
-![kubecfg](../../img/loki-settings.png)
+- Create a new file in the repo called `deploy-nginx.yaml` 
+- Add the following contents to the file:
 
-- Click on the `Shortcuts` tab
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      annotations:
+        policy.otomi.io/ignore-sidecar: container-limits,psp-allowed-users
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginxinc/nginx-unprivileged:stable
+          resources:
+            limits:
+              memory: '128Mi'
+              cpu: '200m'
+            requests:
+              memory: '64Mi'
+              cpu: '100m'
+          securityContext:
+            runAsUser: 1001
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 8080
+```
 
-![kubecfg](../../img/loki-shortcuts.png)
+- Commit Changes
 
-- Click `edit`
-- Fill in the `Title`, `Description` and the `Path` for the shortcut
+Now go back to the Argo app and click on the `team<name>` application. You can see that all the Kubernetes resources have been created.
 
-![kubecfg](../../img/new-loki-shortcut.png)
+![kubecfg](../../img/argo-team-sync.png)
 
-- Click `submit` and then click `Deploy Changes`
-
-Now click on the Shortcuts item in the left menu. Your shortcut is now available for everyone in the team to use.
 

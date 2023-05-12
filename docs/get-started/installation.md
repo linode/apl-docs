@@ -21,12 +21,18 @@ See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 As of version [0.20.0](https://github.com/redkubes/otomi-core/releases/tag/v0.20.0) Otomi does not support Kubernetes versions `1.20` and `1.21`
 :::
 
+:::info
+Support for Kubernetes version `1.25` will come soon!
+:::
+
 ```yaml
 cluster:
   k8sVersion: "1.24" # currently 1.22, 1.23 and 1.24 are supported
   name: # the name of your cluster
   provider: # choose between aws, azure, google, digitalocean or custom
 ```
+
+When the chart is installed, follow the [activation steps](activation)
 
 #### Custom values
 
@@ -62,6 +68,8 @@ watch helm list -Aa
 ```
 
 Or view detailed info about kubernetes resources with [k9s](https://k9scli.io)
+
+When the chart is installed, follow the [activation steps](activation)
 
 ### Installing from source
 

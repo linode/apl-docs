@@ -11,4 +11,4 @@ All known Workloads on the platform are listed here. Workloads can be sorted bas
 | Workload Name | The name of the workload                               |
 | Team Name     | The name of the Team responsible for the workload      |
 
-A platform admin can also create Workloads. Make sure to select the correct conext (team-name) in the top bar.
+A platform admin can also create Workloads. Make sure to select the correct context (team-name) in the top bar. See [here](/docs/for-devs/console/workloads) for more information about creating builds.

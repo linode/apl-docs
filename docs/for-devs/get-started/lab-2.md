@@ -15,7 +15,7 @@ After sign in, you will see this page:
 
 ![Team apps](../../img/team-apps.png)
 
-## Download the KUBECFG
+## (optional) Download the KUBECFG
 
 To get Kubectl access to your team namespace, you'll need a kubeconfig file. In Otomi Console you can download the KUBECFG.
 
@@ -34,7 +34,6 @@ By default, kubectl looks for a file named config in the $HOME/.kube directory. 
 ```
 export KUBECONFIG=/path-to-the-kubecfg-file.yaml
 ```
-
 
 ## (Optional) Download CA
 

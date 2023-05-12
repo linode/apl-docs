@@ -55,4 +55,8 @@ module.exports = [
     from: ["/docs/installation/activation"],
     to: "/docs/get-started/activation",
   },
+  {
+    from: ["/docs//docs/console/"],
+    to: "/docs/get-started/activation",
+  },
 ];

@@ -1,0 +1,15 @@
+---
+slug: secrets
+title: Platform - Secrets
+sidebar_label: Secrets
+---
+
+All known Builds on the platform are listed here. Builds can be sorted based on:
+
+| Property      | Description                                            |
+| ------------- | ------------------------------------------------------ |
+| Name          | The name of the secret                                 |
+| Type          | The secret type (generic, docker-registry, TLS)        |
+| Team          | The name of the Team responsible for the secret        |
+
+A platform admin can NOT create secrets and does NOT have access to the team's secrets in Vault.

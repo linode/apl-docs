@@ -1,56 +1,37 @@
 ---
 slug: lab-3
-title: Push your container images
+title: Create a private Git repo
 sidebar_label: Lab 3
 ---
 
-Now that you have kubectl access to your team namespace, you are ready to deploy your first container. When the platform administrator created your team, a private container registry has been automatically created for your team in Harbor and a pull secret has been added to your team namespace. To be able to push container images to your private repository, you'll first need to create a robot-account in your Harbor project with push access rights.
+As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like Gitlab, or use Github. But if you don't, Otomi has you covered. Otomi includes a complete self-hosted Git solution called Gitea.
 
-## Access Harbor UI
+As a team member, you can create and manage your own repositories.
+## Create a private repository
 
-In the apps section in Otomi console, you'll see an app called Harbor. Click on it and follow these steps:
+In the apps section in Otomi console, you'll see an app called Gitea. Click on it.
 
-- Choose `Login via OIDC provider`
+![kubecfg](../../img/team-app-gitea.png)
 
-![oidc](../../img/harbor-oidc.png)
+Now follow these steps:
 
-- Set your OIDC user name
+- Click on `Sign In` with OpenID
 
-![harbor-oidc](../../img/harbor-user-name.png)
+![kubecfg](../../img/gitea-openid.png)
 
+- Click on `+ New Repository`
 
-- In Harbor you'll all the projects of the teams that you are a member of
+![kubecfg](../../img/new-gitea-repo.png)
 
-![harbor-projects](../../img/harbor-projects.png)
+- Fill in a Repository Name
+- Optional: Enable `Initialize Repository`
+- Optional: Make Repository Private
+- Click on `Create Repository`
 
-- Click on the project of your team. Here you will see all team repositories
+Your repo is now ready to be used!
 
-## Login to Harbor
+![kubecfg](../../img/new-gitea-repo-ready.png)
 
-To be able to push images to Harbor, you'll need a robot account with push permissions. Otomi offers teams with a self-service option to download the Docker config for their team's private registry in Harbor. In the left menu you will see the option `Download DOCKERCFG`. Click on it to download the credentials.
-
-![harbor-projects](../../img/download-dcfg.png)
-
-When you have downloaded the docker config then run `docker login`:
-
-```
-docker login -u 'otomi-<team-name>-push' -p <token> harbor.<your-domain>
-```
-
-:::note
-If Docker refuses to connect with an error
-`x509: certificate signed by unknown authority`, go to the Otomi Console,
-and click `Download CA` (if you have not done so already); then copy the
-obtained file to `~/.docker/ca.crt` or restart docker desktop.
+:::info
+Note that you as a user are now the owner of this repo and can add other team members to collaborate. Otomi does not create a group in Gitea that contains all the team member. Team members first have to sign in to Gitea (using OpenID) before they can be added to an existing repo.
 :::
-
-- Build and tag your image
-
-```
-docker build -t harbor.<your-domain>/<team-name>/<image-name>:<tag> .
-```
-
-- Push the image to Harbor
-
-```
-docker push harbor.<your-domain>/<team-name>/<image-name>:<tag>

@@ -1,72 +1,56 @@
 ---
 slug: lab-19
-title: Deploy serverless workloads
+title: Configuring network policies
 sidebar_label: Lab 19
 ---
 
-Otomi uses Knative serving for serverless (or Function as a Service) support.
+In some cases you want to explicitly allow access to your application. This can be done by creating network policies. Otomi supports 2 types of network policies:
 
-As a developer, you'll have the following options to deploy serverless workloads:
+- Policies for ingress traffic inside the cluster
+- Policies for egress traffic to go outside of the cluster (to access external FQDNs)
 
-- BYO Knative service manifest and deploy it using kubectl or ArgoCD
-- Use the workloads feature with the knative Helm Chart in `otomi-charts`
+## Prerequisites
 
-In this lab we're going to create a workload in Otomi to create a Knative service using the knative chart in `otomi-charts`.
+Before you can configure network policies, first make sure to add the  `otomi.io/app: <service name>` label to all pods belonging to the service.
 
-## Create a workload
+## configuring network policies for internal ingress
 
-1. Enter a name for the workload
+The internal ingress network policies alllow you to:
 
-```
-hello-ksvc
-```
+- Deny all traffic to your application
+- Allow selected applications running on the cluster to access your application
 
-2. Enter the URL to the Git repo containing the Helm Chart or a Helm repository:
+`Deny all` and `Allow all` we don't need to explain right?
 
-```
-https://github.com/redkubes/otomi-charts.git
-```
+To allow other applications running on the cluster to access your application, do the following:
 
-3. Enter the path of the chart
+- Register the Kubernetes ClusterIP service of your app as a Service in Otomi. If no public ingress is required, then just use the `Cluster` ingress option
 
-```
-ksvc
-```
+- In the `Ingress traffic inside the cluster` block in the `Network policies` section of the Service, select `Allow selected`
+- Add the team name and the service name (a service also registered in Otomi)
 
-4. Enter the revision. In case of using a Git repo, this can be commit, tag, or branch. If omitted, will equal to HEAD. In case of using a Chart repository, this is a semver tag for the Chart's version
-5. Click `Submit`
+In the example below, you are part of the team backend and you would like to allow the service frontend running in team frontend to be able to access your service:
 
-After submitting the new workload specs, the values editor will be shown. Here you can edit the chart values.
+![harbor-projects](../../img/netpols-example.png)
 
-1. Click on `Edit`
-2. Add the following (minimal) values:
+- Click `Submit` and then `Deploy Changes`
 
-```
-fullnameOverride: hello-ksvc
-image:
-  repository: otomi/nodejs-helloworld
-  tag: v1.2.13
-```
+## Configuring network policies for external egress
 
-3. Click `Submit`
+The external egress policies allow you to:
 
-Now click on `Deploy Changes`
+- Allow your application to access resources outside of the cluster
 
+By default this is not allowed.
 
-## Publicly expose the service
+To allow your application to access resources outside of the cluster, do the following:
 
-- In the left menu panel under click `Services` then click on `Create Service`
+- In the `External egress filtering` block in the `Network policies` section of the Service, click on `Add item`
+- Add the Fully Qualified Domain Name (FQDN) or the IP address of the resource your application needs to access
+- Add the port number
+- Select the protocol
 
-- Fill in the name of the (existing) knative service: `hello-world-ksvc`
+![harbor-projects](../../img/netpols-example-2.png)
 
-- Under `service-type` select `existing knative service`
-
-- Under `Exposure Ingress`, select `Ingress` and use the default configuration
-
-- Click on `Submit`
-  
-- Click on `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).
-
-
-
+- Click `Submit` and then `Deploy Changes`
 

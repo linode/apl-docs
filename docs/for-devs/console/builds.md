@@ -52,7 +52,7 @@ Now choose the type of the build:
 
 ### (optional) Configure repository access:
 
-- If Gitea (provided by Otomo) is used to host the code repository, select `Otomi Gitea repo`
+- If Gitea (provided by Otomi) is used to host the code repository, select `Otomi Gitea repo`
 - If an external private Git repo is used that requires authentication, select `Private repo` and fill in the username ans password. If your github account has 2 factor auth configured, create a personal access token using [this procedure](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 After a few minutes, Otomi will run a pipeline to create the build and push the build to the team's private Harbor registry. Check Harbor to see if the image is created and pushed.

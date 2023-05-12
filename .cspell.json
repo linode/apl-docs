@@ -58,7 +58,8 @@
     "Tekton",
     "kpack",
     "paketo",
-    "decompile"
+    "decompile",
+    "kaniko"
   ],
   "language": "en",
   "words": [

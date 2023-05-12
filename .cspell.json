@@ -57,7 +57,8 @@
     "myapp",
     "Tekton",
     "kpack",
-    "paketo"
+    "paketo",
+    "decompile"
   ],
   "language": "en",
   "words": [

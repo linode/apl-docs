@@ -4,6 +4,10 @@ title: Create secrets
 sidebar_label: lab 8
 ---
 
+:::info
+Prerequisite: For this lab, Hashicorp Vault needs to be activated.
+:::
+
 When the platform administrator has enabled Vault, you can use Vault to store and manage secrets. Secrets in Vault can be synchronized to your team namespace as Kubernetes secrets. In this part we'll first create a secret in Vault and then sync the secret to your team namespace using the Secrets option in Otomi Console.
 
 ## Create a secret in Vault
@@ -42,12 +46,16 @@ The secret is now created in vault. Now we need to synchronize the secret in Vau
 
 - In the left menu under the Team demo, click Secrets
 - Click on Create secret
+
+![kubecfg](../../img/create-secret.png)
+
 - Provide a name for the secret. The name should match the name of the secret in Vault
 - Select the secret type (Generic in this case)
 - Under Entries fill in the `keys` (the keys of the secret in Vault)
-- Click submit
 
-![kubecfg](../../img/otomi-secret.png)
+![kubecfg](../../img/create-secret-2.png)
+
+- Click submit
 
 - Now click on `Deploy Changes` on top of the left menu
 

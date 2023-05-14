@@ -4,6 +4,10 @@ title: View container logs
 sidebar_label: Lab 20
 ---
 
+:::info
+Prerequisite: For this lab, Loki and Grafana need to be activated.
+:::
+
 When your application is deployed, you would of course like to be able to see container logs for debugging purposes. Grafana Loki is used in Otomi for log aggregation. When Grafana Loki is enabled, you'll see the Loki app in your apps.
 
 :::info
@@ -27,15 +31,15 @@ Adjust the query to your own needs. Loki uses LogQL as a query language. Learn m
 When you created a custom query that you would like to use more often, or would like to share with the team, you can create a shortcut in Otomi.
 
 - Copy the absolute path of your query
+  
 - In the apps section, click on the `Settings` icon of the Loki app
-
-![kubecfg](../../img/loki-settings.png)
 
 - Click on the `Shortcuts` tab
 
-![kubecfg](../../img/loki-shortcuts.png)
-
 - Click `edit`
+
+- Click on `Edd item`
+  
 - Fill in the `Title`, `Description` and the `Path` for the shortcut
 
 ![kubecfg](../../img/new-loki-shortcut.png)

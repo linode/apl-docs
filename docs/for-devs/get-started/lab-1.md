@@ -11,6 +11,20 @@ We assume the platform administrator has onboarded your team and you as a team m
 - The URL to access the Otomi web UI (Otomi Console)
 - The login credentials
 
+We also assume the platform administrator has activated the following K8s applications:
+
+- Harbor
+- ArgoCD
+- Prometheus
+- Loki
+- Grafana
+- Trivy Operator
+- Tekton
+- OPA/Gatekeeper
+- Knative
+
+Each lab will show the required K8s application to te activated.
+
 Also make sure to sign into Gitea:
 
 - Open Gitea

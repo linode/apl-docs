@@ -1,13 +1,13 @@
 ---
 slug: lab-11
-title: Configure Argo CD image updater
+title: Configure ArgoCD image updater
 sidebar_label: Lab 11
 ---
 
-In the previous part, you have seen how to use Argo CD to automatically deploy applications by adding the Kubernetes manifests in to the gitops repo in Gitea. You can also use Argo CD to deploy Helm charts and automatically update the version of the deployed image.
+In the previous part, you have seen how to use ArgoCD to automatically deploy applications by adding the Kubernetes manifests in to the gitops repo in Gitea. You can also use ArgoCD to deploy Helm charts and automatically update the version of the deployed image.
 
 :::info
-Argo CD currently only supports the image update feature in combination with a Helm chart.
+ArgoCD currently only supports the image update feature in combination with a Helm chart.
 :::
 
 ## Upload a Helm chart to Harbor
@@ -26,9 +26,9 @@ helm registry login -u 'otomi-team-demo-push' -p $token harbor.<your-domain>
 helm push <chart-name>.tgz oci://harbor.<your-domain>/library/<chart-name>
 ```
 
-## Connect the repo in Argo CD
+## Connect the repo in ArgoCD
 
-- In the apps section in Otomi console, click on the Argo CD app
+- In the apps section in Otomi console, click on the ArgoCD app
 - Open `Settings` > `Repositories`
 - Choose `Connect Repo using https`
 - Fill in the following:
@@ -38,7 +38,7 @@ helm push <chart-name>.tgz oci://harbor.<your-domain>/library/<chart-name>
    - `Repository URL: https://harbor.<your-domain>/chartrepo/library`
 - Click `Connect`
 
-## Create a new Argo CD application
+## Create a new ArgoCD application
 
 - Select `Applications`, and click on `Create`
 - Fill in the following:
@@ -54,9 +54,9 @@ helm push <chart-name>.tgz oci://harbor.<your-domain>/library/<chart-name>
 
 You'll see that the chart is now automatically deployed.
 
-## Configure Argo CD Image Updater
+## Configure ArgoCD Image Updater
 
-- In Argo CD, go to applications and click on the new created application
+- In ArgoCD, go to applications and click on the new created application
 - Click on `App Details` and then `edit`
 - Under `Annotations`, add the following annotation (example):
 

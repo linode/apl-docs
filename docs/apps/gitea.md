@@ -18,7 +18,7 @@ Currently Gitea only supports a single role in combination with OIDC. To sign in
 
 ## Automation
 
-When Argo CD is enabled, Otomi will automatically create a GitOps repository for each Team in Gitea.
+When ArgoCD is enabled, Otomi will automatically create a GitOps repository for each Team in Gitea.
 
 ## Integrations
 

@@ -4,6 +4,10 @@ title: Platform - Builds
 sidebar_label: Builds
 ---
 
+:::info
+To enable this feature, first make sure [Harbor](../../apps/harbor.md) and [Tekton](../../apps/tekton.md) are activated.
+:::
+
 All known Builds on the platform are listed here. Builds can be sorted based on:
 
 | Property      | Description                                            |

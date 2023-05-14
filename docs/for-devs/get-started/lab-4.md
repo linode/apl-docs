@@ -68,4 +68,4 @@ In Drone, you will see the pipeline has automatically started building and then 
 
 ![kubecfg](../../img/drone-pipeline.png)
 
-If you use Harbor as a private registry, check to see if the repo has been created. You can now also use Trivy to scan your image(s) for vulnerabilities.
+If you use Harbor as a private registry, check to see if the repo has been created. You can now also use Trivy in Harbor to scan your image(s) for vulnerabilities.

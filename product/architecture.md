@@ -22,7 +22,7 @@ Otomi Core contains all the integrated applications and is made available (per r
 
 Otomi Core also contains the source code for Otomi CLI. Otomi CLI can be used for advanced initial configuration (bootstrapping), deployment, sync, push, template validation, and much more.
 
-### Integrated tools
+### Integrated K8s applications
 
 Otomi Core is the heart of Otomi and contains a suite of the following integrated Kubernetes applications:
 
@@ -47,9 +47,9 @@ Otomi Core is the heart of Otomi and contains a suite of the following integrate
 - [Nginx Ingress Controller](https://github.com/kubernetes/ingress-nginx): Ingress controller for Kubernetes
 - [Minio](https://github.com/minio/minio): High performance Object Storage compatible with Amazon S3 cloud storage service
 
-### Tool catagories
+### Catagories
 
-Otomi contains four catagories of integrated tools:
+Otomi contains four catagories of integrated K8s applications:
 
 - Core applications: applications that are activated by default
 - Shared applications: applications that are shared between teams. Shared applications are user-, and role-aware or not (user is anonymous)

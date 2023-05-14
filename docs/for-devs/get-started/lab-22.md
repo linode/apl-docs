@@ -4,6 +4,9 @@ title: Monitor custom metrics
 sidebar_label: Lab 22
 ---
 
+:::info
+Prerequisite: For this lab, Prometheus and Grafana need to be activated.
+:::
 ## What are custom metrics
 
 Prometheus will collect all kind of standard container metrics like CPU and memory usage, but no (custom) business or customer metrics like the number of customers who logged into your app each hour.

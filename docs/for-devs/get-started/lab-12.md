@@ -1,7 +1,7 @@
 ---
 slug: lab-12
 title: Deploy a BYO Helm chart
-sidebar_label: Lab 13
+sidebar_label: Lab 12
 ---
 
 Otomi offers a self-service feature to create 3 types of workloads:
@@ -16,19 +16,27 @@ In this Lab you're going to create a workload in Otomi to install your're own He
 
 - Click on `Workloads` in the left menu.
 
+- Click on `Create Workload`
+
+![kubecfg](../../img/create-workload.png)
+
 - Select `Bring your own Helm chart`
+
+![kubecfg](../../img/byo-chart-workload.png)
 
 - Enter the following name for the workload
 
 `hello-world`
 
-- Enter the URL to the Git repo containing the Helm Chart or a Helm repository
+- Enter the URL to the Git repo containing the Helm chart or a Helm repository
 
 `https://github.com/redkubes/nodejs-helloworld`
 
 - Add the Path of the chart within the repo:
 
 `chart/hello-world`
+
+![kubecfg](../../img/byo-chart-workload-2.png)
 
 - Click `Next`
 

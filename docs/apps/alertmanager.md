@@ -18,12 +18,9 @@ When running Otomi in multi-tenant mode, each team is provided a dedicated alert
 
 ## Automation
 
-Not applicable.
+Otomi automatically configures notification receivers for:
 
-## Integrations
-
-The following Otomi apps (if enabled) are configured to use the platform Alertmanager instance:
-
-- [Falco](falco.md)
-
-## Instructions
+- Slack
+- Microsoft Teams
+- Ops Genie
+- Email

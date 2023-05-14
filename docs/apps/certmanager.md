@@ -12,6 +12,18 @@ Setting CertManager to use Letsencrypt requires DNS availability of the requesti
 
 ## Configuration
 
+The following values cam be configured:
+
+| Value     | Description                                            |
+| ------------- | ------------------------------------------------------ |
+| customRootCA          | CA that is used to create and verify self-signed certificates. Leave it empty to generate one automatically                                |
+| customRootCAKey      | CA private key that is used to issue certificates. Leave it empty to generate one automatically                    |
+| email          | Required when using the Let's Encrypt Issuer        |
+| issuer | The certificate issuer. Choose between `letsencrypt` or `custom-ca` |
+| stage | Required when using the Let's Encrypt Issuer. Choose between `staging` or `production` |
+| resources | Configure Request and Limits for cert-manager |
+
+
 ## Automation
 
 Not applicable.

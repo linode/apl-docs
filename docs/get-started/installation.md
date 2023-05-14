@@ -32,11 +32,13 @@ cluster:
   provider: # choose between aws, azure, google, digitalocean or custom
 ```
 
-When the chart is installed, follow the [activation steps](activation). Part of the activation is to register your cluster in [Otomi Cloud](https://portal.otomi.cloud) and download a Community Edition License to use Otomi Console and Otomi API. You can also first create a license key and add it to the chart values:
+When the chart is installed, follow the [activation steps](activation). 
+
+<!-- Part of the activation is to register your cluster in [Otomi Cloud](https://portal.otomi.cloud) and download a Community Edition License to use Otomi Console and Otomi API. You can also first create a license key and add it to the chart values:
 
 ```yaml
 license: <License Key>
-```
+``` -->
 
 #### Custom values
 

@@ -4,6 +4,10 @@ title: Platform - Backups
 sidebar_label: Backups
 ---
 
+:::info
+To enable this feature, first make sure [Velero](../../apps/velero.md) is activated.
+:::
+
 All known Builds on the platform are listed here. Builds can be sorted based on:
 
 | Property      | Description                                            |

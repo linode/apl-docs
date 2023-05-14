@@ -4,62 +4,73 @@ title: Deploy serverless workloads
 sidebar_label: Lab 14
 ---
 
+:::info
+Prerequisite: For this lab, ArgoCD needs to be activated.
+:::
+
 Otomi uses Knative serving for serverless (or Function as a Service) support.
 
 As a developer, you'll have the following options to deploy serverless workloads:
 
 - BYO Knative service manifest and deploy it using kubectl or ArgoCD
-- Use the workloads feature with the knative Helm Chart in `otomi-charts`
+- Create workloads with the deployment Helm chart  in `otomi-charts`
+- Create workloads with the Knative Helm chart in `otomi-charts`
 
 In this lab we're going to create a workload in Otomi to create a Knative service using the knative chart in `otomi-charts`.
 
-## Create a workload
+## Create a Function as a Service workload
 
-1. Enter a name for the workload
+You can create a workload to deploy your own Helm chart, or you can use one of the `otomi-charts` Helm charts. In this case we'll use the deployment chart in the `otomi-charts` repository.
+
+1. Go to `Workloads` in the right menu and click on `New Workload`
+
+2. Choose `Function as a Service`
+
+![kubecfg](../../img/ksvc-app.png)
+
+3. Enter a name for the workload
 
 ```
 hello-ksvc
 ```
 
-2. Enter the URL to the Git repo containing the Helm Chart or a Helm repository:
+4. Fill in the image to deploy:
 
 ```
-https://github.com/redkubes/otomi-charts.git
+otomi/nodejs-helloworld
 ```
 
-3. Enter the path of the chart
+5. Fill in the tag of the image to deploy:
 
 ```
-ksvc
+v1.2.13
 ```
 
-4. Enter the revision. In case of using a Git repo, this can be commit, tag, or branch. If omitted, will equal to HEAD. In case of using a Chart repository, this is a semver tag for the Chart's version
-5. Click `Submit`
+![kubecfg](../../img/ksvc-app-2.png)
 
-After submitting the new workload specs, the values editor will be shown. Here you can edit the chart values.
+:::info
+Note: When creating a Function as a Service workload, the Min Instances will by default be set to `0` to enable `Scale to Zero`.
+:::
 
-1. Click on `Edit`
-2. Add the following (minimal) values:
+6. Click `Next`
 
-```
-fullnameOverride: hello-ksvc
-image:
-  repository: otomi/nodejs-helloworld
-  tag: v1.2.13
-```
+7. Review the values. Here you can add more values supported by the [otomi-charts](https://github.com/redkubes/otomi-charts)
 
-3. Click `Submit`
+![kubecfg](../../img/ksvc-app-3.png)
+
+8. Click `Submit`
 
 Now click on `Deploy Changes`
 
+After a few minutes, Otomi will have created all the needed ArgoCD resources to deploy your workload. In the workloads list, click on the `Application` link of your workload to see the status of your workload.
 
-## Publicly expose the service
+The values of a workload can be changed at any time. Changes will automatically be deployed.
+
+## (optionally) Publicly expose the service
 
 - In the left menu panel under click `Services` then click on `Create Service`
 
-- Fill in the name of the (existing) knative service: `hello-world-ksvc`
-
-- Under `service-type` select `existing knative service`
+- Select the name of the (existing) knative service: `hello-ksvc`
 
 - Under `Exposure Ingress`, select `Ingress` and use the default configuration
 

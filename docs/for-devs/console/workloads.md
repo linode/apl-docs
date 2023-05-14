@@ -15,7 +15,7 @@ A Workload in Otomi is a self-service feature for:
 - Manage the custom values of the workloads in Git
 
 :::info
-Ask you platform administrator to activate Argo CD to be able to use this feature.
+Ask you platform administrator to activate ArgoCD to be able to use this feature.
 :::
 
 :::info

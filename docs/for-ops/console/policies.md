@@ -4,6 +4,9 @@ title: Platform - Policies
 sidebar_label: Policies
 ---
 
+:::info
+To enable this feature, first make sure [OPA/Gatekeeper](../../apps/gatekeeper.md) is activated.
+:::
 <!-- ![Policies](../../img/platform-policies.png) -->
 
 This section allows to turn Open Policy Agent (OPA) / Gatekeeper policies on or off, and also set default parameters to be used by the policies.

@@ -31,7 +31,7 @@ To allow other applications running on the cluster to access your application, d
 
 In the example below, you are part of the team backend and you would like to allow the service frontend running in team frontend to be able to access your service:
 
-![harbor-projects](../../img/netpols-example.png)
+![harbor-projects](../../img/create-netpols.png)
 
 - Click `Submit` and then `Deploy Changes`
 
@@ -50,7 +50,7 @@ To allow your application to access resources outside of the cluster, do the fol
 - Add the port number
 - Select the protocol
 
-![harbor-projects](../../img/netpols-example-2.png)
+![harbor-projects](../../img/create-netpols-2.png)
 
 - Click `Submit` and then `Deploy Changes`
 

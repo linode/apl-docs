@@ -6,15 +6,15 @@ sidebar_label: Apps
 
 <!-- ![Console apps](../../img/platform-apps.png) -->
 
-The apps section lists all apps available to the otomi-admin role. The apps section is devided into 2 parts:
+The apps section lists all apps available.
 
-### Disabled apps
+### Activating apps
 
-The disabled apps are available for users to activate. Drag and drop the app to the enabled section to activate the app. This will install the app based on the Otomi default configuration.
+When Otomi is installed, only the [core](../../../product/architecture#catagories) applications are activated. To active more apps, hoover over the app you would like to activate and click on the activation button. All apps are configured with default configuration. To change the configuration, click on the configuration button and then click on `VALUES`. 
 
-### Enabled apps
-
-After installing Otomi, only the Core apps will be active and visable in the enabled apps section. Core apps have white names. Optional apps have yellow (in light mode) or red (in dark mode) names.
+:::info
+Note: Some apps have dependencies with other apps. The dependencies can be found [here](https://github.com/redkubes/otomi-core/blob/main/core.yaml). We will soon make sure dependencies are handled automatically.
+:::
 
 ## App configuration
 

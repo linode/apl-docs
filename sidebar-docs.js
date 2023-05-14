@@ -42,12 +42,14 @@ module.exports = {
           "for-ops/how-to/ingress-classes",
           "for-ops/how-to/switch-to-dns",
           "for-ops/how-to/use-team-admin",
+          "for-ops/how-to/core-only",
         ],
       },
       {
         "Otomi CLI": [
           "for-ops/cli/installation",
           "for-ops/cli/deploying",
+          "for-ops/cli/known-issues",
           {
             "CLI Commands": [
               "for-ops/cli/apply",
@@ -80,15 +82,6 @@ module.exports = {
           "for-ops/sre/daily",
           "for-ops/sre/upgrades",
           "for-ops/sre/troubleshooting",
-        ],
-      },
-      {
-        "Known Issues": [
-          "for-ops/known-issues/overview",
-          "for-ops/known-issues/cli",
-          "for-ops/known-issues/harbor",
-          "for-ops/known-issues/istio",
-          "for-ops/known-issues/loki",
         ],
       },
     ],

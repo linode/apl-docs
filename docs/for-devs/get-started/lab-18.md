@@ -12,17 +12,15 @@ When you have deployed your app, you will propably like to expose it publicly. Y
 
 ![harbor-projects](../../img/create-svc.png)
 
-- Fill in the name of the Kubernetes service (hello-svc) that you already deployed:
+- Select a service that you already deployed:
 
-![harbor-projects](../../img/svc-name.png)
+![harbor-projects](../../img/create-svc-2.png)
 
 - Under `Exposure Ingress`, select `Ingress` and use the default configuration
 
-![harbor-projects](../../img/ingress.png)
-
+![harbor-projects](../../img/create-svc-3.png)
 
 - Click on `Submit`
 - Click on `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).
-
 
 Deploying changes in Otomi usually takes just a couple of minutes depending on the amount of resources available on your cluster. You will see your service in the list of Services. Click on the URL and see your application.

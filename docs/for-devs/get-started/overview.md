@@ -25,7 +25,7 @@ Welcome to Otomi! If you are a developer and are going to use Otomi Platform, th
 
 - Lab 8: [Create secrets](lab-8)
 - Lab 9: [BYO manifest to deploy a workload using Kubectl](lab-9)
-- Lab 10: [BYO manifest to deploy a workload with Argo CD](lab-10)
+- Lab 10: [BYO manifest to deploy a workload with ArgoCD](lab-10)
 - Lab 11: [Configure ArgoCD image updater](lab-11)
 - Lab 12: [Deploy BYO Helm chart](lab-12)
 - lab 13: [Create regular workloads using Otomi charts](lab-13)

@@ -4,6 +4,10 @@ title: Platform - Workloads
 sidebar_label: Workloads
 ---
 
+:::info
+To enable this feature, first make sure [ArgoCD](../../apps/argocd.md) is activated.
+:::
+
 All known Workloads on the platform are listed here. Workloads can be sorted based on:
 
 | Property      | Description                                            |

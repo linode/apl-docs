@@ -4,6 +4,10 @@ title: View container metrics
 sidebar_label: Lab 21
 ---
 
+:::info
+Prerequisite: For this lab, Prometheus and Grafana need to be activated.
+:::
+
 When your application is deployed, you would of course like to be able to see container metrics for debugging purposes. Prometheus is used in Otomi for metrics. When Prometheus is enabled, you'll see the Prometheus app in your apps.
 
 :::info
@@ -14,7 +18,7 @@ When Otomi is configured in multi-tenant mode, each team will get a dedicated Pr
 
 - Open the Grafana app in your team apps
 
-![kubecfg](../../img/prometheus-teams.png)
+![kubecfg](../../img/grafana-teams.png)
 
 - Grafana will open the default Welcome to Grafana page. On the right, click on `Dashboards`
 

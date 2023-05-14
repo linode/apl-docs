@@ -1,7 +1,7 @@
 ---
-slug: cli
-title: 'Known Issues: Current Otomi CLI'
-sidebar_label: Otomi CLI
+slug: known-issues
+title: Known Issues
+sidebar_label: Known issues
 ---
 
 The `otomi (diff|apply|sync|template)` commands are delegated to `helmfile`, which in turn delegates the deployment work to `helm`. Sometimes it is not clear wether the issue is from Helm or Helmfile, so we will address them together in this section.

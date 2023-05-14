@@ -14,4 +14,4 @@ All known Otomi clusters are listed here. Clusters can be sorted based on:
 | Name     | The name of the cluster                                              |
 | URL      | The URL of the Otomi Console of the cluster                          |
 
-Kubernetes clusters running Otomi can be grouped by adding additional clusters. This enables to switch context between clusters by selecting `Cluster` in the top bar.
+Kubernetes clusters running Otomi can be linked by adding additional clusters in the [Platform Settings / Otomi](settings/otomi). This enables to switch context between clusters by selecting `Cluster` in the top bar.

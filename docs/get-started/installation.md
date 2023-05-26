@@ -18,7 +18,7 @@ See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 #### Minimal configuration
 
 :::info
-As of version [0.20.0](https://github.com/redkubes/otomi-core/releases/tag/v0.20.0) Otomi does not support Kubernetes versions `1.20` and `1.21`
+As of version [0.21.0](https://github.com/redkubes/otomi-core/releases/tag/v0.21.0) Otomi only supports Kubernetes versions `1.23` and `1.24`
 :::
 
 :::info
@@ -27,7 +27,7 @@ Support for Kubernetes version `1.25` will come soon!
 
 ```yaml
 cluster:
-  k8sVersion: "1.24" # currently 1.22, 1.23 and 1.24 are supported
+  k8sVersion: "1.24" # currently 1.23 and 1.24 are supported
   name: # the name of your cluster
   provider: # choose between aws, azure, google, digitalocean or custom
 ```

@@ -59,7 +59,8 @@
     "kpack",
     "paketo",
     "decompile",
-    "kaniko"
+    "kaniko",
+    "petclinic"
   ],
   "language": "en",
   "words": [

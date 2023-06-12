@@ -17,7 +17,7 @@ In this lab, you are going to create a build, using the [Spring Pet Clinic sampl
 
 ![harbor-projects](../../img/create-build.png)
 
-3. Fill in a name for your build and (optional) a tag
+3. Fill in the name `petclinic` for your build and a tag (default is tag is latest)
 4. Choose `Buildpacks`
 5. In the `Application source` section, fill in the following:
 - RepoURL: https://github.com/spring-projects/spring-petclinic
@@ -35,3 +35,12 @@ When the build is ready, you will see the image in Harbor:
    
 
 ![harbor-projects](../../img/see-build-harbor.png)
+
+When using the Build feature in Otomi, a Tekton Pipeline is created and the pipline is executed only once using a Tekton Pipelinerun. To run the build again, follow these steps:
+
+1. Change the tag of the build to `1.0.0`
+2. Use the following command to run the pipeline again:
+
+```
+tkn pipeline start buildpacks-build-petclinc  --use-pipelinerun buildpacks-build-petclinc
+```

@@ -42,5 +42,5 @@ When using the Build feature in Otomi, a Tekton Pipeline is created and the pipl
 2. Use the following command to run the pipeline again:
 
 ```
-tkn pipeline start buildpacks-build-petclinc  --use-pipelinerun buildpacks-build-petclinc
+tkn pipeline start buildpacks-build-petclinic  --use-pipelinerun buildpacks-build-petclinic
 ```

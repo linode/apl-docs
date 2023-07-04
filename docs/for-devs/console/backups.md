@@ -31,3 +31,5 @@ Ask you platform administrator to activate Velero to be able to use this feature
 5. (optional) Change the default TTL (expiration of the backup). Defaults to 7 days.
 6. Click `Submit`
 
+Team members can only schedule backups of PVCs, but they can not restore backups. Backup schedules and backups are created in the velero namespace and teams don't have access to this namespace. Ask your platform administrator in case a restore is required.
+

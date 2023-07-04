@@ -37,7 +37,7 @@ A URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are 
 
 | Setting                          | Description                                                                                                               |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Ingress class name               | The ingress class to assing this service to                                                                               |
+| Ingress class name               | The ingress class to assing this service to. Select one of the available classes                                          |
 | TLS passthrough                  | Pass through the request as is to the backing service                                                                     |
 | Use suggested domain             | The suggested domain is the team domain for which a wildcard certificate already exists. Has the team name in it          |
 | Host                             | Choose a hostname that will be the prefix of the domain                                                                   |

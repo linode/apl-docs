@@ -26,7 +26,7 @@ We can imagine when looking at the list of all pre-configured and ready-to-use a
 <details>
   <summary>What are the minimal requirements to install Otomi?</summary>
 
-Otomi requires a running Kubernetes cluster of version `1.20` up to `1.23` using a Node pool with at least `6 vCPU` and `8 GiB memory`, but more is recommended. When using the `custom` provider (when installing Kubernetes on a unsupported provider), make sure Otomi can create a K8s LoadBalancer Service that is accessible from your machine (but not using 127.0.0.1).
+Otomi requires a running Kubernetes cluster of version `1.24` up to `1.25` using a Node pool with at least `6 vCPU` and `8 GiB memory`, but more is recommended. When using the `custom` provider (when installing Kubernetes on a unsupported provider), make sure Otomi can create a K8s LoadBalancer Service that is accessible from your machine (but not using 127.0.0.1).
 
 </details>
 

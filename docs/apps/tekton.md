@@ -4,7 +4,6 @@ title: Tekton
 sidebar_label: Tekton
 ---
 
-## Introduction
 Tekton is used in Otomi for the Builds self-service. When a Build is created, Otomi generates the Tekton Pipeline and Pipelinerun resources. There are 2 types op pipelines:
 
 - Docker for building images based on a Dockerfile
@@ -18,19 +17,11 @@ When Tekton is activated, Otomi will add 3 Tekton tasks to the team's namespace:
 
 and use them in the pipelines.
 
-## Default values
-
-There are no default values used for Tekton.
-
 ## Automation
 
 - When activated, the Tekton Helm chart will be installed
 - When a team is created and Tekton is active, Tekton tasks used by the pipelines will be added to the team namespace 
 - When a build is created, the required pipeline and pipelinerun resources are created
-
-## Integrations
-
-N.A.
 
 ## Instructions
 

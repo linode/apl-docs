@@ -8,7 +8,7 @@ sidebar_label: Builds
 
 A Build in Otomi is a self-service feature for:
 
-- Building images based on application source code
+- Building OCI compliant images based on application source code
 - Pushing the image to the teams private registry in Harbor
 
 :::info
@@ -50,10 +50,35 @@ Now choose the type of the build:
 4. (optional) Configure [repository access](#optional-configure-repository-access)
 
 
-### (optional) Configure repository access:
+### (optional) Configure repository access
+
+:::info
+For now, Otomi only supports authenticated access to local Gitea repositories. Otomi will soon also support authenticated access to GitHib repositories.
+:::
 
 - If Gitea (provided by Otomi) is used to host the code repository, select `Otomi Gitea repo`
-- If an external private Git repo is used that requires authentication, select `Private repo` and fill in the username ans password. If your github account has 2 factor auth configured, create a personal access token using [this procedure](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+<!-- - If an external private Git repo is used that requires authentication, select `Private repo` and fill in the username ans password. If your github account has 2 factor auth configured, create a personal access token using [this procedure](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). -->
 
 After a few minutes, Otomi will run a pipeline to create the build and push the build to the team's private Harbor registry. Check Harbor to see if the image is created and pushed.
+
+To see the status of the build:
+
+- Start/open a shell in the console
+- run the following command:
+
+```
+tkn pipelineruns list
+tkn pipelinerun logs <pipelinerun-name> -f
+```
+
+Build can be restarted by changing the `tag` of the build or by restarting the pipeline manually:
+
+- Start/open a shell in the console
+- run the following command:
+
+```
+tkn pipelines list
+tkn pipeline start <pipeline-name> --use-pipelinerun <pipelinerun-name>
+```
+
 

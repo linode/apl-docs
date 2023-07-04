@@ -15,11 +15,13 @@ module.exports = {
           "for-ops/console/clusters",
           "for-ops/console/policies",
           "for-ops/console/teams",
+          "for-ops/console/projects",
           "for-ops/console/builds",
           "for-ops/console/secrets",
           "for-ops/console/workloads",
           "for-ops/console/services",
           "for-ops/console/backups",
+          "for-ops/console/shell",
           {
             Settings: [
               "for-ops/console/settings/cluster",
@@ -90,11 +92,13 @@ module.exports = {
         "Otomi Console": [
           "for-devs/console/apps",
           "for-devs/console/shortcuts",
+          "for-devs/console/projects",
           "for-devs/console/builds",
           "for-devs/console/workloads",
           "for-devs/console/services",
           "for-devs/console/secrets",
           "for-devs/console/backups",
+          "for-devs/console/shell",
           "for-devs/console/deploy-changes",
           "for-devs/console/settings",
         ],

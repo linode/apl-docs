@@ -1,19 +1,17 @@
 ---
 slug: external-dns
-title: ExternalDNS
+title: External-DNS
 sidebar_label: ExternalDNS
 ---
 
-## Introduction
+External-dns is required to make public service domains accessible by registering them with Otomi's front loadbalancer CNAME or IP address. When it is not enabled (default) Otomi will instead rely on [nip.io](https://nip.io) to create host names for all services.
 
-ExternalDNS is required to make public service domains accessible by registering them with Otomi's front loadbalancer CNAME or IP address. When it is not enabled (default) Otomi will instead rely on [nip.io](https://nip.io) to create host names for all services.
+The use of external-dns is a prerequisite for using the following features:
 
-## Configuration
+- Harbor private registries for teams
+- Builds (rely on Harbor)
+- Projects (rely on Harbor)
 
-## Automation
+## Configuration values
 
-Not applicable.
-
-## Integrations
-
-## Instructions
+External-dns can be configured in the [DNS section](/docs/for-ops/console/settings/dns) of the Platform Setting

@@ -4,9 +4,7 @@ title: NGINX Ingress
 sidebar_label: Ingress-nginx
 ---
 
-## Introduction
-
-## Configuration
+Ingress NGINX is the default ingress controller in Otomi and part of the core setup (this means it is not possible use another controller within Otomi).
 
 ### Using the OWASP rule set
 

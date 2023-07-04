@@ -39,8 +39,4 @@ When the build is ready, you will see the image in Harbor:
 When using the Build feature in Otomi, a Tekton Pipeline is created and the pipline is executed only once using a Tekton Pipelinerun. To run the build again, follow these steps:
 
 1. Change the tag of the build to `1.0.0`
-2. Use the following command to run the pipeline again:
-
-```
-tkn pipeline start buildpacks-build-petclinic  --use-pipelinerun buildpacks-build-petclinic
-```
+2. Submit changes

@@ -25,35 +25,34 @@ Ask you platform administrator to activate Knative to be able to create Function
 
 ## Create a Workload
 
-1. Select the workload type
+1. In the right menu click on `Workloads` and then on `Create workload`.
+
+2. Select the workload type
 
 - Regular application: will use the [Otomi deployment Helm chart](https://github.com/redkubes/otomi-charts)
 - Function as a Service: will use the [Otomi Knative service Helm chart](https://github.com/redkubes/otomi-charts)
 - Bring your own Helm chart: use your own (custom) Helm chart
 
-## Regular application
+### Regular application
+
+3. Enter a name for the workload
+4. Provide [Basic](#basic-values) or [Advanced](#advanced-values) values configuration
+5. Click `Next`
+6. Review the Values used to install the chart. Optionally add more values. See [here](https://github.com/redkubes/otomi-charts/blob/main/deployment/values.yaml) for all supported values
+7. Click `Submit`
+
+Now click on `application` in the `Argocd` column of the workload in the list of workloads. Note that an ArgoCD application is created to deploy the workload.
+
+### Function as a Service
 
 1. Enter a name for the workload
-2. Fill in the image name of the image the workload will deploy
-3. Fill in the tag of the image
-4. (optionally) Adjust the port
-5. (optionally) Adjust the required CPU and memory resources
-6. (optionally) Adjust the Min and Max instances. This will be used to auto-scale the application based on a Kubernetes HPA
-7. Click `Next`
-8. Review the Values used to install the chart. Optionally add more values. See [here](https://github.com/redkubes/otomi-charts) for all supported values
+2. Provide [Basic](#basic-values) or [Advanced](#advanced-values) values configuration
+3. Click `Next`
+4. Review the Values used to install the chart. Optionally add more values. See [here](https://github.com/redkubes/otomi-charts/blob/main/ksvc/values.yaml) for all supported values
+5. Click `Submit`
 
-## Function as a Service
-
-1. Enter a name for the workload
-2. Fill in the image name of the image the workload will deploy
-3. Fill in the tag of the image
-4. (optionally) Adjust the port
-5. (optionally) Adjust the required CPU and memory resources
-6. (optionally) Adjust the Min and Max instances. This will be used by Knative to auto scale the application. By default the Min count is set to `0`. This means that the workload will scale to zero. The application container in this case will start when a request is received.
-7. Click `Next`
-8. Review the Values used to install the chart. Optionally add more values. See [here](https://github.com/redkubes/otomi-charts) for all supported values
-
-## BYO Helm chart
+Now click on `application` in the `Argocd` column of the workload in the list of workloads. Note that an ArgoCD application is created to deploy the workload.
+### BYO Helm chart
 
 1. Enter a name for the workload
 2. Enter the URL to the Git repo containing the Helm Chart or a Helm repository
@@ -70,3 +69,43 @@ After a few minutes, Otomi will have created all the needed ArgoCD resources to 
 
 The values of a workload can be changed at any time. Changes will automatically be deployed.
 
+### Basic values
+
+| Title               | Value               | Description                                            |
+| -------------       | ------------------- | --------------------------------                       |
+| Image - Registry    | image.registry      | The registry name of the image to deploy               |
+| Image - Tag         | image.tag           | The tag of the image to deploy                         |
+| Port - Containerport | containerPorts: [] | The port of the container |
+| Resources - Requests vCPU | resources.requests.cpu | The minimal amount of vCPU needed to run the container |
+| Resources - Requests Memory | resources.requests.memory | The minimal amount of memory needed to run the container |
+| Instances - Min     | autoscaling.minReplicas | The minimal amount of containers to run. It's advised to always run at least 2 (default for a regular application). In case of a Function as a Service, the minimal amount of instances is set to 0. A container is started at the first request (scale to zero configuration) 
+| Instances - Max     | autoscaling.maxReplicas | The maximum of containers to run. The autoscaling mechanism in this case will never scale above the configured max instances |
+| Container security context - run as user | podSecurityContext.runAsUser | Containers must not set to run as user (default) 1001 |
+| Container security context - run as non root | podSecurityContext.runAsNonRoot | Select to run the container as a non-root user |
+| Container security context - read only file system | podSecurityContext.readOnlyRootFilesystem | Select to make the root filesystem immutable |
+
+### Advanced values
+
+| Title               | Value               | Description                                            |
+| -------------       | ------------------- | --------------------------------                       |
+| Image - Registry    | image.registry      | The registry name of the image to deploy               |
+| Image - Tag         | image.tag           | The tag of the image to deploy                         |
+| Port - Containerport | containerPorts: [] | The port of the container |
+| Resources - Requests vCPU | resources.requests.cpu | The minimal amount of vCPU needed to run the container |
+| Resources - Requests Memory | resources.requests.memory | The minimal amount of memory needed to run the container |
+| Resources - Limits vCPU | resources.requests.cpu | The minimal amount of vCPU needed to run the container |
+| Resources - Limits Memory | resources.requests.memory | The minimal amount of memory needed to run the container |
+| Instances - Max     | autoscaling.maxReplicas | The maximum of containers to run. The autoscaling mechanism in this case will never scale above the configured max instances |
+| Environment variables | env: [] | Environment variables for containers |
+| Command arguments | command: [] | Override the arguments given to the entrypoint/command of the container |
+| Labels | labels: {} | A set of labels that will be added to all the manifests |
+| Annotations | annotations: {} | Annotations for pods |
+| Secret name | secrets: [] | Set secrets as container environment variables using a secretRef. Select from secrets managed in Otomi/Vault |
+| Container security context - run as user | podSecurityContext.runAsUser | Containers must not set to run as user (default) 1001 |
+| Container security context - run as non root | podSecurityContext.runAsNonRoot | Select to run the container as a non-root user |
+| Container security context - read only file system | podSecurityContext.readOnlyRootFilesystem | Select to make the root filesystem immutable |
+| Files | files: {} | Entries of absolute path > content pairs. One caveat: content can be 131072 chars max |
+| Secret mounts | secretMounts: {} | Pairs of secret name > absolute folder path. Will mount the contents of the secret in the container at the specified folder path |
+| Service ports | servicePorts: [] | Configures the service ports to listens on. Exposes on port 80 by default, using the http port of the pod |
+| Service monitor | serviceMonitor.create | Select to create a a Prometheus Operator ServiceMonitor for custom metrics |
+| Service monitor endpoints | endpoints: [] | Add endpoints. Note that the port also needs to be exposed by the container |

@@ -4,12 +4,4 @@ title: Thanos
 sidebar_label: Thanos
 ---
 
-## Introduction
-
-## Configuration
-
-## Automation
-
-## Integrations
-
-## Instructions
+Thanos can be enabled for multi-cluster long term metrics retention.

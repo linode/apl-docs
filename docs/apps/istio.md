@@ -4,8 +4,6 @@ title: Istio
 sidebar_label: Istio
 ---
 
-## Introduction
-
 Since Otomi has security best practices built in, it is designed for intrusion.
 Istio is installed by Otomi as a service mesh to deliver the following capabilities:
 
@@ -14,11 +12,6 @@ Istio is installed by Otomi as a service mesh to deliver the following capabilit
 - advanced routing capabilities such as weight based load balancing (A/B or blue/green testing)
 
 In the future we might make it possible to opt out of Istio, but that effectively nullifies the mTLS capabilities and egress control.
-
-## Configuration
-## Automation
-
-## Integrations
 
 ## Known issues
 

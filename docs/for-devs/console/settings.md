@@ -4,7 +4,7 @@ title: Team Settings
 sidebar_label: Settings
 ---
 
-Based on the configured self-service flags, team members can change the settings of their team.
+Based on self-service options allowed by the platfrom administrator, team members can change the settings of their team.
 
 ## Configure OIDC group mapping
 

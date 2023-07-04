@@ -4,9 +4,6 @@ title: Velero
 sidebar_label: Velero
 ---
 
-
-## Introduction
-
 Velero can be activated for creating backups of PVC's and Kubernetes resources.
 
 ## Configuration
@@ -18,10 +15,6 @@ Velero in Otomi uses the Velero plugin for Microsoft Azure. To setup Velero in A
 ### AWS
 
 Velero in Otomi uses the Velero plugin for AWS. To setup Velero in AWS, follow the instructions [here](https://github.com/vmware-tanzu/velero-plugin-for-aws).
-
-## Automation
-
-## Integrations
 
 ## Instructions
 

@@ -11,7 +11,6 @@ Your deployed workloads may trigger one or more Falco rules. Hence, you may want
 :::
 
 ## Configuration values
-Fdefauk
 ### Falco sidekick configuration
 
 - Number of replica's of Falco Sidekick

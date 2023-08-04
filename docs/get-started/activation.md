@@ -65,19 +65,8 @@ alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 
 3. Optional: Restart Docker (to support pushing images to Harbor)
 
-### Step 4: Activate Drone
 
-[Drone](https://www.drone.io/) is an integral part in the deployment of Otomi cluster configuration.
-
-1. In the side menu of Otomi Console under `platform` click on the **Drone** app
-2. Click on the `play` button in the top right. A new tab will open for Drone
-3. Sign in locally with as `otomi-admin` and the password provided in the logs of the installer job.
-4. Click on `Authorize Application`
-5. Click on `Submit on the Complete your Drone Registration page. You don't need to fill in your Email, Full Name or Company Name if you don't want to
-6. Click on the `otomi/values` repository
-7. Click on `+ Activate Repository`
-
-### Step 5 (Optional): Create a new admin user
+### Step 4 (Optional): Create a new admin user
 
 :::info ATTENTION
 We strongly advise to not use the default `otomi-admin` account after activation and to not change the password. Store it somewhere safe and only use it in case absolutely required.
@@ -85,7 +74,7 @@ We strongly advise to not use the default `otomi-admin` account after activation
 
 [Create a new user account in Keycloak](/docs/apps/keycloak#step-2-create-a-user-in-keycloak) and add the new user to the `otomi-admin` and `team-admin`.
 
-### Step 6 (Optional): Add the URL of the Kubernetes API
+### Step 5 (Optional): Add the URL of the Kubernetes API
 
 :::info NOTE
 Adding the URL of the K8s cluster API is required by teams to be able to download the KUBECONFIG

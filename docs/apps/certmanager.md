@@ -10,13 +10,15 @@ Setting CertManager to use Letsencrypt requires DNS availability of the requesti
 
 ## Configuration Values
 
-The following values cam be configured:
+The following values can be configured:
 
-| Value           | Description                                            |
-| -------------   | ------------------------------------------------------ |
-| customRootCA    | CA that is used to create and verify self-signed certificates. Leave it empty to generate one automatically |
-| customRootCAKey | CA private key that is used to issue certificates. Leave it empty to generate one automatically |
-| email           | Required when using the Let's Encrypt Issuer        |
-| issuer          | The certificate issuer. Choose between `letsencrypt` or `custom-ca` |
-| stage           | Required when using the Let's Encrypt Issuer. Choose between `staging` or `production` |
-| resources       | Configure Request and Limits for cert-manager |
+| Values             | Description                                                                                                                                                                                                                                                                                           |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| issuer             | Indicates the origin of the wildcard certificate. Set `custom-ca` to instruct cert-manager to derive certificate from the customRootCA. Set `letsencrypt` to instruct cert-manager to request certificate from letsencrypt endpoint. Set `byo-wildcard-cert` to not use you own wildcard certificate. |
+| customRootCA       | CA that is used to create and verify self-signed certificates. Leave it empty to generate one automatically                                                                                                                                                                                           |
+| customRootCAKey    | CA private key that is used to issue certificates. Leave it empty to generate one automatically                                                                                                                                                                                                       |
+| byoWildcardCert    | Bring your own trusted wildcard certificate                                                                                                                                                                                                                                                           |
+| byoWildcardCertKey | A certificate key corresponding to the byoWildcardCert                                                                                                                                                                                                                                                |
+| email              | Required when using the Let's Encrypt Issuer                                                                                                                                                                                                                                                          |
+| stage              | Required when using the Let's Encrypt Issuer. Choose between `staging` or `production`                                                                                                                                                                                                                |
+| resources          | Configure Request and Limits for cert-manager                                                                                                                                                                                                                                                         |

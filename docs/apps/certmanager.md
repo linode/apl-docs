@@ -4,7 +4,9 @@ title: CertManager
 sidebar_label: Cert-Manager
 ---
 
-Cert-Manager is used by Otomi to automatically create and rotate TLS certificates for service endpoints. You may bring your own CA, or let Otomi create one for you, but we recommend using [Letsencrypt](https://letsencrypt.org) for production certificates.
+Cert-Manager is used by Otomi to automatically create and rotate wildcard TLS certificate for service endpoints. You may bring your own CA, or let Otomi create one for you. If you bring your own trusted wildcard certificate, then cert-manager will not manage this certificate.
+
+The wildcard certificate must be valid for the following domain For example `*.<cluster.domainSuffix>`, where `cluster.domainSuffix` is set in the cluster.yaml file.
 
 Setting CertManager to use Letsencrypt requires DNS availability of the requesting domains, and forces Otomi to install [ExternalDNS](external-dns). Because a lot of DNS settings are used by other Otomi contexts, all DNS configuration can be found [here](../for-ops/console/settings/dns).
 

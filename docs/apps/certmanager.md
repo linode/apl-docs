@@ -18,7 +18,7 @@ Setting CertManager to use Letsencrypt requires DNS availability of the requesti
 
 The following values can be configured:
 
-| Values             | Description                                                                                                                                                                                                                                                                                            |
+| Value              | Description                                                                                                                                                                                                                                                                                            |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | issuer             | Indicates the origin of the wildcard certificate. Set `custom-ca` to instruct cert-manager to derive certificate from the customRootCA. Set `letsencrypt` to instruct cert-manager to request certificate from letsencrypt endpoint. Set `byo-wildcard-cert` to provide your own wildcard certificate. |
 | customRootCA       | CA that is used to create and verify self-signed certificates. Leave it empty to generate one automatically                                                                                                                                                                                            |

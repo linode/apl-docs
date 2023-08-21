@@ -21,6 +21,10 @@ See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 As of version [0.22.0](https://github.com/redkubes/otomi-core/releases/tag/v0.21.0) Otomi only supports Kubernetes versions `1.24` and `1.25`
 :::
 
+:::info
+The Otomi [Build](../for-devs/console/builds.md) feature and using Harbor is NOT supported when Otomi is installed with minimal values. Install Otomi with DNS to use all features.
+:::
+
 ```yaml
 cluster:
   k8sVersion: "1.25" # currently 1.24 and 1.25 are supported

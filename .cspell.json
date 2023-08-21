@@ -60,7 +60,8 @@
     "paketo",
     "decompile",
     "kaniko",
-    "petclinic"
+    "petclinic",
+    "favourite"
   ],
   "language": "en",
   "words": [

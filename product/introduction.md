@@ -11,12 +11,22 @@ Building a Kubernetes-based platform requires a huge investment and requires ski
 
 This is what we indended when we created Otomi. Any infrastructure, any K8s, one install, all the tools you need in an integrated and automated way, easy self-service, 100% Git-based.
 
-## What is Otomi
+## What is Otomi?
 
-Otomi is a self-hosted PaaS and adds developer- and operations-centric tools, automation and self-service on top of Kubernetes offering a multi and hybrid platform experience out-of-the-box. Otomi is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. Otomi attempts to connect many of the technologies found in the CNCF landscape in a way to provide direct value. No more re-inventing the wheel when building and maintaining your own Kubernetes based (developer) platform or bespoke stack.
+Otomi is a self-hosted PaaS and adds developer- and operations-centric tools, automation and self-service on top of Kubernetes offering a multi and hybrid platform experience out-of-the-box. Otomi is placed in the CNCF landscape under the [PaaS/Container Service](https://landscape.cncf.io/guide#platform--paas-container-service) section. Otomi attempts to connect many of the technologies found in the CNCF landscape in a way to provide direct value. No more re-inventing the wheel when building and maintaining your own Kubernetes based platform or bespoke stack.
+
+### What is the difference between an IDP and a PaaS?
+
+An Internal Developer Platform (IDP) consists of many different technologies, glued together to lowers cognitive load on developers without abstracting away context and underlying technologies. An IDP is always custom built.
+
+A PaaS for Kubernetes also lowers cognitive load on developers, but abstracts away most of the underlying technologies. Unlike an IDP, a PaaS can be used almost instantly, just like downloading and using your favourite Linux Distribution. Organizations that use a PaaS instead of building an IDP can enjoy lower upfront costs and huge time savings.
+
+### When to build an IDP or use a PaaS?
+
+Because building an IDP requires a large upfront investment, it’s mostly suitable for large enterprises. For smaller organizations a PaaS can sometimes be far more efficient than building a custom IDP in-house.
 
 ## Otomi for developers
-**Developers, focus on your application, not on writing Kubernetes manifests! Kubernetes is great for running containers, but it's complex. Wouldn't it be awesome if you didn't need to worry about understanding Kubernetes objects and writing YAML manifests?**
+Otomi let's developers focus on their application, not on writing Kubernetes manifests! Kubernetes is great for running containers, but it's complex. Wouldn't it be awesome if you didn't need to worry about understanding Kubernetes objects and writing YAML manifests?
 
 This is how Otomi helps developers:
 
@@ -33,7 +43,7 @@ Otomi offers you the ability to immediately start deploying applications on Kube
 As a developer, you don’t like to go to the Ops team asking for help. Otomi provides full developer self-service. Developers can spin up new virtual environments, download pull secrets, create Kubernetes secrets, build images from source code, deploy workloads and configure public exposure. And all of these features are accessible through just one Web Console. Now you can deliver code completely autonomously.
 
 ## Otomi for Platform Teams
-**If you can’t scale beyond a handful of teams you're going to lose speed. Speed is everything to bring new products and applications to market. No one wants to slow down developers. Empower developers, ensure quality, compliance, and governance, avoid lock-in, and lower the operational burden. These are some of the challenges platform teams have to deal with and where Otomi can help out.**
+If you can’t scale beyond a handful of teams you're going to lose speed. Speed is everything to bring new products and applications to market. No one wants to slow down developers. Empower developers, ensure quality, compliance, and governance, avoid lock-in, and lower the operational burden. These are some of the challenges platform teams have to deal with and where Otomi can help out.
 
 ### Avoid Cloud Lock-In
 Are you worried that you can’t adopt cloud-native technology without becoming completely reliant on one cloud provider? One way that organizations outsource management for Kubernetes is to use one of the cloud provider’s Kubernetes versions in conjunction with a variety of cloud provider native services. This is often faster than using vanilla Kubernetes and managing integrations and infrastructure in-house, but it also completely locks the organization into the cloud provider and often becomes very expensive.

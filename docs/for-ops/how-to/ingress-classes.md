@@ -48,7 +48,7 @@ By default the internal load balancer is is created in the node resource group a
 
 When the platform ingress class has been configured to use an internal load balancer, Otomi will add the following annotations to the K8s load balancer service of the platform ingress controller:
 
-```
+```yaml
 service.beta.kubernetes.io/azure-load-balancer-resource-group: {{ . }}
 service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "{{ . }}"

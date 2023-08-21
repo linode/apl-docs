@@ -19,7 +19,7 @@ The example Otomi chart values below shows how to install Otomi with
 - Drone disabled
 - A team with 2 workloads and 2 services
 
-```
+```yaml
 cluster:
   k8sVersion: ${clusterVersion}
   name: ${clusterName}

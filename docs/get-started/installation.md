@@ -22,7 +22,7 @@ As of version [0.22.0](https://github.com/redkubes/otomi-core/releases/tag/v0.21
 :::
 
 :::info
-The Otomi [Build](../for-devs/console/builds.md) feature and using Harbor is NOT supported when Otomi is installed with minimal values. Install Otomi with DNS to use all features.
+The Otomi [Build](../for-devs/console/builds.md) feature and using Harbor is NOT supported when Otomi is installed with minimal values. Install Otomi with DNS to use all features. Check the how-to's under `For-Ops` for instructions on how to install Otomi with Route53 (more how-to's coming soon).
 :::
 
 ```yaml

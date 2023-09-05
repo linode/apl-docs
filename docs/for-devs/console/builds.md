@@ -12,10 +12,6 @@ A Build in Otomi is a self-service feature for:
 - Pushing the image to the teams private registry in Harbor
 
 :::info
-This is a BETA feature. Any feedback on this feature is very much appreciated.
-:::
-
-:::info
 Ask you platform administrator to activate Harbor and Tekton to be able to use this feature.
 :::
 

@@ -1,7 +1,7 @@
 ---
 slug: lab-18
 title: Publicly expose your application
-sidebar_label: Lab 18
+sidebar_label: Expose services
 ---
 
 When you have deployed your app, you will propably like to expose it publicly. You propably noticed that in the previous part, we created a Kubernetes service of type `ClusterIP` and not `LoadBalancer` and also that the Pod(s) created by the deployment have an Istio sidecar. All Pods created in your team will automatically be added to the service mesh. In this part we'll create a Service in Otomi to expose your app publicly. When you create a Service, Otomi will then create the Istio virtual service and configure ingress for your application.

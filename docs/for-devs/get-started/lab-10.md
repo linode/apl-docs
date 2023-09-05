@@ -1,22 +1,22 @@
 ---
 slug: lab-10
-title: BYO manifest to deploy a workload with ArgoCD
-sidebar_label: Lab 10
+title: BYO manifest to deploy a workload with Argo CD
+sidebar_label: Using Argo CD
 ---
 
 :::info
-Prerequisite: For this lab, ArgoCD needs to be activated.
+Prerequisite: For this lab, Argo CD needs to be activated.
 :::
 
-Deploying your applications by doing `kubectl apply -f` is not ideal. You as a developer would like to automatically deploy and update your application after a new build. Otomi integrated ArgoCD to provide an out-of-the-box gitops solution.
+Deploying your applications by doing `kubectl apply -f` is not ideal. You as a developer would like to automatically deploy and update your application after a new build. Otomi integrated Argo CD to provide an out-of-the-box gitops solution.
 
 ## Using ArgoCD to deploy manifests and charts
 
-In the apps section in Otomi console, you'll see an app called ArgoCD. Click on it.
+In the apps section in Otomi console, you'll see an app called Argo CD. Click on it.
 
 ![kubecfg](../../img/team-app-argo.png)
 
-In ArgoCD you'll see that an Argo app has already been created for your team. This app is configured to synchronize any manifest that is in the created repo in Gitea for Argo.
+In Argo CD you'll see that an Argo app has already been created for your team. This app is configured to synchronize any manifest that is in the created repo in Gitea for Argo.
 
 ![kubecfg](../../img/argo-team-app.png)
 
@@ -26,7 +26,7 @@ Go back to the console and click on the Gitea app in the apps section. In the li
 
 ![kubecfg](../../img/argo-team-repo.png)
 
-To show the power of ArgoCD, let's add a manifest to the repo and see what happens.
+To show the power of Argo CD, let's add a manifest to the repo and see what happens.
 
 - Create a new file in the repo called `deploy-nginx.yaml` 
 - Add the following contents to the file:
@@ -77,7 +77,7 @@ spec:
 
 - Commit Changes
 
-Now go back to the ArgoCD application and click on the `team<name>` application. You can see that all the Kubernetes resources have been created.
+Now go back to the Argo CD application and click on the `team<name>` application. You can see that all the Kubernetes resources have been created.
 
 ![kubecfg](../../img/argo-team-sync.png)
 

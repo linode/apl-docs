@@ -1,7 +1,7 @@
 ---
 slug: lab-15
 title: Check policy compliance
-sidebar_label: Lab 15
+sidebar_label: Check policy compliance
 ---
 :::info
 Prerequisite: For this lab, Gatekeeper needs to be activated.

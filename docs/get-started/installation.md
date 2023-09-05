@@ -18,7 +18,7 @@ See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 #### Minimal configuration
 
 :::info
-As of version [0.22.0](https://github.com/redkubes/otomi-core/releases/tag/v0.21.0) Otomi only supports Kubernetes versions `1.24` and `1.25`
+As of version [0.26.0](https://github.com/redkubes/otomi-core/releases/tag/v0.21.0) Otomi supports Kubernetes versions `1.24`,`1.25` and `1.26`.
 :::
 
 :::info
@@ -27,9 +27,8 @@ The Otomi [Build](../for-devs/console/builds.md) feature and using Harbor is NOT
 
 ```yaml
 cluster:
-  k8sVersion: "1.25" # currently 1.24 and 1.25 are supported
   name: # the name of your cluster
-  provider: # choose between aws, azure, google, digitalocean or custom
+  provider: # choose between aws, azure, google, digitalocean, ovh, vultr, scaleway or custom
 ```
 
 When the chart is installed, follow the [activation steps](activation). 

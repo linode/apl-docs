@@ -1,7 +1,7 @@
 ---
 slug: lab-8
 title: Create secrets
-sidebar_label: lab 8
+sidebar_label: Create secrets
 ---
 
 :::info

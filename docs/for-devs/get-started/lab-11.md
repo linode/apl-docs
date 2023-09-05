@@ -1,7 +1,7 @@
 ---
 slug: lab-11
 title: Configure ArgoCD image updater
-sidebar_label: Lab 11
+sidebar_label: Use auto image updater
 ---
 
 In the previous part, you have seen how to use ArgoCD to automatically deploy applications by adding the Kubernetes manifests in to the gitops repo in Gitea. You can also use ArgoCD to deploy Helm charts and automatically update the version of the deployed image.

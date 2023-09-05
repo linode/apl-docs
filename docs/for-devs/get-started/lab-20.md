@@ -1,7 +1,7 @@
 ---
 slug: lab-20
 title: View container logs
-sidebar_label: Lab 20
+sidebar_label: View container logs
 ---
 
 :::info

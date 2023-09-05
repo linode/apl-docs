@@ -26,7 +26,6 @@ In this first tutorial, we'll be installing [Otomi](https://github.com/redkubes/
 
     ```bash
     helm install otomi otomi/otomi \
-    --set cluster.k8sVersion="1.24" \
     --set cluster.name=$CLUSTERNAME \
     --set cluster.provider=$PROVIDER
     ```

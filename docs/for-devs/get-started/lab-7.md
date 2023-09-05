@@ -1,7 +1,7 @@
 ---
 slug: lab-7
 title: Scan your images for vulnerabilities
-sidebar_label: Lab 7
+sidebar_label: Scan images
 ---
 
 When your team is using Harbor for private image registries, you can use Trivy to automatically scan your images on push. This is not enabled by default. Ask your platform administrator to turn this on for your project in Harbor. When enabled, you can see the results of the scans by following these steps:

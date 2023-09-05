@@ -1,7 +1,7 @@
 ---
 slug: lab-13
 title: Deploy workloads using Otomi
-sidebar_label: Lab 13
+sidebar_label: Create Otomi workload
 ---
 
 In the previous 2 parts we have explained how to deploy a workload with a BYO manifest using Kubectl and how to deploy a workload with a BYO manifest using ArgoCD in Otomi. In this part we'll deploy a regular workload (a Kubernetes Deployment) using the Otomi Workloads feature.

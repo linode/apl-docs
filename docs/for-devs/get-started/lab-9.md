@@ -1,7 +1,7 @@
 ---
 slug: lab-9
 title: Deploy your application
-sidebar_label: Lab 9
+sidebar_label: Deploy app
 ---
 
 Now that you have access to the team namespace and have pushed your image to Harbor, you can now deploy your application.
@@ -12,7 +12,7 @@ In this case we'll use a demo app called hello. If you like you can clone the re
 git clone https://github.com/redkubes/nodejs-helloworld.git
 ```
 
-And then tag and build the image as you have done in [lab 5](lab-5).
+And then tag and build the image as you have done in the [Push images](lab-5) lab.
 
 ## Create a Deployment and Service
 

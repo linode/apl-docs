@@ -1,7 +1,7 @@
 ---
 slug: lab-21
 title: View container metrics
-sidebar_label: Lab 21
+sidebar_label: View container metrics
 ---
 
 :::info

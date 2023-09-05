@@ -1,7 +1,7 @@
 ---
 slug: lab-4
-title: Create a CI (build) pipeline
-sidebar_label: lab 4
+title: Create a CI pipeline
+sidebar_label: Create CI pipeline
 ---
 
 Kubernetes is a container orchestrator, so we need to create container images that we can deploy. Next to providing a Git service. Otomi also has a complete CI solution called Drone integrated. You can use Drone to create and run CI pipelines to build images and push them to your private image registry (Harbor).
@@ -28,15 +28,15 @@ In the apps section in Otomi console, you'll see an app called Drone. Click on i
 ![kubecfg](../../img/drone-activate-repo.png)
 
 
-Now we’ll need to add the credentials of the robot account as secrets toDrone:
+Now we’ll need to add the Harbor push credentials (you can download the credentials in the Otomi Console) as secrets to Drone:
 
 - Click on your repository.
 - Under Settings, Click on secrets
 - Add the following 2 secrets:
 
 ```
-REGISTRY_USERNAME = <harbor-robot-account-name.
-REGISTRY_PASSWORD = <the-token-of-the-robot-account>
+REGISTRY_USERNAME = <harbor-account-name.
+REGISTRY_PASSWORD = <the-token-of-the-account-name>
 ```
 
 Now you'll need to add a Drone pipeline definition to our repo.

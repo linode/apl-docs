@@ -21,7 +21,6 @@ The example Otomi chart values below shows how to install Otomi with
 
 ```yaml
 cluster:
-  k8sVersion: ${clusterVersion}
   name: ${clusterName}
   provider: ${clusterProvider}
 otomi:

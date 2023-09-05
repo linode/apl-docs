@@ -1,33 +1,12 @@
 ---
 slug: lab-5
 title: Push your container images
-sidebar_label: Lab 5
+sidebar_label: Push images
 ---
 
 :::info
 Prerequisite: For this lab, Harbor needs to be activated and the cluster needs to be configured with trusted certificates (like Let's Encrypt using production certificate).
 :::
-
-Now that you have kubectl access to your team namespace, you are ready to deploy your first container. When the platform administrator created your team, a private container registry has been automatically created for your team in Harbor and a pull secret has been added to your team namespace. To be able to push container images to your private registries, you'll first need to create a robot-account in your Harbor project with push access rights.
-
-## Access Harbor UI
-
-In the apps section in Otomi console, you'll see an app called Harbor. Click on it and follow these steps:
-
-- Choose `Login via OIDC provider`
-
-![oidc](../../img/harbor-oidc.png)
-
-- Set your OIDC user name
-
-![harbor-oidc](../../img/harbor-user-name.png)
-
-
-- In Harbor you'll see all the projects of the teams that you are a member of
-
-![harbor-projects](../../img/harbor-projects.png)
-
-- Click on the project of your team. Here you will see all the registries of the team
 
 ## Login to Harbor
 

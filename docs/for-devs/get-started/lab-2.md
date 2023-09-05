@@ -1,7 +1,7 @@
 ---
 slug: lab-2
 title: Access Otomi Console and download the KUBECFG
-sidebar_label: Lab 2
+sidebar_label: Access Console
 ---
 
 When you have received the URL of the web UI of Otomi Platform and have a username/password with access permissions, then it's time to sign-in
@@ -14,26 +14,6 @@ When you have received the URL of the web UI of Otomi Platform and have a userna
 After sign in, you will see this page:
 
 ![Team apps](../../img/team-apps.png)
-
-## (optional) Download the KUBECFG
-
-To get Kubectl access to your team namespace, you'll need a kubeconfig file. In Otomi Console you can download the KUBECFG.
-
-![kubecfg](../../img/kubecfg.png)
-
-In case you'll see this message:
-
-```
-{"authz":false,"message":"User not allowed to perform \"read\" on \"Kubecfg\" resource"}
-```
-
-then contact your platform administrator.
-
-By default, kubectl looks for a file named config in the $HOME/.kube directory. You can specify other kubeconfig files by setting the KUBECONFIG environment variable:
-
-```
-export KUBECONFIG=/path-to-the-kubecfg-file.yaml
-```
 
 ## (Optional) Download CA
 

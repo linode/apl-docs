@@ -1,17 +1,24 @@
 ---
 slug: lab-1
 title: Prerequisites for getting started
-sidebar_label: Lab 1
+sidebar_label: Prerequisites
 ---
 
 Welcome to Otomi! If you are a developer and are going to use Otomi, this getting started guide is for you. In this first part we are going to make sure everything is ready to get started.
 
-We assume the platform administrator has onboarded your team and you as a team member have received:
+We assume the platform administrator has:
+
+1. Created a team (called `demo` in the labs), allowing the team (using the Team self service flags) to:
+
+- Download docker config
+
+2. Added you as a team member to the team-role in KeyCloak
+3. Provided you with the following information:
 
 - The URL to access the Otomi web UI (Otomi Console)
-- The login credentials
+- Your login credentials
 
-We also assume the platform administrator has activated the following K8s applications:
+4. Has activated the following applications:
 
 - Harbor
 - ArgoCD
@@ -20,27 +27,12 @@ We also assume the platform administrator has activated the following K8s applic
 - Grafana
 - Trivy Operator
 - Tekton
-- OPA/Gatekeeper
-- Knative
+- Gatekeeper (with option `Disable validating webhook` set to true)
 
-Each lab will show the required K8s application to te activated.
-
-Also make sure to sign into Gitea:
+After receiving the login credentials, make sure to sign-in to Gitea for the first time:
 
 - Open Gitea
 - Click on `sign-in` in the top left
 - Do not sign in with your username and password, but click on `Sign in with OpenID`
 
-After signing in for the first time, the platform administrator can now provide you access to the Git repositories of the team in Gitea.
-
-## Install required software
-
-Make sure you have installed the following minimal software:
-
-- [Kubectl](https://kubernetes.io/docs/tasks/tools/), the Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters.
-
-Optionally install:
-
-- [Docker](https://docs.docker.com/get-docker/) or any other alternative ;-)
-- [Helm](https://helm.sh/docs/intro/install/) for installing Helm charts
-- [k9s](https://k9scli.io/) or [Lens](https://k8slens.dev/) to get a better UI to manage Kubernetes resources
+After signing in for the first time, the platform administrator will need to provide you access to the Git repositories of the team in Gitea.

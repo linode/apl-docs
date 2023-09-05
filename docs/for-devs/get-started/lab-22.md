@@ -1,7 +1,7 @@
 ---
 slug: lab-22
-title: Monitor custom metrics
-sidebar_label: Lab 22
+title: Using custom metrics
+sidebar_label: Using custom metrics
 ---
 
 :::info

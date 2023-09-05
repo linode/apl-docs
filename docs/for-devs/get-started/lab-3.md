@@ -1,7 +1,7 @@
 ---
 slug: lab-3
 title: Create a private Git repo
-sidebar_label: Lab 3
+sidebar_label: Create repo
 ---
 
 As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like Gitlab, or use Github. But if you don't, Otomi has you covered. Otomi includes a complete self-hosted Git solution called Gitea.
@@ -33,5 +33,5 @@ Your repo is now ready to be used!
 ![kubecfg](../../img/new-gitea-repo-ready.png)
 
 :::info
-Note that you as a user are now the owner of this repo and can add other team members to collaborate. Otomi does not create a group in Gitea that contains all the team member. Team members first have to sign in to Gitea (using OpenID) before they can be added to an existing repo.
+Note that you as a user are now the owner of this repo and can add other team members to collaborate. Otomi does not create a group in Gitea that contains all the team members. Team members first have to sign in to Gitea (using OpenID) and be granted access to an organization before they can be added to an existing repo.
 :::

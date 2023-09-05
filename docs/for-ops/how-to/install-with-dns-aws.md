@@ -86,7 +86,6 @@ EOF
 
 ```yaml
 cluster:
-  k8sVersion: "1.25"
   name: my-cluster # choose a name for your cluster
   provider: your-provider
   domainSuffix: your-domain.com # your domain name

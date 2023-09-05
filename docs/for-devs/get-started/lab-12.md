@@ -1,7 +1,7 @@
 ---
 slug: lab-12
 title: Deploy a BYO Helm chart
-sidebar_label: Lab 12
+sidebar_label: Create BYO workload
 ---
 
 Otomi offers a self-service feature to create 3 types of workloads:

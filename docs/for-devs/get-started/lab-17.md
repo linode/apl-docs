@@ -1,7 +1,7 @@
 ---
 slug: lab-17
 title: Scan your running containers for vulnerabilities
-sidebar_label: Lab 17
+sidebar_label: Scan container
 ---
 
 :::info

@@ -9,7 +9,7 @@ Kubernetes has been called The Operating System of the Cloud. In our opinion, Ku
 
 Building a Kubernetes-based platform requires a huge investment and requires skilled engineers. But why would you invest in building and maintaining a custom platform? Why can't you just install everyting you need to turn Kubernetes into a full platform, just like you can download a Linux distribution? 
 
-This is what we indended when we created Otomi. Any infrastructure, any K8s, one install, all the tools you need in an integrated and automated way, easy self-service, 100% Git-based.
+This is what we indended when we created Otomi. Any infrastructure, any K8s, one install, all the tools you need in an integrated and automated way, easy self-service and everything as code.
 
 ## What is Otomi?
 

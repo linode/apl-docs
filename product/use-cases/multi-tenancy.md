@@ -36,7 +36,7 @@ When multi-tenancy in Otomi is activated (which is optional), Otomi will support
 9. Tenants can allow other tenants to access their services
 10. Tenant services that are publicly exposed can be configured with OIDC, only allowing tenant members to access the exposed services
 
-## When to enable multi-tenancy in Otomi?
+## Why multi-tenancy in Otomi?
 
 ### Prevent cluster sprawl
 
@@ -52,11 +52,14 @@ With Otomi you can onboard development teams (tenants) in just a couple of minut
 
 - Get access to a private image registry
 - Download the Docker login credentials to get access to their private image registry
-- Deploy their images (stored in the private registry) using the Otomi workloads feature
+- Build OCI-compliant images from application code
+- Deploy images (stored in the private registry) using the Otomi workloads feature
 - Get access to pre-configured dashboards to see container metrics, policy violations, detected threads in containers and detected vulnerabilities in containers
 - Configure ingress and network policies
-- Get access to Vault to create secrets
+- Configure HTTP response headers
+- Configure CNAMEs
+- Get access to Vault to create and manage secrets
 - Use secrets for ingress or workloads
 
-When a team already has build an image, this image can be deployed within minutes after they have been onboarded.
+When a team already has a code repo with a Dockderfile, they can build, deploy and expose this app within minutes after they have been onboarded onto the platform.
 

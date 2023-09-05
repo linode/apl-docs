@@ -10,8 +10,8 @@ Otomi adds developer- and operations-centric tools, automation and self-service 
 
 - [Adoption framework for Kubernetes](adoption-framework.md): Use Otomi as an adoption framework to support migration to Kubernetes in an efficient and streamlined way
 - [Multi-tenancy](multi-tenancy.md): Share a Kubernetes cluster and all the integrated tools with multiple tenants
-- [Multi-cluster observability](multi-cluster.md): Create a multi-cluster setup with central observability
-- [Kubernetes at the Edge](edge.md): Run multiple Kubernetes clusters in different regions using different cloud providers
+<!-- - [Multi-cluster observability](multi-cluster.md): Create a multi-cluster setup with central observability -->
+<!-- - [Kubernetes at the Edge](edge.md): Run multiple Kubernetes clusters in different regions using different cloud providers -->
 - [Serverless](serverless.md): Use Otomi as a landing zone for serverless applications
 - [CD/CD](ci-cd.md): Use the CI and CD capabilities of Otomi
 

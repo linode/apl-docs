@@ -60,7 +60,7 @@ Follow the steps below to set up a CNAME when the TLS termination happens on the
 3. Go to the service configuration section in the Otomi Console.
 4. Create a new service by selecting the k8s service and port that you want to expose.
 5. Check the "Use CNAME" checkbox. Two text boxes will appear: "domain" and "tlsSecretName".
-6. Fill in both text boxes accordingly. Example: domain=`demo.example.com`, tlsSecretName=`mycnamecert`.
+6. Fill in both text boxes accordingly. Example: domain=`demo.example.com`, tlsSecretName=`my-cname-cert`.
 7. Click on the "Submit" button, followed by the "Deploy" button.
 
 ### With TLS Termination at the Application (Pod) Level

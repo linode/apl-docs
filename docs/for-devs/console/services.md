@@ -51,8 +51,6 @@ A URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are 
 
 
 ## Configure CNAME (available from v0.26)
-
-
 ### With TLS Termination at the NGINX Controller
 
 Follow the steps below to set up a CNAME when the TLS termination happens on the NGINX controller.

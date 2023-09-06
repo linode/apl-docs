@@ -59,7 +59,7 @@ function Home() {
         </div>
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
-            <h1>DEMO</h1> <h4>BUILD, DEPLOY and EXPOSE containerized apps with OTOMI</h4>
+            <h1>DEMO</h1> <h4>BUILD, DEPLOY and EXPOSE apps on Kubernetes with OTOMI</h4>
           </div>
         </div>
         <div
@@ -69,7 +69,7 @@ function Home() {
           <div className={`${clsx(styles.appsContainer)}`}>
             <br></br>
           <div className={styles.iframeWrapper}>
-          <iframe width="100%" height="550" className={styles.iframeVideo} src="https://www.youtube.com/embed/Lxy9uA_J2OM" title="Build, Deploy and Expose containerized applications with Otomi"  allow="fullscreen;"></iframe> 
+          <iframe width="960" height="540" className={styles.iframeVideo} src="https://www.youtube.com/embed/YXUDTgc9rXE" title="Build, Deploy and Expose containerized applications with Otomi"  allow="fullscreen;"></iframe> 
           </div>
 
           </div>

@@ -6,13 +6,14 @@ sidebar_label: Builds
 
 <!-- ![Console: new service](img/team-builds.png) -->
 
-A Build in Otomi is a self-service feature for:
-
-- Building OCI compliant images based on application source code
-- Pushing the image to the teams private registry in Harbor
+A Build in Otomi is a self-service feature for building OCI compliant images based on application source code.
 
 :::info
 Ask you platform administrator to activate Harbor and Tekton to be able to use this feature.
+:::
+
+:::info
+The otomi Builds feature can only use public code repositories or private repo's in the local Gitea. Images will always be pushed to a registry in the local Harbor.
 :::
 
 ## Create a build
@@ -35,29 +36,16 @@ Now choose the type of the build:
 1. Add the URL of the Git repository that contains the application source code
 2. (optional) Change the path of the `Dockerfile`
 3. (optional) Change the revsion. This can be a commit, a tag, or a branch
-4. (optional) Configure [repository access](#optional-configure-repository-access)
-
 
 ### Buildpacks
 
 1. Add the URL of the Git repository that contains the application source code
 2. (optional) Add the path. This is a subpath within the repo where the source to build is located
 3. (optional) Change the revsion. This can be a commit, a tag, or a branch
-4. (optional) Configure [repository access](#optional-configure-repository-access)
 
+### Build status
 
-### (optional) Configure repository access
-
-:::info
-For now, Otomi only supports authenticated access to local Gitea repositories. Otomi will soon also support authenticated access to GitHib repositories.
-:::
-
-- If Gitea (provided by Otomi) is used to host the code repository, select `Otomi Gitea repo`
-<!-- - If an external private Git repo is used that requires authentication, select `Private repo` and fill in the username ans password. If your github account has 2 factor auth configured, create a personal access token using [this procedure](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). -->
-
-After a few minutes, Otomi will run a pipeline to create the build and push the build to the team's private Harbor registry. Check Harbor to see if the image is created and pushed.
-
-To see the status of the build:
+To see the status of a build:
 
 - Start/open a shell in the console
 - run the following command:

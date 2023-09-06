@@ -1,10 +1,12 @@
 ---
-slug: route-53
-title: Install Otomi using Route53 for DNS
-sidebar_label: Install with Route53
+slug: install-with-dns
+title: Install Otomi with DNS
+sidebar_label: Install with DNS
 ---
 
-Follow the following steps to install Otomi with DNS using AWS Route53
+## Install Otomi with DNS using AWS Route53
+
+Follow the following steps to install Otomi with DNS using AWS Route53.
 
 1. Register a domain and retrieve the Hosted zone ID
 2. Create a `dns-policy.json` file for the policy and add the Zone ID:
@@ -104,7 +106,7 @@ apps:
   cert-manager:
     issuer: letsencrypt
     stage: production
-    email: admin@your-domain.net
+    email: admin@your-domain.com
 ```
 
 10. Install Otomi:

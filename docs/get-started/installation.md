@@ -22,7 +22,7 @@ As of version [0.26.0](https://github.com/redkubes/otomi-core/releases/tag/v0.21
 :::
 
 :::info
-The Otomi [Build](../for-devs/console/builds.md) feature and using Harbor is NOT supported when Otomi is installed with minimal values. Install Otomi with DNS to use all features. Check the how-to's under `For-Ops` for instructions on how to install Otomi with Route53 (more how-to's coming soon).
+The Otomi [Builds](../for-devs/console/builds.md) and [Projects](../for-devs/console/projects.md) features and using Harbor for private registries is NOT supported when Otomi is installed with minimal configuration. Install Otomi [with DNS](#install-otomi-with-dns) to use all Otomi features.
 :::
 
 ```yaml
@@ -113,25 +113,27 @@ for ns in $(kubectl get ns --field-selector status.phase=Terminating -o jsonpath
 
 You can optionally configure Otomi to use an external IDP (Azure AD), use an external Key Management Service (KMS) for SOPS and use a DNS zone in combination with LetsEncrpt certificates or a custom CA. Below you can find detailed instructions on how to set up Azure AD as an external IDP and configure KMS. We will soon add more instructions for other IDPs, such as Amazon Incognito, Google Identity, and Okta.
 
-### Use DNS and Let's Encrypt
+### Install Otomi with DNS
 
-By default, Otomi uses the public IP address of the load balancer for nameresolving using [nip.io](http://nip.io). To install Otomi with DNS and Let's Encrypt, use the following values:
+When Otomi is installed with minimal values, Otomi uses the public IP address of the load balancer for nameresolving using [nip.io](http://nip.io). To install Otomi with DNS, use the following values:
 
 ```yaml
+cluster:
+  name: # the name of your cluster
+  provider: # choose between aws, azure, google, digitalocean, ovh, vultr, scaleway or custom
+  domainSuffix: cluster-name.your-domain.com
 otomi:
   hasExternalDNS: true
-  adminPassword: yourpassword
 
-# Configure cert-manager
 apps:
   cert-manager:
     issuer: letsencrypt
-    stage: staging # defaults to 'production' when commented out
+    stage: production
+    email: admin@your-domain.com
 
-# Configure DNS
 dns:
-#   domainFilters: []
-#   zoneIdFilters: []
+#   domainFilters:
+      - your-domain.com
 #   provider: # provide one of the following: aws|azure|google|digitalocean|azure-private-dns|cloudflare|other
 #     aws:
 #       credentials:
@@ -148,6 +150,8 @@ dns:
 #       serviceAccountKey: ''
 #       project: ''
 ```
+
+See [here](../for-ops/how-to/install-with-dns.md) for more examples on how to install Otomi with DNS.
 
 ### Use Azure AD as IDP
 

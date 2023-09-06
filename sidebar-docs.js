@@ -155,9 +155,9 @@ module.exports = {
       "apps/vault",
       "apps/velero",
     ],
-    "Tutorials": [
-      "tutorials/overview",
-      "tutorials/tutorial-1",
-    ],
+    // "Tutorials": [
+    //   "tutorials/overview",
+    //   "tutorials/tutorial-1",
+    // ],
   },
 };

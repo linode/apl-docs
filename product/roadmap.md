@@ -19,10 +19,9 @@ We are dedicated to maintaining support for three different Kubernetes versions 
 ### 2023 Q4
 
 - Implement status indicators within the Otomi Console to keep team users informed about the status of various components, including the Drone pipeline, Build process, Workload management, and Service availability.
-
 - Create a Team Dashboard that provides an overview of team-specific namespaces and their associated resources, using Prometheus metrics as a basis for this information.
-
 - Deploy Otomi by leveraging Drone and ArgoCD.
+- Quality assurance cluster for continuous Otomi hardening and performance test
 
 ### 2024 Q1
 

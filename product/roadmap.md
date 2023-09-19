@@ -23,7 +23,7 @@ Every time we drop support of a given Kubernetes version we increase Otomi major
 
 - Create a Team Dashboard that provides an overview of team-specific namespaces and their associated resources, using Prometheus metrics as a basis for this information.
 
-- Deploy Otomi alongside Drone and ArgoCD.
+- Deploy Otomi by leveraging Drone and ArgoCD.
 
 ### 2024 Q1
 

@@ -6,8 +6,7 @@ sidebar_label: Roadmap
 
 ## Supported Kubernetes version
 
-We are committed to support three kubernetes version for a given Otomi major version.
-Every time we drop support of a given Kubernetes version we increase Otomi major version.
+We are dedicated to maintaining support for three different Kubernetes versions within a specific major version of Otomi. Whenever we decide to discontinue support for a particular Kubernetes version, we increment the major version of Otomi.
 
 | Otomi Version | Supported Kubernetes version | Expected date |
 | ------------- | ---------------------------- | ------------- |

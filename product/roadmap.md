@@ -6,7 +6,7 @@ sidebar_label: Roadmap
 
 ## Supported Kubernetes version
 
-We are dedicated to maintaining support for three different Kubernetes versions within a specific major version of Otomi. Whenever we decide to discontinue support for a particular Kubernetes version, we increment the major version of Otomi.
+We are dedicated to maintain support for three different Kubernetes versions within a specific major version of Otomi. Whenever we decide to discontinue support for a particular Kubernetes version, we increment the major version of Otomi.
 
 | Otomi Version | Supported Kubernetes version | Expected date |
 | ------------- | ---------------------------- | ------------- |
@@ -18,23 +18,23 @@ We are dedicated to maintaining support for three different Kubernetes versions 
 
 ### 2023 Q4
 
-- Implement status indicators within the Otomi Console to keep team users informed about the status of various components, including the Drone pipeline, Build process, Workload management, and Service availability.
-- Deploy Otomi by leveraging Drone and ArgoCD.
-- Quality assurance cluster for continuous Otomi hardening and performance test.
+- Implement status indicators within Otomi Console to keep Team users informed about the status of various components, including Drone pipeline, Build processes, Workload management, and Service availability
+- Deploy Otomi by leveraging Drone and ArgoCD
+- Quality assurance cluster for continuous Otomi hardening and performance test
 
 ### 2024 Q1
 
-- Create a Team Dashboard that provides an overview of team-specific resources, using Prometheus metrics as a basis for this information.
-- Strengthen the Istio service mesh configuration.
-- Add support for ARM architecture.
-- Enable configurable storage classes.
-- Implement Gitea with a database managed by the CloudNativePG operator.
-- Implement Drone with a database managed by the CloudNativePG operator.
+- Add Team Dashboards to provide an overview of team-specific resources using Prometheus metrics
+- Harden the Istio service mesh configuration
+- Add support for ARM architecture
+- Enable user configurable storage classes
+- Implement Gitea with a database managed by the CloudNativePG operator
+- Implement Drone with a database managed by the CloudNativePG operator
 
 ### 2024 Q2
 
-- Enhance network policies across the platform.
-- Develop disaster recovery procedures for core Otomi applications, such as Gitea, Keycloak, Drone, and Harbor.
-- Establish separate Kubernetes namespaces for Team Applications.
-- Ensure Otomi's security compliance with hardening guides from NSA and CISA.
-- Create an Application Dashboard.
+- Enhance network policies across the platform
+- Provide disaster recovery procedures for core Otomi applications, such as Gitea, Keycloak, Drone, and Harbor
+- Establish separate Kubernetes namespaces for Team Applications
+- Ensure Otomi's NSA and CISA compliance
+- Provide Application Dashboards

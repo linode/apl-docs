@@ -31,12 +31,11 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 - Add support for ARM architecture
 - Enable user configurable storage classes
 - Implement Gitea with a database managed by the CloudNativePG operator
-- Implement Drone with a database managed by the CloudNativePG operator
+- Provide disaster recovery procedures for Otomi core applications, such as Gitea, Keycloak and Harbor
 
 ## 2024 Q2
 
 - Enhance network policies across the platform
-- Provide disaster recovery procedures for Otomi core applications, such as Gitea, Keycloak, Drone, and Harbor
 - Establish separate Kubernetes namespaces for Team Applications
 - Ensure Otomi's NSA and CISA compliance
 - Provide Application specific dashboards

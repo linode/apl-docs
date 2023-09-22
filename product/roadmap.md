@@ -45,7 +45,7 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 
 After Q2 2024 we have the following goals:
 
-- Make Otomi more plugable by enableling users to bring their own platform apps
+- Make Otomi more plugable by enabling users to bring their own platform apps
 - Offer more middleware services (like caching, message queuing, databases)
 - Migrate to ambient mesh using eBPF
 - Remove platform app forms in favor of generated values that can be customized in an editor

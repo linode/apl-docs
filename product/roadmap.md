@@ -26,15 +26,16 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 ## 2024 Q1
 
 - Implement status indicators within Otomi Console to keep Team users informed about the status of various components, including Build processes, Workload management, and Service availability
-- Add Team Dashboards to provide an overview of team resource status using Prometheus metrics
 - Harden the Istio service mesh configuration
 - Add support for ARM architecture
 - Enable user configurable storage classes
 - Implement Gitea with a database managed by the CloudNativePG operator
 - Provide disaster recovery procedures for Otomi core applications, such as Gitea, Keycloak and Harbor
+- New secret storage engine (a replacement for Hashicorp Vault)
 
 ## 2024 Q2
 
+- Add Team Dashboards to provide an overview of team resource status using Prometheus metrics
 - Enhance network policies across the platform
 - Establish separate Kubernetes namespaces for Team Applications
 - Ensure Otomi's NSA and CISA compliance

@@ -2,8 +2,7 @@ module.exports = {
   mainSidebar: [
     "introduction", 
     "architecture", 
-    // "roadmap", 
-    // "release-plan", 
+    "roadmap", 
     "faq",
     {
       "Use Cases": [

@@ -36,3 +36,7 @@ Your repo is now ready to be used!
 :::info
 Otomi does not create a group in Gitea that contains all the team members. Team members first have to sign in to Gitea (using OpenID), after which they are automatically added to the correct team.
 :::
+
+:::info
+The `otomi-admin` account is unable to login with OpenID, this account needs to login with the normal login form.
+:::

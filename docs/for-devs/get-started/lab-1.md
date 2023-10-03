@@ -34,5 +34,3 @@ After receiving the login credentials, make sure to sign-in to Gitea for the fir
 - Open Gitea
 - Click on `sign-in` in the top left
 - Do not sign in with your username and password, but click on `Sign in with OpenID`
-
-After signing in for the first time, the platform administrator will need to provide you access to the Git repositories of the team in Gitea.

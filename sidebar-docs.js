@@ -45,7 +45,8 @@ module.exports = {
           "for-ops/how-to/use-team-admin",
           "for-ops/how-to/core-only",
           "for-ops/how-to/install-with-dns",
-          "for-ops/how-to/create-and-restore-backups"
+          "for-ops/how-to/switch-to-dns",
+          "for-ops/how-to/create-and-restore-backups",
         ],
       },
       {

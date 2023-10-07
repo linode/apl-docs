@@ -4,9 +4,9 @@ title: Installation
 sidebar_label: Installation
 ---
 
-### Install Otomi with Helm
+## Install Otomi with Helm
 
-#### Add the Otomi repository
+### Add the Otomi repository
 
 ```bash
 helm repo add otomi https://otomi.io/otomi-core
@@ -15,7 +15,7 @@ helm repo update
 
 See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
-#### Minimal configuration
+### Minimal configuration
 
 :::info
 As of version [0.26.0](https://github.com/redkubes/otomi-core/releases/tag/v0.21.0) Otomi supports Kubernetes versions `1.25`,`1.26` and `1.27`.
@@ -39,7 +39,7 @@ When the chart is installed, follow the [activation steps](activation).
 license: <License Key>
 ``` -->
 
-#### Custom values
+### Custom values
 
 To view the required `values.yaml` file with detailed comments, view and download the chart's latest [values.yaml](https://github.com/redkubes/otomi-core/blob/main/chart/otomi/values.yaml). Run the following command to view _all_ the values (which might be overwhelming):
 
@@ -53,7 +53,7 @@ To test wether the input values are correct run the following command:
 helm template -f values.yaml otomi/otomi
 ```
 
-#### Install the Chart
+### Install the Chart
 
 Install the chart with the following command:
 
@@ -61,7 +61,7 @@ Install the chart with the following command:
 helm install -f values.yaml otomi otomi/otomi
 ```
 
-#### Monitoring the chart install
+### Monitoring the chart install
 
 The chart deploys a Job (`otomi`) in the `default` namespace. Monitor the chart install using `kubectl`:
 
@@ -76,11 +76,11 @@ Or view detailed info about kubernetes resources with [k9s](https://k9scli.io)
 
 When the chart is installed, follow the [activation steps](activation)
 
-### Installing from source
+## Installing from source
 
 As an alternative, you can also clone the otomi-core source code from the [Github](https://github.com/redkubes/otomi-core) and install otomi using the chart source code.
 
-#### Download source
+### Download source
 
 ```bash
 git clone https://github.com/redkubes/otomi-core.git

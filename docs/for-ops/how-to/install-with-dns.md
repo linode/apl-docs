@@ -117,7 +117,7 @@ helm repo update
 helm install -f values.yaml otomi otomi/otomi
 ```
 
-## Civo DNS
+## Civo DNS (Coming soon!)
 
 Set up DNS in Civo:
 

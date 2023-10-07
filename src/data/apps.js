@@ -1,5 +1,29 @@
 export default [
   {
+    href: "https://github.com/open-telemetry/opentelemetry-operator",
+    src: "otel-logo.svg",
+    name: "OpenTelemetry",
+    desc: "Instrument, generate, collect, and export telemetry data",
+  },
+  {
+    href: "https://github.com/GoogleContainerTools/kaniko",
+    src: "kaniko-logo.png",
+    name: "Kaniko",
+    desc: "Build images from Dockerfile",
+  },
+  {
+    href: "https://github.com/grafana/tempo",
+    src: "tempo-logo.svg",
+    name: "Tempo",
+    desc: "Distributed tracing backend",
+  },
+  {
+    href: "https://github.com/cloudnative-pg/cloudnative-pg",
+    src: "cnpg-logo.svg",
+    name: "Cloudnative-pg",
+    desc: "Operator to manage PostgreSQL workloads",
+  },
+  {
     href: "https://argo-cd.readthedocs.io/",
     src: "argo-cd.svg",
     name: "Argo CD",

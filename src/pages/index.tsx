@@ -59,7 +59,7 @@ function Home() {
         </div>
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
-            <h1>DEMO</h1> <h4>BUILD, DEPLOY and EXPOSE apps on Kubernetes with OTOMI</h4>
+            <h1>DEMO</h1> <h4>CODE, BUILD and RUN apps on Kubernetes with OTOMI</h4>
           </div>
         </div>
         <div
@@ -91,7 +91,7 @@ function Home() {
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
           <div className={styles.announcementInner}>
-            <h1>INTEGRATED TOOLS</h1> <h4>Create your own suite of PRE-CONFIGURED, INTEGRATED and AUTOMATED tools</h4>
+            <h1>INTEGRATED APPLICATIONS</h1> <h4>Compose your platform by activating the required Kubernetes applications </h4>
           </div>
           </div>
         </div>

@@ -12,6 +12,16 @@ A service in Otomi is a self-service feature for:
 - Private (in-cluster) exposure of ClusterIP services
 - Configure network policies
 
+## Services `(team <team-name>)`
+
+All known Services of the team are listed here. Services can be sorted based on:
+
+| Property     | Description                                            |
+| ------------ | ------------------------------------------------------ |
+| Service Name | The name of the service                                |
+| Ingress class     | The ingress class configured. This is the ingress controller that exposes the service              |
+| URL        | The URL of the service if the service is configured for external exposure |
+
 ## Create a Service
 
 1. Enter a name for the service. The name will be used to generate hostname if `Use suggested domain` is chosen (see below). When configuring ingress for an existing (pre-deployed) service, make sure the name provided here matches the name of the CusterIP service
@@ -23,15 +33,15 @@ After providing a name and a port number, you can now configure ingress.
 Exposure controls wether internet exposure should be enabled or not. Three options exist:
 
 - `Private`: choose to expose services in-cluster
-- `Public`: choose to expose services publicly
+- `Public`: choose to expose services on a private or public load balancer
 
 ### Private
 
 Choose private to expose the service in-cluster and configure in-cluster [ingress network policies](#ingress-traffic-inside-the-cluster)
 
-### Public
+### External
 
-Use Public to expose a service with a domain name and a certificate on an external network (using an external load balancer)
+Use External to expose a service with a domain name and a certificate on an external network (using an external load balancer).
 
 A URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are described below.
 
@@ -50,7 +60,9 @@ A URL will have a hostname that consists of `$HOST_NAME.$DNS_ZONE`. Options are 
 | HTTP Response Headers            | HTTP Response headers that will be set on the exposed service                                                             |
 
 
-## Configure CNAME (available from v0.26)
+## Use CNAME
+
+Select `Use CNAME` when the URL of the service is used as a value in a CNAME.
 ### With TLS Termination at the NGINX Controller
 
 Follow the steps below to set up a CNAME when the TLS termination happens on the NGINX controller.

@@ -4,7 +4,7 @@ title: Install Otomi with DNS
 sidebar_label: Install with DNS
 ---
 
-## Install Otomi with DNS using AWS Route53
+## Route53
 
 Follow the following steps to install Otomi with DNS using AWS Route53.
 
@@ -116,3 +116,4 @@ helm repo add otomi https://otomi.io/otomi-core
 helm repo update
 helm install -f values.yaml otomi otomi/otomi
 ```
+

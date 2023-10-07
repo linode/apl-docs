@@ -10,3 +10,4 @@ Minio can be enabled to provice an in-cluster S3 compatible Object Store service
 - Thanos (for storing metrics)
 - Velero (for storing backups)
 - Cloudnative-pg (for storing database backups)
+- Tempo (for storing traces)

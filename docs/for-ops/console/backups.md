@@ -8,7 +8,9 @@ sidebar_label: Backups
 To enable this feature, first make sure [Velero](../../apps/velero.md) is activated.
 :::
 
-All known Builds on the platform are listed here. Builds can be sorted based on:
+When Velero is activated on the platform level, platform admins can create backups of Persistent Volumes (PVs) in Team namespaces using Otomi Console. When creating backups using Otomi Console, a Velero `schedule` resource is created that will create the backup at a specified time, defined by a Cron expression.
+
+All known Backups on the platform are listed here. Builds can be sorted based on:
 
 | Property      | Description                                            |
 | ------------- | ------------------------------------------------------ |
@@ -19,7 +21,7 @@ All known Builds on the platform are listed here. Builds can be sorted based on:
 ## Create a backup
 
 :::note
-Backup can only be created by platform administrators
+Backups of Team PVs can only be created by platform administrators
 :::
 
 1. Select the Team name in the top bar to set the context to the namespace that contains the PV to backup

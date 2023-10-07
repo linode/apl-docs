@@ -22,6 +22,16 @@ Ask you platform administrator to activate ArgoCD to be able to use this feature
 Ask you platform administrator to activate Knative to be able to create Function as a Service workloads.
 :::
 
+## Workloads (all)
+
+All known Workloads of the team are listed here.
+
+| Property      | Description                                            |
+| ------------- | ------------------------------------------------------ |
+| Workload Name | The name of the workload                               |
+| Type | The type of the workload (deployment/ksvc/custom)               |
+| Argocd | Link to the ArgoCD application in the ArgoCD UI               |
+
 
 ## Create a Workload
 
@@ -68,6 +78,23 @@ Now click on `Deploy Changes`
 After a few minutes, Otomi will have created all the needed ArgoCD resources to deploy your workload. In the workloads list, click on the `Application` link of your workload to see the status of your workload.
 
 The values of a workload can be changed at any time. Changes will automatically be deployed.
+
+#### (optional) Configure Auto Image Updater
+
+Workloads with a BYO Helm chart can be configured with the Auto Image Updater. The Auto Image Updater will (based on the update strategy) update the deployed image.
+
+:::info
+Using the auto image updater is only supported when the Helm chart is in a local Gitea repository on the platform, and the image is stored in the local Harbor on the platform.
+:::
+
+1. If the URL for the chart is a local Gitea repo, the option to enable the Auto Image updater will become active. Select `Enabled`
+2. Fill in a Build name (a Build created in Otomi) or the name of an existing image in harbor (without `*/team-<name>/`)
+3. Select the Update strategy. Choose between:
+
+- Latest: Update to the most recently built image.
+- Digest: Update to the most recent pushed version of a given tag. Requires to provide a `tag`.
+- Semver: Update based on semantic versions. Example: `1.0` would allow the image to be updated to any patch version within the 1.0 minor release.
+
 
 ### Basic values
 

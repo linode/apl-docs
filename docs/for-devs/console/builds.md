@@ -16,6 +16,18 @@ Ask you platform administrator to activate Harbor and Tekton to be able to use t
 The otomi Builds feature can only use public code repositories or private repo's in the local Gitea. Images will always be pushed to a registry in the local Harbor.
 :::
 
+## Builds (all)
+
+All known Builds of the team are listed here.
+
+| Property      | Description                                            |
+| ------------- | ------------------------------------------------------ |
+| Build         | The name of the build                                  |
+| Type          | Type of the build. Buildpacks or Docker                |
+| Trigger       | Is trigger configured for the build                    |
+| Tekton        | Link to the PipelineRun of the build in Tekton dashboard |
+| Harbor        | Link to the image in Harbor                            |
+
 ## Create a build
 
 1. Enter a name for the build
@@ -36,18 +48,33 @@ Now choose the type of the build:
 1. Add the URL of the Git repository that contains the application source code
 2. (optional) Change the path of the `Dockerfile`
 3. (optional) Change the revsion. This can be a commit, a tag, or a branch
+4. (optional) Select to create an event listener to trigger the build based on a Gitea webhook.
+
+:::info
+Configuring a Trigger is only supported when the Repo is in the local Gitea.
+:::
+
 
 ### Buildpacks
 
 1. Add the URL of the Git repository that contains the application source code
 2. (optional) Add the path. This is a subpath within the repo where the source to build is located
 3. (optional) Change the revsion. This can be a commit, a tag, or a branch
+4. (optional) Select to create an event listener to trigger the build based on a Gitea webhook.
+
+:::info
+Configuring a Trigger is only supported when the Repo is in the local Gitea.
+:::
 
 ### Build status
 
-To see the status of a build:
+To see the status of the build, click on the `PipelineRun` link of the build in the list of builds. If a trigger is configured, the link will show all PipelineRuns.
 
-- Start/open a shell in the console
+### Restart a build
+
+To restart a build:
+
+- Start a shell in the console
 - run the following command:
 
 ```

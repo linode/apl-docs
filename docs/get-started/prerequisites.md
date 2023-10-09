@@ -45,6 +45,13 @@ To install Otomi on a [Vultr Kubernetes Engine (VKE)](https://www.vultr.com/docs
 
 To install Otomi on a [Civo K3s](https://www.civo.com/kubernetes) cluster, use the `civo` provider.
 
+Otomi on CIVO requires at least:
+
+* A node pool with `3` Large Standard nodes (4 CPU Cores and 8 GB RAM)
+* Kubernetes version `1.26` or `1.27`
+
+Otomi installs and configures Nginx as a default ingress controller. When launching from the marketplace, make sure to unselect the default Traefik v2 (NodePort).
+
 ### All others
 
 Use the `custom` provider for all other clouds, and when running Kubernetes on your own hardware (including Minikube on your local machine). The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that obtains an external accessible IP.

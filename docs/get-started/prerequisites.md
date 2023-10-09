@@ -41,7 +41,11 @@ To install Otomi on a OVHcloud [Managed Kubernetes Service](https://www.ovhcloud
 
 To install Otomi on a [Vultr Kubernetes Engine (VKE)](https://www.vultr.com/docs/vultr-kubernetes-engine/) cluster, use the `vultr` provider.
 
-### Civo (Coming soon!)
+### Civo
+
+:::info
+Civo support is comming soon!
+:::
 
 To install Otomi on a [Civo K3s](https://www.civo.com/kubernetes) cluster, use the `civo` provider.
 

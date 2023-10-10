@@ -10,47 +10,11 @@ In this how-to, we'll create a backup of a PV using Otomi and then restore it us
 
 ## Prerequisites
 
-To perform this how-to, first make sure Velero is enabled. Velero requires object storage to be be configured. By default Velero uses the local Minio provided by Otomi.
+To perform this how-to, first make sure Velero is enabled. Velero requires object storage to be be configured. By default Velero uses the local Minio provided by Otomi. In this how-to we'll use Minio.
 
-When Otomi installs Velero, the Velero plug-in for Azure, AWS and Google are configured by default. Velero also has support for backing up and restoring Kubernetes volumes using [Restic](https://velero.io/docs/v1.3.2/restic/#limitations). Note that Restic is not configured by default.
+When Otomi installs Velero, the Velero plug-in for Azure, AWS and Google are configured by default. Velero also has support for backing up and restoring Kubernetes volumes using [Restic](https://velero.io/docs/v1.3.2/restic/#limitations). Note that Restic is not enabled by default.
 
-For this how-to we'll use the PV of a Team's private Prometheus instance, so make sure Prometheus is also enabled. The Prometheus pod in the team namespace does not have the `backup.velero.io/backup-volumes` annotation. 
-
-Add the annotation:
-
-1. In Otomi Console, click on `Shell` in the bottom of the left menu
-2. Run the following cmd in the shell:
-
-```shell
-kubectl get po -n team-demo
-NAME                              READY   STATUS    RESTARTS   AGE
-prometheus-demo-po-prometheus-0   3/3     Running   0          52m
-
-kubectl get pod prometheus-demo-po-prometheus-0 -n team-demo -o yaml
-```
-
-In the output you will see that the volume used by Prometheus is `prometheus-demo-po-prometheus-db`:
-```yaml
-Volumes:
-  prometheus-demo-po-prometheus-db:
-    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-    ClaimName:  prometheus-demo-po-prometheus-db-prometheus-demo-po-prometheus-0
-    ReadOnly:   false
-```
-
-3. Annotate the pod:
-
-```shell
-kubectl -n team-demo annotate pod prometheus-demo-po-prometheus-0 backup.velero.io/backup-volumes=prometheus-demo-po-prometheus-db
-pod/prometheus-demo-po-prometheus-0 annotate
-```
-
-and verify the pod has been annotated:
-
-```shell
-kubectl -n team-demo describe pod prometheus-demo-po-prometheus-0 | grep Annotations
-Annotations: backup.velero.io/backup-volumes: prometheus-demo-po-prometheus-db
-```
+For this how-to we'll use the PV of a Team's private Prometheus instance, so make sure Prometheus is also enabled. 
  
 ## Create a backup schedule using Otomi
 
@@ -58,8 +22,12 @@ Annotations: backup.velero.io/backup-volumes: prometheus-demo-po-prometheus-db
 2. In Otomi Console, click on `Backup` in the left menu under `Platform` and click on `Create`.
 3. Enter a name for the backup. In this how-to we'll use the name `prom`.
 4. Add the schedule of the backup. The schedule is a cron-type expression to schedule the backup. Defaults to once a day at 00:00. Create your cron-type expression [here](https://crontab.guru/).
-5. Using snapshots only applies to Persistent Volumes in Azure, GCE, and AWS
-6. In this how-to, we'll create a backup of the private Prometheus PV in the `demo` team. 
+5. Using snapshots only applies to Persistent Volumes in Azure, GCE, and AWS.
+6. In this how-to, we'll create a backup of the private Prometheus PV in the `demo` team by using a `labelSelector`
+
+:::note
+If the labelSelector is not used, the backup schedule will backup all PVs of the team.
+:::
 
 - In Otomi Console, click on `Shell` in the bottom of the left menu.
 - Run the following cmd in the shell:
@@ -115,6 +83,32 @@ Restore request "team-demo-backup-prom-20230924115514-20230924133133" submitted 
 Run `velero restore describe team-demo-backup-prom-20230924115514-20230924133133` or `velero restore logs team-demo-backup-prom-20230924115514-20230924133133` for more details.
 ```
 
-## Create custom backups
+## Manually create backups
 
-Otomi only provides an easy self-service option for administrators to schedule backups of persistent volumes. The shell in Otomi includes the Velero CLI, so if you're confortable with Velero you can also create you're own custom backups. Check the docs on [https://velero.io/](https://velero.io/) for more information.
+Otomi only provides a self-service option for administrators to schedule backups of persistent volumes within team namespaces. The shell in Otomi includes the Velero CLI, so if you're confortable with Velero you can also create you're own custom backups. Check the docs on [https://velero.io/](https://velero.io/) for more information.
+
+This is an example of creating a custom backup:
+
+- Create a full backup (to backup all resources, including PVs)
+
+```shell
+velero backup create my-custom-backup-01 --include-namespaces team-demo
+```
+
+- Create a backup of spefic resources:
+
+```shell
+velero backup create my-custom-backup-02 --include-namespaces team-demo --include-resources secret,deployment
+```
+
+- Verify the backup:
+
+```shell
+velero describe backup my-custom-backup-01 --details
+```
+
+- Restore a backup:
+
+```shell
+velero restore create --from-backup my-custom-backup-01
+```

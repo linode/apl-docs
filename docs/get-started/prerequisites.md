@@ -79,7 +79,7 @@ Otomi currently supports the following Kubernetes versions:
 Otomi requires a node pool with at least **8 vCPU** and **16 GiB RAM**. Note that this is the requirements for a minimal install. When activating more apps, you'll probably need more resources.
 
 :::info ATTENTION
-The minimal resource requirement to run Otomi is based on running Core Apps only! The core apps provide an advanced ingress architecture based on Nginx, Istio, Keycloak, Oaut2 Proxy and Certmanager. Activating optional apps will require more compute resources. We advise to have a node pool available with 12 vCPU and 24 GiB memory.
+The minimal resource requirement to run Otomi is based on running Core Apps only! The core apps provide an advanced ingress architecture based on Nginx, Istio, Keycloak, Oaut2 Proxy and Certmanager. Activating optional apps will require more compute resources. We advise to have a node pool available with 16 vCPU and 24 GiB memory.
 :::
 
 ## CNI

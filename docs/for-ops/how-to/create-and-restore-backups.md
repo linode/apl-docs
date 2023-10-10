@@ -95,7 +95,7 @@ This is an example of creating a custom backup:
 velero backup create my-custom-backup-01 --include-namespaces team-demo
 ```
 
-- Create a backup of spefic resources:
+- Create a backup of specific resources:
 
 ```shell
 velero backup create my-custom-backup-02 --include-namespaces team-demo --include-resources secret,deployment

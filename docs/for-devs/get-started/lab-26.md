@@ -62,7 +62,7 @@ The build should now have started. For this, Otomi created a pipeline in Tekton.
 
 1. In Otomi Console, click on `Builds`
 2. In the list of Builds, click on the `PipelineRun` link of the `hello` build
-3. Tekton Dasboard will open and show a list of all the PipelineRuns
+3. Tekton Dashboard will open and show a list of all the PipelineRuns
 4. Click on the PipelineRun with the name `docker-trigger-build-hello-*`
 5. You can now see the status of the build.
 

@@ -19,6 +19,7 @@ Welcome to Otomi! If you are a developer and are going to use Otomi Platform, th
 - [Create a CI (build) pipeline](lab-4)
 - [Push container images to your private repo](lab-5)
 - [Create builds using Otomi](lab-6)
+- [Trigger builds](lab-26)
 - [Scan your images for vulnerabilities](lab-7)
 
 ## Deploy application workloads

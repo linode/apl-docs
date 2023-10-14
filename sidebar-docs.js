@@ -111,6 +111,7 @@ module.exports = {
           "for-devs/get-started/lab-4",
           "for-devs/get-started/lab-5",
           "for-devs/get-started/lab-6",
+          "for-devs/get-started/lab-26",
           "for-devs/get-started/lab-7",
           "for-devs/get-started/lab-8",
           "for-devs/get-started/lab-10",

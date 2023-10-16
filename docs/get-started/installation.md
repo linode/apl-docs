@@ -4,9 +4,9 @@ title: Installation
 sidebar_label: Installation
 ---
 
-### Install Otomi with Helm
+## Install Otomi with Helm
 
-#### Add the Otomi repository
+### Add the Otomi repository
 
 ```bash
 helm repo add otomi https://otomi.io/otomi-core
@@ -15,7 +15,7 @@ helm repo update
 
 See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
-#### Minimal configuration
+### Minimal configuration
 
 :::info
 As of version [1.0.0](https://github.com/redkubes/otomi-core/releases/tag/v0.21.0) Otomi supports Kubernetes versions `1.25`,`1.26` and `1.27`.
@@ -39,7 +39,7 @@ When the chart is installed, follow the [activation steps](activation).
 license: <License Key>
 ``` -->
 
-#### Custom values
+### Custom values
 
 To view the required `values.yaml` file with detailed comments, view and download the chart's latest [values.yaml](https://github.com/redkubes/otomi-core/blob/main/chart/otomi/values.yaml). Run the following command to view _all_ the values (which might be overwhelming):
 
@@ -53,7 +53,7 @@ To test wether the input values are correct run the following command:
 helm template -f values.yaml otomi/otomi
 ```
 
-#### Install the Chart
+### Install the Chart
 
 Install the chart with the following command:
 
@@ -61,7 +61,7 @@ Install the chart with the following command:
 helm install -f values.yaml otomi otomi/otomi
 ```
 
-#### Monitoring the chart install
+### Monitoring the chart install
 
 The chart deploys a Job (`otomi`) in the `default` namespace. Monitor the chart install using `kubectl`:
 
@@ -76,11 +76,11 @@ Or view detailed info about kubernetes resources with [k9s](https://k9scli.io)
 
 When the chart is installed, follow the [activation steps](activation)
 
-### Installing from source
+## Installing from source
 
 As an alternative, you can also clone the otomi-core source code from the [Github](https://github.com/redkubes/otomi-core) and install otomi using the chart source code.
 
-#### Download source
+### Download source
 
 ```bash
 git clone https://github.com/redkubes/otomi-core.git
@@ -239,78 +239,4 @@ kms:
 #       project: ''
 #     vault:
 #       token: ''
-```
-
-## Known issues
-
-### Metrics server with untrusted Kube API certificates
-
-**Problem**
-
-Metrics server will not start when installing on a K8s cluster (like on Minikube or a cluster created with Kubeadm) with Kube API using self-signed certificates
-
-**Solution** 
-
-Add extra args to the metrics-service by using the following values when installing Otomi with Helm chart:
-
-```
-apps:
-  metrics-server:
-    enabled: true
-    _rawValues:
-      extraArgs:
-        kubelet-preferred-address-types: InternalIP
-        kubelet-insecure-tls: true
-```
-
-### Uninstalling Otomi
-
-**Problem**
-
-When uninstalling Otomi using the `helm unistall` cmd, all Otomi namespaces get stuck in a terminating state.
-
-**Solution** 
-
-The work around for now is to delete all namespaces using this cmd:
-
-```
-for ns in $(kubectl get ns --field-selector status.phase=Terminating -o jsonpath='{.items[*].metadata.name}'); do  kubectl get ns $ns -ojson | jq '.spec.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/$ns/finalize" -f -; done
-```
-
-### Installing Otomi with Cloudflare DNS
-
-**Problem**
-
-When installing Otomi with `otomi.hasExternalDNS=true` and `apps.cert-manager.issuer=letsencrypt` with `apps.cert-manager.stage=staging`, activating Drone is not possible because of the following error:
-
-```
-Post "https://gitea.d3-otomi.net/login/oauth/access_token": x509: certificate signed by unknown authority
-```
-
-**Solution** 
-
-1. Install with `apps.cert-manager.stage=production`
-
-or 
-
-1. In Cloudflare, set the `A-record` for Gitea to proxy status = `DNS Only`. Also make sure your SSL/TLS encryption mode is set to `Full`
-
-### Installing Otomi with DNS fails due to failed authentication for gitea
-
-**Problem**
-
-When installing Otomi with DNS fails with the following error:
-
-```
-otomi:cmd:commit:commitAndPush:error remote: Unauthorized
-fatal: Authentication failed for 'https://gitea.otomi.example.com/otomi/values.git/'
-```
-
-**Solution**
-
-Provide a custom password:
-
-```
-otomi:
-  adminPassword: yourpassword
 ```

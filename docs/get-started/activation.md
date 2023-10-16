@@ -6,7 +6,7 @@ sidebar_label: Activation
 
 Follow the steps below to activate Otomi after initial installation.
 
-### Step 1: Get the log output of the installer job
+## Step 1: Get the log output of the installer job
 
 When the installer job (in the default namespace) has finished, copy the URL and the generated password from the bottom of the logs, sign in to the console with the provided URL, username and password.
 
@@ -16,7 +16,7 @@ Use the following command to get the logs of the installer job:
 kubectl logs jobs/otomi -n default -f
 ```
 
-### Step 2: Create an License Key for using Otomi Console and Otomi API
+## Step 2: Create an License Key for using Otomi Console and Otomi API
 
 :::info
 A Community Edition License Key is required per 17-05-2023
@@ -33,7 +33,7 @@ If you would like to use the Otomi Console (Web UI) and Otomi API (for code vali
 - Add the License key to Otomi Console
 - Click `Activate`
 
-### Step 3 (optional): Add the auto generated CA to your keychain
+## Step 3 (optional): Add the auto generated CA to your keychain
 
 Otomi by default automatically generates a CA. The generated CA is of course not trusted on your local machine. Here are some options to prevent you from clicking away lots of security warning in your browser:
 
@@ -66,15 +66,15 @@ alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 3. Optional: Restart Docker (to support pushing images to Harbor)
 
 
-### Step 4 (Optional): Create a new admin user
+## Step 4 (Optional): Create a new admin user
 
 :::info ATTENTION
 We strongly advise to not use the default `otomi-admin` account after activation and to not change the password. Store it somewhere safe and only use it in case absolutely required.
 :::
 
-[Create a new user account in Keycloak](/docs/apps/keycloak#step-2-create-a-user-in-keycloak) and add the new user to the `otomi-admin` and `team-admin`.
+[Create a new user account in Keycloak](/docs/apps/keycloak#step-2-create-a-user-in-keycloak) and add the new user to the `otomi-admin` and `team-admin` group.
 
-### Step 5 (Optional): Add the URL of the Kubernetes API
+## Step 5 (Optional): Add the URL of the Kubernetes API
 
 :::info NOTE
 Adding the URL of the K8s cluster API is required by teams to be able to download the KUBECONFIG

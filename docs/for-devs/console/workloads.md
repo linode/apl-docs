@@ -65,9 +65,9 @@ Now click on `application` in the `Argocd` column of the workload in the list of
 ### BYO Helm chart
 
 1. Enter a name for the workload
-2. Enter the URL to the Git repo containing the Helm Chart or a Helm repository
-3. Optionally (only when using a Git repo) add the relative directory path within the Git repository. Absolute paths cause errors.
-4. Optionally (only when using a Chart registry) add the name of the Helm chart
+2. Enter the URL to the Git repo containing the Helm Chart or a Helm repository.
+3. Add the relative path to a directory within the Git repository. Use `./` when no directory is used.
+4. Optionally (only when using a Chart registry) add the name of the Helm chart.
 5. Enter the revision. In case of using a Git repo, this can be commit, tag, or branch. If omitted, will equal to HEAD. In case of using a Chart repository, this is a semver tag for the Chart's version
 6. Click `Next`
 7. Review the Values used to install the chart

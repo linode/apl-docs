@@ -117,3 +117,47 @@ helm repo update
 helm install -f values.yaml otomi otomi/otomi
 ```
 
+## Civo DNS
+
+:::info
+Civo support is comming soon!
+:::
+
+Set up DNS in Civo:
+
+1. Under `Networking` in the Civo Dashboard, click `DNS` and then `Add a domain name`
+2. Fill in a domain name and then click `Add domain`
+3. Create a NS record in the zone where your domain is hosted and add the Civo name servers `ns0.civo.com` ans `ns1.civo.com`
+4. Under `Settings`, `Profile`, click on the tab `Security` and copy the `API key`
+
+Install Otomi:
+
+5. Add the DNS configuration to the `values.yaml` to install Otomi:
+
+```yaml
+cluster:
+  name: my-cluster # choose a name for your cluster
+  provider: civo
+  domainSuffix: your-domain.com # your domain name
+otomi:
+  hasExternalDNS: true # required
+dns:
+  domainFilters: 
+    - your-domain.com
+  provider:
+    civo:
+      apiToken: "<add your api token here>"
+apps:
+  cert-manager:
+    issuer: letsencrypt
+    stage: production
+    email: admin@your-domain.com
+```
+
+6. Install Otomi:
+
+```yaml
+helm repo add otomi https://otomi.io/otomi-core
+helm repo update
+helm install -f values.yaml otomi otomi/otomi
+```

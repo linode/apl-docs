@@ -155,8 +155,8 @@ module.exports = {
               href: "/docs/for-devs/get-started/overview",
             },
             {
-              label: "Tutorials",
-              href: "/docs/tutorials/overview/",
+              label: "Roadmap",
+              href: "/product/roadmap",
             },
           ],
         },

@@ -4,6 +4,7 @@ module.exports = {
       "get-started/prerequisites",
       "get-started/installation",
       "get-started/activation",
+      "get-started/known-issues",
       "for-devs/get-started/overview",
     ],
     "For Ops": [
@@ -45,7 +46,8 @@ module.exports = {
           "for-ops/how-to/use-team-admin",
           "for-ops/how-to/core-only",
           "for-ops/how-to/install-with-dns",
-          "for-ops/how-to/create-and-restore-backups"
+          "for-ops/how-to/switch-to-dns",
+          "for-ops/how-to/create-and-restore-backups",
         ],
       },
       {

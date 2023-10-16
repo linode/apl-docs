@@ -4,6 +4,7 @@ module.exports = {
       "get-started/prerequisites",
       "get-started/installation",
       "get-started/activation",
+      "get-started/known-issues",
       "for-devs/get-started/overview",
     ],
     "For Ops": [

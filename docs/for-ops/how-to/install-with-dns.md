@@ -146,7 +146,7 @@ dns:
     - your-domain.com
   provider:
     civo:
-      apiToken: <add your api token here>
+      apiToken: "<add your api token here>"
 apps:
   cert-manager:
     issuer: letsencrypt

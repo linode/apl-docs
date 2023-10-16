@@ -97,3 +97,37 @@ Keycloak jobs fail during installation.
 **Solution**
 
 There is no solution for this at the moment. The Keycloak job will retry multiple times and eventually succeed.
+
+**Issue**
+
+When installing Otomi using Civo market place on a Linux Talos cluster the Otomi installation fails.
+
+**Solution**
+
+Installing Otomi on Civo Linux Talos is currently not supported. Try installing Otomi on Civo K3s.
+
+<!-- Currently, `metrics-server` is not by default installed on Linux Talos and also not by default installed by Otomi when using the `civo` provider. For now install metrics-server manually first before installing Otomi:
+
+```bash
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
+
+And add the following arguments to the deployment:
+
+```yaml
+      - args:
+        - --kubelet-preferred-address-types=InternalIP
+        - --kubelet-insecure-tls=true
+```
+
+Or install Otomi manually and add the following values:
+
+```yaml
+apps:
+  metrics-server:
+    enabled: true
+    _rawValues:
+      extraArgs:
+        kubelet-preferred-address-types: InternalIP
+        kubelet-insecure-tls: true
+``` -->

@@ -151,7 +151,7 @@ dns:
 #       project: ''
 ```
 
-See [here](../for-ops/how-to/install-with-dns.md) for more examples on how to install Otomi with DNS.
+See [here](/docs/get-started/install-with-dns.md) for more examples on how to install Otomi with DNS.
 
 ### Use Azure AD as IDP
 

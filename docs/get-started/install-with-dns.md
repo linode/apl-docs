@@ -4,9 +4,18 @@ title: Install Otomi with DNS
 sidebar_label: Install with DNS
 ---
 
+Installing Otomi with DNS unlocks Otomi's full potential and is strongly advised.
+
+Her you will find detailed instructions on how to install Otomi with DNS using:
+
+- AWS Route53
+- Civo DNS
+
+We will add instructions for Azure public DNS and Google DNS soon.
+
 ## Route53
 
-Follow the following steps to install Otomi with DNS using AWS Route53.
+Follow these steps to install Otomi with DNS using AWS Route53.
 
 1. Register a domain and retrieve the Hosted zone ID
 2. Create a `dns-policy.json` file for the policy and add the Zone ID:

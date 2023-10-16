@@ -3,6 +3,7 @@ module.exports = {
     "Getting Started": [
       "get-started/prerequisites",
       "get-started/installation",
+      "get-started/install-with-dns",
       "get-started/activation",
       "get-started/known-issues",
       "for-devs/get-started/overview",
@@ -45,7 +46,6 @@ module.exports = {
           "for-ops/how-to/ingress-classes",
           "for-ops/how-to/use-team-admin",
           "for-ops/how-to/core-only",
-          "for-ops/how-to/install-with-dns",
           "for-ops/how-to/switch-to-dns",
           "for-ops/how-to/create-and-restore-backups",
         ],

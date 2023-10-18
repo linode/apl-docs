@@ -96,7 +96,7 @@ Keycloak jobs fail during installation.
 
 **Solution**
 
-There is no solution for this at the moment. The Keycloak job will retry multiple times and eventually succeed.
+There is no solution for this at the moment and the issue only occurs on Civo cloud. The Keycloak job will retry multiple times and eventually succeed.
 
 **Issue**
 
@@ -105,6 +105,26 @@ When installing Otomi using Civo market place on a Linux Talos cluster the Otomi
 **Solution**
 
 Installing Otomi on Civo Linux Talos is currently not supported. Try installing Otomi on Civo K3s.
+
+**Issue**
+
+Keycloak-01 pod is not able to start and the Keycloak logs show the following message: `File "base/16385/PG_VERSION" does not contain valid data.`
+
+**Solution**
+
+This issue is still under investigation. For now, first run the following cmd:
+
+```shell
+kubectl exec -it -n keycloak keycloak-db-1 -c postgres -- sh -c 'echo "15" > /var/lib/postgresql/data/pgdata/base/16385/PG_VERSION'
+```
+
+and then delete the `keycloak-0` pod:
+
+```shell
+kubectl delete pod keycloak-0 -n keycloak
+```
+
+Keycloak should now start.
 
 <!-- Currently, `metrics-server` is not by default installed on Linux Talos and also not by default installed by Otomi when using the `civo` provider. For now install metrics-server manually first before installing Otomi:
 

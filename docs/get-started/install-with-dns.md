@@ -128,10 +128,6 @@ helm install -f values.yaml otomi otomi/otomi
 
 ## Civo DNS
 
-:::info
-Civo support is comming soon!
-:::
-
 Set up DNS in Civo:
 
 1. Under `Networking` in the Civo Dashboard, click `DNS` and then `Add a domain name`

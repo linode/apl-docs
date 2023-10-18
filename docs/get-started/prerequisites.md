@@ -37,15 +37,15 @@ To install Otomi on a Kubernetes cluster in Digital Ocean, use the `digitalocean
 
 To install Otomi on a OVHcloud [Managed Kubernetes Service](https://www.ovhcloud.com/en-gb/public-cloud/kubernetes/), use the `ovh` provider.
 
+### Linode Kubernetes Engine
+
+To install Otomi on a [Linode Kubernetes Engine](https://www.linode.com/products/kubernetes/) cluster, use the `linode` provider.
+
 ### Vultr (VKE)
 
 To install Otomi on a [Vultr Kubernetes Engine (VKE)](https://www.vultr.com/docs/vultr-kubernetes-engine/) cluster, use the `vultr` provider.
 
 ### Civo
-
-:::info
-Civo support is comming soon!
-:::
 
 To install Otomi on a [Civo K3s](https://www.civo.com/kubernetes) cluster, use the `civo` provider.
 

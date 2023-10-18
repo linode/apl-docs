@@ -36,7 +36,3 @@ If the build is changed in Otomi, the pipelinerun will not be re-started. Use th
 ```
 tkn pipeline start <name-of-the-pipeline>  --use-pipelinerun <name-of-the-pipelinerun>  -n team-<team name>
 ```
-
-:::info
-We will soon add the option to restart the pipeline after the build has been changed in Otomi.
-:::

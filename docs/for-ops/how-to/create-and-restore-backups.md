@@ -75,6 +75,12 @@ You can see the status of the backup is `Completed`. The backup is now stored in
 
 Now the backup is created, we can restore the backup.
 
+Follow this procedure to restore a backup:
+
+- Scale down the `replicas` of the `deployment` or `statefulset` that uses the PV
+
+- Delete the PVC. You can find the name of the PVC in the deployment `spec.template.spec.volumes`
+
 - Run the following cmd in the shell:
 
 ```shell
@@ -82,6 +88,8 @@ velero restore create --from-backup team-demo-backup-prom-20230924115514
 Restore request "team-demo-backup-prom-20230924115514-20230924133133" submitted successfully.
 Run `velero restore describe team-demo-backup-prom-20230924115514-20230924133133` or `velero restore logs team-demo-backup-prom-20230924115514-20230924133133` for more details.
 ```
+
+- Scale up the `replicas` of the `deployment` or `statefulset` to use the restored PV
 
 ## Manually create backups
 

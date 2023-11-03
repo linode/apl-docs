@@ -1,6 +1,7 @@
 module.exports = {
   mainSidebar: {
     "Getting Started": [
+      "get-started/promo",
       "get-started/prerequisites",
       "get-started/installation",
       "get-started/install-with-dns",

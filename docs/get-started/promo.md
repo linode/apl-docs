@@ -5,11 +5,11 @@ sidebar_label: Promotions
 ---
 # November / December 2023
 
-This is your chance to win a Amazon Gift Card! 
+This is your chance to win an Amazon Gift Card! 
 
 ## Terms & Conditions
 
-The only thing you'll need to do for your chance to win a Amazon Gift Card is to install Otomi Community edition in November or December 2023.
+The only thing you'll need to do for your chance to win an Amazon Gift Card is to install Otomi Community edition in November or December 2023.
 
 In the first week of January 2024, we'll announce all the winners. Make sure you'll provide your full name when registering your installation at [portal.otomi.cloud](https://portal.otomi.cloud).
 

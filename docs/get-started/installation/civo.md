@@ -10,7 +10,7 @@ Otomi can also be installed using the Civo marketplace. When Otomi is installed 
 
 # Install Otomi on Civo with DNS
 
-## CReate a K3s cluster in Civo
+## Create a K3s cluster in Civo
 
 1. Sign in to the [Civo dashboard](https://dashboard.civo.com/)
 2. Click on `Kubernetes` in the left menu
@@ -33,7 +33,7 @@ Set up DNS in Civo:
 4. Under `Settings`, `Profile`, click on the tab `Security` and copy the `API key`
 
 ```bash
-CIVO_TOKEN="<your-token>"
+CIVO_TOKEN="<your-api-key>"
 ```
 
 ## Create the values.yaml file
@@ -43,9 +43,9 @@ tee values.yaml<<EOF
 cluster:
   name: otomi
   provider: civo
-  domainSuffix: your-civo-domain.example.com # the Civo domain name created in the previous step
+  domainSuffix: your-civo-domain.example.com
 otomi:
-  hasExternalDNS: true # required
+  hasExternalDNS: true
 dns:
   domainFilters: 
     - your-civo-domain.example.com
@@ -60,7 +60,7 @@ apps:
 EOF
 ```
 
-And adjust the `domainSuffix`, `domainFilters`, `apiToken` and `email`.
+And adjust the `domainSuffix`, `domainFilters` and `email`.
 
 ## Install Otomi
 

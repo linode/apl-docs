@@ -133,7 +133,7 @@ tee values.yaml<<EOF
 cluster:
   name: otomi
   provider: aws
-  domainSuffix: your-domain.com # your domain name
+  domainSuffix: your-domain.com
 otomi:
   hasExternalDNS: true
 dns:

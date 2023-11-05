@@ -15,7 +15,7 @@ sidebar_label: AWS
 ## Additional resources
 
 - If you use VSCode, hover over variables to see the description/type in .tf and .tfvars files with the [Terraform extension](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform)
-- [How to setup awsci and terraform](https://learn.hashicorp.com/tutorials/terraform/aws-build)
+- [How to setup aws cli and terraform](https://learn.hashicorp.com/tutorials/terraform/aws-build)
 
 
 ```jsx title="AWS CLI Cheat Sheet"

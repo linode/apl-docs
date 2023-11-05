@@ -17,7 +17,7 @@ To configure an entrypoint, add the following to the `values.yaml` when installi
 ```yaml
 ingress:
   platformClass:
-    entrypoint: <entryoint-ip-address>
+    entrypoint: <entrypoint-ip-address>
 ```
 
 Make sure the external gateway is able to connect to the IP of the private load balancer used by the `platformClass` ingress controller.

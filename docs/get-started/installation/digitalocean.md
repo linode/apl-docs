@@ -6,7 +6,7 @@ sidebar_label: Digital Ocean
 
 # Installing Otomi using the Digital Ocean marketplace
 
-Otomi can be installed as a [1-click-app](https://marketplace.digitalocean.com/apps/otomi?refcode=476bfcac9ec9&action=deploy) on DigitalOcean martketplace. You can find the install instructions [here.](https://marketplace.digitalocean.com/apps/otomi)
+Otomi can be installed as a [1-click-app](https://marketplace.digitalocean.com/apps/otomi?refcode=476bfcac9ec9&action=deploy) on DigitalOcean marketplace. You can find the install instructions [here.](https://marketplace.digitalocean.com/apps/otomi)
 
 :::info ATTENTION
 Otomi can also be installed using the Digital Ocean  marketplace. When Otomi is installed using the Digital Ocean marketplace, Otomi is installed without DNS! To see the full potential of Otomi, install Otomi with DNS as described here.

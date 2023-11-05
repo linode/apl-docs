@@ -74,7 +74,7 @@ watch helm list -Aa
 
 Or view detailed info about kubernetes resources with [k9s](https://k9scli.io)
 
-When the chart is installed, follow the [activation steps](activation)
+When the chart is installed, follow the [activation steps](../../get-started/activation.md)
 
 ## Installing from source
 

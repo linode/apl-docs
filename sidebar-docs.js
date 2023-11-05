@@ -3,10 +3,25 @@ module.exports = {
     "Getting Started": [
       "get-started/promo",
       "get-started/prerequisites",
-      "get-started/installation",
-      "get-started/install-with-dns",
+      {
+        "Installation": [
+          "get-started/overview",
+          "get-started/installation/aws",
+          "get-started/installation/azure",
+          "get-started/installation/civo",
+          "get-started/installation/custom",
+          "get-started/installation/digitalocean",
+          "get-started/installation/gcp",
+          "get-started/installation/linode",
+          "get-started/installation/minikube",
+          "get-started/installation/helm",
+          "get-started/installation/known-issues",
+          "get-started/installation/oidc",
+          "get-started/installation/kms",
+          "get-started/installation/entrypoint",
+        ]
+      },
       "get-started/activation",
-      "get-started/known-issues",
       "for-devs/get-started/overview",
     ],
     "For Ops": [

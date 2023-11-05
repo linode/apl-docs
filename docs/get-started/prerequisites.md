@@ -13,10 +13,6 @@ When installing Otomi using the chart, make sure the following client binaries e
 
 ## Supported Providers
 
-:::info
-We have created [quickstarts](https://github.com/redkubes/quickstart) for Azure, GCP, AWS, Linode, Digital Ocean and Minikube to help you spin-up a Kubernetes cluster.
-:::
-
 ### Azure (AKS)
 
 To install Otomi on a AKS cluster in Azure, use the `azure` provider. The `azure` provider includes creating optimized storage classes and optional integration with the a Application Gateway Ingress Controller add-on.
@@ -33,7 +29,7 @@ To install Otomi on a GKE cluster in GCP, use the `google` provider.
 
 To install Otomi on a Kubernetes cluster in Digital Ocean, use the `digitalocean` provider. Otomi is also available in the Digital Ocean [marketplace](https://marketplace.digitalocean.com/apps/otomi?refcode=476bfcac9ec9&action=deploy).
 
-### OVHcloud
+### OVH cloud
 
 To install Otomi on a OVHcloud [Managed Kubernetes Service](https://www.ovhcloud.com/en-gb/public-cloud/kubernetes/), use the `ovh` provider.
 
@@ -61,9 +57,7 @@ Otomi installs and configures Nginx as a default ingress controller. When launch
 Use the `custom` provider for all other clouds, and when running Kubernetes on your own hardware (including Minikube on your local machine). The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that obtains an external accessible IP.
 
 :::info NOTE
-
 When using Minikube, only Otomi Core apps can be used! Activating more apps will require more compute resources. We advise to have a node pool available with at least 12 vCPU and 32 GiB memory.
-
 :::
 
 ## Kubernetes versions

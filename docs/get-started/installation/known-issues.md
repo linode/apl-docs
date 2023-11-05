@@ -1,7 +1,7 @@
 ---
 slug: known-issues
 title: Known Installation Issues
-sidebar_label: Known Installation Issues
+sidebar_label: Known Issues
 ---
 
 
@@ -89,14 +89,6 @@ Some pods get stuck in a `pending` state during installation.
 **Solution**
 
 Otomi installs K8s applications like KeyCloak and Gitea. These apps require persistent storage. Civo has default quota set on resources, including volumes. If a pod stays in a pending state, it might be caused by a quota limit. In Civo dashboard, check the amount of volumes and remove all volumes that are not in use. Also check in the amount of volumes did not reach a quota limit and request an increase when needed.
-
-**Issue**
-
-Keycloak jobs fail during installation.
-
-**Solution**
-
-There is no solution for this at the moment and the issue only occurs on Civo cloud. The Keycloak job will retry multiple times and eventually succeed.
 
 **Issue**
 

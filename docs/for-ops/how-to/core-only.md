@@ -111,7 +111,7 @@ files:
 
 You can now make changes in this configuration and apply them directly to the cluster:
 
-1. Install otomi using your custom values:
+1. Install Otomi using your custom values:
 
 ```
 helm install -f values.yaml otomi otomi/otomi

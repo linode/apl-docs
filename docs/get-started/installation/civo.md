@@ -8,7 +8,7 @@ sidebar_label: Civo
 Otomi can also be installed using the Civo marketplace. When Otomi is installed using the Civo marketplace, Otomi is installed without DNS! To see the full potential of Otomi, install Otomi with DNS as described here.
 :::
 
-# Install Otomi on AKS with DNS
+# Install Otomi on Civo with DNS
 
 ## CReate a K3s cluster in Civo
 

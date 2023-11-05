@@ -45,18 +45,18 @@ module.exports = [
   },
   {
     from: ["/docs/installation/post-install"],
-    to: "/docs/get-started/installation",
+    to: "/docs/get-started/activation",
   },
   {
     from: ["/docs/installation/prerequisites"],
-    to: "/docs/get-started/installation",
+    to: "/docs/get-started/prerequisites",
   },
   {
     from: ["/docs/installation/activation"],
     to: "/docs/get-started/activation",
   },
   {
-    from: ["/docs//docs/console/"],
-    to: "/docs/get-started/activation",
+    from: ["/docs/get-started/known-issues"],
+    to: "/docs/get-started/installation/known-issues",
   },
 ];

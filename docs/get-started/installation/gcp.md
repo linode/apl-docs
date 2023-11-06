@@ -132,7 +132,7 @@ tee values.yaml<<EOF
 cluster:
   name: otomi
   provider: google
-  domainSuffix: example.com
+  domainSuffix: gcp.example.com
 otomi:
   hasExternalDNS: true
 dns:

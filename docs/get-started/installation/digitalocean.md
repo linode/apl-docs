@@ -55,7 +55,7 @@ tee values.yaml<<EOF
 cluster:
   name: otomi
   provider: digitalocean
-  domainSuffix: example.com
+  domainSuffix: do.example.com
 otomi:
   hasExternalDNS: true
 dns:

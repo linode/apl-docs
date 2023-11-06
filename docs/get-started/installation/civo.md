@@ -45,7 +45,7 @@ tee values.yaml<<EOF
 cluster:
   name: otomi
   provider: civo
-  domainSuffix: your-civo-domain.example.com
+  domainSuffix: civo.your-civo-domain.example.com
 otomi:
   hasExternalDNS: true
 dns:

@@ -31,14 +31,13 @@ az account set --subscription=<subscription_id>
 Setting the environment variables
 ```bash
 # Set Resource Group Name 
-RGNAME=otomi
+RGNAME=rg-otomi
 # Set Region (Location) or any other location
 LOCATION=westeurope
 # Create Resource Group
 az group create -n $RGNAME -l $LOCATION
 # Set Cluster name
-NAME=quickstart
-CLUSTER_NAME=otomi-aks-$NAME
+CLUSTER_NAME=otomi
 ```
 
 Creating the cluster
@@ -53,7 +52,7 @@ az aks create --name $CLUSTER_NAME \
 --nodepool-name otomipool \
 --node-count 3 \
 --node-vm-size Standard_F8s_v2 \
---kubernetes-version 1.26.9 \
+--kubernetes-version 1.27.3 \
 --enable-cluster-autoscaler \
 --min-count 1 \
 --max-count 6 \
@@ -61,7 +60,6 @@ az aks create --name $CLUSTER_NAME \
 --network-plugin azure \
 --network-policy calico \
 --outbound-type loadBalancer \
---uptime-sla \
 --generate-ssh-keys
 ```
 
@@ -127,7 +125,7 @@ tee values.yaml<<EOF
 cluster:
   name: otomi
   provider: azure
-  domainSuffix: example.com
+  domainSuffix: azure.example.com
 otomi:
   hasExternalDNS: true
 dns:

@@ -54,12 +54,12 @@ tee values.yaml<<EOF
 cluster:
   name: otomi # choose a name for your cluster
   provider: linode
-  domainSuffix: your-civo-domain.com # the Linode domain name created in the previous step
+  domainSuffix: your-linode-domain.com # the Linode domain name created in the previous step
 otomi:
   hasExternalDNS: true
 dns:
   domainFilters: 
-    - your-civo-domain.com
+    - your-linode-domain.com
   provider:
     linode:
       apiToken: $LINODE_TOKEN

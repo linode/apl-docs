@@ -47,6 +47,25 @@ terraform init
 terraform apply
 ```
 
+## Add a CNI
+
+To use the network policies feature in Otomi, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI or any other CNI that supports Kubernetes network polices.
+
+Install Tigera Operator:
+
+```bash
+helm repo add projectcalico https://docs.tigera.io/calico/charts
+helm repo update
+kubectl create namespace tigera-operator
+helm install calico projectcalico/tigera-operator --version v3.26.3 --namespace tigera-operator
+```
+
+Or install Calico minimal:
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.3/manifests/calico.yaml
+```
+
 ## Configure Route53
 
 Follow these steps to use AWS Route53.

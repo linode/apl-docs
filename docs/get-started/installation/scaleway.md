@@ -80,6 +80,7 @@ cluster:
   domainSuffix: your-sub-domain.example.com
 otomi:
   hasExternalDNS: true
+  version: scaleway-dns
 dns:
   domainFilters: 
     - example.com

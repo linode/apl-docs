@@ -29,6 +29,9 @@ Instal Otomi on GKE with Cloud DNS
 ### [Linode](installation/linode.md)
 Install Otomi on Linode Kubernetes Engine using Linode DNS
 
+### [Scaleway](installation/scaleway.md)
+Install Otomi on Kapsule Kubernetes in Scaleway using a Scaleway Internal Domain
+
 ---
 
 **Other installation resources**

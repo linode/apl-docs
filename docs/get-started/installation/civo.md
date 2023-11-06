@@ -32,6 +32,8 @@ Set up DNS in Civo:
 3. Create a NS record in the zone where your domain is hosted and add the Civo name servers `ns0.civo.com` ans `ns1.civo.com`
 4. Under `Settings`, `Profile`, click on the tab `Security` and copy the `API key`
 
+Add the API key to your environment variables:
+
 ```bash
 CIVO_TOKEN="<your-api-key>"
 ```

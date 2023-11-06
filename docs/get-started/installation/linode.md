@@ -4,7 +4,7 @@ title: Linode
 sidebar_label: Linode
 ---
 
-# Getting started with Otomi on Linode
+# # Install Otomi on Linode Kubernetes Engine (LKE) with Linode DNS
 
 ## Prerequisites
 
@@ -26,6 +26,10 @@ export KUBECONFIG=<path-to-downloads>/otomi--kubeconfig.yaml
 ```
 
 ## Configure DNS
+
+:::info AlERT
+Support for Linode DNS will be available soon!
+:::
 
 If you want to learn about how to use Linode DNS Manager read the following tutorials:
 

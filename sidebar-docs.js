@@ -13,6 +13,7 @@ module.exports = {
           "get-started/installation/digitalocean",
           "get-started/installation/gcp",
           "get-started/installation/linode",
+          "get-started/installation/scaleway",
           "get-started/installation/minikube",
           "get-started/installation/helm",
           "get-started/installation/known-issues",

@@ -93,3 +93,23 @@ apps:
       kubelet-insecure-tls: true
       kubelet-preferred-address-types: InternalIP
 ```
+
+## Install Otomi using the Helm chart
+
+To install Otomi using the `custom` provider, use the following values:
+
+```bash
+tee values.yaml<<EOF
+cluster:
+  name: otomi
+  provider: custom
+# optionally configure metrics-server for kubelet-insecure-tls
+apps:
+  metrics-server:
+    extraArgs:
+      kubelet-insecure-tls: true
+      kubelet-preferred-address-types: InternalIP
+EOF
+```
+
+The `custom` Otomi provider can be used in combination with any DNS provider.

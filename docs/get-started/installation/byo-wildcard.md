@@ -32,7 +32,12 @@ dns:
 apps:
   cert-manager:
     issuer: byo-wildcard-cert
+    # Add the full chain of your wild card certificate
     byoWildcardCert: |
+      -----BEGIN CERTIFICATE-----
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      -----END CERTIFICATE-----
       -----BEGIN CERTIFICATE-----
       -----END CERTIFICATE-----
     byoWildcardCertKey: |

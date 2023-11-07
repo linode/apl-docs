@@ -50,6 +50,11 @@ When using API Token authentication, the token should be granted Zone `Read`, DN
 
 If you would like to further restrict the API permissions to a specific zone (or zones), you also need to use the `--zone-id-filter` so that the underlying API requests only access the zones that you explicitly specify, as opposed to accessing all zones.
 
+Set the `CF_API_TOKEN` environment variable:
+
+```
+CF_API_TOKEN="Your Cloudflare API Token"
+```
 ## Create the values.yaml file
 
 ```
@@ -64,7 +69,7 @@ dns:
     - example.com
   provider:
     cloudflare:
-      apiToken: $VULTR_API_KEY
+      apiToken: $CF_API_TOKEN
       proxied: false
 apps:
   cert-manager:

@@ -66,6 +66,10 @@ And adjust the `domainSuffix`, `domainFilters` and `email`.
 
 ## Install Otomi
 
+:::info ALERT
+There are some known issues when installing Otomi on Civo. Check them [here](known-issues.md)
+:::
+
 Install Otomi using Helm:
 
 ```bash

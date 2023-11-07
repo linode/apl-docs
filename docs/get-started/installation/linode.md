@@ -28,7 +28,7 @@ export KUBECONFIG=<path-to-downloads>/otomi--kubeconfig.yaml
 ## Configure DNS
 
 :::info AlERT
-Support for Linode DNS will be available soon!
+Support for Linode DNS is tested, but not officially released yet!
 :::
 
 If you want to learn about how to use Linode DNS Manager read the following tutorials:
@@ -57,6 +57,7 @@ cluster:
   domainSuffix: linode.example.com
 otomi:
   hasExternalDNS: true
+  version: linode-dns
 dns:
   domainFilters: 
     - example.com

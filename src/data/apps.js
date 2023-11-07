@@ -78,12 +78,6 @@ export default [
     desc: "Manage Secrets and Protect Sensitive Data",
   },
   {
-    href: "https://bitnami.com/kubernetes/kubeapps",
-    src: "kubeapps.png",
-    name: "Bitnami Kubeapps",
-    desc: "Web-based UI for launching and managing applications on Kubernetes",
-  },
-  {
     href: "https://cert-manager.io/",
     src: "cert-manager.svg",
     name: "Certmanager",
@@ -142,12 +136,6 @@ export default [
     src: "velero-logo.svg",
     name: "Velero",
     desc: "Back up Kubernetes objects and Persistent Volumes",
-  },
-  {
-    href: "https://github.com/openclarity/kubeclarity",
-    src: "kubeclarity-logo.svg",
-    name: "Kubeclarity",
-    desc: "Scan container images on vulnerabilities",
   },
   {
     href: "https://github.com/kubernetes/ingress-nginx",

@@ -9,10 +9,33 @@ When installing Otomi with DNS, there are 3 `issuers` you can use:
 2. letsencrypt
 3. byo-wildcard-cert
 
-In the installation examples we use `letsencrypt`. In this example we'll show how to use a Bring Your Own wildcard certificate.
+In most of the installation examples we use `letsencrypt`. In this example we'll show how to use a Bring Your Own wildcard certificate.
 
 To use a `byo-wildcard-cert`, install otomi with the following values:
 
 ```yaml
-
+cluster:
+  name: otomi
+  provider: aws # adjust to your provider
+  domainSuffix: try-otomi.net
+otomi:
+  hasExternalDNS: true
+dns:
+  domainFilters: 
+    - try-otomi.net
+  provider:
+    aws:
+      credentials:
+        secretKey: xxx
+        accessKey: xxx
+      region: eu-central-1
+apps:
+  cert-manager:
+    issuer: byo-wildcard-cert
+    byoWildcardCert: |
+      -----BEGIN CERTIFICATE-----
+      -----END CERTIFICATE-----
+    byoWildcardCertKey: |
+      -----BEGIN PRIVATE KEY-----
+      -----END PRIVATE KEY-----
 ```

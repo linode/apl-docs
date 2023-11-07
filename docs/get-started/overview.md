@@ -61,4 +61,7 @@ Install Otomi with KMS
 ### [Configure an entrypoint for an external gateway](installation/entrypoint.md)
 Install Otomi with an entrypoint for an external gateway
 
+### [Bring Your Own Wild Card Certificate](installation/byo-wildcard.md)
+Install Otomi using a BYO wild card certificate
+
 ---

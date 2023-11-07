@@ -20,4 +20,6 @@ ingress:
     entrypoint: <entrypoint-ip-address>
 ```
 
-Make sure the external gateway is able to connect to the IP of the private load balancer used by the `platformClass` ingress controller.
+Make sure the external gateway is configured to connect to the IP of the private load balancer used by the `platformClass` ingress controller.
+
+The DNS A records created by Otomi will now all point to the IP address of the external gateway.

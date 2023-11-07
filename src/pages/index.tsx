@@ -37,7 +37,7 @@ function Home() {
               />
               Self hosted PaaS for Kubernetes
             </h1>
-            <h2 className={styles.heroProjectSubLine}>Add developer- and operations-centric tools, <br></br>automation and self-service on top of Kubernetes</h2>
+            <h2 className={styles.heroProjectSubLine}>A paved road for developers from code to production</h2>
             <div className={styles.indexCtas}>
               <Link
                 className={styles.indexCtasGetStartedButton}

@@ -45,12 +45,12 @@ tee values.yaml<<EOF
 cluster:
   name: otomi
   provider: civo
-  domainSuffix: civo.your-civo-domain.example.com
+  domainSuffix: civo.example.com
 otomi:
   hasExternalDNS: true
 dns:
   domainFilters: 
-    - your-civo-domain.example.com
+    - example.com
   provider:
     civo:
       apiToken: $CIVO_TOKEN

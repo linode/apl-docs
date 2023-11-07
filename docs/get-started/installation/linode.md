@@ -52,14 +52,14 @@ The environment variable `LINODE_TOKEN` will be needed to run ExternalDNS with L
 ```bash
 tee values.yaml<<EOF
 cluster:
-  name: otomi # choose a name for your cluster
+  name: otomi
   provider: linode
-  domainSuffix: your-linode-domain.com # the Linode domain name created in the previous step
+  domainSuffix: linode.example.com
 otomi:
   hasExternalDNS: true
 dns:
   domainFilters: 
-    - your-linode-domain.com
+    - example.com
   provider:
     linode:
       apiToken: $LINODE_TOKEN
@@ -67,7 +67,7 @@ apps:
   cert-manager:
     issuer: letsencrypt
     stage: production
-    email: admin@your-domain.com
+    email: admin@example.com
 EOF
 ```
 

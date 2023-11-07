@@ -47,7 +47,7 @@ scw k8s cluster create name=$SCALEWAY_CLUSTER_NAME \
 ## Configure DNS
 
 :::info AlERT
-Support for Scaleway DNS will be available soon!
+Support for Scaleway DNS is tested, but not officially released yet!
 :::
 
 ### Importing a Domain into Scaleway DNS

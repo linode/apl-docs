@@ -21,6 +21,7 @@ module.exports = {
           "get-started/installation/oidc",
           "get-started/installation/kms",
           "get-started/installation/entrypoint",
+          "get-started/installation/byo-wildcard",
         ]
       },
       "get-started/activation",

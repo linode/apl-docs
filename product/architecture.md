@@ -29,13 +29,11 @@ Otomi Core is the heart of Otomi and contains a suite of the following integrate
 - [Istio](https://github.com/istio/istio): The service mesh framework with end-to-end transit encryption
 - [Velero](https://github.com/vmware-tanzu/velero): Back up and restore your Kubernetes cluster resources and persistent volumes
 - [Argo CD](https://github.com/argoproj/argo-cd): Declarative continuous deployment
-- [KubeClarity](https://github.com/openclarity/kubeclarity): Detect vulnerabilities of container images
 - [Knative](https://github.com/knative/serving): Deploy and manage serverless workloads
 - [Prometheus](https://github.com/prometheus/prometheus): Collecting container application metrics
 - [Loki](https://github.com/grafana/loki): Collecting container application logs
 - [Harbor](https://github.com/goharbor/harbor): Container image registry with role-based access control, image scanning, and image signing
 - [HashiCorp Vault](https://github.com/hashicorp/vault): Manage Secrets and Protect Sensitive Data
-- [Kubeapps](https://github.com/vmware-tanzu/kubeapps): Launching and managing applications on Kubernetes
 - [Keycloak](https://github.com/keycloak/keycloak): Identity and access management for modern applications and services
 - [OPA](https://github.com/open-policy-agent/opa): Policy-based control for cloud-native environments
 - [Let's Encrypt](https://letsencrypt.org/): A nonprofit Certificate Authority providing industry-recognized TLS certificates
@@ -71,13 +69,11 @@ The following table shows all integrated applications:
 | [Gatekeeper Operator](/docs/apps/gatekeeper) |      |        |      |                 |    X     |
 | [Hashicorp Vault](/docs/apps/vault)          |      |   X    |      |        X        |    X     |
 | [Harbor](/docs/apps/harbor)                  |      |   X    |      |        X        |    X     |
-| [Kubeapps](/docs/apps/kubeapps)              |      |   X    |      |                 |    X     |
 | [Drone](/docs/apps/drone)                    |  X   |        |      |        X        |          |
 | Gitea                                        |  X   |        |      |        X        |    X     |
 | Httpbin                                      |      |   X    |      |                 |    X     |
 | Jeager                                       |      |   X    |      |                 |    X     |
 | Kiali                                        |      |        |      |                 |    X     |
-| KubeClarity                                  |      |        |      |                 |    X     |
 | Velero                                       |      |        |      |                 |    X     |
 | Minio                                        |      |        |      |                 |    X     |
 | Opencost                                     |      |        |      |                 |    X     |

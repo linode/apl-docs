@@ -11,17 +11,17 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 | Otomi Version | Supported Kubernetes version | Expected date |
 | ------------- | ---------------------------- | ------------- |
 | v1.0.0        | 1.25, 1.26, 1.27             | 2023-09-28    |
-| v2.0.0        | 1.26, 1.27, 1.28             | 2024-02-28    |
-| v3.0.0        | 1.27, 1.28, 1.29             | 2024-05-28    |
+| v2.0.0        | 1.25, 1.26, 1.27             | 2023-11-28    |
+| v3.0.0        | 1.26, 1.27, 1.28             | 2024-03-28    |
 
 # Roadmap
 
 ## 2023 Q4
 
-- Provide a default workload catalog in Gitea
+- Provide a developer catalog in Gitea
 - Migrate platform pipeline from Drone to Tekton
-- Leverage ArgoCD to deploy Otomi apps and Teams
-- Quality assurance cluster for continuous Otomi hardening and performance test
+- Leverage Argo CD to deploy Otomi apps and Teams
+- Quality assurance cluster for continuous Otomi hardening and performance testing
 
 ## 2024 Q1
 
@@ -31,7 +31,7 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 - Enable user configurable storage classes
 - Implement Gitea with a database managed by the CloudNativePG operator
 - Provide disaster recovery procedures for Otomi core applications, such as Gitea, Keycloak and Harbor
-- New secret storage engine (a replacement for Hashicorp Vault)
+- Implement a new secret management solution (as a replacement for Hashicorp Vault)
 
 ## 2024 Q2
 

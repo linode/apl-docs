@@ -9,11 +9,11 @@ sidebar_label: Builds
 A Build in Otomi is a self-service feature for building OCI compliant images based on application source code.
 
 :::info
-Ask you platform administrator to activate Harbor and Tekton to be able to use this feature.
+Ask you platform administrator to activate Harbor to use this feature.
 :::
 
 :::info
-The otomi Builds feature can only use public code repositories or private repo's in the local Gitea. Images will always be pushed to a registry in the local Harbor.
+The Otomi Builds feature can only be used with private repo's in the local Gitea. Images will always be pushed to a registry in the local Harbor.
 :::
 
 ## Builds (all)
@@ -22,11 +22,11 @@ All known Builds of the team are listed here.
 
 | Property      | Description                                            |
 | ------------- | ------------------------------------------------------ |
-| Build         | The name of the build                                  |
-| Type          | Type of the build. Buildpacks or Docker                |
-| Trigger       | Is trigger configured for the build                    |
-| Tekton        | Link to the PipelineRun of the build in Tekton dashboard |
-| Harbor        | Link to the image in Harbor                            |
+| Name          | The name of the build                                  |
+| Type          | Type of the build. `buildpacks` or `docker`            |
+| Webhook url   | The webhook URL if a trigger is configured for the build  |
+| Tekton        | Link to the `PipelineRun`` of the build in the Tekton dashboard |
+| Repository    | The repository of the image                          |
 
 ## Create a build
 
@@ -45,26 +45,17 @@ Now choose the type of the build:
 
 ### Docker
 
-1. Add the URL of the Git repository that contains the application source code
+1. Add the URL of the Gitea repository that contains the application source code
 2. (optional) Change the path of the `Dockerfile`
-3. (optional) Change the revsion. This can be a commit, a tag, or a branch
+3. (optional) Change the revision. This can be a commit, a tag, or a branch
 4. (optional) Select to create an event listener to trigger the build based on a Gitea webhook.
-
-:::info
-Configuring a Trigger is only supported when the Repo is in the local Gitea.
-:::
-
 
 ### Buildpacks
 
 1. Add the URL of the Git repository that contains the application source code
 2. (optional) Add the path. This is a subpath within the repo where the source to build is located
-3. (optional) Change the revsion. This can be a commit, a tag, or a branch
+3. (optional) Change the revision. This can be a commit, a tag, or a branch
 4. (optional) Select to create an event listener to trigger the build based on a Gitea webhook.
-
-:::info
-Configuring a Trigger is only supported when the Repo is in the local Gitea.
-:::
 
 ### Build status
 

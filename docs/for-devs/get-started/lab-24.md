@@ -4,15 +4,11 @@ title: Create a PostgreSQL database
 sidebar_label: Create a database
 ---
 
-Otomi by defalt installs the Cloudnative-gp database operator. Teams can use the operator to create their own PostgreSQL databases.
-
-:::info
-For now teams can create databases by adding a database resource to their GitOps repository. Creating databases will soon be a self-service feature in Otomi Console.
-:::
+Otomi by default installs the Cloudnative POstgreSQL database operator. Teams can use the operator to create their own PostgreSQL databases.
 
 ## Create a database
 
-1. In the apps section in Otomi console, click on Gitea. In the list of repo's you'll now see a new repo called `otomi/team-<name>-argocd`.
+1. In the apps section in Otomi console, click on Gitea. In the list of repo's you'll now see a new repo called `otomi/team-demo-argocd`.
 2. Create a new file in the repo called `my-db.yaml`
 
 ```yaml

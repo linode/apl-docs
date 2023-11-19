@@ -1,11 +1,11 @@
 ---
 slug: lab-6
 title: Build images from application source
-sidebar_label: Build images with Otomi
+sidebar_label: Build images
 ---
 
 :::info
-Prerequisite: For this lab, Harbor and Tekton need to be activated.
+Prerequisite: For this lab, Harbor need to be activated.
 :::
 
 When your team is using Harbor for private image registries and Tekton is enabled, you can build images from source using pre-configured Tekton pipelines and buildpacks from [paketo](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) to build images from application source.
@@ -14,29 +14,22 @@ In this lab, you are going to create a build, using the [Spring Pet Clinic sampl
 
 1. In the right menu, click on `Build`
 2. Click on `Create Build`
-3. Fill in the name `petclinic` for your build and a tag (default is tag is latest)
-4. Choose `Buildpacks`
-5. In the `Application source` section, fill in the following:
-
-- RepoURL: `https://github.com/spring-projects/spring-petclinic`
-- revision: `82cb521d636b282340378d80a6307a08e3d4a4c4`
-
+3. Fill in the name `blue` for your build and a tag (default is tag is latest)
+4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab. 
 6. Click `Submit`
 
-To see the status of the build, open a Shell (in the right menu in the Console) and run `k9s`. You will now see all the pods in your team's namespace. 2 new pods will start and run the build pipeline tasks.
+Otomi will now create all the Tekton resources to build the image. To see the status of the build, click on `PipelineRun` of your build in the list of Builds. This will open the Tekton Dashboard and show the status of the PipelineRun of the build.
 
 
-When the build is ready (the 2 build pods have the status `completed`), you will see the image in Harbor:
+When the build is ready you can see the image in Harbor:
 
 1. Open Harbor
 2. Click on the project of your team. Here you will see all the registries of the team, including the registry of the new build image
-   
 
-![harbor-projects](../../img/see-build-harbor.png)
 
-When using the Build feature in Otomi, a Tekton Pipeline is created and the pipline is executed only once using a Tekton Pipelinerun. To run the build again using Otomi Console, follow these steps:
+To run the build again using Otomi Console, follow these steps:
 
-1. Change the tag of the build to `1.0.0`
+1. Change the tag of the build to `v1.0.0`
 2. Submit changes
 
 To re-build the image using the same tag, restart the build pipeline using the Tekton cli in the Shell:

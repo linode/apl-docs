@@ -1,70 +1,94 @@
 ---
 slug: lab-11
-title: Configure ArgoCD image updater
-sidebar_label: Use auto image updater
+title: Configure auto image updater
+sidebar_label: Configure auto image updater
 ---
 
-In the previous part, you have seen how to use ArgoCD to automatically deploy applications by adding the Kubernetes manifests in to the gitops repo in Gitea. You can also use ArgoCD to deploy Helm charts and automatically update the version of the deployed image.
+When using the Workload feature in Otomi to deploy Helm charts from the Developer Catalog, then you can also use the `Auto image updater` feature to to automatically update the container images of Kubernetes workloads.
 
 :::info
-ArgoCD currently only supports the image update feature in combination with a Helm chart.
+Otomi only supports the image update feature in combination with a Helm chart stored in the Developer Catalog.
 :::
 
-## Upload a Helm chart to Harbor
+## Create a Workload with auto image updater
 
-You can do this in the Harbor UI, or directly with the helm CLI:
+Before creating a workload from the developer catalog, we'll need the `repository` and `tag` of the image we like to deploy.
 
-- Login to the team's OCI registry first, by using the push credentials for your team provided by the platform administrator.
+- Go to the list of Builds and add the `repository` of the `green` build to your clipboard. Remember that the tag is `latest`.
 
-```
-helm registry login -u 'otomi-team-demo-push' -p $token harbor.<your-domain>
-```
+You can create a workload from the developer catalog:
 
-- Upload the chart:
+1. Go to `Workloads` in the right menu and click on `New Workload`
 
-```
-helm push <chart-name>.tgz oci://harbor.<your-domain>/library/<chart-name>
-```
+2. Add the name `auto` for the workload
 
-## Connect the repo in ArgoCD
+3. Select `otomi-quickstart-k8s-deployment` from the catalog
 
-- In the apps section in Otomi console, click on the ArgoCD app
-- Open `Settings` > `Repositories`
-- Choose `Connect Repo using https`
-- Fill in the following:
-   - `Type: Helm`
-   - `Name: Harbor`
-   - `Project: <team-name>`
-   - `Repository URL: https://harbor.<your-domain>/chartrepo/library`
-- Click `Connect`
+4. Set the `Auto image updater` to `Digest` and fill in:
 
-## Create a new ArgoCD application
+- ImageRepository: paste from clipboard
 
-- Select `Applications`, and click on `Create`
-- Fill in the following:
-   - `Application Name: <your-app-name>`
-   - `Project: <team-name>`
-   - `Sync Policy: Automatic`
-   - `Repository URL: harbor.<your-domain>/chartrepo/library`
-   - `Chart: <chart-name>`
-   - `Version: <version>`
-   - `Cluster URL: https://kubernetes.default.svc`
-   - `Namespace: <team-name>`
-- Click on `Create`
+`Digest` is the update strategy and will update the image to the most recent pushed version of a given tag.
 
-You'll see that the chart is now automatically deployed.
-
-## Configure ArgoCD Image Updater
-
-- In ArgoCD, go to applications and click on the new created application
-- Click on `App Details` and then `edit`
-- Under `Annotations`, add the following annotation (example):
+5. In the workload `values`, change the following parameters:
 
 ```yaml
-argocd-image-updater.argoproj.io/image-list: "otomi/nodejs-helloworld:~1.2"
+image:
+  repository: <paste from clipboard>
+  tag: latest
 ```
 
-- Now click `Save`
+6. Click `Submit`
 
-In the example above, we used the `semver` update strategy. Read more about the supported update strategies [here](https://argocd-image-updater.readthedocs.io/en/stable/basics/update-strategies/)
+Now click on `Deploy Changes`
 
+In the example above, we used the `Digest` update strategy. The `Semver` strategy allows you to track & update images which use tags that follow the semantic versioning scheme.
+
+## Expose the service
+
+Now go to the [Expose services](lab-18) lab and expose the `auto` service. When the service is created, go to `Services` in the left menu and click on the Url of the `auto` service. What do you see?
+
+## Make code change to trigger a new build
+
+In the Trigger Builds lab we already created a Build called `green` and configured it with a trigger.
+
+Now go to the `green` repo in Gitea and change the color in the `green.html` to `orange`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sample Deployment</title>
+  <style>
+    body {
+      color: #ffffff;
+      background-color: orange
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    
+    h1 {
+      font-size: 500%;
+      font-weight: normal;
+      margin-bottom: 0;
+    }
+    
+    h2 {
+      font-size: 200%;
+      font-weight: normal;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div align="center">
+    <h1>Welcome to Orange</h1>
+  </div>
+</body>
+</html>
+```
+
+And commit changes.
+
+After the change has been committed, go to `Services` in the left menu and click on the Url of the `auto` service. After a couple of minutes (note that the auto image update checks for changes every 2 minutes) you should see an `orange` page saying `Welcome to Orange`

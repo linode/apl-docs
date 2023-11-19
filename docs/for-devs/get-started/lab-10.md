@@ -1,7 +1,7 @@
 ---
 slug: lab-10
-title: BYO manifest to deploy a workload with Argo CD
-sidebar_label: Using Argo CD
+title: BYO manifests to create a workload
+sidebar_label: BYO manifests
 ---
 
 :::info
@@ -43,8 +43,6 @@ spec:
       app: nginx
   template:
     metadata:
-      annotations:
-        policy.otomi.io/ignore-sidecar: container-limits,psp-allowed-users
       labels:
         app: nginx
     spec:
@@ -58,8 +56,6 @@ spec:
             requests:
               memory: '64Mi'
               cpu: '100m'
-          securityContext:
-            runAsUser: 1001
           ports:
             - containerPort: 8080
 ---

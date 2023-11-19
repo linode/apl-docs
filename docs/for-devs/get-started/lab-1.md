@@ -8,11 +8,8 @@ Welcome to Otomi! If you are a developer and are going to use Otomi, this gettin
 
 We assume the platform administrator has:
 
-1. Created a team (called `demo` in the labs), allowing the team (using the Team self service flags) to:
-
-- Download docker config
-
-2. Added you as a team member to the team-role in KeyCloak
+1. Created a team (called `demo`) on the platform
+2. Created an account and added you as a team member to the team-demo group in KeyCloak
 3. Provided you with the following information:
 
 - The URL to access the Otomi web UI (Otomi Console)
@@ -26,7 +23,6 @@ We assume the platform administrator has:
 - Loki
 - Grafana
 - Trivy Operator
-- Tekton
 - Gatekeeper (with option `Disable validating webhook` set to true)
 
 After receiving the login credentials, make sure to sign-in to Gitea for the first time:
@@ -34,3 +30,4 @@ After receiving the login credentials, make sure to sign-in to Gitea for the fir
 - Open Gitea
 - Click on `sign-in` in the top left
 - Do not sign in with your username and password, but click on `Sign in with OpenID`
+- You will now have access to Gitea and are able to create repositories

@@ -1,7 +1,7 @@
 ---
 slug: lab-2
 title: Access Otomi Console and download the KUBECFG
-sidebar_label: Access Console
+sidebar_label: Access the Console
 ---
 
 When you have received the URL of the web UI of Otomi Platform and have a username/password with access permissions, then it's time to sign-in
@@ -18,6 +18,10 @@ After sign in, you will see this page:
 ## (Optional) Download CA
 
 In some cases the platform is using a non-trusted CA. In this case you can download the CA and add it to your keychain.
+
+:::info 
+When Otomi is using non-trusted certificates (and is probably not configured with DNS), you will not be able to do the labs that are using Harbor.
+::: 
 
 - In the left menu of the console, click on "Download CA"
 

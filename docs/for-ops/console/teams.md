@@ -23,7 +23,7 @@ Another difference between the Team Admin and user created Teams is that Team Ad
 
 1. Login with a user who is a member of the `otomi-admin` or `team-admin` role
 
-2. Provide a name for the team (lowercase). The teamname can not be changed afterwards! Creating a team will result in the creation of namespace `team-$NAME`
+2. Provide a name for the team (lowercase). The teamname can not be changed afterwards! Creating a team will result in the creation of namespace `team-$NAME`. The name of a team can be max `12` characters.
 
 3. Optional: Provide a OIDC group name/id granting for granting access to team. Only members of the group will get access to the team
 

@@ -6,20 +6,10 @@ sidebar_label: Workloads
 
 <!-- ![Console: new service](img/team-services.png) -->
 
-A Workload in Otomi is a self-service feature for:
-
-- Deploying Kubernetes workloads
-  * A regular Kubernetes deployment with a HPA (Horizontal Pod Autoscaler)
-  * A Knative service
-- Automatically create the ArgoCD resources to deploy the workload in a GitOps way
-- Manage the custom values of the workloads in Git
+A Workload in Otomi is a self-service feature for creating Kubernetes resources using Helm charts form the Otomi Developer Catalog.
 
 :::info
-Ask you platform administrator to activate ArgoCD to be able to use this feature.
-:::
-
-:::info
-Ask you platform administrator to activate Knative to be able to create Function as a Service workloads.
+Ask you platform administrator to activate Argo CD to be able to use this feature.
 :::
 
 ## Workloads (all)
@@ -28,111 +18,43 @@ All known Workloads of the team are listed here.
 
 | Property      | Description                                            |
 | ------------- | ------------------------------------------------------ |
-| Workload Name | The name of the workload                               |
-| Type | The type of the workload (deployment/ksvc/custom)               |
-| Argocd | Link to the ArgoCD application in the ArgoCD UI               |
+| Name | The name of the workload                               |
+| Argocd | Link to the Argo CD application in the Argo CD UI               |
 
 
 ## Create a Workload
 
-1. In the right menu click on `Workloads` and then on `Create workload`.
+Before creating a workload from the developer catalog, we'll need the `repository` and `tag` of the image you would like to use.
 
-2. Select the workload type
+1. Go to the list of Builds and add the `repository` of the `blue` build to your clipboard. Remember that the tag is `latest`.
 
-- Regular application: will use the [Otomi deployment Helm chart](https://github.com/redkubes/otomi-charts)
-- Function as a Service: will use the [Otomi Knative service Helm chart](https://github.com/redkubes/otomi-charts)
-- Bring your own Helm chart: use your own (custom) Helm chart
+2. Go to `Workloads` in the right menu and click on `New Workload`
 
-### Regular application
+3. Add a `Name` for the workload
 
-3. Enter a name for the workload
-4. Provide [Basic](#basic-values) or [Advanced](#advanced-values) values configuration
-5. Click `Next`
-6. Review the Values used to install the chart. Optionally add more values. See [here](https://github.com/redkubes/otomi-charts/blob/main/deployment/values.yaml) for all supported values
-7. Click `Submit`
+4. Select a template from the catalog
 
-Now click on `application` in the `Argocd` column of the workload in the list of workloads. Note that an ArgoCD application is created to deploy the workload.
+5. Configure the `Auto image updater`. Default is `Disabled`.
 
-### Function as a Service
+The Auto Image Updater will (based on the update strategy) automatically update the container images of a workload.
 
-1. Enter a name for the workload
-2. Provide [Basic](#basic-values) or [Advanced](#advanced-values) values configuration
-3. Click `Next`
-4. Review the Values used to install the chart. Optionally add more values. See [here](https://github.com/redkubes/otomi-charts/blob/main/ksvc/values.yaml) for all supported values
-5. Click `Submit`
+Select the update strategy. Choose between:
 
-Now click on `application` in the `Argocd` column of the workload in the list of workloads. Note that an ArgoCD application is created to deploy the workload.
-### BYO Helm chart
+- Digest: Update to the most recent pushed version of a given tag. Requires to provide a `repository` and a `tag`.
+- Semver: Update based on semantic versions. Example: `v1.0` would allow the image to be updated to any patch version within the 1.0 minor release.
 
-1. Enter a name for the workload
-2. Enter the URL to the Git repo containing the Helm Chart or a Helm repository.
-3. Add the relative path to a directory within the Git repository. Use `./` when no directory is used.
-4. Optionally (only when using a Chart registry) add the name of the Helm chart.
-5. Enter the revision. In case of using a Git repo, this can be commit, tag, or branch. If omitted, will equal to HEAD. In case of using a Chart repository, this is a semver tag for the Chart's version
-6. Click `Next`
-7. Review the Values used to install the chart
-8. Click `Submit`
+6. In the workload `values`, change the following parameters:
+
+```yaml
+image:
+  repository: <paste from clipboard>
+  tag: latest
+```
+
+6. Click `Submit`
 
 Now click on `Deploy Changes`
 
-After a few minutes, Otomi will have created all the needed ArgoCD resources to deploy your workload. In the workloads list, click on the `Application` link of your workload to see the status of your workload.
+After a few minutes, Otomi will have created all the needed Argo CD resources to deploy your workload. In the workloads list, click on the `Application` link of your workload to see the status of your workload.
 
 The values of a workload can be changed at any time. Changes will automatically be deployed.
-
-#### (optional) Configure Auto Image Updater
-
-Workloads with a BYO Helm chart can be configured with the Auto Image Updater. The Auto Image Updater will (based on the update strategy) update the deployed image.
-
-:::info
-Using the auto image updater is only supported when the Helm chart is in a local Gitea repository on the platform, and the image is stored in the local Harbor on the platform.
-:::
-
-1. If the URL for the chart is a local Gitea repo, the option to enable the Auto Image updater will become active. Select `Enabled`
-2. Fill in a Build name (a Build created in Otomi) or the name of an existing image in harbor (without `*/team-<name>/`)
-3. Select the Update strategy. Choose between:
-
-- Latest: Update to the most recently built image.
-- Digest: Update to the most recent pushed version of a given tag. Requires to provide a `tag`.
-- Semver: Update based on semantic versions. Example: `1.0` would allow the image to be updated to any patch version within the 1.0 minor release.
-
-
-### Basic values
-
-| Title               | Value               | Description                                            |
-| -------------       | ------------------- | --------------------------------                       |
-| Image - Registry    | image.registry      | The registry name of the image to deploy               |
-| Image - Tag         | image.tag           | The tag of the image to deploy                         |
-| Port - Containerport | containerPorts: [] | The port of the container |
-| Resources - Requests vCPU | resources.requests.cpu | The minimal amount of vCPU needed to run the container |
-| Resources - Requests Memory | resources.requests.memory | The minimal amount of memory needed to run the container |
-| Instances - Min     | autoscaling.minReplicas | The minimal amount of containers to run. It's advised to always run at least 2 (default for a regular application). In case of a Function as a Service, the minimal amount of instances is set to 0. A container is started at the first request (scale to zero configuration) 
-| Instances - Max     | autoscaling.maxReplicas | The maximum of containers to run. The autoscaling mechanism in this case will never scale above the configured max instances |
-| Container security context - run as user | podSecurityContext.runAsUser | Containers must not set to run as user (default) 1001 |
-| Container security context - run as non root | podSecurityContext.runAsNonRoot | Select to run the container as a non-root user |
-| Container security context - read only file system | podSecurityContext.readOnlyRootFilesystem | Select to make the root filesystem immutable |
-
-### Advanced values
-
-| Title               | Value               | Description                                            |
-| -------------       | ------------------- | --------------------------------                       |
-| Image - Registry    | image.registry      | The registry name of the image to deploy               |
-| Image - Tag         | image.tag           | The tag of the image to deploy                         |
-| Port - Containerport | containerPorts: [] | The port of the container |
-| Resources - Requests vCPU | resources.requests.cpu | The minimal amount of vCPU needed to run the container |
-| Resources - Requests Memory | resources.requests.memory | The minimal amount of memory needed to run the container |
-| Resources - Limits vCPU | resources.requests.cpu | The minimal amount of vCPU needed to run the container |
-| Resources - Limits Memory | resources.requests.memory | The minimal amount of memory needed to run the container |
-| Instances - Max     | autoscaling.maxReplicas | The maximum of containers to run. The autoscaling mechanism in this case will never scale above the configured max instances |
-| Environment variables | env: [] | Environment variables for containers |
-| Command arguments | command: [] | Override the arguments given to the entrypoint/command of the container |
-| Labels | labels: {} | A set of labels that will be added to all the manifests |
-| Annotations | annotations: {} | Annotations for pods |
-| Secret name | secrets: [] | Set secrets as container environment variables using a secretRef. Select from secrets managed in Otomi/Vault |
-| Container security context - run as user | podSecurityContext.runAsUser | Containers must not set to run as user (default) 1001 |
-| Container security context - run as non root | podSecurityContext.runAsNonRoot | Select to run the container as a non-root user |
-| Container security context - read only file system | podSecurityContext.readOnlyRootFilesystem | Select to make the root filesystem immutable |
-| Files | files: {} | Entries of absolute path > content pairs. One caveat: content can be 131072 chars max |
-| Secret mounts | secretMounts: {} | Pairs of secret name > absolute folder path. Will mount the contents of the secret in the container at the specified folder path |
-| Service ports | servicePorts: [] | Configures the service ports to listens on. Exposes on port 80 by default, using the http port of the pod |
-| Service monitor | serviceMonitor.create | Select to create a a Prometheus Operator ServiceMonitor for custom metrics |
-| Service monitor endpoints | endpoints: [] | Add endpoints. Note that the port also needs to be exposed by the container |

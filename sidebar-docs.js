@@ -63,11 +63,12 @@ module.exports = {
       {
         "How To": [
           "for-ops/how-to/overview",
+          "for-ops/how-to/dev-catalog",
           "for-ops/how-to/ingress-classes",
           "for-ops/how-to/use-team-admin",
           "for-ops/how-to/core-only",
           "for-ops/how-to/switch-to-dns",
-          "for-ops/how-to/create-and-restore-backups",
+          "for-ops/how-to/backups",
         ],
       },
       {

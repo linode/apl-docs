@@ -12,11 +12,11 @@ sidebar_label: Overview
 
 ### [Managing Ingress Controllers](ingress-classes)
 
-### [Using Core only](core-only)
-
-### [Create and restore backups](create-and-restore-backups)
-
 ### [Use the team-admin](use-team-admin)
 
+### [Using Core only](core-only)
+
 ### [Switch to DNS](switch-to-dns)
+
+### [Create and restore backups](backups)
 

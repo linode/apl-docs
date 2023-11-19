@@ -55,7 +55,7 @@
     "DOCKERCFG",
     "tfvars",
     "userarn",
-    "telemetry"
+    "telemetry",
     "rolearn",
     "OTEL",
     "Istio",

@@ -76,8 +76,5 @@ Welcome to Otomi! If you are a developer and are going to use Otomi, these getti
 ---
 
 **Advanced Labs**
-Coming soon!
 
-### Blue/Green and Canary deployments
-
-### Tracing with OpenTelemetry
+### [Tracing with OpenTelemetry](lab-27)

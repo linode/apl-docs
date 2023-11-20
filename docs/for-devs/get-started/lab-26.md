@@ -22,7 +22,7 @@ Before we can configure the webhook for the `green` repo in Gitea, we will need 
 ## Create a Webhook
 
 1. In Otomi Console, click on `apps` the left menu and then open `Gitea`
-2. In the top menu of Gitea, click on `Explore` and then on the `otomi/hello` repo
+2. In the top menu of Gitea, click on `Explore` and then on the `green` repo
 3. Go to `Settings` (top right) and then to `Webhooks`
 4. Click `Add Webhook` and select `Gitea`
 5. In the `Target URL`, paste the webhook URL from your clipboard.
@@ -30,9 +30,9 @@ Before we can configure the webhook for the `green` repo in Gitea, we will need 
 
 ## Trigger the build
 
-You can now trigger the build by doing a commit in the `hello` repo, or by testing the webhook. Let's test the webhook:
+You can now trigger the build by doing a commit in the `green` repo, or by testing the webhook. Let's test the webhook:
 
-1. In Gitea, go to the `Settings` (top right) of the `hello` repo and then to `Webhooks`
+1. In Gitea, go to the `Settings` (top right) of the `green` repo and then to `Webhooks`
 2. Click on the webhook we just created
 3. In the bottom, click on `Test Delivery`
 

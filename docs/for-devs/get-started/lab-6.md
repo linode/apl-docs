@@ -14,7 +14,7 @@ In this lab, you are going to create a build, using the [Spring Pet Clinic sampl
 
 1. In the right menu, click on `Build`
 2. Click on `Create Build`
-3. Fill in the name `blue` for your build and a tag (default is tag is latest)
+3. Fill in the name `blue` for your build and a tag (default tag is latest)
 4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab. 
 6. Click `Submit`
 

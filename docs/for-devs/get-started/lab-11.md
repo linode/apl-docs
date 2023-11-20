@@ -12,11 +12,9 @@ Otomi only supports the image update feature in combination with a Helm chart st
 
 ## Create a Workload with auto image updater
 
-Before creating a workload from the developer catalog, we'll need the `repository` and `tag` of the image we like to deploy.
+Before creating a workload from the developer catalog, we'll need the `repository` and `tag` of the image we like to deploy. Go to the list of Builds and add the `repository` of the `green` build to your clipboard. Remember that the tag is `latest`.
 
-- Go to the list of Builds and add the `repository` of the `green` build to your clipboard. Remember that the tag is `latest`.
-
-You can create a workload from the developer catalog:
+You can now create a workload from the developer catalog:
 
 1. Go to `Workloads` in the right menu and click on `New Workload`
 
@@ -24,9 +22,7 @@ You can create a workload from the developer catalog:
 
 3. Select `otomi-quickstart-k8s-deployment` from the catalog
 
-4. Set the `Auto image updater` to `Digest` and fill in:
-
-- ImageRepository: paste from clipboard
+4. Set the `Auto image updater` to `Digest` and fill in the `ImageRepository` from the clipboard
 
 `Digest` is the update strategy and will update the image to the most recent pushed version of a given tag.
 

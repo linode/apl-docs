@@ -19,9 +19,7 @@ The Developer Catalog in Otomi is a curated list of Helm charts that can be used
 
 ## Create a Workload from the Developer Catalog
 
-Before creating a workload from the developer catalog, we'll need the `repository` and `tag` of the image to use.
-
-- Go to the list of Builds and add the `repository` of the `blue` build to your clipboard. Remember that the tag is `latest`.
+Before creating a workload from the developer catalog, we'll need the `repository` and `tag` of the image to use. Go to the list of Builds and add the `repository` of the `blue` build to your clipboard. Remember that the tag is `latest`.
 
 You can create a workload from the developer catalog:
 

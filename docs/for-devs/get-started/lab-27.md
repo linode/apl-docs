@@ -85,7 +85,7 @@ Now click on `Deploy Changes`
 
 - In the left menu panel under click `Services` then click on `Create Service`
 
-- Select a service that you already deployed:
+- Select the `petclinic` service
 
 - Under `Exposure Ingress`, select `Ingress` and use the default configuration
 

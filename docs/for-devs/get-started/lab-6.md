@@ -5,7 +5,7 @@ sidebar_label: Build images
 ---
 
 :::info
-Prerequisite: For this lab, Harbor need to be activated.
+Prerequisite: Harbor needs to be activated.
 :::
 
 When your team is using Harbor for private image registries and Tekton is enabled, you can build images from source using pre-configured Tekton pipelines and buildpacks from [paketo](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) to build images from application source.
@@ -41,26 +41,28 @@ To re-build the image using the same tag, restart the build pipeline using the T
 ```bash
 kubectl get pipelines
 NAME                         AGE
-buildpacks-build-petclinic   5m10s
+docker-build-blue            41h
 ```
 
 3. Get the name of the pipelinerun:
 
 ```bash
 kubectl get pipelineruns
-NAME                                SUCCEEDED   REASON   STARTTIME   COMPLETIONTIME
-buildpacks-build-petclinic-latest   False       Failed   5m18s       4m27s
+NAME                       SUCCEEDED   REASON      STARTTIME   COMPLETIONTIME
+docker-build-blue-latest   True        Succeeded   41h         41h
 ```
 
 4. Start the pipeline using the pipelinerun:
 
 ```bash
-tkn pipeline start buildpacks-build-petclinic --use-pipelinerun buildpacks-build-petclinic-latest
-PipelineRun started: buildpacks-build-petclinic-latest-j5mmt
+tkn pipeline start docker-build-blue --use-pipelinerun docker-build-blue-latest
+PipelineRun started: docker-build-blue-latest-j5mmt
 ```
 
 5. In order to track the PipelineRun progress run:
 
 ```bash
-tkn pipelinerun logs buildpacks-build-petclinic-latest-j5mmt -f
+tkn pipelinerun logs docker-build-blue-latest-j5mmt -f
 ```
+
+But it's much easier to just open the Tekton dashboard and Click on `PipelineRuns`.

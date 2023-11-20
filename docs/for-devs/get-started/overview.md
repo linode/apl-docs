@@ -78,3 +78,5 @@ Welcome to Otomi! If you are a developer and are going to use Otomi, these getti
 **Advanced Labs**
 
 ### [Tracing with OpenTelemetry](lab-27)
+
+### [Canary Deployments](lab-28)

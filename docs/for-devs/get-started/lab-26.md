@@ -4,7 +4,7 @@ title: Trigger builds
 sidebar_label: Trigger builds
 ---
 
-In the previous lab we created a build in Otomi using the `blue` repo in Gitea. In this lab we'll create a build for the `green` repo and trigger the build based on a webhook
+In the previous lab we created a build in Otomi using the `blue` repo in Gitea. In this lab we'll create a build for the `green` repo and trigger the build based on a webhook.
 
 ## Create a build in Otomi with Trigger enabled
 

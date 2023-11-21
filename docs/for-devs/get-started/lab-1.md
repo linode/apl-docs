@@ -15,7 +15,7 @@ We assume the platform administrator has:
 - The URL to access the Otomi web UI (Otomi Console)
 - Your login credentials
 
-4. Has activated the following applications:
+4. Activated the following applications:
 
 - Harbor
 - ArgoCD
@@ -25,9 +25,27 @@ We assume the platform administrator has:
 - Trivy Operator
 - Gatekeeper (with option `Disable validating webhook` set to true)
 
-After receiving the login credentials, make sure to sign-in to Gitea for the first time:
+For the [Use OpenTelemery](lab-27) Lab, the following additional apps need to be activated:
 
-- Open Gitea
+- Tempo
+
+And tracing for `Istio` and `Nginx Ingress` needs to be enabled.
+
+When you have received the URL of the web UI of Otomi Platform and have a username/password with access permissions, then it's time to sign-in
+
+## Sign in to the Console
+
+- Go to the provided URL. The URL will look like this: https://otomi.yourdomain.com
+- Sign in with the provided username/password or your existing corporate AD account
+
+After sign in, you will see this page:
+
+![Team apps](../../img/team-apps.png)
+
+## Sign in to Gitea
+
+- In the left menu, click `Apps`
+- Click on `Gitea`
 - Click on `sign-in` in the top left
 - Do not sign in with your username and password, but click on `Sign in with OpenID`
 - You will now have access to Gitea and are able to create repositories

@@ -5,7 +5,7 @@ sidebar_label: Scan containers
 ---
 
 :::info
-Prerequisite: For this lab, Trivy needs to be activated.
+Trivy need to be activated for this lab.
 :::
 
 So now you know how to scan container images when pushed to Harbor. But what if you have long running versions of containers? When new vulnerabilities are identified after you scanned the image, you wil only see them when you update your image. For this scenario, Otomi offers Trivy Operator for automatic daily scanning of containers in all Teams.

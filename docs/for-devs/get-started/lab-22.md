@@ -5,7 +5,7 @@ sidebar_label: Using custom metrics
 ---
 
 :::info
-Prerequisite: For this lab, Prometheus and Grafana need to be activated.
+Prometheus and Grafana need to be activated for this lab.
 :::
 ## What are custom metrics
 

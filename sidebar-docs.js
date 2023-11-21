@@ -128,7 +128,6 @@ module.exports = {
         "Get Started With Otomi": [
           "for-devs/get-started/overview",
           "for-devs/get-started/lab-1",
-          "for-devs/get-started/lab-2",
           "for-devs/get-started/lab-3",
           "for-devs/get-started/lab-6",
           "for-devs/get-started/lab-26",

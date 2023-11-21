@@ -5,10 +5,10 @@ sidebar_label: BYO manifests
 ---
 
 :::info
-Prerequisite: For this lab, Argo CD needs to be activated.
+Argo CD needs to be activated for this lab.
 :::
 
-Deploying your applications by doing `kubectl apply -f` is not ideal. You as a developer would like to automatically deploy and update your application after a new build. Otomi integrated Argo CD to provide an out-of-the-box gitops solution.
+Deploying your applications by doing `kubectl apply -f` is not ideal. You as a developer would like to automatically deploy and update your application after a new build. Otomi integrated Argo CD to provide an out-of-the-box GitOps solution.
 
 ## Using Argo CD to deploy manifests and charts
 
@@ -73,7 +73,9 @@ spec:
 
 - Commit Changes
 
-Now go back to the Argo CD application and click on the `team<name>` application. You can see that all the Kubernetes resources have been created.
+Now go back to the Argo CD application and click on the `team<name>` application.
+
+Note that the Argo CD application is not configured to automatically SYNC. So click `SYNC` and then `REFRESH`.
 
 ![kubecfg](../../img/argo-team-sync.png)
 

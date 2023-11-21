@@ -5,7 +5,7 @@ sidebar_label: Create secrets
 ---
 
 :::info
-Prerequisite: For this lab, Hashicorp Vault needs to be activated.
+Hashicorp Vault needs to be activated for this lab.
 :::
 
 When the platform administrator has enabled Vault, you can use Vault to store and manage secrets. Secrets in Vault can be synchronized to your team namespace as Kubernetes secrets. In this part we'll first create a secret in Vault and then sync the secret to your team namespace using the Secrets option in Otomi Console.

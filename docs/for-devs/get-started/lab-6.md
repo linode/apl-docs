@@ -5,12 +5,12 @@ sidebar_label: Build images
 ---
 
 :::info
-Prerequisite: Harbor needs to be activated.
+Harbor needs to be activated for this lab.
 :::
 
-When your team is using Harbor for private image registries and Tekton is enabled, you can build images from source using pre-configured Tekton pipelines and buildpacks from [paketo](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) to build images from application source.
+When your team is using Harbor for private image registries and Tekton is enabled, you can build images from source using pre-configured Tekton pipelines using the [paketo](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) task or the [Kaniko](https://github.com/GoogleContainerTools/kaniko) task to build images from application source.
 
-In this lab, you are going to create a build, using the [Spring Pet Clinic sample app](https://github.com/spring-projects/spring-petclinic) and buildpacks. When using the buildpacks option, Otomi uses buildpacks to build an image based on application source code without using a Dockerfile.
+## Build the blue image
 
 1. In the right menu, click on `Build`
 2. Click on `Create Build`
@@ -26,10 +26,11 @@ When the build is ready you can see the image in Harbor:
 1. Open Harbor
 2. Click on the project of your team. Here you will see all the registries of the team, including the registry of the new build image
 
+## Re-run the build (optional)
 
 To run the build again using Otomi Console, follow these steps:
 
-1. Change the tag of the build to `v1.0.0`
+1. Change the tag of the build for example to `v1.0.0`
 2. Submit changes
 
 To re-build the image using the same tag, restart the build pipeline using the Tekton cli in the Shell:

@@ -14,8 +14,6 @@ Welcome to Otomi! If you are a developer and are going to use Otomi, these getti
 
 ### [Prerequisites](lab-1)
 
-### [Access Otomi Console](lab-2)
-
 ---
 
 **Create code repositories and build images**

@@ -91,5 +91,5 @@ A user with the `otomi-admin` and `team-admin` role can delegate permissions to 
 | Team    | Download kube config | Select to grant the team the permission to download the KubeConfig to get Kube API access to the teams namespace        |
 | Team    | Download docker config | Select to grant the team the permission to download the Dockerconfig for the teams project in Harbor          |
 | Team    | Network Policy       | Select to grant the team the permission to turn on/off network policies          |
-| Apps    | ArgoCD               | Select to provide team members access to the team Gitops repository in Gitea   |
+| Apps    | Argo CD               | Select to provide team members access to the team Gitops repository in Gitea   |
 | Apps    | Gitea                | Select to provide team members access to Gitea                                   |

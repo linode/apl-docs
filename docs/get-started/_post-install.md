@@ -48,21 +48,7 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 ```
 3. Optional: Restart Docker (to support pushing images to Harbor)
 
-### Step 5: Activate Drone
-
-<!-- [Drone](https://www.drone.io/) is an integral part in the deployment of Otomi cluster configuration. -->
-
-1. Click on the **Drone** app (under Platform/Otomi Apps) in the console
-2. Click on `Continue` on the Welcome to Drone page
-3. Sign in
-
-Sign in using the Gitea admin credentials (username: "otomi-admin", and password: `$otomi.adminPassword` or the auto-generated password provided in the logs of the installer job).
-
-4. Click on `Authorize Application`
-5. Click on `Submit on the Complete your Drone Registration page. You don't need to fill in your Email, Full Name or Company Name
-6. Click on the `otomi/values` repository
-7. Click on `+ Activate Repository`
-8. Click on `Save Changes`
+### Create a Team
 
 Now the final step is to create a team. See the [Teams](/docs/for-ops/console/teams) page for more information.
 
@@ -74,4 +60,4 @@ If Otomi is configured with `hasExternalIDP=true` and `oidc` settings have been 
 
 <!-- ![console-login](img/console-login.png) -->
 
-When OIDC is configured, an external IDP user needs to be a member of the "otomi-admin" group. Now follow the same steps as described above to activate Drone.
+When OIDC is configured, an external IDP user needs to be a member of the "otomi-admin" group.

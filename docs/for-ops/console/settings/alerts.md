@@ -22,4 +22,3 @@ The alerts settings section offers configuration options to define alerting endp
 | MSteams | Microsoft Teams webhook urls for critical (high prio) and non-critical alerts (low prio). |
 | Email | Email address(es) for critical and non-critical alerts. |
 | Notification receivers | Select default notification channel(s) for receiving alerts. |
-| Drone notifications | Channel to be used by the deployment pipeline for failure/success notifications. Can only be delivered to Slack or MSteams (for now). |

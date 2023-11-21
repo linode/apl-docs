@@ -16,7 +16,7 @@ sidebar_label: Overview
 
 ### [Using Core only](core-only)
 
-### [Switch to DNS](switch-to-dns)
+<!-- ### [Switch to DNS](switch-to-dns) -->
 
 ### [Create and restore backups](backups)
 

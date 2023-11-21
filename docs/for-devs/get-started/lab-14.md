@@ -5,7 +5,7 @@ sidebar_label: Lab 14
 ---
 
 :::info
-Prerequisite: For this lab, ArgoCD needs to be activated.
+Prerequisite: For this lab, Argo CD needs to be activated.
 :::
 
 Otomi uses Knative serving for serverless (or Function as a Service) support.
@@ -62,7 +62,7 @@ Note: When creating a Function as a Service workload, the Min Instances will by 
 
 Now click on `Deploy Changes`
 
-After a few minutes, Otomi will have created all the needed ArgoCD resources to deploy your workload. In the workloads list, click on the `Application` link of your workload to see the status of your workload.
+After a few minutes, Otomi will have created all the needed Argo CD resources to deploy your workload. In the workloads list, click on the `Application` link of your workload to see the status of your workload.
 
 The values of a workload can be changed at any time. Changes will automatically be deployed.
 

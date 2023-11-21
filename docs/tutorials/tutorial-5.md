@@ -31,4 +31,4 @@ What do you see?
 
 Go back to Otomi Console to edit the values of the workload. Set the replicacount to `1`.
 
-What do you see happening in the ArgoCD app?
+What do you see happening in the Argo CD app?

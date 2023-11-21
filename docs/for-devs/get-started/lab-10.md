@@ -10,7 +10,7 @@ Prerequisite: For this lab, Argo CD needs to be activated.
 
 Deploying your applications by doing `kubectl apply -f` is not ideal. You as a developer would like to automatically deploy and update your application after a new build. Otomi integrated Argo CD to provide an out-of-the-box gitops solution.
 
-## Using ArgoCD to deploy manifests and charts
+## Using Argo CD to deploy manifests and charts
 
 In the apps section in Otomi console, you'll see an app called Argo CD. Click on it.
 

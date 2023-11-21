@@ -16,7 +16,6 @@ In some cases you might not want to use Otomi Console, Otomi API and Drone, but 
 
 The example Otomi chart values below shows how to install Otomi with 
 
-- Drone disabled
 - A team with 2 workloads and 2 services
 
 ```yaml
@@ -28,8 +27,6 @@ otomi:
 apps:
   argocd:
     enabled: true
-  drone:
-    enabled: false
 teamConfig:
   demo:
     password: ${somePassword}
@@ -122,7 +119,7 @@ After Otomi has been installed with these values, Otomi will install and configu
 - All required ingress resources
 - Istio (including the virtual services for public exposed services with HTTP response headers)
 - Network policies
-- ArgoCD and ArgoCD application sets to automatically deploy the front-end and api workloads
+- Argo CD and Argo CD application sets to automatically deploy the front-end and api workloads
 
 2. Change the values
 

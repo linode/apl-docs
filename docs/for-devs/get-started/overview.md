@@ -1,6 +1,6 @@
 ---
 slug: overview
-title: Get started with Otomi for Developers
+title: Get started with Otomi for Developers Labs
 sidebar_label: Get Started Labs
 ---
 

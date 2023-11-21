@@ -25,7 +25,7 @@ You can create a workload from the developer catalog:
 
 1. Go to `Workloads` in the right menu and click on `New Workload`
 
-2. Add a `Name` for the workload
+2. Add the Name `blue` for the workload
 
 3. Select `otomi-quickstart-k8s-deployment` from the catalog
 

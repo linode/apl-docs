@@ -18,11 +18,11 @@ You can now create a workload from the developer catalog:
 
 1. Go to `Workloads` in the right menu and click on `New Workload`
 
-2. Add the name `auto` for the workload
+2. Add the Name `green` for the workload
 
 3. Select `otomi-quickstart-k8s-deployment` from the catalog
 
-4. Set the `Auto image updater` to `Digest` and fill in the `ImageRepository` from the clipboard
+4. Set the `Auto image updater` to `Digest` and fill in the `ImageRepository` from the clipboard.
 
 `Digest` is the update strategy and will update the image to the most recent pushed version of a given tag.
 
@@ -42,7 +42,7 @@ In the example above, we used the `Digest` update strategy. The `Semver` strateg
 
 ## Expose the service
 
-Now go to the [Expose services](lab-18) lab and expose the `auto` service. When the service is created, go to `Services` in the left menu and click on the Url of the `auto` service. What do you see?
+Now go to the [Expose services](lab-18) lab and expose the `green` service. When the service is created, go to `Services` in the left menu and click on the Url of the `green` service. What do you see?
 
 ## Make code change to trigger a new build
 
@@ -87,4 +87,6 @@ Now go to the `green` repo in Gitea and change the color in the `green.html` to 
 
 And commit changes.
 
-After the change has been committed, go to `Services` in the left menu and click on the Url of the `auto` service. After a couple of minutes (note that the auto image update checks for changes every 2 minutes) you should see an `orange` page saying `Welcome to Orange`
+After the change has been committed, go to `Services` in the left menu and click on the Url of the `green` service. After a couple of minutes (note that the auto image update checks for changes every 2 minutes) you should see an `orange` page saying `Welcome to Orange`
+
+Now go to `Services` in the left menu and click on the Url of the `green` service. What do you see?

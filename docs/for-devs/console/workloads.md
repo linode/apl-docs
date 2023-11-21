@@ -26,7 +26,7 @@ All known Workloads of the team are listed here.
 
 Before creating a workload from the developer catalog, we'll need the `repository` and `tag` of the image you would like to use.
 
-1. Go to the list of Builds and add the `repository` of the `blue` build to your clipboard. Remember that the tag is `latest`.
+1. Go to the list of Builds and add the `repository` of the build to use to your clipboard. Remember the tag.
 
 2. Go to `Workloads` in the right menu and click on `New Workload`
 
@@ -34,7 +34,7 @@ Before creating a workload from the developer catalog, we'll need the `repositor
 
 4. Select a template from the catalog
 
-5. Configure the `Auto image updater`. Default is `Disabled`.
+5. (Optional) Configure the `Auto image updater`. Default is `Disabled`.
 
 The Auto Image Updater will (based on the update strategy) automatically update the container images of a workload.
 
@@ -42,6 +42,8 @@ Select the update strategy. Choose between:
 
 - Digest: Update to the most recent pushed version of a given tag. Requires to provide a `repository` and a `tag`.
 - Semver: Update based on semantic versions. Example: `v1.0` would allow the image to be updated to any patch version within the 1.0 minor release.
+
+There are 2 other properties available: `imageParameter` and `tagParameter`. Change the parameters in case your Helm application contains more than one image in the manifests or use another set of parameters than `image.repository` and `image.tag` to define which image to render in the manifests.
 
 6. In the workload `values`, change the following parameters:
 

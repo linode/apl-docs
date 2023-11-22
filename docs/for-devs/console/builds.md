@@ -9,7 +9,7 @@ sidebar_label: Builds
 A Build in Otomi is a self-service feature for building OCI compliant images based on application source code.
 
 :::info
-Ask you platform administrator to activate Harbor to use this feature.
+Ask your platform administrator to activate Harbor to use this feature.
 :::
 
 :::info

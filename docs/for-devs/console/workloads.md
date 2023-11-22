@@ -9,7 +9,7 @@ sidebar_label: Workloads
 A Workload in Otomi is a self-service feature for creating Kubernetes resources using Helm charts form the Otomi Developer Catalog.
 
 :::info
-Ask you platform administrator to activate Argo CD to be able to use this feature.
+Ask your platform administrator to activate Argo CD to be able to use this feature.
 :::
 
 ## Workloads (all)
@@ -32,7 +32,7 @@ Before creating a workload from the developer catalog, we'll need the `repositor
 
 3. Add a `Name` for the workload
 
-4. Select a template from the catalog
+4. Select a template from the catalog to use
 
 5. (Optional) Configure the `Auto image updater`. Default is `Disabled`.
 
@@ -40,10 +40,10 @@ The Auto Image Updater will (based on the update strategy) automatically update 
 
 Select the update strategy. Choose between:
 
-- Digest: Update to the most recent pushed version of a given tag. Requires to provide a `repository` and a `tag`.
+- Digest: Inspects a single tag in the registry for changes, and updates the image on any change to the previous state. Requires to provide a `repository` and a `tag`.
 - Semver: Update based on semantic versions. Example: `v1.0` would allow the image to be updated to any patch version within the 1.0 minor release.
 
-There are 2 other properties available: `imageParameter` and `tagParameter`. Change the parameters in case your Helm application contains more than one image in the manifests or use another set of parameters than `image.repository` and `image.tag` to define which image to render in the manifests.
+There are 2 other properties available: `imageParameter` and `tagParameter`. Change the parameters in case your Helm application contains more than one image in the manifests or uses another parameters to define which image to render in the manifests.
 
 6. In the workload `values`, change the following parameters:
 

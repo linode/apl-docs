@@ -28,7 +28,7 @@ First select the (ClusterIP) service to use.
 
 ## Configuring traffic control
 
-The traffic control option allows to split traffic between multiple deployed versions (blue-green, canary). Note that the traffic control can only be used when: 
+The traffic control option allows to split traffic between multiple deployed versions of the same app (blue-green, canary). Note that the traffic control can only be used when: 
 - There are 2 versions deployed that share a single service
 - The service is configured for external exposure
 

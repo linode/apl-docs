@@ -8,14 +8,7 @@ Welcome to Otomi! If you are a developer and are going to use Otomi, this gettin
 
 We assume the platform administrator has:
 
-1. Created a team (called `demo`) on the platform
-2. Created an account and added you as a team member to the team-demo group in KeyCloak
-3. Provided you with the following information:
-
-- The URL to access the Otomi web UI (Otomi Console)
-- Your login credentials
-
-4. Activated the following applications:
+1. Activated the following applications:
 
 - Harbor
 - ArgoCD
@@ -30,6 +23,13 @@ For the [Use OpenTelemery](lab-27) Lab, the following additional apps need to be
 - Tempo
 
 And tracing for `Istio` and `Nginx Ingress` needs to be enabled.
+
+2. Created a team for you on the platform. In the labs we'll be using a team called `demo`
+3. [Created an account](/docs/apps/keycloak#create-a-user-in-keycloak) and added you as a team member to the team group in KeyCloak
+4. Provided you with the following information:
+
+- The URL to access the Otomi web UI (Otomi Console)
+- Your login credentials
 
 When you have received the URL of the web UI of Otomi Platform and have a username/password with access permissions, then it's time to sign-in
 

@@ -31,7 +31,7 @@ And tracing for `Istio` and `Nginx Ingress` needs to be enabled.
 - The URL to access the Otomi web UI (Otomi Console)
 - Your login credentials
 
-When you have received the URL of the web UI of Otomi Platform and have a username/password with access permissions, then it's time to sign-in
+When you have received the URL of the web UI and have a username/password, then it's time to sign-in
 
 ## Sign in to the Console
 
@@ -41,11 +41,3 @@ When you have received the URL of the web UI of Otomi Platform and have a userna
 After sign in, you will see this page:
 
 ![Team apps](../../img/team-apps.png)
-
-## Sign in to Gitea
-
-- In the left menu, click `Apps`
-- Click on `Gitea`
-- Click on `sign-in` in the top left
-- Do not sign in with your username and password, but click on `Sign in with OpenID`
-- You will now have access to Gitea and are able to create repositories

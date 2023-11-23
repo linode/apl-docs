@@ -4,9 +4,9 @@ title: Deploy workloads using Otomi
 sidebar_label: Create workloads
 ---
 
-In the previous lab we explained how to deploy a workload with using Argo CD in Otomi. In this part we'll deploy a regular workload (a Kubernetes Deployment) using the Otomi Developer Catalog.
+In the previous lab we deployed a workload using Argo CD. In this lab we'll deploy a regular workload (a Kubernetes Deployment) using the Otomi Developer Catalog and Otomi Workload feature.
 
-The Otomi Developer Catalog allows to store any Helm chart in the `otomi/charts` git repository at Gitea. By deploying a given Helm chart from the catalog, Otomi saves the corresponding Helm chart values in a separate file the `otomi/values` repo. Otomi configures ArgoCD to observe that file and automatically deploy changes upon file change (GitOps).
+The Otomi Developer Catalog allows to store any Helm chart in the `otomi/charts` repository in Gitea. By deploying a given Helm chart from the catalog, Otomi saves the corresponding Helm chart values in a separate file in the `otomi/values` repo. Otomi configures Argo CD to observe the values and automatically deploy changes when values are adjusted (based on the GitOps principle).
 
 ## About the Developer Catalog
 

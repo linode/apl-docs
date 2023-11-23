@@ -17,6 +17,10 @@ For this lab it is required to:
 
 For this lab we're going to use the [Spring PetClinic Sample Application](https://github.com/spring-projects/spring-petclinic). Follow these steps to build an image from source code:
 
+:::note
+Using a Gitea repository is not required. You can also build using public repositories.
+:::
+
 1. Create a new repo called `petclinic`
 
 2. Clone the Spring PetClinic Sample Application:

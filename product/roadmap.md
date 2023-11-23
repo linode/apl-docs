@@ -16,7 +16,7 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 | v2.0.0        | 1.25, 1.26, 1.27             | 2023-11-28    |
 | v3.0.0        | 1.26, 1.27, 1.28             | 2024-03-28    |
 
-# Milestons
+# Milestones
 
 ## 2023 Q4
 

@@ -8,7 +8,7 @@ sidebar_label: Build images
 Harbor needs to be activated for this lab.
 :::
 
-When your team is using Harbor for private image registries and Tekton is enabled, you can build images from source using pre-configured Tekton pipelines using the [paketo](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) task or the [Kaniko](https://github.com/GoogleContainerTools/kaniko) task to build images from application source.
+When your team is using Harbor for private image registries, you can build images from source using pre-configured Tekton pipelines using the [paketo](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) task or the [Kaniko](https://github.com/GoogleContainerTools/kaniko) task to build images from application source.
 
 ## Build the blue image
 

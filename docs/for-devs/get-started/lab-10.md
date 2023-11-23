@@ -1,16 +1,16 @@
 ---
 slug: lab-10
-title: BYO manifest to deploy a workload with Argo CD
-sidebar_label: Using Argo CD
+title: BYO manifests to create a workload
+sidebar_label: BYO manifests
 ---
 
 :::info
-Prerequisite: For this lab, Argo CD needs to be activated.
+Argo CD needs to be activated for this lab.
 :::
 
-Deploying your applications by doing `kubectl apply -f` is not ideal. You as a developer would like to automatically deploy and update your application after a new build. Otomi integrated Argo CD to provide an out-of-the-box gitops solution.
+Deploying your applications by doing `kubectl apply -f` is not ideal. As a developer you would like to manage resources based on code stored in Git. Otomi integrates Argo CD to provide an out-of-the-box GitOps solution.
 
-## Using ArgoCD to deploy manifests and charts
+## Using Argo CD to deploy manifests and charts
 
 In the apps section in Otomi console, you'll see an app called Argo CD. Click on it.
 
@@ -43,8 +43,6 @@ spec:
       app: nginx
   template:
     metadata:
-      annotations:
-        policy.otomi.io/ignore-sidecar: container-limits,psp-allowed-users
       labels:
         app: nginx
     spec:
@@ -58,8 +56,6 @@ spec:
             requests:
               memory: '64Mi'
               cpu: '100m'
-          securityContext:
-            runAsUser: 1001
           ports:
             - containerPort: 8080
 ---
@@ -77,7 +73,9 @@ spec:
 
 - Commit Changes
 
-Now go back to the Argo CD application and click on the `team<name>` application. You can see that all the Kubernetes resources have been created.
+Now go back to the Argo CD application and click on the `team<name>` application.
+
+Note that the Argo CD application is not configured to automatically SYNC. So click `SYNC` and then `REFRESH`.
 
 ![kubecfg](../../img/argo-team-sync.png)
 

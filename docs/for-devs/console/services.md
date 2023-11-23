@@ -24,10 +24,17 @@ All known Services of the team are listed here. Services can be sorted based on:
 
 ## Create a Service
 
-1. Enter a name for the service. The name will be used to generate hostname if `Use suggested domain` is chosen (see below). When configuring ingress for an existing (pre-deployed) service, make sure the name provided here matches the name of the CusterIP service
-2. Enter the port number of the service
+First select the (ClusterIP) service to use.
 
-After providing a name and a port number, you can now configure ingress.
+## Configuring traffic control
+
+The traffic control option allows to split traffic between multiple deployed versions of the same app (blue-green, canary). Note that the traffic control can only be used when: 
+- There are 2 versions deployed that share a single service
+- The service is configured for external exposure
+
+- Select `Enabled` to configure traffic control
+- Fill in the weight for the 2 versions. A 50/50 weight can be used for blue/green. A 90/10 weight can be used for canary.
+
 ## Configuring exposure (ingress)
 
 Exposure controls wether internet exposure should be enabled or not. Three options exist:

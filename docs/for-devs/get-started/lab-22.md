@@ -5,7 +5,7 @@ sidebar_label: Using custom metrics
 ---
 
 :::info
-Prerequisite: For this lab, Prometheus and Grafana need to be activated.
+Prometheus and Grafana need to be activated for this lab.
 :::
 ## What are custom metrics
 
@@ -25,7 +25,7 @@ In this guide we assume that otomi is configured for multi-tenancy and that each
 
 For this lab we'll use a prometheus-dummy-exporter container from Google
 
-- Now go to your team's Git repo for ArgoCD `(otomi/team-<name>-argocd)`
+- Now go to your team's Git repo for Argo CD `(otomi/team-<name>-argocd)`
 
 - Create a new file in the repo called custom-metrics.yaml
 - Add the following contents to the file:

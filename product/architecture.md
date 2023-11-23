@@ -27,23 +27,36 @@ Otomi Core also contains the source code for Otomi CLI. Otomi CLI can be used fo
 Otomi Core is the heart of Otomi and contains a suite of the following integrated Kubernetes applications:
 
 - [Istio](https://github.com/istio/istio): The service mesh framework with end-to-end transit encryption
-- [Velero](https://github.com/vmware-tanzu/velero): Back up and restore your Kubernetes cluster resources and persistent volumes
-- [Argo CD](https://github.com/argoproj/argo-cd): Declarative continuous deployment
-- [Knative](https://github.com/knative/serving): Deploy and manage serverless workloads
-- [Prometheus](https://github.com/prometheus/prometheus): Collecting container application metrics
-- [Loki](https://github.com/grafana/loki): Collecting container application logs
-- [Harbor](https://github.com/goharbor/harbor): Container image registry with role-based access control, image scanning, and image signing
-- [HashiCorp Vault](https://github.com/hashicorp/vault): Manage Secrets and Protect Sensitive Data
 - [Keycloak](https://github.com/keycloak/keycloak): Identity and access management for modern applications and services
-- [OPA](https://github.com/open-policy-agent/opa): Policy-based control for cloud-native environments
-- [Let's Encrypt](https://letsencrypt.org/): A nonprofit Certificate Authority providing industry-recognized TLS certificates
-- [Jaeger](https://github.com/jaegertracing/jaeger): End-to-end distributed tracing and monitor for complex distributed systems
-- [Kiali](https://github.com/kiali/kiali): Observe Istio service mesh relations and connections
+- [Cert Manager](https://github.com/cert-manager/cert-manager) - Bring your own wildcard certificate or request one from Let's Encrypt
+- [Nginx Ingress Controller](https://github.com/kubernetes/ingress-nginx): Ingress controller for Kubernetes
 - [External DNS](https://github.com/kubernetes-sigs/external-dns): Synchronize exposed ingresses with DNS providers
 - [Drone](https://github.com/harness/drone): Continuous integration platform built on Docker
 - [Gitea](https://github.com/go-gitea/gitea): Self-hosted Git service
-- [Nginx Ingress Controller](https://github.com/kubernetes/ingress-nginx): Ingress controller for Kubernetes
+- [Velero](https://github.com/vmware-tanzu/velero): Back up and restore your Kubernetes cluster resources and persistent volumes
+- [Argo CD](https://github.com/argoproj/argo-cd): Declarative continuous deployment
+- [Knative](https://github.com/knative/serving): Deploy and manage serverless workloads
+- [Kaniko](https://github.com/GoogleContainerTools/kaniko): Build container images from a Dockerfile
+- [Prometheus](https://github.com/prometheus/prometheus): Collecting container application metrics
+- [Grafana](https://github.com/grafana/grafana): Visualize metrics, logs, and traces from multiple sources
+- [Grafana Loki](https://github.com/grafana/loki): Collecting container application logs
+- [Harbor](https://github.com/goharbor/harbor): Container image registry with role-based access control, image scanning, and image signing
+- [HashiCorp Vault](https://github.com/hashicorp/vault): Manage Secrets and Protect Sensitive Data
+- [OPA/Gatekeeper](https://github.com/open-policy-agent/gatekeeper): Policy-based control for cloud-native environments
+- [Jaeger](https://github.com/jaegertracing/jaeger): End-to-end distributed tracing and monitor for complex distributed systems
+- [Kiali](https://github.com/kiali/kiali): Observe Istio service mesh relations and connections
 - [Minio](https://github.com/minio/minio): High performance Object Storage compatible with Amazon S3 cloud storage service
+- [Trivy](https://github.com/aquasecurity/trivy-operator): Kubernetes-native security toolkit
+- [Thanos](https://github.com/thanos-io/thanos): HA Prometheus setup with long term storage capabilities
+- [Falco](https://github.com/falcosecurity/falco): Cloud Native Runtime Security
+- [Opencost](https://github.com/opencost/opencost): Cost monitoring for Kubernetes
+- [Tekton Pipeline](https://github.com/tektoncd/pipeline): K8s-style resources for declaring CI/CD pipelines
+- [Tekton Triggers](https://github.com/tektoncd/triggers): Trigger pipelines from event payloads
+- [Tekton dashboard](https://github.com/tektoncd/dashboard): Web-based UI for Tekton Pipelines and Tekton Triggers
+- [Paketo build packs](https://github.com/paketo-buildpacks): Cloud Native Buildpack implementations for popular programming language ecosystems
+- [Cloudnative-pg](https://github.com/cloudnative-pg/cloudnative-pg): Open source operator designed to manage PostgreSQL workloads
+- [Grafana Tempo](https://github.com/grafana/tempo): High-scale distributed tracing backend
+- [OpenTelemetry](https://github.com/open-telemetry/opentelemetry-operator): Instrument, generate, collect, and export telemetry data to help you analyze your software’s performance and behavior
 
 ### Catagories
 
@@ -69,16 +82,17 @@ The following table shows all integrated applications:
 | [Gatekeeper Operator](/docs/apps/gatekeeper) |      |        |      |                 |    X     |
 | [Hashicorp Vault](/docs/apps/vault)          |      |   X    |      |        X        |    X     |
 | [Harbor](/docs/apps/harbor)                  |      |   X    |      |        X        |    X     |
-| [Drone](/docs/apps/drone)                    |  X   |        |      |        X        |          |
-| Gitea                                        |  X   |        |      |        X        |    X     |
+| [Drone](/docs/apps/drone)                    |      |        |      |        X        |    X     |
+| Gitea                                        |  X   |        |      |        X        |          |
 | Httpbin                                      |      |   X    |      |                 |    X     |
 | Jeager                                       |      |   X    |      |                 |    X     |
 | Kiali                                        |      |        |      |                 |    X     |
 | Velero                                       |      |        |      |                 |    X     |
 | Minio                                        |      |        |      |                 |    X     |
 | Opencost                                     |      |        |      |                 |    X     |
-| Tekton Pipeline                              |      |        |      |                 |    X     |
+| Tekton Pipeline                              |  X   |   X    |   X  |                 |    X     |
 | Trivy Operator                               |      |        |      |                 |    X     |
+| Cloudnative-pg                               |  X   |        |      |                 |          |
 
 
 ### Advanced ingress architecture as its core
@@ -104,7 +118,7 @@ The ingress & SSO architecture overview explained:
 
 ## Otomi Tasks
 
-Otomi Tasks contains a set of Kubernetes jobs. These jobs ensure that the configuration of applications integrated in Otomi are always equal to the desired-state configuration (see Otomi Values). An example: If a team is created via Otomi Console (in combination with Otomi API), Otomi Tasks ensures that a project is created for the new team in Harbor, the access to the project in Harbor is configured, a robot account (that can be used to push images to the project registry) is created and that a pull secret is created in the namespace of the team.
+Otomi Tasks contains a set of Kubernetes jobs and teh Otomi Operator. The jobs and Operator ensure that the configuration of applications integrated in Otomi are always equal to the desired-state configuration (see Otomi Values). An example: If a team is created via Otomi Console (in combination with Otomi API), Otomi Tasks ensures that a project is created for the new team in Harbor, the access to the project in Harbor is configured, a robot account (that can be used to push images to the project registry) is created and that a pull secret is created in the namespace of the team.
 
 Otomi Tasks is currently used to configure the following applications:
 

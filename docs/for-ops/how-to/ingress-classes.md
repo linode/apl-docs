@@ -1,6 +1,6 @@
 ---
 slug: ingress-classes
-title: Use private ingress class
+title: Manage Ingress Controllers
 ---
 
 When Otomi is installed, exposure (ingress) for all services (included exposure for platform services) is handeled by the default platform ingress class using a public (cloud) load balancer. Otomi offers the option to use multiple ingress classes. Each class get a dedicated ingress controller. In case of security requirements, where platform services are not allowed to be exposed publicly, the default platform class can be configured to use a private load balancer instead of a public one. Additional (public) ingress classes can be created to expose team (application) services.

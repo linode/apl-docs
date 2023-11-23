@@ -202,3 +202,7 @@ kubectl logs jobs/otomi -n default -f
 When the installer is finished, copy the `url` and `admin-password` from the console output.
 
 Follow the activation steps [here.](https://otomi.io/docs/get-started/activation)
+
+:::tip
+Like to learn how to use Otomi? Go through the [Get Started labs](/docs/for-devs/get-started/overview)
+:::

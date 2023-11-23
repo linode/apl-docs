@@ -22,13 +22,18 @@ When there are different requirements to use Keycloak for business applications,
 To create users in Keycloak, follow these steps:
 
 1. Open the Keycloak app
-2. Click on "Administration Console"
-3. Login with admin credentials (using `admin` user and password provided in the installer log or the `otomi.adminPassword` provided in the initial values)
-4. Select the "Otomi" realm
-5. Click on "Users" then "Add user"
-6. Fill in a user name in the "Username" field
-7. Fill in your email address in the "Email" field
-8. Select the "otomi-admin" group
-9. Click on "Save"
-10. Choose the "Credentials" tab and then fill in a password for this user
-11. Click on "Set Password"
+2. Click on `Administration Console`
+3. Login with admin credentials (using `otomi-admin` user and password provided in the installer log or the `otomi.adminPassword` provided in the initial values)
+4. Select the `Otomi` realm
+5. Click on `Users` then `Create user`
+6. Fill in a user name in the `Username` field
+7. Fill in your email address in the `Email` field
+8. Select `Email verified`
+9. Click `Join Groups`
+10. Add the user to the required group (Team)
+11. Click `Create`
+10. Choose the `Credentials` tab and then `Set password`
+11. Fill in a password
+12. Optional: Make te password `Temporary`. This requires the user to change the password at the first login
+13. Click on "Save"
+14. Click `Save password`

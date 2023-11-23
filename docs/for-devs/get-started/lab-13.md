@@ -1,59 +1,48 @@
 ---
 slug: lab-13
 title: Deploy workloads using Otomi
-sidebar_label: Create Otomi workload
+sidebar_label: Create workloads
 ---
 
-In the previous 2 parts we have explained how to deploy a workload with a BYO manifest using Kubectl and how to deploy a workload with a BYO manifest using ArgoCD in Otomi. In this part we'll deploy a regular workload (a Kubernetes Deployment) using the Otomi Workloads feature.
+In the previous lab we explained how to deploy a workload with using Argo CD in Otomi. In this part we'll deploy a regular workload (a Kubernetes Deployment) using the Otomi Developer Catalog.
 
-When creating workloads in Otomi, the specifications (URL and path) and the values of a Helm chart is stored in `otomi-values` and then used to automatically create the ArgoCD resources to deploy the workload.
+When creating workloads in Otomi, the specifications (URL and path) and the values of a Helm chart is stored in `otomi-values` and then used to automatically create the Argo CD resources to deploy the workload.
 
 As a developer, you'll have the following options to deploy serverless workloads:
 
-- BYO Knative service manifest and deploy it using kubectl or ArgoCD
-- Create workloads with the deployment Helm chart  in `otomi-charts`
-- Create workloads with the Knative Helm chart in `otomi-charts`
+- BYO Knative manifests and deploy it using Argo CD
+- Create workloads using the Developer Catalog in Otomi
 
-## Creating a Regular Workload
+## About the Developer Catalog
 
-You can create a workload to deploy your own Helm chart, or you can use one of the `otomi-charts` Helm charts. In this case we'll use the deployment chart in the `otomi-charts` repository.
+The Developer Catalog in Otomi is a curated list of Helm charts that can be used in workloads to create Kubernetes resources. The catalog by default only contains a set of Otomi quick start Helm charts. 
+
+## Create a Workload from the Developer Catalog
+
+Before creating a workload from the developer catalog, we'll need the `repository` and `tag` of the image to use. Go to the list of Builds and add the `repository` of the `blue` build to your clipboard. Remember that the tag is `latest`.
+
+You can create a workload from the developer catalog:
 
 1. Go to `Workloads` in the right menu and click on `New Workload`
 
-2. Choose `Regular application`
+2. Add the Name `blue` for the workload
 
-![kubecfg](../../img/regular-app.png)
+3. Select `otomi-quickstart-k8s-deployment` from the catalog
 
-3. Enter a name for the workload
+4. Leave the `Auto image updater` to `Disabled`
 
-```
-hello-deploy
-```
+5. In the workload `values`, change the following parameters:
 
-4. Fill in the image to deploy:
-
-```
-otomi/nodejs-helloworld
+```yaml
+image:
+  repository: <paste from clipboard>
+  tag: latest
 ```
 
-5. Fill in the tag of the image to deploy:
-
-```
-v1.2.13
-```
-
-![kubecfg](../../img/regular-app-2.png)
-
-6. Click `Next`
-
-7. Review the values. Here you can add more values supported by the [otomi-charts](https://github.com/redkubes/otomi-charts)
-
-![kubecfg](../../img/regular-app-3.png)
-
-8. Click `Submit`
+6. Click `Submit`
 
 Now click on `Deploy Changes`
 
-After a few minutes, Otomi will have created all the needed ArgoCD resources to deploy your workload. In the workloads list, click on the `Application` link of your workload to see the status of your workload.
+After a few minutes, Otomi will have created all the needed Argo CD resources to deploy your workload. In the workloads list, click on the `Application` link of your workload to see the status of your workload in Argo CD.
 
-The values of a workload can be changed at any time. Changes will automatically be deployed.
+The values of a workload can be changed at any time. Changes will be deployed automatically.

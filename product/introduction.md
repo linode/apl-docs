@@ -34,7 +34,7 @@ This is how Otomi helps developers:
 As a Developer, you want to focus on your code and don’t be bothered with Kubernetes internals. With Otomi, you can deploy your apps on Kubernetes without needing to understand or learn Kubernetes. Just build your image, push it to a registry in Otomi and use the Web Console to deploy your app in just a couple of minutes. Otomi makes Kubernetes easy!
 
 ### All the tools you need
-Otomi provides developers with all the tools they need. After deploying your app you can directly see all the container logs and metrics. Next to logs and metrics, you will also get access to tools like Kubeapps to quickly deploy apps from a catalog and Hashicorp Vault to store and manage secrets. Secrets stored in Vault can directly be used in your deployments. You will also get access to a project in Harbor and can directly see possible vulnerabilities in container images.
+Otomi provides developers with all the tools they need. After deploying your app you can directly see all the container logs, metrics, status, policy violations and vulnerabilities. Next to access to al kinds of dashboards, you will also get access to Harbor, Tekton and Argo CD. 
 
 ### Best practices
 Otomi offers you the ability to immediately start deploying applications on Kubernetes and configure public exposure. This will give you a jump start to get apps running on Kubernetes. But in time you will probably learn more about Kubernetes and start trying out things yourself. Otomi does not force you to use the Web Console. You can just as easily download the KubeConfig for your team and create and deploy manifests yourself. But Otomi will always force you to adhere to the configured safeguards and best practices.

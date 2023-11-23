@@ -72,7 +72,7 @@ otomi bootstrap
 otomi console
 ```
 
-The console allows for easy configuration of many settings but not all. Assuming the setup steps are completed, you need to now configure the Otomi values repository. This repo is the source configuration for Otomi. It contains Drone pipeline configuration for listening to updates of these values targeting the cluster the Drone instance is running on.
+The console allows for easy configuration of many settings but not all. Assuming the setup steps are completed, you need to now configure the Otomi values repository. This repo is the source configuration for Otomi.
 
 ## 5. Configuration
 
@@ -186,6 +186,4 @@ To commit values and run post processing tasks:
 otomi commit
 ```
 
-This will detect any version changes, generate Drone pipeline configuration, and then commit all files with a standardized message "Manual commit". (We believe all values repo configuration changes are equally meaningful and don't need explicit commit messages.) Directly doing a `git commit` is discouraged with a git hook saying so, but whenever you did not touch any versions in `env/clusters.yaml` you may bypass with `git commit -m "Manual commit" --no-verify` to save development time.
-
-This will then trigger the pipeline of any [configured Drone](https://drone.$clusterDomain/) (if you followed the postinstall step).
+This will detect any version changes and then commit all files with a standardized message "Manual commit". (We believe all values repo configuration changes are equally meaningful and don't need explicit commit messages.) Directly doing a `git commit` is discouraged with a git hook saying so, but whenever you did not touch any versions in `env/clusters.yaml` you may bypass with `git commit -m "Manual commit" --no-verify` to save development time.

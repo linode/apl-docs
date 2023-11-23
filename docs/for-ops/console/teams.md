@@ -23,7 +23,7 @@ Another difference between the Team Admin and user created Teams is that Team Ad
 
 1. Login with a user who is a member of the `otomi-admin` or `team-admin` role
 
-2. Provide a name for the team (lowercase). The teamname can not be changed afterwards! Creating a team will result in the creation of namespace `team-$NAME`
+2. Provide a name for the team (lowercase). The teamname can not be changed afterwards! Creating a team will result in the creation of namespace `team-$NAME`. The name of a team can be max `12` characters.
 
 3. Optional: Provide a OIDC group name/id granting for granting access to team. Only members of the group will get access to the team
 
@@ -91,5 +91,5 @@ A user with the `otomi-admin` and `team-admin` role can delegate permissions to 
 | Team    | Download kube config | Select to grant the team the permission to download the KubeConfig to get Kube API access to the teams namespace        |
 | Team    | Download docker config | Select to grant the team the permission to download the Dockerconfig for the teams project in Harbor          |
 | Team    | Network Policy       | Select to grant the team the permission to turn on/off network policies          |
-| Apps    | ArgoCD               | Select to provide team members access to the team Gitops repository in Gitea   |
+| Apps    | Argo CD               | Select to provide team members access to the team Gitops repository in Gitea   |
 | Apps    | Gitea                | Select to provide team members access to Gitea                                   |

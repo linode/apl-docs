@@ -5,7 +5,7 @@ sidebar_label: View container logs
 ---
 
 :::info
-Prerequisite: For this lab, Loki and Grafana need to be activated.
+Loki, Minio, Prometheus and Grafana need to be activated for this lab.
 :::
 
 When your application is deployed, you would of course like to be able to see container logs for debugging purposes. Grafana Loki is used in Otomi for log aggregation. When Grafana Loki is enabled, you'll see the Loki app in your apps.
@@ -20,11 +20,11 @@ Only when Otomi is configured in multi-tenant mode, container logs of teams are 
 
 ![kubecfg](../../img/loki-teams.png)
 
-In Grafana, you are directed to the `Explore` section. Otomi already added a query for you, showing the logs of all containers running in your team namespace
+In Grafana, you are directed to the `Explore` section. Otomi already added a query for you, showing the logs of all containers running in your team namespace.
 
 ![kubecfg](../../img/grafana-loki.png)
 
-Adjust the query to your own needs. Loki uses LogQL as a query language. Learn more about LOgQL [here](https://grafana.com/docs/loki/latest/logql/)
+Select the label `app` and then select `blue`. You will now see all the `blue` container logs. You can also create your own queries. Learn more about LogQL [here](https://grafana.com/docs/loki/latest/logql/).
 
 ## Creating shortcuts
 

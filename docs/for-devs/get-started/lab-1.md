@@ -8,17 +8,7 @@ Welcome to Otomi! If you are a developer and are going to use Otomi, this gettin
 
 We assume the platform administrator has:
 
-1. Created a team (called `demo` in the labs), allowing the team (using the Team self service flags) to:
-
-- Download docker config
-
-2. Added you as a team member to the team-role in KeyCloak
-3. Provided you with the following information:
-
-- The URL to access the Otomi web UI (Otomi Console)
-- Your login credentials
-
-4. Has activated the following applications:
+1. Activated the following applications:
 
 - Harbor
 - ArgoCD
@@ -26,11 +16,28 @@ We assume the platform administrator has:
 - Loki
 - Grafana
 - Trivy Operator
-- Tekton
 - Gatekeeper (with option `Disable validating webhook` set to true)
 
-After receiving the login credentials, make sure to sign-in to Gitea for the first time:
+For the [Use OpenTelemery](lab-27) Lab, the following additional apps need to be activated:
 
-- Open Gitea
-- Click on `sign-in` in the top left
-- Do not sign in with your username and password, but click on `Sign in with OpenID`
+- Tempo
+
+And tracing for `Istio` and `Nginx Ingress` needs to be enabled.
+
+2. Created a team for you on the platform. In the labs we'll be using a team called `demo`
+3. [Created an account](/docs/apps/keycloak#create-a-user-in-keycloak) and added you as a team member to the team group in KeyCloak
+4. Provided you with the following information:
+
+- The URL to access the Otomi web UI (Otomi Console)
+- Your login credentials
+
+When you have received the URL of the web UI and have a username/password, then it's time to sign-in
+
+## Sign in to the Console
+
+- Go to the provided URL. The URL will look like this: https://otomi.yourdomain.com
+- Sign in with the provided username/password or your existing corporate AD account
+
+After sign in, you will see this page:
+
+![Team apps](../../img/team-apps.png)

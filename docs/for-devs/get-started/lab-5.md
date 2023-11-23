@@ -5,7 +5,7 @@ sidebar_label: Push images
 ---
 
 :::info
-Prerequisite: For this lab, Harbor needs to be activated and the cluster needs to be configured with trusted certificates (like Let's Encrypt using production certificate).
+For this lab, Harbor needs to be activated and the cluster needs to be configured with trusted certificates (like Let's Encrypt using production certificate).
 :::
 
 ## Login to Harbor

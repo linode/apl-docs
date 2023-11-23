@@ -14,7 +14,7 @@ The OWASP rule set can only be enabled when ModSecurity is enabled. Read more ab
 
 ## Automation
 
-Teams will be be automatically given a git repository in Gitea named `team-$teamId-argocd`, and ArgoCD is automatically configured to access the repository and sync. All that is left to do is for a team-admin (or team member with self-service rights) to fill their repository with intended state and commit.
+Teams will be be automatically given a git repository in Gitea named `team-$teamId-argocd`, and Argo CD is automatically configured to access the repository and sync. All that is left to do is for a team-admin (or team member with self-service rights) to fill their repository with intended state and commit.
 
 ## Integrations
 

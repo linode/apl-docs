@@ -39,30 +39,12 @@ The work around for now is to delete all namespaces using this cmd:
 for ns in $(kubectl get ns --field-selector status.phase=Terminating -o jsonpath='{.items[*].metadata.name}'); do  kubectl get ns $ns -ojson | jq '.spec.finalizers = []' | kubectl replace --raw "/api/v1/namespaces/$ns/finalize" -f -; done
 ```
 
-## Drone activation fails when installing Otomi with Cloudflare DNS
-
-**Issue**
-
-When installing Otomi with `otomi.hasExternalDNS=true` and `apps.cert-manager.issuer=letsencrypt` with `apps.cert-manager.stage=staging`, activating Drone is not possible because of the following error:
-
-```
-Post "https://gitea.d3-otomi.net/login/oauth/access_token": x509: certificate signed by unknown authority
-```
-
-**Solution** 
-
-1. Install with `apps.cert-manager.stage=production`
-
-or 
-
-1. In Cloudflare, set the `A-record` for Gitea to proxy status = `DNS Only`. Also make sure your SSL/TLS encryption mode is set to `Full`
-
 
 ## Installing Otomi with DNS fails due to failed authentication for Gitea
 
 **Issue**
 
-When installing Otomi with DNS fails with the following error:
+When installing Otomi with DNS, the installations fails with the following error:
 
 ```
 otomi:cmd:commit:commitAndPush:error remote: Unauthorized

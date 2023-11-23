@@ -24,4 +24,4 @@ So every time an upgrade of the stack is released it is important to follow thes
 4. Do a diff first: `otomi diff`
 5. Run the upgrade script
 6. Check the output and fix anything that needs fixing and repeat steps 4-6
-7. Commit the values when all is well and Drone syncing will take it from there
+7. Commit the values when all is well and the Otomi Tekton pipeline will take it from there

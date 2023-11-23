@@ -27,7 +27,7 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 
 ## 2024 Q1
 
-- Provide UI interface to add Helm charts to developer catalog in Gitea 🔄
+- Provide UI interface for adding Helm charts to developer catalog in Gitea 🔄
 - Implement a new secret management solution (as a replacement for Hashicorp Vault)
 - Implement status indicators within Otomi Console to keep Team users informed about the status of various components, including Build processes, Workload management, and Service availability
 - Harden the Istio service mesh configuration

@@ -4,7 +4,9 @@ title: Product Roadmap
 sidebar_label: Roadmap
 ---
 
-# Supported Kubernetes version
+# Roadmap
+
+## Supported Kubernetes version
 
 We are dedicated to maintain support for three different Kubernetes versions within a specific major version of Otomi. Whenever we decide to discontinue support for a particular Kubernetes version, we increment the major version of Otomi.
 
@@ -14,24 +16,25 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 | v2.0.0        | 1.25, 1.26, 1.27             | 2023-11-28    |
 | v3.0.0        | 1.26, 1.27, 1.28             | 2024-03-28    |
 
-# Roadmap
+# Milestons
 
 ## 2023 Q4
 
-- Provide a developer catalog in Gitea
-- Migrate platform pipeline from Drone to Tekton
-- Leverage Argo CD to deploy Otomi apps and Teams
-- Quality assurance cluster for continuous Otomi hardening and performance testing
+- Provide a developer catalog in Gitea ✅
+- Migrate platform pipeline from Drone to Tekton ✅
+- Leverage Argo CD to deploy Otomi apps and Teams 🔄
+- Quality assurance cluster for continuous Otomi hardening and performance testing ✅
 
 ## 2024 Q1
 
+- Provide UI interface for adding Helm charts to developer catalog in Gitea 🔄
+- Implement a new secret management solution (as a replacement for Hashicorp Vault)
 - Implement status indicators within Otomi Console to keep Team users informed about the status of various components, including Build processes, Workload management, and Service availability
 - Harden the Istio service mesh configuration
 - Add support for ARM architecture
 - Enable user configurable storage classes
 - Implement Gitea with a database managed by the CloudNativePG operator
 - Provide disaster recovery procedures for Otomi core applications, such as Gitea, Keycloak and Harbor
-- Implement a new secret management solution (as a replacement for Hashicorp Vault)
 
 ## 2024 Q2
 

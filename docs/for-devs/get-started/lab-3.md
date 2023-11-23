@@ -54,7 +54,8 @@ Add `Dockerfile`:
 
 ```Dockerfile
 FROM nginxinc/nginx-unprivileged:stable
-COPY blue.html /usr/share/nginx/html/index.html # change to green.html in the green repo!
+# change to green.html in the green repo!
+COPY blue.html /usr/share/nginx/html/index.html
 EXPOSE 8080
 ```
 
@@ -63,34 +64,35 @@ Add `blue.html`:
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Sample Deployment</title>
-  <style>
-    body {
-      color: #ffffff;
-      background-color: blue; # change to green in the green repo!
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-    
-    h1 {
-      font-size: 500%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-    
-    h2 {
-      font-size: 200%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-  </style>
-</head>
-<body>
-  <div align="center">
-    <h1>Welcome to Blue</h1> # change to green in the green repo!
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sample Deployment</title>
+    <style>
+      body {
+        color: #ffffff;
+        background-color: blue; # change to green in the green repo!
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 500%;
+        font-weight: normal;
+        margin-bottom: 0;
+      }
+
+      h2 {
+        font-size: 200%;
+        font-weight: normal;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div align="center">
+      <h1>Welcome to Blue</h1>
+      # change to green in the green repo!
+    </div>
+  </body>
 </html>
 ```

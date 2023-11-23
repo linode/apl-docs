@@ -8,10 +8,10 @@ A Project in Otomi is a collection of a Build, a Workload and a Service in ONE f
 
 ## Create a Project
 
-1. In the right menu click on `Projects` and then on `Create project`.
+1. In the left menu click on `Projects` and then on `Create project`.
 2. Provide a name for the project.
 
-Note: The name of the project will be used for all created otomi resources (build, workload and service). 
+Note: The name of the project will be used for all created otomi resources (build, workload and service).
 
 1. Select `Create build form source` or `Use an existing image`
 2. If `Create build from source` is selected: follow the [instruction](builds.md) for creating a Build

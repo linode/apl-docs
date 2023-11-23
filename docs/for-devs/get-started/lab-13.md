@@ -15,7 +15,7 @@ As a developer, you'll have the following options to deploy serverless workloads
 
 ## About the Developer Catalog
 
-The Developer Catalog in Otomi is a curated list of Helm charts that can be used in workloads to create Kubernetes resources. The catalog by default only contains a set of Otomi quick start Helm charts. 
+The Developer Catalog in Otomi is a curated list of Helm charts that can be used in workloads to create Kubernetes resources. The catalog by default only contains a set of Otomi quick start Helm charts.
 
 ## Create a Workload from the Developer Catalog
 
@@ -23,7 +23,7 @@ Before creating a workload from the developer catalog, we'll need the `repositor
 
 You can create a workload from the developer catalog:
 
-1. Go to `Workloads` in the right menu and click on `New Workload`
+1. Go to `Workloads` in the left menu and click on `New Workload`
 
 2. Add the Name `blue` for the workload
 

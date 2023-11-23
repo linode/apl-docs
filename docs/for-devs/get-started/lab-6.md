@@ -8,18 +8,17 @@ sidebar_label: Build images
 Harbor needs to be activated for this lab.
 :::
 
-When your team is using Harbor for private image registries and Tekton is enabled, you can build images from source using pre-configured Tekton pipelines using the [paketo](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) task or the [Kaniko](https://github.com/GoogleContainerTools/kaniko) task to build images from application source.
+When your team is using Harbor for private image registries, you can build images from source using pre-configured Tekton pipelines using the [paketo](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) task or the [Kaniko](https://github.com/GoogleContainerTools/kaniko) task to build images from application source.
 
 ## Build the blue image
 
-1. In the right menu, click on `Build`
+1. In the left menu, click on `Builds`
 2. Click on `Create Build`
 3. Fill in the name `blue` for your build and a tag (default tag is latest)
-4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab. 
-6. Click `Submit`
+4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab.
+5. Click `Submit`
 
-Otomi will now create all the Tekton resources to build the image. To see the status of the build, click on `PipelineRun` of your build in the list of Builds. This will open the Tekton Dashboard and show the status of the PipelineRun of the build.
-
+Otomi will now leverage Tekton Pipeline to build the image. To see the status of the build, go to Tekton App and click on `PipelineRun` of your build in the list of Builds. This will open the Tekton Dashboard and show the status of the PipelineRun of the build.
 
 When the build is ready you can see the image in Harbor:
 

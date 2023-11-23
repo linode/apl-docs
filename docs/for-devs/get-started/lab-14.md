@@ -13,7 +13,7 @@ Otomi uses Knative serving for serverless (or Function as a Service) support.
 As a developer, you'll have the following options to deploy serverless workloads:
 
 - BYO Knative service manifest and deploy it using kubectl or ArgoCD
-- Create workloads with the deployment Helm chart  in `otomi-charts`
+- Create workloads with the deployment Helm chart in `otomi-charts`
 - Create workloads with the Knative Helm chart in `otomi-charts`
 
 In this lab we're going to create a workload in Otomi to create a Knative service using the knative chart in `otomi-charts`.
@@ -22,7 +22,7 @@ In this lab we're going to create a workload in Otomi to create a Knative servic
 
 You can create a workload to deploy your own Helm chart, or you can use one of the `otomi-charts` Helm charts. In this case we'll use the deployment chart in the `otomi-charts` repository.
 
-1. Go to `Workloads` in the right menu and click on `New Workload`
+1. Go to `Workloads` in the left menu and click on `New Workload`
 
 2. Choose `Function as a Service`
 
@@ -75,9 +75,4 @@ The values of a workload can be changed at any time. Changes will automatically 
 - Under `Exposure Ingress`, select `Ingress` and use the default configuration
 
 - Click on `Submit`
-  
 - Click on `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).
-
-
-
-

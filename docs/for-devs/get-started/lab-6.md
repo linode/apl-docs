@@ -12,7 +12,7 @@ When your team is using Harbor for private image registries, you can build image
 
 ## Build the blue image
 
-1. In the left menu, click on `Build`
+1. In the left menu, click on `Builds`
 2. Click on `Create Build`
 3. Fill in the name `blue` for your build and a tag (default tag is latest)
 4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab.

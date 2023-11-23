@@ -45,3 +45,13 @@ The build should now have started. Based on the webhook, Tekton has now created 
 3. Tekton Dashboard will open and show a list of all the PipelineRuns
 4. Click on the PipelineRun with the name `docker-trigger-build-green-*`
 5. You can now see the status of the build
+
+## Find your image in Harbor
+
+The build succeeded. Now it is time to see artifacts
+
+1. In Otomi Console, got to Apps and click on `Harbor`
+2. Click `LOGIN VIA OIDC PROVIDER`
+3. Navigate to the `team-demo` project
+4. In the `Repositories` tab, click `team-demo/blue` link
+5. Observe artifacts

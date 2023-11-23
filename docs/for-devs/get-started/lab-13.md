@@ -6,12 +6,7 @@ sidebar_label: Create workloads
 
 In the previous lab we explained how to deploy a workload with using Argo CD in Otomi. In this part we'll deploy a regular workload (a Kubernetes Deployment) using the Otomi Developer Catalog.
 
-When creating workloads in Otomi, the specifications (URL and path) and the values of a Helm chart is stored in `otomi-values` and then used to automatically create the Argo CD resources to deploy the workload.
-
-As a developer, you'll have the following options to deploy serverless workloads:
-
-- BYO Knative manifests and deploy it using Argo CD
-- Create workloads using the Developer Catalog in Otomi
+The Otomi Developer Catalog allows to store any Helm chart in the `otomi/charts` git repository at Gitea. By deploying a given Helm chart from the catalog, Otomi saves the corresponding Helm chart values in a separate file the `otomi/values` repo. Otomi configures ArgoCD to observe that file and automatically deploy changes upon file change (GitOps).
 
 ## About the Developer Catalog
 

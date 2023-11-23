@@ -56,10 +56,6 @@ module.exports = [
     to: "/docs/get-started/activation",
   },
   {
-    from: ["/docs/for-devs/overview/"],
-    to: "/docs/for-devs/get-started/",
-  },
-  {
     from: ["/docs/get-started/known-issues"],
     to: "/docs/get-started/installation/known-issues",
   },

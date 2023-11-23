@@ -69,7 +69,7 @@ function Home() {
           <div className={`${clsx(styles.appsContainer)}`}>
             <br></br>
           <div className={styles.iframeWrapper}>
-          <iframe width="960" height="540" className={styles.iframeVideo} src="https://www.youtube.com/embed/YXUDTgc9rXE" title="Build, Deploy and Expose containerized applications with Otomi"  allow="fullscreen;"></iframe> 
+          <iframe width="960" height="540" className={styles.iframeVideo} src="https://www.youtube.com/embed/RI4pIVxbhS0?si=_hslbXVlnjoQdJmG" title="Use Otomi as a self servive portal for developers"  allow="fullscreen;"></iframe> 
           </div>
 
           </div>

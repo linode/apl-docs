@@ -18,7 +18,7 @@ When your team is using Harbor for private image registries, you can build image
 4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab.
 5. Click `Submit`
 
-Otomi will now create all the Tekton resources to build the image. To see the status of the build, click on `PipelineRun` of your build in the list of Builds. This will open the Tekton Dashboard and show the status of the PipelineRun of the build.
+Otomi will now leverage Tekton Pipeline to build the image. To see the status of the build, go to Tekton App and click on `PipelineRun` of your build in the list of Builds. This will open the Tekton Dashboard and show the status of the PipelineRun of the build.
 
 When the build is ready you can see the image in Harbor:
 

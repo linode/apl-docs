@@ -59,7 +59,7 @@ function Home() {
         </div>
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
-            <h1>DEMO</h1> <h4>CODE, BUILD and RUN apps on Kubernetes with OTOMI</h4>
+            <h1>DEMO</h1> <h4>Use Otomi as a Kubernetes self servive portal for developer</h4>
           </div>
         </div>
         <div

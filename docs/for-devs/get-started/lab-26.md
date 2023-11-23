@@ -8,7 +8,7 @@ In the previous lab we created a build in Otomi using the `blue` repo in Gitea. 
 
 ## Create a build in Otomi with Trigger enabled
 
-1. In the right menu, click on `Build`
+1. In the left menu, click on `Build`
 2. Click on `Create Build`
 3. Fill in the name `green` for your build
 4. Choose `./Dockerfile` and fill in the repo URL for the `green` repo created in the previous lab.
@@ -45,6 +45,3 @@ The build should now have started. Based on the webhook, Tekton has now created 
 3. Tekton Dashboard will open and show a list of all the PipelineRuns
 4. Click on the PipelineRun with the name `docker-trigger-build-green-*`
 5. You can now see the status of the build
-
-
-

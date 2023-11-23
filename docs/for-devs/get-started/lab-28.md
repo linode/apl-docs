@@ -19,7 +19,7 @@ For this lab we need the 2 images (`blue` and `green`) we already created in the
 
 Go to the list of Builds and add the repository of the `green` build to your clipboard.
 
-1. Go to `Workloads` in the right menu and click on `New Workload`
+1. Go to `Workloads` in the left menu and click on `New Workload`
 
 2. Add the Name `canary` for the workload
 
@@ -58,7 +58,7 @@ We now created 2 deployments. One for `blue` and one for `green`. The `green` im
 
 - In the left menu panel under click `Services` then click on `Create Service`
 
-- Select the  `canary` service
+- Select the `canary` service
 
 - Under `Traffic Control` click `enabled` (and use the default weights for v1 and v2)
 
@@ -78,7 +78,6 @@ After a refresh of the page you should see:
 
 ![Team apps](../../img/canary-v2.png)
 
-
 ## Update the canary image
 
 Go to the `green` repo and change the `background-color` in the `green.html` file from `green` to `MediumSeaGreen` and commit the change. After a couple of minutes you should now see the background color of version 1 (our canary) changed:
@@ -86,6 +85,3 @@ Go to the `green` repo and change the `background-color` in the `green.html` fil
 ![Team apps](../../img/canary-v2-mediumgreen.png)
 
 Do you see the difference?
-
-
-

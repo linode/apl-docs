@@ -16,7 +16,7 @@ Before creating a workload from the developer catalog, we'll need the `repositor
 
 You can now create a workload from the developer catalog:
 
-1. Go to `Workloads` in the right menu and click on `New Workload`
+1. Go to `Workloads` in the left menu and click on `New Workload`
 
 2. Add the Name `green` for the workload
 
@@ -53,35 +53,35 @@ Now go to the `green` repo in Gitea and change the color in the `green.html` to 
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Sample Deployment</title>
-  <style>
-    body {
-      color: #ffffff;
-      background-color: orange
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-    
-    h1 {
-      font-size: 500%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-    
-    h2 {
-      font-size: 200%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-  </style>
-</head>
-<body>
-  <div align="center">
-    <h1>Welcome to Orange</h1>
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sample Deployment</title>
+    <style>
+      body {
+        color: #ffffff;
+        background-color: orange
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 500%;
+        font-weight: normal;
+        margin-bottom: 0;
+      }
+
+      h2 {
+        font-size: 200%;
+        font-weight: normal;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div align="center">
+      <h1>Welcome to Orange</h1>
+    </div>
+  </body>
 </html>
 ```
 

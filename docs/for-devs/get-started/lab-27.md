@@ -46,7 +46,7 @@ git push --mirror https://gitea.<your-domain>/<your-user-name>/petclinic.git
 
 Go to the list of Builds and add the repository of the `petclinc` build to your clipboard. Remember that the tag is latest.
 
-1. Go to `Workloads` in the right menu and click on `New Workload`
+1. Go to `Workloads` in the left menu and click on `New Workload`
 
 2. Add the Name `petclinic` for the workload
 

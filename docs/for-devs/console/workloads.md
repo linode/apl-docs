@@ -16,11 +16,10 @@ Ask your platform administrator to activate Argo CD to be able to use this featu
 
 All known Workloads of the team are listed here.
 
-| Property      | Description                                            |
-| ------------- | ------------------------------------------------------ |
-| Name | The name of the workload                               |
-| Argocd | Link to the Argo CD application in the Argo CD UI               |
-
+| Property | Description                                       |
+| -------- | ------------------------------------------------- |
+| Name     | The name of the workload                          |
+| Argocd   | Link to the Argo CD application in the Argo CD UI |
 
 ## Create a Workload
 
@@ -28,7 +27,7 @@ Before creating a workload from the developer catalog, we'll need the `repositor
 
 1. Go to the list of Builds and add the `repository` of the build to use to your clipboard. Remember the tag.
 
-2. Go to `Workloads` in the right menu and click on `New Workload`
+2. Go to `Workloads` in the left menu and click on `New Workload`
 
 3. Add a `Name` for the workload
 

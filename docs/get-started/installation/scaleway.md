@@ -47,7 +47,7 @@ scw k8s cluster create name=$SCALEWAY_CLUSTER_NAME \
 ## Configure DNS
 
 :::info AlERT
-Support for Scaleway DNS is tested, but not officially released yet!
+Support for Scaleway DNS is coming soon!
 :::
 
 ### Importing a Domain into Scaleway DNS
@@ -80,7 +80,6 @@ cluster:
   domainSuffix: your-sub-domain.example.com
 otomi:
   hasExternalDNS: true
-  version: scaleway-dns
 dns:
   domainFilters: 
     - example.com

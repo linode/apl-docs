@@ -29,24 +29,33 @@ gcloud services enable container.googleapis.com
 
 ## Create a GKE cluster
 
-Set up environment variables
+Set up environment variables:
+
+:::info
+Change the Machine Type to match a type supported in your region.
+:::
 
 ```bash
 # Set Cluster name
 CLUSTER_NAME=otomi
 # Set region
 COMPUTE_REGION=europe-west4
+# Set machine type
+MACHINE_TYPE=e2-standard-8
 ```
 
+Create the cluster:
+
 ```bash
-# Create the cluster 
 gcloud container clusters create $CLUSTER_NAME \
     --enable-autoscaling \
     --enable-network-policy \
     --num-nodes 1 \
     --min-nodes 1 \
-    --max-nodes 3 \
-    --machine-type e2-standard-8 \
+    --max-nodes 2 \
+    --machine-type $MACHINE_TYPE \
+    --logging NONE \
+    --monitoring NONE \
     --region $COMPUTE_REGION
 ```
 

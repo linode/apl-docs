@@ -4,6 +4,10 @@ title: Hashicorp Vault
 sidebar_label: Hashicorp Vault
 ---
 
+:::note
+Hashicorp Vault is being deprecated in Otomi. We are going to replace this app with solution based on SealedSecrets.
+:::
+
 HashiCorp Vault is a shared application for securely storing and managing secrets. Read more about Vault [here](https://www.vaultproject.io/docs/what-is-vault).
 Vault has been made tenant aware in Otomi. When it is enabled, a space will automatically be created for each team, and only team members are allowed access. Vault is automatically configured to use Otomi's Keycloak OIDC settings to login users through Otomi's SSO.
 

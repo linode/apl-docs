@@ -17,6 +17,7 @@ Group (team) membership is reflected in the user's 'groups' claim. When this aut
 When there are different requirements to use Keycloak for business applications, Keycloak's designated "master" and "otomi" realms may not be used, and an additional realm needs to be created. We refer to the keycloak docs for any custom configuration targeting business applications.
 
 ## Instructions
+
 ### Create a user in Keycloak
 
 To create users in Keycloak, follow these steps:
@@ -25,15 +26,15 @@ To create users in Keycloak, follow these steps:
 2. Click on `Administration Console`
 3. Login with admin credentials (using `otomi-admin` user and password provided in the installer log or the `otomi.adminPassword` provided in the initial values)
 4. Select the `Otomi` realm
-5. Click on `Users` then `Create user`
+5. Click on `Users` then `Add user`
 6. Fill in a user name in the `Username` field
 7. Fill in your email address in the `Email` field
 8. Select `Email verified`
 9. Click `Join Groups`
 10. Add the user to the required group (Team)
 11. Click `Create`
-10. Choose the `Credentials` tab and then `Set password`
-11. Fill in a password
-12. Optional: Make te password `Temporary`. This requires the user to change the password at the first login
-13. Click on "Save"
-14. Click `Save password`
+12. Choose the `Credentials` tab and then `Set password`
+13. Fill in a password
+14. Optional: Make te password `Temporary`. This requires the user to change the password at the first login
+15. Click on "Save"
+16. Click `Save password`

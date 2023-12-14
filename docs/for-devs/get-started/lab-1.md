@@ -20,8 +20,8 @@ We assume the platform administrator has:
 
 For the [Use OpenTelemery](lab-27) Lab, the Tempo app needs to be enabled together with tracing at `Istio` and `Nginx Ingress` apps.
 
-1. Created a team for you on the platform. In the labs we'll be using a team called `demo`
-2. [Created an account](/docs/apps/keycloak#create-a-user-in-keycloak) and added you as a team member to the team group in KeyCloak
+1. Created a team called `demo`
+2. [Created an account](/docs/apps/keycloak#create-a-user-in-keycloak) and added your user the team group in Keycloak
 3. Provided you with the following information:
 
 - The URL to access the Otomi web UI (Otomi Console)

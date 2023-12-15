@@ -1,12 +1,12 @@
 ---
 slug: overview
-title: Get started with Otomi for Developers Labs
+title: Get started with Otomi Labs
 sidebar_label: Get Started Labs
 ---
 
-**Otomi getting started labs for developers**
+**Otomi get started labs**
 
-Welcome to Otomi! If you are a developer and are going to use Otomi, these getting started labs are for you. Step by step we'll guide you in using Otomi to deploy and manage your containerized applications. The getting started with Otomi for developers contains a set of labs to cover the most common developer activities.
+Welcome to Otomi! If you are going to use Otomi, these getting started labs are for you. Step by step we'll guide you in using Otomi to build, deploy and manage your containerized applications. The getting started with Otomi contains a set of labs to cover the most common activities performed by developer- and/or DevOps teams.
 
 ---
 
@@ -32,6 +32,8 @@ Welcome to Otomi! If you are a developer and are going to use Otomi, these getti
 ### [Create secrets](lab-8)
 
 ### [BYO manifest to create a workload](lab-10)
+
+### [Explore the Catalog](lab-29)
 
 ### [Create a workload using the developer catalog](lab-13)
 
@@ -65,7 +67,11 @@ Welcome to Otomi! If you are a developer and are going to use Otomi, these getti
 
 ### [View container metrics](lab-21)
 
-### [Monitor custom metrics](lab-22)
+### [Using custom metrics](lab-22)
+
+### [Create custom dashboards](lab-30)
+
+### [Create custom rules](lab-31)
 
 ### [Monitoring availability](lab-23)
 

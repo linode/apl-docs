@@ -6,9 +6,13 @@ sidebar_label: Prerequisites
 
 Welcome to Otomi! If you are a developer and are going to use Otomi, this getting started guide is for you. In this first part we are going to make sure everything is ready to get started.
 
+## Prerequisites
+
 We assume the platform administrator has:
 
-1. Activated the following applications:
+1. Installed Otomi with DNS configured
+
+2. Activated the following applications:
 
 - Harbor
 - ArgoCD
@@ -18,11 +22,11 @@ We assume the platform administrator has:
 - Trivy Operator
 - Gatekeeper (with option `Disable validating webhook` set to true)
 
-For the [Use OpenTelemery](lab-27) Lab, the Tempo app needs to be enabled together with tracing at `Istio` and `Nginx Ingress` apps.
+For the [Use OpenTelemery](lab-27) Lab, the Tempo app needs to be enabled together with tracing in the `Istio` and `Nginx Ingress` apps.
 
-1. Created a team called `demo`
-2. [Created an account](/docs/apps/keycloak#create-a-user-in-keycloak) and added your user the team group in Keycloak
-3. Provided you with the following information:
+3. Created a team called `demo` with `Managed prometheus and alert manager` enabled
+4. [Created an account](/docs/apps/keycloak#create-a-user-in-keycloak) and added your user to the team group in Keycloak
+5. Provided you with the following information:
 
 - The URL to access the Otomi web UI (Otomi Console)
 - Your login credentials

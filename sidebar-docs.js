@@ -27,7 +27,7 @@ module.exports = {
       "get-started/activation",
       "for-devs/get-started/overview",
     ],
-    "For Ops": [
+    "For Platform Admins": [
       {
         "Otomi Console": [
           "for-ops/console/overview",
@@ -63,7 +63,7 @@ module.exports = {
       {
         "How To": [
           "for-ops/how-to/overview",
-          "for-ops/how-to/dev-catalog",
+          "for-ops/how-to/use-catalog",
           "for-ops/how-to/ingress-classes",
           "for-ops/how-to/use-team-admin",
           "for-ops/how-to/core-only",
@@ -111,10 +111,11 @@ module.exports = {
         ],
       },
     ],
-    "For Devs": [
+    "For Team Members": [
       {
         "Otomi Console": [
           "for-devs/console/apps",
+          "for-devs/console/catalog",
           "for-devs/console/shortcuts",
           "for-devs/console/projects",
           "for-devs/console/builds",
@@ -133,6 +134,7 @@ module.exports = {
           "for-devs/get-started/lab-26",
           "for-devs/get-started/lab-8",
           "for-devs/get-started/lab-10",
+          "for-devs/get-started/lab-29",
           "for-devs/get-started/lab-13",
           "for-devs/get-started/lab-11",
           "for-devs/get-started/lab-24",
@@ -144,6 +146,8 @@ module.exports = {
           "for-devs/get-started/lab-20",
           "for-devs/get-started/lab-21",
           "for-devs/get-started/lab-22",
+          "for-devs/get-started/lab-30",
+          "for-devs/get-started/lab-31",
           "for-devs/get-started/lab-23",
           "for-devs/get-started/lab-25",
           "for-devs/get-started/lab-27",

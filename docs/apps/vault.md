@@ -5,7 +5,7 @@ sidebar_label: Hashicorp Vault
 ---
 
 :::note
-Hashicorp Vault is being deprecated in Otomi. We are going to replace this app with solution based on SealedSecrets.
+Hashicorp Vault is being deprecated. The Otomi Secrets feature is soon going to be based on SealedSecrets.
 :::
 
 HashiCorp Vault is a shared application for securely storing and managing secrets. Read more about Vault [here](https://www.vaultproject.io/docs/what-is-vault).

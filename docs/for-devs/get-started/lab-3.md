@@ -9,12 +9,14 @@ As a developer you'll need a Git repository for your code. Most organizations wi
 As a team member, you can create and manage your own repositories.
 
 :::info
-Otomi does not create a group in Gitea that contains all the team members. Team members first have to sign in to Gitea (using OpenID), after which they are automatically added to the correct team.
+Team members first have to sign in to Gitea (using OpenID), after which they are automatically added to the correct team.
 :::
 
 :::info
-The `otomi-admin` account is unable to login with OpenID, this account needs to login with the normal login form.
+The `otomi-admin` account is unable to login with OpenID, this account needs to login with the user/password login form.
 :::
+
+In these labs we'll be using a Team called `labs` and a user called `labs-user`.
 
 ## Create a private repository
 

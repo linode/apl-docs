@@ -29,9 +29,9 @@ Before creating a workload from the developer catalog, we'll need the `repositor
 
 2. Go to `Workloads` in the left menu and click on `New Workload`
 
-3. Add a `Name` for the workload
+3. Select a template from the catalog to use
 
-4. Select a template from the catalog to use
+4. Add a `Name` for the workload
 
 5. (Optional) Configure the `Auto image updater`. Default is `Disabled`.
 

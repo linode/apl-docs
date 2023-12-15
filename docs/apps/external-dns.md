@@ -9,9 +9,5 @@ External-dns is required to make public service domains accessible by registerin
 The use of external-dns is a prerequisite for using the following features:
 
 - Harbor private registries for teams
-- Builds (rely on Harbor)
-- Projects (rely on Harbor)
-
-## Configuration values
-
-External-dns can be configured in the [DNS section](/docs/for-ops/console/settings/dns) of the Platform Setting
+- Builds (relies on Harbor)
+- Projects (relies on Harbor)

@@ -48,7 +48,7 @@ Now go to the [Expose services](lab-18) lab and expose the `green` service. When
 
 In the Trigger Builds lab we already created a Build called `green` and configured it with a trigger.
 
-Now go to the `green` repo in Gitea and change the color in the `green.html` to `orange`:
+Now go to the `green` repo in Gitea and change the the welcome message:
 
 ```html
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ Now go to the `green` repo in Gitea and change the color in the `green.html` to 
     <style>
       body {
         color: #ffffff;
-        background-color: orange
+        background-color: green
         font-family: Arial, sans-serif;
         font-size: 14px;
       }
@@ -79,7 +79,7 @@ Now go to the `green` repo in Gitea and change the color in the `green.html` to 
   </head>
   <body>
     <div align="center">
-      <h1>Welcome to Orange</h1>
+      <h1>Welcome to the improved Green app</h1>
     </div>
   </body>
 </html>
@@ -87,6 +87,4 @@ Now go to the `green` repo in Gitea and change the color in the `green.html` to 
 
 And commit changes.
 
-After the change has been committed, go to `Services` in the left menu and click on the Url of the `green` service. After a couple of minutes (note that the auto image update checks for changes every 2 minutes) you should see an `orange` page saying `Welcome to Orange`
-
-Now go to `Services` in the left menu and click on the Url of the `green` service. What do you see?
+After the change has been committed, go to `Services` in the left menu and click on the Url of the `green` service. After a couple of minutes (note that the auto image update checks for changes every 2 minutes) you should see a `green` page saying `Welcome to the improved Green app`

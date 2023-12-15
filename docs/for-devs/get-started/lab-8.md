@@ -8,6 +8,10 @@ sidebar_label: Create secrets
 Hashicorp Vault needs to be activated for this lab.
 :::
 
+:::note
+Hashicorp Vault is being deprecated in Otomi. We are going to replace this app with solution based on SealedSecrets.
+:::
+
 When the platform administrator has enabled Vault, you can use Vault to store and manage secrets. Secrets in Vault can be synchronized to your team namespace as Kubernetes secrets. In this part we'll first create a secret in Vault and then sync the secret to your team namespace using the Secrets option in Otomi Console.
 
 ## Create a secret in Vault
@@ -59,11 +63,9 @@ The secret is now created in vault. Now we need to synchronize the secret in Vau
 
 - Now click on `Deploy Changes` on top of the left menu
 
-
 The secret in Vault will now be synchronized to Kubernetes and can be used by the team in any workload. Otomi Console makes this easy by offering a secret selector during the creation of services.
 
 :::info
 
 In this part we only covered using generic secrets. See [here](../console/secrets) to see how you can create TLS and pull secrets
 :::
-

@@ -1,7 +1,7 @@
 ---
 slug: dev-catalog
-title: Managing the Developer Catalog
-sidebar_label: Manage Developer Catalog
+title: Managing the Catalog
+sidebar_label: Manage the Catalog
 ---
 
 Otomi offers a Catalog to Teams on the platform to offer them golden path templates (Helm charts). This is how it works:

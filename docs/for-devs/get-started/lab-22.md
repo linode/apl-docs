@@ -12,7 +12,7 @@ To be able to collect custom metrics you will need to expose this data in your c
 
 Instrumenting code means you write code to expose information about the technical, business, and customer context. This information can then be collected and analyzed using Prometheus and Grafana.
 
-In this guide we will not dive into the way how to instrument your code. We will assume you have a container that exposes custom metrics and will show how the custom metrics can be collected and analysed.
+In this lab we'll not dive into the way how to instrument your code. We will use a container that exposes custom metrics and then show how the metrics can be collected and analysed.
 
 
 ## Create a Workload
@@ -39,14 +39,7 @@ servicePorts:
     targetPort: 8080
     protocol: TCP
     name: web
-resources:
-  limits:
-    cpu: 300m
-    memory: 128Mi
-  requests:
-    cpu: 100m
-    memory: 32Mi
-replicaCount: 1
+replicaCount: 2
 serviceMonitor:
   create: true
   endpoints:
@@ -60,7 +53,7 @@ serviceMonitor:
 
 ## Check the status of the ServiceMonitor
 
-Check if the ServiveMonitor is now being scraped by Prometheus:
+Check if the ServiveMonitor has been picked up by Prometheus:
 
 1. In the left menu go to `Apps`
 
@@ -72,7 +65,7 @@ Check if the ServiveMonitor is now being scraped by Prometheus:
 
 ![metrics](../../img/custom-metrics.png)
 
-Okay, our custom metrics are now being scraped by the Team's own Prometheus. Before we continue, let's first generate some load so we can see actual metrics;
+Okay, our metrics are now being scraped by the Team's Prometheus. Before we continue, let's first generate some load:
 
 1. Go to the [Expose services](lab-18) lab and expose the `custom-metrics` service
 
@@ -82,11 +75,11 @@ Okay, our custom metrics are now being scraped by the Team's own Prometheus. Bef
 for i in {1..1000}; do curl https://custom-metrics-labs.<your-domain>/hello; sleep 10; done
 ```
 
-3. Wait for approximately 10 minutes
+3. Wait for approximately 10 minutes...
 
 ## See the custom metrics
 
-To see the custom metrics:
+To see the metrics:
 
 1. Open the `Prometheus` app
 
@@ -105,13 +98,3 @@ Prometheus is now scraping our custom metrics. You can now use these metrics to:
 
 - Create a dashboard in Grafana in the lab [Create custom dashboards](lab-30)
 - Create rules and send alerts in the lab [Create custom rules](lab-31)
-
-## Things to be aware of
-
-In this lab we are using the `k8s-deployment` template. In this template the follow `label` is added:
-
-```yaml
-otomi.io/team: team-labs
-```
-
-This label is needed for the team's Prometheus to use the `ServiceMonitor` because of strict networkpolicies. If you would like to create you're own ServiceMonitors, them always add the `otomi.io/team` label to your pods!

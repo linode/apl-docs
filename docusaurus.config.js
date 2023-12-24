@@ -148,10 +148,10 @@ module.exports = {
           items: [
             {
               label: "Installation",
-              to: "/docs/get-started/installation",
+              to: "/docs/get-started/installation/overview",
             },
             {
-              label: "Get started for Devs",
+              label: "Get started labs",
               href: "/docs/for-devs/get-started/overview",
             },
             {

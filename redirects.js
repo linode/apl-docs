@@ -33,7 +33,7 @@ module.exports = [
   },
   {
     from: ["/docs/installation/chart"],
-    to: "/docs/get-started/installation",
+    to: "/docs/get-started/installation/helm",
   },
   {
     from: ["/docs/installation/cli"],
@@ -41,7 +41,7 @@ module.exports = [
   },
   {
     from: ["/docs/installation/optional"],
-    to: "/docs/get-started/installation",
+    to: "/docs/get-started/installation/overview",
   },
   {
     from: ["/docs/installation/post-install"],

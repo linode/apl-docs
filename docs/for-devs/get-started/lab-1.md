@@ -4,11 +4,11 @@ title: Prerequisites for getting started
 sidebar_label: Prerequisites
 ---
 
-Welcome to Otomi! If you are a developer and are going to use Otomi, this getting started guide is for you. In this first part we are going to make sure everything is ready to get started.
+Welcome to Otomi! If you would like to explore Otomi, this getting started guide is for you.
 
 ## Prerequisites
 
-We assume the platform administrator has:
+We assume you (or the platform administrator) have:
 
 1. Installed Otomi with DNS configured
 

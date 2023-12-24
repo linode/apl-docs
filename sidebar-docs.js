@@ -1,11 +1,12 @@
 module.exports = {
   mainSidebar: {
     "Getting Started": [
+      "get-started/overview",
       "get-started/promo",
       "get-started/prerequisites",
       {
         "Installation": [
-          "get-started/overview",
+          "get-started/installation/overview",
           "get-started/installation/aws",
           "get-started/installation/azure",
           "get-started/installation/civo",

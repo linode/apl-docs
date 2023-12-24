@@ -11,6 +11,30 @@ When installing Otomi using the chart, make sure the following client binaries e
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to access the cluster
 - [Helm](https://helm.sh/docs/intro/install/) for helm chart installation of Otomi
 
+## Kubernetes
+
+Otomi requires a (Vanilla) Kubernetes cluster.
+
+### Versions
+
+Otomi currently supports the following Kubernetes versions:
+
+- `1.25`
+- `1.26`
+- `1.27`
+
+### Minimal compute resource requirements
+
+Otomi requires a node pool with at least **12 vCPU** and **12 GiB RAM**. Note that this is the requirements for a minimal install. When activating more apps, you'll probably need more resources.
+
+### CNI
+
+To use the network policies feature in Otomi, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI or any other CNI that supports Kubernetes network polices.
+
+### CSI
+
+Install a CSI driver for exposing block and file storage systems to containerized workloads.
+
 ## Supported Providers
 
 ### Azure (AKS)
@@ -33,7 +57,7 @@ To install Otomi on a Kubernetes cluster in Digital Ocean, use the `digitalocean
 
 To install Otomi on a OVHcloud [Managed Kubernetes Service](https://www.ovhcloud.com/en-gb/public-cloud/kubernetes/), use the `ovh` provider.
 
-### Linode Kubernetes Engine
+### Linode Kubernetes Engine (LKE)
 
 To install Otomi on a [Linode Kubernetes Engine](https://www.linode.com/products/kubernetes/) cluster, use the `linode` provider.
 
@@ -54,28 +78,5 @@ Otomi installs and configures Nginx as a default ingress controller. When launch
 
 ### All others
 
-Use the `custom` provider for all other clouds, and when running Kubernetes on your own hardware (including Minikube on your local machine). The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that obtains an external accessible IP.
+Use the `custom` provider for all other clouds, and when running Kubernetes on your own hardware. The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that can obtain an external accessible IP.
 
-:::info NOTE
-When using Minikube, only Otomi Core apps can be used! Activating more apps will require more compute resources. We advise to have a node pool available with at least 12 vCPU and 24 GiB memory.
-:::
-
-## Kubernetes versions
-
-Otomi currently supports the following Kubernetes versions:
-
-- `1.25`
-- `1.26`
-- `1.27`
-
-## Minimal compute resource requirements
-
-Otomi requires a node pool with at least **8 vCPU** and **16 GiB RAM**. Note that this is the requirements for a minimal install. When activating more apps, you'll probably need more resources.
-
-:::info ATTENTION
-The minimal resource requirement to run Otomi is based on running Core Apps only! The core apps provide an advanced ingress architecture based on Nginx, Istio, Keycloak, Oaut2 Proxy and Certmanager. Activating optional apps will require more compute resources. We advise to have a node pool available with 16 vCPU and 24 GiB memory.
-:::
-
-## CNI
-
-To use the network policies feature in Otomi, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI or any other CNI that supports Kubernetes network polices.

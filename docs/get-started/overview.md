@@ -1,67 +1,24 @@
 ---
-slug: installation
-title: Installation
+slug: overview
+title: Overview
 sidebar_label: Overview
 ---
 
-**How to install Otomi on various cloud and infrastructure platforms**
+
+
+**How to get started with Otomi**
 
 ---
 
-### [AWS](installation/aws.md)
-Install Otomi on EKS using Route53 for DNS
+### Step 1: [Read the prerequisites](prerequisites.md)
+Know what is required to install Otomi.
 
-### [Azure](installation/azure.md)
-Install Otomi on AKS using an Azure public DNS zone
 
-### [Civo](installation/civo.md)
-Install Otomi on Civo K3s using Civo DNS
+### Step 2: [Install Otomi](installation/overview.md)
+Deploy a Kubernetes cluster in your favourite cloud or infrastructure and install Otomi on it. The examples on how to deploy a Kubernetes cluster are only to help you get started.
 
-### [Custom](installation/custom.md)
-Install Otomi on any other cloud or infrastructure platforms
+### Step 3: [Activate your installation ](activation.md)
+Activate your Otomi installation on [otomi.cloud](https://portal.otomi.cloud)
 
-### [Digital Ocean](installation/digitalocean.md)
-Install Otomi on Digital Ocean using Digital Ocean DNS
-
-### [Google Cloud Platform](installation/gcp.md)
-Instal Otomi on GKE with Cloud DNS
-
-### [Linode](installation/linode.md)
-Install Otomi on Linode Kubernetes Engine using Linode DNS
-
-### [Scaleway](installation/scaleway.md)
-Install Otomi on Kapsule Kubernetes in Scaleway using a Scaleway Internal Domain
-
-### [Vultr](installation/vultr.md)
-Install Otomi on Vultr Kubernetes using Cloudflare DNS
-
----
-
-**Other installation resources**
-
-### [Helm](installation/helm.md)
-Instructions for using the Otomi Helm chart
-
-### [Minikube](installation/minikube.md)
-Install Otomi on Minikube
-
-### [Know issues](installation/known-issues.md)
-Know installation issues
-
----
-
-**Advanced configurations**
-
-### [Use Azure AD as IDP](installation/oidc.md)
-Install Otomi with Azure AD for OIDC
-
-### [Use KMS to manage keys for encryption](installation/kms.md)
-Install Otomi with KMS
-
-### [Configure an entrypoint for an external gateway](installation/entrypoint.md)
-Install Otomi with an entrypoint for an external gateway
-
-### [Bring Your Own Wild Card Certificate](installation/byo-wildcard.md)
-Install Otomi using a BYO wild card certificate
-
----
+### Step 4: [Explore Otomi with the Get Stared Labs](/docs/for-devs/get-started/overview)
+The get started with Otomi labs contains a set of labs to cover all the Otomi supported activities performed by developer- and/or DevOps teams.

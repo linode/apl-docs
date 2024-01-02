@@ -35,9 +35,9 @@ function Home() {
                 className={styles.heroLogo}
                 src={useBaseUrl("img/otomi-logo.svg")}
               />
-              Self hosted PaaS for Kubernetes
+              Self hosted DevOps PaaS for Kubernetes
             </h1>
-            <h2 className={styles.heroProjectSubLine}>A paved road for developers from code to production</h2>
+            <h2 className={styles.heroProjectSubLine}>A paved road for DevOps teams from code to production</h2>
             <div className={styles.indexCtas}>
               <Link
                 className={styles.indexCtasGetStartedButton}
@@ -59,7 +59,7 @@ function Home() {
         </div>
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
-            <h1>DEMO</h1> <h4>Use Otomi as a Kubernetes self servive portal for developer</h4>
+            <h1>DEMO</h1> <h4>Use Otomi as a self servive portal for DevOps teams when using Kubernetes</h4>
           </div>
         </div>
         <div

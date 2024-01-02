@@ -1,10 +1,10 @@
 ---
 slug: dashboard
-title: Team Dashboard
+title: Platform Dashboard
 sidebar_label: Dashboard
 ---
 
-The team dashboard gives a global overview of information most relevant to the team.
+The platform dashboard gives a global overview of information most relevant to the team. In the top bar, select the View: `platform`.
 
 ## Prerequisites
 

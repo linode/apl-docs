@@ -4,21 +4,21 @@ title: Publicly expose your application
 sidebar_label: Expose services
 ---
 
-When you have deployed your app, you will probably like to expose it publicly. Maybe you noticed that in the previous labs, we created a Kubernetes service of type `ClusterIP` and not `LoadBalancer` and also that the Pod(s) created by the deployment have an Istio sidecar. All Pods created in your team will automatically be added to the service mesh. In this part we'll create a Service in Otomi to expose your app publicly. When you create a Service, Otomi will then create the Istio virtual service and configure ingress for your application.
+When you have deployed your application using the Workloads feature, you will probably like to expose it publicly. In this lab we'll create a Service in Otomi to expose your application publicly. When you create a Service, Otomi will create the Istio virtual service and configure ingress for your application.
 
 ## Create a Service
 
 - In the left menu panel under click `Services` then click on `Create Service`
 
-![harbor-projects](../../img/create-svc.png)
+![expose services](../../img/create-svc.png)
 
-- Select a service that you already deployed:
+- Select the `blue` service of the Workload we created in the previous laby:
 
-![harbor-projects](../../img/create-svc-2.png)
+![expose services](../../img/create-svc-2.png)
 
 - Under `Exposure Ingress`, select `Ingress` and use the default configuration
 
-![harbor-projects](../../img/create-svc-3.png)
+![expose services](../../img/create-svc-3.png)
 
 - Click `Submit`
 - Click `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).

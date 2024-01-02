@@ -23,7 +23,6 @@ In this lab we're going to create a workload in Otomi to create a Knative servic
 You can create a workload to deploy your own Helm chart, or you can use one of the `otomi-charts` Helm charts. In this case we'll use the deployment chart in the `otomi-charts` repository.
 
 1. Go to `Workloads` in the left menu and click on `New Workload`
-
 2. Choose `Function as a Service`
 
 ![kubecfg](../../img/ksvc-app.png)
@@ -53,7 +52,6 @@ Note: When creating a Function as a Service workload, the Min Instances will by 
 :::
 
 6. Click `Next`
-
 7. Review the values. Here you can add more values supported by the [otomi-charts](https://github.com/redkubes/otomi-charts)
 
 ![kubecfg](../../img/ksvc-app-3.png)
@@ -69,10 +67,7 @@ The values of a workload can be changed at any time. Changes will automatically 
 ## (optionally) Publicly expose the service
 
 - In the left menu panel under click `Services` then click on `Create Service`
-
 - Select the name of the (existing) knative service: `hello-ksvc`
-
 - Under `Exposure Ingress`, select `Ingress` and use the default configuration
-
 - Click on `Submit`
 - Click on `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).

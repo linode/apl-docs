@@ -88,40 +88,6 @@ function Home() {
             <Carousel items={carouselItems} />
           </div>
         </div> */}
-        <div className={clsx(styles.announcement, styles.announcementBanner)}>
-          <div className={styles.announcementInner}>
-          <div className={styles.announcementInner}>
-            <h1>INTEGRATED APPLICATIONS</h1> <h4>Compose your platform by activating the required Kubernetes applications </h4>
-          </div>
-          </div>
-        </div>
-        <div className={clsx(styles.announcement, styles.announcementList)}>
-          <div className={`${clsx(styles.appsContainer)}`}>
-            <div className={`row ${clsx(styles.center)}`}>
-              {apps.map((app) => (
-                <div className="col col--3" key={app.name}>
-                  <div className="avatar avatar--vertical margin-bottom--lg">
-                    <a href={app.href}>
-                      <img
-                        alt={app.name}
-                        className={`avatar__photo avatar__photo--lg ${clsx(
-                          styles.logo
-                        )}`}
-                        src={useBaseUrl(`img/${app.src}`)}
-                      />
-                    </a>
-                    <div className="avatar__intro padding-top--sm">
-                      <h3 className="avatar__name">{app.name}</h3>
-                      <small className={`row ${clsx(styles.appDescription)}`}>
-                        {app.desc}
-                      </small>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </main>
     </Layout>
   );

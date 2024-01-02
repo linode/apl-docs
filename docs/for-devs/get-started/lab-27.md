@@ -22,7 +22,6 @@ Using a Gitea repository is not required. You can also build using public reposi
 :::
 
 1. Create a new repo called `petclinic`
-
 2. Clone the Spring PetClinic Sample Application:
 
 ```bash
@@ -37,13 +36,9 @@ git push --mirror https://gitea.<your-domain>/<your-user-name>/petclinic.git
 ```
 
 4. Go to `Builds` in the left menu and click `Create Build`
-
 5. Fill in the Build name `petclinic`
-
 6. Choose `Buildpacks`
-
 7. Fill in the `Repo URL` with the `petclinic` Gitea repo you created
-
 8. Click `Submit`
 
 ## Create a workload from the developer catalog
@@ -51,13 +46,9 @@ git push --mirror https://gitea.<your-domain>/<your-user-name>/petclinic.git
 Go to the list of Builds and add the repository of the `petclinc` build to your clipboard. Remember that the tag is latest.
 
 1. Go to `Workloads` in the left menu and click on `New Workload`
-
 2. Add the Name `petclinic` for the workload
-
 3. Select `otomi-quickstart-k8s-deployment-otel` from the catalog
-
 4. Leave the `Auto image updater` to `Disabled`
-
 5. In the workload `values`, change the following parameters:
 
 ```yaml
@@ -85,13 +76,9 @@ Now click on `Deploy Changes`
 ## Expose the service
 
 - In the left menu panel under click `Services` then click on `Create Service`
-
 - Select the `petclinic` service
-
 - Under `Exposure Ingress`, select `Ingress` and use the default configuration
-
 - Click `Submit`
-
 - Click `Deploy Changes`
 
 ## See traces

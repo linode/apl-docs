@@ -15,23 +15,22 @@ We assume you (or the platform administrator) have:
 2. Activated the following applications:
 
 - Harbor
-- ArgoCD
 - Prometheus
 - Loki
 - Grafana
 - Trivy Operator
 - Gatekeeper (with option `Disable validating webhook` set to true)
 
-For the [Use OpenTelemery](lab-27) Lab, the Tempo app needs to be enabled together with tracing in the `Istio` and `Nginx Ingress` apps.
+For the [Use OpenTelemery](lab-27) Lab, `Tempo` and `Otel` need to be enabled and tracing in the `Istio` and `Nginx Ingress` needs to be enabled.
 
-3. Created a team called `demo` with `Managed prometheus and alert manager` enabled
-4. [Created an account](/docs/apps/keycloak#create-a-user-in-keycloak) and added your user to the team group in Keycloak
+3. Created a team called `labs` with `Grafana`, `Prometheus` and `Alertmanager` activated
+4. [Created an account](/docs/apps/keycloak#create-a-user-in-keycloak) and added your account to the `labs` team group in Keycloak. In the labs we'll be using the user `labs-user`
 5. Provided you with the following information:
 
 - The URL to access the Otomi web UI (Otomi Console)
 - Your login credentials
 
-When you have received the URL of the web UI and have a username/password, then it's time to sign-in
+When you have received the URL of the web UI and have a username/password, then it's time to sign-in.
 
 ## Sign in to the Console
 

@@ -14,13 +14,16 @@ A service in Otomi is a self-service feature for:
 
 ## Services `(team <team-name>)`
 
-All known Services of the team are listed here. Services can be sorted based on:
+All Services of the team are listed here.
+
+![Team services](../../img/team-services.png)
 
 | Property     | Description                                            |
 | ------------ | ------------------------------------------------------ |
 | Service Name | The name of the service                                |
-| Ingress class     | The ingress class configured. This is the ingress controller that exposes the service              |
+| Ingress class     | The ingress class configured. This is the ingress controller that exposes the service |
 | URL        | The URL of the service if the service is configured for external exposure |
+| Status | The status of the service |
 
 ## Create a Service
 

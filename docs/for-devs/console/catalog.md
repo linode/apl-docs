@@ -18,15 +18,23 @@ The `otomi-quickstart-k8s-deployment` Helm chart can be used to create a Kuberne
 
 ### k8s-deployment-otel
 
-The `otomi-quickstart-k8s-deployment-otel` Helm chart can be used to create a Kubernetes `Deployment` (to deploy a single image), a `Service`, a `ServiceAccount`, an `OpenTelemetryCollector` and an `Instrumentation`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` can be created.
+The `otomi-quickstart-k8s-deployment-otel` Helm chart can be used to create a Kubernetes `Deployment` (to deploy a single image), a `Service`, a `ServiceAccount` and an `Instrumentation` resource. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` can be created.
 
 ### k8s-deployments-canary
 
-The `otomi-quickstart-k8s-deployments-canary` Helm chart can be used to create 2 Kubernetes `Deployments` (to deploy 2 versions of an image), a `Service` and a `ServiceAccount`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` (for each version) can be created.
+The `otomi-quickstart-k8s-deployments-canary` Helm chart can be used to create 2 Kubernetes `Deployments` (to deploy 2 versions of an image), a `Service` and a `ServiceAccount` resource. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` (for each version) can be created.
 
 ### knative-service
 
 The `otomi-quickstart-knative-service` Helm chart can be used to create a Knative `Service` (to deploy a single image), a `Service` and a  `ServiceAccount`. Optionally a Prometheus `ServiceMonitor` can be created.
+
+### Otomi quick start for creating a PostgreSQL cluster
+
+The `otomi-quickstart-postgresql` Helm chart can be used to create a cloudnativepg PostgreSQL `Cluster`. Optionally a Prometheus `PodMonitor` and a `Configmap` (for adding a postgresql dashboard to Grafana) can be created.
+
+### Otomi quick start for creating a Redis master-replica cluster
+
+The `otomi-quickstart-redis` Helm chart can be used to create a Redis master-replica cluster.
 
 
 ## Using the Catalog
@@ -35,7 +43,7 @@ The `otomi-quickstart-knative-service` Helm chart can be used to create a Knativ
 
 2. You will now see all the templates that are available to use
 
-![catalog](../../img/catalog-1.png)
+![catalog](../../img/catalog.png)
 
 3. Click on the `k8s-deployment` template
 

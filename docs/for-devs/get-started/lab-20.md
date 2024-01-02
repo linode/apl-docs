@@ -31,15 +31,10 @@ Select the label `app` and then select `blue`. You will now see all the `blue` c
 When you created a custom query that you would like to use more often, or would like to share with the team, you can create a shortcut in Otomi.
 
 - Copy the absolute path of your query
-  
 - In the apps section, click on the `Settings` icon of the Loki app
-
 - Click on the `Shortcuts` tab
-
 - Click `edit`
-
 - Click on `Edd item`
-  
 - Fill in the `Title`, `Description` and the `Path` for the shortcut
 
 ![kubecfg](../../img/new-loki-shortcut.png)

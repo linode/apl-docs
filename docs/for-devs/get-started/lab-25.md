@@ -9,7 +9,6 @@ If you previously created a database, you'll noticed that we did not let the ope
 ## Create a PodMonitor
 
 1. In the apps section in Otomi console, click on Gitea. In the list of repo's you'll now see a new repo called `otomi/team-<name>-argocd`.
-
 2. Create a new file called `my-db-pod-monitor.yaml`
 
 ```yaml
@@ -30,13 +29,13 @@ spec:
     matchLabels:
       cnpg.io/cluster: my-db
 ```
-2. Save the file and commit the changes.
+3. Save the file and commit the changes.
 
 The pod monitor will be picked-up by the team's own Prometheus. You can now add a dashboard to the team's Grafana instance.
 
 ## Add a custom dashboard to the team's Grafana
 
-1. Create a new file called `my-db-dashboard.yaml`
+4. Create a new file called `my-db-dashboard.yaml`
 
 ```yaml
 apiVersion: v1

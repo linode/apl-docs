@@ -15,15 +15,27 @@ When your team is using Harbor for private image registries, you can build image
 1. In the left menu, click on `Builds`
 2. Click on `Create Build`
 3. Fill in the name `blue` for your build and a tag (default tag is latest)
-4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab.
+4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab
 5. Click `Submit`
 
-Otomi will now leverage Tekton Pipeline to build the image. To see the status of the build, go to Tekton App and click on `PipelineRun` of your build in the list of Builds. This will open the Tekton Dashboard and show the status of the PipelineRun of the build.
+Otomi will now create a Tekton Pipeline and PipelineRun resource to build the image. This will take around 15-20 seconds. Then the PipelineRun will start building the image. During this time the status will show `in progress`:
+
+![build status](../../img/build-status.png)
+
+When the build is finished, the status will show `healthy`:
+
+![build status](../../img/build-status-1.png)
+
+To see the full PipelineRun of the build, go to the list of Builds and click on `PipelineRun` of the `blue` build. This will open the Tekton Dashboard and show the status of the PipelineRun of the build:
+
+![build status](../../img/build-status-2.png)
 
 When the build is ready you can see the image in Harbor:
 
 1. Open Harbor
 2. Click on the project of your team. Here you will see all the registries of the team, including the registry of the new build image
+
+![build status](../../img/build-status-3.png)
 
 ## Re-run the build (optional)
 
@@ -65,4 +77,4 @@ PipelineRun started: docker-build-blue-latest-j5mmt
 tkn pipelinerun logs docker-build-blue-latest-j5mmt -f
 ```
 
-But it's much easier to just open the Tekton dashboard and Click on `PipelineRuns`.
+But it's easier to just open the Tekton dashboard and Click on `PipelineRuns`.

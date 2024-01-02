@@ -43,6 +43,14 @@ Welcome to Otomi! If you are going to use Otomi, these getting started labs are 
 
 ---
 
+**Expose workloads**
+
+### [Publicly expose a service](lab-18)
+
+### [Configuring network policies](lab-19)
+
+---
+
 **Secure workloads**
 
 ### [Check policy compliance](lab-15)
@@ -50,14 +58,6 @@ Welcome to Otomi! If you are going to use Otomi, these getting started labs are 
 ### [Scan images for vulnerabilities](lab-7)
 
 ### [Scan your running containers for vulnerabilities](lab-17)
-
----
-
-**Expose workloads**
-
-### [Publicly expose a service](lab-18)
-
-### [Configuring network policies](lab-19)
 
 ---
 
@@ -74,8 +74,6 @@ Welcome to Otomi! If you are going to use Otomi, these getting started labs are 
 ### [Create custom rules](lab-31)
 
 ### [Monitoring availability](lab-23)
-
-### [Monitor databases](lab-25)
 
 ---
 

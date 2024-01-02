@@ -8,20 +8,22 @@ When your application is deployed, you would of course like to get an alert when
 
 ## Monitor your application for availability
 
-- [Create a Service](lab-7) for your app in Otomi. The service can have an Exposure ingress of type `Cluster` or `Ingress`
-
-- Open the Prometheus
+1. [Create a Service](lab-18) for your app in Otomi and publicy expose the service
+2. Open the Prometheus
 
 ![kubecfg](../../img/prometheus-teams.png)
 
-- In Prometheus, Go to `Status` and click on `Targets`
+3. In Prometheus, Go to `Status` and click on `Targets`
 
-You will see the `prope-service-<team-name>` endpoint. First in an `UNKNOWN` state:
+![kubecfg](../../img/targets-up.png)
 
-![kubecfg](../../img/target-unknown.png)
+In the list of targets you will see:
 
-But after a couple of minutes the state will be `UP`:
+- The `PodMonitor` endpoints of the `istio sidecars` os the Team Workloads
+- The `Probes` of all the Team services that are exposed
 
-![kubecfg](../../img/target-up.png)
+4. In Prometheus, Go to `Alerts`
 
-When alertmanager is enabled, and an alert notification receiver is configured, you will automatically receive an alert when your service is down.
+![kubecfg](../../img/prometheus-alerts.png)
+
+In the alerts you will see an (inactive) alert for `ProbeFailing`. If the `State` of a Servive Probe is `Down` the Prometheus `Rule` for this alert will fire. When alertmanager is enabled, and an alert notification receiver is configured, you will automatically receive an alert when your exposed Service is down.

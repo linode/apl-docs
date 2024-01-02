@@ -13,13 +13,9 @@ Before creating a workload from the Catalog, we'll need the `repository` and `ta
 You can create a workload from the developer catalog:
 
 1. Go to `Catalog` in the left menu and click on the `k8s-deployment`template
-
 2. Click on `Values`
-
 3. Add the Name `blue`
-
 4. Leave the `Auto image updater` to `Disabled`
-
 5. In the workload `values`, change the following parameters:
 
 ```yaml

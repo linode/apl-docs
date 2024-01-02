@@ -32,9 +32,9 @@ module.exports = {
       {
         "Otomi Console": [
           "for-ops/console/overview",
+          "for-ops/console/dashboard",
           "for-ops/console/apps",
           "for-ops/console/shortcuts",
-          "for-ops/console/clusters",
           "for-ops/console/policies",
           "for-ops/console/teams",
           "for-ops/console/projects",
@@ -115,6 +115,7 @@ module.exports = {
     "For Team Members": [
       {
         "Otomi Console": [
+          "for-devs/console/dashboard",
           "for-devs/console/apps",
           "for-devs/console/catalog",
           "for-devs/console/shortcuts",
@@ -137,12 +138,12 @@ module.exports = {
           "for-devs/get-started/lab-10",
           "for-devs/get-started/lab-29",
           "for-devs/get-started/lab-13",
+          "for-devs/get-started/lab-18",
           "for-devs/get-started/lab-11",
           "for-devs/get-started/lab-24",
           "for-devs/get-started/lab-15",
           "for-devs/get-started/lab-7",
           "for-devs/get-started/lab-17",
-          "for-devs/get-started/lab-18",
           "for-devs/get-started/lab-19",
           "for-devs/get-started/lab-20",
           "for-devs/get-started/lab-21",
@@ -150,7 +151,6 @@ module.exports = {
           "for-devs/get-started/lab-30",
           "for-devs/get-started/lab-31",
           "for-devs/get-started/lab-23",
-          "for-devs/get-started/lab-25",
           "for-devs/get-started/lab-27",
           "for-devs/get-started/lab-28",
         ],

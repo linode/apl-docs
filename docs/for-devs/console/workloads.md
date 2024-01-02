@@ -18,7 +18,7 @@ All Workloads of the team are listed here.
 | -------- | ------------------------------------------------- |
 | Name     | The name of the workload                          |
 | Argocd   | Link to the Argo CD application in the Argo CD UI |
-| Image update strategy | The configured update strategy for the worlkload |
+| Image update strategy | The configured update strategy for the workload |
 | Status | The status of the workload. Click on the Argo CD application link to see more status details |
 
 ## Create a Workload

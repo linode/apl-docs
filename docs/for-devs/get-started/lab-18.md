@@ -12,7 +12,7 @@ When you have deployed your application using the Workloads feature, you will pr
 
 ![expose services](../../img/create-svc.png)
 
-- Select the `blue` service of the Workload we created in the previous laby:
+- Select the `blue` service of the Workload we created in the previous lab:
 
 ![expose services](../../img/create-svc-2.png)
 

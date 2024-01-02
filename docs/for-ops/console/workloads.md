@@ -14,7 +14,7 @@ All known Workloads on the platform are listed here. Workloads can be sorted bas
 | ------------- | ------------------------------------------------------ |
 | Name          | The name of the workload                                    |
 | Argocd        | Link to the Argo CD application in the Argo CD UI           |
-| Image update strategy | The configured update strategy for the worlkload |
+| Image update strategy | The configured update strategy for the workload |
 | Status        | The status of the workload. Click on the Argo CD application link to see more status details |
 | Team Name     | The name of the Team responsible for the workload      |
 

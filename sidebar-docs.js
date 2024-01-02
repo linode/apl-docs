@@ -112,7 +112,7 @@ module.exports = {
         ],
       },
     ],
-    "For Team Members": [
+    "For DevOps Teams": [
       {
         "Otomi Console": [
           "for-devs/console/dashboard",
@@ -140,6 +140,7 @@ module.exports = {
           "for-devs/get-started/lab-13",
           "for-devs/get-started/lab-18",
           "for-devs/get-started/lab-11",
+          "for-devs/get-started/lab-32",
           "for-devs/get-started/lab-24",
           "for-devs/get-started/lab-15",
           "for-devs/get-started/lab-7",

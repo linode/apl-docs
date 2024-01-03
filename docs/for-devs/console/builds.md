@@ -56,8 +56,9 @@ Now choose the type of the build:
 1. Add the URL of the Git repository that contains the application source code
 2. (optional) Add the path. This is a subpath within the repo where the source to build is located
 3. (optional) Change the revision. This can be a commit, a tag, or a branch
-4. (Optional) Select `External Repo` if the repository used for the Build is not a public or a private Git repo in the local Gitea. When selected, fill in the secret name that contains the required SSH credentials. Read more [here](https://tekton.dev/docs/how-to-guides/clone-repository/#git-authentication) about how to setup SSH authentication with your Git provider.
-5. (optional) Select to create an event listener to trigger the build based on a Gitea webhook.
+4. (optional) Add Environment variables to set during build-time
+5. (Optional) Select `External Repo` if the repository used for the Build is not a public or a private Git repo in the local Gitea. When selected, fill in the secret name that contains the required SSH credentials. Read more [here](https://tekton.dev/docs/how-to-guides/clone-repository/#git-authentication) about how to setup SSH authentication with your Git provider.
+6. (optional) Select to create an event listener to trigger the build based on a Gitea webhook.
 
 ### Build status details
 

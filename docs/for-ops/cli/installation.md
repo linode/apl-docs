@@ -61,23 +61,23 @@ To find the options available.
 
 | Command                                          | Description                                                                                          |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
-| [`otomi apply`](apply)                           | Apply all, or supplied, K8S resources                                                                |
-| [`otomi bash`](bash)                             | Run interactive bash shell in otomi-core container                                                   |
-| [`otomi bootstrap`](bootstrap)                   | Bootstrap values repo with artifacts corresponding to the cluster's stack version                    |
-| [`otomi check-policies`](check-policies)         | Check if generated manifests adhere to defined OPA policies                                          |
-| [`otomi commit`](commit)                         | Execute wrapper for generate pipelines -> git commit changed files                                   |
-| [`otomi decrypt [files..]`](decrypt)             | Decrypts file(s), given as arguments, or any file matching `secrets.*.yaml` in the values repository |
-| [`otomi destroy`](destroy)                       | Destroy all, or supplied, K8S resources                                                              |
-| [`otomi diff`](diff)                             | Diff all, or supplied, K8S resources                                                                 |
-| [`otomi encrypt [files..]`](encrypt)             | Encrypts file(s), given as arguments, or any file matching `secrets.*.yaml` in the values repository |
-| [`otomi lint`](lint)                             | Uses helmfile lint to lint the target manifests                                                      |
-| [`otomi pull`](pull)                             | Wrapper for git pull && otomi bootstrap                                                              |
-| [`otomi rotate-keys`](rotate-keys)               | Rotate keys for all the sops secrets in the values repository                                        |
-| [`otomi status`](status)                         | Show cluster status                                                                                  |
-| [`otomi sync`](sync)                             | Sync all, or supplied, K8S resources                                                                 |
-| [`otomi template [outDir]`](template)            | Export all, or supplied, K8S resources                                                               |
-| [`otomi test`](test)                             | Run tests against the target cluster                                                                 |
-| [`otomi validate-templates`](validate-templates) | Validate generated manifests against supported k8s versions/CRDs and best practices                  |
-| [`otomi validate-values`](validate-values)       | Validate values for each cluster against JSON schema (takes target options)                          |
-| [`otomi values`](values)                         | Show helmfile values for target cluster                                                              |
-| [`otomi x`](x)                                   | Execute command in container                                                                         |
+| [`otomi apply`](apply.md)                           | Apply all, or supplied, K8S resources                                                                |
+| [`otomi bash`](bash.md)                             | Run interactive bash shell in otomi-core container                                                   |
+| [`otomi bootstrap`](bootstrap.md)                   | Bootstrap values repo with artifacts corresponding to the cluster's stack version                    |
+| [`otomi check-policies`](check-policies.md)         | Check if generated manifests adhere to defined OPA policies                                          |
+| [`otomi commit`](commit.md)                         | Execute wrapper for generate pipelines -> git commit changed files                                   |
+| [`otomi decrypt [files..]`](decrypt.md)             | Decrypts file(s), given as arguments, or any file matching `secrets.*.yaml` in the values repository |
+| [`otomi destroy`](destroy.md)                       | Destroy all, or supplied, K8S resources                                                              |
+| [`otomi diff`](diff.md)                             | Diff all, or supplied, K8S resources                                                                 |
+| [`otomi encrypt [files..]`](encrypt.md)             | Encrypts file(s), given as arguments, or any file matching `secrets.*.yaml` in the values repository |
+| [`otomi lint`](lint.md)                             | Uses helmfile lint to lint the target manifests                                                      |
+| [`otomi pull`](pull.md)                             | Wrapper for git pull && otomi bootstrap                                                              |
+| [`otomi rotate-keys`](rotate-keys.md)               | Rotate keys for all the sops secrets in the values repository                                        |
+| [`otomi status`](status.md)                         | Show cluster status                                                                                  |
+| [`otomi sync`](sync.md)                             | Sync all, or supplied, K8S resources                                                                 |
+| [`otomi template [outDir]`](template.md)            | Export all, or supplied, K8S resources                                                               |
+| [`otomi test`](test.md)                             | Run tests against the target cluster                                                                 |
+| [`otomi validate-templates`](validate-templates.md) | Validate generated manifests against supported k8s versions/CRDs and best practices                  |
+| [`otomi validate-values`](validate-values.md)       | Validate values for each cluster against JSON schema (takes target options)                          |
+| [`otomi values`](values.md)                         | Show helmfile values for target cluster                                                              |
+| [`otomi x`](x.md)                                   | Execute command in container                                                                         |

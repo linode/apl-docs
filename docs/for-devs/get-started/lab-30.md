@@ -4,7 +4,7 @@ title: Create custom dashboards
 sidebar_label: Create custom dashboards
 ---
 
-In the lab [Using custom metrics](lab-22) we created a Workload with a ServiceMonitor so the Team's Prometheus can scrape our custom metrics. In this lab we are going to create a custom Grafana dashboard and add the dashboard to a Configmap so the Team's Grafana will automatically load the dashboard.
+In the lab [Using custom metrics](lab-22.md) we created a Workload with a ServiceMonitor so the Team's Prometheus can scrape our custom metrics. In this lab we are going to create a custom Grafana dashboard and add the dashboard to a Configmap so the Team's Grafana will automatically load the dashboard.
 
 ## Create a dashboard in Grafana
 

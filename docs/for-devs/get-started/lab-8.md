@@ -67,5 +67,5 @@ The secret in Vault will now be synchronized to Kubernetes and can be used by th
 
 :::info
 
-In this part we only covered using generic secrets. See [here](../console/secrets) to see how you can create TLS and pull secrets
+In this part we only covered using generic secrets. See [here](../console/secrets.md) to see how you can create TLS and pull secrets
 :::

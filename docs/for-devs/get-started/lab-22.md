@@ -67,7 +67,7 @@ Check if the ServiveMonitor has been picked up by Prometheus:
 
 Okay, our metrics are now being scraped by the Team's Prometheus. Before we continue, let's first generate some load:
 
-1. Go to the [Expose services](lab-18) lab and expose the `custom-metrics` service
+1. Go to the [Expose services](lab-18.md) lab and expose the `custom-metrics` service
 
 2. Run the following command in your terminal:
 
@@ -96,5 +96,5 @@ To see the metrics:
 
 Prometheus is now scraping our custom metrics. You can now use these metrics to:
 
-- Create a dashboard in Grafana in the lab [Create custom dashboards](lab-30)
-- Create rules and send alerts in the lab [Create custom rules](lab-31)
+- Create a dashboard in Grafana in the lab [Create custom dashboards](lab-30.md)
+- Create rules and send alerts in the lab [Create custom rules](lab-31.md)

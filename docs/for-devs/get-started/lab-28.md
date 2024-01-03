@@ -12,8 +12,8 @@ For this we are going to deploy the stable version (blue), introduce a new versi
 
 For this lab we need the 2 images (`blue` and `green`) we already created in the previous labs. If you haven't created the blue and green images, first complete these 2 labs:
 
-- [Build images](lab-6)
-- [Trigger builds](lab-26)
+- [Build images](lab-6.md)
+- [Trigger builds](lab-26.md)
 
 ## Create a workload from the developer catalog
 

@@ -12,7 +12,7 @@ In this case we'll use a demo app called hello. If you like you can clone the re
 git clone https://github.com/redkubes/nodejs-helloworld.git
 ```
 
-And then tag and build the image as you have done in the [Push images](lab-5) lab.
+And then tag and build the image as you have done in the [Push images](lab-5.md) lab.
 
 ## Create a Deployment and Service
 

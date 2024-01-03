@@ -8,15 +8,15 @@ sidebar_label: Overview
 
 ---
 
-### [Managing the Developer Catalog](dev-catalog)
+### [Managing the Developer Catalog](use-catalog.md)
 
-### [Managing Ingress Controllers](ingress-classes)
+### [Managing Ingress Controllers](ingress-classes.md)
 
-### [Use the team-admin](use-team-admin)
+### [Use the team-admin](use-team-admin.md)
 
-### [Using Core only](core-only)
+### [Using Core only](core-only.md)
 
-<!-- ### [Switch to DNS](switch-to-dns) -->
+<!-- ### [Switch to DNS](switch-to-dns.md) -->
 
-### [Create and restore backups](backups)
+### [Create and restore backups](backups.md)
 

@@ -20,5 +20,5 @@ Deploy a Kubernetes cluster in your favourite cloud or infrastructure and instal
 ### Step 3: [Activate your installation ](activation.md)
 Activate your Otomi installation on [otomi.cloud](https://portal.otomi.cloud)
 
-### Step 4: [Explore Otomi with the Get Stared Labs](/docs/for-devs/get-started/overview)
+### Step 4: [Explore Otomi with the Get Stared Labs](/docs/for-devs/get-started/overview.md)
 The get started with Otomi labs contains a set of labs to cover all the Otomi supported activities performed by developer- and/or DevOps teams.

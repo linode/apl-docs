@@ -18,8 +18,8 @@ Before submitting code to Otomi, you should first complete the following prerequ
 
 ### Code of Conduct
 
-Please make sure to read and observe the [Code of Conduct](code-of-conduct) and
-[Community Values](community-values)
+Please make sure to read and observe the [Code of Conduct](code-of-conduct.md) and
+[Community Values](values.md)
 
 ### Developer guide
 
@@ -33,4 +33,4 @@ It is not required to set up a developer environment in order to contribute to O
 
 Otomi is a community project. Consequently, it is wholly dependent on its community to provide a productive, friendly and collaborative environment.
 
-Please read and review the [Contribution Expectations](expectations) for an understanding of code and review expectations.
+Please read and review the [Contribution Expectations](expectations.md) for an understanding of code and review expectations.

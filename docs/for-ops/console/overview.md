@@ -17,28 +17,28 @@ Otomi Console has a topbar showing a cluster and team selector, the logged-in us
 The Platform section in the left menu provides access to:
 
 - Dashboard
-- [Apps](apps): All active and inactive apps. Activate apps by dragging them to the active apps section
-- [Shortcuts](shortcuts): A list off all shortcuts created on this platform
-- [Clusters](clusters): A list of all known Kubernetes clusters running Otomi 
-- [Policies](policies): A list of all available security policies and their configuration for this platform
-- [Teams](teams): A list of all Teams using this platform
-- [Builds](builds): A list of all builds created on this platform
-- [Secrets](secrets): A list of all secrets created on this platform
-- [Workloads](workloads): A list of all workloads running on this platform
-- [Services](services): A list of all services running on this platform
-- [Settings](settings/alerts): Specific configuration of the platform
+- [Apps](apps.md): All active and inactive apps. Activate apps by dragging them to the active apps section
+- [Shortcuts](shortcuts.md): A list off all shortcuts created on this platform
+- [Clusters](clusters.md): A list of all known Kubernetes clusters running Otomi 
+- [Policies](policies.md): A list of all available security policies and their configuration for this platform
+- [Teams](teams.md): A list of all Teams using this platform
+- [Builds](builds.md): A list of all builds created on this platform
+- [Secrets](secrets.md): A list of all secrets created on this platform
+- [Workloads](workloads.md): A list of all workloads running on this platform
+- [Services](services.md): A list of all services running on this platform
+- [Settings](settings/alerts.md): Specific configuration of the platform
 
 ### Team section
 
 The Team `$name` section gives access to:
 
-- [Apps](../../for-devs/console/apps): All the apps available to the team on this platform
-- [Shortcuts](../../for-devs/console/shortcuts): All shortcuts available to the team on this platform
-- [Builds](../../for-devs/console/builds): A list of all builds created by the team
-- [Secrets](../../for-devs/console/secrets): A list of all secrets created by the team
-- [Workloads](../../for-devs/console/workloads): A list of all team workloads
-- [Services](../../for-devs/console/services): A list of all team services
-- [Settings](../../for-devs/console/settings): Specific team configuration options
+- [Apps](../../for-devs/console/apps.md): All the apps available to the team on this platform
+- [Shortcuts](../../for-devs/console/shortcuts.md): All shortcuts available to the team on this platform
+- [Builds](../../for-devs/console/builds.md): A list of all builds created by the team
+- [Secrets](../../for-devs/console/secrets.md): A list of all secrets created by the team
+- [Workloads](../../for-devs/console/workloads.md): A list of all team workloads
+- [Services](../../for-devs/console/services.md): A list of all team services
+- [Settings](../../for-devs/console/settings.md): Specific team configuration options
 
 ### Cluster section
 

@@ -7,7 +7,7 @@ Use Helm to install Otomi.
 
 Visit the [helm documentation](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing) page for more details on how to work with helm charts.
 
-Before you begin verify if you have met the [prerequisites](/docs/installation/prerequisites)
+Before you begin verify if you have met the [prerequisites](/docs/get-started/prerequisites.md)
 
 ## Add the Otomi repository
 
@@ -63,7 +63,7 @@ Or view detailed info about kubernetes resources with [k9s](https://k9scli.io)
 
 ### Next steps
 
-Once Otomi is installed, follow the [activation steps](activation) to get ready to use Otomi.
+Once Otomi is installed, follow the [activation steps](activation.md) to get ready to use Otomi.
 
 ## Installing from source
 

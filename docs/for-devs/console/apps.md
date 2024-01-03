@@ -14,4 +14,4 @@ Here you will find more information about the app and how the app is integrated 
 
 ### Shortcuts
 
-Create shortcuts to open the app at a target path. Created shortcuts will also become visable in the [Shortcuts](shortcuts) section.
+Create shortcuts to open the app at a target path. Created shortcuts will also become visable in the [Shortcuts](shortcuts.md) section.

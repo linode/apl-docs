@@ -42,7 +42,7 @@ In the example above, we used the `Digest` update strategy. The `Semver` strateg
 
 ## Expose the service
 
-Now go to the [Expose services](lab-18) lab and expose the `green` service. When the service is created, go to `Services` in the left menu and click on the Url of the `green` service. What do you see?
+Now go to the [Expose services](lab-18.md) lab and expose the `green` service. When the service is created, go to `Services` in the left menu and click on the Url of the `green` service. What do you see?
 
 ## Make code change to trigger a new build
 

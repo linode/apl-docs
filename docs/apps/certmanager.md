@@ -11,7 +11,7 @@ The wildcard certificate must be valid for the following domain `*.<cluster.doma
 :::
 
 :::info
-Setting Cert-Manager to use Letsencrypt requires DNS availability of the requesting domains, and forces Otomi to install [ExternalDNS](external-dns). Because a lot of DNS settings are used by other Otomi contexts, all DNS configuration can be found [here](../for-ops/console/settings/dns).
+Setting Cert-Manager to use Letsencrypt requires DNS availability of the requesting domains, and forces Otomi to install [ExternalDNS](external-dns.md). Because a lot of DNS settings are used by other Otomi contexts, all DNS configuration can be found [here](../for-ops/console/settings/dns.md).
 :::
 
 ## Configuration Values

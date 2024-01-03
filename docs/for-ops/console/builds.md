@@ -20,4 +20,4 @@ All known Builds on the platform are listed here. Builds can be sorted based on:
 | Tag           | The tag of the image                                            |
 | Team          | The name of the Team responsible for the build                  |
 
-A platform admin can also create builds. Make sure to select the correct context (team-name) in the top bar. See [here](/docs/for-devs/console/builds) for more information about creating builds.
+A platform admin can also create builds. Make sure to select the correct context (team-name) in the top bar. See [here](/docs/for-devs/console/builds.md) for more information about creating builds.

@@ -51,6 +51,6 @@ Line 1-7 are configuration options supported in the Otomi values schema. Line 8-
 
 For SRE's we have created a couple of guides and checklists:
 
-- [Daily routine](daily)
-- [Troubleshooting](troubleshooting)
-- [Upgrading Otomi](upgrades)
+- [Daily routine](daily.md)
+- [Troubleshooting](troubleshooting.md)
+- [Upgrading Otomi](upgrades.md)

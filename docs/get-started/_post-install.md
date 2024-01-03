@@ -36,7 +36,7 @@ kubectl logs jobs/otomi -n default -f
 
 Open the Otomi console (using the URL provided in the installer logs), and sign in with the new user.
 
-Click [here](/docs/console) to learn more about using Otomi Console.
+Click [here](/docs/console.md) to learn more about using Otomi Console.
 
 ### Step 4: Add the auto generated CA to your keychain
 
@@ -50,7 +50,7 @@ sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keyc
 
 ### Create a Team
 
-Now the final step is to create a team. See the [Teams](/docs/for-ops/console/teams) page for more information.
+Now the final step is to create a team. See the [Teams](/docs/for-ops/console/teams.md) page for more information.
 
 ## When Otomi is installed with optional configuration
 

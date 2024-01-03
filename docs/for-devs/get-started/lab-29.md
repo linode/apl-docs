@@ -51,4 +51,4 @@ In the Info tab you'll see some information about the Chart like the version and
 
 ![catalog](../../img/catalog-3.png)
 
-From here you can create a Workload using the Catalog template by adding a name and changing the values. Go to the [next lab](lab-13) to create a workload.
+From here you can create a Workload using the Catalog template by adding a name and changing the values. Go to the [next lab](lab-13.md) to create a workload.

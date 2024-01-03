@@ -6,7 +6,7 @@ sidebar_label: Overview
 
 This section contains tutorials for more advanced installation scenario's. 
 
-1. [Install and activate Otomi with minimal vales](tutorial-1)
+1. [Install and activate Otomi with minimal vales](tutorial-1.md)
 
 We'll soon add tutorials for:
 

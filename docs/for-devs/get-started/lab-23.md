@@ -8,8 +8,9 @@ When your application is deployed, you would of course like to get an alert when
 
 ## Monitor your application for availability
 
-1. [Create a Service](lab-18) for your app in Otomi and publicy expose the service
-2. Open the Prometheus
+1. [Create a Service](lab-7.md) for your app in Otomi. The service can have an Exposure ingress of type `Cluster` or `Ingress`
+
+2. Open Prometheus
 
 ![kubecfg](../../img/prometheus-teams.png)
 

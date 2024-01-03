@@ -18,4 +18,4 @@ All known Workloads on the platform are listed here. Workloads can be sorted bas
 | Status        | The status of the workload. Click on the Argo CD application link to see more status details |
 | Team Name     | The name of the Team responsible for the workload      |
 
-A platform admin can also create Workloads. Make sure to select the correct context (team-name) in the top bar. See [here](/docs/for-devs/console/workloads) for more information about creating builds.
+A platform admin can also create Workloads. Make sure to select the correct context (team-name) in the top bar. See [here](/docs/for-devs/console/workloads.md) for more information about creating builds.

@@ -27,7 +27,7 @@ If you would like to use the Otomi Console (Web UI) and Otomi API (for code vali
 - Go to [Otomi Cloud](https://portal.otomi.cloud)
 - Create an account
 - Click on `Register Cluster`
-- Agree with the [EULA](../../product/eula/v1)
+- Agree with the [EULA](/product/eula/v1)
 - Copy the License Key and click `Continue`
 - Log in to Otomi Console. You can find the link in the logs of the installer (see step 1)
 - Add the License key to Otomi Console

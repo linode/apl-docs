@@ -33,13 +33,9 @@ In the lab [Using custom metrics](lab-22.md) we created a Workload with a Servic
 You know know how to create a dashboard in Grafana using custom metrics. You could now save the dashboard, but if Grafana would get re-started, the dashboard would be gone. To make the dashboard persistent we need to add it to a configmap.
 
 1. Go to `apps` and open `Gitea`
-
 2. In the list of repositories there is a repository called `otomi/team-<team-name>-argocd`. Go to this repository.
-
 3. Click `Add File` and then `New File`
-
 4. Name the file `my-custom-dashboard.yaml`
-
 5. Add the following manifest to the file:
 
 ```yaml
@@ -56,16 +52,11 @@ data:
 ```
 
 6. Before commiting changes, go back to Grafana
-
 7. Click on `Dashboard settings` (in the top right)
-
 8. In the left menu click `JSON model`
-
 9. Copy the JSON model and paste it into the ConfigMap. Make sure to indent with 4
-
-11. Delete the dashboard created in Grafana
-
-10. Commit changes in Gitea
+10. Delete the dashboard created in Grafana
+11. Commit changes in Gitea
 
 The dashboard will now automatically be loaded into Grafana.
 

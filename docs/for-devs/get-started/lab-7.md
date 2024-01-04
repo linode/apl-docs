@@ -4,7 +4,15 @@ title: Scan your images for vulnerabilities
 sidebar_label: Scan images
 ---
 
-When your team is using Harbor for private image registries, you can use Trivy to automatically scan your images on push. This is not enabled by default. Ask your platform administrator to turn this on for your project in Harbor. When enabled, you can see the results of the scans by following these steps:
+## Prerequisites
+
+To automatically scan images for vulnerabilities, `Automatically scan images on push` in the Team project settings in Harbor needs to be enabled by the platform administrator:
+
+![image vulnerabilities](../../img/harbor-config.png)
+
+## Scanning images
+
+When your team is using Harbor for private image registries, you can use Trivy to automatically scan your images on push. When `Automatically scan images on push` is enabled by the platform administrator, you can see the results of the scans by following these steps:
 
 - In the apps section in Otomi console, click on Harbor
 - Click on your project. You will only see the projects of the Teams that you are a member of

@@ -6,20 +6,20 @@ sidebar_label: Workloads
 
 <!-- ![Console: new service](img/team-services.png) -->
 
-A Workload in Otomi is a self-service feature for creating Kubernetes resources using Helm charts form the Otomi Developer Catalog.
-
-:::info
-Ask your platform administrator to activate Argo CD to be able to use this feature.
-:::
+A Workload in Otomi is a self-service feature for creating Kubernetes resources using Helm charts from the Otomi Developer Catalog.
 
 ## Workloads (all)
 
-All known Workloads of the team are listed here.
+All Workloads of the team are listed here.
+
+![Team workloads](../../img/team-workloads.png)
 
 | Property | Description                                       |
 | -------- | ------------------------------------------------- |
 | Name     | The name of the workload                          |
 | Argocd   | Link to the Argo CD application in the Argo CD UI |
+| Image update strategy | The configured update strategy for the workload |
+| Status | The status of the workload. Click on the Argo CD application link to see more status details |
 
 ## Create a Workload
 

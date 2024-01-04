@@ -19,6 +19,10 @@ In the previous lab we created a build in Otomi using the `blue` repo in Gitea. 
 
 Before we can configure the webhook for the `green` repo in Gitea, we will need the webhook URL. You can find this webhook URL for your build in the list of Builds. Add the webhook URL to your clipboard.
 
+![trigger build](../../img/trigger-builds.png)
+
+Also notice that the status of the Build shows an exclamation mark. This is because Otomi created the Pipeline, but the PipelineRun is not yet created because it was not triggered yet.
+
 ## Create a Webhook
 
 1. In Otomi Console, click on `apps` the left menu and then open `Gitea`
@@ -41,17 +45,16 @@ You can now trigger the build by doing a commit in the `green` repo, or by testi
 The build should now have started. Based on the webhook, Tekton has now created a `PipelineRun`. Let's check the status of the PipelineRun:
 
 1. In Otomi Console, click on `Builds`
+
+Because the Build was triggered, a PipelineRun is now running and the status of the Build will show `in progress`:
+
+![trigger build](../../img/trigger-builds-2.png)
+
+When the Build is completed, the status will show `healthy`:
+
+![trigger build](../../img/trigger-builds-3.png)
+
 2. In the list of Builds, click on the `PipelineRun` link of the `green` build
-3. Tekton Dashboard will open and show a list of all the PipelineRuns
+3. Tekton Dashboard will open and show a list of all the PipelineRuns. It will show all PipelineRuns because when using a Trigger, the PipelineRun resource is created based on a template and Otomi will not know the exact name of the PipelineRun because the name is automatically generated.
 4. Click on the PipelineRun with the name `docker-trigger-build-green-*`
-5. You can now see the status of the build
-
-## Find your image in Harbor
-
-The build succeeded. Now it is time to see artifacts
-
-1. In Otomi Console, got to Apps and click on `Harbor`
-2. Click `LOGIN VIA OIDC PROVIDER`
-3. Navigate to the `team-demo` project
-4. In the `Repositories` tab, click `team-demo/blue` link
-5. Observe artifacts
+5. You can now see the the full log of the build

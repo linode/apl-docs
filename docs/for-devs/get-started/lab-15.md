@@ -12,11 +12,8 @@ When the platform administrator has enabled Gatekeeper and configured policies, 
 ## View policy violations
 
 - Open the Grafana app
-
 - Click on `Dashboards` / `Browse`
-
 - In the list of dashboards you will see a dashboard called `Policy Violations`. Click on it
-
 - Now you will see the following dashboard, showing all detected policy violations within your team workloads
 
 

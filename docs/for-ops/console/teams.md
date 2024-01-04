@@ -27,7 +27,7 @@ Another difference between the Team Admin and user created Teams is that Team Ad
 
 3. Optional: Provide a OIDC group name/id granting for granting access to team. Only members of the group will get access to the team
 
-4. Optional (only when Alert Manager is enabled): In order to receive alerts, please choose an alerting endpoint:
+4. Optional (only when Alert Manager is enabled for the team): In order to receive alerts, please choose an alerting endpoint:
 
 | Option           | Description                                                                      |
 | ---------------- | -------------------------------------------------------------------------------- |
@@ -45,15 +45,13 @@ Billing alert quota can be configured to receive an alert when a team hits a quo
 When required, add resource quota for the team. The resource quota should adhere to the "spec.hard" format as described [here](https://kubernetes.io/docs/concepts/policy/resource-quotas/).
 
 :::note Note
-
 There is no validation as there is no schema published. Add/change resource quota at your own risk.
-
 :::
 
 7. Optional: Configure Azure Monitor
 
 :::note
-Configuring Azure Monitor settings will only be active when `cluster.provider=azure`).
+Configuring Azure Monitor settings will only be shown when `cluster.provider=azure`).
 :::
 
 Azure Monitor is the platform service that provides a single source for monitoring Azure resources.
@@ -64,9 +62,9 @@ Azure Monitor is the platform service that provides a single source for monitori
 | Azure monitoring with global settings | Takes on the global settings  |
 | Azure monitoring with custom settings | Overrides any global settings |
 
-8. Private team monitoring
+8. Managed Monitoring
 
-By default, a team will get a dedicated Grafana and Prometheus instance. If Private team monitoring is not enabled, the team will not get a dedicated Grafana and Prometheus instance. This means that to see logs and metrics of team workloads, the platform Grafana instance.
+Activate a (platform) managed Prometheus, Grafana and/or Alertmanager instance.
 
 9.  Turn Network Policy On/Off for the team
 
@@ -84,12 +82,9 @@ A user with the `otomi-admin` and `team-admin` role can delegate permissions to 
 | Service | Ingress              | Select to grant the team the permission to configure exposure for Services       |
 | Service | Network policy       | Select to grant the team the permission to configure network polices             |
 | Team    | Alerts               | Select to grant the team the permission to configure Alerts for the team         |
-| Team    | Backup               | Select to grant the team the permission to create Backups for the team           |
 | Team    | Billing alert quotas | Select to grant the team the permission to configure Billing alerts for the team |
 | Team    | Oidc                 | Select to grant the team the permission to configure OIDC for the team           |
 | Team    | Resource quota       | Select to grant the team the permission to configure Resource Quota for the team |
 | Team    | Download kube config | Select to grant the team the permission to download the KubeConfig to get Kube API access to the teams namespace        |
 | Team    | Download docker config | Select to grant the team the permission to download the Dockerconfig for the teams project in Harbor          |
 | Team    | Network Policy       | Select to grant the team the permission to turn on/off network policies          |
-| Apps    | Argo CD               | Select to provide team members access to the team Gitops repository in Gitea   |
-| Apps    | Gitea                | Select to provide team members access to Gitea                                   |

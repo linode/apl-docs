@@ -15,7 +15,6 @@ In this Lab you're going to create a workload in Otomi to install your're own He
 ## Creating a Workload to install your Helm chart
 
 - Click on `Workloads` in the left menu.
-
 - Click on `Create Workload`
 
 ![kubecfg](../../img/create-workload.png)
@@ -39,9 +38,7 @@ In this Lab you're going to create a workload in Otomi to install your're own He
 ![kubecfg](../../img/byo-chart-workload-2.png)
 
 - Click `Next`
-
 - We are going to use the default chart values, so there is no need to fill in any values here
-
 - Click `Submit`
 
 The values of a workload can be changed at any time. Changes will automatically be deployed.

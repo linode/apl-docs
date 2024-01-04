@@ -18,7 +18,7 @@ The `otomi-admin` account is unable to login with OpenID, this account needs to 
 
 In these labs we'll be using a Team called `labs` and a user called `labs-user`.
 
-## Create a private repository
+## Create the private repository
 
 In the apps section in Otomi console, you'll see an app called Gitea. Click on it.
 
@@ -34,29 +34,21 @@ Now follow these steps:
 
 ![kubecfg](../../img/new-gitea-repo.png)
 
-- Fill in a Repository Name
+- Add the name `blue` for the repository
 - Optional: Enable `Initialize Repository`
-- Optional: Make Repository Private
+- Make Repository Private
 - Click on `Create Repository`
 
 Your repo is now ready to be used!
 
 ![kubecfg](../../img/new-gitea-repo-ready.png)
 
-## Create 2 repositories for the labs
-
-For the next labs we're going to need two repo's. Create the following 2 repo's:
-
-- `blue`
-- `green`
-
-And add the following 2 files to each repo. Make sure to change `blue` to `green` in the `green` repo:
+Add the following 2 files to the repository:
 
 Add `Dockerfile`:
 
 ```Dockerfile
 FROM nginxinc/nginx-unprivileged:stable
-# change to green.html in the green repo!
 COPY blue.html /usr/share/nginx/html/index.html
 EXPOSE 8080
 ```
@@ -72,17 +64,15 @@ Add `blue.html`:
     <style>
       body {
         color: #ffffff;
-        background-color: blue; # change to green in the green repo!
+        background-color: blue;
         font-family: Arial, sans-serif;
         font-size: 14px;
       }
-
       h1 {
         font-size: 500%;
         font-weight: normal;
         margin-bottom: 0;
       }
-
       h2 {
         font-size: 200%;
         font-weight: normal;
@@ -93,8 +83,9 @@ Add `blue.html`:
   <body>
     <div align="center">
       <h1>Welcome to Blue</h1>
-      # change to green in the green repo!
     </div>
   </body>
 </html>
 ```
+
+In the following labs we are going to use the `blue` repository, but we'll also need a `green` repository. Create the `green` repository and add the 2 files, but change `blue` into `green`.

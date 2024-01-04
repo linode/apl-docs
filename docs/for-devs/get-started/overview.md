@@ -43,6 +43,12 @@ Welcome to Otomi! If you are going to use Otomi, these getting started labs are 
 
 ---
 
+**Expose workloads**
+
+### [Publicly expose a service](lab-18.md)
+
+---
+
 **Secure workloads**
 
 ### [Check policy compliance](lab-15.md)
@@ -80,6 +86,8 @@ Welcome to Otomi! If you are going to use Otomi, these getting started labs are 
 ---
 
 **Advanced Labs**
+
+### [Configuring network policies](lab-19.md)
 
 ### [Tracing with OpenTelemetry](lab-27.md)
 

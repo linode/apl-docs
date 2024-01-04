@@ -26,13 +26,20 @@ The `otomi-quickstart-k8s-deployments-canary` Helm chart can be used to create 2
 
 The `otomi-quickstart-knative-service` Helm chart can be used to create a Knative `Service` (to deploy a single image), a `Service` and a  `ServiceAccount`. Optionally a Prometheus `ServiceMonitor` can be created.
 
+### Otomi quick start for creating a PostgreSQL cluster
+
+The `otomi-quickstart-postgresql` Helm chart can be used to create a cloudnativepg PostgreSQL `Cluster`. Optionally a Prometheus `PodMonitor` and a `Configmap` (for adding a postgresql dashboard to Grafana) can be created.
+
+### Otomi quick start for creating a Redis master-replica cluster
+
+The `otomi-quickstart-redis` Helm chart can be used to create a Redis master-replica cluster.
+
 ## Using the Catalog
 
 1. Click on `Catalog` in the left menu
-
 2. You will now see all the templates that are available to use
 
-![catalog](../../img/catalog-1.png)
+![catalog](../../img/catalog.png)
 
 3. Click on the `k8s-deployment` template
 
@@ -40,7 +47,7 @@ The `otomi-quickstart-knative-service` Helm chart can be used to create a Knativ
 
 In the Info tab you'll see some information about the Chart like the version and additional instructions.
 
-3. Click on the `Values` tab
+4. Click on the `Values` tab
 
 ![catalog](../../img/catalog-3.png)
 

@@ -20,17 +20,12 @@ For this lab we need the 2 images (`blue` and `green`) we already created in the
 Go to the list of Builds and add the repository of the `green` build to your clipboard.
 
 1. Go to `Workloads` in the left menu and click on `New Workload`
-
 2. Add the Name `canary` for the workload
-
 3. Select `otomi-quickstart-k8s-deployment-canary` from the catalog
-
 4. Set the `Auto image updater` to `Digest` and fill in:
 
 - imageRepository = paste from the clipboard
-
 - imageParameter = `versionTwo.image.repository`
-
 - tagParameter = `versionTwo.image.tag`
 
 5. In the workload `values`, change the following parameters:
@@ -57,15 +52,10 @@ We now created 2 deployments. One for `blue` and one for `green`. The `green` im
 ## Expose the service
 
 - In the left menu panel under click `Services` then click on `Create Service`
-
 - Select the `canary` service
-
 - Under `Traffic Control` click `enabled` (and use the default weights for v1 and v2)
-
 - Under `Exposure Ingress`, select `Ingress` and use the default configuration
-
 - Click `Submit`
-
 - Click `Deploy Changes`
 
 ## See the results

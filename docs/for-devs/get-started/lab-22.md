@@ -56,11 +56,8 @@ serviceMonitor:
 Check if the ServiveMonitor has been picked up by Prometheus:
 
 1. In the left menu go to `Apps`
-
 2. Click on the `Prometheus` app
-
 3. In Prometheus, click on `Status` in the top menu and then click `Targets`
-
 4. You will now see that the ServiceMonitor has the `State` UP:
 
 ![metrics](../../img/custom-metrics.png)
@@ -82,11 +79,8 @@ for i in {1..1000}; do curl https://custom-metrics-labs.<your-domain>/hello; sle
 To see the metrics:
 
 1. Open the `Prometheus` app
-
 2. In Prometheus, fill in the following Expression: `application_greetings_total`
-
 3. Click on `Graph`
-
 4. You should now see the following:
 
 ![metrics](../../img/custom-metrics-1.png)

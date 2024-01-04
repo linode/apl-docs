@@ -36,6 +36,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
+  labels:
+    otomi.io/app: nginx
+    app: nginx
 spec:
   replicas: 1
   selector:

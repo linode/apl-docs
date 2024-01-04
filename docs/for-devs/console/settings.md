@@ -8,13 +8,39 @@ Based on self-service options allowed by the platfrom administrator, team member
 
 ## Configure OIDC group mapping
 
-Change the OIDC group-mapping to allow access to the team based on group membership.
+:::note
+The OIDC group mapping will only be visible when Otomi is configured with an external Identity Provider (IdP).
+:::
+
+Change the OIDC group-mapping to allow access based on group membership.
+
+## Managed monitoring
+
+Activate a (platform) managed Grafana, Prometheus or Alertmanager instance for the team. The installed Grafana, Prometheus and Alertmanager will be monitored by the Platform administrator.
+
+### Grafana
+
+Enable to install a Grafana instance for the team.
+
+**Dependencies:**
+
+- The Grafana instance is automatically configured with a datasource for the Team's Prometheus.
+- If Loki (for logs) is enabled on the Platform, Grafana needs to be enabled here.
+- Grafana is provisioned with multiple dashboards that rely on the Platform Prometheus. If Prometheus on the Platform is not enabled, these dashboards will not work!
+
+### Prometheus
+
+Enable to install a Prometheus instance for the team. The Prometheus instance is configured to only scrape metrics from `PodMonitors` and `ServiceMonitors` that have the label `prometheus: team-<team-name>`.
+
+### Alertmanger
+
+Enable to install an Alertmanager instance for the team. The Alertmanger instance will only show alerts based on `Rules` from the Team's Prometheus.
+
 
 ## Configure alert settings
 
 :::note
-
-Alerts settings will only be active when Alertmanager is active.
+Alerts settings will only be active when Alertmanager is enabled for the team.
 :::
 
 Change the alert settings and preferred notification receivers.
@@ -40,7 +66,7 @@ There is no validation as there is no schema published. Add/change resource quot
 
 :::note
 
-Configuring Azure Monitor settings will only be active when `cluster.provider=azure`) and when multi-tenancy is enabled.
+Configuring Azure Monitor settings will only be active when `cluster.provider=azure`.
 :::
 
 Azure Monitor is the platform service that provides a single source for monitoring Azure resources.
@@ -61,3 +87,24 @@ Azure Monitor is the platform service that provides a single source for monitori
 ## Team self service flags
 
 The self-service flags (what is a team allowed to) can only be configured by an admin user.
+
+### Service
+
+| Option           | Permission                                                                             |
+| ---------------- | -------------------------------------------------------------------------------------- |
+| Ingress          | The Team is allowed to configure External Exposure for a Service                       |
+| Network policy   | The team is allowed to configure network (ingress and egress) for a Service            |
+
+### Team
+
+| Option                 | Permission                                                                             |
+| ---------------------- | -------------------------------------------------------------------------------------- |
+| Alerts                 | The Team is allowed to configure Alert settings for the team                           |
+| Billing alert quotas   | The team is allowed to configure Billing alert quotas for the team                     |
+| OIDC                   | The team is allowed to configure the OIDC group mapping for the team                   |
+| Resource quotas        | The team is allowed to configure resource quotas for the team                          |
+| Download kube config   | The team is allowed to download the Kube Config                                        |
+| Download docker config | The team is allowed to download the Docker Config                                      |
+| Network policy         | The team is allowed to the Network policy configuration for the team                   |
+
+

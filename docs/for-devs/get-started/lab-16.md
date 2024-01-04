@@ -12,11 +12,8 @@ When the platform administrator has enabled Falco, you might like to check and s
 ## View detected threads
 
 - Open the Grafana app
-
 - Click on `Dashboards` / `Browse`
-
 - In the list of dashboards you will see a dashboard called `Detected Threads`. Click on it
-
 - Now you will see the following dashboard, showing all the detected threads in your team workloads
 
 

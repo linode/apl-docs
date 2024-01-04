@@ -87,7 +87,11 @@ To be able to see traces, we'll first need to generate some requests. Click on t
 
 To see traces, you'll first need to find a `TraceID` of a trace. Go to `Apps` in the left menu and then click op `Loki`. Select the label `App` and select value `petclinic`.
 
-Click on a log entry of a request. Note that the requests are logged by the Istio Envoy proxy. You will now see a link to Tempo. Click on it.
+Click on a log entry of a request. Note that the requests are logged by the Istio Envoy proxy. You will now see a link to the full trace in Grafana Tempo. Click on it.
+
+:::note
+If you don't see any traces, check and see if the pod runs the `ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.26.0` container. Sometimes the pod starts before the `Instrumentation` resource has been created. If this is the case, restart the Pod
+:::
 
 ![Team apps](../../img/traces-loki.png)
 

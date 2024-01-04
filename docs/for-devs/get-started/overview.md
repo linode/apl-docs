@@ -45,7 +45,7 @@ Welcome to Otomi! If you are going to use Otomi, these getting started labs are 
 
 **Expose workloads**
 
-### [Publicly expose a service](lab-18)
+### [Publicly expose a service](lab-18.md)
 
 ---
 

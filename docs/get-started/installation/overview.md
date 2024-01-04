@@ -42,9 +42,6 @@ Install Otomi on Vultr Kubernetes using Cloudflare DNS
 ### [Helm](helm.md)
 Instructions for using the Otomi Helm chart
 
-### [Minikube](minikube.md)
-Install Otomi on Minikube
-
 ### [Know issues](known-issues.md)
 Know installation issues
 

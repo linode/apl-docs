@@ -16,7 +16,6 @@ module.exports = {
           "get-started/installation/linode",
           "get-started/installation/scaleway",
           "get-started/installation/vultr",
-          "get-started/installation/minikube",
           "get-started/installation/helm",
           "get-started/installation/known-issues",
           "get-started/installation/oidc",

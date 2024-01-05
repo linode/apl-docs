@@ -228,4 +228,13 @@ module.exports = {
       },
     ],
   ],
+  scripts: [
+    {
+      src: 'https://static.reo.dev/bca128e3b28a4dc/reo.js',
+      async: true,
+      onLoad: () => {
+        window.Reo && window.Reo.init({ clientID: "bca128e3b28a4dc" });
+      }
+    },
+  ],
 };

@@ -1,85 +1,99 @@
 ---
-slug: lab-10
-title: BYO manifests to create a workload
-sidebar_label: BYO manifests
+slug: deploy-workloads-argo-cd-otomi-kubernetes
+title: Deploy Workloads with Argo CD in Otomi
+sidebar_label: Deploy Workloads with Argo CD
+description: Learn how to deploy your applications using Argo CD in the Otomi Kubernetes environment with this comprehensive guide. Discover how to manage resources effectively using Git and streamline your deployment process.
+keywords:
+  - Argo
+  - ArgoCD
+  - Otomi
+  - Kubernetes
+  - GitOps
+  - Workloads
+  - Deployment
+  - Deploying
+  - HowTo
+  - Tutorial
 ---
 
 :::info
-Argo CD needs to be activated for this lab.
+**Prerequisite**: Argo CD needs to be activated for this lab.
 :::
 
-Deploying your applications by doing `kubectl apply -f` is not ideal. As a developer you would like to manage resources based on code stored in Git. Otomi integrates Argo CD to provide an out-of-the-box GitOps solution.
+Deploying applications using `kubectl apply -f` can be inefficient. As a developer, managing resources based on code stored in Git enhances control and traceability. Otomi integrates with Argo CD to provide a seamless GitOps experience, streamlining your deployment process.
 
-## Using Argo CD to deploy manifests and charts
+## Deploying Workloads Using Argo CD and Otomi
 
-In the apps section in Otomi console, you'll see an app called Argo CD. Click on it.
+Start by navigating to the apps section in the Otomi console, where you will find an app named Argo CD. Click on it to proceed.
 
-![kubecfg](../../img/team-app-argo.png)
+![Argo CD App in Otomi Console](../../img/team-app-argo.png)
 
-In Argo CD you'll see that an Argo app has already been created for your team. This app is configured to synchronize any manifest that is in the created repo in Gitea for Argo.
+In Argo CD, notice that an application specific to your team has already been set up. This application syncs with any manifest present in the Gitea repository designated for Argo.
 
-![kubecfg](../../img/argo-team-app.png)
+![Argo CD Team Application Overview](../../img/argo-team-app.png)
 
-If you click on the app and then click on `APP DETAILS`, you'll see the `REPO URL` and also that the `SYNC POLICY` is set to `ENABLE AUTO-SYNC`.
+After clicking on the app and selecting `APP DETAILS`, you'll find the `REPO URL`. The `SYNC POLICY` is also set to `ENABLE AUTO-SYNC`, facilitating automatic synchronization with the repository.
 
-Go back to the console and click on the Gitea app in the apps section. In the list of repo's you'll now see a new repo called `otomi/team-<name>-argocd`.
+Returning to the Otomi console, select the Gitea app in the apps section. There, you'll discover a new repository titled `otomi/team-<name>-argocd`.
 
-![kubecfg](../../img/argo-team-repo.png)
+![Gitea Repository for Argo CD in Otomi](../../img/argo-team-repo.png)
 
-To show the power of Argo CD, let's add a manifest to the repo and see what happens.
+### Demonstrating the Power of Argo CD
 
-- Create a new file in the repo called `deploy-nginx.yaml` 
-- Add the following contents to the file:
+Let's demonstrate the capabilities of Argo CD by adding a manifest to the repository:
 
-```
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx
-  labels:
-    otomi.io/app: nginx
-    app: nginx
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-        - name: nginx
-          image: nginxinc/nginx-unprivileged:stable
-          resources:
-            limits:
-              memory: '128Mi'
-              cpu: '200m'
-            requests:
-              memory: '64Mi'
-              cpu: '100m'
-          ports:
-            - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx
-spec:
-  selector:
-    app: nginx
-  ports:
-    - port: 80
-      targetPort: 8080
-```
+1. Create a file named `deploy-nginx.yaml` in the repository.
+2. Insert the following contents into the file:
 
-- Commit Changes
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: nginx
+     labels:
+       otomi.io/app: nginx
+       app: nginx
+   spec:
+     replicas: 1
+     selector:
+       matchLabels:
+         app: nginx
+     template:
+       metadata:
+         labels:
+           app: nginx
+       spec:
+         containers:
+           - name: nginx
+             image: nginxinc/nginx-unprivileged:stable
+             resources:
+               limits:
+                 memory: '128Mi'
+                 cpu: '200m'
+               requests:
+                 memory: '64Mi'
+                 cpu: '100m'
+             ports:
+               - containerPort: 8080
+   ---
+   apiVersion: v1
+   kind: Service
+   metadata:
+     name: nginx
+   spec:
+     selector:
+       app: nginx
+     ports:
+       - port: 80
+         targetPort: 8080
+   ```
 
-Now go back to the Argo CD application and click on the `team<name>` application.
+3. Commit the changes to the repository.
 
-Note that the Argo CD application is not configured to automatically SYNC. So click `SYNC` and then `REFRESH`.
+Once you return to the Argo CD application, click on the `team<name>` application.
 
-![kubecfg](../../img/argo-team-sync.png)
+Remember, the application is not configured for automatic syncing, so manually initiate a `SYNC` by selecting SYNC and then `REFRESH`.
+
+![Syncing in ArgoCD](../../img/argo-team-sync.png)
 
 

@@ -1,6 +1,6 @@
 ---
 slug: deploy-workloads-argo-cd-otomi-kubernetes
-title: Deploy Workloads with Argo CD in Otomi
+title: Deploy Workloads with Argo CD
 sidebar_label: Deploy Workloads with Argo CD
 description: Learn how to deploy your applications using Argo CD in the Otomi Kubernetes environment with this comprehensive guide. Discover how to manage resources effectively using Git and streamline your deployment process.
 keywords:

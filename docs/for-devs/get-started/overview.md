@@ -31,7 +31,7 @@ Welcome to Otomi! If you are going to use Otomi, these getting started labs are 
 
 ### [Create secrets](lab-8.md)
 
-### [BYO manifest to create a workload](lab-10.md)
+### [Deploy Workloads with Argo CD](lab-10.md)
 
 ### [Explore the Catalog](lab-29.md)
 

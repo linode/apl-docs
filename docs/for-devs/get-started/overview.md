@@ -18,7 +18,6 @@ Welcome to Otomi! If you are going to use Otomi, these getting started labs are 
 
 **Create code repositories and build images**
 
-
 ### [Create private Git repositories](lab-3.md)
 
 ### [Create builds](lab-6.md)
@@ -31,7 +30,7 @@ Welcome to Otomi! If you are going to use Otomi, these getting started labs are 
 
 ### [Create secrets](lab-8.md)
 
-### [Deploy Workloads with Argo CD](lab-10.md)
+### [Create Kubernetes resources with Argo CD](lab-10.md)
 
 ### [Explore the Catalog](lab-29.md)
 
@@ -45,7 +44,7 @@ Welcome to Otomi! If you are going to use Otomi, these getting started labs are 
 
 **Expose workloads**
 
-### [Publicly expose a service](lab-18.md)
+### [Publicly expose workloads](lab-18.md)
 
 ---
 
@@ -56,14 +55,6 @@ Welcome to Otomi! If you are going to use Otomi, these getting started labs are 
 ### [Scan images for vulnerabilities](lab-7.md)
 
 ### [Scan your running containers for vulnerabilities](lab-17.md)
-
----
-
-**Expose workloads**
-
-### [Publicly expose a service](lab-18.md)
-
-### [Configuring network policies](lab-19.md)
 
 ---
 

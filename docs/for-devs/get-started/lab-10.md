@@ -2,7 +2,7 @@
 slug: deploy-workloads-argo-cd-otomi-kubernetes
 title: Deploy Workloads with Argo CD
 sidebar_label: Deploy Workloads with Argo CD
-description: Learn how to deploy your applications using Argo CD in the Otomi Kubernetes environment with this comprehensive guide. Discover how to manage resources effectively using Git and streamline your deployment process.
+description: Learn how to deploy your applications on Kubernetes using Argo CD with this comprehensive guide. Discover how to manage resources effectively using Git and streamline your deployment process.
 keywords:
   - Argo
   - ArgoCD
@@ -16,31 +16,27 @@ keywords:
   - Tutorial
 ---
 
-:::info
-**Prerequisite**: Argo CD needs to be activated for this lab.
-:::
+Creating Kubernetes resources using `kubectl apply -f` can be inefficient. As a developer, managing resources based on code stored in Git enhances control and traceability. Otomi integrates with Argo CD to provide a seamless GitOps experience, streamlining your deployment process.
 
-Deploying applications using `kubectl apply -f` can be inefficient. As a developer, managing resources based on code stored in Git enhances control and traceability. Otomi integrates with Argo CD to provide a seamless GitOps experience, streamlining your deployment process.
-
-## Deploying Workloads Using Argo CD and Otomi
+## Deploying Workloads Using Argo CD
 
 Start by navigating to the apps section in the Otomi console, where you will find an app named Argo CD. Click on it to proceed.
 
 ![Argo CD App in Otomi Console](../../img/team-app-argo.png)
 
-In Argo CD, notice that an application specific to your team has already been set up. This application syncs with any manifest present in the Gitea repository designated for Argo.
+In Argo CD, notice that an application specific to your team has already been set up. This application syncs with any manifest present in the Gitea repository designated for your team.
 
 ![Argo CD Team Application Overview](../../img/argo-team-app.png)
 
-After clicking on the app and selecting `APP DETAILS`, you'll find the `REPO URL`. The `SYNC POLICY` is also set to `ENABLE AUTO-SYNC`, facilitating automatic synchronization with the repository.
+After clicking on the app and selecting `APP DETAILS`, you'll find the `REPO URL`.
 
-Returning to the Otomi console, select the Gitea app in the apps section. There, you'll discover a new repository titled `otomi/team-<name>-argocd`.
+Return to the Otomi console, select the Gitea app in the apps section. In Gitea you will see a repository titled `otomi/team-<name>-argocd`.
 
 ![Gitea Repository for Argo CD in Otomi](../../img/argo-team-repo.png)
 
 ### Demonstrating the Power of Argo CD
 
-Let's demonstrate the capabilities of Argo CD by adding a manifest to the repository:
+Let's demonstrate the capabilities of Argo CD by adding some manifests to the repository:
 
 1. Create a file named `deploy-nginx.yaml` in the repository.
 2. Insert the following contents into the file:
@@ -92,7 +88,7 @@ Let's demonstrate the capabilities of Argo CD by adding a manifest to the reposi
 
 Once you return to the Argo CD application, click on the `team<name>` application.
 
-Remember, the application is not configured for automatic syncing, so manually initiate a `SYNC` by selecting SYNC and then `REFRESH`.
+The application is configured for automatic syncing, so a manual `SYNC` is not needed.
 
 ![Syncing in ArgoCD](../../img/argo-team-sync.png)
 

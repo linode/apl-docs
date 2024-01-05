@@ -1,6 +1,6 @@
 ---
 slug: lab-18
-title: Publicly expose your application
+title: Publicly expose workloads
 sidebar_label: Expose services
 ---
 

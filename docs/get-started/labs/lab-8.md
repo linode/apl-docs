@@ -58,5 +58,5 @@ The secret is now created in vault. Now we need to synchronize the secret in Vau
 The secret in Vault will now be synchronized to Kubernetes and can be used by the team in any workload. Otomi Console makes this easy by offering a secret selector during the creation of services.
 
 :::info
-In this lab we only covered using generic secrets. See [here](../console/secrets.md) to see how you can create TLS and pull secrets
+In this lab we only covered using generic secrets. See [here](/for-devs/console/secrets.md) to see how you can create TLS and pull secrets
 :::

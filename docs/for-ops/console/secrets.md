@@ -5,7 +5,7 @@ sidebar_label: Secrets
 ---
 
 :::info
-To enable this feature, first make sure [Hashicorp Vault](../../apps/vault.md) is activated.
+To enable this feature, first make sure [Hashicorp Vault](/apps/vault.md) is activated.
 :::
 
 All known Builds on the platform are listed here. Builds can be sorted based on:

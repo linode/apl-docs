@@ -10,7 +10,7 @@ Welcome to Otomi! If you would like to explore Otomi, this getting started guide
 
 We assume you (or the platform administrator) have:
 
-1. Installed Otomi with DNS configured
+1. Installed Otomi with DNS configured. See [here](get-started/installation/overview.md)
 
 2. Activated the following applications:
 

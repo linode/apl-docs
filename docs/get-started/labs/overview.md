@@ -1,18 +1,18 @@
 ---
 slug: overview
-title: Get started with Otomi Labs
-sidebar_label: Get Started Labs
+title: Overview
+sidebar_label: Overview
 ---
 
-**Otomi get started labs**
-
-Welcome to Otomi! If you are going to use Otomi, these getting started labs are for you. Step by step we'll guide you in using Otomi to build, deploy and manage your containerized applications. The getting started with Otomi contains a set of labs to cover the most common activities performed by developer- and/or DevOps teams.
+Welcome to Otomi! If you are going to use Otomi or like to learn Kubernetes, these labs are for you. Step by step we'll guide you in how to build, deploy, secure and observe containerized applications on Kubernetes. The labs cover the most common activities performed by developer- and/or DevOps teams when using Kubernetes with Otomi.
 
 ---
 
 **Make sure everything is ready to get started**
 
 ### [Prerequisites](lab-1.md)
+
+### [Provision a Kubernetes cluster and install Otomi](get-started/installation/overview.md)
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 slug: deploy-workloads-argo-cd-otomi-kubernetes
-title: Deploy Workloads with Argo CD
-sidebar_label: Deploy Workloads with Argo CD
+title: Using Argo CD
+sidebar_label: Using Argo CD
 description: Learn how to deploy your applications on Kubernetes using Argo CD with this comprehensive guide. Discover how to manage resources effectively using Git and streamline your deployment process.
 keywords:
   - Argo
@@ -18,7 +18,7 @@ keywords:
 
 Creating Kubernetes resources using `kubectl apply -f` can be inefficient. As a developer, managing resources based on code stored in Git enhances control and traceability. Otomi integrates with Argo CD to provide a seamless GitOps experience, streamlining your deployment process.
 
-## Deploying Workloads Using Argo CD
+## Create Kubernetes resources with Argo CD
 
 Start by navigating to the apps section in the Otomi console, where you will find an app named Argo CD. Click on it to proceed.
 
@@ -34,7 +34,7 @@ Return to the Otomi console, select the Gitea app in the apps section. In Gitea 
 
 ![Gitea Repository for Argo CD in Otomi](../../img/argo-team-repo.png)
 
-### Demonstrating the Power of Argo CD
+## See the Power of Argo CD in action
 
 Let's demonstrate the capabilities of Argo CD by adding some manifests to the repository:
 

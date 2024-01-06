@@ -151,8 +151,8 @@ module.exports = {
               to: "/docs/get-started/installation/overview",
             },
             {
-              label: "Get started labs",
-              href: "/docs/for-devs/get-started/overview",
+              label: "Labs",
+              href: "/docs/get-started/labs/overview",
             },
             {
               label: "Roadmap",
@@ -170,10 +170,6 @@ module.exports = {
             {
               label: "YouTube",
               href: "https://www.youtube.com/channel/UCarOB4QW6lTqKG17XUT2uaA",
-            },
-            {
-              label: "Facebook",
-              href: "https://www.facebook.com/groups/otomiusers",
             },
             {
               label: "Start contributing",

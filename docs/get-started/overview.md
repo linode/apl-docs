@@ -13,12 +13,11 @@ sidebar_label: Overview
 ### Step 1: [Read the prerequisites](prerequisites.md)
 Know what is required to install Otomi.
 
-
 ### Step 2: [Install Otomi](installation/overview.md)
-Deploy a Kubernetes cluster in your favourite cloud or infrastructure and install Otomi on it. The examples on how to deploy a Kubernetes cluster are only to help you get started.
+Setup a Kubernetes cluster in your favourite cloud or infrastructure and install Otomi on it. The examples on how to setup a Kubernetes cluster are only to help you get started.
 
 ### Step 3: [Activate your installation ](activation.md)
 Activate your Otomi installation on [otomi.cloud](https://portal.otomi.cloud)
 
-### Step 4: [Explore Otomi with the Get Stared Labs](/docs/for-devs/get-started/overview.md)
-The get started with Otomi labs contains a set of labs to cover all the Otomi supported activities performed by developer- and/or DevOps teams.
+### Step 4: [Explore Otomi using the Labs](labs/overview.md)
+Otomi Labs contains a set of labs to cover all the  activities performed by developer- and/or DevOps teams supported by Otomi.

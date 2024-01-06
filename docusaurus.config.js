@@ -18,11 +18,11 @@ const isBootstrapPreset = process.env.DOCUSAURUS_PRESET === "bootstrap";
 
 module.exports = {
   title: "Otomi",
-  tagline: "Get started with Otomi",
+  tagline: "Self-hosted DevOps platform for Kubernetes",
   url: "https://otomi.io",
   baseUrl: "/",
   customFields: {
-    description: "Self-hosted PaaS for Kubernetes",
+    description: "Build, deploy and monitor apps on Kubernetes",
   },
   favicon: "img/otomi.ico",
   onBrokenLinks: "throw",

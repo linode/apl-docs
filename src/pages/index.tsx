@@ -59,21 +59,16 @@ function Home() {
         </div>
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
-            <h1>DEMO</h1> <h4>Use Otomi as a self servive portal for DevOps teams when using Kubernetes</h4>
+            <h1>Build, Deploy and Run applications at scale</h1> <h4>With one consistent experience for Kubernetes across public cloud, on-premise and hybrid cloud</h4>
           </div>
-        </div>
-        <div
-          id="demo"
-          className={clsx(styles.announcement, styles.announcementDark)}
-        >
-          <div className={`${clsx(styles.appsContainer)}`}>
-            <br></br>
-          <div className={styles.iframeWrapper}>
-          <iframe width="960" height="540" className={styles.iframeVideo} src="https://www.youtube.com/embed/RI4pIVxbhS0?si=_hslbXVlnjoQdJmG" title="Use Otomi as a self servive portal for developers"  allow="fullscreen;"></iframe> 
+          <div>
+            <img 
+              src={useBaseUrl("img/otomi-console.png")}
+              alt="Otomi web console" 
+              width="800" 
+              height="600"
+            />
           </div>
-
-          </div>
-          <br></br>
         </div>
         {/* <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>

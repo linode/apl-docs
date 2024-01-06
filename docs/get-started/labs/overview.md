@@ -1,7 +1,7 @@
 ---
 slug: overview
-title: Overview
-sidebar_label: Overview
+title: Labs Overview
+sidebar_label: Labs Overview
 ---
 
 Welcome to Otomi! If you are going to use Otomi or like to learn Kubernetes, these labs are for you. Step by step we'll guide you in how to build, deploy, secure and observe containerized applications on Kubernetes. The labs cover the most common activities performed by developer- and/or DevOps teams when using Kubernetes with Otomi.
@@ -20,7 +20,7 @@ Welcome to Otomi! If you are going to use Otomi or like to learn Kubernetes, the
 
 ### [Create private Git repositories](lab-3.md)
 
-### [Create builds](lab-6.md)
+### [Build images](lab-6.md)
 
 ### [Trigger builds](lab-26.md)
 

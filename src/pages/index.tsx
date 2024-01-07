@@ -59,7 +59,7 @@ function Home() {
         </div>
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
-            <h1>Build, Deploy and Run applications at scale</h1> <h4>With one consistent experience for Kubernetes across public cloud, on-premise and hybrid cloud</h4>
+            <h1>Build, Deploy and Run applications at scale</h1> <h4>With one consistent experience on any CNCF conformant Kubernetes cluster across public cloud, on-premise and hybrid cloud</h4>
           </div>
           <div>
             <img 

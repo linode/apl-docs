@@ -25,7 +25,7 @@ Suppose you have 2 application workloads that you would like to run on multiple 
 
 ![edge](../img/edge.png)
 
-Read [this](../../docs/for-ops/how-to/core-only) how-to to learn more about installing Otomi at the edge.
+Read [this](/docs/for-ops/how-to/core-only) how-to to learn more about installing Otomi at the edge.
 
 
 

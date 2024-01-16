@@ -10,7 +10,7 @@ The apps section lists all apps available.
 
 ### Activating apps
 
-When Otomi is installed, only the [core](../../../product/architecture#catagories) applications are activated. To active more apps, hoover over the app you would like to activate and click on the activation button. All apps are configured with default configuration. To change the configuration, click on the configuration button and then click on `VALUES`. 
+When Otomi is installed, only the [core](/product/architecture#catagories) applications are activated. To active more apps, hoover over the app you would like to activate and click on the activation button. All apps are configured with default configuration. To change the configuration, click on the configuration button and then click on `VALUES`. 
 
 :::info
 Note: Some apps have dependencies with other apps. The dependencies can be found [here](https://github.com/redkubes/otomi-core/blob/main/core.yaml). Dependencies are handled automatically.

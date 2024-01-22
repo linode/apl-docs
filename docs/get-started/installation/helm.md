@@ -87,9 +87,16 @@ git clone https://github.com/redkubes/otomi-core.git
 cd otomi-core
 ```
 
+Before installing the chart from source, first change the `CHART_VERSION_PLACEHOLDER` in the `chart/otomi/Chart.yaml` to `v1.0.0`
+
 ### Install
 
-Now customize the `values.yaml` file.
+Now customize the `values.yaml` file. Make sure to set the version to the branch you like to use:
+
+```
+otomi:
+  version: main
+```
 
 Use the following command to install the chart with the name `my-otomi-release` (a custom name that you choose).
 

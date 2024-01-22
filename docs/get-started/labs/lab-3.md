@@ -16,7 +16,17 @@ Team members first have to sign in to Gitea (using OpenID), after which they are
 The `otomi-admin` account is unable to login with OpenID, this account needs to login with the user/password login form.
 :::
 
-In these labs we'll be using a Team called `labs` and a user called `labs-user`.
+In the labs we'll be using a Team called `labs` and a user called `labs-user`.
+
+## Using a Git client
+
+Gitea in Otomi only supports HTTPS for Git authentication. To connect to Git using HTTPS you'll first need to add a password to your account in Gitea:
+
+- Sign in to Gitea using OpenID
+- Click on your account (top right) and then click `Settings`
+- Fill in a password in the `Account` tab
+
+After adding a password, you can now authenticate using your username (labs-user) and the password created in Gitea.
 
 ## Create the private repository
 

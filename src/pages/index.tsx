@@ -5,12 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-//  import React from 'react';
-//  import {Redirect} from '@docusaurus/router';
-//  const Home = () => {
-//    return <Redirect to="/docs" />;
-//  };
-
 import React from "react";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -18,7 +12,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
 import styles from "./index.module.css";
-import apps from "../data/apps";
 
 function Home() {
   const context = useDocusaurusContext();
@@ -70,19 +63,6 @@ function Home() {
             />
           </div>
         </div>
-        {/* <div className={clsx(styles.announcement, styles.announcementBanner)}>
-          <div className={styles.announcementInner}>
-            <h1>FEATURE OVERVIEW</h1> <h4>Install Otomi and deploy your app in just a couple of minutes</h4>
-          </div>
-        </div>
-        <div
-          id="carousel"
-          className={clsx(styles.announcement, styles.announcementDark)}
-        >
-          <div className={styles.announcementInner}>
-            <Carousel items={carouselItems} />
-          </div>
-        </div> */}
       </main>
     </Layout>
   );

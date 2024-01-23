@@ -18,7 +18,7 @@ Teams will be be automatically given a git repository in Gitea named `team-$team
 
 ## Integrations
 
-Otomi integrated NGINX Ingress Controller into an advanced [ingress architecture](/product/architecture#ingress--sso).
+Otomi integrated NGINX Ingress Controller into an advanced [ingress architecture](/product/architecture#advanced-ingress-architecture-as-its-core).
 
 ## Instructions
 

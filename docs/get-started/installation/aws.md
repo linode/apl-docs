@@ -47,6 +47,14 @@ terraform init
 terraform apply
 ```
 
+Get the credentials of the cluster:
+
+```bash
+# Update your kubeconfig
+# Default: aws eks update-kubeconfig --name otomi
+aws eks update-kubeconfig --name <cluster_name>
+```
+
 ## Add a CNI
 
 To use the network policies feature in Otomi, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI or any other CNI that supports Kubernetes network polices.
@@ -146,12 +154,17 @@ ACCESS_KEY_SECRET=$(echo $ACCESS_KEY | jq -r '.AccessKey.SecretAccessKey')
 
 ## Create the values.yaml file
 
-Add the DNS configuration created in the previous step to the `values.yaml` that we'll use to install Otomi:
+- Get the API server endpoint (eg. https://C000000000000.gr7.eu-central-1.eks.amazonaws.com)
+
+- Add the DNS configuration created in the previous step, the API server endpoint, the `domainSuffix`, `domainFilters`, `region` and `email` to the `values.yaml` that we'll use to install Otomi:
+
 ```bash
 tee values.yaml<<EOF
 cluster:
   name: otomi
   provider: aws
+  region: your-region
+  apiName: api-server-endpoint
   domainSuffix: your-domain.com
 otomi:
   hasExternalDNS: true
@@ -163,7 +176,7 @@ dns:
       credentials:
         secretKey: $ACCESS_KEY_ID
         accessKey: $ACCESS_KEY_SECRET
-      region: eu-central-1 # your region
+      region: your-region
 apps:
   cert-manager:
     issuer: letsencrypt
@@ -172,18 +185,8 @@ apps:
 EOF
 ```
 
-And adjust the `domainSuffix`, `domainFilters`, `region` and `email`.
-
 
 ## Install Otomi on EKS
-
-Get the credentials of the cluster:
-
-```bash
-# Update your kubeconfig
-# Default: aws eks update-kubeconfig --name otomi
-aws eks update-kubeconfig --name <cluster_name>
-```
 
 Install Otomi using Helm:
 

@@ -154,7 +154,7 @@ ACCESS_KEY_SECRET=$(echo $ACCESS_KEY | jq -r '.AccessKey.SecretAccessKey')
 
 ## Create the values.yaml file
 
-- Get the API server endpoint (eg. https://C000000000000.gr7.eu-central-1.eks.amazonaws.com)
+- Get the API server endpoint. You can find the API server endpoint in the Details section of the cluster in the AWS console.
 
 - Add the DNS configuration created in the previous step, the API server endpoint, the `domainSuffix`, `domainFilters`, `region` and `email` to the `values.yaml` that we'll use to install Otomi:
 

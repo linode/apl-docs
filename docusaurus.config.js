@@ -86,10 +86,7 @@ module.exports = {
       backgroundColor: "#0d47a1",
       textColor: "#ffd700",
     },
-    prism: {
-      theme: require("prism-react-renderer/themes/github"),
-      darkTheme: require("prism-react-renderer/themes/dracula"),
-    },
+    theme: "github",
     image: "img/otomi-logo.svg",
     algolia: {
       appId: "U3MTGFO19C",
@@ -197,7 +194,6 @@ module.exports = {
       ],
     },
   },
-  trailingSlash: true,
   presets: [
     [
       isBootstrapPreset

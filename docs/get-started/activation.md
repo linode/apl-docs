@@ -72,7 +72,7 @@ alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 We strongly advise to not use the default `otomi-admin` account after activation and to not change the password. Store it somewhere safe and only use it in case absolutely required.
 :::
 
-[Create a new user account in Keycloak](/docs/apps/keycloak#step-2-create-a-user-in-keycloak) and add the new user to the `otomi-admin` and `team-admin` group.
+[Create a new user account in Keycloak](/docs/apps/keycloak#create-a-user-in-keycloak) and add the new user to the `otomi-admin` and `team-admin` group.
 
 ## Step 5 (Optional): Add the URL of the Kubernetes API
 

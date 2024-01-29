@@ -194,6 +194,7 @@ module.exports = {
       ],
     },
   },
+  trailingSlash: false,
   presets: [
     [
       isBootstrapPreset

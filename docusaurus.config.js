@@ -33,9 +33,10 @@ module.exports = {
     [
       "@docusaurus/plugin-client-redirects",
       {
-        redirects: redirects.concat(
-          redirects.map((r) => ({ from: `/otomi${r.from}`, to: r.to }))
-        ),
+        redirects: redirects.map((r) => ({
+          from: r.from.concat(r.from.map((f) => (`/otomi${f}`))),
+          to: r.to,
+        })),
         createRedirects(existingPath) {
           return [`/otomi${existingPath}`];
         },

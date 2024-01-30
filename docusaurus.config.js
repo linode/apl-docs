@@ -126,7 +126,7 @@ module.exports = {
           position: "left",
         },
         {
-          to: "https://redkubes.com/pricing-otomi-subscriptions/",
+          to: "https://www.redkubes.com/kubernetes-platform/pricing",
           label: "Support",
           position: "left",
         },

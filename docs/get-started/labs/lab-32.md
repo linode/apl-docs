@@ -8,28 +8,28 @@ A Project in Otomi is a collection of a Build, a Workload and a Service. The ben
 
 ## Create a new Git repository
 
-1. Create a new repo called `hello-world`
+1. Create a new repo called `nodejs-helloworld`
 2. Set the Default Branch to `master`
 3. Clone the Hello World Sample Application from the Red Kubes GitHub repository:
 
 ```bash
 git clone https://github.com/redkubes/nodejs-helloworld
-cd spring-petclinic
+cd nodejs-helloworld
 ```
 
-4. Mirror the Hello World Sample Application to your `hello-world` repo:
+4. Mirror the Hello World Sample Application to your `nodejs-helloworld` repo:
 
 ```
-git push --mirror https://gitea.<your-domain>/<your-user-name>/hello-world.git
+git push --mirror https://gitea.<your-domain>/<your-user-name>/nodejs-helloworld.git
 ```
 
 ## Create a Project
 
 1. Go to `Project` and click `Create Project`
-2. Fill in a name for the Project. This name is used for the Build (the name of the image) and the Workload. The Service will automatically select the ClusterIp service name based on the Workload name.
+2. Fill in a name for the Project. This name is used for the Build (the name of the image) and the Workload. The Service will automatically select the ClusterIP service name based on the Workload name
 3. Click `Create build from source`
 4. Click `Next`
-5. Choose `Docker` and fill in the repository URL of the `hello-world` repository
+5. Choose `Docker` and fill in the repository URL of the `nodejs-helloworld` repository
 6. Enable `Trigger`
 7. Select the `Digest` strategy for the `Auto image updater`
 8. The `imageRepository` is already filled in. Make sure the `tag` is identical to the tag used for the Build
@@ -40,14 +40,14 @@ git push --mirror https://gitea.<your-domain>/<your-user-name>/hello-world.git
 
 ## Get the webhook URL
 
-Before we can configure the webhook for the `hello-world` repo in Gitea, we will need the webhook URL. You can find this webhook URL for your build in the list of Builds. Add the webhook URL to your clipboard.
+Before we can configure the webhook for the `nodejs-helloworld` repo in Gitea, we will need the webhook URL. You can find this webhook URL for your build in the list of Builds. Add the webhook URL to your clipboard.
 
 Also notice that the status of the Build shows an exclamation mark. This is because Otomi created the Pipeline, but the PipelineRun is not yet created because it was not triggered yet.
 
 ## Create a Webhook
 
 1. In Otomi Console, click on `apps` the left menu and then open `Gitea`
-2. In the top menu of Gitea, click on `Explore` and then on the `hello-world` repo
+2. In the top menu of Gitea, click on `Explore` and then on the `nodejs-helloworld` repo
 3. Go to `Settings` (top right) and then to `Webhooks`
 4. Click `Add Webhook` and select `Gitea`
 5. In the `Target URL`, paste the webhook URL from your clipboard.
@@ -55,9 +55,9 @@ Also notice that the status of the Build shows an exclamation mark. This is beca
 
 ## Trigger the build
 
-You can now trigger the build by doing a commit in the `hello-world` repo, or by testing the webhook. Let's test the webhook:
+You can now trigger the build by doing a commit in the `nodejs-helloworld` repo, or by testing the webhook. Let's test the webhook:
 
-1. In Gitea, go to the `Settings` (top right) of the `hello-world` repo and then to `Webhooks`
+1. In Gitea, go to the `Settings` (top right) of the `nodejs-helloworld` repo and then to `Webhooks`
 2. Click on the webhook we just created
 3. In the bottom, click on `Test Delivery`
 

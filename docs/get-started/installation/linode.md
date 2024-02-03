@@ -27,8 +27,8 @@ export KUBECONFIG=<path-to-downloads>/otomi--kubeconfig.yaml
 
 ## Configure DNS
 
-:::info AlERT
-Support for Linode DNS is coming soon!
+:::info
+When using Domains in Linode, name resolving takes at least 30 min to work. The Otomi installer will retry until it can resolve the Keycloak host name in the configured domain.
 :::
 
 If you want to learn about how to use Linode DNS Manager read the following tutorials:

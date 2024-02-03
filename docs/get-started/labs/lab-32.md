@@ -6,6 +6,10 @@ sidebar_label: Create projects
 
 A Project in Otomi is a collection of a Build, a Workload and a Service. The benefit of using Projects is that you can create a Build, a Workload and a Service in one run. Projects are ideal for developers to run multiple code branches next to each other and automatically update the deployment based on a push. In this lab we are going to create a Project and see how everything now comes together is one simple form.
 
+:::info AlERT
+It is currently not possible to create a Project using the Auto Image Update feature. We are trying to resolve this as quick as possible. If you would like to try the Auto Image Update feature, first create a Build using a Trigger and then create a Workload.
+:::
+
 ## Create a new Git repository
 
 1. Create a new repo called `nodejs-helloworld`

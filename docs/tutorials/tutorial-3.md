@@ -10,7 +10,7 @@ Otomi by default installs a minimal set of core applications. With the Core apps
 
 ## Optional Apps
 
-Next to the Core apps, Otomi offers optional apps like Knative, Harbor, Vault, Kubeapps, Prometheus, Loki, Alertmanager, and more. These apps are all fully integrated and can be activated by dragging them to the active apps section in the Console.
+Next to the Core apps, Otomi offers optional apps like Knative, Harbor, Vault, Prometheus, Loki, Alertmanager, and more. These apps are all fully integrated and can be activated by dragging them to the active apps section in the Console.
 
 In this lab we are going to activate Loki for logging.
 

@@ -22,7 +22,7 @@ As of version [1.0.0](https://github.com/redkubes/otomi-core/releases/tag/v0.21.
 :::
 
 :::info
-The Otomi [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features and using Harbor for private registries is NOT supported when Otomi is installed with minimal configuration. Install Otomi [with DNS](#install-otomi-with-dns) to use all Otomi features.
+The Otomi [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features and using Harbor for private registries is NOT supported when Otomi is installed with minimal configuration. Install Otomi with DNS to use all Otomi features.
 :::
 
 ```yaml
@@ -31,7 +31,7 @@ cluster:
   provider: # choose between aws, azure, google, digitalocean, ovh, vultr, scaleway or custom
 ```
 
-When the chart is installed, follow the [activation steps](../../get-started/activation.md). 
+When the chart is installed, follow the [activation steps](../../get-started/activation.md).
 
 <!-- Part of the activation is to register your cluster in [Otomi Cloud](https://portal.otomi.cloud) and download a Community Edition License to use Otomi Console and Otomi API. You can also first create a license key and add it to the chart values:
 

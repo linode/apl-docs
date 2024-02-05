@@ -5,7 +5,7 @@ module.exports = {
       "get-started/promo",
       "get-started/prerequisites",
       {
-        "Installation": [
+        Installation: [
           "get-started/installation/overview",
           "get-started/installation/aws",
           "get-started/installation/azure",
@@ -22,7 +22,7 @@ module.exports = {
           "get-started/installation/kms",
           "get-started/installation/entrypoint",
           "get-started/installation/byo-wildcard",
-        ]
+        ],
       },
       "get-started/activation",
       {
@@ -178,6 +178,7 @@ module.exports = {
       "apps/minio",
       "apps/otel",
       "apps/prometheus",
+      "apps/sealedsecrets",
       "apps/thanos",
       "apps/trivy",
       "apps/tekton",
@@ -189,4 +190,4 @@ module.exports = {
     //   "tutorials/tutorial-1",
     // ],
   },
-};
+}

@@ -178,6 +178,7 @@ module.exports = {
       "apps/minio",
       "apps/otel",
       "apps/prometheus",
+      "apps/rabbitmq",
       "apps/sealedsecrets",
       "apps/thanos",
       "apps/trivy",

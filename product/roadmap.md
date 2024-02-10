@@ -22,24 +22,33 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 - Migrate platform pipeline from Drone to Tekton ✅
 - Implement status indicators within Otomi Console to keep Team users informed about the status of various components, including Build processes, Workload management, and Service availability ✅
 - Add Team and Platform Dashboards to provide an overview of team resource status using Prometheus metrics ✅
-- Leverage Argo CD to deploy Otomi apps and Teams ✅
+- Leverage Argo CD to deploy Team K8s resources ✅
 - Quality assurance cluster for continuous Otomi hardening and performance testing ✅
 - Provide UI interface for adding Helm charts to developer catalog in Gitea ✅
 
 ## 2024 Q1
 
+- Add Grype to the Otomi Build pipeline to scan source code for security vulnerabilities ✅
 - Add the option to add charts from [artifacthub](https://artifacthub.io) to the Catalog 🔄
 - Implement a new secret management solution (as a replacement for Hashicorp Vault) 🔄
+- Move network policies out of the Service configuration to improve network policy management 🔄
+- Migrate OPA/Gatekeeper to Kyverno and offer a large set of default policies that can also be managed by Teams 🔄
+- Improve Team self-service permissions 🔄
+- Leverage Argo CD to deploy Otomi Platform apps 🔄
 - Harden the Istio service mesh configuration
 - Implement Gitea with a database managed by the CloudNativePG operator
+- Migrate Harbor and Keycloak Jobs to the Otomi operators
+- Create an Organization in Gitea for each Team (tenant)
 
 ## 2024 Q2
 
+- Bring user management into Otomi when Keycloak is used as an IdP
 - Enhance network policies across the platform
 - Establish separate Kubernetes namespaces for Team Applications
 - Ensure Otomi's NSA and CISA compliance
 - Enable user configurable storage classes
 - Provide disaster recovery procedures for Otomi core applications, such as Gitea, Keycloak and Harbor
+- Show a compliance report (code vulnerabilities, image vulnerabilities, security violations, container vulnerabilities, config audit, exposed secrets) per workload
 
 ## After Q2 2024
 

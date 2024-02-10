@@ -94,19 +94,4 @@ module.exports = [
     from: ["/docs/sre/daily"],
     to: "/docs/for-ops/sre/daily",
   },
-  {
-    from: [
-      "/about/tags/about",
-      "/about/tags/philosophy",
-    ],
-    to: "https://www.redkubes.com/about-red-kubes",
-  },
-  {
-    from: ["/blog"],
-    to: "https://www.redkubes.com/blog",
-  },
-  {
-    from: ["/blog/harbor-keycloak-istio"],
-    to: "https://www.redkubes.com/post/harbor-keycloak-and-istio-a-good-dance-troupe",
-  },
 ];

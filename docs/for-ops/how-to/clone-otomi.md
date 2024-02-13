@@ -4,7 +4,7 @@ title: Clone Otomi Instance
 sidebar_label: Clone Otomi
 ---
 
-It may happen that you need to move Otomi to another Kubernetes cluster. Because Otomi is a GitOps driven platfrom, you can export existing values that can then be uses to install a new Otomi instance.
+It may happen that you need to move Otomi to another Kubernetes cluster. Because Otomi is a GitOps driven platfrom, you can export existing values that can then be used to install a new Otomi instance.
 
 :::info
 This procedure does not cover cloning the persistent volumes from your old cluster.

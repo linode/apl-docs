@@ -21,6 +21,9 @@ While the controller generates its own certificates upon deployment, you also ha
 To configure the certificates, add the following to the `values.yaml` when installing Otomi:
 
 ```yaml
+apps:
+  sealed-secrets:
+    enabled: true
 bootstrap:
   apiVersion: v1
   items:

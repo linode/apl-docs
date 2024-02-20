@@ -82,6 +82,7 @@ The procedure to migrate from Hashicorp Vault to SealedSecrets is going to be an
 
 :::note
 This app will not be deleted if it is already deployed.
+The external-secrets app is still going to be part of Otomi
 :::
 
 #### OPA Gatekeeper

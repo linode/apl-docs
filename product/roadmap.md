@@ -15,7 +15,7 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 | v1.0          | 1.24, 1.25, 1.26             | 2023-09-28            |
 | v2.0          | 1.25, 1.26, 1.27             | 2023-11-28            |
 | v3.0          | 1.26, 1.27, 1.28             | 2024-03-28            |
-| v4.0          | 1.27, 1.28, 1.29             | 2024-04-28            |
+| v4.0          | 1.27, 1.28, 1.29             | 2024-05-14            |
 
 ## Plan
 

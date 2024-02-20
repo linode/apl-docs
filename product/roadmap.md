@@ -65,13 +65,30 @@ After Q2 2024 we have the following goals:
 
 ### v3.0
 
+#### Drone
+
+Otomi will stop delivering Drone as a platform app.
+The Tekton app is introduced in Otomi v2.0 as a replacement. There is no migration procedure, Drone is used primarely as an Otomi deployment pipeline. However if you used it as for custom pipeline then you may need to migrate them Tekton.
+
+:::note
+This app will not be deleted if it is already deployed.
+:::
+
 #### Hashicorp Vault
 
 Otomi will stop delivering the Hashicorp Vault as a platform app.
 The SealedSecrets app is introduced in Otomi v2.7 as a replacement.
 The procedure to migrate from Hashicorp Vault to SealedSecrets is going to be announced soon.
 
+:::note
+This app will not be deleted if it is already deployed.
+:::
+
 #### OPA Gatekeeper
 
 Otomi will stop delivering the OPA Gatekeeper as a platform app.
 The Kyverno app is introduced in Otomi v2.7 as a replacement. There is no migration procedure, as the basic policies are already covered. However if you used your custom policies then you may need to migrated them on your own.
+
+:::note
+This app will not be deleted if it is already deployed.
+:::

@@ -11,12 +11,15 @@ sidebar_label: Roadmap
 We are dedicated to maintain support for three different Kubernetes versions within a specific major version of Otomi. Whenever we decide to discontinue support for a particular Kubernetes version, we increment the major version of Otomi.
 
 | Otomi Version | Supported Kubernetes version | Expected release date |
-| ------------- | ---------------------------- | ------------- |
-| v1.0.0        | 1.25, 1.26, 1.27             | 2023-09-28    |
-| v2.0.0        | 1.25, 1.26, 1.27             | 2023-11-28    |
-| v3.0.0        | 1.26, 1.27, 1.28             | 2024-03-28    |
+| ------------- | ---------------------------- | --------------------- |
+| v1.0          | 1.24, 1.25, 1.26             | 2023-09-28            |
+| v2.0          | 1.25, 1.26, 1.27             | 2023-11-28            |
+| v3.0          | 1.26, 1.27, 1.28             | 2024-03-28            |
+| v4.0          | 1.27, 1.28, 1.29             | 2024-04-28            |
 
-## 2023 Q4
+## Plan
+
+### 2023 Q4
 
 - Provide a developer catalog in Gitea ✅
 - Migrate platform pipeline from Drone to Tekton ✅
@@ -26,7 +29,7 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 - Quality assurance cluster for continuous Otomi hardening and performance testing ✅
 - Provide UI interface for adding Helm charts to developer catalog in Gitea ✅
 
-## 2024 Q1
+### 2024 Q1
 
 - Add Grype to the Otomi Build pipeline to scan source code for security vulnerabilities ✅
 - Add the option to add charts from [artifacthub](https://artifacthub.io) to the Catalog 🔄
@@ -40,7 +43,7 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 - Migrate Harbor and Keycloak Jobs to the Otomi operators
 - Create an Organization in Gitea for each Team (tenant)
 
-## 2024 Q2
+### 2024 Q2
 
 - Bring user management into Otomi when Keycloak is used as an IdP
 - Enhance network policies across the platform
@@ -50,10 +53,25 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 - Provide disaster recovery procedures for Otomi core applications, such as Gitea, Keycloak and Harbor
 - Show a compliance report (code vulnerabilities, image vulnerabilities, security violations, container vulnerabilities, config audit, exposed secrets) per workload
 
-## After Q2 2024
+### After Q2 2024
 
 After Q2 2024 we have the following goals:
 
 - Make Otomi more plugable by enabling users to bring their own platform apps
 - Migrate to ambient mesh using eBPF
 - Remove platform app forms in favor of generated values that can be customized in an editor
+
+## Removed features by release
+
+### v3.0
+
+#### Hashicorp Vault
+
+Otomi will stop delivering the Hashicorp Vault as a platform app.
+The SealedSecrets app is introduced in Otomi v2.7 as a replacement.
+The procedure to migrate from Hashicorp Vault to SealedSecrets is going to be announced soon.
+
+#### OPA Gatekeeper
+
+Otomi will stop delivering the OPA Gatekeeper as a platform app.
+The Kyverno app is introduced in Otomi v2.7 as a replacement. There is no migration procedure, as the basic policies are already covered. However if you used your custom policies then you may need to migrated them on your own.

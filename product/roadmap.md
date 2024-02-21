@@ -93,3 +93,10 @@ The Kyverno app is introduced in Otomi v2.7 as a replacement. There is no migrat
 :::note
 This app will not be deleted if it is already deployed.
 :::
+
+#### Otomi shortcuts
+
+Due to lack of interest in this feature, we decided to remove it from Otomi.
+:::note
+The shortcuts will be automatically removed from the values repo.
+:::

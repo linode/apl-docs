@@ -11,6 +11,7 @@ In order to make a system observable, it must be instrumented. Language specific
 For this lab it is required to:
 
 - Enable `Tempo`
+- Enable `Otel`
 - Enable tracing for `Istio` and `Nginx Ingress`
 
 ## Build an image from source code

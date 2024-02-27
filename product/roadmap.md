@@ -36,11 +36,11 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 - Move network policies out of the Service configuration to improve network policy management 🔄
 - Migrate OPA/Gatekeeper to Kyverno and offer a large set of default policies that can also be managed by Teams 🔄
 - Improve Team self-service permissions ✅
-- Harden the Istio service mesh configuration
 - Create an Organization in Gitea for each Team (tenant)
 
 ### 2024 Q2
 
+- Harden the Istio service mesh configuration
 - Implement Gitea with a database managed by the CloudNativePG operator
 - Migrate Harbor and Keycloak Jobs to the Otomi operators
 - Enhance network policies across the platform

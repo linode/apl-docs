@@ -41,7 +41,6 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 
 ### 2024 Q2
 
-- Add the option to add charts from [artifacthub](https://artifacthub.io) to the Catalog 🔄
 - Implement Gitea with a database managed by the CloudNativePG operator
 - Migrate Harbor and Keycloak Jobs to the Otomi operators
 - Enhance network policies across the platform
@@ -52,6 +51,7 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 
 After Q2 2024 we have the following goals:
 
+- Add the option to add charts from [artifacthub](https://artifacthub.io) to the Catalog 🔄
 - Leverage Argo CD to deploy Otomi Platform apps 🔄
 - Bring user management into Otomi when Keycloak is used as an IdP
 - Ensure Otomi's NSA and CISA compliance
@@ -60,9 +60,8 @@ After Q2 2024 we have the following goals:
 
 ### Q4 2024
 
-- Migrate to ambient mesh using eBPF
-- Remove platform app forms in favor of generated values that can be customized in an editor
 - Encrypt platform secrets with SealedSecrets instead of SOPS
+- Remove platform app forms in favor of generated values that can be customized in an editor
 - Migrate to ambient mesh using eBPF
 
 ## Removed features by release

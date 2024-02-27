@@ -37,7 +37,6 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 - Migrate OPA/Gatekeeper to Kyverno and offer a large set of default policies that can also be managed by Teams 🔄
 - Improve Team self-service permissions ✅
 - Harden the Istio service mesh configuration
-- Leverage Argo CD to deploy Otomi Platform apps 🔄
 - Create an Organization in Gitea for each Team (tenant)
 
 ### 2024 Q2
@@ -53,6 +52,7 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 
 After Q2 2024 we have the following goals:
 
+- Leverage Argo CD to deploy Otomi Platform apps 🔄
 - Bring user management into Otomi when Keycloak is used as an IdP
 - Ensure Otomi's NSA and CISA compliance
 - Show a compliance report (code vulnerabilities, image vulnerabilities, security violations, container vulnerabilities, config audit, exposed secrets) per workload

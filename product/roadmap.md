@@ -32,34 +32,38 @@ We are dedicated to maintain support for three different Kubernetes versions wit
 ### 2024 Q1
 
 - Add Grype to the Otomi Build pipeline to scan source code for security vulnerabilities ✅
-- Add the option to add charts from [artifacthub](https://artifacthub.io) to the Catalog 🔄
-- Implement a new secret management solution (as a replacement for Hashicorp Vault) 🔄
+- Implement a new secret management solution (as a replacement for Hashicorp Vault) ✅
 - Move network policies out of the Service configuration to improve network policy management 🔄
 - Migrate OPA/Gatekeeper to Kyverno and offer a large set of default policies that can also be managed by Teams 🔄
-- Improve Team self-service permissions 🔄
-- Leverage Argo CD to deploy Otomi Platform apps 🔄
+- Improve Team self-service permissions ✅
 - Harden the Istio service mesh configuration
-- Implement Gitea with a database managed by the CloudNativePG operator
-- Migrate Harbor and Keycloak Jobs to the Otomi operators
+- Leverage Argo CD to deploy Otomi Platform apps 🔄
 - Create an Organization in Gitea for each Team (tenant)
 
 ### 2024 Q2
 
-- Bring user management into Otomi when Keycloak is used as an IdP
+- Add the option to add charts from [artifacthub](https://artifacthub.io) to the Catalog 🔄
+- Implement Gitea with a database managed by the CloudNativePG operator
+- Migrate Harbor and Keycloak Jobs to the Otomi operators
 - Enhance network policies across the platform
-- Establish separate Kubernetes namespaces for Team Applications
-- Ensure Otomi's NSA and CISA compliance
 - Enable user configurable storage classes
 - Provide disaster recovery procedures for Otomi core applications, such as Gitea, Keycloak and Harbor
-- Show a compliance report (code vulnerabilities, image vulnerabilities, security violations, container vulnerabilities, config audit, exposed secrets) per workload
 
-### After Q2 2024
+### Q3 2024
 
 After Q2 2024 we have the following goals:
 
+- Bring user management into Otomi when Keycloak is used as an IdP
+- Ensure Otomi's NSA and CISA compliance
+- Show a compliance report (code vulnerabilities, image vulnerabilities, security violations, container vulnerabilities, config audit, exposed secrets) per workload
 - Make Otomi more plugable by enabling users to bring their own platform apps
+
+### Q4 2024
+
 - Migrate to ambient mesh using eBPF
 - Remove platform app forms in favor of generated values that can be customized in an editor
+- Encrypt platform secrets with SealedSecrets instead of SOPS
+- Migrate to ambient mesh using eBPF
 
 ## Removed features by release
 

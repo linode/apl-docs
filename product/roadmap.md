@@ -81,11 +81,34 @@ This app will not be deleted if it is already deployed.
 
 Otomi will stop delivering the Hashicorp Vault as a platform app.
 The SealedSecrets app is introduced in Otomi v2.7 as a replacement.
-The procedure to migrate from Hashicorp Vault to SealedSecrets is going to be announced soon.
+The procedure to migrate from Hashicorp Vault to SealedSecrets is as follows:
 
 :::note
 This app will not be deleted if it is already deployed.
 The external-secrets app is still going to be part of Otomi
+:::
+
+##### Migrating Secrets from Hashicorp Vault to SealedSecrets
+
+Otomi Console offers a feature to migrate secrets from Hashicorp Vault to SealedSecrets. Follow the steps below:
+
+1. Ensure the SealedSecrets app is enabled and deployed in the cluster via the Otomi Console apps page.
+2. Navigate to the `Maintenance` page in the Otomi Console.
+3. Click the `Migrate HashiCorp Vault Secrets to Sealed Secrets` button in the `Migrations` section.
+4. Wait for the migration to complete. The duration depends on the number of secrets in the cluster.
+5. Upon completion, an information modal will display the count of migrated secrets.
+6. The migrated secrets (Sealed Secrets) will be accessible in a few minutes.
+7. Use the SealedSecrets page to manage your secrets.
+
+:::note
+Otomi cannot overwrite existing secrets due to immutable fields. 
+It will recreate the secrets with the same name using SealedSecrets after removing them from the cluster. 
+This makes the secrets temporarily unavailable during the migration.
+:::
+
+:::note
+The migration process doesn't delete secrets from Hashicorp Vault.
+You can delete them from Hashicorp Vault manually after the migration is completed.
 :::
 
 #### OPA Gatekeeper

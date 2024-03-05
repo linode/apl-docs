@@ -91,7 +91,7 @@ The external-secrets app is still going to be part of Otomi
 #### OPA Gatekeeper
 
 Otomi will stop delivering the OPA Gatekeeper as a platform app.
-The Kyverno app is introduced in Otomi v2.7 as a replacement. There is no migration procedure, as the basic policies are already covered. However if you used your custom policies then you may need to migrated them on your own.
+The Kyverno app is going to be introduced as a replacement. There is no migration procedure, as the basic policies are already covered. However if you used your custom policies then you may need to migrated them on your own.
 
 :::note
 This app will not be deleted if it is already deployed.

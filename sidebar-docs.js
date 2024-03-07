@@ -52,6 +52,7 @@ module.exports = {
           "get-started/labs/lab-19",
           "get-started/labs/lab-27",
           "get-started/labs/lab-28",
+          "get-started/labs/lab-33",
         ],
       },
     ],

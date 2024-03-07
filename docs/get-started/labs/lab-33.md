@@ -84,6 +84,8 @@ To `port-forward` use the following command:
 kubectl port-forward -n team-demo rabbit1-rabbitmq-server-0 56027:15672
 ```
 
+![Port Forwarding](../../img/rabbitmq-7-port-forwarding.png)
+
 Access `http://localhost:56027` and use the previously acquired user credentials to log in. If you cannot log in, please check if the credentials are for the correct rabbitMQ cluster.
 
 ![Logging-in to Management UI](../../img/rabbitmq-8-logging-in.png)

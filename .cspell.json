@@ -6,6 +6,7 @@
   "ignoreWords": [
     "ABDEFHIJZ",
     "aspinu",
+    "Bitnami",
     "vultr",
     "behaviour",
     "OVHcloud",
@@ -16,6 +17,7 @@
     "Traefik",
     "rbaumgar",
     "ebpf",
+    "grype",
     "minio",
     "Alin",
     "petclinc",
@@ -97,6 +99,7 @@
     "argoproj",
     "authz",
     "autocd",
+    "bitnami",
     "chartrepo",
     "chmod",
     "ciso",

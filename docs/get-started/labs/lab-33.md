@@ -1,7 +1,7 @@
 ---
 slug: lab-33
 title: Create rabbitMQ Cluster
-sidebar_label: Create a rabbitMQ Cluster
+sidebar_label: Create RabbitMQ cluster
 ---
 
 In this lab we will deploy a RabbitMQ workload that is created with the Catalog.

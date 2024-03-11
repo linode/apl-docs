@@ -4,7 +4,6 @@ title: Otomi Projects
 sidebar_label: Otomi Projects
 ---
 
-
 Otomi consists out of the following projects:
 
 | Project                                                    | open source |
@@ -14,7 +13,6 @@ Otomi consists out of the following projects:
 | [otomi-clients](https://github.com/redkubes/otomi-clients) | Yes         |
 | [otomi-console](https://github.com/redkubes/otomi-console) | No          |
 | [otomi-api](https://github.com/redkubes/otomi-api)         | No          |
-
 
 ## Otomi Core
 
@@ -58,6 +56,7 @@ Otomi Core is the heart of Otomi and contains a suite of the following integrate
 - [Grafana Tempo](https://github.com/grafana/tempo): High-scale distributed tracing backend
 - [OpenTelemetry](https://github.com/open-telemetry/opentelemetry-operator): Instrument, generate, collect, and export telemetry data to help you analyze your software’s performance and behavior
 - [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets): Encrypt your Secret into a SealedSecret, which is safe to store - even inside a public repository.
+- [RabbitMQ](https://github.com/rabbitmq/cluster-operator): Kubernetes operator to deploy and manage RabbitMQ clusters.
 
 ### Catagories
 
@@ -71,7 +70,7 @@ Otomi contains four catagories of integrated K8s applications:
 The following table shows all integrated applications:
 
 | Application                                  | Core | Shared | Team | User/role-aware | Optional |
-| :------------------------------------------  | :--: | :----: | :--: | :-------------: | :------: |
+| :------------------------------------------- | :--: | :----: | :--: | :-------------: | :------: |
 | Istio                                        |  X   |        |      |                 |          |
 | Ingress NGINX Controller                     |  X   |        |      |                 |          |
 | Knative                                      |      |        |      |                 |    X     |
@@ -91,10 +90,9 @@ The following table shows all integrated applications:
 | Velero                                       |      |        |      |                 |    X     |
 | Minio                                        |      |        |      |                 |    X     |
 | Opencost                                     |      |        |      |                 |    X     |
-| Tekton Pipeline                              |  X   |   X    |   X  |                 |    X     |
+| Tekton Pipeline                              |  X   |   X    |  X   |                 |    X     |
 | Trivy Operator                               |      |        |      |                 |    X     |
 | Cloudnative-pg                               |  X   |        |      |                 |          |
-
 
 ### Advanced ingress architecture as its core
 
@@ -106,16 +104,17 @@ The ingress & SSO architecture overview explained:
 
 - (optional) an external gateway is used for termination of external traffic (e.g. an Azure Application Gateway or an AWS Application Load Balancer).
 - 2 Ingress NGINX controllers are deployed, one for public access and one for authenticated access.
-- Authenticated (SSO) access is handled by an oauth2 proxy and KeyCloak. The user logs in using the Otomi custom KeyCloak login page. 
+- Authenticated (SSO) access is handled by an oauth2 proxy and KeyCloak. The user logs in using the Otomi custom KeyCloak login page.
 - KeyCloak is configured with an external IDP (optional) or uses local accounts. After authentication, KeyCloak provides a normalized JWT token. The JWT token is used by integrated core applications (providing user and role information) and team services configured with SSO
-- 4 Istio (ingress) gateways are provisioned: 
+- 4 Istio (ingress) gateways are provisioned:
+
 1.  a public gateway for routing public (non authenticated traffic to a service)
 2.  an authentication gateway to route authenticated traffic to a service
 3.  a local gateway (for local cluster routing)
 4.  a Knative gateway to route traffic to Knative services
+
 - For each service a Istio virtual service is configured.
 - One egress gateway is provisioned for all egress traffic (network policies allow all egress traffic).
-
 
 ## Otomi Tasks
 

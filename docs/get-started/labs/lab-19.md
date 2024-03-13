@@ -187,14 +187,13 @@ env:
 - Name the network policy `otomi` and select the `egress` rule type.
 - Add the FQDN `otomi.io` to be accessed.
 - Add port number `443` and protocol `HTTPS`.
-- Add port number `80` and protocol `HTTP`.
 
 ### Deploy Netshoot Pod
 
-- Deploy a Netshoot pod in your Kubernetes cluster.
+- Deploy a Netshoot pod in your namespace within your Kubernetes cluster.
 - You can do this using kubectl command:
   ```shell
-  kubectl run -i --tty --rm netshoot --image nicolaka/netshoot --restart=Never
+  kubectl run -i --tty --rm netshoot --image nicolaka/netshoot -n team-labs
   ```
 
 :::info
@@ -205,7 +204,7 @@ The [Netshoot](https://github.com/nicolaka/netshoot) pod is a network troublesho
 
 - Run the following command in the Netshoot pod:
   ```shell
-  curl -v https://otomi.io
+  curl https://otomi.io
   ```
 - You should see the HTML of the Otomi.io website.
 - Run the following command to see the `<h1>Build, Deploy and Run applications at scale</h1>` message:

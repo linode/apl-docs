@@ -13,25 +13,23 @@ In some cases you want to explicitly allow access to your application. This can 
 
 The internal ingress network policies allow you to:
 
-- Deny all traffic to the Pods of a Workload (default)
+- Deny all traffic to Pods (default mode)
 - Allow selected Workload Pods running on the cluster to access your Workload's Pods
 - Allow all traffic to the Pods of a Workload
 
 `Deny all` and `Allow all` we don't need to explain right?
 
 :::info
-The Ingress Network Policies in Otomi rely on the `otomi.io/app` label. All Workloads in Otomi need to use this label. 
-When you're using an Otomi quick start template from the Catalog, this label is always added.
+The Ingress Network Policies in Otomi rely on Pod labels. We require that a single label covers Pods for a given workload. We recommend to use the `otomi.io/app: <workload-name>` label.
 :::
 
 To allow other Workloads in the cluster to access your Workload's Pods, follow these steps:
 
-- Register your Workload's Kubernetes ClusterIP service as a Service in Otomi. If public ingress isn't needed, select the `Private` Exposure option.
 - Navigate to the `Network Policies` page in the Otomi Console and click `Create Netpol`.
 - Name the network policy and select the `ingress` rule type.
-- Add the selector label name and value for the Workload Pods to be accessed. Use the `otomi.io/app` label value.
+- Add the selector label name and value for the Workload Pods to be accessed. E.g.: use the `otomi.io/app` label.
 - Select either `AllowAll` or `AllowOnly` mode.
-- If you select `AllowOnly`, specify the namespace (e.g., `team-labs`), and the selector label name and value for the Workload Pods to be accessed. Again, use the `otomi.io/app` label value.
+- If you select `AllowOnly`, specify the namespace (e.g., `team-labs`), and the selector label name and value for the Workload Pods to be accessed.
 - Add more rules if needed.
 
 ## Understanding Egress Network Policies
@@ -48,13 +46,17 @@ To allow your Workload's Pods to access external FQDNs or IPs, follow these step
 - Add the FQDN or IP to be accessed.
 - Add port number(s) and protocol if needed.
 
+:::info
+The egress rules are namespace wide. You cannot bind egress policy to a given workload only.
+:::
+
 ## Setting Up Network Policies for the Example Voting App: An Ingress Example
 
 ### Build Images for the Application
 
 Build the `Vote`, `Worker` and `Result` images from this [repo](https://github.com/redkubes/example-voting-app).
 
-Use the Build feature in Otomi to build the images with `mode-Docker`. Set the `path` to `./vote/Dockerfile` for the Vote image (and `./worker/Dockerfile` for the Worker and `./result/Dockerfile` for Result).
+Use the Build feature in Otomi to build the images with `mode: Docker`. Set the `path` to `./vote/Dockerfile` for the Vote image (and `./worker/Dockerfile` for the Worker and `./result/Dockerfile` for Result).
 
 ### Create a Redis Cluster and a PostgreSQL Database
 
@@ -139,7 +141,7 @@ env:
 
 #### Redis
 
-- Register the `<workload-name>-master` Redis service. 
+- Register the `<workload-name>-master` Redis service.
 - Set exposure to `Private` (default).
 
 #### Vote

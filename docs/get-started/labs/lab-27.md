@@ -12,6 +12,8 @@ For this lab it is required to:
 
 - Enable `Tempo`
 - Enable `Otel`
+- Enable `Loki`
+- Enable `Grafana`
 - Enable tracing for `Istio` and `Nginx Ingress`
 
 ## Build an image from source code

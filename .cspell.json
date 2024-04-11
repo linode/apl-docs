@@ -50,6 +50,7 @@
     "mkdir",
     "mkilled",
     "mysecret",
+    "nicolaka",
     "nofollow",
     "noindex",
     "ojson",
@@ -91,7 +92,10 @@
     "petclinic",
     "cnpg",
     "pgdata",
-    "favourite"
+    "favourite",
+    "WPUE",
+    "wsbtpg",
+    "uxqf"
   ],
   "language": "en",
   "words": [
@@ -149,6 +153,7 @@
     "owasp",
     "postgres",
     "prio",
+    "rabbitmq",
     "rbac",
     "redkubes",
     "rego",

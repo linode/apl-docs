@@ -34,7 +34,7 @@ When you created a custom query that you would like to use more often, or would 
 - In the apps section, click on the `Settings` icon of the Loki app
 - Click on the `Shortcuts` tab
 - Click `edit`
-- Click on `Edd item`
+- Click on `Add item`
 - Fill in the `Title`, `Description` and the `Path` for the shortcut
 
 ![kubecfg](../../img/new-loki-shortcut.png)

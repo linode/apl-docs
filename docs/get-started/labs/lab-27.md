@@ -46,9 +46,9 @@ git push --mirror https://gitea.<your-domain>/<your-user-name>/petclinic.git
 
 Go to the list of Builds and add the repository of the `petclinc` build to your clipboard. Remember that the tag is latest.
 
-1. Go to `Workloads` in the left menu and click on `New Workload`
-2. Add the Name `petclinic` for the workload
-3. Select `otomi-quickstart-k8s-deployment-otel` from the catalog
+1. Go to `Workloads` in the left menu and click on `Create Workload`
+2. Select `k8s-deployment-otel` from the catalog
+3. Add the Name `petclinic` for the workload
 4. Leave the `Auto image updater` to `Disabled`
 5. In the workload `values`, change the following parameters:
 

@@ -22,7 +22,7 @@ In this lab we're going to create a workload in Otomi to create a Knative servic
 
 You can create a workload to deploy your own Helm chart, or you can use one of the `otomi-charts` Helm charts. In this case we'll use the deployment chart in the `otomi-charts` repository.
 
-1. Go to `Workloads` in the left menu and click on `New Workload`
+1. Go to `Workloads` in the left menu and click on `Create Workload`
 2. Choose `Function as a Service`
 
 ![kubecfg](../../img/ksvc-app.png)

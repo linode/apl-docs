@@ -15,6 +15,8 @@ For this lab we need the 2 images (`blue` and `green`) we already created in the
 - [Build images](lab-6.md)
 - [Trigger builds](lab-26.md)
 
+Or you can use public images e.g. `nginx:latest` and `tomcat:latest` for this lab.
+
 ## Create a workload from the developer catalog
 
 Go to the list of Builds and add the repository of the `green` build to your clipboard.

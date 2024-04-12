@@ -79,14 +79,14 @@ cluster:
   provider: scaleway
   domainSuffix: your-sub-domain.example.com
 otomi:
-  hasExternalDNS: true
+  hasExternalDNS: false
 dns:
   domainFilters: 
     - example.com
   provider:
-    scaleway:
-      scwAccessKey: $SCW_ACCESS_KEY
-      scwSecretKey: $SCW_SECRET_KEY
+    cloudflare:
+      apiToken: $CF_API_TOKEN
+      proxied: false
 apps:
   cert-manager:
     issuer: letsencrypt

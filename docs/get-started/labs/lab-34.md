@@ -19,7 +19,7 @@ To create a sealed secret, on the team overview click on the `Sealed Secrets` in
 
 To configure the sealed secret fill in a name for your secret and the desired namespace. 
 Afterwards you can add the `secret` data that you want to store in the sealed secret. 
-The secret data is stored as 'key' 'value'. In the example below we created a secret named 'secret-credentials' in the namespace 'team-admin'. 
+The secret data is stored as 'key' 'value'. In the example below we created a secret named 'secret-credentials' in the namespace 'team-demo'. 
 The secret has the key values `password=helloworld` and `username=labs-user`. Now click on `submit` and `Deploy Changes`.
 
 ![Create sealed secret](../../img/create-sealed-secrets.png)
@@ -39,7 +39,7 @@ Now go to Gitea and check the otomi/values repository. You will see that under `
 The only way to see the values of the secret is to have access to the cluster and decrypt the secret. The secrets are there stored as base64 encoded values.
 
 ```bash
-kubectl get secret secret-credentials -o yaml -n team-admin
+kubectl get secret secret-credentials -o yaml -n team-demo
 ```
 This wil return the secret in yaml format. The values are stored as base64 encoded values.
 ```yaml
@@ -51,7 +51,7 @@ kind: Secret
 metadata:
   creationTimestamp: "2024-04-11T14:33:37Z"
   name: secret-credentials
-  namespace: team-admin
+  namespace: team-demo
   ownerReferences:
   - apiVersion: bitnami.com/v1alpha1
     controller: true
@@ -65,6 +65,6 @@ type: kubernetes.io/opaque
 If you want to decode the secret you can use base64 decode:
 
 ```bash
-kubectl get secret secret-credentials -n team-admin -o jsonpath="{.data.password}" | base64 --decode
+kubectl get secret secret-credentials -n team-demo -o jsonpath="{.data.password}" | base64 --decode
 helloworld
 ```

@@ -1,10 +1,10 @@
 ---
 slug: lab-34
 title: Use Sealed Secrets
-sidebar_label: Create RabbitMQ cluster
+sidebar_label: Use Sealed Secrets
 ---
 
-In this lab we will create sealed secrets and see how they can be publicly stored in a git repository.
+In this lab we will create sealed secrets and see how to securely sensitive information in git repository.
 
 ## Enabling Sealed Secrets
 

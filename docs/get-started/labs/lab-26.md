@@ -11,7 +11,7 @@ In the previous lab we created a build in Otomi using the `blue` repo in Gitea. 
 1. In the left menu, click on `Builds`
 2. Click on `Create Build`
 3. Fill in the name `green` for your build
-4. Choose `./Dockerfile` and fill in the repo URL for the `green` repo created in the previous lab.
+4. Choose `./Dockerfile` and fill in the repo URL for the `green` repo created in the previous lab: `https://gitea.<your-domain>/<gitea-username>/green`
 5. Enable `Trigger`
 6. Click `Submit`
 

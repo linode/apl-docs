@@ -39,6 +39,8 @@ When the build is ready you can see the image in Harbor:
 
 ## Re-run the build (optional)
 
+For this step you need to have the Tekton cli installed. If you don't have the Tekton cli installed, you can install it from this page: [https://tekton.dev/docs/cli/](https://tekton.dev/docs/cli/)
+
 To run the build again using Otomi Console, follow these steps:
 
 1. Change the tag of the build for example to `v1.0.0`

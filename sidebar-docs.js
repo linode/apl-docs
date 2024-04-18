@@ -33,7 +33,7 @@ module.exports = {
           "get-started/labs/lab-6",
           "get-started/labs/lab-26",
           "get-started/labs/lab-8",
-          "get-started/labs/lab-10",
+          "get-started/labs/lab-34",
           "get-started/labs/lab-29",
           "get-started/labs/lab-13",
           "get-started/labs/lab-18",

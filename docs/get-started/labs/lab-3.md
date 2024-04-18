@@ -88,14 +88,74 @@ Add `blue.html`:
         font-weight: normal;
         margin-bottom: 0;
       }
+      .centered-text {
+          text-align: center;
+      }
     </style>
   </head>
   <body>
-    <div align="center">
+  <div class="centered-text">
       <h1>Welcome to Blue</h1>
-    </div>
+  </div>
   </body>
 </html>
 ```
 
 In the following labs we are going to use the `blue` repository, but we'll also need a `green` repository. Create the `green` repository and add the 2 files, but change `blue` into `green`.
+
+- Click on `+ New Repository`
+
+![kubecfg](../../img/new-gitea-repo.png)
+
+- Add the name `green` for the repository
+- Optional: Enable `Initialize Repository`
+- Make Repository Private
+- Click on `Create Repository`
+
+Add the following 2 files to the repository:
+
+Add `Dockerfile`:
+
+```Dockerfile
+FROM nginxinc/nginx-unprivileged:stable
+COPY green.html /usr/share/nginx/html/index.html
+EXPOSE 8080
+```
+
+Add `green.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sample Deployment</title>
+    <style>
+      body {
+        color: #ffffff;
+        background-color: green;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+      h1 {
+        font-size: 500%;
+        font-weight: normal;
+        margin-bottom: 0;
+      }
+      h2 {
+        font-size: 200%;
+        font-weight: normal;
+        margin-bottom: 0;
+      }
+      .centered-text {
+          text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="centered-text">
+      <h1>Welcome to Green</h1>
+    </div>
+  </body>
+</html>
+```

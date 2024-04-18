@@ -26,13 +26,43 @@ To configure the RabbitMQ Cluster workload go to the `Values` tab and fill in a 
 ## Adding Queues and Policies
 
 To configure `Queues` and `Policies` for the rabbitMQ Cluster you can add them to the `queues` and `policies` parameters respectively.
-For example we create a rabbitMQ Cluster workload with the name `rabbit1` with 2 `queues` and 2 `policies`.
+For example, we create a rabbitMQ Cluster workload with the name `rabbit1` with 2 `queues` and 2 `policies`.
 
 ![Fill In Values](../../img/rabbitmq-3-add-queues-and-policies.png)
 
 :::info ALERT
 Do remember that even though these values can be edited afterwards, not all specifications or definitions can be updated after a `queue` or `policy` has been created. Please make sure everything is filled in correctly.
 :::
+```yaml
+queues:
+  - name: my-quorum-queue1
+    spec:
+      durable: true
+      arguments:
+        x-queue-type: quorum
+  - name: my-quorum-queue2
+    spec:
+      arguments:
+        autoDelete: true
+
+policies:
+  - name: my-policy1
+    pattern: ".*"
+    definition:
+      dead-letter-exchange: cc
+      ha-mode: all
+    spec:
+      applyTo: classic_queues
+      priority: 1
+      vhost: "/"
+  - name: my-policy2
+    pattern: ".*"
+    definition:
+      dead-letter-exchange: cc
+      max-age: 1h
+    spec:
+      applyTo: quorum_queues
+```
 
 When everything is filled in correctly you can `submit` and click the `deploy changes` button.
 
@@ -46,8 +76,11 @@ ArgoCD Status:
 
 ## Accessing the RabbitMQ Management UI
 
-To access the `RabbitMQ Management UI` you have to retrieve the default user credentials and `port-forward` the `rabbitMQ server`.
-To do this connect to your k8s cluster with `kubectl`.
+To access the `RabbitMQ Management UI` you have two options:
+- retrieve the default user credentials and `port-forward` the `rabbitMQ server`.
+- Create a service to expose the `rabbitMQ server` and access the `Management UI` publicly. This is not recommended for production services
+
+In this lab we are going to use the cluster. To do this connect to your k8s cluster with `kubectl`.
 
 :::info NOTE
 In this example the `rabbitMQ cluster` was created in the demo team so we have to get the `secret` from the `team-demo` namespace. Please retrieve the `secret` from the namespace where the `rabbitMQ cluster` was created.

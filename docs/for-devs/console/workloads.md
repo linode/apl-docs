@@ -27,7 +27,7 @@ Before creating a workload from the developer catalog, we'll need the `repositor
 
 1. Go to the list of Builds and add the `repository` of the build to use to your clipboard. Remember the tag.
 
-2. Go to `Workloads` in the left menu and click on `New Workload`
+2. Go to `Workloads` in the left menu and click on `Create Workload`
 
 3. Select a template from the catalog to use
 

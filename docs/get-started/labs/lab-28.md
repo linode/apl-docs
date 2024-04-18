@@ -15,13 +15,15 @@ For this lab we need the 2 images (`blue` and `green`) we already created in the
 - [Build images](lab-6.md)
 - [Trigger builds](lab-26.md)
 
+Or you can use public images e.g. `nginx:latest` and `tomcat:latest` for this lab.
+
 ## Create a workload from the developer catalog
 
 Go to the list of Builds and add the repository of the `green` build to your clipboard.
 
-1. Go to `Workloads` in the left menu and click on `New Workload`
-2. Add the Name `canary` for the workload
-3. Select `otomi-quickstart-k8s-deployment-canary` from the catalog
+1. Go to `Workloads` in the left menu and click on `Create Workload`
+2. Select `k8s-deployment-canary` from the catalog
+3. Add the Name `canary` for the workload
 4. Set the `Auto image updater` to `Digest` and fill in:
 
 - imageRepository = paste from the clipboard

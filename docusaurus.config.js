@@ -126,11 +126,6 @@ module.exports = {
           position: "left",
         },
         {
-          to: "https://www.redkubes.com/kubernetes-platform/pricing",
-          label: "Support",
-          position: "left",
-        },
-        {
           href: "https://github.com/redkubes/otomi-core",
           position: "right",
           className: "header-github-link",
@@ -166,29 +161,8 @@ module.exports = {
               href: "https://join.slack.com/t/otomi/shared_invite/zt-1axa4vima-E~LHN36nbLR~ay5r5pGq9A",
             },
             {
-              label: "YouTube",
-              href: "https://www.youtube.com/channel/UCarOB4QW6lTqKG17XUT2uaA",
-            },
-            {
               label: "Start contributing",
               to: "/community/welcome",
-            },
-          ],
-        },
-        {
-          title: "Red Kubes",
-          items: [
-            {
-              label: "Website",
-              href: "https://redkubes.com",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/redkubes/",
-            },
-            {
-              label: "LinkedIn",
-              href: "https://www.linkedin.com/company/red-kubes/",
             },
           ],
         },

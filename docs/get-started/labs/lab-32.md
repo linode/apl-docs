@@ -14,7 +14,7 @@ It is currently not possible to create a Project using the Auto Image Update fea
 
 1. Create a new repo called `nodejs-helloworld`
 2. Set the Default Branch to `master`
-3. Clone the Hello World Sample Application from the Red Kubes GitHub repository:
+3. Clone the Hello World Sample Application:
 
 ```bash
 git clone https://github.com/redkubes/nodejs-helloworld

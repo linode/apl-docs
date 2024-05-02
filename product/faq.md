@@ -88,12 +88,3 @@ Yes. You can use the Otomi `custom` provider to install Otomi on Kubernetes runn
 Otomi is a complete platform suite and not a single purpose tool. This is why otomi requires a stable (cloud) infrastructure and sufficient resources. Running Otomi on your laptop is therefor not advised.
 
 </details>
-
-## Other
-
-<details>
-  <summary>Do you provide commercial support?</summary>
-
-Yes, you can contact us for commercial support. [Red Kubes](https://redkubes.com) is the company behind Otomi.
-
-</details>

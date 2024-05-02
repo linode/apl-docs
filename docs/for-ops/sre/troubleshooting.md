@@ -123,5 +123,3 @@ In case (after troubleshooting) the customer discovers one of the Otomi function
 - Which function is not working?
 - Which remediation activities have been performed?
 - kubeLog output of the container(s) supporting this function
-
-In case the issue is caused by a bug in one of the Otomi features, then Red Kubes will provide a fix within at least 24 hours.

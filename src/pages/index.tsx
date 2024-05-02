@@ -28,7 +28,7 @@ function Home() {
                 className={styles.heroLogo}
                 src={useBaseUrl("img/otomi-logo.svg")}
               />
-              Self hosted DevOps PaaS for Kubernetes
+              Self hosted PaaS for Kubernetes
             </h1>
             <h2 className={styles.heroProjectSubLine}>A paved road for DevOps teams from code to production</h2>
             <div className={styles.indexCtas}>

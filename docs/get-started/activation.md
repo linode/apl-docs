@@ -16,24 +16,7 @@ Use the following command to get the logs of the installer job:
 kubectl logs jobs/otomi -n default -f
 ```
 
-## Step 2: Create an License Key for using Otomi Console and Otomi API
-
-:::info
-A Community Edition License Key is required per 17-05-2023
-:::
-
-If you would like to use the Otomi Console (Web UI) and Otomi API (for code validation and creation), then you will first need to create a Community Edition License key in [Otomi Cloud](https://portal.otomi.cloud). Follow these instructions to create a License Key:
-
-- Go to [Otomi Cloud](https://portal.otomi.cloud)
-- Create an account
-- Click on `Register Cluster`
-- Agree with the [EULA](/product/eula/v1)
-- Copy the License Key and click `Continue`
-- Log in to Otomi Console. You can find the link in the logs of the installer (see step 1)
-- Add the License key to Otomi Console
-- Click `Activate`
-
-## Step 3 (optional): Add the auto generated CA to your keychain
+## Step 2 (optional): Add the auto generated CA to your keychain
 
 Otomi by default automatically generates a CA. The generated CA is of course not trusted on your local machine. Here are some options to prevent you from clicking away lots of security warning in your browser:
 
@@ -66,7 +49,7 @@ alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 3. Optional: Restart Docker (to support pushing images to Harbor)
 
 
-## Step 4 (Optional): Create a new admin user
+## Step 3 (Optional): Create a new admin user
 
 :::info ATTENTION
 We strongly advise to not use the default `otomi-admin` account after activation and to not change the password. Store it somewhere safe and only use it in case absolutely required.
@@ -74,7 +57,7 @@ We strongly advise to not use the default `otomi-admin` account after activation
 
 [Create a new user account in Keycloak](/docs/apps/keycloak#create-a-user-in-keycloak) and add the new user to the `otomi-admin` and `team-admin` group.
 
-## Step 5 (Optional): Add the URL of the Kubernetes API
+## Step 4 (Optional): Add the URL of the Kubernetes API
 
 :::info NOTE
 Adding the URL of the K8s cluster API is required by teams to be able to download the KUBECONFIG

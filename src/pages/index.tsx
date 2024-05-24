@@ -28,9 +28,9 @@ function Home() {
                 className={styles.heroLogo}
                 src={useBaseUrl("img/otomi-logo.svg")}
               />
-              Self hosted PaaS for Kubernetes
+              Application Platform for Kubernetes
             </h1>
-            <h2 className={styles.heroProjectSubLine}>A paved road for DevOps teams from code to production</h2>
+            <h2 className={styles.heroProjectSubLine}>A paved road from code to production</h2>
             <div className={styles.indexCtas}>
               <Link
                 className={styles.indexCtasGetStartedButton}
@@ -52,7 +52,7 @@ function Home() {
         </div>
         <div className={clsx(styles.announcement, styles.announcementBanner)}>
           <div className={styles.announcementInner}>
-            <h1>Build, Deploy and Run applications at scale</h1> <h4>With one consistent experience on any CNCF conformant Kubernetes cluster across public cloud, on-premise and hybrid cloud</h4>
+            <h1>Build, Deploy and Run applications at scale</h1> <h4>With one consistent experience on any CNCF conformant Kubernetes cluster</h4>
           </div>
           <div>
             <img 

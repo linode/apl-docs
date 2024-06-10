@@ -25,7 +25,7 @@ And run the following commands:
 SCALEWAY_CLUSTER_NAME="otomi"
 SCALEWAY_NODE_TYPE="PRO2-M"
 SCALEWAY_NODE_POOL_MIN_SIZE=3
-SCALEWAY_K8s_VERSION="1.27.6"
+SCALEWAY_K8s_VERSION="1.29.1"
 SCALEWAY_PRIVATE_NETWORK_ID=$(scw vpc private-network create project-id=$SCW_DEFAULT_PROJECT_ID name=$SCALEWAY_CLUSTER_NAME-pn region=nl-ams -ojson | jq -r .id)
 scw k8s cluster create name=$SCALEWAY_CLUSTER_NAME \
     project-id=$SCW_DEFAULT_PROJECT_ID \

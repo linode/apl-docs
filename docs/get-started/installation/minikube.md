@@ -28,19 +28,19 @@ The installation examples below install Otomi without DNS.
 ### For Windows
 
 ```bash
-minikube start --memory=8192 --cpus=8 --driver=hyperv --kubernetes-version=v1.26.9 --cni calico
+minikube start --memory=8192 --cpus=8 --driver=hyperv --kubernetes-version=v1.29.1 --cni calico
 ```
 
 ### For Mac
 
 ```bash
-minikube start --memory=8192 --cpus=8 --driver=hyperkit --kubernetes-version=v1.26.9 --cni calico
+minikube start --memory=8192 --cpus=8 --driver=hyperkit --kubernetes-version=v1.29.1 --cni calico
 ```
 
 ### For Linux, using the KVM2 driver
 
 ```bash
-minikube start --memory=8192 --cpus=8 --driver=kvm2 --kubernetes-version=v1.26.9 --cni calico
+minikube start --memory=8192 --cpus=8 --driver=kvm2 --kubernetes-version=v1.29.1 --cni calico
 ```
 
 ## Enable Metallb (Network Load Balancer)

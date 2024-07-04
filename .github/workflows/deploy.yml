@@ -40,5 +40,5 @@ jobs:
           # https://github.com/actions/checkout/issues/13#issuecomment-724415212
           # The GH actions bot is used by default if you didn't specify the two fields.
           # You can swap them out with your own user credentials.
-          user_name: linode-gh-bot
-          user_email: linode-gh-bot@users.noreply.github.com
+          # user_name: linode-gh-bot
+          # user_email: linode-gh-bot@users.noreply.github.com

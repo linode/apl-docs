@@ -14,7 +14,7 @@ sidebar_label: Linode
 
 Configure the LKE cluster with the following specs
 
-- K8s version: `1.27`
+- K8s version: `1.29`
 - Enable HA Control Plane
 - Dedicated CPU: Dedicated 8 GB Plan, 4 CPUs, 160 GB Storage
 

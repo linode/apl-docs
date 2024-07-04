@@ -19,7 +19,7 @@ Otomi can also be installed using the Civo marketplace. When Otomi is installed 
 5. Select the `Standard Large` node pool size (3 nodes)
 6. Configure `Network` and `Firewall`
 7. Show advanced options
-8. Choose `Flannel`, Cluster type `K3S` and Kubernetes version `1.27.1`
+8. Choose `Flannel`, Cluster type `K3S` and Kubernetes version `1.29.1`
 9. In the Marketplace, under `Architecture`, de-activate `Traefik v2 (NodePort)`
 10. Click `Create cluster`
 

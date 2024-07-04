@@ -52,7 +52,7 @@ az aks create --name $CLUSTER_NAME \
 --nodepool-name otomipool \
 --node-count 3 \
 --node-vm-size Standard_F8s_v2 \
---kubernetes-version 1.27.3 \
+--kubernetes-version 1.29.1 \
 --enable-cluster-autoscaler \
 --min-count 1 \
 --max-count 6 \

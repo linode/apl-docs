@@ -4,10 +4,15 @@ module.exports = [
     to: "/docs/for-ops/sre/upgrades",
   },
   {
-    from: [
-      "/docs/configuring-apps",
-      "/docs/console/platform-apps",
-    ],
+    from: ["/"],
+    to: "/docs/get-started/overview",
+  },
+  {
+    from: ["/docs"],
+    to: "/docs/get-started/overview",
+  },
+  {
+    from: ["/docs/configuring-apps", "/docs/console/platform-apps"],
     to: "/docs/for-ops/console/apps",
   },
   {
@@ -49,10 +54,7 @@ module.exports = [
     to: "/docs/get-started/installation/overview",
   },
   {
-    from: [
-      "/docs/installation/post-install",
-      "/docs/installation/activation",
-    ],
+    from: ["/docs/installation/post-install", "/docs/installation/activation"],
     to: "/docs/get-started/activation",
   },
   {
@@ -84,10 +86,7 @@ module.exports = [
     to: "/docs/apps/keycloak",
   },
   {
-    from: [
-      "/contributing/get-started",
-      "/community/development",
-    ],
+    from: ["/contributing/get-started", "/community/development"],
     to: "/community/welcome",
   },
   {

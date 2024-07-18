@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkredkubes_github_io=self.webpackChunkredkubes_github_io||[]).push([[263],{3230:(e,t,u)=>{u.r(t),u.d(t,{default:()=>i});u(7294);var s=u(6550),r=u(5893);function i(){return(0,r.jsx)(s.l_,{to:"/docs/get-started/overview"})}}}]);

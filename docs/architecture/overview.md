@@ -1,7 +1,7 @@
 ---
-slug: architecture
-title: Otomi Projects
-sidebar_label: Otomi Projects
+slug: overview
+title: Architecture
+sidebar_label: Overview
 ---
 
 Otomi consists out of the following projects:
@@ -145,4 +145,3 @@ Otomi API allows for a controlled change of all Otomi Values, based on a configu
 ## Otomi Console
 
 Otomi Console is the User Interface of Otomi. Otomi Console communicates with Otomi API for reading and changing Otomi Values configuration. Otomi Console also offers (via the Otomi Apps option) shortcuts to the UI of the various integrated applications.
-

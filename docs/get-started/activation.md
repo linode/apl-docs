@@ -1,14 +1,14 @@
 ---
 slug: activation
-title: Activation steps
-sidebar_label: Activation
+title: Post installation steps
+sidebar_label: Post Installation Steps
 ---
 
-Follow the steps below to activate Otomi after initial installation.
+Follow the post-installation steps after initial installation.
 
 ## Step 1: Get the log output of the installer job
 
-When the installer job (in the default namespace) has finished, copy the URL and the generated password from the bottom of the logs, sign in to the console with the provided URL, username and password.
+When the installer job (in the default namespace) has finished, copy the URL and use the generated password from the bottom of the logs, sign in to the Otomi Console.
 
 Use the following command to get the logs of the installer job:
 

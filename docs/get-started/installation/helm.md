@@ -9,7 +9,7 @@ sidebar_label: Helm
 ## Add the Otomi repository
 
 ```bash
-helm repo add otomi https://otomi.io/otomi-core
+helm repo add apl https://linode.github.io/apl-core/
 helm repo update
 ```
 

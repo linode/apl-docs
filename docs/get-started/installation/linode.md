@@ -78,15 +78,15 @@ And adjust the `domainSuffix`, `domainFilters` and `email`.
 Install Otomi using Helm:
 
 ```bash
-helm repo add otomi https://otomi.io/otomi-core
+helm repo add apl https://linode.github.io/apl-core/
 helm repo update
-helm install -f values.yaml otomi otomi/otomi
+helm install -f values.yaml otomi apl/otomi
 ```
 
 Monitor the logs of the installer job:
 
 ```bash
-kubectl logs jobs/otomi -n default -f
+kubectl logs jobs/apl-otomi -n default -f
 ```
 
 When the installer is finished, copy the `url` and `admin-password` from the console output.

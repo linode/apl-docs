@@ -13,7 +13,7 @@ When the installer job (in the default namespace) has finished, copy the URL and
 Use the following command to get the logs of the installer job:
 
 ```
-kubectl logs jobs/otomi -n default -f
+kubectl logs jobs/apl-otomi -n default -f
 ```
 
 ## Step 2 (optional): Add the auto generated CA to your keychain

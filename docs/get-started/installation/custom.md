@@ -12,9 +12,9 @@ To install Otomi on any other cloud or infrastructure platform, use the `custom`
 
 Otomi currently supports the following Kubernetes versions:
 
-- `1.27`
 - `1.28`
 - `1.29`
+- `1.30`
 
 ## Compute resources
 

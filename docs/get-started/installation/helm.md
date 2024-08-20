@@ -18,7 +18,7 @@ See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 ## Minimal configuration
 
 :::info
-As of version [1.0.0](https://github.com/redkubes/otomi-core/releases/tag/v0.21.0) Otomi supports Kubernetes versions `1.27`,`1.28` and `1.29`.
+As of version [1.0.0](https://github.com/redkubes/otomi-core/releases/tag/v0.21.0) Otomi supports Kubernetes versions `1.28`,`1.29` and `1.30`.
 :::
 
 :::info

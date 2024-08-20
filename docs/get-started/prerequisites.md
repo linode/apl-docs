@@ -19,9 +19,9 @@ Otomi requires a (Vanilla) Kubernetes cluster.
 
 Otomi currently supports the following Kubernetes versions:
 
-- `1.27`
 - `1.28`
 - `1.29`
+- `1.30`
 
 ### Minimal compute resource requirements
 
@@ -71,12 +71,11 @@ To install Otomi on a [Civo K3s](https://www.civo.com/kubernetes) cluster, use t
 
 Otomi on CIVO requires at least:
 
-* A node pool with `3` Large Standard nodes (4 CPU Cores and 8 GB RAM)
-* Kubernetes version `1.28` or `1.29`
+- A node pool with `3` Large Standard nodes (4 CPU Cores and 8 GB RAM)
+- Kubernetes version `1.28` or `1.29`
 
 Otomi installs and configures Nginx as a default ingress controller. When launching from the marketplace, make sure to unselect the default Traefik v2 (NodePort).
 
 ### All others
 
 Use the `custom` provider for all other clouds, and when running Kubernetes on your own hardware. The custom provider uses the default available storage classes. The only requirement for using the custom provider is to be able to create a Kubernetes LoadBalancer Service that can obtain an external accessible IP.
-

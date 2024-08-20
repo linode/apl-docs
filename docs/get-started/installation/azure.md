@@ -13,7 +13,7 @@ sidebar_label: Azure
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [Helm](https://kubernetes.io/docs/tasks/tools/)
 
-> Note: If you login via [Azure Cloud Shell]( https://shell.azure.com), you don't need to install the prerequisites
+> Note: If you login via [Azure Cloud Shell](https://shell.azure.com), you don't need to install the prerequisites
 
 **Azure CLI Cheat Sheet**
 
@@ -29,8 +29,9 @@ az account set --subscription=<subscription_id>
 ## Create an AKS cluster
 
 Setting the environment variables
+
 ```bash
-# Set Resource Group Name 
+# Set Resource Group Name
 RGNAME=rg-otomi
 # Set Region (Location) or any other location
 LOCATION=westeurope
@@ -52,7 +53,7 @@ az aks create --name $CLUSTER_NAME \
 --nodepool-name otomipool \
 --node-count 3 \
 --node-vm-size Standard_F8s_v2 \
---kubernetes-version 1.29.1 \
+--kubernetes-version 1.30.2 \
 --enable-cluster-autoscaler \
 --min-count 1 \
 --max-count 6 \
@@ -129,7 +130,7 @@ cluster:
 otomi:
   hasExternalDNS: true
 dns:
-  domainFilters: 
+  domainFilters:
     - example.com
   provider:
     azure:

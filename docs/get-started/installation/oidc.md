@@ -1,8 +1,10 @@
 ---
 slug: oidc
-title: Azure AD for OIDC
+title: OIDC
 sidebar_label: OIDC
 ---
+
+## Use Azure Entra ID
 
 The authentication of brokered identities through Azure AD requires a service principal with certain Azure AD API permissions. An app registration needs to be created with the following API permissions:
 

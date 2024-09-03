@@ -1,29 +1,25 @@
 module.exports = {
   mainSidebar: {
+    "App Platform for LKE": [
+      "apl/introduction",
+    ],
     "Getting Started": [
       "get-started/overview",
-      "get-started/prerequisites",
       {
         Installation: [
           "get-started/installation/overview",
-          "get-started/installation/aws",
-          "get-started/installation/azure",
-          "get-started/installation/civo",
-          "get-started/installation/custom",
-          "get-started/installation/digitalocean",
-          "get-started/installation/gcp",
+          "get-started/installation/apl",
           "get-started/installation/linode",
-          "get-started/installation/scaleway",
-          "get-started/installation/vultr",
+          "get-started/installation/custom",
           "get-started/installation/helm",
-          "get-started/installation/known-issues",
+          "get-started/installation/dns",
           "get-started/installation/oidc",
-          "get-started/installation/kms",
+          "get-started/installation/sops",
           "get-started/installation/entrypoint",
           "get-started/installation/byo-wildcard",
         ],
       },
-      "get-started/activation",
+      "get-started/post-install-steps",
       {
         "Otomi labs": [
           "get-started/labs/overview",

@@ -1,5 +1,5 @@
 ---
-slug: activation
+slug: post-installation-steps
 title: Post installation steps
 sidebar_label: Post Installation Steps
 ---
@@ -13,12 +13,12 @@ When the installer job (in the default namespace) has finished, copy the URL and
 Use the following command to get the logs of the installer job:
 
 ```
-kubectl logs jobs/otomi -n default -f
+kubectl logs jobs/apl-apl -n default -f
 ```
 
 ## Step 2 (optional): Add the auto generated CA to your keychain
 
-Otomi by default automatically generates a CA. The generated CA is of course not trusted on your local machine. Here are some options to prevent you from clicking away lots of security warning in your browser:
+When APL is installed without DNS, APL automatically generates a CA. The generated CA is not trusted on your local machine. Here are some options to prevent you from clicking away lots of security warning in your browser:
 
 1. In the left menu of the console, click on "Download CA"
 2. Double click the downloaded CA.crt or add the CA to your keychain on Mac using the following command:
@@ -46,9 +46,6 @@ But you could also run Chrome in insecure mode:
 alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors --ignore-urlfetcher-cert-requests &> /dev/null'
 ```
 
-3. Optional: Restart Docker (to support pushing images to Harbor)
-
-
 ## Step 3 (Optional): Create a new admin user
 
 :::info ATTENTION
@@ -68,3 +65,37 @@ Adding the URL of the K8s cluster API is required by teams to be able to downloa
 - Add the full URL of the API server
 - Click on `Submit`
 - Click on `Deploy Changes`
+
+## Step 5 (Optional): Configure Object Storage
+
+If you're planning on activating apps that can use Object Storage (like Loki, Harbor, Tempo, Velero), then first configure Object Storage. Check the table in Step 6 to see which App requires Object Storage configured.
+
+- Under `Platform` in Otomi Console, click on `Settings`
+- Click on `Object Storage`
+- Select `Minio Local` or `Linode`
+
+When Minio is selected (only for development), Minio App is enebaled and all required buckets are provisioned.
+When Linode is selected, create the buckets for the apps you are planning to use and fill in the region and the Access Key ID and Secret Access Key (with read/write access).
+
+- Click on `Submit`
+- Click on `Deploy Changes`
+
+## Step 6 (Optional): Activate more Apps
+
+APL is a composable platform. Activate more Apps based on the required platform capabilities:
+
+| Capability      | App                                                    | Object storage |
+| --------------- | ------------------------------------------------------ | -------------- |
+| Log aggregation | Loki and Grafana | Optional |
+| Metric collection | Prometheus and Grafana | No |
+| Send Alerts | Prometheus and Alert manager | No |
+| Tracing | Tempo, OTEL, Loki and Grafana | Required |
+| Long term retention of Logs, Metrics and Traces | Required |
+| Build images from source code | Harbor | Optional |
+| Scan running containers for vulnerabilities | Trivy | No |
+| Enforce security policies | Kyverno | No |
+| Database backups | | Required |
+| Full Disaster Recovery | | Required |
+
+## Step 7: Create Teams
+

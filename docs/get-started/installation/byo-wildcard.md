@@ -5,6 +5,7 @@ sidebar_label: BYO Wild Card Cert
 ---
 
 When installing Otomi with DNS, there are 3 `issuers` you can use:
+
 1. custom-ca
 2. letsencrypt
 3. byo-wildcard-cert

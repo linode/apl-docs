@@ -1,20 +1,20 @@
 ---
 slug: linode
 title: Linode
-sidebar_label: Linode
+sidebar_label: Linode Kubernetes Engine
 ---
 
-# # Install Otomi on Linode Kubernetes Engine (LKE) with Linode DNS
+# Install APL on Linode Kubernetes Engine (LKE) with Linode DNS
 
 ## Prerequisites
 
 - [linode-access](https://cloud.linode.com/)
 
-## Configure Linode Kubernetes cluster
+## Provision a LKE cluster
 
-Configure the LKE cluster with the following specs
+Provision a LKE cluster with the following specs:
 
-- K8s version: `1.29`
+- K8s version: `1.30`
 - Enable HA Control Plane
 - Dedicated CPU: Dedicated 8 GB Plan, 4 CPUs, 160 GB Storage
 
@@ -28,7 +28,7 @@ export KUBECONFIG=<path-to-downloads>/otomi--kubeconfig.yaml
 ## Configure DNS
 
 :::info
-When using Domains in Linode, name resolving takes at least 30 min to work. The Otomi installer will retry until it can resolve the Keycloak host name in the configured domain.
+When using Domains in Linode, name resolving takes at least 30 min to work. The APL installer will retry until it can resolve the Keycloak host name in the configured domain.
 :::
 
 If you want to learn about how to use Linode DNS Manager read the following tutorials:
@@ -73,7 +73,7 @@ EOF
 
 And adjust the `domainSuffix`, `domainFilters` and `email`.
 
-## Install Otomi using helm
+## Install Otomi
 
 Install Otomi using Helm:
 
@@ -91,8 +91,8 @@ kubectl logs jobs/otomi -n default -f
 
 When the installer is finished, copy the `url` and `admin-password` from the console output.
 
-Follow the activation steps [here.](https://otomi.io/docs/get-started/activation)
+Follow the post installation steps [here.](https://otomi.io/docs/get-started/post-installation-steps)
 
 :::tip
-Like to learn how to use Otomi? Go through the [Get Started labs](../labs/overview.md)
+Like to learn how to use APL? Go through the [Get Started labs](../labs/overview.md)
 :::

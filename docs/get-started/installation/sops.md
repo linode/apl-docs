@@ -1,10 +1,12 @@
 ---
-slug: kms
-title: Use KMS to manage keys for encryption
-sidebar_label: KMS
+slug: sops
+title: Use SOPS for value encryption
+sidebar_label: SOPS
 ---
 
-If you would like the secrets in the `values` repository to be encrypted, you will have to setup an account with your Key Management Service (KMS) provider. It is needed by [sops](https://github.com/mozilla/sops), the tool used for encryption.
+If you would like the secrets in the `values` repository to be encrypted, you will have to use [sops](https://github.com/mozilla/sops) that is used by APL for encryption.
+
+## Use SOPS with an external Key Management Service (KMS)
 
 Find quickstart documentation below on how to setup KMS access per supported provider:
 
@@ -14,7 +16,7 @@ Find quickstart documentation below on how to setup KMS access per supported pro
 
 Follow the instructions of the provider of your choosing and jot down the credentials obtained for the next steps.
 
-To install Otomi with SOPS/KMS, use the following values:
+To install APL with SOPS/KMS, use the following values:
 
 ```yaml
 kms:
@@ -37,3 +39,7 @@ kms:
 #     vault:
 #       token: ''
 ```
+
+## Use SOPS with AGE (comming soon!)
+
+[AGE](https://github.com/FiloSottile/age) is a simple, modern, and secure encryption tool (and Go library) with small explicit keys, no config options, and UNIX-style composability.

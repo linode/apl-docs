@@ -4,27 +4,23 @@ title: Custom
 sidebar_label: Custom
 ---
 
-# Install Otomi using the `custom` provider
+To install APL on any other conformant Kubernetes, use the `custom` provider. Make sure your infrastructure adheres to the following pre-requisites:
 
-To install Otomi on any other cloud or infrastructure platform, use the `custom` provider in Otomi. Make sure your infrastructure adheres to the following pre-requisites:
+## Prerequisites
 
-## Kubernetes versions
+### Kubernetes versions
 
-Otomi currently supports the following Kubernetes versions:
+APL currently supports the following Kubernetes versions:
 
-- `1.27`
 - `1.28`
 - `1.29`
+- `1.30`
 
-## Compute resources
+### Compute resources
 
-Otomi requires a node pool with at least **8 vCPU** and **16 GiB RAM**. Note that this is the requirements for a minimal install. When activating more apps, you'll probably need more resources.
+APL requires a node pool with at least **12 vCPU** and **24 GiB RAM**.
 
-:::info ATTENTION
-The minimal resource requirement to run Otomi is based on running Core Apps only! The core apps provide an advanced ingress architecture based on Nginx, Istio, Keycloak, Oaut2 Proxy and Certmanager. Activating optional apps will require more compute resources. We advise to have a node pool available with 16 vCPU and 24 GiB memory.
-:::
-
-## Default storage class
+### Default storage class
 
 The custom provider uses the default storage class. If your cluster has a storage class, make sure it is set to be the default:
 
@@ -32,9 +28,22 @@ The custom provider uses the default storage class. If your cluster has a storag
 kubectl patch storageclass ,your-storage-class> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
-## External IP
+Use the `_rawValues` to specify another StorageClass per app. This is an example for Harbor:
 
-Otomi needs to be able to create a Kubernetes LoadBalancer Service that obtains an external IP. This IP needs to be accessible from within the cluster. Use Metallb for on-prem installations to allow Otomi to create a LoadBalancer Service:
+```yaml
+app:
+  harbor:
+    _rawValues:
+      persistence:
+        persistentVolumeClaim:
+          registry:
+            storageClass: ""
+            size: 5Gi
+```
+
+### External IP
+
+APL needs to be able to create a Kubernetes LoadBalancer Service that obtains an external IP. This IP needs to be accessible from within the cluster. Use Metallb for on-prem installations to allow APL to create a LoadBalancer Service:
 
 ```bash
 # Install Metallb with Helm
@@ -63,9 +72,18 @@ metadata:
 EOF
 ```
 
-## CNI
+APL uses the Nginx Ingress Controller. If the cloud provider requires specific annotations to be set on the `LoadBalancer` Service, add the required annotations to the service in the chart values:
 
-To use the network policies feature in Otomi, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI or any other CNI that supports Kubernetes network polices.
+```yaml
+apps:
+  ingress-nginx:
+    service:
+      annotations: {}
+```
+
+### CNI
+
+To use the network policies feature in APL, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI or any other CNI that supports Kubernetes network polices.
 
 Install Tigera Operator:
 
@@ -82,9 +100,19 @@ Or install Calico minimal:
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.3/manifests/calico.yaml
 ```
 
-## API certificates
+### Metrics Server
 
-If your cluster uses untrusted certificates, make sure to set `metrics-server` for `kubelet-insecure-tls`:
+APL installs a Metrics Server. If your provider installs Metrics Server on their managed Kubernetes service, then disable Metrics Server in APL:
+
+```yaml
+apps:
+  metrics-server:
+    enabled: false
+```
+
+### API certificates
+
+If your Kubernetes cluster uses untrusted certificates, make sure to set `metrics-server` for `kubelet-insecure-tls`:
 
 ```yaml
 apps:
@@ -94,7 +122,15 @@ apps:
       kubelet-preferred-address-types: InternalIP
 ```
 
-## Install Otomi using the Helm chart
+### Cluster Autoscaler
+
+APL does NOT install a [Cluster Autoscaler](https://github.com/kubernetes/autoscaler). If your provider does not install a Cluster Autoscaler, install one yourself if required.
+
+### DNS
+
+The APL [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported when APL is installed with minimal values. Install APL with [DNS](dns.md) to use all APL features.
+
+## Install APL using Helm
 
 To install Otomi using the `custom` provider, use the following values:
 

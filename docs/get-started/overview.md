@@ -4,20 +4,15 @@ title: Overview
 sidebar_label: Overview
 ---
 
-
-
 **How to get started with Otomi**
 
 ---
 
-### Step 1: [Read the prerequisites](prerequisites.md)
-Know what is required to install Otomi.
+### Step 1: [Install APL](installation/overview.md)
+Install APL on Linode LKE or any conformant Kubernetes cluster.
 
-### Step 2: [Install Otomi](installation/overview.md)
-Setup a Kubernetes cluster in your favourite cloud or infrastructure and install Otomi on it. The examples on how to setup a Kubernetes cluster are only to help you get started.
+### Step 2: [Follow the post installation steps ](post-install-steps.md)
+Get the initial credentials and configure APL for your use case.
 
-### Step 3: [Follow the post installation steps ](activation.md)
-Get the initial credentials and sign in to the Otomi Console.
-
-### Step 4: [Explore Otomi using the Labs](labs/overview.md)
-Otomi Labs contains a set of labs to cover all the  activities performed by developer- and/or DevOps teams supported by Otomi.
+### Step 3: [Explore APL using the Labs](labs/overview.md)
+Explore APL with a comprehensive set of hands-on labs.

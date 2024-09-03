@@ -39,7 +39,7 @@ If you don't need encryption straight away please continue to the next step
 
 :::
 
-Otomi will encrypt any `secrets.*.yaml` files with [sops](https://github.com/mozilla/sops), but only if it finds `sops:` configuration details. In order to have access to the KMS credentials to encrypt/decrypt, a `.secrets` file needs to exist and have those credentials. Please `copy .secrets.sample .secrets` and fill it in with the credentials from the [prerequisites](/docs/get-started/prerequisites.md).
+Otomi will encrypt any `secrets.*.yaml` files with [sops](https://github.com/mozilla/sops), but only if it finds `sops:` configuration details. In order to have access to the KMS credentials to encrypt/decrypt, a `.secrets` file needs to exist and have those credentials. Please `copy .secrets.sample .secrets` and fill it in with the KMS credentials.
 
 Then you can run `otomi bootstrap`, which will result in the encryption and decryption of the secrets files.
 

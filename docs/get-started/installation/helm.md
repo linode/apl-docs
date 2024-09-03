@@ -34,7 +34,7 @@ cluster:
   provider: # choose between aws, azure, google, digitalocean, ovh, vultr, scaleway or custom
 ```
 
-When the chart is installed, follow the [post installation steps](../../get-started/post-install-steps).
+When the chart is installed, follow the [post installation steps](../post-installation-steps).
 
 <!-- Part of the activation is to register your cluster in [Otomi Cloud](https://portal.otomi.cloud) and download a Community Edition License to use Otomi Console and Otomi API. You can also first create a license key and add it to the chart values:
 
@@ -77,7 +77,7 @@ watch helm list -Aa
 
 Or view detailed info about Kubernetes resources with [k9s](https://k9scli.io)
 
-When the chart is installed, follow the [post installation steps](../../get-started/post-install-steps).
+When the chart is installed, follow the [post installation steps](../post-installation-steps).
 
 ## Installing from source
 

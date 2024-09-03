@@ -18,7 +18,6 @@ The Platform section in the left menu provides access to:
 
 - Dashboard
 - [Apps](apps.md): All active and inactive apps. Activate apps by dragging them to the active apps section
-- [Shortcuts](shortcuts.md): A list off all shortcuts created on this platform
 - [Clusters](clusters.md): A list of all known Kubernetes clusters running Otomi 
 - [Policies](policies.md): A list of all available security policies and their configuration for this platform
 - [Teams](teams.md): A list of all Teams using this platform
@@ -33,7 +32,6 @@ The Platform section in the left menu provides access to:
 The Team `$name` section gives access to:
 
 - [Apps](../../for-devs/console/apps.md): All the apps available to the team on this platform
-- [Shortcuts](../../for-devs/console/shortcuts.md): All shortcuts available to the team on this platform
 - [Builds](../../for-devs/console/builds.md): A list of all builds created by the team
 - [Secrets](../../for-devs/console/secrets.md): A list of all secrets created by the team
 - [Workloads](../../for-devs/console/workloads.md): A list of all team workloads

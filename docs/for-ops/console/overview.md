@@ -18,7 +18,6 @@ The Platform section in the left menu provides access to:
 
 - Dashboard
 - [Apps](apps.md): All active and inactive apps. Activate apps by dragging them to the active apps section
-- [Clusters](clusters.md): A list of all known Kubernetes clusters running Otomi 
 - [Policies](policies.md): A list of all available security policies and their configuration for this platform
 - [Teams](teams.md): A list of all Teams using this platform
 - [Builds](builds.md): A list of all builds created on this platform

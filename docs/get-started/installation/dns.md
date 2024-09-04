@@ -6,7 +6,7 @@ sidebar_label: DNS
 
 The APL [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported when APL is installed with minimal values. Install APL with DNS to use all APL features.
 
-## Route53
+## AWS
 
 Follow these steps to use AWS Route53:
 
@@ -52,7 +52,7 @@ Follow these steps to use AWS Route53:
 4. Create the policy:
 
 ```bash
-aws iam create-policy --policy-name "otomi-dns" --policy-document file://dns-policy.json
+aws iam create-policy --policy-name "apl-dns" --policy-document file://dns-policy.json
 ```
 
 5. export the policy ARN:
@@ -91,13 +91,13 @@ ACCESS_KEY_SECRET=$(echo $ACCESS_KEY | jq -r '.AccessKey.SecretAccessKey')
 
 - Get the API server endpoint. You can find the API server endpoint in the Details section of the cluster in the AWS console.
 
-- Add the DNS configuration created in the previous step, the API server endpoint, the `domainSuffix`, `domainFilters`, `region` and `email` to the `values.yaml` that we'll use to install Otomi:
+- Add the DNS configuration created in the previous step, the API server endpoint, the `domainSuffix`, `domainFilters`, `region` and `email` to the `values.yaml` that we'll use to install APL:
 
 ```bash
 tee values.yaml<<EOF
 cluster:
-  name: otomi
-  provider: aws
+  name: $CLUSTER_NAME
+  provider: custom
   region: your-region
   apiName: api-server-endpoint
   domainSuffix: your-domain.com
@@ -120,7 +120,7 @@ apps:
 EOF
 ```
 
-## Azure DNS
+## Azure
 
 Follow these steps to use AWS Route53:
 
@@ -174,8 +174,8 @@ $ az role assignment create --role "Contributor" --assignee $DNS_SP_APP_ID --sco
 ```bash
 tee values.yaml<<EOF
 cluster:
-  name: otomi
-  provider: azure
+  name: $CLUSTER_NAME
+  provider: custom
   domainSuffix: azure.example.com
 otomi:
   hasExternalDNS: true
@@ -197,7 +197,7 @@ apps:
 EOF
 ```
 
-## Google Cloud DNS
+## Google Cloud Platform
 
 Follow these steps to use Google Cloud DNS:
 
@@ -241,7 +241,7 @@ gcloud iam service-accounts keys create /local/path/to/credentials.json \
   --iam-account $DNS_SA_EMAIL
 ```
 
-5. Get the contents of the `credentials.son`. Note that you don't need to create a Kubernetes secret. The credentials will be directly provided to the Otomi installer and Otomi will create the secret.
+5. Get the contents of the `credentials.son`. Note that you don't need to create a Kubernetes secret. The credentials will be directly provided to the APL installer and APL will create the secret.
 
 ```bash
 cat /local/path/to/credentials.json
@@ -267,7 +267,7 @@ cat /local/path/to/credentials.json
 ```bash
 tee values.yaml<<EOF
 cluster:
-  name: otomi
+  name: $CLUSTER_NAME
   provider: google
   domainSuffix: gcp.example.com
 otomi:
@@ -283,7 +283,7 @@ dns:
             "project_id": "xxx",
             "private_key_id": "xxx",
             "private_key": xxx,
-            "client_email": "external-dns-sa@otomi.iam.gserviceaccount.com",
+            "client_email": "external-dns-sa@apl.iam.gserviceaccount.com",
             "client_id": "000000000000",
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
@@ -299,7 +299,7 @@ apps:
 EOF
 ```
 
-## DigitalOcean DNS
+## DigitalOcean
 
 If you want to learn about how to use DigitalOcean's DNS service read the following tutorial series:
 
@@ -315,11 +315,11 @@ DO_TOKEN="<your-token>"
 
 3. Create the values.yaml file
 
-```bash
+```yaml
 tee values.yaml<<EOF
 cluster:
-  name: otomi
-  provider: digitalocean
+  name: $CLUSTER_NAME
+  provider: custom
   domainSuffix: do.example.com
 otomi:
   hasExternalDNS: true
@@ -335,4 +335,53 @@ apps:
     stage: production
     email: admin@example.com
 EOF
+```
+
+## Cloudflare
+
+1. Creating a Cloudflare DNS zone
+
+We highly recommend to read this tutorial if you haven't used Cloudflare before:
+
+[Create a Cloudflare account and add a website](https://support.cloudflare.com/hc/en-us/articles/201720164-Step-2-Create-a-Cloudflare-account-and-add-a-website)
+
+2. Creating Cloudflare Credentials
+
+Snippet from [Cloudflare - Getting Started](https://api.cloudflare.com/#getting-started-endpoints):
+
+>Cloudflare's API exposes the entire Cloudflare infrastructure via a standardized programmatic interface. Using Cloudflare's API, you can do just about anything you can do on cloudflare.com via the customer dashboard.
+
+>The Cloudflare API is a RESTful API based on HTTPS requests and JSON responses. If you are registered with Cloudflare, you can obtain your API key from the bottom of the "My Account" page, found here: [Go to My account](https://dash.cloudflare.com/profile).
+
+
+When using API Token authentication, the token should be granted Zone `Read`, DNS `Edit` privileges, and access to `All zones`.
+
+If you would like to further restrict the API permissions to a specific zone (or zones), you also need to use the `--zone-id-filter` so that the underlying API requests only access the zones that you explicitly specify, as opposed to accessing all zones.
+
+Set the `CF_API_TOKEN` environment variable:
+
+```
+CF_API_TOKEN="Your Cloudflare API Token"
+```
+3. Create the values.yaml file
+
+```yaml
+cluster:
+  name: otomi
+  provider: custom
+  domainSuffix: linode.example.com
+otomi:
+  hasExternalDNS: true
+dns:
+  domainFilters:
+    - example.com
+  provider:
+    cloudflare:
+      apiToken: $CF_API_TOKEN
+      proxied: false
+apps:
+  cert-manager:
+    issuer: letsencrypt
+    stage: production
+    email: admin@example.com
 ```

@@ -8,14 +8,14 @@ sidebar_label: Overview
 
 ---
 
-### [Provision LKE combined with APL in Linode - Comming soon](apl.md)
+### [Linode Cloud Manager - Comming soon](apl.md)
 Provision LKE with APL using Linode Cloud Manager or Linode CLI.
 
-### [Manually install APL on Linode Kubernetes Engine](linode.md)
-Install APL on Linode Kubernetes Engine.
+### [Linode Kubernetes Engine](linode.md)
+Create a Linode Kubernetes Engine cluster and manually install APL.
 
 ### [Custom](custom.md)
-Install APL on any other conformant Kubernetes cluster.
+Install APL on any other conformant Kubernetes cluster like EKS, AKS, GKE
 
 ---
 
@@ -32,10 +32,10 @@ Instructions for using the APL Helm chart.
 Install APL with DNS
 
 ### [Use Azure AD as IDP](oidc.md)
-Install APL with Azure AD for OIDC
+Install APL with Azure Entra ID for OIDC
 
 ### [Use KMS to manage keys for encryption](sops.md)
-Install APL with KMS
+Install APL with SOPS and an external KMS
 
 ### [Configure an entrypoint for an external gateway](entrypoint.md)
 Install APL with an entrypoint for an external gateway

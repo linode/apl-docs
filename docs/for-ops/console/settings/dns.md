@@ -8,7 +8,7 @@ sidebar_label: DNS
 
 :::note
 
-DNS settings will only be active when `otomi.hasExternalDNS=true` flag is set during installation. This can also be set after installation in Settings/Otomi.
+DNS settings will only be active when `otomi.hasExternalDNS=true` flag is set during installation. This can also be set after installation in Settings/APL.
 
 :::
 
@@ -37,6 +37,7 @@ The followingDNS providers are supported in Otomi:
 - CloudFlare
 - Digital Ocean
 - Google
+- Linode Domains
 - Other
 
 When `Other` is selected, the required values can be added to support any other DNS provider (supported by External DNS).

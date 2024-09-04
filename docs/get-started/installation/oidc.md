@@ -6,7 +6,7 @@ sidebar_label: OIDC
 
 ## Use Azure Entra ID
 
-The authentication of brokered identities through Azure AD requires a service principal with certain Azure AD API permissions. An app registration needs to be created with the following API permissions:
+The authentication of brokered identities through Azure Entra ID (formerly Azure Active Directory) requires a service principal with certain API permissions. An app registration needs to be created with the following API permissions:
 
 | API / Permission name       | Type      | Description                   |
 | --------------------------- | --------- | ----------------------------- |
@@ -31,7 +31,7 @@ At the 'Authentication' tab you should be able to set the following callback URL
 - `https://keycloak.<dns-zone-name>/realms/master/broker/otomi-idp/endpoint`
 - `https://keycloak.<dns-zone-name>`
 
-To install Otomi with Azure Active Directory as an IdP instead of (default) using Keycloak as an IdP, use the following values:
+To install APL with Azure Entra ID as an IdP instead of (default) using Keycloak as an IdP, use the following values:
 
 ```yaml
 oidc:

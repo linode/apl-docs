@@ -132,12 +132,12 @@ The APL [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs
 
 ## Install APL using Helm
 
-To install Otomi using the `custom` provider, use the following values:
+To install APL using the `custom` provider, use the following values:
 
 ```bash
 tee values.yaml<<EOF
 cluster:
-  name: otomi
+  name: $CLUSTER_NAME
   provider: custom
 # optionally configure metrics-server for kubelet-insecure-tls
 apps:
@@ -148,4 +148,4 @@ apps:
 EOF
 ```
 
-The `custom` Otomi provider can be used in combination with any DNS provider.
+The `custom` provider can be used in combination with any [DNS](dns.md) provider.

@@ -21,7 +21,7 @@ module.exports = {
       },
       "get-started/post-install-steps",
       {
-        "Otomi labs": [
+        "Hands-on Labs": [
           "get-started/labs/overview",
           "get-started/labs/lab-1",
           "get-started/labs/lab-3",
@@ -69,16 +69,15 @@ module.exports = {
           {
             Settings: [
               "for-ops/console/settings/cluster",
-              "for-ops/console/settings/otomi",
+              "for-ops/console/settings/apl",
               "for-ops/console/settings/key-management",
               "for-ops/console/settings/alerts",
-              "for-ops/console/settings/co-monitoring",
-              "for-ops/console/settings/azure",
               "for-ops/console/settings/dns",
               "for-ops/console/settings/ingress",
               "for-ops/console/settings/oidc",
               "for-ops/console/settings/smtp",
               "for-ops/console/settings/backup",
+              "for-ops/console/settings/obj",
             ],
           },
         ],

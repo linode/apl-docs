@@ -8,7 +8,7 @@ sidebar_label: Helm
 
 ## Install client binaries
 
-When installing Otomi using the Helm chart, make sure the following client binaries exist:
+When installing APL using the Helm chart, make sure the following client binaries exist:
 
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to access the cluster
 - [Helm](https://helm.sh/docs/intro/install/) for Helm chart installation of APL
@@ -16,7 +16,7 @@ When installing Otomi using the Helm chart, make sure the following client binar
 ## Add the APL repository
 
 ```bash
-helm repo add aPL https://apl-docs.net/apl-core
+helm repo add apl https://linode.github.io/apl-core
 helm repo update
 ```
 
@@ -36,24 +36,18 @@ cluster:
 
 When the chart is installed, follow the [post installation steps](../post-installation-steps).
 
-<!-- Part of the activation is to register your cluster in [Otomi Cloud](https://portal.otomi.cloud) and download a Community Edition License to use Otomi Console and Otomi API. You can also first create a license key and add it to the chart values:
-
-```yaml
-license: <License Key>
-``` -->
-
 ## Custom values
 
-To view the required `values.yaml` file with detailed comments, view and download the chart's latest [values.yaml](https://github.com/redkubes/otomi-core/blob/main/chart/otomi/values.yaml). Run the following command to view _all_ the values (which might be overwhelming):
+To view the required `values.yaml` file with detailed comments, view and download the chart's latest [values.yaml](https://github.com/linode/apl-core/blob/main/chart/apl/values.yaml). Run the following command to view _all_ the values (which might be overwhelming):
 
 ```bash
-helm show values otomi/otomi
+helm show values apl/apl
 ```
 
 To test wether the input values are correct run the following command:
 
 ```bash
-helm template -f values.yaml otomi/otomi
+helm template -f values.yaml apl/apl
 ```
 
 ## Install the Helm chart
@@ -61,16 +55,16 @@ helm template -f values.yaml otomi/otomi
 Install the Helm chart:
 
 ```bash
-helm install -f values.yaml otomi otomi/otomi
+helm install -f values.yaml apl apl/apl
 ```
 
 ## Monitoring the installation
 
-The chart deploys a Job (`otomi`) in the `default` namespace. Monitor the chart install using `kubectl`:
+The chart deploys a Job (`-apl`) in the `default` namespace. Monitor the chart install using `kubectl`:
 
 ```bash
 # get the status of the job
-kubectl get job otomi -w
+kubectl get job apl-apl -w
 # watch the helm chart install status:
 watch helm list -Aa
 ```
@@ -81,16 +75,16 @@ When the chart is installed, follow the [post installation steps](../post-instal
 
 ## Installing from source
 
-As an alternative, you can also clone the otomi-core source code from the [Github](https://github.com/redkubes/otomi-core) and install otomi using the chart source code.
+As an alternative, you can also clone the apl-core source code from the [Github](https://github.com/linode/apl-core) and install APL using the chart source code.
 
 ### Download source
 
 ```bash
-git clone https://github.com/redkubes/otomi-core.git
-cd otomi-core
+git clone https://github.com/linode/apl-core.git
+cd apl-core
 ```
 
-Before installing the chart from source, first change the `CHART_VERSION_PLACEHOLDER` in the `chart/otomi/Chart.yaml` to `v1.0.0`
+Before installing the chart from source, first change the `CHART_VERSION_PLACEHOLDER` in the `chart/apl/Chart.yaml` to `v1.0.0`
 
 ### Install
 
@@ -101,10 +95,10 @@ otomi:
   version: main
 ```
 
-Use the following command to install the chart with the name `my-otomi-release` (a custom name that you choose).
+Use the following command to install the chart with the name `my-apl-release` (a custom name that you choose).
 
 ```bash
-helm install -f values.yaml my-otomi-release chart/otomi
+helm install -f values.yaml my-apl-release chart/apl
 ```
 
 <!-- ## Uninstalling Otomi

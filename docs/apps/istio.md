@@ -34,7 +34,7 @@ Jwks doesn't have key to match kid or alg from Jwt
 When you see errors in the logs like such:
 
 ```
-error    authorization    skipped rule ns[monitoring]-policy[grafana-dev-mycluster.akamai-apl-net]-rule[0]: :authority must not be used in TCP
+error    authorization    skipped rule ns[monitoring]-policy[grafana-dev-clusterid.akamai-apl-net]-rule[0]: :authority must not be used in TCP
 ```
 
 These are not real errors, but logged incorrectly: https://github.com/istio/istio/issues/24701#issuecomment-649719089

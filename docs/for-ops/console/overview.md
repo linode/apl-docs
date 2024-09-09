@@ -22,7 +22,7 @@ The Platform View provides access to:
 - [Projects](projects.md): A list of all Projects.
 - [Builds](builds.md): A list of all Builds.
 - [Workloads](workloads.md): A list of all Workloads.
-- [Network Policies](netpols.ml): A list of all Network Policies.
+- [Network Policies](netpols.md): A list of all Network Policies.
 - [Services](services.md): A list of all Services.
 - [Backups](backups.md): A list of all Backups.
 - [Maintenance](maintenance.md): Maintenance actions.

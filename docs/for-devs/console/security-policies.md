@@ -14,7 +14,7 @@ All known Security Policies for the Team are listed here. Security policies can 
 | ------------- | -------------------------------------------------------------------------------------------------- |
 | Name          | The name of the Security Policy                                                                    |
 | Severity      | The Severity of the policy. Can be `low`, `medium` or `high`                                       |
-| Action        | The action to take when a policy gets violated. Can be `Audit` (whicj is the default) or `Enforce` |
+| Action        | The action to take when a policy gets violated. Can be `Audit` (which is the default) or `Enforce` |
 
 ## About Security Policies
 

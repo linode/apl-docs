@@ -79,7 +79,7 @@ Example of a `config.json`:
     "username":"tiger",
     "password":"pass1234",
     "email":"tiger@acme.example",
-    "auth":"dGlnZXI6cGFzczEyMzQ="
+    "auth":"the-authentication-key"
     }
   }
 }

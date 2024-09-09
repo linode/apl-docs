@@ -10,7 +10,7 @@ Welcome to Otomi! If you would like to explore Otomi, this getting started guide
 
 We assume you (or the platform administrator) have:
 
-1. Installed Otomi with DNS configured. See [here](get-started/installation/overview.md)
+1. Installed Otomi with DNS configured. See [here](get-started/installation/overview.md).
 
 2. Activated the following applications:
 
@@ -19,12 +19,13 @@ We assume you (or the platform administrator) have:
 - Loki
 - Grafana
 - Trivy Operator
-- Gatekeeper (with option `Disable validating webhook` set to true)
 
 For the [Use OpenTelemery](lab-27.md) Lab, the Tempo app needs to be enabled together with tracing in the `Istio` and `Nginx Ingress` apps.
 
-3. Created a team called `labs` with `Grafana`, `Prometheus` and `Alertmanager` activated
-4. [Created an account](/docs/apps/keycloak#create-a-user-in-keycloak) and added your account to the `labs` team group in Keycloak. In the labs we'll be using the user `labs-user`
+3. Created a team called `labs` with `Grafana`, `Prometheus` and `Alertmanager` activated.
+
+4. Created a user account and added the account to the `labs` team group in Keycloak. In the labs we'll be using the user `labs-user`.
+
 5. Provided you with the following information:
 
 - The URL to access the Otomi web UI (Otomi Console)

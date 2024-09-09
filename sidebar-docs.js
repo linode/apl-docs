@@ -35,7 +35,6 @@ module.exports = {
           "get-started/labs/lab-11",
           "get-started/labs/lab-32",
           "get-started/labs/lab-24",
-          "get-started/labs/lab-15",
           "get-started/labs/lab-7",
           "get-started/labs/lab-17",
           "get-started/labs/lab-20",

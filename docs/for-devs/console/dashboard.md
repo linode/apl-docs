@@ -19,10 +19,13 @@ The Team dashboard uses the Team's Grafana instance to get it's information from
 The dashboard has 5 elements
 
 - [Inventory](#inventory)
+
 - [Resource Status](#resource-status)
+
 - [Resource Utilization](#resource-utilization)
+
 - [Vulnerabilities](#vulnerabilities)
-- [Compliance](#compliance)
+
 
 ![Team dashboard](../../img/team-dashboard.png)
 

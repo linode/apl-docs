@@ -133,7 +133,9 @@ The secret value will only be visible at the time of creation or once it has bee
 :::
 
 
-## Metadata (optional)
+## Metadata
+
+Adding metadata is optional.
 
 Add the following standard metadata to the sealed-secret:
 

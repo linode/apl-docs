@@ -50,7 +50,7 @@ Welcome to Otomi! If you are going to use Otomi or like to learn Kubernetes, the
 
 **Secure workloads**
 
-### [Check policy compliance](lab-15.md)
+<!-- ### [Check policy compliance](lab-15.md) -->
 
 ### [Scan images for vulnerabilities](lab-7.md)
 

@@ -4,8 +4,8 @@ title: Team Apps
 sidebar_label: Apps
 ---
 
-The team apps are shared apps on the platform available for teams to use. Click on the app to open the app, or click on the configuration icon to go to the app details:
+The Team Apps are shared platform applications that ate available for teams to use or dedicated Team applications. Click on the Icon of the app to go directly to the UI of the application, or click on the configuration icon to go to the app details.
 
 ### Info
 
-Here you will find more information about the app and how the app is integrated into Otomi.
+Here you will find more information about the app.

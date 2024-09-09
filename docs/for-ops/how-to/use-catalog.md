@@ -1,48 +1,50 @@
 ---
-slug: dev-catalog
+slug: catalog
 title: Managing the Catalog
 sidebar_label: Manage the Catalog
 ---
 
-Otomi offers a Catalog to Teams on the platform to offer them golden path templates (Helm charts). This is how it works:
+APL offers a Catalog to Teams on the platform to offer them golden path templates (Helm charts). This is how it works:
 
-- Add a Helm chart to the `otomi/charts` repo in the local Gitea
-- Configure which Teams can use the chart
-- Teams can create Workloads from the Catalog
+- Add a Helm chart to the `otomi/charts` repo in the local Gitea.
 
-After Otomi is installed, the catalog (the `otomi/charts` repo) will contain a set of quick start Helm charts. Tbe The Otomi provided Helm charts are not mandetory to use and can be removed or modified to your own liking. They are only provided to make it easier to get started.
+- Configure which Teams can use the chart.
 
-## Otomi quick start Helm charts
+- Teams can create Workloads from the Catalog.
+
+After APL is installed, the catalog (the `otomi/charts` repo) will contain a set of quick start Helm charts. Tbe The APL provided Helm charts are not mandetory to use and can be removed or modified to your own liking. They are only provided to make it easier to get started.
+
+## APL quick start Helm charts
 
 The Catalog contains a set of Helm charts that can be used as quick starts. The following quick starts are available:
 
 ### k8s-deployment
 
-The `otomi-quickstart-k8s-deployment` Helm chart can be used to create a Kubernetes `Deployment` (to deploy a single image), a `Service` and a `ServiceAccount`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` can be created.
+The `apl-quickstart-k8s-deployment` Helm chart can be used to create a Kubernetes `Deployment` (to deploy a single image), a `Service` and a `ServiceAccount`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` can be created.
 
 ### k8s-deployment-otel
 
-The `otomi-quickstart-k8s-deployment-otel` Helm chart can be used to create a Kubernetes `Deployment` (to deploy a single image), a `Service`, a `ServiceAccount`, an `OpenTelemetryCollector` and an `Instrumentation`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` can be created.
+The `apl-quickstart-k8s-deployment-otel` Helm chart can be used to create a Kubernetes `Deployment` (to deploy a single image), a `Service`, a `ServiceAccount`, an `OpenTelemetryCollector` and an `Instrumentation`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` can be created.
 
 ### k8s-deployments-canary
 
-The `otomi-quickstart-k8s-deployments-canary` Helm chart can be used to create 2 Kubernetes `Deployments` (to deploy 2 versions of an image), a `Service` and a `ServiceAccount`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` (for each version) can be created.
+The `apl-quickstart-k8s-deployments-canary` Helm chart can be used to create 2 Kubernetes `Deployments` (to deploy 2 versions of an image), a `Service` and a `ServiceAccount`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` (for each version) can be created.
 
 ### knative-service
 
-The `otomi-quickstart-knative-service` Helm chart can be used to create a Knative `Service` (to deploy a single image), a `Service` and a  `ServiceAccount`. Optionally a Prometheus `ServiceMonitor` can be created.
+The `apl-quickstart-knative-service` Helm chart can be used to create a Knative `Service` (to deploy a single image), a `Service` and a  `ServiceAccount`. Optionally a Prometheus `ServiceMonitor` can be created.
 
-### Otomi quick start for creating a PostgreSQL cluster
+### APL quick start for creating a PostgreSQL cluster
 
-The `otomi-quickstart-postgresql` Helm chart can be used to create a cloudnativepg PostgreSQL `Cluster`. Optionally a Prometheus `PodMonitor` and a `Configmap` (for adding a postgresql dashboard to Grafana) can be created.
+The `apl-quickstart-postgresql` Helm chart can be used to create a cloudnativepg PostgreSQL `Cluster`. Optionally a Prometheus `PodMonitor` and a `Configmap` (for adding a postgresql dashboard to Grafana) can be created.
 
-### Otomi quick start for creating a Redis master-replica cluster
+### APL quick start for creating a Redis master-replica cluster
 
-The `otomi-quickstart-redis` Helm chart can be used to create a Redis master-replica cluster.
+The `APL-quickstart-redis` Helm chart can be used to create a Redis master-replica cluster.
 
 ## Customize the catalog
 
-The Otomi provided charts are not mandetory to use and can be removed or modified to your own liking. They are only provided to make it easier to get started. To manage the catalog, just pull the `otomi/charts` repo, add the Helm charts you would like to make available and push changes. A newly added chart will immediately become available in the catalog for Teams to use.
+The APL provided charts are not mandetory to use and can be removed or modified to your own liking. They are only provided to make it easier to get started. To manage the catalog, just pull the `otomi/charts` repo, add the Helm charts you would like to make available and push changes. A newly added chart will immediately become available in the catalog for Teams to use.
 
 ## Configure chart access
 

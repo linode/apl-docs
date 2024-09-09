@@ -1,28 +1,28 @@
 ---
 slug: core-only
-title: Use Otomi Core only
-sidebar_label: Use Core only
+title: Use APL Core only
+sidebar_label: Use APL only
 ---
 
-Otomi by default installs Gitea, Drone, Otomi API and Otomi Console. Otomi Console is the self-service UI and uses Otomi API to generate validated configuration code. This configuration code is then committed to Gitea (in the `values` repository), which will trigger teh pre-configured Drone pipeline to apply the changes.
+APL by default installs Gitea, Drone, APL API and APL Console. APL Console is the self-service UI and uses APL API to generate validated configuration code. This configuration code is then committed to Gitea (in the `otomi-values` repository), which will trigger the pre-configured Tekton pipeline to apply the changes.
 
-In some cases you might not want to use Otomi Console, Otomi API and Drone, but instead install and manage configuration of the platform using a custom pipeline. Possible use-cases for this scenario are:
+In some cases you might not want to use APL Console and APL API, but instead install and manage configuration of the platform using a custom pipeline. Possible use-cases for this scenario are:
 
-- Pushing configuration changes to multiple clusters at the same time (edge use-case)
-- Not allowing configuration changes be made by developers
-- Only using the open source [otomi-core](https://github.com/redkubes/otomi-core) project
+- Pushing configuration changes to multiple clusters at the same time (edge use-case).
+
+- Not allowing configuration changes be made by developers.
+
+- Only using the open source [APL-core](https://github.com/linode/apl-core) project.
 
 ## Example
 
-The example Otomi chart values below shows how to install Otomi with 
-
-- A team with 2 workloads and 2 services
+The example APL Helm chart values below shows how to install APL with A team with 2 workloads and 2 services:
 
 ```yaml
 cluster:
   name: ${clusterName}
   provider: ${clusterProvider}
-otomi:
+otomi::
   adminPassword: ${password}
 apps:
   argocd:
@@ -63,12 +63,12 @@ teamConfig:
         path: ksvc
         revision: v1.0.1
         selectedChart: ksvc
-        url: https://github.com/redkubes/otomi-charts.git
+        url: https://github.com/redkubes/APL-charts.git
       - name: api
         path: deployment
         revision: v1.0.1
         selectedChart: deployment
-        url: https://github.com/redkubes/otomi-charts.git
+        url: https://github.com/redkubes/APL-charts.git
 files:
   env/teams/workloads/demo/front-end.yaml: |
     values: |
@@ -108,31 +108,34 @@ files:
 
 You can now make changes in this configuration and apply them directly to the cluster:
 
-1. Install Otomi using your custom values:
+1. Install APL using your custom values:
 
 ```
-helm install -f values.yaml otomi otomi/otomi
+helm install -f values.yaml apl apl/apl
 ```
 
-After Otomi has been installed with these values, Otomi will install and configure:
+After APL has been installed with these values, APL will install and configure:
 
-- All required ingress resources
-- Istio (including the virtual services for public exposed services with HTTP response headers)
-- Network policies
-- Argo CD and Argo CD application sets to automatically deploy the front-end and api workloads
+- All required ingress resources.
+
+- Istio (including the virtual services for public exposed services with HTTP response headers).
+
+- Network policies.
+
+- Argo CD and Argo CD application sets to automatically deploy the front-end and api workloads.
 
 2. Change the values
 
-You can extend the values with all Otomi supported configuration.
+You can extend the values with all APL supported configuration.
 
-3. Uninstall the Otomi release:
+3. Uninstall the APL release:
 
 ```
-helm uninstall otomi --no-hooks
+helm uninstall APL --no-hooks
 ```
 
 3. Re-install the chart with the adjusted values:
 
 ```
-helm install -f values.yaml otomi otomi/otomi
+helm install -f values.yaml apl apl/apl
 ```

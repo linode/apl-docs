@@ -30,9 +30,9 @@ To use Velero to create backups of Persistent Volumes, Object Storage needs to b
 
 To use Velero to create backups of Persistent Volumes in Linode:
 
-1. Create a Linode API Token in Linode
+1. Create a Linode API Token in Linode.
 
-2. Fill in the token and apply changes
+2. Fill in the token and submit changes.
 
-3. Go to the apps section in the left menu and enable Velero
+3. Go to the apps section in the left menu and enable Velero.
 

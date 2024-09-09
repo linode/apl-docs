@@ -29,9 +29,9 @@ Limit the possible target zones by zone id.
 
 The DNS provider used to manage the domain(s).
 
-The followingDNS providers are supported in Otomi:
+The followingDNS providers are supported in APL:
 
-- AWS
+- AWS Route53
 - Azure (Public zones)
 - Azure Private DNS
 - CloudFlare

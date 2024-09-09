@@ -4,14 +4,16 @@ title: Istio
 sidebar_label: Istio
 ---
 
-Since Otomi has security best practices built in, it is designed for intrusion.
-Istio is installed by Otomi as a service mesh to deliver the following capabilities:
+## About
 
-- mTLS enforcement for all traffic that is deemed compromisable
-- egress control, forcing teams to choose explicit egress endpoints
-- advanced routing capabilities such as weight based load balancing (A/B or blue/green testing)
+Istio is installed by APL to deliver the following capabilities:
 
-In the future we might make it possible to opt out of Istio, but that effectively nullifies the mTLS capabilities and egress control.
+- mTLS enforcement for all traffic that is deemed compromisable.
+
+- egress control, forcing teams to choose explicit egress endpoints.
+
+- advanced routing capabilities such as weight based load balancing (A/B or blue/green testing).
+
 
 ## Known issues
 
@@ -32,7 +34,7 @@ Jwks doesn't have key to match kid or alg from Jwt
 When you see errors in the logs like such:
 
 ```
-error    authorization    skipped rule ns[monitoring]-policy[grafana-dev-eks-otomi-cloud]-rule[0]: :authority must not be used in TCP
+error    authorization    skipped rule ns[monitoring]-policy[grafana-dev-mycluster.akamai-apl-net]-rule[0]: :authority must not be used in TCP
 ```
 
 These are not real errors, but logged incorrectly: https://github.com/istio/istio/issues/24701#issuecomment-649719089

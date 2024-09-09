@@ -64,7 +64,7 @@ The chart deploys a Job (`-apl`) in the `default` namespace. Monitor the chart i
 
 ```bash
 # get the status of the job
-kubectl get job apl-apl -w
+kubectl get job apl -w
 # watch the helm chart install status:
 watch helm list -Aa
 ```
@@ -83,8 +83,6 @@ As an alternative, you can also clone the apl-core source code from the [Github]
 git clone https://github.com/linode/apl-core.git
 cd apl-core
 ```
-
-Before installing the chart from source, first change the `CHART_VERSION_PLACEHOLDER` in the `chart/apl/Chart.yaml` to `v1.0.0`
 
 ### Install
 

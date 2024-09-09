@@ -5,7 +5,7 @@ sidebar_label: Builds
 ---
 
 :::info
-To enable this feature, first make sure [Harbor](../../apps/harbor.md) and [Tekton](../../apps/tekton.md) are activated. To be able to push images to Harbor, Otomi needs to be configured with a DNS and trusted certificates (Lets encrypt with production certificates).
+To enable this feature, first make sure [Harbor](../../apps/harbor.md) is activated. To push images to Harbor, APL needs to be configured with DNS and trusted certificates (Lets encrypt with production certificates).
 :::
 
 All known Builds on the platform are listed here. Builds can be sorted based on:

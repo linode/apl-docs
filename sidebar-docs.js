@@ -51,21 +51,40 @@ module.exports = {
         ],
       },
     ],
+    "For Team Members": [
+      {
+        "APL Console - Team View": [
+          "for-devs/console/overview",
+          "for-devs/console/deploy-changes",
+          "for-devs/console/dashboard",
+          "for-devs/console/apps",
+          "for-devs/console/catalog",
+          "for-devs/console/projects",
+          "for-devs/console/builds",
+          "for-devs/console/workloads",
+          "for-devs/console/netpols",
+          "for-devs/console/services",
+          "for-devs/console/security-policies",
+          "for-devs/console/sealed-secrets",
+          "for-devs/console/shell",
+          "for-devs/console/settings",
+        ],
+      },
+    ],
     "For Platform Admins": [
       {
-        "Otomi Console": [
+        "APL Console - Platform View": [
           "for-ops/console/overview",
           "for-ops/console/dashboard",
           "for-ops/console/apps",
-          "for-ops/console/policies",
           "for-ops/console/teams",
           "for-ops/console/projects",
           "for-ops/console/builds",
-          "for-ops/console/secrets",
           "for-ops/console/workloads",
+          "for-ops/console/netpols",
           "for-ops/console/services",
           "for-ops/console/backups",
-          "for-ops/console/shell",
+          "for-ops/console/maintenance",
           {
             Settings: [
               "for-ops/console/settings/cluster",
@@ -89,13 +108,12 @@ module.exports = {
           "for-ops/how-to/ingress-classes",
           "for-ops/how-to/use-team-admin",
           "for-ops/how-to/core-only",
-          "for-ops/how-to/clone-otomi",
-          // "for-ops/how-to/switch-to-dns",
+          "for-ops/how-to/clone-apl",
           "for-ops/how-to/backups",
         ],
       },
       {
-        "Otomi CLI": [
+        "APL CLI": [
           "for-ops/cli/installation",
           "for-ops/cli/deploying",
           "for-ops/cli/known-issues",
@@ -141,7 +159,6 @@ module.exports = {
           "apps/cloudnativepg",
           "apps/drone",
           "apps/external-dns",
-          "apps/gatekeeper",
           "apps/gitea",
           "apps/grafana",
           "apps/harbor",
@@ -158,25 +175,7 @@ module.exports = {
           "apps/sealedsecrets",
           "apps/trivy",
           "apps/tekton",
-          "apps/vault",
           "apps/velero",
-        ],
-      },
-    ],
-    "For DevOps Teams": [
-      {
-        "Otomi Console": [
-          "for-devs/console/dashboard",
-          "for-devs/console/apps",
-          "for-devs/console/catalog",
-          "for-devs/console/projects",
-          "for-devs/console/builds",
-          "for-devs/console/workloads",
-          "for-devs/console/services",
-          "for-devs/console/secrets",
-          "for-devs/console/shell",
-          "for-devs/console/deploy-changes",
-          "for-devs/console/settings",
         ],
       },
     ],

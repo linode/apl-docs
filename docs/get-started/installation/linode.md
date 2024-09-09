@@ -56,20 +56,32 @@ k config use-context lke<cluster_id>-ctx
 
 ## Create a Domain
 
-:::info
-When using Domains in Linode, name resolving takes at least 30 min to work. The APL installer will retry until it can resolve the Keycloak host name in the configured domain.
-:::
-
 If you want to learn about how to use Linode DNS Manager read the following tutorial: [Get started with DNS Manager](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-dns-manager).
+
+When you create a domain in Linode, make sure to set the TTL of the SOA Record to 30 seconds:
+
+1. Click on your domain
+2. Click on the tree dots on the right of the SOA Record and click `edit`
+3. Change the default TTL to `30 seconds`
+4. Click `Save`
 
 ### Creating a Personal Access Token
 
-Create a new Personal Access Token with Read/Write access for Domains.
+Create a new Personal Access Token with Read/Write access for Domains:
 
-Set environment variable for the token:
+1. Go to your profile on the top right
+2. Click on `API Tokens`
+3. Click on `Create A Personal Access Token`
+4. Add a `Label` (the name of the Token)
+5. Select the desired `Expiry`
+6. Select `No Access` for all
+7. Select `Read/Write` for `Domains`
+8. Click `Create Token`
+9. Copy your Personal Access Token
+10. Set environment variable for the token:
 
 ```bash
-LINODE_TOKEN="<your-token-here>"
+LINODE_TOKEN="<your-personal-access-token>"
 ```
 
 ## Create the values.yaml file
@@ -111,7 +123,7 @@ helm install -f values.yaml apl apl/apl
 Monitor the logs of the installer job:
 
 ```bash
-kubectl logs jobs/apl-apl -n default -f
+kubectl logs jobs/apl -n default -f
 ```
 
 When the installer is finished, copy the `url` and `admin-password` from the console output.

@@ -1,20 +1,24 @@
 ---
-slug: lab-24
+slug: create-postgresql-db
 title: Create a PostgreSQL database
-sidebar_label: Create a database
+sidebar_label: Create a Database
 ---
 
-Otomi by default installs the Cloudnative POstgreSQL database operator. Teams can use the operator and the `postgresql` quick start to create their own PostgreSQL databases.
+APL by default installs the Cloudnative POstgreSQL database operator. Teams can use the operator and the `postgresql` quick start to create their own PostgreSQL databases.
 
 ## Create a database
 
-You can create a postgresql database from the developer catalog:
+You can create a postgresql database from the Catalog:
 
-1. Go to `Catalog` in the left menu and click on the `postgresql` template
-2. Click on `Values`
-3. Fill in a name for the database
-4. Change other parameter values as required
-5. Click `Submit` and the `Deploy Changes`
+1. Go to `Catalog` in the left menu and click on the `postgresql` template.
+
+2. Click on `Values`.
+
+3. Fill in a name for the database.
+
+4. Change other parameter values if required.
+
+5. Click `Submit` and the `Deploy Changes`.
 
 The operator will now create the database and add secrets to the team's namespace called `<database-name>-superuser` and `<database-name>-app`. `<database-name>-superuser` contains the secrets for the superuser of the PostgreSQL cluster, whereas the `<database-name>-app` is granted access to the default database with the name set for the database. Each secret contains the username and password for the database with the keys `username` and `password`.
 
@@ -34,7 +38,9 @@ env:
         key: username
 ```
 
-> Note: Using the superuser credentials for connecting an app is discouraged. The app user has the access it needs for initializing tables etc.
+:::note 
+Using the superuser credentials for connecting an app is discouraged. The app user has the access it needs for initializing tables etc.
+:::
 
 ## Monitoring
 

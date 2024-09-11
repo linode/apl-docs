@@ -45,13 +45,18 @@ The traffic control option allows to split traffic between multiple deployed ver
 
 Exposure controls wether internet exposure should be enabled or not. Two options exist:
 
+- `No Exposure`: Choose to expose services in-cluster only (default).
+
 - `External`: Choose to expose services on a private or public load balancer.
 
-- `No Exposure`: Choose to expose services in-cluster only.
 
 ### No Exposure
 
 Choose to expose services in-cluster only.
+
+:::info
+The `No Exposure` option is deprecated. Only use the `External` exposure option.
+:::
 
 ### External
 

@@ -1,13 +1,13 @@
 ---
-slug: lab-11
+slug: auto-image-update
 title: Configure auto image updater
-sidebar_label: Configure auto image updater
+sidebar_label: Configure Auto Image Updater
 ---
 
-When using the Workload feature in Otomi to deploy Helm charts from the Developer Catalog, then you can also use the `Auto image updater` feature to to automatically update the container images of Kubernetes workloads.
+When using the Workload feature in APL to deploy Helm charts from the Developer Catalog, then you can also use the `Auto image updater` feature to to automatically update the container images of Kubernetes workloads.
 
 :::info
-Otomi only supports the image update feature in combination with a Helm chart stored in the Developer Catalog.
+APL only supports the image update feature in combination with a Helm chart stored in the Catalog.
 :::
 
 ## Create a Workload with auto image updater
@@ -39,7 +39,7 @@ In the example above, we used the `Digest` update strategy. The `Semver` strateg
 
 ## Expose the service
 
-Now go to the [Expose services](lab-18.md) lab and expose the `green` service. When the service is created, go to `Services` in the left menu and click on the Url of the `green` service. What do you see?
+Now go to the [Expose services](expose-services.md) lab and expose the `green` service. When the service is created, go to `Services` in the left menu and click on the Url of the `green` service. What do you see?
 
 ## Make code change to trigger a new build
 

@@ -90,7 +90,7 @@ To create users in Keycloak, follow these steps:
 
 ## Step 4 (Optional): Add the URL of the Kubernetes API
 
-:::info NOTE
+:::info
 Adding the URL of the K8s cluster API is required by teams to be able to download the KUBECONFIG
 :::
 
@@ -139,5 +139,5 @@ APL is a composable platform. Activate more Apps based on the required platform 
 
 ## Step 7: Create Teams
 
-Create your first team. Follow the instructions [here](../for-ops/console/teams#creating-new-teams).
+Create your first team. Follow the instructions [here](../for-ops/console/teams#creating-a-team).
 

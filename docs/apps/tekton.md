@@ -6,7 +6,7 @@ sidebar_label: Tekton
 
 ## About
 
-Tekton is used in Otomi for the Builds self-service. When a Build is created, Otomi generates the Tekton Pipeline and Pipelinerun resources. There are 2 types op pipelines:
+Tekton is used in APL for the Builds self-service. When a Build is created, APL generates the Tekton Pipeline and Pipelinerun resources. There are 2 types op pipelines:
 
 - Docker for building images based on a Dockerfile
 

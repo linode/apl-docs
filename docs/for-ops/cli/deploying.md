@@ -1,12 +1,12 @@
 ---
 slug: deploying
-title: Using Otomi CLI
-sidebar_label: Using Otomi CLI
+title: Using the CLI
+sidebar_label: Using the CLI
 ---
 
 ## 1. Initialize a values repo
 
-Otomi needs a git repo to store its configuration. We call it a **_values_** repo.
+APL needs a git repo to store its configuration. We call it a **_values_** repo.
 
 In order to quickly get up and running it is advised to download the [chart values](https://github.com/redkubes/otomi-core/blob/main/chart/otomi/values.yaml) and fill in the values.
 
@@ -39,7 +39,7 @@ If you don't need encryption straight away please continue to the next step
 
 :::
 
-Otomi will encrypt any `secrets.*.yaml` files with [sops](https://github.com/mozilla/sops), but only if it finds `sops:` configuration details. In order to have access to the KMS credentials to encrypt/decrypt, a `.secrets` file needs to exist and have those credentials. Please `copy .secrets.sample .secrets` and fill it in with the KMS credentials.
+APL will encrypt any `secrets.*.yaml` files with [sops](https://github.com/mozilla/sops), but only if it finds `sops:` configuration details. In order to have access to the KMS credentials to encrypt/decrypt, a `.secrets` file needs to exist and have those credentials. Please `copy .secrets.sample .secrets` and fill it in with the KMS credentials.
 
 Then you can run `otomi bootstrap`, which will result in the encryption and decryption of the secrets files.
 
@@ -63,7 +63,7 @@ Now try a diff:
 git diff
 ```
 
-## 4. Start Otomi Console on your local machine (optional)
+## 4. Start APL Console on your local machine (optional)
 
 Bootstrap again and start the console:
 
@@ -72,11 +72,11 @@ otomi bootstrap
 otomi console
 ```
 
-The console allows for easy configuration of many settings but not all. Assuming the setup steps are completed, you need to now configure the Otomi values repository. This repo is the source configuration for Otomi.
+The console allows for easy configuration of many settings but not all. Assuming the setup steps are completed, you need to now configure the APL values repository. This repo is the source configuration for APL.
 
 ## 5. Configuration
 
-Configuration can be performed much easier through the Otomi Console, so please refer to the [Otomi Console](/docs/for-ops/console/overview.md) documentation.
+Configuration can be performed much easier through the APL Console, so please refer to the [APL Console](/docs/for-ops/console/overview.md) documentation.
 
 However, chart configuration is not (yet) exposed through the console, so please look at the values repo's `env/charts/*` files to edit the configuration files.
 
@@ -88,7 +88,7 @@ Important things to note:
 
 Please follow the guidance of the yaml hinting, as it has all the descriptions and example values you need to operate on these files.
 
-:::info Otomi YAML hinting only works in vscode
+:::info APL YAML hinting only works in vscode
 
 VSCode automatically loads the '.vscode/values-schema.yaml' schema provided. Please inspect it or wire it up manually when using another editor.
 
@@ -154,7 +154,7 @@ Whenever you add a team, or change or add to these uncharted resources, you have
 
 During development iterations you will probably not touch uncharted resources often, but instead you will add features in charts.
 
-Otomi has these subcommands that only target charted resources:
+APL has these subcommands that only target charted resources:
 
 ```bash
 otomi (diff|apply|sync|template)

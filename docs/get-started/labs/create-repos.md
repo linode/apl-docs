@@ -1,10 +1,10 @@
 ---
-slug: lab-3
+slug: create-repos
 title: Create a private Git repo
 sidebar_label: Create GIT repos
 ---
 
-As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like Gitlab, or use Github. But if you don't, Otomi has you covered. Otomi includes a complete self-hosted Git solution called Gitea.
+As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like Gitlab, or use Github. But if you don't, APL has you covered. APL includes a complete self-hosted Git solution called Gitea.
 
 As a team member, you can create and manage your own repositories.
 
@@ -20,34 +20,39 @@ In the labs we'll be using a Team called `labs` and a user called `labs-user`.
 
 ## Using a Git client
 
-Gitea in Otomi only supports HTTPS for Git authentication. To connect to Git using HTTPS you'll first need to add a password to your account in Gitea:
+Gitea in APL only supports HTTPS for Git authentication. To connect to Git using HTTPS you'll first need to add a password to your account in Gitea:
 
-- Sign in to Gitea using OpenID
-- Click on your account (top right) and then click `Settings`
-- Fill in a password in the `Account` tab
+1. Sign in to Gitea using OpenID.
+
+2. Click on your account (top right) and then click `Settings`.
+
+3. Fill in a password in the `Account` tab.
 
 After adding a password, you can now authenticate using your username (labs-user) and the password created in Gitea.
 
 ## Create the private repository
 
-In the apps section in Otomi console, you'll see an app called Gitea. Click on it.
+In the apps section in APL console, you'll see an app called Gitea. Click on it.
 
 ![kubecfg](../../img/team-app-gitea.png)
 
 Now follow these steps:
 
-- Click on `Sign In` with OpenID
+1. Click on `Sign In` with OpenID.
 
 ![kubecfg](../../img/gitea-openid.png)
 
-- Click on `+ New Repository`
+2. Click on `+ New Repository`
 
 ![kubecfg](../../img/new-gitea-repo.png)
 
-- Add the name `blue` for the repository
-- Optional: Enable `Initialize Repository`
-- Make Repository Private
-- Click on `Create Repository`
+3. Add the name `blue` for the repository.
+
+4. Select `Make Repository Private`.
+
+5. Select `Initialize Repository`.
+
+6. Click on `Create Repository`.
 
 Your repo is now ready to be used!
 
@@ -101,16 +106,18 @@ Add `blue.html`:
 </html>
 ```
 
-In the following labs we are going to use the `blue` repository, but we'll also need a `green` repository. Create the `green` repository and add the 2 files, but change `blue` into `green`.
+In the following labs we are going to use the `blue` repository, but we'll also need a `green` repository. 
+Create the `green` repository and add the 2 files, but change `blue` into `green`:
 
-- Click on `+ New Repository`
+1. Click on `+ New Repository`.
 
-![kubecfg](../../img/new-gitea-repo.png)
+2. Add the name `green` for the repository.
 
-- Add the name `green` for the repository
-- Optional: Enable `Initialize Repository`
-- Make Repository Private
-- Click on `Create Repository`
+3. Optional: Enable `Initialize Repository`.
+
+4. Make Repository Private.
+
+5. Click on `Create Repository`.
 
 Add the following 2 files to the repository:
 

@@ -1,29 +1,30 @@
 ---
-slug: lab-23
-title: Monitoring service availability
-sidebar_label: Monitor services
+slug: monitor-workloads
+title: Monitoring availability
+sidebar_label: Monitor Workloads
 ---
 
-When your application is deployed, you would of course like to get an alert when you application (service) is not available anymore. To automatically monitor you applications for availability, Otomi automatically configures a prope to monitor your service.
+When your application is deployed, you would of course like to get an alert when you application (service) is not available anymore. To automatically monitor you applications for availability, APL automatically configures a prope to monitor your service.
 
 ## Monitor your application for availability
 
-1. [Create a Service](lab-7.md) for your app in Otomi. The service can have an Exposure ingress of type `Cluster` or `Ingress`
+1. [Create a Service](expose-services.md) for your app in APL. The service can have an Exposure ingress of type `Cluster` or `Ingress`.
 
-2. Open Prometheus
+2. Open Prometheus:
 
 ![kubecfg](../../img/prometheus-teams.png)
 
-3. In Prometheus, Go to `Status` and click on `Targets`
+3. In Prometheus, Go to `Status` and click on `Targets`:
 
 ![kubecfg](../../img/targets-up.png)
 
 In the list of targets you will see:
 
 - The `PodMonitor` endpoints of the `istio sidecars` os the Team Workloads
+
 - The `Probes` of all the Team services that are exposed
 
-4. In Prometheus, Go to `Alerts`
+4. In Prometheus, Go to `Alerts`:
 
 ![kubecfg](../../img/prometheus-alerts.png)
 

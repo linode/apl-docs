@@ -12,7 +12,7 @@ When APL is installed on a private Kubernetes cluster and APL services are expos
 
 For this you can use an `entrypoint` in APL. The entrypoint is a public IP address that will override the (load balancer's private) IP used for registering hosts. This allows public access to private clusters through an external gateway.
 
-To configure an entrypoint, add the following to the `values.yaml` when installing Otomi:
+To configure an entrypoint, add the following to the `values.yaml` when installing APL:
 
 ```yaml
 ingress:

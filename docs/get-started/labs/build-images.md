@@ -1,24 +1,30 @@
 ---
-slug: lab-6
+slug: build-images
 title: Build images from application source
-sidebar_label: Build images
+sidebar_label: Build Images
 ---
 
 :::info
 Harbor needs to be activated for this lab.
 :::
 
-When your team is using Harbor for private image registries, you can build images from source using pre-configured Tekton pipelines using the [paketo](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) task or the [Kaniko](https://github.com/GoogleContainerTools/kaniko) task to build images from application source.
+When your team is using Harbor for private image registries, you can build images from source using pre-configured Tekton pipelines using the [paketo](https://buildpacks.io/docs/buildpack-author-guide/package-a-buildpack/) (used by Buildpacks mode) task or the [Kaniko](https://github.com/GoogleContainerTools/kaniko) task (used by the Docker mode) to build images from application source.
 
 ## Build the blue image
 
-1. In the left menu, click on `Builds`
-2. Click on `Create Build`
-3. Fill in the name `blue` for your build and a tag (default tag is latest)
-4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab
-5. Click `Submit`
+1. In the left menu, click on `Builds`.
 
-Otomi will now create a Tekton Pipeline and PipelineRun resource to build the image. This will take around 15-20 seconds. Then the PipelineRun will start building the image. During this time the status will show `in progress`:
+2. Click on `Create Build`.
+
+3. Fill in the name `blue` for your build and a tag (default tag is latest).
+
+4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab.
+
+5. Click `Submit`.
+
+6. Click `Deploy changes`.
+
+APL will now create a Tekton Pipeline and PipelineRun resource to build the image. This will take around 15-20 seconds. Then the PipelineRun will start building the image. During this time the status will show `in progress`:
 
 ![build status](../../img/build-status.png)
 
@@ -32,8 +38,9 @@ To see the full PipelineRun of the build, go to the list of Builds and click on 
 
 When the build is ready you can see the image in Harbor:
 
-1. Open Harbor
-2. Click on the project of your team. Here you will see all the registries of the team, including the registry of the new build image
+1. Open Harbor.
+
+2. Click on the project of your team. Here you will see all the registries of the team, including the registry of the new build image.
 
 ![build status](../../img/build-status-3.png)
 
@@ -41,14 +48,17 @@ When the build is ready you can see the image in Harbor:
 
 For this step you need to have the Tekton cli installed. If you don't have the Tekton cli installed, you can install it from this page: [https://tekton.dev/docs/cli/](https://tekton.dev/docs/cli/)
 
-To run the build again using Otomi Console, follow these steps:
+To run the build again using APL Console, follow these steps:
 
-1. Change the tag of the build for example to `v1.0.0`
-2. Submit changes
+1. Change the tag of the build for example to `v1.0.0`.
+
+2. Click `Submit`.
+
+3. Click `Deploy changes`.
 
 To re-build the image using the same tag, restart the build pipeline using the Tekton cli in the Shell:
 
-1. Start a shell in Otomi Console
+1. Start a shell in APL Console
 
 2. Get the name of the pipeline
 

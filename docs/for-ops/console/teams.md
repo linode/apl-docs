@@ -24,7 +24,7 @@ See [Team Services](../../for-devs/console/services.md) for more info about how 
 
 Another difference between the Team Admin and regular Teams is that Team Admin does not have apps and it is not possible to configure any settings for the team-admin namespace.
 
-## Creating new Teams
+## Creating a Team
 
 1. Login with a user who is a member of the `otomi-admin` or `team-admin` role.
 

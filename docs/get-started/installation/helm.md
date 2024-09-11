@@ -71,7 +71,7 @@ watch helm list -Aa
 
 Or view detailed info about Kubernetes resources with [k9s](https://k9scli.io)
 
-When the chart is installed, follow the [post installation steps](../post-installation-steps).
+When the chart is installed, follow the [post installation steps](../installation/post-installation-steps).
 
 ## Installing from source
 

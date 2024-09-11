@@ -139,5 +139,5 @@ APL is a composable platform. Activate more Apps based on the required platform 
 
 ## Step 7: Create Teams
 
-Create your first team. Follow the instructions [here](../for-ops/console/teams#creating-a-team).
+Create your first team. Follow the instructions [here](/docs/for-ops/console/teams#creating-a-team).
 

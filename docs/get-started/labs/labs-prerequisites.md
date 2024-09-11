@@ -20,7 +20,7 @@ We assume you (or the platform administrator) have:
 - Grafana
 - Trivy Operator
 
-For the [Use OpenTelemery](lab-27.md) Lab, the Tempo app needs to be enabled together with tracing in the `Istio` and `Nginx Ingress` apps.
+For the [Using OpenTelemery](use-otel.md) Lab, the Tempo app needs to be enabled together with tracing in the `Istio` and `Nginx Ingress` apps.
 
 3. Created a team called `labs` with `Grafana`, `Prometheus` and `Alertmanager` activated.
 

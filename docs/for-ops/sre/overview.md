@@ -55,5 +55,3 @@ For SRE's we have created a couple of guides and checklists:
 - [Daily routine](daily.md)
 
 - [Troubleshooting](troubleshooting.md)
-
-- [Upgrading APL](upgrades.md)

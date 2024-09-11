@@ -128,7 +128,7 @@ kubectl logs jobs/apl -n default -f
 
 When the installer is finished, copy the `url` and `admin-password` from the console output.
 
-Follow the post installation steps [here.](https://apl-docs.net/docs/get-started/post-installation-steps)
+Follow the post installation steps [here](post-installation-steps.md).
 
 :::tip
 Like to learn how to use APL? Go through the [Get Started labs](../labs/labs-overview.md)

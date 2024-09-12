@@ -24,7 +24,7 @@ kubectl label namespace my-namespace istio-injection=enabled
 
 You can now create a workload to deploy Helm charts to this new namespace. In this example we'll use the deployment chart in the `otomi-charts` repo. In the left menu, under `team-admin` click `Workloads` and then click `Create Workload`.
 
-1. Enter a name for the workload.
+1. Enter a name for the workload:
 
 ```
 hello-deploy
@@ -36,7 +36,7 @@ hello-deploy
 https://github.com/redkubes/otomi-charts.git
 ```
 
-3. Enter the path of the chart
+3. Enter the path of the chart:
 
 ```
 deployment
@@ -50,11 +50,11 @@ deployment
 my-namespace
 ```
 
-6. Click `Submit`
+6. Click `Submit`.
 
 After submitting the new workload specs, the values editor will be shown. Here you can edit the chart values.
 
-7. Click on `Edit`
+7. Click on `Edit`.
 
 8. Add the following (minimal) values:
 
@@ -65,9 +65,9 @@ image:
   tag: v1.2.13
 ```
 
-9.  Click on `Submit`
+9.  Click on `Submit`.
 
-10. Click on `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).
+10. Click on `Deploy Changes`.
 
 
 ## Publicly expose a service deployed in any namespace
@@ -76,19 +76,19 @@ The Services in `team-admin` can be used to publicly expose services deployed in
 
 Let's now configure public exposure for the workload we deployed in the namespace `my-namespace`:
 
-1. In the left menu panel under click `Services` then click on `Create Service`
+1. In the left menu panel under click `Services` then click on `Create Service`.
 
-2. Fill in the name of the Kubernetes service (hello-deploy) that you already deployed
+2. Fill in the name of the Kubernetes service (hello-deploy) that you already deployed.
 
-3. Fill in the namespace where the service is deployed (my-namespace in this example)
+3. Fill in the namespace where the service is deployed (my-namespace in this example).
 
-4. Fill in the port of the service (8080 in this case)
+4. Fill in the port of the service (8080 in this case).
 
-5. Under `Exposure Ingress`, select `Ingress`
+5. Under `Exposure Ingress`, select `Ingress`.
 
-6. Turn off `Use team domain` and fill in the name of the service as the hostname (hello-deploy in this example)
+6. Turn off `Use team domain` and fill in the name of the service as the hostname (hello-deploy in this example).
 
-7.  Click on `Submit`
+7. Click on `Submit`.
 
 8. Click on `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).
 

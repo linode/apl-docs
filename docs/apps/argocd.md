@@ -12,11 +12,11 @@ Teams will be be automatically given a git repository in Gitea named `team-$team
 
 Argo CD is configured to use the SSO provided by keycloak, and maps APL groups to Argo CD roles:
 
-- Group `otomi-admin` is made super admin within Argo CD.
+- Group `otomi-admin` is made super admin within Argo CD
 
-- Group team-admin has access to, and is admin of all team projects.
+- Group team-admin has access to, and is admin of all team projects
 
-- Team members are only allowed access to, and administer their own projects.
+- Team members are only allowed access to, and administer their own projects
 
 Teams will be be automatically given a git repository in Gitea named `team-$teamId-argocd`, and Argo CD is automatically configured to access the repository and sync. All that is left to do is Teams is to fill their repository with intended state and commit.
 

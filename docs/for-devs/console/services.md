@@ -12,7 +12,7 @@ A service in APL is a self-service feature for:
 
 - Configuring Traffic Control to split traffic between 2 deployments using the same service.
 
-## Services `(team <team-name>)`
+## Services
 
 All Services of the team are listed here.
 

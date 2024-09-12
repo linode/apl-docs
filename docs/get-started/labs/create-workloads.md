@@ -12,7 +12,7 @@ Before creating a Workload from the Catalog, we'll need the `repository` and `ta
 
 You can create a workload from the developer catalog:
 
-1. Go to `Catalog` in the left menu and click on the `k8s-deployment`template.
+1. Go to `Catalog` in the left menu and click on the `Quickstart-K8s-Deployment`template.
 
 2. Click on `Values`.
 
@@ -30,15 +30,17 @@ image:
 
 ![workloads](../../img/workloads-1.png)
 
-6. Click `Submit` and then `Deploy Changes`
+6. Click `Submit`.
+
+7. Click `Deploy Changes`.
 
 APL will now create all the needed Argo CD resources to deploy your workload. 
 
-7. Click on `Workloads` in the left menu. You will now see a list of all Workloads and there status:
+8. Click on `Workloads` in the left menu. You will now see a list of all Workloads and there status:
 
 ![workloads](../../img/workloads-2.png)
 
-8. In the workloads list, click on the `Application` link of your workload to see the status of your workload in Argo CD:
+9. In the workloads list, click on the `Application` link of your workload to see the status of your workload in Argo CD:
 
 ![workloads](../../img/workloads-3.png)
 

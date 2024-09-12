@@ -55,7 +55,7 @@ Go to the list of Builds and add the repository of the `petclinc` build to your 
 
 1. Go to `Workloads` in the left menu and click on `Create Workload`.
 
-2. Select `k8s-deployment-otel` from the catalog.
+2. Select `Quickstart-K8s-Deployment-Otel` from the catalog.
 
 3. Add the Name `petclinic` for the workload.
 

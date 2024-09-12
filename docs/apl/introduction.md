@@ -4,7 +4,7 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-## Application Platform for LKE (APL)
+## Application Platform for LKE
 
 Application Platform for LKE (APL) is a platform that combines developer- and operations-centric tools, automation and self-service to streamline the application lifecycle. From development to delivery to management of containerized application workloads.
 

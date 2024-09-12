@@ -28,7 +28,7 @@ Select between one of the following Object Storage Providers:
 
 | Setting | Description |
 | ------- | ----------- |
-| region| The name of the Linode region where the buckets are created |
+| region| The name of the Linode region (Datacenter ID) where the buckets are created. See [here](https://techdocs.akamai.com/cloud-computing/docs/access-buckets-and-files-through-urls#cluster-url-s3-endpoint) for all Linode Datacenter IDs |
 | accessKeyId | The Id of the access key with read/write permissions for all buckets |
 | secretAccessKey | The secret of the access key used |
 

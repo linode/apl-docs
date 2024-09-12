@@ -16,12 +16,16 @@ When you have deployed your application using the Workloads feature, you will pr
 
 ![expose services](../../img/create-svc-2.png)
 
-3. Under `Exposure Ingress`, select `Ingress` and use the default configuration:
+3. Under `Exposure Ingress`, select `External` and use the default configuration:
 
 ![expose services](../../img/create-svc-3.png)
 
 4. Click `Submit`.
 
-5. Click `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).
+5. Click `Deploy Changes`.
 
-Deploying changes in APL usually takes just a couple of minutes depending on the amount of resources available on your cluster. You will see your service in the list of Services. Click on the URL and see your application.
+You will see your service in the list of Services:
+
+![expose services](../../img/create-svc-4.png)
+
+Click on the URL and see the blue application publicly exposed.

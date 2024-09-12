@@ -20,6 +20,8 @@ In the previous lab we created a build in APL using the `blue` repo in Gitea. In
 
 6. Click `Submit`.
 
+7. Click `Deploy Changes`.
+
 ## Get the webhook URL
 
 Before we can configure the webhook for the `green` repo in Gitea, we will need the webhook URL. You can find this webhook URL for your build in the list of Builds. Add the webhook URL to your clipboard.

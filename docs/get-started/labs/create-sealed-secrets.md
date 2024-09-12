@@ -12,8 +12,6 @@ In this lab we will create sealed secrets and see how to securely sensitive info
 
 2. Click on `Create SealedSecret`. This will take you to the page where you can create a sealed secret.
 
-![Sealed secrets](../../img/sealed-secrets.png)
-
 3. Fill in a name for your secret. In this lab we will use the name `secret-credentials`
 
 4. Select the secret type. In this lab we will create a secret of type `opaque`.
@@ -25,7 +23,9 @@ In this lab we will create sealed secrets and see how to securely sensitive info
 
 ![Create sealed secret](../../img/create-sealed-secrets.png)
 
-6. Click on `submit` and then `Deploy Changes`.
+6. Click on `submit`.
+
+7. Click on `Deploy Changes`.
 
 Note that after the secret is created you can not see the values in APL Console anymore:
 
@@ -42,7 +42,7 @@ Now go to Gitea and check the otomi/values repository. You will see that under `
 The only way to see the values of the secret is to decrypt the secret. The secret values are stored as base64 encoded values. Open a Shell and run the following command:
 
 ```bash
-kubectl get secret secret-credentials -o yaml -n team-demo
+kubectl get secret secret-credentials -o yaml -n team-labs
 ```
 
 This wil return the secret in yaml format. The values are stored as base64 encoded values.
@@ -54,23 +54,23 @@ data:
   username: bGFicy11c2Vy
 kind: Secret
 metadata:
-  creationTimestamp: "2024-04-11T14:33:37Z"
+  creationTimestamp: "2024-09-12T06:11:55Z"
   name: secret-credentials
-  namespace: team-demo
+  namespace: team-labs
   ownerReferences:
   - apiVersion: bitnami.com/v1alpha1
     controller: true
     kind: SealedSecret
     name: secret-credentials
-    uid: 4ead6ffe-f1e9-4b30-91d7-94011af12452
-  resourceVersion: "4085462"
-  uid: 48d84c95-0eb1-47d8-acae-b0d3d7474921
+    uid: b9dc5d5c-9699-4efb-86a8-7bd1dd869318
+  resourceVersion: "357105"
+  uid: 84dd34e1-2313-482d-b7de-e5d848675fb7
 type: kubernetes.io/opaque
 ```
 
 If you want to decode the secret you can use `base64 -- decode`:
 
 ```bash
-kubectl get secret secret-credentials -n team-demo -o jsonpath="{.data.password}" | base64 --decode
+kubectl get secret secret-credentials -n team-labs -o jsonpath="{.data.password}" | base64 --decode
 helloworld
 ```

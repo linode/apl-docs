@@ -17,8 +17,11 @@ Before creating a workload from the developer catalog, we'll need the `repositor
 You can now create a workload from the developer catalog:
 
 1. Go to `Workloads` in the left menu and click on `Create Workload`
-2. Select `k8s-deployment` from the catalog
-3. Add the Name `green` for the workload
+
+2. Select `Quickstart-K8s-Deployment` from the catalog.
+
+3. Add the Name `green` for the workload.
+
 4. Set the `Auto image updater` to `Digest` and fill in the `ImageRepository` from the clipboard.
 
 `Digest` is the update strategy and will update the image to the most recent pushed version of a given tag.
@@ -31,9 +34,9 @@ image:
   tag: latest
 ```
 
-6. Click `Submit`
+6. Click `Submit`.
 
-Now click on `Deploy Changes`
+7. Click `Deploy Changes`.
 
 In the example above, we used the `Digest` update strategy. The `Semver` strategy allows you to track & update images which use tags that follow the semantic versioning scheme.
 

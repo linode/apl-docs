@@ -15,38 +15,44 @@ Steps to change to use a private load balancer for exposing platform services:
 
 If there are no team services created that use the default platform class, then you can skip step 2.
 
-1. Create an additional public ingress class
+### Create an additional public ingress class
 
-- Go to Ingress Classes under Settings in the web UI.
+1. Go to Ingress Classes under Settings in the web UI.
 
-- Under `additional classes` click on `add item`.
+2. Under `additional classes` click on `add item`.
 
-- Provide a name for the additional ingress class (for example `teams`).
+3. Provide a name for the additional ingress class (for example `teams`).
 
-- Use the public load balancer type.
+4. Use the public load balancer type.
 
-- (optional) If you would like to create a new load balancer in another resource group, fill in the name of that resource group.
+5. (optional) If you would like to create a new load balancer in another resource group, fill in the name of that resource group.
 
-- (optional) If you would like to use a static (public) IP for the load balancer, then fill in the IP address.
+6. (optional) If you would like to use a static (public) IP for the load balancer, then fill in the IP address.
 
-- Click submit and then deploy changes.
+7. Click `submit`.
 
-2. Move all existing team services to use the new ingress class:
+8. Click `Deploy Changes`.
 
-- Go to `services`, click on the service you would like to move to the new ingress class.
+### Move all existing team services to use the new ingress class
 
-- Under `Exposure Ingress`, fill in the name of the new ingress class in the `ingress class name` field.
+1. Go to `services`, click on the service you would like to move to the new ingress class.
 
-- Click submit and then deploy changes.
+2. Under `Exposure Ingress`, fill in the name of the new ingress class in the `ingress class name` field.
 
-3. Change the platform class from public to private:
+3. Click `submit`.
 
-- Go to Ingress Classes under Settings in the web UI.
+4. Click `Deploy Changes`.
 
-- Under `Platform class`, select `private`.
+### Change the platform class from public to private
 
-- (optional) If you would like to use a static IP for the load balancer, then fill in the IP address.
+1. Go to Ingress Classes under Settings in the web UI.
 
-- Click submit and then deploy changes
+2. Under `Platform class`, select `private`.
+
+3. (optional) If you would like to use a static IP for the load balancer, then fill in the IP address.
+
+4. Click `submit`.
+
+5. Click `Deploy Changes`.
 
 

@@ -35,10 +35,16 @@ All known Backups on the platform are listed here. Backups can be sorted based o
 
 3. Add the schedule of the backup. The schedule is a cron-type expression to schedule the backup. Defaults to once a day at 00:00. Create your cron-type expression [here](https://crontab.guru/).
 
-4. (optional) Select `Snapshot Volumes` to snapshot volumes. This only applies to Persistent Volumes in Azure, GCE, and AWS.
+4. (optional) Select `Snapshot Volumes` to snapshot volumes.
+
+:::info
+Snapshots are currently not supported on Linode.
+:::
 
 5. Add a label selector. Make sure your workload has the correct labels.
 
 6. (optional) Change the default TTL (expiration of the backup). Defaults to 7 days.
 
-7. Click `Submit` and then `Deploy Changes`.
+7. Click `Submit`.
+
+8. Click `Deploy Changes`.

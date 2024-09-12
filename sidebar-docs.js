@@ -40,10 +40,10 @@ module.exports = {
           "get-started/labs/scan-containers",
           "get-started/labs/view-logs",
           "get-started/labs/view-metrics",
+          "get-started/labs/monitor-workloads",
           "get-started/labs/custom-metrics",
           "get-started/labs/custom-dashboards",
           "get-started/labs/custom-rules",
-          "get-started/labs/monitor-workloads",
           "get-started/labs/create-netpols",
           "get-started/labs/use-otel",
           "get-started/labs/canary-deployment",
@@ -152,6 +152,7 @@ module.exports = {
       },
       {
         "Integrated Apps": [
+          "apps/apps-overview",
           "apps/alertmanager",
           "apps/argocd",
           "apps/certmanager",

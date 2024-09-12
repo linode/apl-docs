@@ -94,32 +94,32 @@ To create users in Keycloak, follow these steps:
 Adding the URL of the K8s cluster API is required by teams to be able to download the KUBECONFIG
 :::
 
-- Under `Platform` in APL Console, click on `Settings`.
+1. Under `Platform` in APL Console, click on `Settings`.
 
-- Click on `Cluster`.
+2. Click on `Cluster`.
 
-- Add the full URL of the API server.
+3. Add the full URL of the API server.
 
-- Click on `Submit`.
+4. Click on `Submit`.
 
-- Click on `Deploy Changes`.
+5. Click on `Deploy Changes`.
 
 ## Step 5 (Optional): Configure Object Storage
 
 If you're planning on activating apps that can use Object Storage (like Loki, Harbor, Tempo, Velero), then first configure Object Storage. Check the table in Step 6 to see which App requires Object Storage configured.
 
-- Under `Platform` in APL Console, click on `Settings`.
+1. Under `Platform` in APL Console, click on `Settings`.
 
-- Click on `Object Storage`.
+2. Click on `Object Storage`.
 
-- Select `Minio Local` or `Linode`.
+3. Select `Minio Local` or `Linode`.
 
 When Minio is selected (only for development), Minio App is enabled and all required buckets are automatically provisioned.
 When Linode is selected, create the buckets for the apps you are planning to use and fill in the region and the Access Key ID and Secret Access Key (with read/write access).
 
-- Click on `Submit`
+4. Click on `Submit`.
 
-- Click on `Deploy Changes`
+5. Click on `Deploy Changes`.
 
 ## Step 6 (Optional): Activate more Apps
 

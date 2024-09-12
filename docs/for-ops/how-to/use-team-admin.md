@@ -33,13 +33,13 @@ hello-deploy
 2. Enter the URL to the Git repo containing the Helm Chart or a Helm repository:
 
 ```
-https://github.com/redkubes/otomi-charts.git
+https://github.com/linode/apl-charts.git
 ```
 
 3. Enter the path of the chart:
 
 ```
-deployment
+quickstart-k8s-deployment
 ```
 
 4. Enter the revision. In case of using a Git repo, this can be commit, tag, or branch. If omitted, will equal to HEAD. In case of using a Chart repository, this is a semver tag for the Chart's version

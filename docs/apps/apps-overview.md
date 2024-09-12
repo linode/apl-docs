@@ -4,7 +4,12 @@ title: Apps Overview
 sidebar_label: Apps Overview
 ---
 
-**Application Platform for Linode Kubernetes Engine integrates the following Kubernetes tools**
+## Application Platform for Linode Kubernetes Engine integrated Applications
+
+Enable all the Kubernetes Applications you need with just one click!
+
+
+![integrated-apps](../img/integrated-apps.png)
 
 ---
 ### Image Build and CI/CD
@@ -13,26 +18,104 @@ sidebar_label: Apps Overview
 Declarative GitOps Continuous Delivery for Kubernetes
 
 ### [Gitea](gitea.md)
-A self-hosted GIT service.
+Gitea is a painless self-hosted Git service.
 
 ### [Tekton](argocd.md)
-Pre configured Pipelines to Build images from source code using Kaniko and Buildpacks tasks.
+Tekton Pipelines provides Kubernetes custom resources for declaring CI/CD-style pipelines.
 
 ### [Harbor](harbor.md)
-A self-hosted registry service.
+Harbor is a cloud native registry that stores, signs, and scans content.
 
 ### [Knative](knative.md)
-Deploy serverless applications.
+Knative Serving builds on Kubernetes to support deploying and serving of applications and functions as serverless containers.
 
 ---
 
 ### Security, Compliance & Keymanagement
 
 ### [Kyverno](kyverno.md)
-Declarative GitOps Continuous Delivery for Kubernetes
+Kyverno is a policy engine designed for Kubernetes. It can validate, mutate, and generate configurations using admission controls and background scans.
 
-### [Grype](kyverno.md)
-Declarative GitOps Continuous Delivery for Kubernetes
+### [Trivy Operator](trivy.md)
+Trivy Operator continuously scans your Kubernetes cluster for security issues, and generates security reports as Kubernetes Custom Resources.
 
-### [Trivy](trivy.md)
-Declarative GitOps Continuous Delivery for Kubernetes
+### [Keycloak](keycloak.md)
+Keycloak is an Open Source Identity and Access Management solution for modern Applications and Services.
+
+### [Cert-Manager](certmanager.md)
+X.509 certificate management for Kubernetes.
+
+### [Sealed secrets](sealedsecrets.md)
+Sealed Secrets is a Kubernetes Custom Resource Definition Controller which allows you to store even sensitive information in Git repositories.
+
+### [Falco](falco.md)
+Falco is an open source cloud native runtime security tool that makes it easy to consume kernel events, and enrich those events with information from Kubernetes.
+
+### [ExternalDNS](external-dns)
+ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with DNS providers.
+
+---
+
+### Monitoring, Logging & Tracing
+
+### [Prometheus](prometheus.md)
+Prometheus is a systems and service monitoring system. It collects metrics from configured targets at given intervals, evaluates rule expressions, displays the results, and can trigger alerts when specified conditions are observed.
+
+### [Alertmanager](alertmanager.md)
+Alertmanager handles alerts sent by client applications such as Prometheus.
+
+### [Grafana Loki](loki.md)
+Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system inspired by Prometheus.
+
+### [Grafana](grafana.md)
+Grafana allows you to query, visualize, alert on and understand your metrics no matter where they are stored.
+
+### [Kiali](kiali.md)
+Kiali is a management console for Istio to manage, visualize, validate and troubleshoot the service mesh.
+
+### [Jaeger](jaeger.md)
+Jaeger is a distributed tracing platform.
+
+### [Grafana Tempo](tempo.md)
+Grafana Tempo is an open source, easy-to-use and high-scale distributed tracing backend.
+
+### [Open Telemetry Operator](otel.md)
+The OpenTelemetry Operator offers a vendor-agnostic implementation on how to receive, process and export telemetry data.
+
+---
+
+### Service Mesh & Proxy
+
+### [Istio](istio.md)
+Istio is an open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data.
+
+### [Nginx Ingress Controller](ingress-nginx.md)
+Nginx Ingress Controller is an Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer.
+
+---
+
+### Streaming & Messaging
+
+### [RabbitMQ](rabbitmq.md)
+RabbitMQ is the most widely deployed open source message broker.
+
+---
+
+### Scheduling
+
+### [Kured](kured.md)
+Kured (KUbernetes REboot Daemon) is a Kubernetes daemonset that performs safe automatic node reboots when the need to do so is indicated by the package management system of the underlying OS.
+
+---
+
+### Cloud Native Storage
+
+### [Velero](velero.md)
+Velero is a tool to back up and restore Kubernetes cluster resources and persistent volumes.
+
+### [Cloudnative PG](cloudnativepg.md)
+CloudNative PostgreSQL is an open source operator designed to manage PostgreSQL workloads on Kubernetes.
+
+### [Minio](minio.md)
+MinIO is a High Performance Object Storage and its API is compatible with the Amazon Web Services S3 cloud storage service.
+

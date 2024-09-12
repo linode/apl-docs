@@ -4,12 +4,12 @@ title: Overview
 sidebar_label: Overview
 ---
 
-**How to get started with APL**
+**How to get started with Application Platform for LKE**
 
 ---
 
-### Step 1: [Install APL](installation/overview.md)
-Install APL on Linode LKE or any conformant Kubernetes cluster.
+### Step 1: [Install Application Platform for LKE](installation/overview.md)
+Install Application Platform for LKE (APL) on Linode Kubernetes Engine (LKE) or any other conformant Kubernetes cluster.
 
 ### Step 2: [Follow the post installation steps ](installation/post-install-steps.md)
 Get the initial credentials and configure APL for your use case.

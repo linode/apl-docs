@@ -20,7 +20,7 @@ Declarative GitOps Continuous Delivery for Kubernetes
 ### [Gitea](gitea.md)
 Gitea is a painless self-hosted Git service.
 
-### [Tekton](argocd.md)
+### [Tekton](tekton.md)
 Tekton Pipelines provides Kubernetes custom resources for declaring CI/CD-style pipelines.
 
 ### [Harbor](harbor.md)

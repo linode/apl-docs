@@ -1,6 +1,6 @@
 ---
 slug: loki
-title: Loki
+title: Grafana Loki
 sidebar_label: Loki
 ---
 

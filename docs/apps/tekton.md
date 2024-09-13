@@ -6,22 +6,24 @@ sidebar_label: Tekton
 
 ## About
 
-Tekton is used in APL for the Builds self-service. When a Build is created, APL generates the Tekton Pipeline and Pipelinerun resources. There are 2 types op pipelines:
+Tekton is used in APL for the Builds self-service. When a Build is created, APL generates the Tekton Pipeline and Pipelinerun resources. There are 2 pipeline types:
 
-- Docker for building images based on a Dockerfile
+- `Docker` for building images based on a Dockerfile
 
-- Buildpacks for building images using buildpacks
+- `Buildpacks` for building images using buildpacks
 
-When Tekton is activated, APL will add 3 Tekton tasks to the team's namespace:
+When Tekton is activated, APL will add 4 Tekton tasks to the team's namespace:
 
-1. [Buildpacks](https://github.com/tektoncd/catalog/tree/main/task/buildpacks/0.6)
+1. [`buildpacks`](https://github.com/tektoncd/catalog/tree/main/task/buildpacks/0.6)
 
-2. [git-clone](https://github.com/tektoncd/catalog/tree/main/task/git-clone/0.9)
+2. [`git-clone`](https://github.com/tektoncd/catalog/tree/main/task/git-clone/0.9)
 
-3. [kaniko](https://github.com/tektoncd/catalog/tree/main/task/kaniko/0.6)
+3. [`kaniko`](https://github.com/tektoncd/catalog/tree/main/task/kaniko/0.6)
+
+4. [`grype`](https://github.com/tektoncd/catalog/tree/main/task/grype/0.1)
 
 
-and use them in the pipelines.
+and use them in the Build pipelines.
 
 When APL generates the manifest resources for the pipeline and the pipelinerun, the pipelinerun will automatically run the pipeline once. Use the following command to check if the status of the pipelinerun:
 

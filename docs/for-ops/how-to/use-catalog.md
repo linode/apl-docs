@@ -14,7 +14,7 @@ APL offers a Catalog to Teams on the platform to offer them golden path template
 
 After APL is installed, the catalog (the `otomi/charts` repo) will contain a set of quick start Helm charts. Tbe The APL provided Helm charts are not mandetory to use and can be removed or modified to your own liking. They are only provided to make it easier to get started.
 
-## APL quick start Helm charts
+## Quick start Helm charts
 
 The Catalog contains a set of Helm charts that can be used as quick starts. The following quick starts are available:
 

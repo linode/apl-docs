@@ -26,19 +26,19 @@ You can now provide the username and password to a container as environment vari
 
 ```yaml
 env:
+  - name: DB_USER
+    valueFrom:
+      secretKeyRef:
+        name: <database-name>-app
+        key: username
   - name: DB_PASSWORD
     valueFrom:
       secretKeyRef:
         name: <database-name>-app
         key: password
-  - name: SECRET_KEY
-    valueFrom:
-      secretKeyRef:
-        name: <database-name>-app
-        key: username
 ```
 
-:::note 
+:::note
 Using the superuser credentials for connecting an app is discouraged. The app user has the access it needs for initializing tables etc.
 :::
 

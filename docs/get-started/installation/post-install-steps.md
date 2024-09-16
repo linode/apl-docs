@@ -48,7 +48,7 @@ alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 
 ## Step 3 (Optional): Create a new admin user
 
-:::info ATTENTION
+:::info
 We strongly advise to not use the default `otomi-admin` account after activation and to not change the password. Store it somewhere safe and only use it in case absolutely required.
 :::
 
@@ -108,6 +108,14 @@ Adding the URL of the K8s cluster API is required by teams to be able to downloa
 
 If you're planning on activating apps that can use Object Storage (like Loki, Harbor, Tempo, Velero), then first configure Object Storage. Check the table in Step 6 to see which App requires Object Storage configured.
 
+:::info
+Velero requires Object Storage!
+:::
+
+:::info
+Creating Database backups requires Object Storage!
+:::
+
 1. Under `Platform` in APL Console, click on `Settings`.
 
 2. Click on `Object Storage`.
@@ -121,7 +129,41 @@ When Linode is selected, create the buckets for the apps you are planning to use
 
 5. Click on `Deploy Changes`.
 
-## Step 6 (Optional): Activate more Apps
+## Step 6 (Optional): Add a Linode Personal Access Token to backup Persistent Volumes (Linode only)
+
+To use the self-service feature to create backups of Persistent Volumes in Linode, first create a new Personal Access Token with Read/Write access for Volumes:
+
+1. Go to your profile on the top right.
+
+2. Click on `API Tokens`.
+
+3. Click on `Create A Personal Access Token`.
+
+4. Add a `Label`.
+
+5. Select the desired `Expiry`.
+
+6. Select `No Access` for all.
+
+7. Select `Read/Write` for `Volumes`.
+
+8. Click `Create Token`.
+
+9. Copy your Personal Access Token.
+
+Then Add the Token to APL:
+
+1. Sign in to the APL Console as an admin.
+
+2. In the left menu, click on Settings.
+
+3. Click on `Backup`.
+
+4. Add the API Token in the `Backup persistent volumes` section.
+
+When Object Storage is configured and an API Token is added, then activate the Velero App. You can now use the Backup self-service feature in APL to create backup schedules to backup Persistent Volumes.
+
+## Step 7 (Optional): Activate more Apps
 
 APL is a composable platform. Activate more Apps based on the required platform capabilities:
 
@@ -137,7 +179,49 @@ APL is a composable platform. Activate more Apps based on the required platform 
 | Database backups | CloudnativePG | Required |
 <!-- | Long term retention of Logs, Metrics and Traces | Thanos | Required | -->
 
-## Step 7: Create Teams
+## Step 8: Create Teams
 
 Create your first team. Follow the instructions [here](/docs/for-ops/console/teams#creating-a-team).
+
+## Step 9: Create users and add them to a Team
+
+Create users in Keycloak and add the users to a Team `Group` in Keycloak:
+
+1. Open the Keycloak app
+
+2. Click on `Administration Console`.
+
+3. Login with admin credentials (using `otomi-admin` user and password provided in the installer log or the `otomi.adminPassword` provided in the initial values).
+
+4. Select the `Otomi` realm.
+
+5. Click on `Users` then `Add user`.
+
+6. Fill in a user name in the `Username` field.
+
+7. Fill in your email address in the `Email` field.
+
+8. Select `Email verified`.
+
+9. Click `Join Groups`.
+
+10. Add the user to the required Team group (`team-<team-name>`).
+
+11. Click `Create`.
+
+12. Choose the `Credentials` tab and then `Set password`.
+
+13. Fill in a password.
+
+14. Optional: Make te password `Temporary`. This requires the user to change the password at the first login.
+
+15. Click on "Save".
+
+16. Click `Save password`.
+
+
+
+
+
+
 

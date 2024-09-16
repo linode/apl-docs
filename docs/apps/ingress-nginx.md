@@ -37,3 +37,15 @@ modsecurity-snippet: |
 ```
 
 To change the modsecurity configuration, use `Raw values`. [Here](<https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#Configuration_Directives>) is an overview of all the configuration directives.
+
+### Configure tracing
+
+To enable tracing set the following values:
+
+```yaml
+tracing:
+    enabled: true
+    samplingRatio: "0.10"
+```
+
+The sampling rate should be in the range of 0.0 to 100.0 with a precision of 0.01. For example, to trace 10 requests out of every 10000, use 0.10 as the value here.

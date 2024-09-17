@@ -12,7 +12,7 @@ APL offers a Catalog to Teams on the platform to offer them golden path template
 
 - Teams can create Workloads from the Catalog.
 
-After APL is installed, the catalog (the `otomi/charts` repo) will contain a set of quick start Helm charts. Tbe The APL provided Helm charts are not mandetory to use and can be removed or modified to your own liking. They are only provided to make it easier to get started.
+After APL is installed, the catalog (the `otomi/charts` repo) will contain a set of quick start Helm charts. The APL provided Helm charts are not mandetory to use and can be removed or modified to your own liking. They are only provided to make it easier to get started.
 
 ## Quick start Helm charts
 

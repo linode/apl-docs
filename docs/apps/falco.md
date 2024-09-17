@@ -6,7 +6,7 @@ sidebar_label: Falco
 
 ## About
 
-Falco can be used for thread detection. 
+Falco can be used for threat detection. 
 
 Before activating Falco, please first check which [Driver](https://falco.org/docs/event-sources/kernel/) to see which driver to use:
 

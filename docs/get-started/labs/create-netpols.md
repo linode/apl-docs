@@ -103,12 +103,12 @@ env:
   - name: DATABASE_USER
     valueFrom:
       secretKeyRef:
-        name: <psql-cluster-name>-superuser
+        name: <psql-cluster-name>-app
         key: username
   - name: DATABASE_PASSWORD
     valueFrom:
       secretKeyRef:
-        name: <psql-cluster-name>-superuser
+        name: <psql-cluster-name>-app
         key: password
   - name: REDIS_HOST
     value: <redis-cluster-name>-master
@@ -131,12 +131,12 @@ env:
   - name: DATABASE_USER
     valueFrom:
       secretKeyRef:
-        name: <psql-cluster-name>-superuser
+        name: <psql-cluster-name>-app
         key: username
   - name: DATABASE_PASSWORD
     valueFrom:
       secretKeyRef:
-        name: <psql-cluster-name>-superuser
+        name: <psql-cluster-name>-app
         key: password
   - name: DATABASE_HOST
     value: <psql-cluster-name>-rw

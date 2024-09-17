@@ -82,7 +82,7 @@ To create users in Keycloak, follow these steps:
 
 13. Fill in a password.
 
-14. Optional: Make te password `Temporary`. This requires the user to change the password at the first login.
+14. Optional: Make the password `Temporary`. This requires the user to change the password at the first login.
 
 15. Click on "Save".
 

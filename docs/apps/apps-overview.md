@@ -87,7 +87,7 @@ The OpenTelemetry Operator offers a vendor-agnostic implementation on how to rec
 ### Service Mesh & Proxy
 
 ### [Istio](istio.md)
-Istio is an open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data.
+Istio is a Service Mesh for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data.
 
 ### [Nginx Ingress Controller](ingress-nginx.md)
 Nginx Ingress Controller is an Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer.

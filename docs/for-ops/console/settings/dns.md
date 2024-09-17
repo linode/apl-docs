@@ -24,7 +24,6 @@ Limit possible target Zones by suffix.
 
 Limit the possible target zones by zone id.
 
-
 ### Provider
 
 The DNS provider used to manage the domain(s).
@@ -40,4 +39,4 @@ The followingDNS providers are supported in APL:
 - Linode Domains
 - Other
 
-When `Other` is selected, the required values can be added to support any other DNS provider (supported by External DNS).
+When `Other` is selected, the required values can be added to support any other DNS provider (supported by [ExternalDNS](https://github.com/kubernetes-sigs/external-dns/)).

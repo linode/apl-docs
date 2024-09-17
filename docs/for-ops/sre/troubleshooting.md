@@ -130,9 +130,9 @@ Istio sidecars manipulate the container's network to reroute traffic. A namespac
 
 ## DNS issues
 
-The external-dns service is registering DNS names to makes sure that the service names are publicly available.
+The ExternalDNS service is registering DNS names to makes sure that the service names are publicly available.
 
-- Make sure external-dns logs indicate All records are already up to date
+- Make sure `external-dns` logs indicate All records are already up to date
 
 - Are the credentials configured correctly?
 
@@ -153,7 +153,7 @@ Check available storage classes `std` and `fast` exist
 ### The otomi-pipeline pipeline failure
 
 In the otomi-pipeline execution failure, read carefully last few lines from the ` PipelineRun`` output.
-Errors containing:  `unable to build kubernetes objects from release manifest: Get "https://10.32.0.1:443/openapi/v2?timeout=32s": net/http: request canceled`string, indicates that the kube-api was not available. Admin can restart the pipeline by triggering webhook from Gitea app. Go to `otomi/values` repository -> click `Settings`-> select `Webhooks`tab -> click the `Test Delivery` button.
+Errors containing:  `unable to build kubernetes objects from release manifest: Get "https://10.32.0.1:443/openapi/v2?timeout=32s": net/http: request canceled`string, indicates that the kube-api was not available. Admin can restart the pipeline by triggering webhook from Gitea app. Go to `otomi/values`repository -> click`Settings`-> select `Webhooks`tab -> click the `Test Delivery` button.
 
 ### Advanced
 

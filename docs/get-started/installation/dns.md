@@ -6,7 +6,73 @@ sidebar_label: DNS
 
 The APL [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported when APL is installed with minimal values. Install APL with DNS to use all APL features.
 
-## Akamai
+## Linode Domains
+
+If you want to learn about how to use Linode DNS Manager read the following tutorial: [Get started with DNS Manager](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-dns-manager).
+
+When you create a domain in Linode, make sure to set the TTL of the SOA Record to 30 seconds:
+
+1. Click on your domain.
+
+2. Click on the tree dots on the right of the SOA Record and click `edit`.
+
+3. Change the default TTL to `30 seconds`.
+
+4. Click `Save`.
+
+Create a new Personal Access Token with Read/Write access for Domains:
+
+1. Go to your profile on the top right.
+
+2. Click on `API Tokens`.
+
+3. Click on `Create A Personal Access Token`.
+
+4. Add a `Label`.
+
+5. Select the desired `Expiry`.
+
+6. Select `No Access` for all.
+
+7. Select `Read/Write` for `Domains`.
+
+8. Click `Create Token`.
+
+9. Copy your Personal Access Token.
+
+10. Set environment variable for the token:
+
+```bash
+LINODE_TOKEN="<your-personal-access-token>"
+```
+
+11. Create the values.yaml file
+
+- Add the DNS configuration created in the previous step, the `domainSuffix`, `domainFilters` and `email` to the `values.yaml` that we'll use to install APL:
+
+```bash
+tee values.yaml<<EOF
+cluster:
+  name: $CLUSTER_NAME
+  provider: custom
+  domainSuffix: <your-domain>
+otomi:
+  hasExternalDNS: true
+dns:
+  domainFilters: 
+    - <your-domain>
+  provider:
+    linode:
+      apiToken: $LINODE_TOKEN
+apps:
+  cert-manager:
+    issuer: letsencrypt
+    stage: production
+    email: admin@<your-domain>
+EOF
+```
+
+## Akamai EdgeDNS
 
 Follow these steps to use Akamai EdgeDNS, provided that you have a registered domain.
 
@@ -65,7 +131,7 @@ apps:
     email: admin@example.com
 ```
 
-## AWS
+## AWS Route53
 
 Follow these steps to use AWS Route53:
 
@@ -179,7 +245,7 @@ apps:
 EOF
 ```
 
-## Azure
+## Azure DNS
 
 Follow these steps to use Azure DNS:
 
@@ -256,7 +322,7 @@ apps:
 EOF
 ```
 
-## Google Cloud Platform
+## Google Cloud Platform DNS
 
 Follow these steps to use Google Cloud DNS:
 
@@ -358,7 +424,7 @@ apps:
 EOF
 ```
 
-## DigitalOcean
+## DigitalOcean DNS
 
 If you want to learn about how to use DigitalOcean's DNS service read the following tutorial series:
 
@@ -396,7 +462,7 @@ apps:
 EOF
 ```
 
-## Cloudflare
+## Cloudflare DNS
 
 1. Creating a Cloudflare DNS zone
 

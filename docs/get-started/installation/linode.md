@@ -126,6 +126,10 @@ EOF
 
 Adjust the `domainSuffix`, `domainFilters` and `email`!
 
+:::info
+You can also use a different DNS provider. See [here](dns.md) for examples on how to use Akamai EdgeDNS, AWS Route53, Cloudflare DNS and many others.
+:::
+
 ## Install APL
 
 Install APL using Helm:

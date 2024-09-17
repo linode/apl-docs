@@ -4,15 +4,15 @@ title: Installation
 sidebar_label: Overview
 ---
 
-**How to install APL on various cloud and infrastructure platforms**
+**How to get Application Platform for LKE up and running**
 
 ---
 
-### [Linode Cloud Manager - Comming soon](apl.md)
-Provision LKE with APL using Linode Cloud Manager or Linode CLI.
-
 ### [Linode Kubernetes Engine](linode.md)
 Create a Linode Kubernetes Engine cluster and manually install APL.
+
+### [Linode Cloud Manager - Comming soon](apl.md)
+Provision LKE with APL using Linode Cloud Manager or Linode CLI.
 
 ### [Custom](custom.md)
 Install APL on any other conformant Kubernetes cluster like EKS, AKS, GKE.

@@ -12,8 +12,6 @@ By default (after installing APL), one ingress controller (ingress-nginx-platfor
 
 2. Add additional ingress classes to expose user created services.
 
-3. Configure IP whitelisting, cloud specific annotations and/or static IP address for the load balancer.
-
 By changing the platform ingress class from public to private, all platform services (like APL Console, the Keycloak platform instance and all other platform end-points) will only be accessible from the private network.
 
 By adding additional ingress classes, each class will get a dedicated ingress controller and a dedicated cloud load balancer. This allows grouping of services and exposing them to differend networks.

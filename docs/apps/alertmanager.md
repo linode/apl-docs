@@ -10,7 +10,7 @@ Alertmanager handles alerts sent by client applications such as the Prometheus s
 
 Alertmanager is configured to use the global values found under settings' [alerts](../for-ops/console/settings/alerts.md).
 
-A team may decide to override some or all of them, in order to have alerts sent to their own endpoints. Self-service rights to alerting must be enabled for the team (enabled by default for all teams). Each Team can enable a dedicated alertmanger instance.
+A team may decide to override some or all of them, in order to have alerts sent to their own endpoints. Self-service rights to alerting must be enabled for the team (enabled by default for all teams). Each Team can enable a dedicated alertmanager instance.
 
 APL supports the following receivers:
 
@@ -18,5 +18,5 @@ APL supports the following receivers:
 - `Microsoft Teams`
 - `Ops Genie`
 - `Email`
-- (default) `None` (will use the `null` receiver to enable the Alertmanger UI).
+- (default) `None` (will use the `null` receiver to enable the Alertmanager UI).
 

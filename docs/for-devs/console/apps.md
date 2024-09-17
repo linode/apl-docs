@@ -4,7 +4,11 @@ title: Team Apps
 sidebar_label: Apps
 ---
 
-The Team Apps are shared platform applications that are available for teams to use or dedicated Team applications.
+The Apps that are available for teams to use. There are 2 types of Apps:
+
+- Dedicated for the Team (like Prometheus, Grafana, Alertmanager and Tekton Dashboard)
+
+- Shared by the Platform (like Harbor and Gitea)
 
 ![team-apps](../../img/team-apps.png)
 

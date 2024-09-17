@@ -75,7 +75,7 @@ To see the more status details of the build, click on the `PipelineRun` link of 
 
 ### Configure a webhook for the Git repo in Gitea
 
-1. In APL Console, click on `apps` the left menu and then open `Gitea`
+1. In APL Console, click on `Apps` in the left menu and then open `Gitea`
 
 2. In the top menu of Gitea, click on `Explore` and then on the `green` repo
 

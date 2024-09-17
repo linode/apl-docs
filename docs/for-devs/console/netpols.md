@@ -22,9 +22,9 @@ All Network Policies of the team are listed here.
 
 ## Create a Network Policy
 
-1. Enter a name for the Network Policy
+1. Enter a name for the Network Policy.
 
-2. Select the Rule type
+2. Select the Rule type:
 
 - Use `Ingress` to allow other Pods to connect to your Pod
 - Use `Egress` to allow all Pods in the Team to connect an external (outside of the cluster) endpoint (based on a FQDN or an IP address)
@@ -33,11 +33,11 @@ All Network Policies of the team are listed here.
 
 If type `Ingress` is selected:
 
-3. Add the label name and value of your Pod
+3. Add the label name and value of your Pod.
 
-4. Select the mode
+4. Select the mode.
 
-- Select `AllowAll` to allow all all Pods in all Teams to connect to your Pod
+- Select `AllowAll` to allow all Pods in all Teams to connect to your Pod
 - Select `AllowOnly` to only allow specific Pods in a specific Namespace
 
 If mode `AllowOnly` is selected:
@@ -51,11 +51,11 @@ If mode `AllowOnly` is selected:
 
 If type `Egress` is selected:
 
-3. Add the Fully Qualified Domain Name (FQDN) or the IP address of the external endpoint Pods in the Team are allowed to connect to
+3. Add the Fully Qualified Domain Name (FQDN) or the IP address of the external endpoint.
 
-4. Add the Port number (between 1 and 65535)
+4. Add the Port number (between 1 and 65535).
 
-5. Select the Protocol (HTTP, HTTPS or TCP)
+5. Select the Protocol (HTTP, HTTPS or TCP).
 
 
 

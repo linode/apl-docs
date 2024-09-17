@@ -8,7 +8,7 @@ sidebar_label: Overview
 
 ## APL Console
 
-APL Console is the web UI of APL and offers access to all integrated apps and self-service tasks. APL Console has a topbar showing a Team selector. The Team selector allows to switch between different Teams (if you are a member of different Teams).
+APL Console is the web UI of APL and offers access to all integrated apps and self-service features. APL Console has a topbar showing a Team selector. The Team selector allows you to switch between different Teams (if you are a member of different Teams).
 
 The Team view in APL Console gives access to 3 menu sections:
 

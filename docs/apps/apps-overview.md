@@ -31,7 +31,7 @@ Knative Serving builds on Kubernetes to support deploying and serving of applica
 
 ---
 
-### Security, Compliance & Keymanagement
+### Security, Compliance & Key Management
 
 ### [Kyverno](kyverno.md)
 Kyverno is a policy engine designed for Kubernetes. It can validate, mutate, and generate configurations using admission controls and background scans.
@@ -45,7 +45,7 @@ Keycloak is an Open Source Identity and Access Management solution for modern Ap
 ### [Cert-Manager](certmanager.md)
 X.509 certificate management for Kubernetes.
 
-### [Sealed secrets](sealedsecrets.md)
+### [Sealed Secrets](sealedsecrets.md)
 Sealed Secrets is a Kubernetes Custom Resource Definition Controller which allows you to store even sensitive information in Git repositories.
 
 ### [Falco](falco.md)

@@ -43,7 +43,7 @@ The traffic control option allows to split traffic between multiple deployed ver
 
 ## Configuring exposure (ingress)
 
-Exposure controls wether internet exposure should be enabled or not. Two options exist:
+Exposure controls whether internet exposure should be enabled or not. Two options exist:
 
 - `No Exposure`: Choose to expose services in-cluster only (default).
 

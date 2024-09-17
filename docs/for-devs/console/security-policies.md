@@ -28,16 +28,16 @@ When Security Policies are enabled for the Team, then know that:
 
 ## Adjusting Security Policies
 
-1. Select the Security Policy you like to adjust
+1. Select the Security Policy you like to adjust.
 
-2. Set the `action` to `Enforce` to block Pods from beeing deployed if the don't comply to the policy
+2. Set the `action` to `Enforce` to block Pods from being deployed if the don't comply to the policy.
 
 3. Change the severity from `medium` (default) to `low` or `high`.
 
 ## See policy reports
 
-1. Go to `Workloads`
+1. Go to `Workloads`.
 
-2. Click on the ArgoCD `application` for the Workload you want to see the policy report
+2. Click on the ArgoCD `application` for the Workload you want to see the policy report.
 
-3. In the `Application Details Tree` you will see a `policyreport` attached to the `ReplicaSet` and an `admissionreport` attached to each `Pod`
+3. In the `Application Details Tree` you will see a `policyreport` attached to the `ReplicaSet` and an `admissionreport` attached to each `Pod`.

@@ -36,7 +36,7 @@ It is advised to keep this file save as it contains passwords and access credent
 
 Depending on your use case, you may need to change some settings from the `values.yaml` file before using it to install a new APL instance. The most common use cases:
 
-- Change the `domianSuffix`.
+- Change the `domainSuffix`.
 
 - Change the team service URLs.
 

@@ -27,7 +27,7 @@ In this lab we will create sealed secrets and see how to securely sensitive info
 
 7. Click on `Deploy Changes`.
 
-Note that after the secret is created you can not see the values in APL Console anymore:
+Note that the secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
 
 ![Created sealed secret](../../img/created-sealed-secrets.png)
 

@@ -18,13 +18,13 @@ Provision a LKE cluster in Cloud Manager or by using the Linode CLI and manually
 
 Provision a LKE cluster with the following specs:
 
-- Fill in teh `Cluster Label`
+- Fill in the `Cluster Label`
 
 - Use Kubernetes version: `1.30`
 
 - Enable HA Control Plane
 
-- Add Node Pools. Select Dedicated CPU: Dedicated 8 GB Plan, 4 CPUs, 160 GB Storage
+- Add Node Pools. Select the Dedicated 8 GB Plan (with 8 GB RAM and 4 CPUs)
 
 - Wait until the nodes are in a `Running` state
 

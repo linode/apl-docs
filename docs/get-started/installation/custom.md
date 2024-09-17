@@ -18,7 +18,7 @@ APL currently supports the following Kubernetes versions:
 
 ### Compute resources
 
-APL requires a node pool with at least **12 vCPU** and **24 GiB RAM**.
+APL requires a node pool with at least **12 vCPU** and **24 GB RAM**.
 
 ### Default storage class
 

@@ -59,7 +59,7 @@ ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with DNS prov
 ### Monitoring, Logging & Tracing
 
 ### [Prometheus](prometheus.md)
-Prometheus is a systems and service monitoring system. It collects metrics from configured targets at given intervals, evaluates rule expressions, displays the results, and can trigger alerts when specified conditions are observed.
+Prometheus monitors systems and services by collecting metrics from targets at intervals, evaluating rules, displaying results, and triggering alerts for specified conditions.
 
 ### [Alertmanager](alertmanager.md)
 Alertmanager handles alerts sent by client applications such as Prometheus.
@@ -80,7 +80,7 @@ Jaeger is a distributed tracing platform.
 Grafana Tempo is an open source, easy-to-use and high-scale distributed tracing backend.
 
 ### [Open Telemetry Operator](otel.md)
-The OpenTelemetry Operator offers a vendor-agnostic implementation on how to receive, process and export telemetry data.
+The Open Telemetry Operator offers a vendor-agnostic implementation on how to receive, process and export telemetry data.
 
 ---
 
@@ -113,7 +113,7 @@ Kured (KUbernetes REboot Daemon) is a Kubernetes daemonset that performs safe au
 ### [Velero](velero.md)
 Velero is a tool to back up and restore Kubernetes cluster resources and persistent volumes.
 
-### [Cloudnative PG](cloudnativepg.md)
+### [CloudNative PG](cloudnativepg.md)
 CloudNative PostgreSQL is an open source operator designed to manage PostgreSQL workloads on Kubernetes.
 
 ### [Minio](minio.md)

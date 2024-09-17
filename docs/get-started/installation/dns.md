@@ -6,6 +6,65 @@ sidebar_label: DNS
 
 The APL [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported when APL is installed with minimal values. Install APL with DNS to use all APL features.
 
+## Akamai
+
+Follow these steps to use Akamai EdgeDNS, provided that you have a registered domain.
+
+> Note that the DNS entries can also be created using a [CLI](https://github.com/akamai/cli-dns); however, creating the client and credentials requires to use the UI (or the API directly).
+
+1. (Optional) Set up a group to manage the domain at the [Akamai Control Center: ACCOUNT ADMIN > Identity & access > Tab "Groups"](https://control.akamai.com/apps/identity-management/#/tabs/groups)
+
+2. (Once for all domains) It is highly recommended to have a role restricted to DNS administration. If not already present, go to the "Roles" tab in [Akamai Control Center](https://control.akamai.com/apps/identity-management/#/tabs/roles) create a role with permissions "Enhanced DNS - All privileges (add/edit/view)".
+
+3. Add a new zone in [DNS SOLUTIONS > EdgeDNS](https://control.akamai.com/apps/authoritative-dns/#/zones).
+
+- Click on "Add zone" (top right).
+- (Optional) Select the group from step 1.
+- Set "Zone type": Primary
+- Enter the "Zone names", e.g. akamai.example.com
+- Click "Create zone"
+
+4. Select "Add record sets" to create the default SOA and NS records.
+
+5. Click "Review change list", then "Activate zone"
+
+6. Go to the "Users and API Clients" tab in [Akamai Control Center: ACCOUNT ADMIN > Identity & access](https://control.akamai.com/apps/identity-management/#/tabs/users/createClient), then select "Create API client"
+
+7. Select Service account > Set API client options
+
+8. Set name, description, and any other fields as needed.
+
+9. "Select APIs": First "Reset API selection"; only set "DNS—Zone Record Management" to "READ-WRITE"; then "Submit"
+
+10. "Select groups": For the group that was assigned to the domain in step 3, select the role from step 2 (or any other suitable existing role).
+
+11. "Compare user permissions" if needed and check the box "I reviewed and acknowledge...", then "Create API client".
+
+12. In the new API client details, go to the "Credentials" section and click "Create credential". The values generated for `client_secret` in this step will be visible only once. Either download or copy them directly into your values file. The values file should look similar to this, credentials to be replaced below:
+
+```yaml
+cluster:
+  name: $CLUSTER_NAME
+  provider: custom
+  domainSuffix: akamai.example.com
+otomi:
+  hasExternalDNS: true
+dns:
+  domainFilters:
+    - akamai.example.com
+  provider:
+    akamai:
+      host: <host>
+      accessToken: <access_token>
+      clientToken: <client_token>
+      clientSecret: <client_secret>
+apps:
+  cert-manager:
+    issuer: letsencrypt
+    stage: production
+    email: admin@example.com
+```
+
 ## AWS
 
 Follow these steps to use AWS Route53:
@@ -104,7 +163,7 @@ cluster:
 otomi:
   hasExternalDNS: true
 dns:
-  domainFilters: 
+  domainFilters:
     - your-domain.com
   provider:
     aws:
@@ -122,7 +181,7 @@ EOF
 
 ## Azure
 
-Follow these steps to use AWS Route53:
+Follow these steps to use Azure DNS:
 
 1. Create a resource group:
 
@@ -180,7 +239,7 @@ cluster:
 otomi:
   hasExternalDNS: true
 dns:
-  domainFilters: 
+  domainFilters:
     - example.com
   provider:
     azure:
@@ -273,7 +332,7 @@ cluster:
 otomi:
   hasExternalDNS: true
 dns:
-  domainFilters: 
+  domainFilters:
     - example.com
   provider:
     google:
@@ -324,7 +383,7 @@ cluster:
 otomi:
   hasExternalDNS: true
 dns:
-  domainFilters: 
+  domainFilters:
     - example.com
   provider:
     digitalocean:

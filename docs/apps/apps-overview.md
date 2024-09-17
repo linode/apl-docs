@@ -4,7 +4,7 @@ title: Apps Overview
 sidebar_label: Apps Overview
 ---
 
-## Application Platform for Linode Kubernetes Engine integrated Applications
+## Application Platform for Linode Kubernetes Engine (LKE) integrated Applications
 
 Enable all the Kubernetes Applications you need with just one click!
 

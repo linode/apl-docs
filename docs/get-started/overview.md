@@ -14,5 +14,5 @@ Install Application Platform for LKE (APL) on Linode Kubernetes Engine (LKE) or 
 ### Step 2: [Follow the post installation steps ](installation/post-install-steps.md)
 Configure Application Platform for LKE for your use case.
 
-### Step 3: [Explore APL using the Labs](labs/labs-overview.md)
+### Step 3: [Explore Application Platform for LKE using the Labs](labs/labs-overview.md)
 Explore Application Platform for LKE with a comprehensive set of hands-on labs.

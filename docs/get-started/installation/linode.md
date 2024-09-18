@@ -4,9 +4,9 @@ title: Linode
 sidebar_label: Linode Kubernetes Engine
 ---
 
-# Install APL on LKE with Linode DNS
+# Install Application Platform for LKE on LKE with Linode DNS
 
-Provision a LKE cluster in Cloud Manager or by using the Linode CLI and manually install APL onto it by using a Linode Domain.
+Provision a LKE cluster in Cloud Manager or by using the Linode CLI and manually install Application Platform for LKE (APL) onto it by using a Linode Domain.
 
 ## Prerequisites
 
@@ -130,9 +130,9 @@ Adjust the `domainSuffix`, `domainFilters` and `email`!
 You can also use a different DNS provider. See [here](dns.md) for examples on how to use Akamai EdgeDNS, AWS Route53, Cloudflare DNS and many others.
 :::
 
-## Install APL
+## Install Application Platform for LKE
 
-Install APL using Helm:
+Install using Helm:
 
 ```bash
 helm repo add apl https://linode.github.io/apl-core

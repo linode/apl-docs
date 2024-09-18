@@ -36,18 +36,19 @@ The `quickstart-redis` Helm chart can be used to create a Redis master-replica c
 
 ## Using the Catalog
 
-1. Click on `Catalog` in the left menu
-2. You will now see all the templates that are available to use
+1. Click on `Catalog` in the left menu.
+
+2. You will now see all the templates that are available to use.
 
 ![catalog](../../img/catalog.png)
 
-3. Click on the `k8s-deployment` template
+3. Click on the `k8s-deployment` template.
 
 ![catalog](../../img/catalog-2.png)
 
 In the Info tab you'll see some information about the Chart like the version and additional instructions.
 
-4. Click on the `Values` tab
+4. Click on the `Values` tab.
 
 ![catalog](../../img/catalog-3.png)
 

@@ -15,7 +15,7 @@ Create a Linode Kubernetes Engine cluster and manually install APL.
 Provision LKE with APL using Linode Cloud Manager or Linode CLI.
 
 ### [Custom](custom.md)
-Install APL on any other conformant Kubernetes cluster like EKS, AKS, GKE.
+Install APL on any other conformant Kubernetes cluster (like EKS, AKS or GKE).
 
 ---
 
@@ -41,6 +41,6 @@ Install APL with SOPS and an external KMS.
 Install APL with an entrypoint for an external gateway.
 
 ### [Bring Your Own Wild Card Certificate](byo-wildcard.md)
-Install APL using a BYO wild card certificate.
+Install APL using a BYO (wild card) certificate.
 
 ---

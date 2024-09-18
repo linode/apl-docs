@@ -25,7 +25,7 @@ APL requires a node pool with at least **12 vCPU** and **24 GB RAM**.
 The custom provider uses the default storage class. If your cluster has a storage class, make sure it is set to be the default:
 
 ```bash
-kubectl patch storageclass ,your-storage-class> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+kubectl patch storageclass <your-storage-class> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
 Use the `_rawValues` to specify another StorageClass per app. This is an example for Harbor:
@@ -37,7 +37,7 @@ app:
       persistence:
         persistentVolumeClaim:
           registry:
-            storageClass: ""
+            storageClass: <your-storage-class>
             size: 5Gi
 ```
 
@@ -72,13 +72,15 @@ metadata:
 EOF
 ```
 
-APL uses the Nginx Ingress Controller. If the cloud provider requires specific annotations to be set on the `LoadBalancer` Service, add the required annotations to the service in the chart values:
+APL uses the Nginx Ingress Controller. If the cloud provider requires specific annotations to be set on the `LoadBalancer` Service, add the required annotations to the service in the APL chart values:
 
 ```yaml
-apps:
-  ingress-nginx:
-    service:
-      annotations: {}
+ingress:
+    platformClass:
+        entrypoint: ''
+        annotations:
+            - key: service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol
+              value: true
 ```
 
 ### CNI
@@ -102,7 +104,7 @@ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.3/
 
 ### Metrics Server
 
-APL installs a Metrics Server. If your provider installs Metrics Server on their managed Kubernetes service, then disable Metrics Server in APL:
+APL installs a Metrics Server. If your provider already installed Metrics Server on their managed Kubernetes service, then disable Metrics Server in APL:
 
 ```yaml
 apps:
@@ -128,7 +130,7 @@ APL does NOT install a [Cluster Autoscaler](https://github.com/kubernetes/autosc
 
 ### DNS
 
-The APL [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported when APL is installed with minimal values. Install APL with [DNS](dns.md) to use all APL features.
+The APL [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported when APL is installed without DNS. Install APL with [DNS](dns.md) to use all APL features.
 
 ## Install APL using Helm
 

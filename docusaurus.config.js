@@ -23,7 +23,7 @@ module.exports = {
   favicon: "img/logos/favicon.ico",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
-  organizationName: "Linode", // Usually your GitHub org/user name.
+  organizationName: "Akamai", // Usually your GitHub org/user name.
   projectName: "linode.github.io", // Usually your repo name.
   themeConfig: {
     metadata: [

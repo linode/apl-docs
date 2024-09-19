@@ -17,13 +17,9 @@ const redirects = require("./redirects");
 const isBootstrapPreset = process.env.DOCUSAURUS_PRESET === "bootstrap";
 
 module.exports = {
-  title: "APL",
-  tagline: "Self-hosted PaaS for Kubernetes",
+  title: "App Platform for LKE",
   url: "https://apl-docs.net",
   baseUrl: "/",
-  customFields: {
-    description: "Build, deploy and monitor apps on Kubernetes",
-  },
   favicon: "img/logos/favicon.ico",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",

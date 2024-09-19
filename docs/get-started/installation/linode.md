@@ -1,65 +1,118 @@
 ---
 slug: linode
 title: Linode
-sidebar_label: Linode
+sidebar_label: Linode Kubernetes Engine
 ---
 
-# # Install Otomi on Linode Kubernetes Engine (LKE) with Linode DNS
+# Install Application Platform for LKE on LKE with Linode DNS
+
+Provision a LKE cluster in Cloud Manager or by using the Linode CLI and manually install Application Platform for LKE (APL) onto it by using a Linode Domain.
 
 ## Prerequisites
 
-- [linode-access](https://cloud.linode.com/)
+- Create an account for Linode [here](https://cloud.linode.com/)
 
-## Configure Linode Kubernetes cluster
+## Provision a LKE cluster
 
-Configure the LKE cluster with the following specs
+### Using Cloud Manager
 
-- K8s version: `1.29`
+Provision a LKE cluster with the following specs:
+
+- Fill in the `Cluster Label`
+
+- Use Kubernetes version: `1.30`
+
 - Enable HA Control Plane
-- Dedicated CPU: Dedicated 8 GB Plan, 4 CPUs, 160 GB Storage
 
-Download the `kubeconfig`.
+- Add Node Pools. Select the Dedicated 8 GB Plan (with 8 GB RAM and 4 CPUs)
+
+- Wait until the nodes are in a `Running` state
+
+- Download the `kubeconfig`
 
 ```bash
 # Update the KUBECONFIG env to gain access to the cluster
-export KUBECONFIG=<path-to-downloads>/otomi--kubeconfig.yaml
+export KUBECONFIG=<path-to-downloads>/$CLUSTER_NAME-kubeconfig.yaml
 ```
 
-## Configure DNS
+### Using Linode CLI
 
-:::info
-When using Domains in Linode, name resolving takes at least 30 min to work. The Otomi installer will retry until it can resolve the Keycloak host name in the configured domain.
-:::
+[Install and configure](https://techdocs.akamai.com/cloud-computing/docs/install-and-configure-the-cli) the CLI.
 
-If you want to learn about how to use Linode DNS Manager read the following tutorials:
-
-[An Introduction to Managing DNS](https://www.linode.com/docs/platform/manager/dns-manager/), and [general documentation](https://www.linode.com/docs/networking/dns/)
-
-### Creating Linode Credentials
-
-Generate a new oauth token by following the instructions at [Access-and-Authentication](https://developers.linode.com/api/v4#section/Access-and-Authentication)
-
-Set environment variable for the token:
+Provision a LKE cluster using the Linode CLI:
 
 ```bash
-LINODE_TOKEN="<your-token-here>"
+linode-cli lke cluster-create \
+  --label $CLUSTER_NAME \
+  --region $REGION \
+  --k8s_version 1.30 \
+  --control_plane.high_availability true \
+  --node_pools.type g6-dedicated-8 \
+  --node_pools.count 3
 ```
 
-The environment variable `LINODE_TOKEN` will be needed to run ExternalDNS with Linode.
+And get the Kubecfg:
+
+```bash
+linode-cli get-kubeconfig --label $CLUSTER_NAME
+kubectl config use-context lke<cluster_id>-ctx
+```
+
+## Create a Domain
+
+If you want to learn about how to use Linode DNS Manager read the following tutorial: [Get started with DNS Manager](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-dns-manager).
+
+When you create a domain in Linode, make sure to set the TTL of the SOA Record to 30 seconds:
+
+1. Click on your domain.
+
+2. Click on the tree dots on the right of the SOA Record and click `edit`.
+
+3. Change the default TTL to `30 seconds`.
+
+4. Click `Save`.
+
+## Creating a Personal Access Token
+
+Create a new Personal Access Token with Read/Write access for Domains:
+
+1. Go to your profile on the top right.
+
+2. Click on `API Tokens`.
+
+3. Click on `Create A Personal Access Token`.
+
+4. Add a `Label`.
+
+5. Select the desired `Expiry`.
+
+6. Select `No Access` for all.
+
+7. Select `Read/Write` for `Domains`.
+
+8. Click `Create Token`.
+
+9. Copy your Personal Access Token.
+
+10. Set environment variable for the token:
+
+```bash
+LINODE_TOKEN="<your-personal-access-token>"
+```
 
 ## Create the values.yaml file
 
 ```bash
 tee values.yaml<<EOF
 cluster:
-  name: otomi
+  name: $CLUSTER_NAME
   provider: linode
-  domainSuffix: linode.example.com
+  domainSuffix: <your-domain>
 otomi:
   hasExternalDNS: true
 dns:
   domainFilters: 
-    - example.com
+    - <your-domain>
   provider:
     linode:
       apiToken: $LINODE_TOKEN
@@ -67,32 +120,36 @@ apps:
   cert-manager:
     issuer: letsencrypt
     stage: production
-    email: admin@example.com
+    email: admin@<your-domain>
 EOF
 ```
 
-And adjust the `domainSuffix`, `domainFilters` and `email`.
+Adjust the `domainSuffix`, `domainFilters` and `email`!
 
-## Install Otomi using helm
+:::info
+You can also use a different DNS provider. See [here](dns.md) for examples on how to use Akamai EdgeDNS, AWS Route53, Cloudflare DNS and many others.
+:::
 
-Install Otomi using Helm:
+## Install Application Platform for LKE
+
+Install using Helm:
 
 ```bash
-helm repo add otomi https://otomi.io/otomi-core
+helm repo add apl https://linode.github.io/apl-core
 helm repo update
-helm install -f values.yaml otomi otomi/otomi
+helm install -f values.yaml apl apl/apl
 ```
 
 Monitor the logs of the installer job:
 
 ```bash
-kubectl logs jobs/otomi -n default -f
+kubectl logs jobs/apl -n default -f
 ```
 
 When the installer is finished, copy the `url` and `admin-password` from the console output.
 
-Follow the activation steps [here.](https://otomi.io/docs/get-started/activation)
+Follow the post installation steps [here](post-install-steps.md).
 
 :::tip
-Like to learn how to use Otomi? Go through the [Get Started labs](../labs/overview.md)
+Like to learn how to use Application Platform for LKE? Go through the [Get Started labs](../labs/labs-overview.md)
 :::

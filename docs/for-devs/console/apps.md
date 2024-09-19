@@ -4,14 +4,16 @@ title: Team Apps
 sidebar_label: Apps
 ---
 
-<!-- ![Team apps](../../img/team-apps.png) -->
+The Apps that are available for teams to use. There are 2 types of Apps:
 
-The team apps are shared apps on the platform available for teams to use. Click on the app to open the app, or click on the configuration icon to go to the app details:
+- Dedicated for the Team (like Prometheus, Grafana, Alertmanager and Tekton Dashboard)
+
+- Shared by the Platform (like Harbor and Gitea)
+
+![team-apps](../../img/team-apps.png)
+
+Click on the Icon of the app to go directly to the UI of the application, or click on the configuration icon to go to the app details.
 
 ### Info
 
-Here you will find more information about the app and how the app is integrated into Otomi.
-
-### Shortcuts
-
-Create shortcuts to open the app at a target path. Created shortcuts will also become visable in the [Shortcuts](shortcuts.md) section.
+Here you will find more information about the app.

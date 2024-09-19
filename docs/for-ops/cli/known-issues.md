@@ -14,7 +14,7 @@ The `otomi (diff|apply|sync|template)` commands are delegated to `helmfile`, whi
 
 **Background info**:
 
-The `otomi apply` command uses helmfile's `apply` command, which combines its `diff` and `sync` commandds. So it first does a `helmfile diff` against helm's bookeeping (which resides in versioned secrets, e.g. `sh.helm.release.v1.loki.v1`). This is the most cost effective way and does not lead to a new release version being deployed when there are no changes. However, when you changed cluster resources without the Otomi CLI (so without using helm) this is not reflected in the secrets. `helmfile diff` will not see any changes in the secret, so it won't execute the subsequent `helmfile sync`. If you wish to overwrite the desired state on the cluster, use the `otomi sync -l name=$releaseName` command directly. Usually only for a certain release, so you don't force change all the releases, which costs a lot of time.
+The `otomi apply` command uses helmfile's `apply` command, which combines its `diff` and `sync` commandds. So it first does a `helmfile diff` against helm's bookeeping (which resides in versioned secrets, e.g. `sh.helm.release.v1.loki.v1`). This is the most cost effective way and does not lead to a new release version being deployed when there are no changes. However, when you changed cluster resources without the CLI (so without using helm) this is not reflected in the secrets. `helmfile diff` will not see any changes in the secret, so it won't execute the subsequent `helmfile sync`. If you wish to overwrite the desired state on the cluster, use the `otomi sync -l name=$releaseName` command directly. Usually only for a certain release, so you don't force change all the releases, which costs a lot of time.
 
 ## Deployment errors/problems
 
@@ -51,15 +51,15 @@ This usually happens when a manifest is not allowed to be patched in place and n
 
 ### 4. Timeout
 
-**Problem**: Sometimes the Otomi cli will time out when operating on a Google cluster.
+**Problem**: Sometimes the CLI will time out when operating on a Google cluster.
 
 **Cause**: This happens when the containerized kubectl binary wants to refresh an access token, but it can't find the binary that was registered to do so in the otomi docker container.
 
-**Workaround**: Retry the command. Before every invocation with the containerized `kubectl` binary, Otomi CLI first runs `kubectl version` with the local binary to invoke a token refresh, resulting in an up-to-date config to mount.
+**Workaround**: Retry the command. Before every invocation with the containerized `kubectl` binary, the CLI first runs `kubectl version` with the local binary to invoke a token refresh, resulting in an up-to-date config to mount.
 
 **Background**:
 
-The Otomi CLI is a docker container with all the binaries it needs to deploy to these clusters. When running a command the local cloud configs are mounted. These configs may contain configuration for token refresh mechanisms, including the name of a binary to execute with certain parameters. This makes it possible to include the binaries in the image, and make them available via the known `$PATH`.
+The CLI is a docker container with all the binaries it needs to deploy to these clusters. When running a command the local cloud configs are mounted. These configs may contain configuration for token refresh mechanisms, including the name of a binary to execute with certain parameters. This makes it possible to include the binaries in the image, and make them available via the known `$PATH`.
 
 However, Google Cloud SDK breaks with that approach, by tightly coupling a hard path to the local gcloud binary. Sample user section from `$KUBECONFIG`:
 

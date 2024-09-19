@@ -4,22 +4,18 @@ title: Falco
 sidebar_label: Falco
 ---
 
-Falco can be used for thread detection. Before activating Falco, please first check which [Driver](https://falco.org/docs/event-sources/kernel/) to use. If you know which driver should be selected, activate Falco, go to the `Values`, select the `Driver` and submit changes. No `Deploy Changes`
+## About
 
-## Configuration values
+Falco can be used for threat detection. 
 
-### Driver settings
-
-Select the driver to use:
+Before activating Falco, please first check which [Driver](https://falco.org/docs/event-sources/kernel/) to see which driver to use:
 
 - module
+
 - ebpf (default)
+
 - modern-bpf
 
-### Resources
+If you know which driver should be used, activate Falco, go to the `Values`, add the `Driver` and submit changes. Now `Deploy Changes`.
 
-Adjust default provided resource requests and limits for Falco and Falco Exporter.
-
-## Raw values
-
-When Falco is installed, Otomi will add a set of rules to `white-list` all known behaviour. These rules are added using the Raw Values. 
+When Falco is installed, APL will add a set of rules to `white-list` all known behaviour. These rules are added using the Raw Values.  

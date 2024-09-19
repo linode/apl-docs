@@ -19,16 +19,19 @@ The Team dashboard uses the Team's Grafana instance to get it's information from
 The dashboard has 5 elements
 
 - [Inventory](#inventory)
+
 - [Resource Status](#resource-status)
+
 - [Resource Utilization](#resource-utilization)
+
 - [Vulnerabilities](#vulnerabilities)
-- [Compliance](#compliance)
+
 
 ![Team dashboard](../../img/team-dashboard.png)
 
 ### Inventory
 
-The inventory shows the Otomi resources within the team. Click on an inventory item to go directly to the full list.
+The inventory shows the APL resources within the team. Click on an inventory item to go directly to the full list.
 
 ### Resource Status
 
@@ -41,7 +44,3 @@ The Resource Utilization panels show the total amount of CPU and Memory consumed
 ### Vulnerabilities
 
 The Vulnerabilities panels show the total amount of LOW, MEDIUM, HIGH and CRITICAL vulnerabilities in running containers deployed by the Team.
-
-### Compliance
-
-The Compliance panel shows the total amount of policy violations in workloads deployed by the Team.

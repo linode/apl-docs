@@ -7,7 +7,6 @@ sidebar_label: SMTP
 ## SMTP
 
 :::note
-
 SMTP settings will only be active when Alertmanager is active.
 :::
 

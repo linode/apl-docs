@@ -4,7 +4,9 @@ title: NGINX Ingress
 sidebar_label: Ingress-nginx
 ---
 
-Ingress NGINX is the default ingress controller in Otomi and part of the core setup (this means it is not possible use another controller within Otomi).
+## About
+
+Ingress NGINX is the default ingress controller in APL and part of the core setup (this means it is not possible use another controller within APL).
 
 ### Using the OWASP rule set
 
@@ -12,15 +14,6 @@ The OWASP ModSecurity Core Rule Set (CRS) is a set of generic attack detection r
 
 The OWASP rule set can only be enabled when ModSecurity is enabled. Read more about the OWASP rule set [here](https://owasp.org/www-project-modsecurity-core-rule-set/)
 
-## Automation
-
-Teams will be be automatically given a git repository in Gitea named `team-$teamId-argocd`, and Argo CD is automatically configured to access the repository and sync. All that is left to do is for a team-admin (or team member with self-service rights) to fill their repository with intended state and commit.
-
-## Integrations
-
-Otomi integrated NGINX Ingress Controller into an advanced [ingress architecture](/docs/architecture/overview).
-
-## Instructions
 
 ### Using ModSecurity
 
@@ -44,3 +37,15 @@ modsecurity-snippet: |
 ```
 
 To change the modsecurity configuration, use `Raw values`. [Here](<https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#Configuration_Directives>) is an overview of all the configuration directives.
+
+### Configure tracing
+
+To enable tracing set the following values:
+
+```yaml
+tracing:
+    enabled: true
+    samplingRatio: "0.10"
+```
+
+The sampling rate should be in the range of 0.0 to 100.0 with a precision of 0.01. For example, to trace 10 requests out of every 10000, use 0.10 as the value here.

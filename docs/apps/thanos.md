@@ -4,4 +4,6 @@ title: Thanos
 sidebar_label: Thanos
 ---
 
-Thanos can be enabled for multi-cluster metrics retention using an off-site object storage service.
+## About
+
+Thanos can be enabled to add HA support for Prometheus (and log term retention of metrics) and store metrics in an object storage service.

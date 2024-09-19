@@ -1,6 +1,6 @@
 ---
 slug: installation
-title: Installing and using Otomi CLI
+title: Installing and using the CLI
 sidebar_label: Installation
 ---
 
@@ -9,7 +9,7 @@ sidebar_label: Installation
 - Docker
 - Bash v4
 
-Otomi CLI only supports bash versions greater than 4. Install or upgrade on Mac OS:
+The CLI only supports bash versions greater than 4. Install or upgrade on Mac OS:
 
 ```bash
 brew install bash

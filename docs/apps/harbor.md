@@ -4,29 +4,23 @@ title: Harbor
 sidebar_label: Harbor
 ---
 
-Harbor is an open-source registry that secures artifacts with policies and role-based access control, ensures images are scanned and free from vulnerabilities, and signs images as trusted. As a [CNCF](https://www.cncf.io/announcements/2020/06/23/cloud-native-computing-foundation-announces-harbor-graduation/) graduated project, Harbor delivers compliance, performance, and interoperability to help you consistently and securely manage artifacts across cloud-native compute platforms like Kubernetes. (source: https://goharbor.io/)
+## About
 
-## Automation
+Harbor is an open-source registry that secures artifacts with policies and role-based access control, ensures images are scanned and free from vulnerabilities, and signs images as trusted. Harbor delivers compliance, performance, and interoperability to help you consistently and securely manage artifacts across cloud-native compute platforms like Kubernetes. (source: https://goharbor.io/)
 
-Otomi runs the following automation tasks:
+APL automates the following Harbor maintanace tasks:
 
-- Creating a project in Harbor for each team
-- Creating a bot-account for each team
-- Creating a Kubernetes pull secret in the team namespace to enable pulling of images out of the local registry
-- Creating a Kubernetes push secret in the team namespace that can be downloaded (if enabled) by team members to push images to a private repo
+- Creating a project in Harbor for each team.
+
+- Creating a bot-account for each team.
+
+- Creating a Kubernetes pull secret in the team namespace to enable pulling of images out of the local registry.
+
+- Creating a Kubernetes push secret in the team namespace that can be downloaded (if enabled) by team members to push images to a private repo.
+
+- Creating a Kubernetes push secret in the team namespace that is used by the Build self-service feature to push images to Harbor.
 
 ## Known issues
-
-### Docker login
-
-Unfortunately Harbor has not yet delivered a user friendly mechanism for users to interface with their registry via docker cli. To use docker cli one has to login with the registry EVERY time before using the cli. At the same time this fails when one is not logged into the Harbor dashboard beforehand. In order to login without issues one has to follow these steps:
-
-- ONLY ONCE: get the cli secret from the Harbor dashboard (via User Profile).
-- refresh Harbor dashboard web view (this will refresh the OIDC auth token)
-- docker login using the cli secret as password: `docker login harbor.<cluster-domain> -u < User_Name > -p <CLI secret>`
-- do your docker pull/push etc within the token TTL window (60 secs)
-
-Usually this is not a problem as team users don't pull or push these images directly. We are working on solving this, and expect to have a fix soon.
 
 ### OIDC: conflicting user
 

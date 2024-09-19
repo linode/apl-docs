@@ -8,7 +8,7 @@ sidebar_label: DNS
 
 :::note
 
-DNS settings will only be active when `otomi.hasExternalDNS=true` flag is set during installation. This can also be set after installation in Settings/Otomi.
+DNS settings will only be active when `otomi.hasExternalDNS=true` flag is set during installation. This can also be set after installation in Settings/APL.
 
 :::
 
@@ -24,19 +24,19 @@ Limit possible target Zones by suffix.
 
 Limit the possible target zones by zone id.
 
-
 ### Provider
 
 The DNS provider used to manage the domain(s).
 
-The followingDNS providers are supported in Otomi:
+The followingDNS providers are supported in APL:
 
-- AWS
+- AWS Route53
 - Azure (Public zones)
 - Azure Private DNS
 - CloudFlare
 - Digital Ocean
 - Google
+- Linode Domains
 - Other
 
-When `Other` is selected, the required values can be added to support any other DNS provider (supported by External DNS).
+When `Other` is selected, the required values can be added to support any other DNS provider (supported by [ExternalDNS](https://github.com/kubernetes-sigs/external-dns/)).

@@ -9,10 +9,10 @@ Based on self-service options allowed by the platfrom administrator, team member
 ## Configure OIDC group mapping
 
 :::note
-The OIDC group mapping will only be visible when Otomi is configured with an external Identity Provider (IdP).
+The OIDC group mapping will only be visible when APL is configured with an external Identity Provider (IdP).
 :::
 
-Change the OIDC group-mapping to allow access based on group membership.
+Change the OIDC group-mapping to allow access based on a group membership.
 
 ## Managed monitoring
 
@@ -20,12 +20,14 @@ Activate a (platform) managed Grafana, Prometheus or Alertmanager instance for t
 
 ### Grafana
 
-Enable to install a Grafana instance for the team.
+Enable to install a Grafana instance for the team. 
 
 **Dependencies:**
 
-- The Grafana instance is automatically configured with a datasource for the Team's Prometheus.
-- If Loki (for logs) is enabled on the Platform, Grafana needs to be enabled here.
+- The Grafana instance is automatically configured with a datasource for the Team's Prometheus if Prometheus for the Team is enabled.
+
+- If Loki (for logs) is enabled on the Platform, Grafana needs to be enabled for the Team to able to see logs in Grafana.
+
 - Grafana is provisioned with multiple dashboards that rely on the Platform Prometheus. If Prometheus on the Platform is not enabled, these dashboards will not work!
 
 ### Prometheus
@@ -34,13 +36,16 @@ Enable to install a Prometheus instance for the team. The Prometheus instance is
 
 ### Alertmanger
 
-Enable to install an Alertmanager instance for the team. The Alertmanger instance will only show alerts based on `Rules` from the Team's Prometheus.
+Enable to install an Alertmanager instance for the team. The Alertmanger instance will only show alerts based on `Rules` for the Team's Prometheus.
 
+### Private
+
+Select to disable cross-team access (and make the Team Grafana private for Team members only)
 
 ## Configure alert settings
 
 :::note
-Alerts settings will only be active when Alertmanager is enabled for the team.
+Alerts settings will only be applied when Alertmanager is enabled for the team.
 :::
 
 Change the alert settings and preferred notification receivers.
@@ -56,32 +61,16 @@ Change the alert settings and preferred notification receivers.
 
 When required, add resource quota for the team. The resource quota should adhere to the "spec.hard" format as described [here](https://kubernetes.io/docs/concepts/policy/resource-quotas/).
 
-:::note Note
-
-There is no validation as there is no schema published. Add/change resource quota at your own risk.
-
-:::
-
-## Configure Azure Monitor
-
 :::note
-
-Configuring Azure Monitor settings will only be active when `cluster.provider=azure`.
+There is no validation as there is no schema published. Add/change resource quota at your own risk.
 :::
 
-Azure Monitor is the platform service that provides a single source for monitoring Azure resources.
-
-| Option                                | Description                   |
-| ------------------------------------- | ----------------------------- |
-| No Azure monitoring                   | -                             |
-| Azure monitoring with global settings | Takes on the global settings  |
-| Azure monitoring with custom settings | Overrides any global settings |
 
 ## Configure Network Policies
 
 | Option           | Description                                                                            |
 | ---------------- | -------------------------------------------------------------------------------------- |
-| Network policies | When enabled team services will be bound by (ingress) network policies                 |
+| Ingress control  | When enabled team services will be bound by (ingress) network policies                 |
 | Egress control   | When enabled team service egress traffic will be limited to pre-defined endpoints only |
 
 ## Team self service flags
@@ -93,18 +82,29 @@ The self-service flags (what is a team allowed to) can only be configured by an 
 | Option           | Permission                                                                             |
 | ---------------- | -------------------------------------------------------------------------------------- |
 | Ingress          | The Team is allowed to configure External Exposure for a Service                       |
-| Network policy   | The team is allowed to configure network (ingress and egress) for a Service            |
+
+### Security Policies
+
+| Option           | Permission                                                                             |
+| ---------------- | -------------------------------------------------------------------------------------- |
+| Edit policies    | The Team is allowed to edit Team Security Policies                      |
 
 ### Team
 
 | Option                 | Permission                                                                             |
 | ---------------------- | -------------------------------------------------------------------------------------- |
-| Alerts                 | The Team is allowed to configure Alert settings for the team                           |
-| Billing alert quotas   | The team is allowed to configure Billing alert quotas for the team                     |
 | OIDC                   | The team is allowed to configure the OIDC group mapping for the team                   |
+| Alerts                 | The Team is allowed to configure Alert settings for the team                           |
+| Managed monitoring     | The team is allowed to configure Managed Monitoring                                    |
 | Resource quotas        | The team is allowed to configure resource quotas for the team                          |
+| Network policy         | The team is allowed to configure Security Policies (enable/disable Security Policies for the Team) |
+
+### Access
+| Option                 | Permission                                                                             |
+| ---------------------- | -------------------------------------------------------------------------------------- |
+| Shell                  | The team is allowed to use the cloud Shell                                             |
 | Download kube config   | The team is allowed to download the Kube Config                                        |
 | Download docker config | The team is allowed to download the Docker Config                                      |
-| Network policy         | The team is allowed to the Network policy configuration for the team                   |
+| Download certificate authority | The team is allowed to download the certificate authority (only when APL is installed with a auto-generated or custom CA) |
 
 

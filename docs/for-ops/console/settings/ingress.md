@@ -6,17 +6,14 @@ sidebar_label: Ingress
 
 ## Ingress
 
-:::note
+By default (after installing APL), one ingress controller (ingress-nginx-platform) is deployed and is used to publicly expose both platform and user created services. In the settings for ingress, an admin can:
 
-Using multiple ingress classes / Ingress controllers is only supported if `cluster.provider=azure`.
+1. Configure the platform ingress class to be private (by adding the required `annotations`).
 
-:::
+2. Add additional ingress classes to expose user created services.
 
-By default (after installing Otomi), one ingress controller (ingress-nginx-platform) is deployed and is used to publicly expose both platform and user created services. In the settings for ingress, an admin can:
-
-1. Configure the platform ingress class to be private (using a private load balancer)
-2. Add additional ingress classes to expose user created services
-
-By changing the platform ingress class from public to private, all platform services (like Otomi Console, the Keycloak platform instance and all other platform end-points) will only be accessible from the private network.
+By changing the platform ingress class from public to private, all platform services (like APL Console, the Keycloak platform instance and all other platform end-points) will only be accessible from the private network.
 
 By adding additional ingress classes, each class will get a dedicated ingress controller and a dedicated cloud load balancer. This allows grouping of services and exposing them to differend networks.
+
+Read more about configuring ingress classes [here](../../how-to/ingress-classes.md).

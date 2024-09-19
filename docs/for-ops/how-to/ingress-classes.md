@@ -3,55 +3,81 @@ slug: ingress-classes
 title: Manage Ingress Controllers
 ---
 
-When Otomi is installed, exposure (ingress) for all services (included exposure for platform services) is handeled by the default platform ingress class using a public (cloud) load balancer. Otomi offers the option to use multiple ingress classes. Each class get a dedicated ingress controller. In case of security requirements, where platform services are not allowed to be exposed publicly, the default platform class can be configured to use a private load balancer instead of a public one. Additional (public) ingress classes can be created to expose team (application) services.
+When APL is installed, exposure (ingress) for all services (included exposure for platform services) is handeled by the default platform ingress class using a public (cloud) load balancer. APL offers the option to use multiple ingress classes. Each class will get a dedicated ingress controller. In case of a security requirement, where platform services are not allowed to be exposed publicly, the default platform class can be configured to use a private load balancer instead of a public one by adding the required annotations. Additional (public) ingress classes can be created to expose team (application) services.
 
 ## prerequisites
 
-- Access to the internal subnet (using a VPN or a Jumphost)
-- `cluster.provider=azure`
-
-## related documentation
-
-- [Azure AKS, create internal load balancer](https://docs.microsoft.com/en-us/azure/aks/internal-lb)
+- Access to the internal subnet (using a VPN or a Jumphost) when using a private load balancer.
 
 ## Steps
 
 Steps to change to use a private load balancer for exposing platform services:
 
-If there are no team services created that use the default platform class, then you can skip step 2.
+If there are no Team services created that use the default platform class, then you can skip step 2.
 
-1. Create an additional public ingress class
+### Create an additional public ingress class
 
-- Go to Ingress Classes under Settings in the web UI
-- Under `additional classes` click on `add item`
-- Provide a name for the additional ingress class (for example `teams`)
-- Use the public load balancer type
-- (optional) If you would like to create a new load balancer in another resource group, fill in the name of that resource group
-- (optional) If you would like to use a static (public) IP for the load balancer, then fill in the IP address. More information about using static IP addresses can be found [here](https://docs.microsoft.com/en-us/azure/aks/static-ip)
-- Click submit and then deploy changes
+1. Go to Ingress Classes under Settings in the web UI.
 
-2. Move all existing team services to use the new ingress class:
+2. Under `additional classes` click on `add item`.
 
-- Go to `services`, click on the service you would like to move to the new ingress class
-- Under `Exposure Ingress`, fill in the name of the new ingress class in the `ingress class name` field.
-- Click submit and then deploy changes
+3. Provide a name for the additional ingress class (for example `teams`).
 
-3. Change the platform class from public to private:
+4. (optional) If you need to add specific annotations to Configure the Load Balancer by applying annotations to the Service resource, Click on `Add Item` and add the required annotations.
 
-- Go to Ingress Classes under Settings in the web UI
-- Under `Platform class`, select `private`
-- (optional) If you would like to use a static IP for the load balancer, then fill in the IP address
+5. (optional) If you would like to use a static (public) IP for the load balancer, then fill in the IP address.
 
-By default the internal load balancer is is created in the node resource group and connected to the same virtual network as the AKS cluster. If you would like to use a different resource group and subnet, fill in the Resource Group name and the subnet.
+6. (optional) If you need to whitelist source IP address ranges, add the CIDR in the `Source IP address filtering` field.
 
-- Click submit and then deploy changes
+7. Click `submit`.
 
-When the platform ingress class has been configured to use an internal load balancer, Otomi will add the following annotations to the K8s load balancer service of the platform ingress controller:
+8. Click `Deploy Changes`.
 
-```yaml
-service.beta.kubernetes.io/azure-load-balancer-resource-group: {{ . }}
-service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "{{ . }}"
-```
+### Move all existing Team Services to use the new ingress class
 
+1. Go to `services`, click on the service you would like to move to the new ingress class.
 
+2. Under `Exposure Ingress`, fill in the name of the new ingress class in the `ingress class name` field.
+
+3. Click `submit`.
+
+4. Click `Deploy Changes`.
+
+### Change the platform class from public to private
+
+1. Go to Ingress Classes under Settings in the web UI.
+
+2. Under `Platform class`, add the required `annotations`:
+
+For Azure:
+
+- `service.beta.kubernetes.io/azure-load-balancer-internal: "true"`
+- `service.beta.kubernetes.io/azure-load-balancer-internal-subnet: <lb-subnet>`
+
+For AWS:
+
+- `service.beta.kubernetes.io/aws-load-balancer-internal: true`
+
+For GCP:
+
+- `networking.gke.io/load-balancer-type: "Internal"`
+
+4. Click `submit`.
+
+5. Click `Deploy Changes`.
+
+### Cloud provider specific annotations
+
+Add the following annotations when using:
+
+#### AWS
+
+- `service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: '*'`
+
+#### Azure
+
+- `service.beta.kubernetes.io/azure-load-balancer-resource-group: <resource-group-name>`
+
+#### Digital Ocean
+
+- `service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: true`

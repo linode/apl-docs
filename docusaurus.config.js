@@ -19,7 +19,7 @@ const isBootstrapPreset = process.env.DOCUSAURUS_PRESET === "bootstrap";
 module.exports = {
   title: "APL",
   tagline: "Self-hosted PaaS for Kubernetes",
-  url: "https://otomi.io",
+  url: "https://apl-docs.net",
   baseUrl: "/",
   customFields: {
     description: "Build, deploy and monitor apps on Kubernetes",
@@ -28,7 +28,7 @@ module.exports = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
   organizationName: "Linode", // Usually your GitHub org/user name.
-  projectName: "redkubes.github.io", // Usually your repo name.
+  projectName: "linode.github.io", // Usually your repo name.
   themeConfig: {
     metadata: [
       {
@@ -61,7 +61,7 @@ module.exports = {
       },
       items: [
         {
-          href: "https://github.com/redkubes/otomi-core",
+          href: "https://github.com/linode/apl-core",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",
@@ -79,7 +79,7 @@ module.exports = {
         docs: {
           breadcrumbs: false,
           sidebarPath: require.resolve("./sidebar-docs.js"),
-          editUrl: "https://github.com/redkubes/redkubes.github.io/tree/main/",
+          editUrl: "https://github.com/linode/linode.github.io/tree/main/",
           // versions: {
           //   current: {
           //     label: `${getNextVersionName()} (unreleased)`,

@@ -1,12 +1,12 @@
 ---
 slug: apl
 title: Platform settings
-sidebar_label: APL
+sidebar_label: General
 ---
 
 ## APL Settings
 
-The APL settings section offers configuration options for APL and feature flags that influence the way APL behaves.
+The General section offers configuration options for APL and feature flags that influence the way APL behaves.
 
 | Setting                | Description   |
 | ---------------------- | ------------------------ |
@@ -17,4 +17,4 @@ The APL settings section offers configuration options for APL and feature flags 
 | External DNS  | Set this to true when an external DNS zone is available to manage DNS records. (Expects required `dns:` fields to be set.) |
 | External IdP | Set this to true when bringing your own external IDP such as Azure AD. (Expects required `oidc:` fields to be set.)  |
 | Node Selector | When a label/value pair is added, all APL platform workloads will be scheduled on the nodes with this label/value pair |
-| APL Version | The installed version of APL. Change to a new valid release to upgrade |
+| Version | The installed version. Change to a new valid release to upgrade |

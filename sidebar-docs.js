@@ -51,9 +51,9 @@ module.exports = {
         ],
       },
     ],
-    "For Team Members": [
+    "For Developers": [
       {
-        "APL Console - Team View": [
+        "Console - Team View": [
           "for-devs/console/overview",
           "for-devs/console/deploy-changes",
           "for-devs/console/dashboard",
@@ -65,19 +65,22 @@ module.exports = {
           "for-devs/console/netpols",
           "for-devs/console/services",
           "for-devs/console/security-policies",
+          "for-devs/console/usermgnt",
+          "for-devs/console/settings",
           "for-devs/console/sealed-secrets",
           "for-devs/console/shell",
-          "for-devs/console/settings",
+          
         ],
       },
     ],
-    "For Platform Admins": [
+    "For Platform Adminstrators": [
       {
-        "APL Console - Platform View": [
+        "Console - Platform View": [
           "for-ops/console/overview",
           "for-ops/console/dashboard",
           "for-ops/console/apps",
           "for-ops/console/teams",
+          "for-ops/console/usermgnt",
           "for-ops/console/projects",
           "for-ops/console/builds",
           "for-ops/console/workloads",

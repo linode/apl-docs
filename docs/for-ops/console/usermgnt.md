@@ -5,7 +5,7 @@ sidebar_label: User Management
 ---
 
 :::info
-User Management will only be available when Keycloak is configured to be the Identity Provider. When OIDC is configured, the User Management section will not be available.
+User Management will only be available when Keycloak is configured as the Identity Provider (default). When OIDC is configured, the User Management section will not be available.
 :::
 
 :::info
@@ -27,7 +27,7 @@ What you need to know about the User Management feature:
 - Users are stored encrypted in the `otomi-values` repository `env/secrets.users.yaml` file.
 - The initial login credentials of a new user can be copied from the platform view user management page by platform admins only.
 - Users’ passwords are not stored in the values repo (except initial password).
-- Users’ passwords can be resetted in Keycloak (Platform admins only!).
+- A password reset can only be performed by a Platform Administrator.
 - User management follows the Single Source of Truth principle by referencing the `env/secrets.users.yaml` file in the `otomi-values` repository. If a new user is created directly in Keycloak, this user will be deleted at the next commit.
 - Kubernetes secrets are used to pass user data between Pods, but there is a limit for user-defined variables. The maximum size of a user-defined environment variable is 32,767 characters. This limits the amount of users that can be created to around 200.
 
@@ -63,7 +63,7 @@ The following example shows how to create a user account and assign the user the
 
 ## Assinging Users to Teams
 
-1. Select the `Team` view in the top bar and the Team that you like to administer.
+1. Select the `Team` view in the top bar and the Team that you would like to administer.
 
 2. Search for the user you would like to make a member.
 

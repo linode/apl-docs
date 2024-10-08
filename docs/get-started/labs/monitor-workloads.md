@@ -4,11 +4,11 @@ title: Monitoring availability
 sidebar_label: Monitor Workloads
 ---
 
-When your application is deployed, you would of course like to get an alert when you application (service) is not available anymore. To automatically monitor you applications for availability, APL automatically configures a prope to monitor your service.
+When your application is deployed, you would of course like to get an alert when you application (service) is not available anymore. To automatically monitor you applications for availability, a prope to monitor your service is automatically configured.
 
 ## Monitor your application for availability
 
-1. [Create a Service](expose-services.md) for your app in APL. The service can have an Exposure ingress of type `Cluster` or `Ingress`.
+1. [Create a Service](expose-services.md) for your app. The service can have an Exposure ingress of type `Cluster` or `Ingress`.
 
 2. Open Prometheus:
 

@@ -4,13 +4,13 @@ title: Custom
 sidebar_label: Custom
 ---
 
-To install APL on any other conformant Kubernetes, use the `custom` provider. Make sure your infrastructure adheres to the following pre-requisites:
+To install on any other conformant Kubernetes, use the `custom` provider. Make sure your infrastructure adheres to the following pre-requisites:
 
 ## Prerequisites
 
 ### Kubernetes versions
 
-APL currently supports the following Kubernetes versions:
+The following Kubernetes versions are currently supported:
 
 - `1.28`
 - `1.29`
@@ -18,11 +18,11 @@ APL currently supports the following Kubernetes versions:
 
 ### Compute resources
 
-APL requires a node pool with at least **12 vCPU** and **24 GB RAM**.
+A node pool with at least **12 vCPU** and **24 GB RAM** is required.
 
 ### Default storage class
 
-The custom provider uses the default storage class. If your cluster has a storage class, make sure it is set to be the default:
+The default storage class will be used. If your cluster has a storage class, make sure it is set to be the default:
 
 ```bash
 kubectl patch storageclass <your-storage-class> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
@@ -43,7 +43,7 @@ app:
 
 ### External IP
 
-APL needs to be able to create a Kubernetes LoadBalancer Service that obtains an external IP. This IP needs to be accessible from within the cluster. Use Metallb for on-prem installations to allow APL to create a LoadBalancer Service:
+During install a Kubernetes LoadBalancer Service is created that obtains an external IP address. This IP address needs to be accessible from within the cluster. Use Metallb for on-prem installations to allow the installer to create a LoadBalancer Service:
 
 ```bash
 # Install Metallb with Helm
@@ -72,7 +72,7 @@ metadata:
 EOF
 ```
 
-APL uses the Nginx Ingress Controller. If the cloud provider requires specific annotations to be set on the `LoadBalancer` Service, add the required annotations to the service in the APL chart values:
+A Nginx Ingress Controller is installed. If the cloud provider requires specific annotations to be set on the `LoadBalancer` Service, add the required annotations to the service in the chart values:
 
 ```yaml
 ingress:
@@ -85,7 +85,7 @@ ingress:
 
 ### CNI
 
-To use the network policies feature in APL, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI or any other CNI that supports Kubernetes network polices.
+To use the network policies feature, make sure to install the [Calico](https://www.tigera.io/project-calico/) CNI or any other CNI that supports Kubernetes network polices.
 
 Install Tigera Operator:
 
@@ -104,7 +104,7 @@ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.3/
 
 ### Metrics Server
 
-APL installs a Metrics Server. If your provider already installed Metrics Server on their managed Kubernetes service, then disable Metrics Server in APL:
+The Metrics Server is installed. If your provider already installed Metrics Server on their managed Kubernetes service, then disable the Metrics Server:
 
 ```yaml
 apps:
@@ -126,15 +126,15 @@ apps:
 
 ### Cluster Autoscaler
 
-APL does NOT install a [Cluster Autoscaler](https://github.com/kubernetes/autoscaler). If your provider does not install a Cluster Autoscaler, install one yourself if required.
+A [Cluster Autoscaler](https://github.com/kubernetes/autoscaler) is NOT installed. If your provider does not install a Cluster Autoscaler, install one yourself if required.
 
 ### DNS
 
-The APL [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported when APL is installed without DNS. Install APL with [DNS](dns.md) to use all APL features.
+The [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported without DNS. Install with [DNS](dns.md) to use all the features.
 
-## Install APL using Helm
+## Install using Helm
 
-To install APL using the `custom` provider, use the following values:
+To install using the `custom` provider, use the following values:
 
 ```bash
 tee values.yaml<<EOF

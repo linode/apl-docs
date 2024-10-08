@@ -10,7 +10,10 @@ sidebar_label: Backup
 To create backups, Object Storage needs to be enabled.
 :::
 
-The Backup section provides the option to enable automatic backups of APL application databases and add a Linode API Token for Velero to make backups of Persistent Volumes.
+The Backup section provides the option to:
+
+- enable automatic backups of application databases
+- add a Linode API Token for Velero to make backups of Persistent Volumes
 
 ### Database Backups
 

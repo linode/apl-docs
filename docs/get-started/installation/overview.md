@@ -8,39 +8,39 @@ sidebar_label: Overview
 
 ---
 
-### [Linode Kubernetes Engine](linode.md)
-Create a Linode Kubernetes Engine cluster and manually install APL.
+### [Linode Kubernetes Engine (LKE)](linode.md)
+Create a LKE cluster and manually install the Application Platform.
 
-### [Linode Cloud Manager - Comming soon](apl.md)
-Provision LKE with APL using Linode Cloud Manager or Linode CLI.
+### [Linode Cloud Manager - Comming soon!](apl.md)
+Provision LKE with the Application Platform using Linode Cloud Manager or Linode CLI.
 
 ### [Custom](custom.md)
-Install APL on any other conformant Kubernetes cluster (like EKS, AKS or GKE).
+Install the Application Platform for LKE on any other conformant Kubernetes cluster.
 
 ---
 
 **Other installation resources**
 
 ### [Helm](helm.md)
-Instructions for using the APL Helm chart.
+Instructions for using the Helm chart.
 
 ---
 
 **Advanced configurations**
 
 ### [Use DNS](dns.md)
-Install APL with DNS.
+Install with DNS.
 
 ### [Use Azure AD as IDP](oidc.md)
-Install APL with Azure Entra ID for OIDC.
+Install with Azure Entra ID for OIDC.
 
-### [Use KMS to manage keys for encryption](sops.md)
-Install APL with SOPS and an external KMS.
+### [Use SOPS for encryption](sops.md)
+Install with SOPS.
 
-### [Configure an entrypoint for an external gateway](entrypoint.md)
-Install APL with an entrypoint for an external gateway.
+### [Use an entrypoint](entrypoint.md)
+Install with an entrypoint for an external gateway.
 
 ### [Bring Your Own Wild Card Certificate](byo-wildcard.md)
-Install APL using a BYO (wild card) certificate.
+Install using a BYO (wild card) certificate.
 
 ---

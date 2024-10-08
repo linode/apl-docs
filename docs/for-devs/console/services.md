@@ -6,9 +6,9 @@ sidebar_label: Services
 
 <!-- ![Console: new service](img/team-services.png) -->
 
-A service in APL is a self-service feature for:
+A Service is a self-service feature for:
 
-- Publicly exposing ClusterIP services. APL will automatically create and configure all ingress resources needed, including Istio Virtual Services and Gateways, certificates, DNS records and the Oauth2 proxy for Single Sign On.
+- Publicly exposing ClusterIP services. All ingress resources needed, including Istio Virtual Services and Gateways, certificates, DNS records and the Oauth2 proxy for Single Sign will be automatically created and configured.
 
 - Configuring Traffic Control to split traffic between 2 deployments using the same service.
 
@@ -91,7 +91,7 @@ Follow the steps below to set up a CNAME when the TLS termination happens on the
 
 2. Generate or copy your domain certificates and store them as a TLS secret in your team's namespace.
 
-3. Go to the service configuration section in the APL Console.
+3. Go to the service configuration section in the Console.
 
 4. Create a new service by selecting the k8s service and port that you want to expose.
 
@@ -107,7 +107,7 @@ Follow the steps below to set up a CNAME when the TLS termination happens on the
 
 1. Configure a CNAME entry with your domain name provider.
 
-2. Go to the service configuration section in the APL Console.
+2. Go to the service configuration section in the Console.
 
 3. Create a new service by selecting the k8s service and port that you want to expose.
 

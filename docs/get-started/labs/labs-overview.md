@@ -4,13 +4,13 @@ title: Labs Overview
 sidebar_label: Labs Overview
 ---
 
-Welcome to the Application Platform for LKE (APL) labs! If you are going to use APL or like to learn Kubernetes, these labs are for you. Step by step we'll guide you in how to build, deploy, secure and observe containerized applications on Kubernetes. The labs cover the most common activities performed by developer- and/or DevOps teams when using Kubernetes with APL.
+Welcome to the Application Platform for LKE labs! If you are going to use the Application Platform for LKE or like to learn Kubernetes, these labs are for you. Step by step we'll guide you in how to build, deploy, secure and observe containerized applications on Kubernetes. The labs cover the most common activities performed by developer- and/or DevOps teams.
 
 ---
 
 **Make sure everything is ready to get started**
 
-### [Provision a LKE Kubernetes cluster and install APL](get-started/installation/linode.md)
+### [Provision a LKE Kubernetes cluster and install the Application Platform](get-started/installation/linode.md)
 
 ### [Lab prerequisites](labs-prerequisites.md)
 

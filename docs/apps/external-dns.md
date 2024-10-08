@@ -6,12 +6,12 @@ sidebar_label: ExternalDNS
 
 ## About
 
-ExternalDNS is required to make public service domains accessible by registering them with APL's front loadbalancer CNAME or IP address. When it is not enabled (default) APL will instead rely on [nip.io](https://nip.io) to create host names for all services.
+ExternalDNS is required to make public service domains accessible by registering them with the loadbalancer IP address. When externalDNS is not enabled, [nip.io](https://nip.io) will be used.
 
 The use of ExternalDNS is a prerequisite for using the following features:
 
 - Harbor private registries for teams.
 
-- The Builds self-service feature in APL Console (relies on Harbor).
+- The Builds self-service feature in the Console (relies on Harbor).
 
-- The Projects self-service feature in APL Console (relies on Harbor).
+- The Projects self-service feature in the Console (relies on Harbor).

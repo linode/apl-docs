@@ -6,11 +6,11 @@ sidebar_label: Teams
 
 <!-- ![Console: Teams](../../img/platform-teams.png) -->
 
-## About Teams in APL
+## About Teams
 
 - Teams are isolated tenants on the platform to support Development/DevOps teams, projects or even DTAP.
 
-- A team will get access to APL Console, providing access to self-service features and all the shared apps available on the platform.
+- A Team will get access to the Console, providing access to self-service features and all the shared apps available on the platform.
 
 - Teams can choose to receive alerts in Microsoft Teams, Slack or email and each team will get access to a project in Harbor.
 
@@ -18,9 +18,9 @@ sidebar_label: Teams
 
 ## Team Admin
 
-By default, APL creates a team called Team Admin. Admins can use this team to expose any service in the team-admin namespace, but also in custom (created by the admin) namespaces.
+By default, a Team called Team Admin is created. Admins can use this team to expose any service in the team-admin namespace, but also in custom (created by the admin) namespaces.
 
-See [Team Services](../../for-devs/console/services.md) for more info about how to create Services in APL and how to configure ingress. The only difference here is that when creating Services in Team Admin, the admin can also select the namespace of the service.
+See [Team Services](../../for-devs/console/services.md) for more info about how to create Services and how to configure ingress. The only difference here is that when creating Services in Team Admin, the admin can also select the namespace of the service.
 
 Another difference between the Team Admin and regular Teams is that Team Admin does not have apps and it is not possible to configure any settings for the team-admin namespace.
 
@@ -74,4 +74,4 @@ A user with the `otomi-admin` and `team-admin` role can delegate permissions to 
 | Access | Shell | Select to grant the team the permission to use the cloud shell |
 | Access | Download kube config | Select to grant the team the permission to download the KubeConfig to get Kube API access to the teams namespace |
 | Access | Download docker config | Select to grant the team the permission to download the Dockerconfig for the teams project in Harbor |
-| Access | Download certificate authority | Select to grant the team the permission to download the CA (only when APL is deployed with a generated CA) |
+| Access | Download certificate authority | Select to grant the team the permission to download the CA (only when installed with a generated CA) |

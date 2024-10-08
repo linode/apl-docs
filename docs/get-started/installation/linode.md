@@ -6,7 +6,7 @@ sidebar_label: Linode Kubernetes Engine
 
 # Install Application Platform for LKE on LKE with Linode DNS
 
-Provision a LKE cluster in Cloud Manager or by using the Linode CLI and manually install Application Platform for LKE (APL) onto it by using a Linode Domain.
+Provision a LKE cluster in Cloud Manager or by using the Linode CLI and manually install Application Platform for LKE onto it by using a Linode Domain.
 
 ## Prerequisites
 
@@ -153,3 +153,15 @@ Follow the post installation steps [here](post-install-steps.md).
 :::tip
 Like to learn how to use Application Platform for LKE? Go through the [Get Started labs](../labs/labs-overview.md)
 :::
+
+## Known issues
+
+### During install Pods get stuck in a Pending state
+
+During the installation, multiple `StatefullSets` are created that require a `PersistentVolumeClaim` (PVC). Each PVC is attached to a `Volume` in Linode. Volumes count towards the account limits. If you see Pods in a `Pending` state, it might be that your're hitting the account limit.
+
+What to do:
+
+- Delete unused resources in your Linode account (like unused Volumes).
+
+- Create a support ticket and request to increase your account limit.

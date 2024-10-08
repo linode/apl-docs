@@ -4,7 +4,7 @@ title: Create Workloads
 sidebar_label: Create Workloads
 ---
 
-In the previous lab we deployed a workload using Argo CD with a BYO manifest and we explored the Catalog. In this lab we'll create a Workload (a Kubernetes Deployment) using the Catalog and the APL Workload self-service feature.
+In the previous lab we deployed a workload using Argo CD with a BYO manifest and we explored the Catalog. In this lab we'll create a Workload (a Kubernetes Deployment) using the Catalog and the Workload self-service feature.
 
 ## Create a Workload using the Catalog
 
@@ -34,7 +34,7 @@ image:
 
 7. Click `Deploy Changes`.
 
-APL will now create all the needed Argo CD resources to deploy your workload. 
+All the needed Argo CD resources to deploy your workload will now be created. 
 
 8. Click on `Workloads` in the left menu. You will now see a list of all Workloads and there status:
 

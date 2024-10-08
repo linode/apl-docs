@@ -8,7 +8,7 @@ sidebar_label: DNS
 
 :::note
 
-DNS settings will only be active when `otomi.hasExternalDNS=true` flag is set during installation. This can also be set after installation in Settings/APL.
+DNS settings will only be active when `otomi.hasExternalDNS=true` flag is set during installation. This can also be set after installation in Settings/General.
 
 :::
 
@@ -28,7 +28,7 @@ Limit the possible target zones by zone id.
 
 The DNS provider used to manage the domain(s).
 
-The followingDNS providers are supported in APL:
+The following DNS providers are supported:
 
 - AWS Route53
 - Azure (Public zones)

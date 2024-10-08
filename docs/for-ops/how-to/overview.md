@@ -18,5 +18,5 @@ sidebar_label: Overview
 
 ### [Create and restore backups](backups.md).
 
-### [Clone APL](clone-apl.md).
+### [Clone the Platform configuration](clone-apl.md).
 

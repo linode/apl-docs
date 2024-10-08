@@ -14,7 +14,7 @@ You can use your certificates for the disaster recovery purpose. Please make sur
 
 While the controller generates its own certificates upon deployment, you also have the option to bring your own certificates. This allows the controller to consume certificates from a secret labeled with `sealedsecrets.bitnami.com/sealed-secrets-key=active`. The Secret should reside in the `sealed-secrets` namespace, which must be the same as the controller's namespace. You can have multiple secrets with this label.
 
-To configure BYO certificates, add the following to the `values.yaml` when installing APL:
+To configure BYO certificates, add the following to the `values.yaml`:
 
 ```yaml
 apps:

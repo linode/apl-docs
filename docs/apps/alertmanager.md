@@ -12,7 +12,7 @@ Alertmanager is configured to use the global values found under settings' [alert
 
 A team may decide to override some or all of them, in order to have alerts sent to their own endpoints. Self-service rights to alerting must be enabled for the team (enabled by default for all teams). Each Team can enable a dedicated alertmanager instance.
 
-APL supports the following receivers:
+The following receivers are supported:
 
 - `Slack`
 - `Microsoft Teams`

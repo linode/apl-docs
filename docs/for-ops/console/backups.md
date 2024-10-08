@@ -17,7 +17,7 @@ Backups of Team PVs can only be created by platform administrators. The back-up 
 :::
 
 
-When Velero is activated, platform admins can create backups of Persistent Volumes (PVs) in Team namespaces using APL Console. When creating backups using APL Console, a Velero `schedule` resource is created that will create the backup at a specified time, defined by a Cron expression.
+When Velero is activated, platform admins can create backups of Persistent Volumes (PVs) in Team namespaces using the Console. When creating backups using the Console, a Velero `schedule` resource is created that will create the backup at a specified time, defined by a Cron expression.
 
 All known Backups on the platform are listed here. Backups can be sorted based on:
 

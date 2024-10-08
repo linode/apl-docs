@@ -31,7 +31,7 @@ The dashboard has 5 elements
 
 ### Inventory
 
-The inventory shows the APL resources within the team. Click on an inventory item to go directly to the full list.
+The inventory shows the resources within the Team. Click on an inventory item to go directly to the full list.
 
 ### Resource Status
 

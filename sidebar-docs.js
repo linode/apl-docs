@@ -51,7 +51,7 @@ module.exports = {
         ],
       },
     ],
-    "For Team Members": [
+    "For Developers": [
       {
         "APL Console - Team View": [
           "for-devs/console/overview",
@@ -88,7 +88,7 @@ module.exports = {
           {
             Settings: [
               "for-ops/console/settings/cluster",
-              "for-ops/console/settings/apl",
+              "for-ops/console/settings/general",
               "for-ops/console/settings/key-management",
               "for-ops/console/settings/alerts",
               "for-ops/console/settings/dns",
@@ -122,7 +122,6 @@ module.exports = {
               "for-ops/cli/apply",
               "for-ops/cli/bash",
               "for-ops/cli/bootstrap",
-              "for-ops/cli/check-policies",
               "for-ops/cli/commit",
               "for-ops/cli/decrypt",
               "for-ops/cli/destroy",

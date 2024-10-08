@@ -4,7 +4,7 @@ title: Create a private Git repo
 sidebar_label: Create GIT repos
 ---
 
-As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like Gitlab, or use Github. But if you don't, APL has you covered. APL includes a complete self-hosted Git solution called Gitea.
+As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like Gitlab, or use Github. But if you don't, you can use the integrated Git service.
 
 As a team member, you can create and manage your own repositories.
 
@@ -20,7 +20,7 @@ In the labs we'll be using a Team called `labs` and a user called `labs-user`.
 
 ## Using a Git client
 
-Gitea in APL only supports HTTPS for Git authentication. To connect to Git using HTTPS you'll first need to add a password to your account in Gitea:
+Gitea only supports HTTPS for Git authentication. To connect to Git using HTTPS you'll first need to add a password to your account in Gitea:
 
 1. Sign in to Gitea using OpenID.
 
@@ -32,7 +32,7 @@ After adding a password, you can now authenticate using your username (labs-user
 
 ## Create the private repository
 
-In the apps section in APL console, you'll see an app called Gitea. Click on it.
+In the apps section in the console, you'll see an app called Gitea. Click on it.
 
 ![kubecfg](../../img/team-app-gitea.png)
 

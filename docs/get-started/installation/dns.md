@@ -4,7 +4,7 @@ title: DNS
 sidebar_label: DNS
 ---
 
-The APL [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported when APL is installed with minimal values. Install APL with DNS to use all APL features.
+The [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported without DNS configured. Install with DNS to use all features.
 
 ## Linode Domains
 
@@ -48,7 +48,7 @@ LINODE_TOKEN="<your-personal-access-token>"
 
 11. Create the values.yaml file
 
-- Add the DNS configuration created in the previous step, the `domainSuffix`, `domainFilters` and `email` to the `values.yaml` that we'll use to install APL:
+- Add the DNS configuration created in the previous step, the `domainSuffix`, `domainFilters` and `email` to the `values.yaml` file:
 
 ```bash
 tee values.yaml<<EOF
@@ -216,7 +216,7 @@ ACCESS_KEY_SECRET=$(echo $ACCESS_KEY | jq -r '.AccessKey.SecretAccessKey')
 
 - Get the API server endpoint. You can find the API server endpoint in the Details section of the cluster in the AWS console.
 
-- Add the DNS configuration created in the previous step, the API server endpoint, the `domainSuffix`, `domainFilters`, `region` and `email` to the `values.yaml` that we'll use to install APL:
+- Add the DNS configuration created in the previous step, the API server endpoint, the `domainSuffix`, `domainFilters`, `region` and `email` to the `values.yaml` file:
 
 ```bash
 tee values.yaml<<EOF
@@ -366,7 +366,7 @@ gcloud iam service-accounts keys create /local/path/to/credentials.json \
   --iam-account $DNS_SA_EMAIL
 ```
 
-5. Get the contents of the `credentials.son`. Note that you don't need to create a Kubernetes secret. The credentials will be directly provided to the APL installer and APL will create the secret.
+5. Get the contents of the `credentials.json`. Note that you don't need to create a Kubernetes secret.
 
 ```bash
 cat /local/path/to/credentials.json

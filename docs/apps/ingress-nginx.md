@@ -6,7 +6,7 @@ sidebar_label: Ingress-nginx
 
 ## About
 
-Ingress NGINX is the default ingress controller in APL and part of the core setup (this means it is not possible use another controller within APL).
+Ingress NGINX is the default ingress controller and part of the core setup.
 
 ### Using the OWASP rule set
 

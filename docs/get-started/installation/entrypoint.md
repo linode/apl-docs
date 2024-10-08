@@ -1,6 +1,6 @@
 ---
 slug: entrypoint
-title: Install APL with an entrypoint
+title: Install with entrypoint
 sidebar_label: Entrypoint
 ---
 
@@ -8,11 +8,11 @@ In some cases, the Kubernetes cluster will de deployed in a private setup where 
 
 ## Use case
 
-When APL is installed on a private Kubernetes cluster and APL services are exposed using a private load balancer, we would like to create host names in APL and configure DNS entries to point to the external gateway.
+When installed on a private Kubernetes cluster and all services are exposed using a private load balancer, we would like to create A records and point them to the IP address of the external gateway instead of the Ip address of the private load balancer.
 
-For this you can use an `entrypoint` in APL. The entrypoint is a public IP address that will override the (load balancer's private) IP used for registering hosts. This allows public access to private clusters through an external gateway.
+For this you can use the `entrypoint`. The entrypoint is a public IP address that will override the (load balancer's private) IP used for registering hosts in DNS. This allows public access to private clusters through an external gateway.
 
-To configure an entrypoint, add the following to the `values.yaml` when installing APL:
+To configure an entrypoint, add the following to the `values.yaml`:
 
 ```yaml
 ingress:
@@ -22,4 +22,4 @@ ingress:
 
 Make sure the external gateway is configured to connect to the IP of the private load balancer used by the `platformClass` ingress controller.
 
-The DNS A records created by APL will now all point to the IP address of the external gateway.
+The DNS A records will now point to the IP address of the external gateway.

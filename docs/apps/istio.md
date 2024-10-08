@@ -6,7 +6,7 @@ sidebar_label: Istio
 
 ## About
 
-Istio is installed by APL to deliver the following capabilities:
+Istio is installed to deliver the following capabilities:
 
 - mTLS enforcement for all traffic that is deemed compromisable.
 

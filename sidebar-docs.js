@@ -8,7 +8,7 @@ module.exports = {
       {
         Installation: [
           "get-started/installation/overview",
-          "get-started/installation/apl",
+          "get-started/installation/akamai-cloud",
           "get-started/installation/linode",
           "get-started/installation/custom",
           "get-started/installation/helm",
@@ -53,7 +53,7 @@ module.exports = {
     ],
     "For Developers": [
       {
-        "APL Console - Team View": [
+        "Console - Team View": [
           "for-devs/console/overview",
           "for-devs/console/deploy-changes",
           "for-devs/console/dashboard",
@@ -73,7 +73,7 @@ module.exports = {
     ],
     "For Platform Admins": [
       {
-        "APL Console - Platform View": [
+        "Console - Platform View": [
           "for-ops/console/overview",
           "for-ops/console/dashboard",
           "for-ops/console/apps",
@@ -113,7 +113,7 @@ module.exports = {
         ],
       },
       {
-        "APL CLI": [
+        "CLI": [
           "for-ops/cli/installation",
           "for-ops/cli/deploying",
           "for-ops/cli/known-issues",

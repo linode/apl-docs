@@ -11,8 +11,8 @@ sidebar_label: Overview
 ### [Linode Kubernetes Engine (LKE)](linode.md)
 Create a LKE cluster and manually install the Application Platform.
 
-### [Linode Cloud Manager - Comming soon!](apl.md)
-Provision LKE with the Application Platform using Linode Cloud Manager or Linode CLI.
+### [Akamai Connected Cloud - Comming soon!](akamai-cloud.md)
+Provision LKE with the Application Platform in Akamai Connected Cloud.
 
 ### [Custom](custom.md)
 Install the Application Platform for LKE on any other conformant Kubernetes cluster.

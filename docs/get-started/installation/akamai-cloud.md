@@ -1,6 +1,6 @@
 ---
 slug: akamai-cloud
-title: Akamai Cloud
+title: Akamai Connected Cloud
 sidebar_label: Akamai Cloud
 ---
 

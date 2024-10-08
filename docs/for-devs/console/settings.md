@@ -9,7 +9,7 @@ Based on self-service options allowed by the platfrom administrator, team member
 ## Configure OIDC group mapping
 
 :::note
-The OIDC group mapping will only be visible when APL is configured with an external Identity Provider (IdP).
+The OIDC group mapping will only be visible when an external Identity Provider (IdP) is used.
 :::
 
 Change the OIDC group-mapping to allow access based on a group membership.
@@ -105,6 +105,6 @@ The self-service flags (what is a team allowed to) can only be configured by an 
 | Shell                  | The team is allowed to use the cloud Shell                                             |
 | Download kube config   | The team is allowed to download the Kube Config                                        |
 | Download docker config | The team is allowed to download the Docker Config                                      |
-| Download certificate authority | The team is allowed to download the certificate authority (only when APL is installed with a auto-generated or custom CA) |
+| Download certificate authority | The team is allowed to download the certificate authority (only when installed with a auto-generated or custom CA) |
 
 

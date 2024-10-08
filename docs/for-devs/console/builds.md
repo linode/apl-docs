@@ -6,7 +6,7 @@ sidebar_label: Builds
 
 <!-- ![Console: new service](img/team-builds.png) -->
 
-A Build in APL is a self-service feature for building OCI compliant images based on application source code and store the image in a private Team registry in Harbor.
+A Build is a self-service feature for building OCI compliant images based on application source code and store the image in a private Team registry in Harbor.
 
 :::info
 Ask your platform administrator to activate the Harbor App to use this feature.
@@ -75,7 +75,7 @@ To see the more status details of the build, click on the `PipelineRun` link of 
 
 ### Configure a webhook for the Git repo in Gitea
 
-1. In APL Console, click on `Apps` in the left menu and then open `Gitea`
+1. In the Console, click on `Apps` in the left menu and then open `Gitea`
 
 2. In the top menu of Gitea, click on `Explore` and then on the `green` repo
 
@@ -89,7 +89,7 @@ To see the more status details of the build, click on the `PipelineRun` link of 
 
 ### Expose the trigger listener publicly
 
-When using an external (private) Git repository, the trigger event listener that is created by APL can also be exposed publicly. To expose the event listener publicly:
+When using an external (private) Git repository, the trigger event listener that is created can also be exposed publicly. To expose the event listener publicly:
 
 1. Go to Services
 

@@ -6,16 +6,16 @@ sidebar_label: Overview
 
 <!-- ![Console apps](img/apps.png) -->
 
-## APL Console
+## Console
 
-APL Console is the web UI of APL and offers access to all integrated apps and self-service features. APL Console has a topbar showing a Team selector. The Team selector allows you to switch between different Teams (if you are a member of different Teams).
+The Console is the web UI of the platform and offers access to all integrated apps and self-service features. The Console has a topbar showing a Team selector. The Team selector allows you to switch between different Teams (if you are a member of different Teams).
 
-The Team view in APL Console gives access to 3 menu sections:
+The Team view in the Console gives access to 3 menu sections:
 
 Deploy section:
 
 - [Deploy Changes](deploy-changes): Commit changes to the configuration repository
-- Revert Changes: Revert your changes made in APL Console
+- Revert Changes: Revert your changes made in the Console
 
 Self-service section:
 
@@ -36,5 +36,5 @@ Download links section:
 
 - A "Download KUBECFG" link to download a KUBECONFIG file that gives access to the namespace of the team selected. Admins can download one with `cluster-admin` permissions (giving access to all namespaces) by setting the team selector to '-'. You can use it like `export KUBECONFIG=$file_location` or by merging it with another KUBECONFIG file like `.kube/config`. Please visit the official Kubernetes [documentation about managing kube contexts](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/).
 - When Harbor is enabled, a link to download the Dockercfg file.
-- When APL uses an automatic generated CA or Let's Encrypt staging certificates, a "Download CA" link is provided.
+- When an automatic generated CA or Let's Encrypt staging certificates are used, a "Download CA" link is provided.
 

@@ -5,7 +5,7 @@ sidebar_label: Builds
 ---
 
 :::info
-To enable this feature, first make sure [Harbor](../../apps/harbor.md) is activated. To push images to Harbor, APL needs to be configured with DNS and trusted certificates (Lets encrypt with production certificates).
+To enable this feature, first make sure [Harbor](../../apps/harbor.md) is activated. To push images to Harbor, DNS and trusted certificates (Lets encrypt with production certificates) need to be configured.
 :::
 
 All known Builds on the platform are listed here. Builds can be sorted based on:

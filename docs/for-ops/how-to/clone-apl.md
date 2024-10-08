@@ -1,10 +1,10 @@
 ---
 slug: clone-apl
-title: Clone APL Instance
-sidebar_label: Clone APL
+title: Clone Platform Instance
+sidebar_label: Clone the Platform
 ---
 
-It may happen that you need to move APL to another Kubernetes cluster. Because APL is a GitOps driven platfrom, you can export the existing setup that can then be used to install a new APL instance.
+It may happen that you need to move the platform configuration to another Kubernetes cluster. Because everyting is GitOps driven, you can export the existing setup that can then be used to install it on a new cluster.
 
 :::info
 This procedure does not cover cloning the persistent volumes from your old cluster.
@@ -12,7 +12,7 @@ This procedure does not cover cloning the persistent volumes from your old clust
 
 ## Prerequisites
 
-- APL version >= `v2.6`
+- Version >= `v2.6`
 
 ## Steps
 
@@ -24,7 +24,7 @@ This procedure does not cover cloning the persistent volumes from your old clust
 
 3. Navigate to the `Maintenance` page in the left menu bar.
 
-4. Click the `Download APL values` link.
+4. Click the `Download Values` link.
 
 5. The values should be in your `Downloads` folder.
 
@@ -32,9 +32,9 @@ This procedure does not cover cloning the persistent volumes from your old clust
 It is advised to keep this file save as it contains passwords and access credentials.
 :::
 
-### Use the values to install a new APL instance
+### Use the values to install a new instance
 
-Depending on your use case, you may need to change some settings from the `values.yaml` file before using it to install a new APL instance. The most common use cases:
+Depending on your use case, you may need to change some settings from the `values.yaml` file before using it to install a new platform instance. The most common use cases:
 
 - Change the `domainSuffix`.
 
@@ -42,7 +42,7 @@ Depending on your use case, you may need to change some settings from the `value
 
 - Change the access credentials to cloud resources.
 
-Once the `values.yaml` file is ready you can use Helm to install APL on to a new Kubernetes cluster:
+Once the `values.yaml` file is ready you can use Helm to install the platform on a new Kubernetes cluster:
 
 ```
 helm install -f values.yaml apl apl/apl

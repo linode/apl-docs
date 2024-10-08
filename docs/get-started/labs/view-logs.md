@@ -8,7 +8,7 @@ sidebar_label: View Container Logs
 Loki needs to be enabled on the platform level and Grafana needs to be enabled for the Team.
 :::
 
-When your application is deployed, you would of course like to be able to see container logs for debugging purposes. Grafana Loki is used in APL for log aggregation. When Loki on the Platform level is enabled, you'll see the Loki app in your Team Apps.
+When your application is deployed, you would of course like to be able to see container logs for debugging purposes. Grafana Loki is used for log aggregation. When Loki on the Platform level is enabled, you'll see the Loki app in your Team Apps.
 
 ## View container logs
 

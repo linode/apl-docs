@@ -24,7 +24,7 @@ When your team is using Harbor for private image registries, you can build image
 
 6. Click `Deploy changes`.
 
-APL will now create a Tekton Pipeline and PipelineRun resource to build the image. This will take around 15-20 seconds. Then the PipelineRun will start building the image. During this time the status will show `in progress`:
+Now a Tekton Pipeline and PipelineRun resource to build the image will be created. This will take around 30 seconds. Then the PipelineRun will start building the image. During this time the status will show `in progress`:
 
 ![build status](../../img/build-status.png)
 
@@ -48,7 +48,7 @@ When the build is ready you can see the image in Harbor:
 
 For this step you need to have the Tekton cli installed. If you don't have the Tekton cli installed, you can install it from this page: [https://tekton.dev/docs/cli/](https://tekton.dev/docs/cli/)
 
-To run the build again using APL Console, follow these steps:
+To run the build again using the Console, follow these steps:
 
 1. Change the tag of the build for example to `v1.0.0`.
 
@@ -58,7 +58,7 @@ To run the build again using APL Console, follow these steps:
 
 To re-build the image using the same tag, restart the build pipeline using the Tekton cli in the Shell:
 
-1. Start a shell in APL Console
+1. Start a shell in the Console
 
 2. Get the name of the pipeline
 

@@ -4,7 +4,7 @@ title: Create a PostgreSQL database
 sidebar_label: Create a Database
 ---
 
-APL by default installs the Cloudnative POstgreSQL database operator. Teams can use the operator and the `postgresql` quick start to create their own PostgreSQL databases.
+The Cloudnative POstgreSQL database operator is installed by default. Teams can use the operator and the `postgresql` quick start to create their own PostgreSQL databases.
 
 ## Create a database
 

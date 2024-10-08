@@ -4,7 +4,7 @@ title: Use SOPS for value encryption
 sidebar_label: SOPS
 ---
 
-If you would like the secrets in the `values` repository to be encrypted, you will have to use [sops](https://github.com/mozilla/sops) that is used by APL for encryption.
+If you would like sensitive information in the `values` repository to be encrypted, you will have to use [sops](https://github.com/mozilla/sops).
 
 ## Use SOPS with an external Key Management Service (KMS)
 
@@ -16,7 +16,7 @@ Find quickstart documentation below on how to setup KMS access per supported pro
 
 Follow the instructions of the provider of your choosing and jot down the credentials obtained for the next steps.
 
-To install APL with SOPS/KMS, use the following values:
+To install with SOPS/KMS, use the following values:
 
 ```yaml
 kms:

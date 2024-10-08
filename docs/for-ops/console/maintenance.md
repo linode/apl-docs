@@ -10,6 +10,6 @@ Maintenance actions available for platform administrators.
 
 The following Maintennace actions are available:
 
-- `Download APL values`: Download all APL values (including secrets) in a single file.
+- `Download Values`: Download all platform values (including secrets) in a single file.
 
-- `Download APL values (secrets redacted)`: Download all APL values without secrets.
+- `Download Values (secrets redacted)`: Download all platform values without secrets.

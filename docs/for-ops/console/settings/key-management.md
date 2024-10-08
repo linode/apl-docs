@@ -6,10 +6,6 @@ sidebar_label: Key Management
 
 ## Key management
 
-The Key management settings section offers configuration options for the used Key Management Service (KMS) information needed to seal and unseal secrets used by APL. APL needs at least one key. It needs one for encrypting/decrypting the `otomi-values` repo.
-
-:::important
-When omitting KMS credentials for SOPS, the secrets in the `otomi-values` repo will be stored in plain text.
-:::
+The Key management settings section offers configuration options for the used Key Management Service (KMS) information needed to seal and unseal sensitive information in the Values repository. At least one key is required. It needs one for encrypting/decrypting the `otomi-values` repo.
 
 It is advised to provide credentials to an external stable KMS, so that unseal keys can always be managed from one central location.

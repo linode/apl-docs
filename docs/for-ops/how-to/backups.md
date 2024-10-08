@@ -4,23 +4,23 @@ title: Create/Restore backups
 sidebar_label: Backups
 ---
 
-When Velero is activated on the platform level, platform admins can create backups of Persistent Volumes (PVs) in Team namespaces using APL Console. When creating backups using APL Console, a Velero `schedule` resource is created that will create the backup at a specified time, defined by a Cron expression.
+When Velero is activated on the platform level, platform admins can create backups of Persistent Volumes (PVs) in Team namespaces using the Console. When creating backups using the Console, a Velero `schedule` resource is created that will create the backup at a specified time, defined by a Cron expression.
 
-In this how-to, we'll create a backup of a PV using APL and then restore it using the velero CLI integrated into the APL Shell.
+In this how-to, we'll create a Backup of a PV and then restore it using the velero CLI integrated into the Shell.
 
 ## Prerequisites
 
-To perform this how-to, first make sure Velero is enabled. Velero requires object storage to be be configured. APL can be configured to use Linode Object Storage or use the local Minio provided by APL. In this how-to we'll use Minio.
+To perform this how-to, first make sure Velero is enabled. Velero requires object storage to be be configured. Linode Object Storage or the local Minio can be used for Object Storage. In this how-to we'll use Minio.
 
-When APL installs Velero, only theVelero plug-in for Linode is configured by default. Velero also has support for backing up and restoring Kubernetes volumes using [Restic](https://velero.io/docs/v1.3.2/restic/#limitations). Note that Restic is not enabled by default.
+When Velero is activated, only the Velero plug-in for Linode is configured by default. Velero also has support for backing up and restoring Kubernetes volumes using [Restic](https://velero.io/docs/v1.3.2/restic/#limitations). Note that Restic is not enabled by default.
 
 For this how-to we'll use the PV of a Team's private Prometheus instance, so make sure Prometheus is also enabled. 
  
-## Create a backup schedule using APL
+## Create a backup schedule
 
 1. Select the Team name in the top bar to set the context to the namespace that contains the PV to backup. In this how-to we'll use the team `demo`.
 
-2. In APL Console, click on `Backup` in the left menu under `Platform` and click on `Create`.
+2. In the Console, click on `Backup` in the left menu under `Platform` and click on `Create`.
 
 3. Enter a name for the backup. In this how-to we'll use the name `prom`.
 
@@ -32,7 +32,7 @@ For this how-to we'll use the PV of a Team's private Prometheus instance, so mak
 If the labelSelector is not used, the backup schedule will backup all PVs of the team.
 :::
 
-- In APL Console, click on `Shell` in the bottom of the left menu.
+- In the Console, click on `Shell` in the bottom of the left menu.
 
 - Run the following cmd in the shell:
 
@@ -55,7 +55,7 @@ value: team-demo
 
 ## Check if the schedule is created
 
-1. In APL Console, click on `Shell` in the bottom of the left menu.
+1. In the Console, click on `Shell` in the bottom of the left menu.
 
 2. Run the following cmd in the shell:
 
@@ -72,7 +72,7 @@ team-demo-backup-prom   Enabled   2023-09-24 11:50:59 +0000 UTC   55 * * * *   1
 ```shell
 velero get backups
 NAME                                   STATUS      ERRORS   WARNINGS   CREATED                         EXPIRES   STORAGE LOCATION   SELECTOR
-team-demo-backup-prom-20230924115514   Completed   0        0          2023-09-24 11:55:14 +0000 UTC   6d        APL              prometheus=team-demo
+team-demo-backup-prom-20230924115514   Completed   0        0          2023-09-24 11:55:14 +0000 UTC   6d        apl                prometheus=team-demo
 ```
 
 You can see the status of the backup is `Completed`. The backup is now stored in the local Minio.
@@ -99,7 +99,7 @@ Run `velero restore describe team-demo-backup-prom-20230924115514-20230924133133
 
 ## Manually create backups
 
-APL only provides a self-service option for administrators to schedule backups of persistent volumes within team namespaces. The shell in APL includes the Velero CLI, so if you're confortable with Velero you can also create you're own custom backups. Check the docs on [https://velero.io/](https://velero.io/) for more information.
+Only platform administrators are able to use the Backup self-service feature to schedule backups of persistent volumes within Team namespaces. The Shell in the Console includes the Velero CLI, so if you're confortable with Velero you can also create you're own custom backups. Check the docs on [https://velero.io/](https://velero.io/) for more information.
 
 This is an example of creating a custom backup:
 

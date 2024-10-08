@@ -18,4 +18,4 @@ Before activating Falco, please first check which [Driver](https://falco.org/doc
 
 If you know which driver should be used, activate Falco, go to the `Values`, add the `Driver` and submit changes. Now `Deploy Changes`.
 
-When Falco is installed, APL will add a set of rules to `white-list` all known behaviour. These rules are added using the Raw Values.  
+When Falco is installed, a set of rules to `white-list` all known behaviour is added. These rules are added using the Raw Values.  

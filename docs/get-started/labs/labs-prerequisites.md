@@ -6,7 +6,7 @@ sidebar_label: Lab Prerequisites
 
 ## Prerequisites
 
-1. APL installed with DNS. See [here](get-started/installation/overview.md).
+1. DNS is configured. See [here](get-started/installation/overview.md).
 
 2. The following applications are enabled:
 

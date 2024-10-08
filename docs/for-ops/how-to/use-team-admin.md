@@ -4,18 +4,18 @@ title: Use team-admin
 sidebar_label: Use Team Admin
 ---
 
-When APL is installed, by default a team called `team-admin` is created. The Admin Team is no regular team. This team for instance has no apps. Instead the admin needs to use the platform apps to see logs and metrics of workloads deployed in the `team-admin` namespace.
+By default a team called `team-admin` is created. The Admin Team is no regular team. This team for instance has no apps. Instead the admin needs to use the platform apps to see logs and metrics of workloads deployed in the `team-admin` namespace.
 
 The Admin Team can be used by admins to:
 
 - Deploy workloads in any namespace
 - Configure ingress for any service in any namespace
 
-This makes it possible for admin to add any kind of tool to the platform and use the Services in APL to expose the UI of the tool and configure SSO.
+This makes it possible for admin to add any kind of tool to the platform and use the Services self-service feature to expose the UI of the tool and configure SSO.
 
 ## Create workloads in any namespace
 
-To create workloads in a namespace not managed by APL (namespaces not owned by teams created in APL), first create a namespace with label `istio-injection: enabled`:
+To create workloads in a custom namespace (namespaces not owned by teams), first create a namespace with label `istio-injection: enabled`:
 
 ```
 kubectl create namespace my-namespace

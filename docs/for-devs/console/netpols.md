@@ -4,7 +4,7 @@ title: Team Network Policies
 sidebar_label: Network Policies
 ---
 
-A Network Policy in APL is a self-service feature for creating Kubernetes Network Policies (Ingress) and Istio Service Entries (Egress).
+A Network Policy is a self-service feature for creating Kubernetes Network Policies (Ingress) and Istio Service Entries (Egress).
 
 When the Network Policies `Ingress control` option is enabled for the team, all traffic to the Pods of the Team (from other Pods within the Team and from Pods in other Teams) will be blocked by default. To allow other Pods to access your Pod you will need to create a Network Policy of type `ingress`.
 

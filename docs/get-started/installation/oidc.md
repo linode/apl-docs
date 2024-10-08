@@ -31,7 +31,7 @@ At the 'Authentication' tab you should be able to set the following callback URL
 - `https://keycloak.<dns-zone-name>/realms/master/broker/otomi-idp/endpoint`
 - `https://keycloak.<dns-zone-name>`
 
-To install APL with Azure Entra ID as an IdP instead of (default) using Keycloak as an IdP, use the following values:
+To use Azure Entra ID as an IdP instead of (default) using Keycloak as an IdP, use the following values:
 
 ```yaml
 oidc:

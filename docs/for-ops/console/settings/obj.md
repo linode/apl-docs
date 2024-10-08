@@ -20,7 +20,7 @@ Select between one of the following Object Storage Providers:
 
 - Disabled (default): No provider is configured. Apps that can use Object Storage will instead be configured to use persistent volumes.
 
-- Minio Local: Use the local self-hosted minio instance in APL. When Minio Local is selected, Minio app also needs to be enabled.
+- Minio Local: Use the local self-hosted Minio instance. When Minio Local is selected, the Minio app also needs to be enabled.
 
 - Linode: Use Linode Object Storage.
 

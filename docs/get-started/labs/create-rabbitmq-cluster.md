@@ -4,7 +4,7 @@ title: Create rabbitMQ Cluster
 sidebar_label: Create RabbitMQ cluster
 ---
 
-In this lab we will create a RabbitMQ Cluster using the APL quick start Rabbitmq Helm charts from the Catalog.
+In this lab we will create a RabbitMQ Cluster using the quick start Rabbitmq Helm chart from the Catalog.
 
 :::info
 For this lab, RabbitMQ Operator needs to be activated.

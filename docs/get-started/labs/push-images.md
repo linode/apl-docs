@@ -10,7 +10,7 @@ For this lab, Harbor needs to be activated and the cluster needs to be configure
 
 ## Login to Harbor
 
-To be able to push images to Harbor, you'll need a robot account with push permissions. APL offers teams with a self-service option to download the Docker config for their team's private registry in Harbor. In the left menu you will see the option `Download DOCKERCFG`. Click on it to download the credentials.
+To be able to push images to Harbor, you'll need a robot account with push permissions. Teams are offered the option to download the Docker config for their team's private registry in Harbor. In the left menu you will see the option `Download DOCKERCFG`. Click on it to download the credentials.
 
 ![harbor-projects](../../img/download-dcfg.png)
 

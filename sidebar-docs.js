@@ -1,7 +1,7 @@
 module.exports = {
   mainSidebar: {
-    "App Platform for LKE": [
-      "apl/introduction",
+    "Akamai Application Platform": [
+      "akamai-app-platform/introduction",
     ],
     "Getting Started": [
       "get-started/overview",
@@ -151,7 +151,7 @@ module.exports = {
       },
       {
         "Integrated Apps": [
-          "apps/apps-overview",
+          "apps/overview",
           "apps/alertmanager",
           "apps/argocd",
           "apps/certmanager",

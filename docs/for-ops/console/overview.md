@@ -17,6 +17,7 @@ The Platform View provides access to:
 - [Dashboard](dashboard.md): A global overview of cluster resource utilization and cluster resource request commitments.
 - [Apps](apps.md): All active and inactive apps. Activate apps clicking on the power-on button.
 - [Teams](teams.md): A list of all Teams.
+- [User Management](usermgnt.md): Manage Users.
 - [Projects](projects.md): A list of all Projects.
 - [Builds](builds.md): A list of all Builds.
 - [Workloads](workloads.md): A list of all Workloads.

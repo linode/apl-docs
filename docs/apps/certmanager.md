@@ -6,7 +6,7 @@ sidebar_label: Cert-Manager
 
 ## About
 
-Cert-Manager is used by to automatically create and rotate wildcard TLS certificates for service endpoints. You may bring your own CA, or otherwise one is created for you. If you bring your own trusted wildcard certificate, then cert-manager will not manage this certificate.
+Cert-Manager is used to automatically create and rotate wildcard TLS certificates for service endpoints. You may bring your own CA, or otherwise one is created for you. If you bring your own trusted wildcard certificate, then cert-manager will not manage this certificate.
 
 :::info
 The wildcard certificate must be valid for the following domain `*.<cluster.domainSuffix>`, where the value of `<cluster.domainSuffix>` comes from the cluster.yaml file.

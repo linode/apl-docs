@@ -4,9 +4,9 @@ title: Team Secrets
 sidebar_label: Sealed Secrets
 ---
 
-Sealed Secrets are encrypted Kubernetes Secrets. The encrypted secrets are stored in the APL Values Git repository. When a Sealed Secrets secret is created in APL Console, the Kubernetes Secret will appear in the Team's namespace and can be used as you would use any secret that you would have created directly.
+Sealed Secrets are encrypted Kubernetes Secrets. The encrypted secrets are stored in the Values Git repository. When a Sealed Secrets secret is created in the Console, the Kubernetes Secret will appear in the Team's namespace and can be used as you would use any secret that you would have created directly.
 
-APL Console supports 7 types of secrets:
+7 types of secrets are supported:
 
 - Opaque
 - Service Account Token

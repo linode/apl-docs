@@ -64,7 +64,6 @@ To find the options available.
 | [`otomi apply`](apply.md)                           | Apply all, or supplied, K8S resources                                                                |
 | [`otomi bash`](bash.md)                             | Run interactive bash shell in otomi-core container                                                   |
 | [`otomi bootstrap`](bootstrap.md)                   | Bootstrap values repo with artifacts corresponding to the cluster's stack version                    |
-| [`otomi check-policies`](check-policies.md)         | Check if generated manifests adhere to defined OPA policies                                          |
 | [`otomi commit`](commit.md)                         | Execute wrapper for generate pipelines -> git commit changed files                                   |
 | [`otomi decrypt [files..]`](decrypt.md)             | Decrypts file(s), given as arguments, or any file matching `secrets.*.yaml` in the values repository |
 | [`otomi destroy`](destroy.md)                       | Destroy all, or supplied, K8S resources                                                              |

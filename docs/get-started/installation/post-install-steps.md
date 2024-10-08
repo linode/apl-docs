@@ -8,7 +8,7 @@ Follow the post-installation steps after initial installation.
 
 ## Step 1: Get the log output of the installer job
 
-When the installer job (in the default namespace) has finished, copy the URL and use the generated password from the bottom of the logs, sign in to the APL Console.
+When the installer job (in the default namespace) has finished, copy the URL and use the generated password from the bottom of the logs, sign in to the Console.
 
 Use the following command to get the logs of the installer job:
 
@@ -18,7 +18,7 @@ kubectl logs jobs/apl -n default -f
 
 ## Step 2 (optional): Add the auto generated CA to your keychain
 
-When APL is installed without DNS, APL automatically generates a CA. The generated CA is not trusted on your local machine. Here are some options to prevent you from clicking away lots of security warning in your browser:
+When installed without DNS, a CA is automatically generated. The generated CA is not trusted on your local machine. Here are some options to prevent you from clicking away lots of security warning in your browser:
 
 1. In the left menu of the console, click on "Download CA"
 2. Double click the downloaded CA.crt or add the CA to your keychain on Mac using the following command:
@@ -94,7 +94,7 @@ To create users in Keycloak, follow these steps:
 Adding the URL of the K8s cluster API is required by teams to be able to download the KUBECONFIG
 :::
 
-1. Under `Platform` in APL Console, click on `Settings`.
+1. Under `Platform` in the Console, click on `Settings`.
 
 2. Click on `Cluster`.
 
@@ -116,7 +116,7 @@ Velero requires Object Storage!
 Creating Database backups requires Object Storage!
 :::
 
-1. Under `Platform` in APL Console, click on `Settings`.
+1. Under `Platform` in the Console, click on `Settings`.
 
 2. Click on `Object Storage`.
 
@@ -151,9 +151,9 @@ To use the self-service feature to create backups of Persistent Volumes in Linod
 
 9. Copy your Personal Access Token.
 
-Then Add the Token to APL:
+Then Add the Token:
 
-1. Sign in to the APL Console as an admin.
+1. Sign in to the Console as an admin.
 
 2. In the left menu, click on Settings.
 
@@ -161,11 +161,11 @@ Then Add the Token to APL:
 
 4. Add the API Token in the `Backup persistent volumes` section.
 
-When Object Storage is configured and an API Token is added, then activate the Velero App. You can now use the Backup self-service feature in APL to create backup schedules to backup Persistent Volumes.
+When Object Storage is configured and an API Token is added, then activate the Velero App. You can now use the Backup self-service feature to create backup schedules to backup Persistent Volumes.
 
 ## Step 7 (Optional): Activate more Apps
 
-APL is a composable platform. Activate more Apps based on the required platform capabilities:
+Application Platform for LKE is a composable platform. Activate more Apps based on the required platform capabilities:
 
 | Capability      | App                                                    | Object storage |
 | --------------- | ------------------------------------------------------ | -------------- |

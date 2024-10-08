@@ -4,7 +4,7 @@ title: BYO Wild card Certificate
 sidebar_label: BYO Wild Card Cert
 ---
 
-When installing APL with DNS, there are 3 `issuers` you can use:
+When installing with DNS, there are 3 `issuers` you can use:
 
 1. custom-ca
 2. letsencrypt
@@ -12,7 +12,7 @@ When installing APL with DNS, there are 3 `issuers` you can use:
 
 In most of the installation examples we use `letsencrypt`. In this example we'll show how to use a Bring Your Own wildcard certificate.
 
-To use a `byo-wildcard-cert`, install APL with the following values:
+To use a `byo-wildcard-cert`, install with the following values:
 
 ```yaml
 cluster:

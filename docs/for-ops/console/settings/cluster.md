@@ -6,7 +6,7 @@ sidebar_label: Cluster
 
 ## Cluster
 
-The Cluster section provides information about the Kubernetes cluster running APL.
+The Cluster section provides information about the Kubernetes cluster.
 
 ### Cluster
 

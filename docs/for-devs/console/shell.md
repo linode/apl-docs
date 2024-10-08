@@ -22,7 +22,7 @@ The Shell provides an easy and efficient way to access and manage Kubernetes res
 
 ## Using the Shell
 
-1. Log in into the APL Console.
+1. Log in into the Console.
 
 2. Click on the "Shell" option in the left menu.
 

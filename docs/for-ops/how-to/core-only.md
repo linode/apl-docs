@@ -1,22 +1,22 @@
 ---
 slug: core-only
-title: Use APL Core only
-sidebar_label: Use APL only
+title: Use Core only
+sidebar_label: Use Core only
 ---
 
-APL by default installs Gitea, Drone, APL API and APL Console. APL Console is the self-service UI and uses APL API to generate validated configuration code. This configuration code is then committed to Gitea (in the `otomi-values` repository), which will trigger the pre-configured Tekton pipeline to apply the changes.
+By default Gitea, Tekton, Argo CD, the platform API and the Console are installed. The Console is the self-service UI and uses the platform API to generate validated configuration code. This configuration code is then committed to Gitea (in the `otomi-values` repository), which will trigger the pre-configured Tekton pipeline to apply the changes.
 
-In some cases you might not want to use APL Console and APL API, but instead install and manage configuration of the platform using a custom pipeline. Possible use-cases for this scenario are:
+In some cases you might not want to use the Console and the platform API, but instead install and manage configuration of the platform using a custom pipeline. Possible use-cases for this scenario are:
 
 - Pushing configuration changes to multiple clusters at the same time (edge use-case).
 
-- Not allowing configuration changes be made by developers.
+- Not allowing configuration changes to be made by developers.
 
-- Only using the open source [APL-core](https://github.com/linode/apl-core) project.
+- Only using the open source [apl-core](https://github.com/linode/apl-core) project.
 
 ## Example
 
-The example APL Helm chart values below shows how to install APL with A team with 2 workloads and 2 services:
+The example Helm chart values below shows how to install the platform with a team, 2 workloads and 2 services:
 
 ```yaml
 cluster:
@@ -63,12 +63,12 @@ teamConfig:
         path: ksvc
         revision: v1.0.1
         selectedChart: ksvc
-        url: https://github.com/redkubes/APL-charts.git
+        url: https://github.com/redkubes/apl-charts.git
       - name: api
         path: deployment
         revision: v1.0.1
         selectedChart: deployment
-        url: https://github.com/redkubes/APL-charts.git
+        url: https://github.com/redkubes/apl-charts.git
 files:
   env/teams/workloads/demo/front-end.yaml: |
     values: |
@@ -108,30 +108,30 @@ files:
 
 You can now make changes in this configuration and apply them directly to the cluster:
 
-1. Install APL using your custom values:
+1. Install using your custom values:
 
 ```
 helm install -f values.yaml apl apl/apl
 ```
 
-After APL has been installed with these values, APL will install and configure:
+After installation:
 
-- All required ingress resources.
+- All required ingress resources will be created.
 
-- Istio (including the virtual services for public exposed services with HTTP response headers).
+- Istio (including the virtual services for public exposed services with HTTP response headers) will be installed and configured.
 
 - Network policies.
 
-- Argo CD and Argo CD application sets to automatically deploy the front-end and api workloads.
+- Argo CD and Argo CD applications and application sets are created to deploy the front-end and api workloads.
 
 2. Change the values
 
-You can extend the values with all APL supported configuration.
+You can extend the values with all supported configuration options.
 
-3. Uninstall the APL release:
+3. Uninstall the release:
 
 ```
-helm uninstall APL --no-hooks
+helm uninstall apl --no-hooks
 ```
 
 3. Re-install the chart with the adjusted values:

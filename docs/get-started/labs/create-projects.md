@@ -4,7 +4,7 @@ title: Create projects
 sidebar_label: Create Projects
 ---
 
-A Project in APL is a collection of a Build, a Workload and a Service. The benefit of using Projects is that you can create a Build, a Workload and a Service in one run. Projects are ideal for developers to run multiple code branches next to each other and automatically update the deployment based on a push. In this lab we are going to create a Project and see how everything now comes together is one simple form.
+A Project is a collection of a Build, a Workload and a Service. The benefit of using Projects is that you can create a Build, a Workload and a Service in one run. Projects are ideal for developers to run multiple code branches next to each other and automatically update the deployment based on a push. In this lab we are going to create a Project and see how everything now comes together is one simple form.
 
 ## Create a new Git repository
 
@@ -57,11 +57,11 @@ git push --mirror https://gitea.<your-domain>/<your-user-name>/nodejs-helloworld
 
 Before we can configure the webhook for the `nodejs-helloworld` repo in Gitea, we will need the webhook URL. You can find this webhook URL for your build in the list of Builds. Add the webhook URL to your clipboard.
 
-Also notice that the status of the Build shows an exclamation mark. This is because APL created the Pipeline, but the PipelineRun is not yet created because it was not triggered yet.
+Also notice that the status of the Build shows an exclamation mark. This is because the Tekton Pipeline is created, but the PipelineRun is not yet created because it was not triggered yet.
 
 ## Create a Webhook
 
-1. In APL Console, click on `apps` the left menu and then open `Gitea`.
+1. In the Console, click on `apps` the left menu and then open `Gitea`.
 
 2. In the top menu of Gitea, click on `Explore` and then on the `nodejs-helloworld` repo.
 

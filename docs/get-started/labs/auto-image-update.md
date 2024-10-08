@@ -4,10 +4,10 @@ title: Configure auto image updater
 sidebar_label: Configure Auto Image Updater
 ---
 
-When using the Workload feature in APL to deploy Helm charts from the Developer Catalog, then you can also use the `Auto image updater` feature to to automatically update the container images of Kubernetes workloads.
+When using the Workload feature to deploy Helm charts from the Catalog, then you can also use the `Auto image updater` feature to to automatically update the container images of Kubernetes workloads.
 
 :::info
-APL only supports the image update feature in combination with a Helm chart stored in the Catalog.
+The image update feature is only supported in combination with a Helm chart stored in the Catalog.
 :::
 
 ## Create a Workload with auto image updater

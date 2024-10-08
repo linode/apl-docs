@@ -4,9 +4,9 @@ title: Trigger Builds
 sidebar_label: Trigger Builds
 ---
 
-In the previous lab we created a build in APL using the `blue` repo in Gitea. In this lab we'll create a build for the `green` repo and trigger the build based on a webhook.
+In the previous lab we created a Build using the `blue` repo in Gitea. In this lab we'll create a build for the `green` repo and trigger the build based on a webhook.
 
-## Create a build in APL with Trigger enabled
+## Create a Build with Trigger enabled
 
 1. In the left menu, click on `Builds`.
 
@@ -28,11 +28,11 @@ Before we can configure the webhook for the `green` repo in Gitea, we will need 
 
 ![trigger build](../../img/trigger-builds.png)
 
-Also notice that the status of the Build shows an exclamation mark. This is because APL created the Pipeline, but the PipelineRun is not yet created because it was not triggered yet.
+Also notice that the status of the Build shows an exclamation mark. This is because the Pipeline is created, but the PipelineRun is not yet created because it was not triggered yet.
 
 ## Create a Webhook
 
-1. In APL Console, click on `apps` the left menu and then open `Gitea`.
+1. In the Console, click on `apps` the left menu and then open `Gitea`.
 
 2. In the top menu of Gitea, click on `Explore` and then on the `green` repo.
 
@@ -58,7 +58,7 @@ You can now trigger the build by doing a commit in the `green` repo, or by testi
 
 The build should now have started. Based on the webhook, Tekton has now created a `PipelineRun`. Let's check the status of the PipelineRun:
 
-1. In APL Console, click on `Builds`
+1. In the Console, click on `Builds`
 
 Because the Build was triggered, a PipelineRun is now running and the status of the Build will show `in progress`:
 
@@ -70,7 +70,7 @@ When the Build is completed, the status will show `healthy`:
 
 2. In the list of Builds, click on the `PipelineRun` link of the `green` build.
 
-3. Tekton Dashboard will open and show a list of all the PipelineRuns. It will show all PipelineRuns because when using a Trigger, the PipelineRun resource is created based on a template and APL will not know the exact name of the PipelineRun because the name is automatically generated.
+3. Tekton Dashboard will open and show a list of all the PipelineRuns. It will show all PipelineRuns because when using a Trigger, the PipelineRun resource is created based on a template and the Console will not know the exact name of the PipelineRun because the name is automatically generated.
 
 4. Click on the PipelineRun with the name `docker-trigger-build-green-*`.
 

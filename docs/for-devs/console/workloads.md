@@ -6,7 +6,7 @@ sidebar_label: Workloads
 
 <!-- ![Console: new service](img/team-services.png) -->
 
-A Workload in APL is a self-service feature for creating Kubernetes resources using Helm charts from the Catalog.
+A Workload is a self-service feature for creating Kubernetes resources using Helm charts from the Catalog.
 
 ## Workloads (all)
 
@@ -57,6 +57,6 @@ image:
 
 Now click on `Deploy Changes`
 
-After a few minutes, APL will have created all the needed Argo CD resources (one `applicationSet` per Workload) to deploy your workload. In the workloads list, click on the `Application` link of your workload to see the status of your workload.
+After a few minutes, all the needed Argo CD resources (one `applicationSet` per Workload) to deploy your workload will be created. In the workloads list, click on the `Application` link of your workload to see the status of your workload.
 
 The values of a workload can be changed at any time. Changes will automatically be deployed.

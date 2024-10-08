@@ -4,7 +4,7 @@ title: Configuring network policies
 sidebar_label: Create Network Policies
 ---
 
-In some cases you want to explicitly allow access to your application. This can be done by creating network policies. APL supports 2 types of network policies:
+In some cases you want to explicitly allow access to your application. This can be done by creating network policies. 2 types of network policies are supported:
 
 1. Policies for ingress traffic inside the cluster.
 
@@ -23,12 +23,12 @@ The internal ingress network policies allow you to:
 `Deny all` and `Allow all` we don't need to explain right?
 
 :::info
-The Ingress Network Policies in APL rely on Pod labels. We require that a single label covers Pods for a given workload. We recommend to use the `otomi.io/app: <workload-name>` label.
+The Ingress Network Policies rely on Pod labels. We require that a single label covers Pods for a given workload. We recommend to use the `otomi.io/app: <workload-name>` label.
 :::
 
 To allow other Workloads in the cluster to access your Workload's Pods, follow these steps:
 
-1. Navigate to the `Network Policies` page in the APL Console and click `Create Netpol`.
+1. Navigate to the `Network Policies` page in the Console and click `Create Netpol`.
 
 2. Name the network policy and select the `ingress` rule type.
 
@@ -50,7 +50,7 @@ The egress network policies allow you to:
 
 To allow your Workload's Pods to access external FQDNs or IPs, follow these steps:
 
-1. Navigate to the `Network Policies` page in the APL Console and click `Create Netpol`.
+1. Navigate to the `Network Policies` page in the Console and click `Create Netpol`.
 
 2. Name the network policy and select the `egress` rule type.
 
@@ -66,7 +66,7 @@ The egress rules are namespace wide. You cannot bind an egress policy to one Wor
 
 ### Build Images for the Application
 
-Build the `Vote`, `Worker` and `Result` images from this [repo](https://github.com/linode/apl-example-app). Use the Build feature in APL to build the images with `mode: Docker`. Set the `path` to `./vote/Dockerfile` for the Vote image (and `./worker/Dockerfile` for the Worker and `./result/Dockerfile` for Result).
+Build the `Vote`, `Worker` and `Result` images from this [repo](https://github.com/linode/apl-example-app). Use the Build feature to build the images with `mode: Docker`. Set the `path` to `./vote/Dockerfile` for the Vote image (and `./worker/Dockerfile` for the Worker and `./result/Dockerfile` for Result).
 
 ### Create a Redis Cluster and a PostgreSQL Database
 
@@ -198,7 +198,7 @@ env:
 
 ### Register the Network Policy for apl-docs.net
 
-1. Navigate to the `Network Policies` page in the APL Console and click `Create Netpol`.
+1. Navigate to the `Network Policies` page in the Console and click `Create Netpol`.
 
 2. Name the network policy `apl-docs` and select the `egress` rule type.
 

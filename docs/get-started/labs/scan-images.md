@@ -14,7 +14,7 @@ To automatically scan images for vulnerabilities, `Automatically scan images on 
 
 When your Team is using Harbor for private image registries, you can use Trivy to automatically scan your images on push. When `Automatically scan images on push` is enabled by the platform administrator, you can see the results of the scans by following these steps:
 
-- In the apps section in APL console, click on Harbor.
+- In the apps section in the console, click on Harbor.
 
 - Click on your project. You will only see the projects of the Teams that you are a member of.
 

@@ -4,13 +4,13 @@ title: Using Argo CD
 sidebar_label: Using Argo CD
 ---
 
-Creating Kubernetes resources using `kubectl apply -f` can be inefficient. As a developer, managing resources based on code stored in Git enhances control and traceability. APL integrates with Argo CD to provide a seamless GitOps experience, streamlining your deployment process.
+Creating Kubernetes resources using `kubectl apply -f` can be inefficient. As a developer, managing resources based on code stored in Git enhances control and traceability. Argo CD is integrated to provide a seamless GitOps experience, streamlining your deployment process.
 
 ## Create Kubernetes resources with Argo CD
 
-Start by navigating to the apps section in the APL console, where you will find an app named Argo CD. Click on it to proceed.
+Start by navigating to the apps section in the Console, where you will find an app named Argo CD. Click on it to proceed.
 
-![Argo CD App in APL Console](../../img/team-app-argo.png)
+![Argo CD App in the Console](../../img/team-app-argo.png)
 
 In Argo CD, notice that an application specific to your team has already been set up. This application syncs with any manifest present in the Gitea repository designated for your team.
 
@@ -18,9 +18,9 @@ In Argo CD, notice that an application specific to your team has already been se
 
 After clicking on the app and selecting `APP DETAILS`, you'll find the `REPO URL`.
 
-Return to the APL console, select the Gitea app in the apps section. In Gitea you will see a repository titled `otomi/team-<name>-argocd`.
+Return to the Console, select the Gitea app in the apps section. In Gitea you will see a repository titled `otomi/team-<name>-argocd`.
 
-![Gitea Repository for Argo CD in APL](../../img/argo-team-repo.png)
+![Gitea Repository for Argo CD](../../img/argo-team-repo.png)
 
 ## See the Power of Argo CD in action
 

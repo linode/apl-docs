@@ -4,7 +4,7 @@ title: Publicly expose workloads
 sidebar_label: Expose Services
 ---
 
-When you have deployed your application using the Workloads feature, you will probably like to expose it publicly. In this lab we'll create a Service in APL to expose your application publicly. When you create a Service, APL will create the Istio virtual service and configure ingress for your application.
+When you have deployed your application using the Workloads feature, you will probably like to expose it publicly. In this lab we'll create a Service to publicly expose your application. When you create a Service, the Istio virtual service and and ingress resource for your application will be created automatically.
 
 ## Create a Service
 

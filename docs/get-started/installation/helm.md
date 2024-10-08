@@ -4,16 +4,16 @@ title: Helm
 sidebar_label: Helm
 ---
 
-# Install APL with Helm
+# Install with Helm
 
 ## Install client binaries
 
-When installing APL using the Helm chart, make sure the following client binaries exist:
+When installing using the Helm chart, make sure the following client binaries exist:
 
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to access the cluster
-- [Helm](https://helm.sh/docs/intro/install/) for Helm chart installation of APL
+- [Helm](https://helm.sh/docs/intro/install/) for Helm chart installation
 
-## Add the APL repository
+## Add the repository
 
 ```bash
 helm repo add apl https://linode.github.io/apl-core
@@ -25,7 +25,7 @@ See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 ## Minimal values
 
 :::info
-The APL [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features and using Harbor for private registries is NOT supported when APL is installed with minimal configuration. Install APL with DNS to use all APL features.
+The [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported without DNS configured. Install with DNS to use all features.
 :::
 
 ```yaml
@@ -75,7 +75,7 @@ When the chart is installed, follow the [post installation steps](post-install-s
 
 ## Installing from source
 
-As an alternative, you can also clone the apl-core source code from the [Github](https://github.com/linode/apl-core) and install APL using the chart source code.
+As an alternative, you can also clone the `apl-core` source code from the [Github](https://github.com/linode/apl-core) and install using the chart source code.
 
 ### Download source
 

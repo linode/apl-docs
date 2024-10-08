@@ -8,7 +8,7 @@ sidebar_label: Harbor
 
 Harbor is an open-source registry that secures artifacts with policies and role-based access control, ensures images are scanned and free from vulnerabilities, and signs images as trusted. Harbor delivers compliance, performance, and interoperability to help you consistently and securely manage artifacts across cloud-native compute platforms like Kubernetes. (source: https://goharbor.io/)
 
-APL automates the following Harbor maintanace tasks:
+The following Harbor maintenance tasks are automated:
 
 - Creating a project in Harbor for each team.
 

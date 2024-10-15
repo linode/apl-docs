@@ -56,7 +56,7 @@ Welcome to the Application Platform for LKE labs! If you are going to use the Ap
 
 ### [Scan images for vulnerabilities](scan-images.md)
 
-### [Scan your running containers for vulnerabilities](scan-containers.md)
+### [Scan running containers for vulnerabilities](scan-containers.md)
 
 ---
 
@@ -68,11 +68,7 @@ Welcome to the Application Platform for LKE labs! If you are going to use the Ap
 
 ### [Using custom metrics](custom-metrics.md)
 
-### [Create custom dashboards](custom-dashboards.md)
-
-### [Create custom rules](custom-rules.md)
-
-### [Monitoring availability of Workloads](monitor-workloads.md)
+### [Monitoring availability of Services](monitor-services.md)
 
 ---
 

@@ -8,19 +8,27 @@ sidebar_label: Lab Prerequisites
 
 1. DNS is configured. See [here](get-started/installation/overview.md).
 
-2. The following applications are enabled:
+2. Platform Applications that are required for the following labs are enabled:
 
-- Harbor
-- Prometheus
-- Loki
-- Grafana
-- Trivy Operator
+| Lab  | App   |
+| ---- | ----- |
+| Build images | Harbor |
+| Trigger builds | Harbor |
+| Push images to harbor | Harbor |
+| Scan running containers for vulnerabilities | Prometheus, Grafana, Trivy Operator |
+| View container logs | Loki |
+| View container metrics | Prometheus |
+| Using custom metrics | Prometheus |
+| Monitoring availability of Workloads | Prometheus |
+| Tracing with Open Telemetry | Loki, Otel, Tempo |
+| Create a RabbitMQ cluster | RabbitMQ |
 
-For the [Using OpenTelemery](use-otel.md) Lab, the Tempo app needs to be enabled together with tracing configured in the `Istio` and `Nginx Ingress` apps.
 
-3. A team called `labs` is created with `Grafana`, `Prometheus` and `Alertmanager` activated.
+For the [Tracing with Open Telemetry](use-otel.md) Lab, tracing meeds to be configured in the `Istio` and `Nginx Ingress` apps.
 
-4. A user account is created and added to the `labs` team group in Keycloak. In the labs we'll be using the user `labs-user`.
+3. A team called `labs` is created with `Alertmanager` activated.
+
+4. A user account is created and added to the `labs` Team. In the labs we'll be using the user `labs-user`.
 
 ## Sign in to the Console
 
@@ -30,4 +38,4 @@ For the [Using OpenTelemery](use-otel.md) Lab, the Tempo app needs to be enabled
 
 After sign in, you will see this page:
 
-![Team apps](../../img/team-dashboard.png)
+![Team dashboard](../../img/team-dashboard.png)

@@ -16,36 +16,16 @@ This documentation was written for SOPS that is using Age Encryption. Please che
 
 ### Steps
 
-1. Install [Age](https://github.com/FiloSottile/age/):
-
-```bash
-brew install age
-```
-
-2. Verify Age Versions:
-
-```bash
-age --version
-age-keygen --version
-```
-
-3. Install [Dependencies](https://github.com/linode/apl-core/blob/main/bin/install-deps.sh):
-
-```bash
-helm plugin install https://github.com/databus23/helm-diff.git
-helm plugin install https://github.com/jkroepke/helm-secrets.git --version v3.15.0
-```
-
-4. Create a values folder:
+1. Create a values folder:
 
 ```bash
 mkdir -p values-folder ~/workspace
 ```
 
-5. Clone the values repo from Gitea:
+2. Clone the values repo from Gitea:
 
 :::info
-Don't forget to set GIT_SSL_NO_VERIFY!
+In case your TLS certificate is not trusted, set GIT_SSL_NO_VERIFY to clone the git repository.
 ```bash
 export GIT_SSL_NO_VERIFY=true
 ```
@@ -55,7 +35,7 @@ export GIT_SSL_NO_VERIFY=true
 git clone gitea.<cluster.domainSuffix>/otomi/values.git ~/workspace/values-folder
 ```
 
-6. Copy SOPS_AGE_KEY secret:
+3. Copy SOPS_AGE_KEY secret:
 
 - Copy the `SOPS_AGE_KEY` secret, which is the private key for Age, from the cluster. It is located in the `otomi-pipelines` namespace in the `otomi-sops-secrets`, or in the `otomi` namespace in the `otomi-api` secret.
 
@@ -68,7 +48,7 @@ SOPS_AGE_KEY=AGE-SECRET-KEY-1XXX
 ```
 :::
 
-7. Export ENV_DIR:
+4. Export ENV_DIR:
 
 Export `ENV_DIR` in the core repository to use `otomi-cli`.
 
@@ -76,26 +56,26 @@ Export `ENV_DIR` in the core repository to use `otomi-cli`.
 export ENV_DIR=~/workspace/values-folder
 ```
 
-8. Use `otomi-cli`:
+5. Use `otomi-cli`:
 
 The local development environment is now ready to use [otomi-cli](/docs/for-ops/cli/installation) commands.
 
 ## Age keys rotation
 
 :::info
-Please follow the local development guidelines and be prepared to use `otomi-cli`.
+Please follow the local development setup steps above and be prepared to use `otomi-cli`.
 :::
 
 ### Steps
 
-1. Decrypt values with old key and credentials:
+1. Decrypt files with old key and credentials:
 
 ```bash
-otomi decrypt
+docker run -it -v $ENV_DIR:/home/app/stack/env linode/apl-core binzx/otomi decrypt
 ```
 
 :::info
-The decrypted versions of the values can be seen in the `.dec` files.
+The decrypted files have `.dec` extension.
 :::
 
 2. Change the following files
@@ -114,10 +94,10 @@ This way we enforce encryption of all secret files.
 cd ~/workspace/values-folder && find . -name '*.dec' -type f  -exec touch {} \;
 ```
 
-4. Encrypt the values:
+4. Encrypt the `*.dec` files:
 
 ```bash
-otomi encrypt
+docker run -it -v $ENV_DIR:/home/app/stack/env linode/apl-core binzx/otomi encrypt
 ```
 
 5. Update the secrets in the cluster.

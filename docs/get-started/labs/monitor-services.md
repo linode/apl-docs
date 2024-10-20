@@ -4,9 +4,9 @@ title: Monitoring service availability
 sidebar_label: Monitor Services
 ---
 
-When your application is deployed and exposed, you probably would like to get an alert when your application (service) is not available anymore. To automatically monitor you applications for availability, a prope to monitor your service is automatically configured.
+When your application is deployed and exposed, you probably would like to get an alert when your application (service) is not available anymore. To automatically monitor you applications for availability, a probe to monitor your service is automatically configured.
 
-In this lab we'll scale down the replica's of a workload to see how this works.
+In this lab we'll scale down the replicas of a workload to see how this works.
 
 ## Check alerts in Alertmanager
 
@@ -18,7 +18,7 @@ In this lab we'll scale down the replica's of a workload to see how this works.
 
 ![alertmanager](../../img/alertmanager-no-alerts.png)
 
-## Scale down the replica's of a Workload
+## Scale down the replicas of a Workload
 
 In the lab [Expose Services](expose-services) we exposed the `blue` service. Let's scale down the `blue` Workload and see what happens:
 

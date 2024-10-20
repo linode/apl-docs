@@ -48,11 +48,11 @@ serviceMonitor:
       path: /q/metrics
 ```
 
-5. Click `Submit` and then `Deploy Changes`
+5. Click `Submit` and then `Deploy Changes`.
 
 Our metrics will now be scraped by the Platform Prometheus. Before we continue, let's first generate some load:
 
-1. Go to the [Expose services](expose-services.md) lab and expose the `custom-metrics` service
+1. Expose the `custom-metrics` service (see lab [Expose services](expose-services.md)).
 
 2. Run the following command in your terminal:
 

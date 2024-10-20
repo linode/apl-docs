@@ -16,7 +16,7 @@ sidebar_label: Lab Prerequisites
 | Trigger builds | Harbor |
 | Push images to harbor | Harbor |
 | Scan running containers for vulnerabilities | Prometheus, Grafana, Trivy Operator |
-| View container logs | Loki |
+| View container logs | Loki, Grafana |
 | View container metrics | Prometheus |
 | Using custom metrics | Prometheus |
 | Monitoring availability of Workloads | Prometheus |
@@ -24,7 +24,7 @@ sidebar_label: Lab Prerequisites
 | Create a RabbitMQ cluster | RabbitMQ |
 
 
-For the [Tracing with Open Telemetry](use-otel.md) Lab, tracing meeds to be configured in the `Istio` and `Nginx Ingress` apps.
+For the [Tracing with Open Telemetry](use-otel.md) Lab, tracing needs to be configured in the `Istio` and `Nginx Ingress` apps.
 
 3. A team called `labs` is created with `Alertmanager` activated.
 

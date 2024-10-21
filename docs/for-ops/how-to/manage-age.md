@@ -25,7 +25,7 @@ mkdir -p values-folder ~/workspace
 2. Clone the values repo from Gitea:
 
 :::info
-In case your TLS certificate is not trusted, set GIT_SSL_NO_VERIFY to clone the git repository.
+In case your TLS certificate is not trusted, set GIT_SSL_NO_VERIFY to clone the git repository:
 ```bash
 export GIT_SSL_NO_VERIFY=true
 ```
@@ -68,14 +68,14 @@ Please follow the local development setup steps above and be prepared to use `ot
 
 ### Steps
 
-1. Decrypt files with old key and credentials:
+1. Decrypt files with the old key and credentials:
 
 ```bash
 docker run -it -v $ENV_DIR:/home/app/stack/env linode/apl-core binzx/otomi decrypt
 ```
 
 :::info
-The decrypted files have `.dec` extension.
+The decrypted files have the `.dec` extension.
 :::
 
 2. Change the following files

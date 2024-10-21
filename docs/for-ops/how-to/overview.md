@@ -20,3 +20,5 @@ sidebar_label: Overview
 
 ### [Clone the Platform configuration](clone-apl.md).
 
+### [Manage Age for Development, Security, and Recovery](manage-age.md).
+

@@ -8,17 +8,15 @@ To install on any other conformant Kubernetes, use the `custom` provider. Make s
 
 ## Prerequisites
 
-### Kubernetes versions
+### Kubernetes
 
-The following Kubernetes versions are currently supported:
+Have a Kubernetes cluster running with one of the following Kubernetes versions:
 
-- `1.28`
 - `1.29`
 - `1.30`
+- `1.31`
 
-### Compute resources
-
-A node pool with at least **12 vCPU** and **24 GB RAM** is required.
+and a node pool with at least **12 vCPU** and **24 GB RAM**.
 
 ### Default storage class
 
@@ -130,11 +128,11 @@ A [Cluster Autoscaler](https://github.com/kubernetes/autoscaler) is NOT installe
 
 ### DNS
 
-The [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported without DNS. Install with [DNS](dns.md) to use all the features.
+Access to a DNS zone. See the [DNS](dns.md) section for more information. The `custom` provider can be used in combination with any [DNS](dns.md) provider.
 
 ## Install using Helm
 
-To install using the `custom` provider, use the following values:
+1. Create a `values.yaml`:
 
 ```bash
 tee values.yaml<<EOF
@@ -147,7 +145,25 @@ apps:
     extraArgs:
       kubelet-insecure-tls: true
       kubelet-preferred-address-types: InternalIP
+# dns is required!
+dns:
+  domainFilters: 
+    - <your-domain>
+  provider:
+    linode:
+      apiToken: $LINODE_TOKEN
 EOF
 ```
 
-The `custom` provider can be used in combination with any [DNS](dns.md) provider.
+2. Add the repository:
+
+```bash
+helm repo add apl https://linode.github.io/apl-core
+helm repo update
+```
+
+3. Install the Helm chart:
+
+```bash
+helm install -f values.yaml apl apl/apl
+```

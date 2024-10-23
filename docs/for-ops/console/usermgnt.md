@@ -9,26 +9,26 @@ User Management will only be available when Keycloak is configured as the Identi
 :::
 
 :::info
-User Management can only be used to manage the users of the Platform instance (single cluster).
+User Management can only be used to manage the users of the platform instance (single cluster).
 :::
 
 ## About User Management
 
 What you need to know about the User Management feature:
 
-- Only platform admins can create or delete users in the platform view.
-- A Platform admin can assign users the role of Platform Admin, Team Admin or Team Member.
-- Users can be created without assigning them to a Team.
-- Team admins can assign users the role of Team Member of the Team they administer.
-- Team admins can not remove themselves from Teams they administer (this can only be done by the Platform Admin).
-- Team admins can not remove other Team Admins from their teams (this can only be done by the Platform Admin).
-- Team admins can not add Platform Admins to their Teams.
+- Only Platform admins can create or delete users in the platform view.
+- A Platform admins can assign users the role of `platform admin`, `Team admin` or `Team member`.
+- Users can be created without assigning them directly to a Team.
+- Team admins can assign users the role of Team member of the Team they administer.
+- Team admins can not remove themselves from Teams they administer (this can only be done by the platform admin).
+- Team admins can not remove other Team admins from their teams (this can only be done by the platform admin).
+- Team admins can not add Platform admins to their Teams.
 - Team members are not able to see the User Management section in the menu.
-- Users are stored encrypted in the `otomi-values` repository `env/secrets.users.yaml` file.
-- The initial login credentials of a new user can be copied from the platform view user management page by platform admins only.
+- Users are stored encrypted in the `values` repository `env/secrets.users.yaml` file.
+- The initial login credentials of a new User can be copied from the platform view user management page by Platform admins only.
 - Users’ passwords are not stored in the values repo (except initial password).
-- A password reset can only be performed by a Platform Administrator.
-- User management follows the Single Source of Truth principle by referencing the `env/secrets.users.yaml` file in the `otomi-values` repository. If a new user is created directly in Keycloak, this user will be deleted at the next commit.
+- A password reset can only be performed by a Platform admin. Password restest need to be done in the Keycloak app using the `otomi-admin` credentials. As an alternative Platform admin can also re-create a user.
+- The User management feature follows the Single Source of Truth principle by referencing the `env/secrets.users.yaml` file in the `values` repository. If a new user is created directly in Keycloak, this user will be deleted at the next commit.
 - Kubernetes secrets are used to pass user data between Pods, but there is a limit for user-defined variables. The maximum size of a user-defined environment variable is 32,767 characters. This limits the amount of users that can be created to around 200.
 
 ## Creating Users
@@ -43,8 +43,8 @@ What you need to know about the User Management feature:
 
 5. Add the new user to the required groups:
 
-- Select `Is platform admin` to add the user to the `platform administrators` group.
-- Select `Is team admin` to add the user to the `team administrators` group. When the user becomes a Team admin, optionally also select the Teams the user is going to administer.
+- Select `Is platform admin` to add the user to the `Platform Administrators` group.
+- Select `Is team admin` to add the user to the `Team Administrators` group. When the user becomes a Team admin, optionally also select the Teams the user is going to administer.
 - Select a `Team` to add the user to the `team members` group.
 
 6. Click `Submit`.

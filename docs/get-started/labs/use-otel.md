@@ -30,7 +30,7 @@ tracing:
 ```
 
 :::note
-Setting the `samplingRatio` to `100` is only done for this lab to make sure all traces are sampled. In a production environment the ratio would normally set to `0.01`.
+Setting the `samplingRatio` to `100` is only done for this lab to make sure all traces are sampled. In a production environment the ratio would normally be set to `0.01`.
 :::
 
 6. Click `Submit`

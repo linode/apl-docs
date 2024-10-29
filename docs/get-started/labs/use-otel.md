@@ -8,13 +8,34 @@ In order to make a system observable, it must be instrumented. Language specific
 
 ## Prerequisites
 
-For this lab it is required to:
+Make sure the following Apps are enabled: 
 
-- Enable `Tempo`
-- Enable `Otel`
-- Enable `Loki`
-- Enable `Grafana`
-- Enable tracing for `Istio` and `Nginx Ingress`
+- `Tempo` on Platform
+- `Otel` on Platform
+- `Loki` on Platform
+- `Grafana` for the Team
+
+Enable tracing for `Istio` and `ingress-nginx-platform`:
+
+1. Go to `Apps`
+2. Click on `Istio`
+3. Click on the configuration icon
+4. Click on the `Values` tab
+5. In the values click `Edit` and set the following values
+
+```yaml
+tracing:
+  enabled: true
+  samplingRatio: "100"
+```
+
+:::note
+Setting the `samplingRatio` to `100` is only done for this lab to make sure all traces are sampled. In a production environment the ratio would normally set to `0.01`.
+:::
+
+6. Click `Submit`
+7. Repeat step 2 to 6 for the `ingress-nginx-platform` app
+8. Click `Deploy Changes`
 
 ## Build an image from source code
 

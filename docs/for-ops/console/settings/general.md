@@ -1,7 +1,7 @@
 ---
-slug: general
+slug: platform
 title: Platform settings
-sidebar_label: General
+sidebar_label: Platform
 ---
 
 ## General Settings

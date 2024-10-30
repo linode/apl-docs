@@ -20,12 +20,13 @@ At the end of the logs you should see the following message:
 
 ```bash
 ########################################################################################################################################
-  #
-  #  Visit the console at: https://console.your-domain.com
-  #  Perform: 
-  #  kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.username}' | base64 -d
-  #  kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.password}' | base64 -d
-  #
+#
+#  The Application Platform console is available at https://console.${domainSuffix}
+#
+#  Obtain login credentials by using the below commands:
+#      kubectl get secret platform-admin -n keycloak -o jsonpath='{.data.username}' | base64 -d
+#      kubectl get secret platform-admin -n keycloak -o jsonpath='{.data.password}' | base64 -d
+#
   ########################################################################################################################################
 ```
 

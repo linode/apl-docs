@@ -27,7 +27,7 @@ At the end of the logs you should see the following message:
 #      kubectl get secret platform-admin -n keycloak -o jsonpath='{.data.username}' | base64 -d
 #      kubectl get secret platform-admin -n keycloak -o jsonpath='{.data.password}' | base64 -d
 #
-  ########################################################################################################################################
+########################################################################################################################################
 ```
 
 Perform the 2 commands to get the initail credentails and use them to sign in to the Console. You will need to change your password at first login.

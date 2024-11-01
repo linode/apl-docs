@@ -1,17 +1,15 @@
 ---
-slug: general
+slug: platform
 title: Platform settings
-sidebar_label: General
+sidebar_label: Platform
 ---
 
 ## General Settings
 
-The general settings section offers configuration options for platform and feature flags that influence the way the platform behaves.
+The Platform settings section offers configuration options for platform and feature flags that influence the way the platform behaves.
 
 | Setting                | Description   |
 | ---------------------- | ------------------------ |
-| Admin password         | The `root` password of the platform. |
-| Additional Clusters    | A list of additional platform instances to select in the Console. |
 | Global pull secrets    | Add you Dockerhub pull secret. Will be connected to each "default" service account in all platform namespaces. Handy for authenticating with DockerHub to avoid rate limiting. |
 | Cloud ingress controller | Set this to true when using a cloud specific ingress controller. By default the Nginx Ingress Controller is used. |
 | External DNS  | Set this to true when an external DNS zone is available to manage DNS records. (Expects required `dns:` fields to be set.) |

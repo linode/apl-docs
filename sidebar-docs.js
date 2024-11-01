@@ -89,7 +89,7 @@ module.exports = {
           {
             Settings: [
               "for-ops/console/settings/cluster",
-              "for-ops/console/settings/general",
+              "for-ops/console/settings/platform",
               "for-ops/console/settings/key-management",
               "for-ops/console/settings/alerts",
               "for-ops/console/settings/dns",

@@ -15,7 +15,7 @@ To prevent loss of data it is advised to configure Object Storage before activat
 :::
 
 :::info
-The Local Minio provider will not be visable when the installation is done by Akamai Connected Cloud.
+The Local Minio provider will not be visible when the installation is done by Akamai Connected Cloud.
 :::
 
 ### Providers
@@ -30,23 +30,20 @@ Select between one of the following Object Storage Providers:
 
 ### Linode
 
-| Setting | Description |
-| ------- | ----------- |
-| region| The name of the Linode region (Datacenter ID) where the buckets are created. See [here](https://techdocs.akamai.com/cloud-computing/docs/access-buckets-and-files-through-urls#cluster-url-s3-endpoint) for all Linode Datacenter IDs |
-| accessKeyId | The Id of the access key with read/write permissions for all buckets |
-| secretAccessKey | The secret of the access key used |
+| Setting         | Description                                                                                                                                                                                                                           |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| region          | The name of the Linode region (Datacenter ID) where the buckets are created. See [here](https://techdocs.akamai.com/cloud-computing/docs/access-buckets-and-files-through-urls#cluster-url-s3-endpoint) for all Linode Datacenter IDs |
+| accessKeyId     | The Id of the access key with read/write permissions for all buckets                                                                                                                                                                  |
+| secretAccessKey | The secret of the access key used                                                                                                                                                                                                     |
 
 ### Buckets
 
 The preferred bucket names to be used for each app
 
-| Bucket | Description |
-| ------- | ----------- |
-| loki    | Bucket used to store Loki logs |
-| cnpg | Bucket used to store backups of databases |
-| velero | Bucket used to store backups of Perstent Volumes by Velero |
+| Bucket | Description                                                 |
+| ------ | ----------------------------------------------------------- |
+| loki   | Bucket used to store Loki logs                              |
+| cnpg   | Bucket used to store backups of databases                   |
+| velero | Bucket used to store backups of Perstent Volumes by Velero  |
 | harbor | Bucket used to store images of private registries in Harbor |
-| tempo | Bucket used to store Tempo traces |
-
-
-
+| tempo  | Bucket used to store Tempo traces                           |

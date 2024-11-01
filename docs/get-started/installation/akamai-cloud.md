@@ -88,7 +88,7 @@ When signed in to the Console (the web UI of the Application Platform), the firs
 
 1. When asked to create all the required Buckets and access key, click Yes. If you don’t want the platform to create all the required buckets, then click Skip. Note that in this case some features like creating backups of databases will not be available. You can start the Wizard at any time in the Console (Platform View: Maintenance, Show Object Storage Wizard). 
 
-2. Follow the instructions to [create a Personal Access Token](https://techdocs.akamai.com/linode-api/reference/get-started#personal-access-tokens) and make sure to select **Read/Write** for the Object Storage category. Copy the Access Token
+2. Follow the instructions to [create a Personal Access Token](https://techdocs.akamai.com/linode-api/reference/get-started#personal-access-tokens) and make sure to select **Read/Write** for the Object Storage category and **Read** for the Kubernetes category. Copy the Access Token.
 
 3. Now paste the Access Token into the wizard and click Submit.
 

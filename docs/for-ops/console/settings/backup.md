@@ -27,6 +27,10 @@ Select to backup the database of the app.
 
 ### Persistent Volume Backups
 
+:::info
+The Persistent Volume Backups section will not be visable when the installation is done by Akamai Connected Cloud. This is because using Velero is not (yet) supported for Linode Volumes.
+:::
+
 :::note
 To use Velero to create backups of Persistent Volumes, Object Storage needs to be enabled.
 :::

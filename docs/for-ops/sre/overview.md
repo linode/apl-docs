@@ -28,7 +28,7 @@ For advanced use-cases, configuration values of all integrated open source appli
 
 The APL values can be overridden by custom configuration values using `_rawValues`. Custom configuration values can be all values supported by the upstream Helm chart of the integrated open source application in APL Core.
 
-SRE's can use APL Console to change configuration settings (like security policies), but can also change the APL values directly using the APL values schema and by using overrides. In all cases, the configuration is stored in code (the otomi-values repository).
+SRE's can use APL Console to change configuration settings (like security policies), but can also change the APL values directly using the APL values schema and by using overrides. In all cases, the configuration is stored in code (the `values` repository).
 
 The following code shows the configuration values of the ingress-nginx chart.
 

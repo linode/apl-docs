@@ -14,6 +14,10 @@ Object Storage needs to be configured to be able to use Velero and create databa
 To prevent loss of data it is advised to configure Object Storage before activating apps that use Object Storage (like Loki, Harbor and Tempo).
 :::
 
+:::info
+The Local Minio provider will not be visable when the installation is done by Akamai Connected Cloud.
+:::
+
 ### Providers
 
 Select between one of the following Object Storage Providers:

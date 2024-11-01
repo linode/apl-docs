@@ -17,15 +17,19 @@ The Backup section provides the option to:
 
 ### Database Backups
 
-Select to backup the database of the app. 
+Select to backup the database of the app.
 
-| Setting       | Description |
-| ------------- | ----------- |
-| Enabled | Select to enable the backup of Otomi platform services |
-| TTL After Finished | Expiration of the backup. |
-| Schedule | Cron-type expression to schedule the backup. Defaults to once a day at 00:00. |
+| Setting            | Description                                                                   |
+| ------------------ | ----------------------------------------------------------------------------- |
+| Enabled            | Select to enable the backup of Otomi platform services                        |
+| TTL After Finished | Expiration of the backup.                                                     |
+| Schedule           | Cron-type expression to schedule the backup. Defaults to once a day at 00:00. |
 
 ### Persistent Volume Backups
+
+:::info
+The Persistent Volume Backups section will not be visible when the installation is done by Akamai Connected Cloud. This is because using Velero is not (yet) supported for Linode Volumes.
+:::
 
 :::note
 To use Velero to create backups of Persistent Volumes, Object Storage needs to be enabled.
@@ -38,4 +42,3 @@ To use Velero to create backups of Persistent Volumes in Linode:
 2. Fill in the token and submit changes.
 
 3. Go to the apps section in the left menu and enable Velero.
-

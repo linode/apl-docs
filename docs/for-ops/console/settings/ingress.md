@@ -4,6 +4,10 @@ title: Platform settings
 sidebar_label: Ingress
 ---
 
+:::info
+The Ingress section in the Settings will not be visible when the installation is done by Akamai Connected Cloud. In this case you will not be able to create multiple ingress classes.
+:::
+
 ## Ingress
 
 By default (after installation), one ingress controller (ingress-nginx-platform) is deployed and is used to publicly expose both platform and user created services. In the settings for ingress, an admin can:

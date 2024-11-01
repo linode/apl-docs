@@ -4,12 +4,14 @@ title: Platform settings
 sidebar_label: DNS
 ---
 
+:::info
+The DNS section in the Settings will not be visible when the installation is done by Akamai Connected Cloud. In this case the DNS configuration is managed by Akamai.
+:::
+
 ## DNS
 
 :::note
-
 DNS settings will only be active when `otomi.hasExternalDNS=true` flag is set during installation. This can also be set after installation in Settings/General.
-
 :::
 
 ### Zones

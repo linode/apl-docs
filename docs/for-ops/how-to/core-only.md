@@ -4,7 +4,7 @@ title: Use Core only
 sidebar_label: Use Core only
 ---
 
-By default Gitea, Tekton, Argo CD, the platform API and the Console are installed. The Console is the self-service UI and uses the platform API to generate validated configuration code. This configuration code is then committed to Gitea (in the `otomi-values` repository), which will trigger the pre-configured Tekton pipeline to apply the changes.
+By default Gitea, Tekton, Argo CD, the platform API and the Console are installed. The Console is the self-service UI and uses the platform API to generate validated configuration code. This configuration code is then committed to Gitea (in the `values` repository), which will trigger the pre-configured Tekton pipeline to apply the changes.
 
 In some cases you might not want to use the Console and the platform API, but instead install and manage configuration of the platform using a custom pipeline. Possible use-cases for this scenario are:
 

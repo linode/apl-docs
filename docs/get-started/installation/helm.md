@@ -22,18 +22,6 @@ helm repo update
 
 See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation.
 
-## Minimal values
-
-:::info
-The [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported without DNS configured. Install with DNS to use all features.
-:::
-
-```yaml
-cluster:
-  name: # the name of your cluster
-  provider: # choose between aws, azure, google, digitalocean, ovh, vultr, scaleway or custom
-```
-
 When the chart is installed, follow the [post installation steps](post-install-steps.md).
 
 ## Custom values
@@ -49,6 +37,10 @@ To test wether the input values are correct run the following command:
 ```bash
 helm template -f values.yaml apl/apl
 ```
+
+## Customize the values
+
+Adjust the `values.yaml` by changing the `provider` and adding `dns` configuration.
 
 ## Install the Helm chart
 

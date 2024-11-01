@@ -4,15 +4,15 @@ title: Overview
 sidebar_label: Overview
 ---
 
-**How to get started with Application Platform for LKE**
+**How to get started with Akamai Application Platform**
 
 ---
 
-### Step 1: [Install Application Platform for LKE](installation/overview.md)
-Install Application Platform for LKE on Linode Kubernetes Engine (LKE) or any other conformant Kubernetes cluster.
+### Step 1: [Install the Application Platform](installation/overview.md)
+Install the Application Platform on Linode Kubernetes Engine (LKE) or any other conformant Kubernetes cluster.
 
 ### Step 2: [Follow the post installation steps ](installation/post-install-steps.md)
-Configure Application Platform for LKE for your use case.
+Configure the Application Platform for usage.
 
-### Step 3: [Explore Application Platform for LKE using the Labs](labs/labs-overview.md)
-Explore Application Platform for LKE with a comprehensive set of hands-on labs.
+### Step 3: [Explore the Application Platform using the Labs](labs/labs-overview.md)
+Explore the Application Platform with a comprehensive set of hands-on labs.

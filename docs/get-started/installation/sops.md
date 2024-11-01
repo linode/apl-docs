@@ -6,6 +6,21 @@ sidebar_label: SOPS
 
 If you would like sensitive information in the `values` repository to be encrypted, you will have to use [sops](https://github.com/mozilla/sops).
 
+## Use SOPS with AGE
+
+[AGE](https://github.com/FiloSottile/age) is a simple, modern, and secure encryption tool (and Go library) with small explicit keys, no config options, and UNIX-style composability.
+
+To install with SOPS/Age, use the following values:
+
+```yaml
+kms:
+  sops:
+    provider: "age"
+#     age:
+#       publicKey: ''
+#       privateKey: ''
+```
+
 ## Use SOPS with an external Key Management Service (KMS)
 
 Find quickstart documentation below on how to setup KMS access per supported provider:
@@ -40,6 +55,3 @@ kms:
 #       token: ''
 ```
 
-## Use SOPS with AGE (comming soon!)
-
-[AGE](https://github.com/FiloSottile/age) is a simple, modern, and secure encryption tool (and Go library) with small explicit keys, no config options, and UNIX-style composability.

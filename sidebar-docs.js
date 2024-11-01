@@ -40,10 +40,8 @@ module.exports = {
           "get-started/labs/scan-containers",
           "get-started/labs/view-logs",
           "get-started/labs/view-metrics",
-          "get-started/labs/monitor-workloads",
+          "get-started/labs/monitor-services",
           "get-started/labs/custom-metrics",
-          "get-started/labs/custom-dashboards",
-          "get-started/labs/custom-rules",
           "get-started/labs/create-netpols",
           "get-started/labs/use-otel",
           "get-started/labs/canary-deployment",
@@ -65,19 +63,22 @@ module.exports = {
           "for-devs/console/netpols",
           "for-devs/console/services",
           "for-devs/console/security-policies",
+          "for-devs/console/usermgnt",
+          "for-devs/console/settings",
           "for-devs/console/sealed-secrets",
           "for-devs/console/shell",
-          "for-devs/console/settings",
+          
         ],
       },
     ],
-    "For Platform Admins": [
+    "For Platform Adminstrators": [
       {
         "Console - Platform View": [
           "for-ops/console/overview",
           "for-ops/console/dashboard",
           "for-ops/console/apps",
           "for-ops/console/teams",
+          "for-ops/console/usermgnt",
           "for-ops/console/projects",
           "for-ops/console/builds",
           "for-ops/console/workloads",
@@ -108,8 +109,9 @@ module.exports = {
           "for-ops/how-to/ingress-classes",
           "for-ops/how-to/use-team-admin",
           "for-ops/how-to/core-only",
-          "for-ops/how-to/clone-apl",
           "for-ops/how-to/backups",
+          "for-ops/how-to/clone-apl",
+          "for-ops/how-to/manage-age",
         ],
       },
       {

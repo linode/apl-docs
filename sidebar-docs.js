@@ -65,19 +65,22 @@ module.exports = {
           "for-devs/console/netpols",
           "for-devs/console/services",
           "for-devs/console/security-policies",
+          "for-devs/console/usermgnt",
+          "for-devs/console/settings",
           "for-devs/console/sealed-secrets",
           "for-devs/console/shell",
-          "for-devs/console/settings",
+          
         ],
       },
     ],
-    "For Platform Admins": [
+    "For Platform Adminstrators": [
       {
         "Console - Platform View": [
           "for-ops/console/overview",
           "for-ops/console/dashboard",
           "for-ops/console/apps",
           "for-ops/console/teams",
+          "for-ops/console/usermgnt",
           "for-ops/console/projects",
           "for-ops/console/builds",
           "for-ops/console/workloads",

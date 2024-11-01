@@ -8,7 +8,7 @@ The platform dashboard gives a global overview of information most relevant for 
 
 ## Prerequisites
 
-The Platform dashboard uses the Platform Grafana and prometheus to get it's information from. Make sure both are enabled.
+The Platform dashboard uses the Platform Grafana and Prometheus to get it's information from. Make sure both are enabled.
 
 ## Dashboard elements
 

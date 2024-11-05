@@ -38,6 +38,7 @@ module.exports = {
           "get-started/labs/create-postgresql-db",
           "get-started/labs/scan-images",
           "get-started/labs/scan-containers",
+          "get-started/labs/detect-threats",
           "get-started/labs/view-logs",
           "get-started/labs/view-metrics",
           "get-started/labs/monitor-services",

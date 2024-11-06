@@ -40,8 +40,11 @@ The App Platform for LKE is not supported in combination with Shared CPU.
 
 8. When you are satisfied with the configuration of your cluster, click the Create Cluster button on the right hand side of the screen. Your cluster's detail page appears, and your Node Pools are listed on this page. First the LKE cluster will be created and once ready the Application Platform for LKE will be installed. The installation of the Application Platform for LKE takes around 10 until 15 minutes. When the installation is finished, the URL of the Portal Endpoint will appear in the Application Platform for LKE section. The progress of the installation will be checked every 60 seconds. When the installation is still in progress, the URL of the Portal Endpoint will not be displayed. Instead the message “Installation in progress” will appear.
 
+9. When the installation of both the LKE cluster and the Application Platform is ready, click on the provided URL of the Portal Endpoint:
 
-9. When the installation of both the LKE cluster and the Application Platform is ready, click on the provided URL of the portal Endpoint. You will then see the following sign-in page:
+![details-page](../../img/cluster-details-page.png)
+
+You will then see the following sign-in page:
 
 ![sign-in](../../img/sign-in-page.png)
 
@@ -75,7 +78,7 @@ kubectl get secret platform-admin-initial-credentials -n keycloak --template={{.
 
 3. Copy the username and password to your clipboard.
 
-4. Sign in to the Console with the provided username and initial password. The link to the Console is also shown in the cluster details page.
+4. Sign in to the Console with the provided username and initial password.
 
 5. Change the initial password
 

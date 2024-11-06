@@ -8,7 +8,7 @@ module.exports = {
       {
         Installation: [
           "get-started/installation/overview",
-          "get-started/installation/akamai-cloud",
+          "get-started/installation/akamai-connected-cloud",
           "get-started/installation/linode",
           "get-started/installation/custom",
           "get-started/installation/helm",

@@ -112,6 +112,8 @@ module.exports = {
           "for-ops/how-to/backups",
           "for-ops/how-to/clone-apl",
           "for-ops/how-to/manage-age",
+          "for-ops/how-to/change-admin-password",
+          "for-ops/how-to/change-user-passwords",
         ],
       },
       {

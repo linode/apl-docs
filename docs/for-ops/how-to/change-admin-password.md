@@ -16,7 +16,7 @@ This how to provides a step-by-step instruction to reset the `otomi-admin` passw
 
 ## Steps:
 
-### Step 1: Generate a New Password
+### Step 1: Generate a new Password
 
 1. Create a secure password (16 characters with alphanumeric and special characters).
 
@@ -40,7 +40,7 @@ This how to provides a step-by-step instruction to reset the `otomi-admin` passw
 Don’t make any other changes during this operation.
 :::
 
-### Step 3: Update the Password in Otomi’s Values Repository
+### Step 3: Update the password in the Otomi Values repository
 
 1. Clone the Otomi values repository if you haven't already:
 
@@ -78,8 +78,8 @@ otomi decrypt
 
 ```yaml
 apps:
-    keycloak:
-    adminPassword: YOUR_NEW_PASSWORD
+  keycloak:
+  adminPassword: YOUR_NEW_PASSWORD
 ```
 
 ### Step 4: Re-encrypt the Secrets

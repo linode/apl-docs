@@ -1,6 +1,6 @@
 module.exports = {
   mainSidebar: {
-    "Akamai Application Platform": [
+    "Akamai App Platform": [
       "akamai-app-platform/introduction",
     ],
     "Getting Started": [

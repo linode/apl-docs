@@ -4,18 +4,18 @@ title: Installation
 sidebar_label: Overview
 ---
 
-**How to get Akamai Application Platform up and running**
+**How to get Akamai App Platform up and running**
 
 ---
 
 ### [Akamai Connected Cloud](akamai-connected-cloud.md)
-Provision LKE with the Application Platform in Akamai Connected Cloud.
+Provision LKE with the App Platform in Akamai Connected Cloud.
 
 ### [Linode Kubernetes Engine (LKE)](linode.md)
-Create a LKE cluster and manually install the Application Platform.
+Create a LKE cluster and manually install the App Platform.
 
 ### [Custom](custom.md)
-Install the Application Platform on any other conformant Kubernetes cluster.
+Install the App Platform on any other conformant Kubernetes cluster.
 
 ---
 

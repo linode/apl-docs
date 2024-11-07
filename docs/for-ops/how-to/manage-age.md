@@ -128,7 +128,7 @@ Please make sure to store the `SOPS_AGE_KEY` in a secure place.
 This key can be obtained from the `otomi-sops-secrets` secret in the `otomi-pipelines` namespace or from the `otomi-api` secret in the `otomi` namespace.
 :::
 
-To configure Age public and private keys, add or update the following `kms` section in the values.yaml file when installing the Application Platform.
+To configure Age public and private keys, add or update the following `kms` section in the values.yaml file when installing the App Platform.
 
 ```yaml
 kms:

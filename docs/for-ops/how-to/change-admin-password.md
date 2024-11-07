@@ -34,9 +34,6 @@ This how to provides a step-by-step instruction to reset the `otomi-admin` passw
 
 5. Save changes(set Temporary=Disabled).
 
-7. Switch to the otomi realm
-
-8. Repeat steps 2 to 5
 
 :::info
 Don’t make any other changes during this operation.

@@ -11,7 +11,7 @@ sidebar_label: Overview
 ### [Linode Kubernetes Engine (LKE)](linode.md)
 Create a LKE cluster and manually install the Application Platform.
 
-### [Akamai Connected Cloud - Comming soon!](akamai-cloud.md)
+### [Akamai Connected Cloud - Comming soon!](akamai-connected-cloud.md)
 Provision LKE with the Application Platform in Akamai Connected Cloud.
 
 ### [Custom](custom.md)

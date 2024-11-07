@@ -10,13 +10,13 @@ This how to provides a step-by-step instruction to reset the `otomi-admin` passw
 
 1. Access to the Keycloak admin console.
 
-2. Otomi CLI installed and configured.
+2. Docker  installed and configured.
 
-3. SOPS set up with Age encryption, with access to the `SOPS_AGE_KEY`.
+3. SOPS set up with Age encryption(default in LKE).
 
 ## Steps:
 
-### Step 1: Generate a new Password
+### Step 1: Generate a New Password
 
 1. Create a secure password (16 characters with alphanumeric and special characters).
 
@@ -26,21 +26,23 @@ This how to provides a step-by-step instruction to reset the `otomi-admin` passw
 
 1. Log in to Keycloak as `otomi-admin` user.
 
-2. Switch to the **otomi** realm.
+2. Go to **Users** in the left-hand sidebar and find the `otomi-admin` user.
 
-3. Go to **Users** in the left-hand sidebar and find the `otomi-admin` user.
+3. Navigate to the **Credentials** tab.
 
-4. Navigate to the **Credentials** tab.
+4. Change the password to the one you generated.
 
-5. Change the password to the one you generated.
+5. Save changes(set Temporary=Disabled).
 
-6. Save changes(set Temporary=Disabled).
+7. Switch to the otomi realm
+
+8. Repeat steps 2 to 5
 
 :::info
 Don’t make any other changes during this operation.
 :::
 
-### Step 3: Update the password in the Otomi Values repository
+### Step 3: Update the Password in Otomi’s Values Repository
 
 1. Clone the Otomi values repository if you haven't already:
 
@@ -69,7 +71,7 @@ kubectl get secret otomi-sops-secrets -n otomi-pipelines -o jsonpath='{.data.SOP
 4. Decrypt the secrets in your values repository by running:
 
 ```bash
-otomi decrypt
+docker run -it -v $ENV_DIR:/home/app/stack/env linode/apl-core binzx/otomi decrypt
 ```
 
 5. Open the `secrets.keycloak.yaml.dec` file (or similar secret file for Keycloak credentials).
@@ -77,9 +79,8 @@ otomi decrypt
 6. Update the `otomi-admin` password:
 
 ```yaml
-apps:
-  keycloak:
-  adminPassword: YOUR_NEW_PASSWORD
+otomi:
+    adminPassword: YOUR_NEW_PASSWORD
 ```
 
 ### Step 4: Re-encrypt the Secrets
@@ -87,7 +88,7 @@ apps:
 1. Encrypt the `.dec` file to secure the updated password:
 
 ```bash
-otomi encrypt
+docker run -it -v $ENV_DIR:/home/app/stack/env linode/apl-core binzx/otomi encrypt
 ```
 
 2. Commit and push your changes to the values repository:
@@ -101,9 +102,14 @@ git push
 
 ### Step 5: Apply the Changes
 
-1. Allow the pipeline to run and verify it passes.
+1. Allow the tekton pipeline to run and verify it passes.
 
-2. After the pipeline completes, restart the Otomi API to ensure it applies the new credentials.
+2. After the pipeline completes, restart the `otomi-api` and `apl-keycloak-operator` to ensure it applies the new credentials.
+    
+    ```bash
+    kubectl rollout restart deployment -n otomi otomi-api
+    kubectl rollout restart deployment -n apl-keycloak-operator apl-keycloak-operator
+    ```
 
 3. Confirm that the Otomi platform is working as expected with the new credentials.
 

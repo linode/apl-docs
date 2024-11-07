@@ -1,31 +1,24 @@
 ---
-slug: akamai-cloud
+slug: akamai-connected-cloud
 title: Akamai Connected Cloud
 sidebar_label: Akamai Connected Cloud
 ---
 
-:::info
-Coming soon!
-:::
+# Get started with the Application Platform for LKE
 
-## Create an LKE cluster
+## Create a Kubernetes cluster with the App Platform for LKE
 
 1. Log into your Cloud Manager account.
 
 2. Select Kubernetes from the left navigation menu and then click Create Cluster.
 
-
 3. The Create a Kubernetes Cluster page appears. At the top of the page, you are required to select the following options
-
 
 - In the Cluster Label field, provide a name for your cluster. The name must be unique between all of the clusters on your account. This name is how you identify your cluster in Cloud Manager’s Dashboard.
 
-
 - From the Region dropdown menu, select the Region where you would like your cluster to reside.
 
-
 - From the Version dropdown menu, select a Kubernetes version to deploy to your cluster.
-
 
 4. In the Application Platform for LKE section, select “Yes, enable Application Platform for LKE”
 
@@ -39,14 +32,23 @@ The Application Platform for LKE requires HA control plane to be enabled. When A
 The Application Platform for LKE requires a node pool with at least 3 worker nodes with a total minimum of 16 GB memory and 12 CPUs. Linode plans that do not provide the minimal required resources can not be selected.
 :::
 
+:::note
+The App Platform for LKE is not supported in combination with Shared CPU.
+:::
+
 6. Select Add to include the node pool in your configuration. If you decide that you need more hardware resources after you deploy your cluster, you can always [edit your Node Pool](https://techdocs.akamai.com/cloud-computing/docs/manage-nodes-and-node-pools).
 
 7. Once a pool has been added to your configuration, it is listed in the Cluster Summary on the right-hand side of Cloud Manager detailing your cluster's hardware resources and monthly cost. Additional pools can be added before finalizing the cluster creation process by repeating the previous step for each additional pool.
 
 8. When you are satisfied with the configuration of your cluster, click the Create Cluster button on the right hand side of the screen. Your cluster's detail page appears, and your Node Pools are listed on this page. First the LKE cluster will be created and once ready the Application Platform for LKE will be installed. The installation of the Application Platform for LKE takes around 10 until 15 minutes. When the installation is finished, the URL of the Portal Endpoint will appear in the Application Platform for LKE section. The progress of the installation will be checked every 60 seconds. When the installation is still in progress, the URL of the Portal Endpoint will not be displayed. Instead the message “Installation in progress” will appear.
 
+9. When the installation of both the LKE cluster and the Application Platform is ready, click on the provided URL of the Portal Endpoint:
 
-9. When the installation of both the LKE cluster and the Application Platform is ready, click on the provided URL of the portal Endpoint. You will then see the following sign-in page:
+![details-page](../../img/cluster-details-page.png)
+
+You will then see the following sign-in page:
+
+![sign-in](../../img/sign-in-page.png)
 
 10. Continue with the next steps to get the initial credentials needed to sign in.
 
@@ -93,6 +95,11 @@ When signed in to the Console (the web UI of the Application Platform), the firs
 3. Now paste the Access Token into the wizard and click Submit.
 
 All the required Buckets and Access Key will now be created in your account and the platform will be configured to use Object Storage to store persistent data and backups. The provided Personal Access Token will not be stored. The created buckets will have the `<cluster-id>` prefix`
+
+## Onboard Teams and Users
+You can now start enabling Applications, onboarding [Teams](../../for-ops/console/teams) and create [Users](../../for-ops/console/user-management).
+
+We recommend to go through the [Hands-on Labs](../labs/overview) to learn how to take advantage of the Application Platform for LKE.
 
 ## Known issues
 

@@ -21,7 +21,7 @@ At the end of the logs you should see the following message:
 ```bash
 ########################################################################################################################################
 #
-#  The Application Platform console is available at https://console.${domainSuffix}
+#  The App Platform console is available at https://console.${domainSuffix}
 #
 #  Obtain login credentials by using the below commands:
 #      kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.username}' | base64 -d
@@ -139,7 +139,7 @@ When Object Storage is configured and an API Token is added, then activate the V
 
 ## Step 6 (optional): Activate more Apps
 
-Application Platform for LKE is a composable platform. Activate more Apps based on the required platform capabilities:
+App Platform for LKE is a composable platform. Activate more Apps based on the required platform capabilities:
 
 | Capability      | App                                                    | Object storage |
 | --------------- | ------------------------------------------------------ | -------------- |

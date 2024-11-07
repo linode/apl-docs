@@ -4,9 +4,9 @@ title: Linode
 sidebar_label: Linode Kubernetes Engine
 ---
 
-# Install Akamai Application Platform on LKE with DNS
+# Install Akamai App Platform on LKE with DNS
 
-Provision a LKE cluster in Cloud Manager or by using the Linode CLI and manually install the Application Platform onto it by using a Linode Domain for DNS.
+Provision a LKE cluster in Cloud Manager or by using the Linode CLI and manually install the App Platform onto it by using a Linode Domain for DNS.
 
 ## Prerequisites
 
@@ -130,7 +130,7 @@ Adjust the `domainSuffix`, `domainFilters` and `email`!
 You can also use a different DNS provider. See [here](dns.md) for examples on how to use Akamai EdgeDNS, AWS Route53, Cloudflare DNS and many others.
 :::
 
-## Install the Application Platform
+## Install the App Platform
 
 Install using Helm:
 
@@ -151,7 +151,7 @@ When the installer is finished, copy the `url` and `admin-password` from the con
 Follow the post installation steps [here](post-install-steps.md).
 
 :::tip
-Like to learn how to use Application Platform for LKE? Go through the [Get Started labs](../labs/labs-overview.md)
+Like to learn how to use App Platform for LKE? Go through the [Get Started labs](../labs/labs-overview.md)
 :::
 
 ## Known issues

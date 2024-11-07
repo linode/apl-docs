@@ -4,7 +4,7 @@ title: Akamai Connected Cloud
 sidebar_label: Akamai Connected Cloud
 ---
 
-# Get started with the Application Platform for LKE
+# Get started with the App Platform for LKE
 
 ## Create a Kubernetes cluster with the App Platform for LKE
 
@@ -20,16 +20,16 @@ sidebar_label: Akamai Connected Cloud
 
 - From the Version dropdown menu, select a Kubernetes version to deploy to your cluster.
 
-4. In the Application Platform for LKE section, select “Yes, enable Application Platform for LKE”
+4. In the App Platform for LKE section, select “Yes, enable App Platform for LKE”
 
 :::note 
-The Application Platform for LKE requires HA control plane to be enabled. When Application Platform for LKE is enabled, HA control plane will automatically be enabled.
+The App Platform for LKE requires HA control plane to be enabled. When App Platform for LKE is enabled, HA control plane will automatically be enabled.
 :::
 
 5. In the Add Node Pools section, select the hardware resources for the Linode worker node(s) that make up your LKE cluster. To the right of each plan, select the plus + and minus - to add or remove a Linode to a node pool one at time.
 
 :::note 
-The Application Platform for LKE requires a node pool with at least **3 worker** nodes with a minimum of **16 GB memory** and **4 CPUs** per node. Make sure to select the required Linode plan.
+The App Platform for LKE requires a node pool with at least **3 worker** nodes with a minimum of **16 GB memory** and **4 CPUs** per node. Make sure to select the required Linode plan.
 :::
 
 :::note
@@ -40,9 +40,9 @@ The App Platform for LKE is not supported in combination with Shared CPU.
 
 7. Once a pool has been added to your configuration, it is listed in the Cluster Summary on the right-hand side of Cloud Manager detailing your cluster's hardware resources and monthly cost. Additional pools can be added before finalizing the cluster creation process by repeating the previous step for each additional pool.
 
-8. When you are satisfied with the configuration of your cluster, click the Create Cluster button on the right hand side of the screen. Your cluster's detail page appears, and your Node Pools are listed on this page. First the LKE cluster will be created and once ready the Application Platform for LKE will be installed. The installation of the Application Platform for LKE takes around 10 until 15 minutes. When the installation is finished, the URL of the Portal Endpoint will appear in the Application Platform for LKE section. The progress of the installation will be checked every 60 seconds. When the installation is still in progress, the URL of the Portal Endpoint will not be displayed. Instead the message “Installation in progress” will appear.
+8. When you are satisfied with the configuration of your cluster, click the Create Cluster button on the right hand side of the screen. Your cluster's detail page appears, and your Node Pools are listed on this page. First the LKE cluster will be created and once ready the App Platform for LKE will be installed. The installation of the App Platform for LKE takes around 10 until 15 minutes. When the installation is finished, the URL of the Portal Endpoint will appear in the App Platform for LKE section. The progress of the installation will be checked every 60 seconds. When the installation is still in progress, the URL of the Portal Endpoint will not be displayed. Instead the message “Installation in progress” will appear.
 
-9. When the installation of both the LKE cluster and the Application Platform is ready, click on the provided URL of the Portal Endpoint:
+9. When the installation of both the LKE cluster and the App Platform is ready, click on the provided URL of the Portal Endpoint:
 
 ![details-page](../../img/cluster-details-page.png)
 
@@ -84,9 +84,9 @@ kubectl get secret platform-admin-initial-credentials -n keycloak --template={{.
 
 5. Change the initial password
 
-## Provision Object Storage for the Application Platform
+## Provision Object Storage for the App Platform
 
-When signed in to the Console (the web UI of the Application Platform), the first thing you’ll need to do is configure Object Storage. A wizard will be displayed asking you if the Application Platform should provision all the required Buckets and access key for you. This is not required, but strongly recommended as this will prevent `out of disk space errors` when using Storage Volumes for integrated applications. Using Object Storage also has the advantage to create backups of all databases used by the platform.
+When signed in to the Console (the web UI of the App Platform), the first thing you’ll need to do is configure Object Storage. A wizard will be displayed asking you if the App Platform should provision all the required Buckets and access key for you. This is not required, but strongly recommended as this will prevent `out of disk space errors` when using Storage Volumes for integrated applications. Using Object Storage also has the advantage to create backups of all databases used by the platform.
 
 1. When asked to create all the required Buckets and access key, click Yes. If you don’t want the platform to create all the required buckets, then click Skip. Note that in this case some features like creating backups of databases will not be available. You can start the Wizard at any time in the Console (Platform View: Maintenance, Show Object Storage Wizard). 
 
@@ -99,15 +99,15 @@ All the required Buckets and Access Key will now be created in your account and 
 ## Onboard Teams and Users
 You can now start enabling Applications, onboarding [Teams](../../for-ops/console/teams) and create [Users](../../for-ops/console/user-management).
 
-We recommend to go through the [Hands-on Labs](../labs/overview) to learn how to take advantage of the Application Platform for LKE.
+We recommend to go through the [Hands-on Labs](../labs/overview) to learn how to take advantage of the App Platform for LKE.
 
 ## Known issues
 
-If the URL of the Portal Endpoint does not appear in the Application Platform for LKE section after 30 minutes, then the following may be the issue:
+If the URL of the Portal Endpoint does not appear in the App Platform for LKE section after 30 minutes, then the following may be the issue:
 
 ### Installation gets stuck because of a quota exceeded exception
 
-Next to the resources required for LKE, the Application Platform also uses a NodeBalancer and a minimum of 11 Storage Volumes. This might result in a quota exceeding exception. Linode currently does not provide quota limits in your account details at this time.
+Next to the resources required for LKE, the App Platform also uses a NodeBalancer and a minimum of 11 Storage Volumes. This might result in a quota exceeding exception. Linode currently does not provide quota limits in your account details at this time.
 
 The following issue might be related to quota exceeding exception:
 
@@ -122,7 +122,7 @@ Resolution:
 - If you would like to know your account's limits or want to increase the number of entities you can create, the best way is to get that information through a support ticket.
 
 ### The Let’s Encrypt secret request was not successful
-For each cluster with the Application Platform for LKE enabled, a Let’s Encrypt certificate will be requested. If the certificate is not ready within 30 minutes, the installation of the Application Platform will fail. Run the following command to see if the certificate is created:
+For each cluster with the App Platform for LKE enabled, a Let’s Encrypt certificate will be requested. If the certificate is not ready within 30 minutes, the installation of the App Platform will fail. Run the following command to see if the certificate is created:
 
 ```bash
 kubectl get secret -n istio-system
@@ -134,4 +134,4 @@ If this secret is not present, then the request failed.
 
 Resolution:
 
-- Delete the LKE cluster with Application Platform for LKE enabled and create a new cluster with Application Platform for LKE enabled
+- Delete the LKE cluster with App Platform for LKE enabled and create a new cluster with App Platform for LKE enabled

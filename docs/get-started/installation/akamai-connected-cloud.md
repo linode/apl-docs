@@ -4,6 +4,8 @@ title: Akamai Connected Cloud
 sidebar_label: Akamai Connected Cloud
 ---
 
+# Get started with the Application Platform for LKE
+
 ## Create a Kubernetes cluster with the App Platform for LKE
 
 1. Log into your Cloud Manager account.

@@ -74,6 +74,8 @@ Welcome to the Application Platform for LKE labs! If you are going to use the Ap
 
 **Advanced Labs**
 
+### [Use external private Git repositories](use-external-private-repo.md)
+
 ### [Create network policies](create-netpols.md)
 
 ### [Tracing with OpenTelemetry](use-otel.md)

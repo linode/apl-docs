@@ -29,7 +29,7 @@ The Application Platform for LKE requires HA control plane to be enabled. When A
 5. In the Add Node Pools section, select the hardware resources for the Linode worker node(s) that make up your LKE cluster. To the right of each plan, select the plus + and minus - to add or remove a Linode to a node pool one at time.
 
 :::note 
-The Application Platform for LKE requires a node pool with at least 3 worker nodes with a total minimum of 16 GB memory and 12 CPUs. Linode plans that do not provide the minimal required resources can not be selected.
+The Application Platform for LKE requires a node pool with at least **3 worker** nodes with a minimum of **16 GB memory** and **4 CPUs** per node. Make sure to select the required Linode plan.
 :::
 
 :::note

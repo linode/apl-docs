@@ -18,12 +18,11 @@ This how to provides step-by-step instructions to reset the `otomi-admin` passwo
 
 ### Step 1: Generate a New Password
 
-1. Create a secure password (16 characters with alphanumeric).
-    ```bash
-    # Generate a random 16 characters alphanumeric string
+```bash
+    # Generate a random 16-character alphanumeric password
     head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16
+    # Example output: FPpLvZyAdAmuzc3N
     ```
-2. Make sure this password meets client security specifications.
 
 ### Step 2: Update the Password in Keycloak
 
@@ -47,7 +46,7 @@ Don’t make any other changes during this operation.
 1. Clone the Otomi values repository if you haven't already:
 
 ```bash
-git clone gitea.<cluster.domainSuffix>/otomi/values.git ~/workspace/values-folder
+git clone https://gitea.<cluster.domainSuffix>/otomi/values.git ~/workspace/values-folder
 ```
 
 2. Export `ENV_DIR` to point to your values directory:
@@ -62,11 +61,14 @@ export ENV_DIR=~/workspace/values-folder
 
 ```
 kubectl get secret otomi-sops-secrets -n otomi-pipelines -o jsonpath='{.data.SOPS_AGE_KEY}' | base64 -d
+# Example output: AGE-SECRET-KEY-1KTYK6RVLN5TAPE7VF6FQQSKZ9HWWCDSKUGXXNUQDWZ7XXT5YK5LSF3UTKQ
 ```
 
 - Create the `.secrets` file in the root of the values directory with the SOPS_AGE_KEY secret. The file contents should look like this:
 
-`SOPS_AGE_KEY=<PASTE_HERE_THE_SOPS_AGE_KEY>`
+```
+SOPS_AGE_KEY=<PASTE_HERE_THE_SOPS_AGE_KEY>
+```
 
 4. Decrypt the secrets in your values repository by running:
 
@@ -74,13 +76,13 @@ kubectl get secret otomi-sops-secrets -n otomi-pipelines -o jsonpath='{.data.SOP
 docker run -it -v $ENV_DIR:/home/app/stack/env linode/apl-core binzx/otomi decrypt
 ```
 
-5. Open the `secrets.keycloak.yaml.dec` file (or similar secret file for Keycloak credentials).
+5. Open the `env/secrets.settings.yaml.dec` file.
 
 6. Update the `otomi-admin` password:
 
 ```yaml
 otomi:
-    adminPassword: YOUR_NEW_PASSWORD
+    adminPassword: <YOUR_NEW_PASSWORD>
 ```
 
 ### Step 4: Re-encrypt the Secrets

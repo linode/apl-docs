@@ -18,13 +18,15 @@ When your team is using Harbor for private image registries, you can build image
 
 3. Fill in the name `blue` for your build and a tag (default tag is latest).
 
-4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab.
+4. Use the default `internal` Repository type.
 
-5. Click `Submit`.
+5. Use the `Docker` mode and select the `blue` repo URL for the Git repo created in the previous lab.
 
-6. Click `Deploy changes`.
+6. Click `Submit`.
 
-Now a Tekton Pipeline and PipelineRun resource to build the image will be created. This will take around 30 seconds. Then the PipelineRun will start building the image. During this time the status will show `in progress`:
+7. Click `Deploy changes`.
+
+A Tekton Pipeline and PipelineRun resource to build the image will now be created. This will take around 30 seconds. Then the PipelineRun will start building the image. During this time the status will show `in progress`:
 
 ![build status](../../img/build-status.png)
 

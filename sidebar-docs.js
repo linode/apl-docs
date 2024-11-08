@@ -43,6 +43,7 @@ module.exports = {
           "get-started/labs/view-metrics",
           "get-started/labs/monitor-services",
           "get-started/labs/custom-metrics",
+          "get-started/labs/use-external-private-repo",
           "get-started/labs/create-netpols",
           "get-started/labs/use-otel",
           "get-started/labs/canary-deployment",

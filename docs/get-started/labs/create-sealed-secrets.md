@@ -16,7 +16,7 @@ In this lab we will create sealed secrets and see how to securely sensitive info
 
 4. Select the secret type. In this lab we will create a secret of type `opaque`.
 
-5. Add the secret `data`. Add the following key-value pairs:
+5. Add the secret `Encrypted data`. Add the following key-value pairs:
 
 - `password=helloworld`
 - `username=labs-user`

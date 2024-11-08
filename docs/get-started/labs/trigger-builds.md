@@ -14,9 +14,11 @@ In the previous lab we created a Build using the `blue` repo in Gitea. In this l
 
 3. Fill in the name `green` for your build.
 
-4. Choose `./Dockerfile` and fill in the repo URL for the `green` repo created in the previous lab: `https://gitea.<your-domain>/<gitea-username>/green`.
+4. Use the default `internal` Repository type.
 
-5. Enable `Trigger`.
+5. Use the `Docker` mode and select the `green` repo URL for the Git repo created in the previous lab.
+
+5. Select the `Trigger` checkbox.
 
 6. Click `Submit`.
 

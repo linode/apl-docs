@@ -10,7 +10,7 @@ Follow these steps to change or reset passwords of users created in the Console 
 
 2. Click on `Administration Console`.
 
-3. Login with `otomi-admin` credentials.
+3. Log in with `otomi-admin` credentials.
 
 4. Select the `Otomi` realm.
 

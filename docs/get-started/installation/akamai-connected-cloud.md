@@ -84,7 +84,7 @@ kubectl get secret platform-admin-initial-credentials -n keycloak --template={{.
 
 5. Change the initial password
 
-## Provision Object Storage for the App Platform
+## Provision Object Storage for the App Platform (Expected to be available on November 12)
 
 When signed in to the Console (the web UI of the App Platform), the first thing you’ll need to do is configure Object Storage. A wizard will be displayed asking you if the App Platform should provision all the required Buckets and access key for you. This is not required, but strongly recommended as this will prevent `out of disk space errors` when using Storage Volumes for integrated applications. Using Object Storage also has the advantage to create backups of all databases used by the platform.
 

@@ -4,8 +4,6 @@ title: Team Builds
 sidebar_label: Builds
 ---
 
-<!-- ![Console: new service](img/team-builds.png) -->
-
 A Build is a self-service feature for building OCI compliant images based on application source code and store the image in a private Team registry in Harbor.
 
 :::info
@@ -30,44 +28,43 @@ All Builds of the team are listed here.
 
 ## Create a build
 
-1. Enter a name for the build
+1. Enter a name for the build. The name of the build will be used for the registry name of the image (`harbor.<domainSuffix>/team-name/build-name`).
 
-The name of the build will be used for the registry name of the image (`harbor.<domainSuffix>/team-name/build-name`)
+2. (optional) Adjust the tag. The tag will be used to tag the image  (`harbor.<domainSuffix>/team-name/build-name:tag`).
 
-2. (optional) Adjust the tag
+4. Select the `Repository type`. Select `internal` if you want to use a Git repository hosted in the local Git service (Gitea), or `external` if you want to use an external repository (like one hosted in Github). Select `private` if the external repo requires authentication and select the (`basic-auth` or `ssh-auth`) secret that contains the credentials. Read more about Git authentication [here](https://tekton.dev/docs/how-to-guides/clone-repository/#git-authentication).
 
-The tag will be used to tag the image  (`harbor.<domainSuffix>/team-name/build-name:tag`)
+3. Choose the type of the build:
 
-Now choose the type of the build:
+- Use `Docker` to build an image using the `./Dockerfile` in your code repository.
 
-- Use `Docker` to build an image using the `./Dockerfile` in your code repository
-- Use `Buildpacks` to build an image from application source using Buildpacks
+- Use `Buildpacks` to build an image from application source using Buildpacks.
 
 ### Docker
 
-1. Add the URL of the repository that contains the application source code.
+1. If the repository is of type `internal`, then select one of the available repositories from the list. If the repository is of type `external`, then add the URL of the external repository that contains the application source code.
 
 2. (optional) Change the path of the `Dockerfile`. Default is `./Dockerfile`. To use a Dockerfile is a specific folder, use `./folder/Dockerfile`.
 
 3. (optional) Change the revision. This can be a commit, a tag, or a branch.
 
-4. (Optional) Select `External Repo` if the repository used for the Build is not a public or a private Git repo in the local Gitea. When selected, fill in the secret name that contains the required SSH credentials. Read more [here](https://tekton.dev/docs/how-to-guides/clone-repository/#git-authentication) about how to setup SSH authentication with your Git provider.
+5. (optional) Select `Trigger` to create an event listener to trigger the build based on a Gitea webhook.
 
-5. (optional) Select to create an event listener to trigger the build based on a Gitea webhook.
-
+6. (optional) Select `Scan source` to scan the source code for vulnerabilities.
+ 
 ### Buildpacks
 
-1. Add the URL of the Git repository that contains the application source code
+1. Add the URL of the Git repository that contains the application source code.
 
-2. (optional) Add the path. This is a subpath within the repo where the source to build is located
+2. (optional) Add the path. This is a subpath within the repo where the source to build is located.
 
-3. (optional) Change the revision. This can be a commit, a tag, or a branch
+3. (optional) Change the revision. This can be a commit, a tag, or a branch.
 
-4. (optional) Add Environment variables to set during build-time
+4. (optional) Add Environment variables to set during build-time.
 
-5. (Optional) Select `External Repo` if the repository used for the Build is not a public or a private Git repo in the local Gitea. When selected, fill in the secret name that contains the required SSH credentials. Read more [here](https://tekton.dev/docs/how-to-guides/clone-repository/#git-authentication) about how to setup SSH authentication with your Git provider.
+5. (optional) Select `Trigger` to create an event listener to trigger the build based on a Gitea webhook.
 
-6. (optional) Select to create an event listener to trigger the build based on a Gitea webhook.
+6. (optional) Select `Scan source` to scan the source code for vulnerabilities.
 
 ### Build status details
 

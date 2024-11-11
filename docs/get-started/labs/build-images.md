@@ -18,7 +18,7 @@ When your team is using Harbor for private image registries, you can build image
 
 3. Fill in the name `blue` for your build and a tag (default tag is latest).
 
-4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab.
+4. Choose `Docker` and fill in the repo URL for the `blue` repo created in the previous lab: `https://gitea.<your-domain>/<gitea-username>/blue`.
 
 5. Click `Submit`.
 

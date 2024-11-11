@@ -34,4 +34,4 @@ The dashboards are dynamically added based on the enabled platform capabilities:
 
 - Click on the `Kubernetes / Pods` dashboard.
 
-- Select the required Pod and Container.
+- Select the desired Pod and Container, e.g., `blue-<pod-hash>` and `all`.

@@ -20,5 +20,5 @@ In Grafana, you are directed to the `Explore` section:
 
 ![kubecfg](../../img/grafana-loki.png)
 
-Select the label `app` and then select `blue`. You will now see all the `blue` container logs. You can also create your own queries. Learn more about LogQL [here](https://grafana.com/docs/loki/latest/logql/).
+Select the `app` label, then choose `blue`, and click `Run Query`. This will display all logs for the `blue` container. You can also create custom queries; learn more about LogQL here: [here](https://grafana.com/docs/loki/latest/logql/).
 

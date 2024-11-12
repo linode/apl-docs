@@ -26,10 +26,10 @@ sidebar_label: Akamai Connected Cloud
 The App Platform for LKE requires HA control plane to be enabled. When App Platform for LKE is enabled, HA control plane will automatically be enabled.
 :::
 
-5. In the Add Node Pools section, select the hardware resources for the Linode worker node(s) that make up your LKE cluster. To the right of each plan, select the plus + and minus - to add or remove a Linode to a node pool one at time.
+5. In the Add Node Pools section, select the required resources for the Linode worker node(s). To the right of each plan, select the plus + and minus - to add or remove a Linode to a node pool one at time.
 
 :::note 
-The App Platform for LKE requires a node pool with at least **3 worker** nodes with a minimum of **16 GB memory** and **4 CPUs** per node. Make sure to select the required Linode plan.
+During the Beta period the App Platform for LKE requires a node pool with at least **3 worker** nodes with a minimum of **16 GB memory** and **4 CPUs** per node. Make sure to select the required Linode plan.
 :::
 
 :::note
@@ -88,13 +88,15 @@ kubectl get secret platform-admin-initial-credentials -n keycloak --template={{.
 
 When signed in to the Console (the web UI of the App Platform), the first thing you’ll need to do is configure Object Storage. A wizard will be displayed asking you if the App Platform should provision all the required Buckets and access key for you. This is not required, but strongly recommended as this will prevent `out of disk space errors` when using Storage Volumes for integrated applications. Using Object Storage also has the advantage to create backups of all databases used by the platform.
 
-1. When asked to create all the required Buckets and access key, click Yes. If you don’t want the platform to create all the required buckets, then click Skip. Note that in this case some features like creating backups of databases will not be available. You can start the Wizard at any time in the Console (Platform View: Maintenance, Show Object Storage Wizard). 
+1. When asked to create all the required Buckets and access key, click Yes. If you don’t want the platform to create all the required buckets, then click Skip for now. Note that in this case some features like creating backups of databases will not be available. You can start the Wizard at any time in the Console (Platform View: Maintenance, Show Object Storage Wizard). 
 
-2. Follow the instructions to [create a Personal Access Token](https://techdocs.akamai.com/linode-api/reference/get-started#personal-access-tokens) and make sure to select **Read/Write** for the Object Storage category and **Read** for the Kubernetes category. Copy the Access Token.
+2. Follow the instructions to [create a Personal Access Token](https://techdocs.akamai.com/linode-api/reference/get-started#personal-access-tokens) and make sure to select **Read/Write** for the Object Storage category. Copy the Access Token.
 
-3. Now paste the Access Token into the wizard and click Submit.
+3. Now paste the Access Token into the wizard and select the region where the buckets should be created from the dropdown list.
 
-All the required Buckets and Access Key will now be created in your account and the platform will be configured to use Object Storage to store persistent data and backups. The provided Personal Access Token will not be stored. The created buckets will have the `<cluster-id>` prefix`
+4. Click `Submit`.
+
+All the required buckets will now be created in your account and the platform will be configured to use Object Storage to store persistent data and backups. The provided Personal Access Token will not be stored. The created buckets will have the `<cluster-id>` prefix`
 
 ## Onboard Teams and Users
 You can now start enabling Applications, onboarding [Teams](../../for-ops/console/teams) and create [Users](../../for-ops/console/user-management).

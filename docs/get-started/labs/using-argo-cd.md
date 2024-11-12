@@ -76,7 +76,7 @@ Let's demonstrate the capabilities of Argo CD by adding some manifests to the re
 
 Once you return to the Argo CD application, click on the `team<name>` application.
 
-The application is configured for automatic syncing, so a manual `SYNC` is not needed.
+The application is set to sync automatically, so a manual `SYNC` is not required. Once ArgoCD completes the sync, the nginx deployment will appear as shown below:
 
 ![Syncing in ArgoCD](../../img/argo-team-sync.png)
 

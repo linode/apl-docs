@@ -20,3 +20,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .history
+
+# IntelliJ IDEA
+.idea

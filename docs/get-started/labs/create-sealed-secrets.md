@@ -39,7 +39,7 @@ Now go to Gitea and check the otomi/values repository. You will see that under `
 
 ## Checking the Kubernetes secret
 
-The only way to see the values of the secret is to decrypt the secret. The secret values are stored as base64 encoded values. Open a Shell and run the following command:
+The only way to see the values of the secret is to decrypt the secret. The secret values are stored as base64 encoded values. In the left menu click on Shell and run the following command:
 
 ```bash
 kubectl get secret secret-credentials -o yaml -n team-labs

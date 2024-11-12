@@ -112,7 +112,7 @@ resources:
 
 2. Select the `petclinic` service.
 
-3. Under `Exposure Ingress`, select `Ingress` and use the default configuration.
+3. Under `Exposure Ingress`, select `External` and use the default configuration.
 
 4. Click `Submit`.
 

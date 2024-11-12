@@ -14,7 +14,7 @@ In the previous lab we created a Build using the `blue` repo in Gitea. In this l
 
 3. Fill in the name `green` for your build.
 
-4. Choose `./Dockerfile` and fill in the repo URL for the `green` repo created in the previous lab: `https://gitea.<your-domain>/<gitea-username>/green`.
+4. Choose `Docker` and fill in the repo URL for the `green` repo created in the previous lab: `https://gitea.<your-domain>/<gitea-username>/green`.
 
 5. Enable `Trigger`.
 

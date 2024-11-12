@@ -8,7 +8,7 @@ A Project is a collection of a Build, a Workload and a Service. The benefit of u
 
 ## Create a new Git repository
 
-1. Create a new repo called `nodejs-helloworld`.
+1. Create a new repo called `nodejs-helloworld` in Gitea.
 
 2. Set the Default Branch to `master`.
 
@@ -39,19 +39,21 @@ git push --mirror https://gitea.<your-domain>/<your-user-name>/nodejs-helloworld
 
 6. Enable `Trigger`.
 
-7. Select the `Digest` strategy for the `Auto image updater`.
+7. Click `Next`.
 
-8. The `imageRepository` is already filled in. Make sure the `tag` is identical to the tag used for the Build.
+8. Select the `Digest` strategy for the `Auto image updater`.
 
-9. Use the default Chart values.
+9. The `imageRepository` is already filled in. Make sure the `tag` is identical to the tag used for the Build.
 
-10. Click `Next`.
+10. Use the default Chart values.
 
-11. Under `Exposure` select `External`.
+11. Click `Next`.
 
-12. Click `Submit`.
+12. Under `Exposure` select `External`.
 
-13. Click `Deploy Changes`.
+13. Click `Submit`.
+
+14. Click `Deploy Changes`.
 
 ## Get the webhook URL
 

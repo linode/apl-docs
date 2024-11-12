@@ -12,7 +12,7 @@ When you have deployed your application using the Workloads feature, you will pr
 
 ![expose services](../../img/create-svc.png)
 
-2. Select the `blue` service of the Workload we created in the previous lab:
+2. Select the `blue` service of the workload created in the previous lab. The blue service will become available once the ArgoCD application is ready:
 
 ![expose services](../../img/create-svc-2.png)
 

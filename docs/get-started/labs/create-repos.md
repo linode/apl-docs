@@ -16,7 +16,7 @@ Team members first have to sign in to Gitea (using OpenID), after which they are
 The `otomi-admin` account is unable to login with OpenID, this account needs to login with the user/password login form.
 :::
 
-In the labs we'll be using a Team called `labs` and a user called `labs-user`.
+In the labs we'll be using a Team called `labs` and a user called `labs-user@example.com`.
 
 ## Using a Git client
 

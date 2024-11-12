@@ -20,7 +20,7 @@ This how to provides step-by-step instructions to reset the `otomi-admin` passwo
 
 ```bash
     # Generate a random 16-character alphanumeric password
-    head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16
+    head /dev/urandom | LC_ALL=C tr -dc A-Za-z0-9 | head -c 16
     # Example output: FPpLvZyAdAmuzc3N
     ```
 

@@ -36,9 +36,9 @@ module.exports = {
     theme: "github",
     image: "img/logos/akamai-logo-color.svg",
     algolia: {
-      appId: "U3MTGFO19C",
-      apiKey: "e0ead7a6f8c98c140b3fca21e9eb5381",
-      indexName: `redkubes_otomi`,
+      appId: "6KB5EH30HY",
+      apiKey: "66fde7b3ea3c028d87ba16c7923e7e58",
+      indexName: "apl-net",
 
       // Optional: see doc section bellow
       contextualSearch: true,

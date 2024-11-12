@@ -39,3 +39,7 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+### Search index
+
+The search index is provided by the algolia.com - a 3rd party service. There is crawler that indexes pages every day. In the `docusaurus.config.js` file you can find configuration parameters under the algolia property.

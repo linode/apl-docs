@@ -4,7 +4,7 @@ title: Create projects
 sidebar_label: Create Projects
 ---
 
-A Project is a collection of a Build, a Workload and a Service. The benefit of using Projects is that you can create a Build, a Workload and a Service in one run. Projects are ideal for developers to run multiple code branches next to each other and automatically update the deployment based on a push. In this lab we are going to create a Project and see how everything now comes together is one simple form.
+A Project is a collection consisting of a Build, a Workload and a Service. The benefit of using Projects is that you can create a Build, a Workload and a Service in one run. Projects are ideal for developers to run multiple code branches next to each other and automatically update the deployment based on a push. In this lab we are going to create a Project and see how everything now comes together is one simple form.
 
 ## Create a new Git repository
 
@@ -65,7 +65,7 @@ Also notice that the status of the Build shows an exclamation mark. This is beca
 
 1. In the Console, click on `apps` the left menu and then open `Gitea`.
 
-2. In the top menu of Gitea, click on `Explore` and then on the `nodejs-helloworld` repo.
+2. In the top left menu of Gitea, click on `Explore` and then on the `nodejs-helloworld` repo.
 
 3. Go to `Settings` (top right) and then to `Webhooks`.
 
@@ -106,6 +106,3 @@ When the state of the Workload becomes `Healthy`, the URL of the Service created
 Check the URL again. After a couple of minutes you will see the following page:
 
 ![Hello World](../../img/hello-world-2.png)
-
-
-

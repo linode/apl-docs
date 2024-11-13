@@ -18,10 +18,10 @@ In this lab we will create sealed secrets and see how to securely sensitive info
 
 5. Click on `Add Item` so you can fill in two key-value pairs
 
-6. Add the secret `data`. Add the following key-value pairs:
+6. In the `Encrypted data` section. Add the following key-value pairs:
 
-- `password=helloworld`
-- `username=labs-user`
+- `key=password value=helloworld`
+- `key=username value=labs-user`
 
 ![Create sealed secret](../../img/create-sealed-secrets.png)
 

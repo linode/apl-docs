@@ -16,7 +16,7 @@ In Argo CD, notice that an application specific to your team has already been se
 
 ![Argo CD Team Application Overview](../../img/argo-team-app.png)
 
-After clicking on the app and selecting `DETAILS` in the top left, you'll find the `REPO URL` in the `SUMMARY` section.
+After clicking on the app and selecting `DETAILS` in the top left menu, you'll find the `REPO URL` in the `SUMMARY` section.
 
 Return to the Console, select the Gitea app in the apps section. In Gitea you will see a repository titled `otomi/team-<name>-argocd`.
 

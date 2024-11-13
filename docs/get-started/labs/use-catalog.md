@@ -42,7 +42,7 @@ The `quickstart-redis` Helm chart can be used to create a Redis master-replica c
 
 ![catalog](../../img/catalog.png)
 
-3. Click on the `k8s-deployment` template.
+3. Click on the `Quickstart-k8s-deployment` template.
 
 ![catalog](../../img/catalog-2.png)
 

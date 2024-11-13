@@ -16,16 +16,18 @@ In this lab we will create sealed secrets and see how to securely sensitive info
 
 4. Select the secret type. In this lab we will create a secret of type `opaque`.
 
-5. Add the secret `data`. Add the following key-value pairs:
+5. Click on `Add Item` so you can fill in two key-value pairs
+
+6. Add the secret `data`. Add the following key-value pairs:
 
 - `password=helloworld`
 - `username=labs-user`
 
 ![Create sealed secret](../../img/create-sealed-secrets.png)
 
-6. Click on `submit`.
+7. Click on `submit`.
 
-7. Click on `Deploy Changes`.
+8. Click on `Deploy Changes`.
 
 Note that the secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
 
@@ -54,16 +56,16 @@ data:
   username: bGFicy11c2Vy
 kind: Secret
 metadata:
-  creationTimestamp: "2024-09-12T06:11:55Z"
+  creationTimestamp: '2024-09-12T06:11:55Z'
   name: secret-credentials
   namespace: team-labs
   ownerReferences:
-  - apiVersion: bitnami.com/v1alpha1
-    controller: true
-    kind: SealedSecret
-    name: secret-credentials
-    uid: b9dc5d5c-9699-4efb-86a8-7bd1dd869318
-  resourceVersion: "357105"
+    - apiVersion: bitnami.com/v1alpha1
+      controller: true
+      kind: SealedSecret
+      name: secret-credentials
+      uid: b9dc5d5c-9699-4efb-86a8-7bd1dd869318
+  resourceVersion: '357105'
   uid: 84dd34e1-2313-482d-b7de-e5d848675fb7
 type: kubernetes.io/opaque
 ```

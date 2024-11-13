@@ -1,7 +1,7 @@
 ---
 slug: backups
-title: Create/Restore backups
-sidebar_label: Backups
+title: Create and Restore backups
+sidebar_label: Create Backups
 ---
 
 When Velero is activated on the platform level, platform admins can create backups of Persistent Volumes (PVs) in Team namespaces using the Console. When creating backups using the Console, a Velero `schedule` resource is created that will create the backup at a specified time, defined by a Cron expression.

@@ -22,3 +22,7 @@ sidebar_label: Overview
 
 ### [Manage Age for Development, Security, and Recovery](manage-age.md).
 
+### [Change the otomi-admin password](change-admin-password.md).
+
+### [Change or reset user passwords](change-user-passwords.md).
+

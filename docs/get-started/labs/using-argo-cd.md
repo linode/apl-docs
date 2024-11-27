@@ -16,7 +16,7 @@ In Argo CD, notice that an application specific to your team has already been se
 
 ![Argo CD Team Application Overview](../../img/argo-team-app.png)
 
-After clicking on the app and selecting `APP DETAILS`, you'll find the `REPO URL`.
+After clicking on the app and selecting `DETAILS` in the top left menu, you'll find the `REPO URL` in the `SUMMARY` section.
 
 Return to the Console, select the Gitea app in the apps section. In Gitea you will see a repository titled `otomi/team-<name>-argocd`.
 
@@ -26,7 +26,7 @@ Return to the Console, select the Gitea app in the apps section. In Gitea you wi
 
 Let's demonstrate the capabilities of Argo CD by adding some manifests to the repository:
 
-1. Create a file named `deploy-nginx.yaml` in the repository.
+1. Create a file named `deploy-nginx.yaml` in the repository `otomi/team-<name>-argocd`.
 2. Insert the following contents into the file:
 
    ```yaml
@@ -79,5 +79,3 @@ Once you return to the Argo CD application, click on the `team<name>` applicatio
 The application is set to sync automatically, so a manual `SYNC` is not required. Once ArgoCD completes the sync, the nginx deployment will appear as shown below:
 
 ![Syncing in ArgoCD](../../img/argo-team-sync.png)
-
-

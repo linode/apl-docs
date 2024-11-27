@@ -18,15 +18,15 @@ All Builds of the team are listed here.
 
 ![Team builds](../../img/team-builds.png)
 
-| Property      | Description                                                     |
-| ------------- | --------------------------------------------------------------- |
-| Name          | The name of the build                                           |
-| Type          | Type of the build. `buildpacks` or `docker`                     |
-| Webhook url   | The `copy to clipboard` webhook URL if a trigger is configured for the build |
-| Tekton        | Link to the `PipelineRun`` of the build in the Tekton dashboard |
-| Repository    | The `copy to clipboard` repository name of the image            |
-| Tag           | The tag of the image                                            |
-| Status        | The status of the Build. If the Build has failed. click on the Tekton link to see more details |
+| Property    | Description                                                                                    |
+| ----------- | ---------------------------------------------------------------------------------------------- |
+| Name        | The name of the build                                                                          |
+| Type        | Type of the build. `buildpacks` or `docker`                                                    |
+| Webhook url | The `copy to clipboard` webhook URL if a trigger is configured for the build                   |
+| Tekton      | Link to the `PipelineRun`` of the build in the Tekton dashboard                                |
+| Repository  | The `copy to clipboard` repository name of the image                                           |
+| Tag         | The tag of the image                                                                           |
+| Status      | The status of the Build. If the Build has failed. click on the Tekton link to see more details |
 
 ## Create a build
 
@@ -36,7 +36,7 @@ The name of the build will be used for the registry name of the image (`harbor.<
 
 2. (optional) Adjust the tag
 
-The tag will be used to tag the image  (`harbor.<domainSuffix>/team-name/build-name:tag`)
+The tag will be used to tag the image (`harbor.<domainSuffix>/team-name/build-name:tag`)
 
 Now choose the type of the build:
 
@@ -77,7 +77,7 @@ To see the more status details of the build, click on the `PipelineRun` link of 
 
 1. In the Console, click on `Apps` in the left menu and then open `Gitea`
 
-2. In the top menu of Gitea, click on `Explore` and then on the `green` repo
+2. In the top left menu of Gitea, click on `Explore` and then on the `green` repo
 
 3. Go to `Settings` (top right) and then to `Webhooks`
 
@@ -122,5 +122,3 @@ Build can be restarted by changing the `tag` of the build or by restarting the p
 tkn pipelines list
 tkn pipeline start <pipeline-name> --use-pipelinerun <pipelinerun-name>
 ```
-
-

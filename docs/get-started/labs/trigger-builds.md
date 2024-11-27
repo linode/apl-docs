@@ -34,7 +34,7 @@ Also notice that the status of the Build shows an exclamation mark. This is beca
 
 1. In the Console, click on `apps` the left menu and then open `Gitea`.
 
-2. In the top menu of Gitea, click on `Explore` and then on the `green` repo.
+2. In the top left menu of Gitea, click on `Explore` and then on the `green` repo.
 
 3. Go to `Settings` (top right) and then to `Webhooks`.
 

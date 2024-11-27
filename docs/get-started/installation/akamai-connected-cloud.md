@@ -29,7 +29,7 @@ The App Platform for LKE requires HA control plane to be enabled. When App Platf
 5. In the Add Node Pools section, select the required resources for the Linode worker node(s). To the right of each plan, select the plus + and minus - to add or remove a Linode to a node pool one at time.
 
 :::note 
-During the Beta period the App Platform for LKE requires a node pool with at least **3 worker** nodes with a minimum of **16 GB memory** and **4 CPUs** per node. Make sure to select the required Linode plan.
+The App Platform for LKE requires a node pool with at least **3 worker** nodes with a minimum of **8 GB memory** and **4 CPUs** per node.
 :::
 
 :::note
@@ -56,7 +56,7 @@ You will then see the following sign-in page:
 
 1. To access your cluster's Kubeconfig, log in to your Cloud Manager account and navigate to the Kubernetes section.
 
-2. From the Kubernetes listing page, click on your cluster's more options ellipsis and select Download Kubeconfig. The file is saved to your computer's Downloads folder.
+2. From the Kubernetes listing page, click on your cluster's more options ellipsis and select `Download Kubeconfig`. The file is saved to your computer's Downloads folder.
 
 3. Open a terminal shell and save your Kubeconfig file's path to the $KUBECONFIG environment variable. In the example command, the Kubeconfig file is located in the Downloads folder, but you should alter this line with this folder's location on your computer:
 
@@ -82,7 +82,7 @@ kubectl get secret platform-admin-initial-credentials -n keycloak --template={{.
 
 4. Sign in to the Console with the provided username and initial password.
 
-5. Change the initial password
+5. Change the initial password.
 
 ## Provision Object Storage for the App Platform (Expected to be available on November 12)
 
@@ -96,7 +96,11 @@ When signed in to the Console (the web UI of the App Platform), the first thing 
 
 4. Click `Submit`.
 
-All the required buckets will now be created in your account and the platform will be configured to use Object Storage to store persistent data and backups. The provided Personal Access Token will not be stored. The created buckets will have the `<cluster-id>` prefix`
+All the required buckets will now be created in your account and the platform will be configured to use Object Storage to store persistent data and backups. The provided Personal Access Token will not be stored. The created buckets will have the `<cluster-id>` prefix`.
+
+## Enable the Autoscaler
+
+Before you start enabling Applications and creating Teams and Workloads, we recommend to enable the [Autoscaler](https://techdocs.akamai.com/cloud-computing/docs/manage-nodes-and-node-pools#autoscale-automatically-resize-node-pools). The minimal required compute resources (a node pool with at least **3 worker** nodes with a minimum of **8 GB memory** and **4 CPUs** per node) might be sufficient, but when you start enabling a lot of Applications and also start running a lot of Workloads, you might need more resources.
 
 ## Onboard Teams and Users
 You can now start enabling Applications, onboarding [Teams](../../for-ops/console/teams) and create [Users](../../for-ops/console/user-management).
@@ -124,6 +128,7 @@ Resolution:
 - If you would like to know your account's limits or want to increase the number of entities you can create, the best way is to get that information through a support ticket.
 
 ### The Let’s Encrypt secret request was not successful
+
 For each cluster with the App Platform for LKE enabled, a Let’s Encrypt certificate will be requested. If the certificate is not ready within 30 minutes, the installation of the App Platform will fail. Run the following command to see if the certificate is created:
 
 ```bash

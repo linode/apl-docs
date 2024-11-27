@@ -19,10 +19,10 @@ This how to provides step-by-step instructions to reset the `otomi-admin` passwo
 ### Step 1: Generate a New Password
 
 ```bash
-    # Generate a random 16-character alphanumeric password
-    head /dev/urandom | LC_ALL=C tr -dc A-Za-z0-9 | head -c 16
-    # Example output: FPpLvZyAdAmuzc3N
-    ```
+# Generate a random 16-character alphanumeric password
+head /dev/urandom | LC_ALL=C tr -dc A-Za-z0-9 | head -c 16
+# Example output: FPpLvZyAdAmuzc3N
+```
 
 ### Step 2: Update the Password in Keycloak
 
@@ -35,7 +35,6 @@ This how to provides step-by-step instructions to reset the `otomi-admin` passwo
 4. Change the password to the one you generated.
 
 5. Save changes (set Temporary to Disabled).
-
 
 :::info
 Don’t make any other changes during this operation.
@@ -59,7 +58,7 @@ export ENV_DIR=~/workspace/values-folder
 
 - Retrieve the SOPS_AGE_KEY from secret:
 
-```
+```bash
 kubectl get secret otomi-sops-secrets -n otomi-pipelines -o jsonpath='{.data.SOPS_AGE_KEY}' | base64 -d
 # Example output: AGE-SECRET-KEY-1KTYK6RVLN5TAPE7VF6FQQSKZ9HWWCDSKUGXXNUQDWZ7XXT5YK5LSF3UTKQ
 ```

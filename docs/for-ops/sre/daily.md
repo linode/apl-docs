@@ -4,7 +4,7 @@ title: SRE Daily Routine
 sidebar_label: Daily Routine
 ---
 
-As an SRE you would like to keep your daily tasks to a minimum and be automatically informed on issues. APL offers the following tooling to automate this:
+As an SRE you would like to keep your daily tasks to a minimum and be automatically informed on issues. App Platform offers the following tools to automate this:
 
 - Prometheus is the main monitoring tool, and notifications will be triggered for issues that need attention
 
@@ -14,7 +14,7 @@ As an SRE you would like to keep your daily tasks to a minimum and be automatica
 
 - Prometheus BlackBox exporter is a service probing tool used by Prometheus to periodically probe services over HTTP, TCP, UDP, and ICMP. When it receives non-valid responses it will trigger an alert
 
-APL makes use of Slack (but MS Teams and email can also be configured) as the main notifications channel. Subscribe to the configured channels.
+App Platform makes use of Slack (but MS Teams and email can also be configured) as the main notifications channel. Subscribe to the configured channels.
 
 ### Steps to perform
 

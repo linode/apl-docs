@@ -151,6 +151,7 @@ module.exports = {
         SRE: [
           "for-ops/sre/overview",
           "for-ops/sre/daily",
+          "for-ops/sre/known-issues",
           "for-ops/sre/troubleshooting",
         ],
       },

@@ -50,3 +50,18 @@ N.A.
 ### Resolution
 
 - Delete the LKE cluster with App Platform for LKE enabled and create a new cluster with App Platform for LKE enabled.
+
+## ArgoCD does not synchronize anymore
+
+
+### Details
+
+ArgoCD may occasionally stop synchronizing without a clear cause. In some instances, errors may appear in the logs, while in others, no errors are logged. This issue results in platform updates being halted.
+
+### Workaround
+
+N.A.
+
+### Resolution
+
+- Increase the resource allocation for the ArgoCD Application Controller. This can be achieved by updating the resource configuration in the values repository within Gitea under the ArgoCD application. The updated configuration will automatically restart the ArgoCD application.

@@ -59,9 +59,13 @@ export ENV_DIR=~/workspace/values-folder
 
 - Retrieve the SOPS_AGE_KEY from secret:
 
-```
+```bash
 kubectl get secret otomi-sops-secrets -n otomi-pipelines -o jsonpath='{.data.SOPS_AGE_KEY}' | base64 -d
-# Example output: AGE-SECRET-KEY-1KTYK6RVLN5TAPE7VF6FQQSKZ9HWWCDSKUGXXNUQDWZ7XXT5YK5LSF3UTKQ
+```
+Example output: 
+
+```bash
+AGE-SECRET-KEY-1KTYK6RVLN5TAPE7VF6FQQSKZ9HWWCDSKUGXXNUQDWZ7XXT5YK5LSF3UTKQ
 ```
 
 - Create the `.secrets` file in the root of the values directory with the SOPS_AGE_KEY secret. The file contents should look like this:

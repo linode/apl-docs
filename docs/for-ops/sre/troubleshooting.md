@@ -4,7 +4,7 @@ title: SRE Troubleshooting Checklist
 sidebar_label: Troubleshooting
 ---
 
-## Pods not starting
+## Pods
 
 Pods that are unable to start do not show any log output, the issue is related to k8s. Look for a pod with status Pending. Most of the time this is related to resources and container component issues.
 
@@ -20,23 +20,7 @@ Pods that are unable to start do not show any log output, the issue is related t
 
 - Does the cluster have enough resources available?
 
-### Advanced
-
-- Check affinity and node selector rules
-
-- Is the image tag valid and compatible with the host CPU? (exec format error)
-
-- Check namespace quotas for pod, cm or secret limits etc.
-
-- Check service account and permissions
-
-- Is the pod a job, deployment, daemonset or statefulset?
-
-- Is there a limitrange configured in the namespace?
-
-- Is the template spec in the pod matching the running container?
-
-## Pods not running
+### Pod status
 
 Pods that are running but restart for whatever reason indicate that a container itself is having issues. Look for pod status `Crashloop, OOMkilled` or `incomplete ready status (2/3)`
 
@@ -60,8 +44,6 @@ Pods that are running but restart for whatever reason indicate that a container 
 
 - Inspect the restart counter for the pod, a high value (32+) indicates an unstable pod
 
-### Advanced
-
 - Check pod's service account permissions
 
 - Attach shell and inspect container status
@@ -72,7 +54,23 @@ Pods that are running but restart for whatever reason indicate that a container 
 
 - Check volume permissions
 
-## Network services not working
+### Advanced
+
+- Check affinity and node selector rules
+
+- Is the image tag valid and compatible with the host CPU? (exec format error)
+
+- Check namespace quotas for pod, cm or secret limits etc.
+
+- Check service account and permissions
+
+- Is the pod a job, deployment, daemonset or statefulset?
+
+- Is there a limitrange configured in the namespace?
+
+- Is the template spec in the pod matching the running container?
+
+## Services
 
 Pods are working but a user can't connect to the service. Most HTTP-based services use an Ingress object, non HTTP services require a service port to be defined.
 
@@ -106,7 +104,7 @@ Network policies or Istio policies can deny pods from communicating, note that D
 
 - Run `istioctl analyze`
 
-## Istio issues
+## Istio
 
 Istio sidecars manipulate the container's network to reroute traffic. A namespace can have an Istio sidecar policy indicated by a label, the same is valid for a deployment or pod. Make sure you see Istio sidecars running when applicable (indicated by the 3/3 Ready status).
 
@@ -128,7 +126,7 @@ Istio sidecars manipulate the container's network to reroute traffic. A namespac
 
 - Turn on logging for a context of an istio sidecar: `ksh exec -it $container_id -c istio-proxy -- sh -c 'curl -k -X POST localhost:15000/logging?jwt=debug'`
 
-## DNS issues
+## ExternalDNS
 
 The ExternalDNS service is registering DNS names to makes sure that the service names are publicly available.
 
@@ -136,27 +134,12 @@ The ExternalDNS service is registering DNS names to makes sure that the service 
 
 - Are the credentials configured correctly?
 
-## Certificate issues
+## Cert-manager
 
-- Check cert-manager working
+Check cert-manager working:
 
 - Run `kubectl describe orders.acme.cert-manager.io -A`
 
 - Run `kubectl describe challenges.acme.cert-manager.io -A`
 
 - Run `kubectl describe certificates.cert-manager.io -A`
-
-## Storage issues
-
-Check available storage classes `std` and `fast` exist
-
-### The otomi-pipeline pipeline failure
-
-In the otomi-pipeline execution failure, read carefully last few lines from the ` PipelineRun`` output.
-Errors containing:  `unable to build kubernetes objects from release manifest: Get "https://10.32.0.1:443/openapi/v2?timeout=32s": net/http: request canceled`string, indicates that the kube-api was not available. Admin can restart the pipeline by triggering webhook from Gitea app. Go to `otomi/values`repository -> click`Settings`-> select `Webhooks`tab -> click the `Test Delivery` button.
-
-### Advanced
-
-- Describe pv and pvc, check if pv's are `rwo` or `rwx` and look for conflicts
-
-- Check if container expects or `rwx` pv

@@ -66,7 +66,7 @@ The egress rules are namespace wide. You cannot bind an egress policy to one Wor
 
 ### Build Images for the Application
 
-Build the `Vote`, `Worker` and `Result` images from this [repo](https://github.com/linode/apl-example-app). Use the Build feature to build the images with `mode: Docker`. Set the `path` to `./vote/Dockerfile` for the Vote image (and `./worker/Dockerfile` for the Worker and `./result/Dockerfile` for Result).
+Build the `vote`, `worker` and `result` images from this [repo](https://github.com/linode/apl-example-app). Use the Build feature to build the images with `mode: Docker`. Set the `path` to `./vote/Dockerfile` for the Vote image (and `./worker/Dockerfile` for the Worker and `./result/Dockerfile` for Result).
 
 ### Create a Redis Cluster and a PostgreSQL Database
 
@@ -86,6 +86,7 @@ containerPorts:
 env:
   - name: REDIS_HOST
     value: <redis-cluster-name>-master
+replicaCount: 1
 ```
 
 ### Deploy the Worker App
@@ -114,7 +115,12 @@ env:
     value: <redis-cluster-name>-master
   - name: DATABASE_HOST
     value: <psql-cluster-name>-rw
+replicaCount: 1
 ```
+
+:::note
+The worker pod will show an error “Waiting for db” in the logs. This is an expected error that will be resolved when all the steps in the lab are done.
+:::
 
 ### Deploy the Result App
 
@@ -140,7 +146,13 @@ env:
         key: password
   - name: DATABASE_HOST
     value: <psql-cluster-name>-rw
+  - name: DATABASE_NAME
+    value: <psql-cluster-name>
+replicaCount: 1
 ```
+:::note
+The result pod will show an error “Waiting for db” in the logs. This is an expected error that will be resolved when all the steps in the lab are done.
+:::
 
 ### Register Services for Exposure
 
@@ -151,14 +163,14 @@ env:
 
 #### Result
 
-- Register the `<result>` service.
+- Register the `result` service.
 - Set exposure to `External`.
 
 ### Create the Network Policies for the Example Voting App
 
 #### Postgres Database
 
-1. Create a new `Netpol` and select the `ingress` rule type.
+1. Create a new `Network policy` and select the `ingress` rule type.
 
 2. Add the selector label name `otomi.io/app`.
 
@@ -166,13 +178,13 @@ env:
 
 4. Select `AllowOnly`.
 
-5. Add the namespace `<team-name>`, the selector label name `otomi.io/app` and the selector label value `<worker>`.
+5. Add the namespace `team-<name>`, the selector label name `otomi.io/app` and the selector label value `worker`.
 
-6. Add the namespace `<team-name>`, the selector label name `otomi.io/app` and the selector label value `<result>`.
+6. Add the namespace `team-<name>`, the selector label name `otomi.io/app` and the selector label value `result`.
 
 #### Redis
 
-1. Create a new `Netpol` and select the `ingress` rule type.
+1. Create a new `Network policy` and select the `ingress` rule type.
 
 2. Add the selector label name `otomi.io/app`.
 
@@ -180,9 +192,9 @@ env:
 
 4. Select `AllowOnly`.
 
-5. Add the namespace `<team-name>`, the selector label name `otomi.io/app` and the selector label value `<worker>`.
+5. Add the namespace `team-<name>`, the selector label name `otomi.io/app` and the selector label value `worker`.
 
-6. Add the namespace `<team-name>`, the selector label name `otomi.io/app` and the selector label value `<vote>`.
+6. Add the namespace `team-<name>`, the selector label name `otomi.io/app` and the selector label value `vote`.
 
 ### Test the Voting App
 

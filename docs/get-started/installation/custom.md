@@ -117,9 +117,7 @@ If your Kubernetes cluster uses untrusted certificates, make sure to set `metric
 ```yaml
 apps:
   metrics-server:
-    extraArgs:
-      kubelet-insecure-tls: true
-      kubelet-preferred-address-types: InternalIP
+    extraArgs: ["--kubelet-insecure-tls=true"]
 ```
 
 ### Cluster Autoscaler
@@ -142,9 +140,7 @@ cluster:
 # optionally configure metrics-server for kubelet-insecure-tls
 apps:
   metrics-server:
-    extraArgs:
-      kubelet-insecure-tls: true
-      kubelet-preferred-address-types: InternalIP
+    extraArgs: ["--kubelet-insecure-tls=true"]
 # dns is required!
 dns:
   domainFilters: 

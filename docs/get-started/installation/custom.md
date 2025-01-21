@@ -117,7 +117,8 @@ If your Kubernetes cluster uses untrusted certificates, make sure to set `metric
 ```yaml
 apps:
   metrics-server:
-    extraArgs: ["--kubelet-insecure-tls=true"]
+    extraArgs:
+      - --kubelet-insecure-tls=true
 ```
 
 ### Cluster Autoscaler

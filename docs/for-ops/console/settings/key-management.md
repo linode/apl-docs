@@ -5,7 +5,7 @@ sidebar_label: Key Management
 ---
 
 :::info
-The Key Management section in the Settings will not be visible when the installation is done by Akamai Connected Cloud. In this case Age is used as KMS.
+The Key Management section in the Settings will not be visible when App Platform is deployed directly through LKE (not manually installed). In this case Age is used as KMS.
 :::
 
 ## Key management

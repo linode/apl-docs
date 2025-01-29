@@ -5,7 +5,7 @@ sidebar_label: Scan Containers
 ---
 
 :::important
-Trivy Operator is not supported when installed using Akamai Connected Cloud or when running Kubernetes version 1.31.
+Trivy Operator is not supported when App Platform is deployed directly through LKE (not manually installed) or when running Kubernetes version 1.31.
 :::
 
 :::info

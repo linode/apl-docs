@@ -10,7 +10,7 @@ sidebar_label: Overview
 
 ### [Automatic deployment on LKE](akamai-connected-cloud.md)
 
-Deploy the App Platform automatically through LKE (Akamai's cloud computing managed Kubernetes service).
+Deploy App Platform automatically through LKE (Akamai's cloud computing managed Kubernetes service).
 
 ---
 
@@ -18,11 +18,11 @@ Deploy the App Platform automatically through LKE (Akamai's cloud computing mana
 
 ### [Manual installation on LKE](linode.md)
 
-Create an LKE cluster and manually install the App Platform.
+Create an LKE cluster and manually install the App Platform. This is not recommended unless you have specific needs that are not addressed in the automatic deployment method.
 
 ### [Custom installation on other Kubernetes services](custom.md)
 
-Install the App Platform on any other conformant Kubernetes cluster.
+Install App Platform on any other conformant Kubernetes cluster.
 
 ---
 

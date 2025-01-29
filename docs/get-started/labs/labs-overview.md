@@ -4,7 +4,7 @@ title: Labs Overview
 sidebar_label: Labs Overview
 ---
 
-Welcome to the App Platform for LKE labs! If you are going to use the App Platform for LKE or like to learn Kubernetes, these labs are for you. Step by step we'll guide you in how to build, deploy, secure and observe containerized applications on Kubernetes. The labs cover the most common activities performed by developer- and/or DevOps teams.
+Welcome to the Akamai App Platform labs! We recommend reviewing these labs to learn how to use App Platform or if you would like to learn Kubernetes. They will guide you in how to build, deploy, secure and observe containerized applications on Kubernetes. The labs cover the most common activities performed by developer and DevOps teams.
 
 ---
 

@@ -6,17 +6,17 @@ sidebar_label: Linode Kubernetes Engine
 
 # Install Akamai App Platform on LKE with DNS
 
-Provision a LKE cluster in Cloud Manager or by using the Linode CLI and manually install the App Platform onto it by using a Linode Domain for DNS.
+Provision an LKE cluster in Cloud Manager or by using the Linode CLI and manually install the App Platform onto it by using a Linode Domain for DNS.
 
 ## Prerequisites
 
 - Create an account for Linode [here](https://cloud.linode.com/)
 
-## Provision a LKE cluster
+## Provision an LKE cluster
 
 ### Using Cloud Manager
 
-Provision a LKE cluster with the following specs:
+Provision an LKE cluster with the following specs:
 
 - Fill in the `Cluster Label`
 
@@ -39,7 +39,7 @@ export KUBECONFIG=<path-to-downloads>/$CLUSTER_NAME-kubeconfig.yaml
 
 [Install and configure](https://techdocs.akamai.com/cloud-computing/docs/install-and-configure-the-cli) the CLI.
 
-Provision a LKE cluster using the Linode CLI:
+Provision an LKE cluster using the Linode CLI:
 
 ```bash
 linode-cli lke cluster-create \
@@ -111,7 +111,7 @@ cluster:
 otomi:
   hasExternalDNS: true
 dns:
-  domainFilters: 
+  domainFilters:
     - <your-domain>
   provider:
     linode:

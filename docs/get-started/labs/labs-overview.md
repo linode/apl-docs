@@ -10,7 +10,7 @@ Welcome to the App Platform for LKE labs! If you are going to use the App Platfo
 
 **Make sure everything is ready to get started**
 
-### [Provision a LKE Kubernetes cluster and install the App Platform](get-started/installation/linode.md)
+### [Provision an LKE Kubernetes cluster and install the App Platform](get-started/installation/linode.md)
 
 ### [Lab prerequisites](labs-prerequisites.md)
 

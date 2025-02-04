@@ -25,7 +25,7 @@ Where applicable, in these manifests the `initdb` section in `clusterSpec.bootst
 
 During a backup or recovery of the database, the application should to be shut down for avoiding any write operations leading to inconsistencies. The following steps for each application will be referred to in the sections below.
 
-### Gitea
+### Gitea app
 
 For temporarily disabling Gitea:
 ```sh
@@ -45,7 +45,7 @@ kubectl patch application -n argocd gitea-gitea --patch '[{"op": "add", "path": 
 kubectl patch statefulset -n gitea gitea --patch '[{"op": "replace", "path": "/spec/replicas", "value": 1}]' --type=json
 ```
 
-### Keycloak
+### Keycloak app
 
 For temporarily disabling Keycloak:
 ```sh
@@ -67,7 +67,7 @@ kubectl patch keycloak -n keycloak keycloak --patch '[{"op": "replace", "path": 
 kubectl delete deploy -n apl-keycloak-operator apl-keycloak-operator
 ```
 
-## Harbor
+### Harbor app
 
 For temporarily disabling Harbor:
 ```sh
@@ -131,7 +131,7 @@ platformBackups:
 
 ### Adjustments to database configuration
 
-The following change only has an effect on an initial database cluster.
+The following change only has an effect on an initial database cluster. Therefore it can be made ahead of shutting down platform-critical services.
 
 In the file `env/databases/<app>.yaml`, update the structure of `databases.<app>.recovery` as follows, depending on the app, inserting the backup name as determined above:
 
@@ -173,11 +173,11 @@ databases:
       owner: keycloak
 ```
 
-Note that ArgoCD may show a sync error, pointing out that there is a `recovery` section on an existing database cluster. This will be resolved in the following steps.
+Note that ArgoCD may show a sync error, pointing out that there are multiple `bootstrap` configurations on an existing database cluster. This will be resolved in the following steps.
 
 ### Shutting down services
 
-Check the Tekton pipelines to ensure that values changes have been deployed as expected. After this, follow above instructions to shut down Gitea, Harbor, or Keycloak as needed.
+Check the Tekton pipelines to ensure that values changes have been deployed as expected. After this, follow [above instructions](#preparation-of-backup-and-recovery) to shut down Gitea, Harbor, or Keycloak as needed.
 
 ### Removing the existing database
 
@@ -312,7 +312,7 @@ databases:
 
 ## Point-in-time recovery
 
-For restoring a backup only up to a specific point in time, add a recovery target to the `recovery` sections above, according to the ClodnativePG docs. For example, for restoring Gitea up to a change that was made after `"2023-07-06T08:00:39Z"`, add the following value:
+For restoring a backup only up to a specific point in time, add a recovery target to the `recovery` sections above, according to the [CloudnativePG docs](https://cloudnative-pg.io/documentation/current/recovery/#point-in-time-recovery-pitr). For example, for restoring Gitea up to a change that was made after `"2023-07-06T08:00:39Z"`, add the following value:
 
 ```yaml
 databases:
@@ -333,15 +333,15 @@ databases:
 
 The methods using the built-in tools of PostgreSQL `pg_dump` and `pg_restore` should be used of the operator is not available. This type of backup can also be used as an additional safety measure before using any of the aforementioned methods. Be aware that the backups are stored on the computer where the commands are executed. This requires a stable connection to the database pods during the time of the backup and recovery.
 
-1. Scale the application to zero that is using the database cluster (see above).
+1. Scale the application to zero that is using the database cluster ([see above](#preparation-of-backup-and-recovery)).
 2. Perform the backup or the restore as needed (following commands).
-3. Restore the application processes (see above).
+3. Restore the application processes ([see above](#preparation-of-backup-and-recovery)).
 
-Note that in difference to the commands as documented in the CNPG site, the following `pg_restore` commands include the `--clean` flag which will clear tables before the import. Otherwise, the import will likely fail as the database is usually not empty after the application has been initializing it on startup. Nevertheless **use this flag with care**!
+Note that in difference to the commands as documented in the [CNPG site](https://cloudnative-pg.io/documentation/current/troubleshooting/#emergency-backup), the following `pg_restore` commands include the `--clean` flag which will clear tables before the import. Otherwise, the import will likely fail as the database is usually not empty after the application has been initializing it on startup. Nevertheless **use this flag with care**!
 
 In the following steps, the `-n` suffix of each pod name (e.g. `gitea-db-n`) needs to be replaced with the primary pod instance (e.g. `kubectl exec -n gitea gitea-db-1 ...`).
 
-### Gitea
+### Gitea database
 
 Determine the primary instance:
 ```sh
@@ -360,7 +360,7 @@ kubectl exec -i -n gitea gitea-db-n postgres \
   -- pg_restore --no-owner --role=gitea -d gitea --verbose --clean < gitea.dump
 ```
 
-### Keycloak
+### Keycloak database
 
 Determine the primary instance:
 ```sh
@@ -379,7 +379,7 @@ kubectl exec -i -n keycloak keycloak-db-n postgres \
   -- pg_restore --no-owner --role=keycloak -d keycloak --verbose --clean < keycloak.dump
 ```
 
-### Harbor
+### Harbor database
 
 Determine the primary instance:
 ```sh

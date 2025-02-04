@@ -36,7 +36,7 @@ cd /backup
 
 ## Optional, not required if backup is available locally
 .bin/rclone lsf gitea:/$BUCKET_NAME  # List files
-.bin/rclone copy gitea:/$BUCKET_NAME/<backup-name>.tar.bz2 /backup/  # Obtain file
+.bin/rclone copy gitea:/$BUCKET_NAME/<backup-name>.tar.bz2 /backup/  # Retrieve file from remote
 
 ## Extract the backup
 mkdir restore

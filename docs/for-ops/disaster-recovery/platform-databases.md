@@ -8,18 +8,19 @@ Generally it is recommended to follow the CNPG documentation on how to backup or
 
 ## Initial notes
 
-The following instructions assume you are generally familiar with essential Kubernetes tools such as `kubectl`. Usage of TUI applications such as `k9s` from the administration terminal are strongly advised.
+The following instructions assume you are generally familiar with essential Kubernetes tools such as `kubectl`. Usage of TUI applications such as `k9s` from the administration terminal is strongly advised.
+Changes to the `values` repository can usually be made through the Gitea UI after signing in with the `platform-admin` user.
 
 In the event that platform-critical services Gitea and Keycloak are not able to start, required changes to the database configuration can be applied directly in the following ArgoCD applications in the `argocd` namespace. This change persists and is synchronized into the cluster until the following Tekton pipeline overwrites them:
 
 * Gitea database: `gitea-gitea-otomi-db`
 * Keycloak database: `keycloak-keycloak-otomi-db`
 
-Where applicable, in these manifests the `initdb` section in `clusterSpec.bootstrap` can be replaced with `recovery` and `externalClusters` as mentioned below. Note that `recovery` and `externalClusters` do not need to be reflected in the values file later, since they are only considered when initializing the cluster; even when Tekton does revert these changes, after a successful recovery this no longer has an effect.
+Where applicable, in these manifests the `initdb` section in `clusterSpec.bootstrap` can be replaced with `recovery` and `externalClusters` just as instructed below. Note that `recovery` and `externalClusters` do not need to be reflected in the values file later, since they are only considered when initializing the cluster; even when Tekton does revert these changes, after a successful recovery this no longer has an effect.
 
 ## Preparation of backup and recovery
 
-During a backup or recovery of the database, the application needs to be shut down for avoiding any write operations leading to inconsistencies. The following steps for each application will be referred to in the sections below.
+During a backup or recovery of the database, the application should to be shut down for avoiding any write operations leading to inconsistencies. The following steps for each application will be referred to in the sections below.
 
 ### Gitea
 
@@ -85,21 +86,21 @@ kubectl patch deploy -n harbor harbor-core --patch '[{"op": "replace", "path": "
 
 ## Regular recovery with backup in same cluster
 
-This procedure should be taken if the database has gotten to an unhealthy state, e.g. because of volume filesystem corruption. For reverting undesired change, additional instructions for a point-in-time recovery are to be considered.
+This procedure should be taken if the database has gotten to an unhealthy state, e.g. because of volume filesystem corruption. For reverting undesired updates, additional instructions for a point-in-time recovery are to be considered as described in the following sections.
 
 The regular backup and recovery requires making adjustments to the values file. Since certain services may become unavailable in the course of restoring a backup, it is advised to:
 
-* Create a Gitea application token for the `platform-admin` user.
+* Create a Gitea application token for the `platform-admin` user and make a local check-out of the values repository.
 * Have editing tools available for updating a Kubernetes resource in-place.
 
-Recovering any of the platform services should be performed in the following order:
+Recovering any of the platform databases should be performed in the following order:
 
 1. Note the name of the `Backup` resource that you intend to run the recovery from.
-2. Make adjustments to the values as described in this section. This needs to be done within the values repository directly.
+2. Make adjustments to the values as described in this section. This needs to be done within the values repository directly, since this is not exposed to the platform API.
 3. Shut down the service accessing the database (see above).
-4. Halt ArgoCD auto-sync and delete the database `Cluster` resource (described below).
+4. Halt ArgoCD auto-sync and delete the database `Cluster` resource.
 5. Re-enable ArgoCD sync.
-6. Re-enable the backup disabled in step 1. This can also take place via the Console.
+6. Re-enable the backup disabled in step 2. This is also possible via the Console.
 
 ### Listing backup resources
 
@@ -119,7 +120,7 @@ Inside `env/settings.yaml`, locate the path `platformBackups.database.<app>` (wh
 Example:
 
 ```yaml
-...
+# ...
 platformBackups:
     database:
         gitea:
@@ -127,18 +128,20 @@ platformBackups:
             retentionPolicy: 7d
             schedule: 0 0 * * *
             pathSuffix: gitea-1
-...
+# ...
 ```
 
 ### Adjustments to database configuration
 
 The following change only has an effect on an initial database cluster.
 
-In the file `env/databases/<app-name>.yaml`, update the structure of `databases.keycloak.recovery` as follows, depending on the app, inserting the backup name as determined above:
+In the file `env/databases/<app>.yaml`, update the structure of `databases.<app>.recovery` as follows, depending on the app, inserting the backup name as determined above:
 
 For Gitea:
 ```yaml
-...
+databases:
+  gitea:
+    # ...
     recovery:
       source:
         backup: <backup-name>
@@ -150,7 +153,9 @@ For Gitea:
 
 For Harbor:
 ```yaml
-...
+databases:
+  harbor:
+    # ...
     recovery:
       source:
         backup: <backup-name>
@@ -160,7 +165,9 @@ For Harbor:
 
 For Keycloak:
 ```yaml
-...
+databases:
+  keycloak:
+    # ...
     recovery:
       source:
         backup: <backup-name>
@@ -168,13 +175,15 @@ For Keycloak:
       owner: keycloak
 ```
 
+Note that ArgoCD may show a sync error, pointing out that there is a `recovery` section on an existing database cluster. This will be resolved in the following steps.
+
 ### Shutting down services
 
 Check the Tekton pipelines to ensure that values changes have been deployed as expected. After this, follow above instructions to shut down Gitea, Harbor, or Keycloak as needed.
 
-### Removing the existing cluster
+### Removing the existing database
 
-After deploying the values changes to the cluster, and shutting down applications accessing the database delete the database cluster.
+After deploying the values changes and shutting down applications accessing the database, delete the database cluster.
 
 For Gitea:
 ```sh
@@ -210,23 +219,127 @@ kubectl patch application -n argocd keycloak-keycloak-otomi-db --patch '[{"op": 
 
 The cluster should now be recreated from the backup. Wait until the `Cluster` status shows `Cluster in healthy state` and restart the dependent services using the instructions above.
 
-## Point-in-time recovery
-
-...
-
 ## Obtaining a backup outside the cluster
 
-...
+If the backup to recover from is not available as a `Backup` resource within the cluster, but in an attached object storage, follow the instructions above, except making the following change to `env/databases/<app>.yaml` in the `values` repository.
+
+Adjust the object storage parameters below as needed, at least replacing the `<bucket-name>` and `<location>` placeholders. Typically `serverName` should remain unchanged. `linode-creds` are the account credentials set up by the platform and can be reused provided that they have access to the storage.
+
+env/databases/gitea.yaml:
+```yaml
+databases:
+  gitea:
+    # ...
+    recovery:
+      source: gitea-backup
+      database: gitea
+      owner: gitea
+    externalClusters:
+      - name: gitea-backup
+        barmanObjectStore:
+          serverName: gitea-db
+          destinationPath: s3://<bucket-name>/gitea
+          endpointURL: https://<location>.linodeobjects.com
+          s3Credentials:
+            accessKeyId:
+              name: linode-creds
+              key: S3_STORAGE_ACCOUNT
+            secretAccessKey:
+              name: linode-creds
+              key: S3_STORAGE_KEY
+          wal:
+            compression: gzip
+            maxParallel: 8
+          data:
+            compression: gzip
+```
+
+env/databases/harbor.yaml:
+```yaml
+databases:
+  harbor:
+    # ...
+    recovery:
+      source: harbor-backup
+      database: registry
+      owner: harbor
+    externalClusters:
+      - name: harbor-backup
+        barmanObjectStore:
+          serverName: harbor-otomi-db
+          destinationPath: s3://<bucket-name>/harbor
+          endpointURL: https://<location>.linodeobjects.com
+          s3Credentials:
+            accessKeyId:
+              name: linode-creds
+              key: S3_STORAGE_ACCOUNT
+            secretAccessKey:
+              name: linode-creds
+              key: S3_STORAGE_KEY
+          wal:
+            compression: gzip
+            maxParallel: 8
+          data:
+            compression: gzip
+```
+
+env/databases/keycloak.yaml:
+```yaml
+databases:
+  keycloak:
+    # ...
+    recovery:
+      source: keycloak-backup
+      database: keycloak
+      owner: keycloak
+    externalClusters:
+      - name: keycloak-backup
+        barmanObjectStore:
+          serverName: keycloak-db
+          destinationPath: s3://<bucket-name>/keycloak
+          endpointURL: https://<location>.linodeobjects.com
+          s3Credentials:
+            accessKeyId:
+              name: linode-creds
+              key: S3_STORAGE_ACCOUNT
+            secretAccessKey:
+              name: linode-creds
+              key: S3_STORAGE_KEY
+          wal:
+            compression: gzip
+            maxParallel: 8
+          data:
+            compression: gzip
+```
+
+## Point-in-time recovery
+
+For restoring a backup only up to a spefific point in time, add a recovery target to the `recovery` sections above, according to the ClodnativePG docs. For example, for restoring Gitea up to a change that was made after `"2023-07-06T08:00:39Z"`, add the following value:
+
+```yaml
+databases:
+  gitea:
+    # ...
+    recovery:
+      source: gitea-backup
+      database: gitea
+      owner: gitea
+      recoveryTarget:
+        # Time base target for the recovery
+        targetTime: "2023-07-06T08:00:39Z"
+    externalClusters:
+    # ...
+```
 
 ## Emergency backup and restore
 
-The methods using the built-in tools of PostgreSQL `pg_dump` and `pg_restore` should be used of the operator is not available. This type of backup can also be used as an additional safety measure before using any of the methods above. Be aware that the backups are stored on the computer where the commands are executed. This requires a stable connection to the database pods during the time of the backup and recovery.
+The methods using the built-in tools of PostgreSQL `pg_dump` and `pg_restore` should be used of the operator is not available. This type of backup can also be used as an additional safety measure before using any of the aforementioned methods. Be aware that the backups are stored on the computer where the commands are executed. This requires a stable connection to the database pods during the time of the backup and recovery.
 
 1. Scale the application to zero that is using the database cluster (see above).
 2. Perform the backup or the restore as needed (following commands).
 3. Restore the application processes (see above).
 
-Note that in difference to the commands as documented in the CNPG site, the following `pg_restore` commands include the `--clean` flag which will clear tables before the import. Otherwise, the import will likely fail as the database is usually not empty after the application has been accessing it for the first time. Nevertheless **use this flag with care**!
+Note that in difference to the commands as documented in the CNPG site, the following `pg_restore` commands include the `--clean` flag which will clear tables before the import. Otherwise, the import will likely fail as the database is usually not empty after the application has been initializing it on startup. Nevertheless **use this flag with care**!
 
 In the following steps, the `-n` suffix of each pod name (e.g. `gitea-db-n`) needs to be replaced with the primary pod instance (e.g. `kubectl exec -n gitea gitea-db-1 ...`).
 

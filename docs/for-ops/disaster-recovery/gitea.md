@@ -7,7 +7,7 @@ sidebar_label: Gitea
 
 Gitea stores the platform configuration (value repository), the workload catalog, and user-created repositories.
 
-The recovery described here uses the application-level backup of Gitea, i.e. using the `gitea dump` command line. That backup type includes a current SQL dump of the database as well as all repositories' data. However, Gitea documentation recommends different methods for restoring the database, due to potential compatibility issues.
+The recovery described here uses the application-level backup of Gitea, i.e. using the `gitea dump` command line. That backup type includes a current SQL dump of the database as well as all repositories' data. However, [Gitea documentation](https://docs.gitea.com/administration/backup-and-restore) recommends different methods for restoring the database, due to potential compatibility issues.
 
 A restore using this backup is advised, if for some reason only Gitea has been affected by a severe operational event leading to data corruption or loss. It is also possible to restore only either the database or single repositories. After such a partial restore there may be mismatches between the repository information and the database however.
 
@@ -66,7 +66,7 @@ cp -R data/avatars /data/
 
 ## Restoring the database
 
-For restoring the database of Gitea, please refer to the platform database instructions.
+For restoring the database of Gitea, please refer to the [platform database instructions](platform-databases.md).
 
 ## Cleaning up
 

@@ -4,14 +4,17 @@ title: Restoring platform databases
 sidebar_label: Databases
 ---
 
-Generally it is recommended to follow the CNPG documentation on how to backup or restore a PostgreSQL database. The steps here are plotted out specifically to this platform.
+Generally it is recommended to get familiar with the [CNPG documentation](https://cloudnative-pg.io/documentation/current/recovery/) on how to restore a PostgreSQL database. The steps here are plotted out specifically to this platform.
 
 ## Initial notes
 
-The following instructions assume you are generally familiar with essential Kubernetes tools such as `kubectl`. Usage of TUI applications such as `k9s` from the administration terminal is strongly advised.
-Changes to the `values` repository can usually be made through the Gitea UI after signing in with the `platform-admin` user.
+Changes to the `values` repository can usually be made through the Gitea UI after signing in with the `platform-admin` user. As this requires Keycloak in addition to Gitea operating normally, the risk can be reduced by creating an application token and pulling/pushing local changes to the repository. In Gitea, go to the user settings, `Applications` tab, enter a token name and select `repo` as the scope. After creating this token, you can include it in the repository URL, e.g.
 
-In the event that platform-critical services Gitea and Keycloak are not able to start, required changes to the database configuration can be applied directly in the following ArgoCD applications in the `argocd` namespace. This change persists and is synchronized into the cluster until the following Tekton pipeline overwrites them:
+```sh
+git clone https://<token>@gitea.example.com/otomi/values.git
+```
+
+In the event that platform-critical services Gitea and Keycloak are not able to start, required changes to the database configuration can be applied directly in the following ArgoCD applications in the `argocd` namespace. This change persists and is synchronized into the cluster until the next following Tekton pipeline overwrites them:
 
 * Gitea database: `gitea-gitea-otomi-db`
 * Keycloak database: `keycloak-keycloak-otomi-db`
@@ -87,11 +90,6 @@ kubectl patch deploy -n harbor harbor-core --patch '[{"op": "replace", "path": "
 ## Regular recovery with backup in same cluster
 
 This procedure should be taken if the database has gotten to an unhealthy state, e.g. because of volume filesystem corruption. For reverting undesired updates, additional instructions for a point-in-time recovery are to be considered as described in the following sections.
-
-The regular backup and recovery requires making adjustments to the values file. Since certain services may become unavailable in the course of restoring a backup, it is advised to:
-
-* Create a Gitea application token for the `platform-admin` user and make a local check-out of the values repository.
-* Have editing tools available for updating a Kubernetes resource in-place.
 
 Recovering any of the platform databases should be performed in the following order:
 
@@ -221,7 +219,7 @@ The cluster should now be recreated from the backup. Wait until the `Cluster` st
 
 ## Obtaining a backup outside the cluster
 
-If the backup to recover from is not available as a `Backup` resource within the cluster, but in an attached object storage, follow the instructions above, except making the following change to `env/databases/<app>.yaml` in the `values` repository.
+These instructions for example apply for Gitea in the last step of [reinstalling a platform setup on a new cluster](platform-reinstall.md). If the backup to recover from is not available as a `Backup` resource within the cluster, but in an attached object storage, follow the instructions above, except for making the following change to `env/databases/<app>.yaml` in the `values` repository.
 
 Adjust the object storage parameters below as needed, at least replacing the `<bucket-name>` and `<location>` placeholders. Typically `serverName` should remain unchanged. `linode-creds` are the account credentials set up by the platform and can be reused provided that they have access to the storage.
 

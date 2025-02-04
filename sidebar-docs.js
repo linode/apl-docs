@@ -1,8 +1,6 @@
 module.exports = {
   mainSidebar: {
-    "Akamai App Platform": [
-      "akamai-app-platform/introduction",
-    ],
+    "Akamai App Platform": ["akamai-app-platform/introduction"],
     "Getting Started": [
       "get-started/overview",
       {
@@ -68,7 +66,6 @@ module.exports = {
           "for-devs/console/settings",
           "for-devs/console/sealed-secrets",
           "for-devs/console/shell",
-          
         ],
       },
     ],
@@ -118,7 +115,15 @@ module.exports = {
         ],
       },
       {
-        "CLI": [
+        "Disaster recovery": [
+          "for-ops/disaster-recovery/overview",
+          "for-ops/disaster-recovery/gitea",
+          "for-ops/disaster-recovery/platform-databases",
+          "for-ops/disaster-recovery/platform-reinstall",
+        ],
+      },
+      {
+        CLI: [
           "for-ops/cli/installation",
           "for-ops/cli/deploying",
           "for-ops/cli/known-issues",

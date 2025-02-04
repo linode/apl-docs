@@ -1,16 +1,8 @@
 {
   "version": "0.1",
   "allowCompoundWords": true,
-  "enabledLanguageIds": [
-    "json",
-    "jsonc",
-    "markdown",
-    "yaml",
-    "yml"
-  ],
-  "ignoreRegExpList": [
-    "/'s\\b/"
-  ],
+  "enabledLanguageIds": ["json", "jsonc", "markdown", "yaml", "yml"],
+  "ignoreRegExpList": ["/'s\\b/"],
   "ignoreWords": [
     "AGE-SECRET-KEY-1KTYK6RVLN5TAPE7VF6FQQSKZ9HWWCDSKUGXXNUQDWZ7XXT5YK5LSF3UTKQ",
     "FPpLvZyAdAmuzc3N",
@@ -114,7 +106,8 @@
     "wsbtpg",
     "uxqf",
     "xvjf",
-    "initdb"
+    "initdb",
+    "creds"
   ],
   "language": "en",
   "words": [

@@ -314,7 +314,7 @@ databases:
 
 ## Point-in-time recovery
 
-For restoring a backup only up to a spefific point in time, add a recovery target to the `recovery` sections above, according to the ClodnativePG docs. For example, for restoring Gitea up to a change that was made after `"2023-07-06T08:00:39Z"`, add the following value:
+For restoring a backup only up to a specific point in time, add a recovery target to the `recovery` sections above, according to the ClodnativePG docs. For example, for restoring Gitea up to a change that was made after `"2023-07-06T08:00:39Z"`, add the following value:
 
 ```yaml
 databases:

@@ -25,4 +25,4 @@ Note that application of this guide has the following prerequisites and limitati
 
 * [Gitea](gitea.md): Restoring the platform's Gitea database and repositories from the application backup
 * [Databases](platform-databases.md): Backup and restore of the CNPG databases
-* [Resinstall](platform-reinstall.md): Restoring the complete platform, including settings and data
+* [Reinstall](platform-reinstall.md): Restoring the complete platform, including settings and data

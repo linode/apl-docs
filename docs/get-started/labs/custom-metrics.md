@@ -72,7 +72,7 @@ for i in {1..1000}; do curl https://custom-metrics-labs.<your-domain>/hello; sle
 
 4. Click `+ Add visualization`.
 
-5. In the `Query` tab select `Prometheus Platform`.
+5. In the `Data source` tab select `Prometheus Platform`.
 
 6. In the `A` collapsible section, select a metric from the `Metric` drop-down list. In our example we use the `application_greetings_total` metric.
 
@@ -115,7 +115,7 @@ data:
 
 7. Click on `Dashboard settings` (in the top right).
 
-8. In the left menu click `JSON model`.
+8. Go to `JSON model` tab.
 
 9. Copy the JSON model and paste it into the ConfigMap. Make sure to indent with 4.
 

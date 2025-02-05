@@ -59,7 +59,7 @@ Now go to the `green` repo in Gitea and change the the welcome message:
     <style>
       body {
         color: #ffffff;
-        background-color: green
+        background-color: green;
         font-family: Arial, sans-serif;
         font-size: 14px;
       }

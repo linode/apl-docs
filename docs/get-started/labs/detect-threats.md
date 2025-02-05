@@ -31,7 +31,7 @@ helm install team-labs falcosecurity/event-generator -n team-labs
 
 1. In the left menu, click on `Apps` and open `Grafana`.
 
-2. Click on the `Detected threads in containers` dashboards
+2. Click on the `Detected threats in containers` dashboards
 
 3. See all the generated threat events
 

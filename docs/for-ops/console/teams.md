@@ -40,7 +40,6 @@ Another difference between the Team Admin and regular Teams is that Team Admin d
 | ---------------- | -------------------------------------------------------------------------------- |
 | Slack            | Needs a slack webhook url that will give alerts for warnings and criticals       |
 | Microsoft Teams  | Needs two alerting endpoints, for both warnings as well as criticals             |
-| Email            | You may provide a list of email addresses for both 'Non Critical' and 'Critical' |
 | If none selected | Global (admin) alerting endpoint configuration will be used                      |
 
 6. Optional: Add Resource Quotas.

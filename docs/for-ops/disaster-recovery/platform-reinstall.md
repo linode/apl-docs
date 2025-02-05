@@ -57,14 +57,15 @@ Make a copy of the downloaded values file and adjust
    * any other credentials (e.g. access tokens) that will change
    * domains of any services that are changed
 
-First relocate the new cluster's backups, provided they are using the same storage buckets, by updating the `pathSuffix`.
+First relocate the new cluster's backups, provided they are using the same storage buckets, by updating the `pathSuffix`. The backups can be activated except for Gitea, which should only be activated after the recovery (in the last step).
 
 ```yaml
 # ...
 platformBackups:
   database:
     gitea:
-      enabled: true
+      # To be activated later
+      enabled: false
       retentionPolicy: 7d
       schedule: 0 0 * * *
       pathSuffix: gitea-1
@@ -179,4 +180,5 @@ When the platform is installed, Gitea can also be restored to the state as prese
   2. [Shut down Gitea](platform-databases.md#gitea-app).
   3. Delete the Gitea database.
   4. [Start Gitea](platform-databases.md#gitea-app).
+  5. Activate backups for Gitea in the platform Settings -> Backups.
 * The contents of the code repositories can be retrieved following the [Gitea-specific steps](gitea.md).

@@ -6,7 +6,7 @@ sidebar_label: Alertmanager
 
 ## About
 
-Alertmanager handles alerts sent by client applications such as the Prometheus server. It takes care of de-duplicating, grouping, and routing them to the correct receiver integration such as email, Slack, MS Teams, or OpsGenie. It also takes care of silencing and inhibition of alerts.
+Alertmanager handles alerts sent by client applications such as the Prometheus server. It takes care of de-duplicating, grouping, and routing them to the correct receiver integration such as Slack, MS Teams, or OpsGenie. It also takes care of silencing and inhibition of alerts.
 
 Alertmanager is configured to use the global values found under settings' [alerts](../for-ops/console/settings/alerts.md).
 
@@ -17,6 +17,5 @@ The following receivers are supported:
 - `Slack`
 - `Microsoft Teams`
 - `Ops Genie`
-- `Email`
 - (default) `None` (will use the `null` receiver to enable the Alertmanager UI).
 

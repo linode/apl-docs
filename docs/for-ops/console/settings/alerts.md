@@ -24,5 +24,4 @@ The alerts settings section offers configuration options to define alerting endp
 | ------- | ----------- |
 | Slack | Slack webhook URL and channels for critical and non-critical alerts. |
 | Msteams | Microsoft Teams webhook URLs for critical (high prio) and non-critical alerts (low prio). |
-| Email | Email address(es) for critical and non-critical alerts. |
 | Opsgenie | Opsgenie API Key, URL and alert responder(s) |

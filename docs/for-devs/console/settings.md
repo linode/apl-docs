@@ -54,7 +54,6 @@ Change the alert settings and preferred notification receivers.
 | ---------------- | -------------------------------------------------------------------------------- |
 | Slack            | Needs a slack webhook url that will give alerts for warnings and criticals       |
 | Microsoft Teams  | Needs two alerting endpoints, for both warnings as well as criticals             |
-| Email            | You may provide a list of email addresses for both 'Non Critical' and 'Critical' |
 | If none selected | Global (admin) alerting endpoint configuration will be used                      |
 
 ## Configure Resource Quotas

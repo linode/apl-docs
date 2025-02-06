@@ -5,7 +5,7 @@ sidebar_label: Ingress
 ---
 
 :::info
-The Ingress section in the Settings will not be visible when the installation is done by Akamai Connected Cloud. In this case you will not be able to create multiple ingress classes.
+The Ingress section in the Settings will not be visible when App Platform is deployed directly through LKE (not manually installed). In this case you will not be able to create multiple ingress classes.
 :::
 
 ## Ingress

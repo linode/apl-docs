@@ -8,9 +8,9 @@ sidebar_label: Known Issues
 
 ### Details
 
-When provisioning App Platform for LKE in Akamai Connected Cloud the installation can fail because a quota exceeded exception. If the URL of the Portal Endpoint does not appear in the App Platform for LKE section after 30 minutes, this could be caused by a quota exceeded exception.
+When provisioning App Platform, the installation can fail because a quota exceeded exception. If the URL of the Portal Endpoint does not appear in the **App Platform** section of the cluster's dashboard after 30 minutes, this could be caused by a quota exceeded exception.
 
-Next to the resources required for LKE, the App Platform also uses a NodeBalancer and a minimum of 11 Storage Volumes. This might result in a quota exceeding exception. Linode currently does not provide quota limits in your account details at this time.
+Next to the resources required for LKE, App Platform also uses a NodeBalancer and a minimum of 11 Storage Volumes. This might result in a quota exceeding exception. Linode currently does not provide quota limits in your account details at this time.
 
 The following issue might be related to quota exceeding exception:
 
@@ -28,12 +28,11 @@ N.A.
 
 - If you would like to know your account's limits or want to increase the number of entities you can create, the best way is to get that information through a support ticket.
 
-
 ## The Let’s Encrypt secret request was not successful
 
 ### Details
 
-For each cluster with the App Platform for LKE enabled, a Let’s Encrypt certificate will be requested. If the certificate is not ready within 30 minutes, the installation of the App Platform will fail. Run the following command to see if the certificate is created:
+For each LKE cluster with App Platform enabled, a Let’s Encrypt certificate will be requested. If the certificate is not ready within 30 minutes, the installation of App Platform will fail. Run the following command to see if the certificate is created:
 
 ```bash
 kubectl get secret -n istio-system
@@ -49,10 +48,9 @@ N.A.
 
 ### Resolution
 
-- Delete the LKE cluster with App Platform for LKE enabled and create a new cluster with App Platform for LKE enabled.
+- Delete the LKE cluster with App Platform enabled and create a new cluster, making sure to enable the App Platform.
 
 ## Argo CD does not synchronize anymore
-
 
 ### Details
 

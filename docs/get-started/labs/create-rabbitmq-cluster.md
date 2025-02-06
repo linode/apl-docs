@@ -78,13 +78,13 @@ In this example the `rabbitMQ cluster` was created in the Team demo, so we have 
 1. Use the following command to retrieve the username:
 
 ```bash
-kubectl get secret rabbit1-rabbitmq-default-user -n team-demo -o jsonpath="{.data.username}" | base64 --decode
+kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-demo -o jsonpath="{.data.username}" | base64 --decode
 ```
 
 2. Use the following command to retrieve the password:
 
 ```bash
-kubectl get secret rabbit1-rabbitmq-default-user -n team-demo -o jsonpath="{.data.password}" | base64 --decode
+kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-demo -o jsonpath="{.data.password}" | base64 --decode
 ```
 :::info
 Make sure you don't copy the `%` symbol at the end.
@@ -129,13 +129,13 @@ To connect to the `rabbitMQ cluster` you use `AMQP` to open a connection. To ope
 1. Get the host use the following command:
 
 ```bash
-kubectl get secret rabbit1-rabbitmq-default-user -n team-demo -o jsonpath="{.data.host}" | base64 --decode
+kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-demo -o jsonpath="{.data.host}" | base64 --decode
 ```
 
 2. Get the port use the following command:
 
 ```bash
-kubectl get secret rabbit1-rabbitmq-default-user -n team-demo -o jsonpath="{.data.port}" | base64 --decode
+kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-demo -o jsonpath="{.data.port}" | base64 --decode
 ```
 
 The connection string is build like this:

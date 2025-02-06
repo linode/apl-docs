@@ -74,7 +74,7 @@ Let's demonstrate the capabilities of Argo CD by adding some manifests to the re
 
 3. Commit the changes to the repository.
 
-Once you return to the Argo CD application, click on the `team<name>` application.
+Once you return to the Argo CD application, click on the `team-<name>` application.
 
 The application is set to sync automatically, so a manual `SYNC` is not required. Once ArgoCD completes the sync, the nginx deployment will appear as shown below:
 

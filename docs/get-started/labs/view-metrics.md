@@ -28,7 +28,7 @@ The dashboards are dynamically added based on the enabled platform capabilities:
 | Kubernetes / Pods       | When Prometheus on the platform level is enabled |
 | Team status             | When Prometheus on the platform level is enabled |
 | Container scan results  | When Trivy Operator on the platform level is enabled |
-| Detected threads in containers | When Falco on the platform level is enabled |
+| Detected threats in containers | When Falco on the platform level is enabled |
 
 ## View container metrics
 

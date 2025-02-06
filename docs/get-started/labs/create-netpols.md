@@ -79,6 +79,10 @@ Use the `k8s-deployment` chart to deploy the vote app. Use the following values:
 Name: `vote`
 
 ```yaml
+image:
+  repository: harbor.<your-domain>/team-<team-name>/vote
+  pullPolicy: IfNotPresent
+  tag: latest
 containerPorts:
   - name: http
     containerPort: 80
@@ -96,6 +100,10 @@ Use the `k8s-deployment` chart to deploy the worker app. Use the following value
 Name: `worker`
 
 ```yaml
+image:
+  repository: harbor.<your-domain>/team-<team-name>/worker
+  pullPolicy: IfNotPresent
+  tag: latest
 containerPorts:
   - name: http
     containerPort: 80
@@ -129,6 +137,10 @@ Use the `k8s-deployment` chart to deploy the result app. Use the following value
 Name: `result`
 
 ```yaml
+image:
+  repository: harbor.<your-domain>/team-<team-name>/result
+  pullPolicy: IfNotPresent
+  tag: latest
 containerPorts:
   - name: http
     containerPort: 80
@@ -239,10 +251,10 @@ curl https://apl-docs.net
 ```
 You should see the HTML of the apl-docs.net website
 
-2. Run the following command to see the `<h1>Build, Deploy and Run applications at scale</h1>` message:
+2. Run the following command to see the `<title data-rh="true">App Platform for LKE</title>` message:
 
 ```shell
-curl https://apl-docs.net | grep -o '<h1>.*</h1>'
+curl -s https://apl-docs.net | grep -o '<title.*</title>'
 ```
 
 3. Type `exit` to exit the Netshoot pod.

@@ -84,7 +84,7 @@ Let's now configure public exposure for the workload we deployed in the namespac
 
 4. Fill in the port of the service (8080 in this case).
 
-5. Under `Exposure Ingress`, select `Ingress`.
+5. Under `Exposure Ingress`, select `External`.
 
 6. Turn off `Use team domain` and fill in the name of the service as the hostname (hello-deploy in this example).
 

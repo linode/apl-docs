@@ -12,7 +12,7 @@ sidebar_label: Teams
 
 - A Team will get access to the Console, providing access to self-service features and all the shared apps available on the platform.
 
-- Teams can choose to receive alerts in Microsoft Teams or Slack or Ops Genie and each team will get access to a project in Harbor.
+- Teams can choose to receive alerts in Microsoft Teams, Slack, or Ops Genie and each team will get access to a project in Harbor.
 
 - Teams can be allowed self-service features like configure ingress, configure a notification receiver for alerts, change the OIDC group mappings and download the KubeConfig.
 

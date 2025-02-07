@@ -36,7 +36,7 @@ image:
 
 All the needed Argo CD resources to deploy your workload will now be created. 
 
-8. Click on `Workloads` in the left menu. You will now see a list of all Workloads and there status:
+8. Click on `Workloads` in the left menu. You will now see a list of all Workloads and their status:
 
 ![workloads](../../img/workloads-2.png)
 

@@ -4,7 +4,7 @@ title: Create Sealed Secrets
 sidebar_label: Create Sealed Secrets
 ---
 
-In this lab we will create sealed secrets and see how to securely sensitive information in git repository.
+In this lab we will create sealed secrets and see how to securely store sensitive information in git repository.
 
 ## Creating a Sealed Secret
 

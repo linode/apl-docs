@@ -96,6 +96,7 @@ module.exports = {
               "for-ops/console/settings/dns",
               "for-ops/console/settings/ingress",
               "for-ops/console/settings/oidc",
+              "for-ops/console/settings/smtp",
               "for-ops/console/settings/backup",
               "for-ops/console/settings/obj",
             ],

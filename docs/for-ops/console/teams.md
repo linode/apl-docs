@@ -12,7 +12,7 @@ sidebar_label: Teams
 
 - A Team will get access to the Console, providing access to self-service features and all the shared apps available on the platform.
 
-- Teams can choose to receive alerts in Microsoft Teams, Slack, or Ops Genie and each team will get access to a project in Harbor.
+- Teams can choose to receive alerts in Microsoft Teams or Slack or Ops Genie and each team will get access to a project in Harbor.
 
 - Teams can be allowed self-service features like configure ingress, configure a notification receiver for alerts, change the OIDC group mappings and download the KubeConfig.
 
@@ -40,6 +40,7 @@ Another difference between the Team Admin and regular Teams is that Team Admin d
 | ---------------- | -------------------------------------------------------------------------------- |
 | Slack            | Needs a slack webhook url that will give alerts for warnings and criticals       |
 | Microsoft Teams  | Needs two alerting endpoints, for both warnings as well as criticals             |
+| Email            | You may provide a list of email addresses for both 'Non Critical' and 'Critical' |
 | If none selected | Global (admin) alerting endpoint configuration will be used                      |
 
 6. Optional: Add Resource Quotas.

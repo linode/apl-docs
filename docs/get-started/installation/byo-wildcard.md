@@ -22,7 +22,7 @@ cluster:
 otomi:
   hasExternalDNS: true
 dns:
-  domainFilters: 
+  domainFilters:
     - try-otomi.net
   provider:
     aws:

@@ -59,8 +59,6 @@ Remember that even though these values can be edited afterwards, not all specifi
 
 6. Click `submit`.
 
-7. Click `Deploy Changes`.
-
 ## Accessing the RabbitMQ Management UI
 
 To access the `RabbitMQ Management UI` you have two options:

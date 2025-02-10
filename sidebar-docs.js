@@ -54,7 +54,6 @@ module.exports = {
       {
         "Console - Team View": [
           "for-devs/console/overview",
-          "for-devs/console/deploy-changes",
           "for-devs/console/dashboard",
           "for-devs/console/apps",
           "for-devs/console/catalog",
@@ -108,7 +107,7 @@ module.exports = {
           "for-ops/how-to/use-catalog",
           "for-ops/how-to/ingress-classes",
           "for-ops/how-to/use-team-admin",
-          "for-ops/how-to/core-only",
+          // "for-ops/how-to/core-only",
           "for-ops/how-to/backups",
           "for-ops/how-to/clone-apl",
           "for-ops/how-to/manage-age",
@@ -161,7 +160,6 @@ module.exports = {
           "apps/argocd",
           "apps/certmanager",
           "apps/cloudnativepg",
-          "apps/drone",
           "apps/external-dns",
           "apps/falco",
           "apps/gitea",

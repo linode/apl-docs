@@ -76,7 +76,6 @@ Adding the URL of the K8s cluster API is required by teams to be able to downloa
 
 4. Click on `Submit`.
 
-5. Click on `Deploy Changes`.
 
 ## Step 4 (optional): Configure Object Storage
 
@@ -100,8 +99,6 @@ When Minio is selected (only for development), Minio App is enabled and all requ
 When Linode is selected, create the buckets for the apps you are planning to use and fill in the region and the Access Key ID and Secret Access Key (with read/write access).
 
 4. Click on `Submit`.
-
-5. Click on `Deploy Changes`.
 
 ## Step 5 (Optional): Add a Linode Personal Access Token to backup Persistent Volumes (Linode only)
 

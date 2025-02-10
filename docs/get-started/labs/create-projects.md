@@ -53,8 +53,6 @@ git push --mirror https://gitea.<your-domain>/<your-user-name>/nodejs-helloworld
 
 13. Click `Submit`.
 
-14. Click `Deploy Changes`.
-
 ## Get the webhook URL
 
 Before we can configure the webhook for the `nodejs-helloworld` repo in Gitea, we will need the webhook URL. You can find this webhook URL for your build in the list of Builds. Add the webhook URL to your clipboard.

@@ -17,11 +17,15 @@ Make sure the following Apps are enabled:
 
 Enable tracing for `Istio` and `ingress-nginx-platform`:
 
-1. Go to `Apps`
-2. Click on `Istio`
-3. Click on the configuration icon
-4. Click on the `Values` tab
-5. In the values click `Edit` and set the following values
+1. Go to `Apps`.
+
+2. Click on `Istio`.
+
+3. Click on the configuration icon.
+
+4. Click on the `Values` tab.
+
+5. In the values click `Edit` and set the following values:
 
 ```yaml
 tracing:
@@ -33,9 +37,9 @@ tracing:
 Setting the `samplingRatio` to `100` is only done for this lab to make sure all traces are sampled. In a production environment the ratio would normally be set to `0.01`.
 :::
 
-6. Click `Submit`
-7. Repeat step 2 to 6 for the `ingress-nginx-platform` app
-8. Click `Deploy Changes`
+6. Click `Submit`.
+
+7. Repeat step 2 to 6 for the `ingress-nginx-platform` app.
 
 ## Build an image from source code
 
@@ -104,8 +108,6 @@ resources:
 
 6. Click `Submit`.
 
-7. Click on `Deploy Changes`.
-
 ## Expose the service
 
 1. In the left menu panel under click `Services` then click on `Create Service`.
@@ -115,8 +117,6 @@ resources:
 3. Under `Exposure Ingress`, select `External` and use the default configuration.
 
 4. Click `Submit`.
-
-5. Click `Deploy Changes`
 
 ## See traces
 

@@ -31,7 +31,6 @@ If there are no Team services created that use the default platform class, then 
 
 7. Click `submit`.
 
-8. Click `Deploy Changes`.
 
 ### Move all existing Team Services to use the new ingress class
 
@@ -41,7 +40,6 @@ If there are no Team services created that use the default platform class, then 
 
 3. Click `submit`.
 
-4. Click `Deploy Changes`.
 
 ### Change the platform class from public to private
 
@@ -64,7 +62,6 @@ For GCP:
 
 4. Click `submit`.
 
-5. Click `Deploy Changes`.
 
 ### Cloud provider specific annotations
 

@@ -34,8 +34,6 @@ replicaCount: 0
 
 4. Click `Submit`.
 
-5. Click `Deploy Changes`.
-
 ## Check the alerts again
 
 Go back to Alertmanager and see if there are new alerts. You should see the following alert:

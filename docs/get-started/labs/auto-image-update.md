@@ -36,8 +36,6 @@ image:
 
 6. Click `Submit`.
 
-7. Click `Deploy Changes`.
-
 In the example above, we used the `Digest` update strategy. The `Semver` strategy allows you to track & update images which use tags that follow the semantic versioning scheme.
 
 ## Expose the service

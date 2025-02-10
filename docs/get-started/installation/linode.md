@@ -20,7 +20,7 @@ Provision a LKE cluster with the following specs:
 
 - Fill in the `Cluster Label`
 
-- Use Kubernetes version: `1.30`
+- Use Kubernetes version: `1.31` or `1.32`
 
 - Enable HA Control Plane
 
@@ -45,7 +45,7 @@ Provision a LKE cluster using the Linode CLI:
 linode-cli lke cluster-create \
   --label $CLUSTER_NAME \
   --region $REGION \
-  --k8s_version 1.30 \
+  --k8s_version 1.32 \
   --control_plane.high_availability true \
   --node_pools.type g6-dedicated-8 \
   --node_pools.count 3

@@ -48,7 +48,7 @@ serviceMonitor:
       path: /q/metrics
 ```
 
-5. Click `Submit` and then `Deploy Changes`.
+5. Click `Submit`.
 
 Our metrics will now be scraped by the Platform Prometheus. Before we continue, let's first generate some load:
 

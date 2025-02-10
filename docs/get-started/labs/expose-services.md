@@ -22,8 +22,6 @@ When you have deployed your application using the Workloads feature, you will pr
 
 4. Click `Submit`.
 
-5. Click `Deploy Changes`.
-
 You will see your service in the list of Services:
 
 ![expose services](../../img/create-svc-4.png)

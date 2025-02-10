@@ -24,8 +24,6 @@ What you need to know about the User Management feature:
 
 4. Click on `Update Users`.
 
-5. Click on `Deploy Changes`.
-
 
 
 

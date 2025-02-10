@@ -10,12 +10,7 @@ sidebar_label: Overview
 
 The Console is the web UI of the platform and offers access to all integrated apps and self-service features. The Console has a topbar showing a Team selector. The Team selector allows you to switch between different Teams (if you are a member of different Teams).
 
-The Team view in the Console gives access to 3 menu sections:
-
-Deploy section:
-
-- [Deploy Changes](deploy-changes): Commit changes to the configuration repository
-- Revert Changes: Revert your changes made in the Console
+The Team view in the Console gives access to 2 sections:
 
 Self-service section:
 

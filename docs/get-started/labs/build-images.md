@@ -22,8 +22,6 @@ When your team is using Harbor for private image registries, you can build image
 
 5. Click `Submit`.
 
-6. Click `Deploy changes`.
-
 Now a Tekton Pipeline and PipelineRun resource to build the image will be created. This will take around 30 seconds. Then the PipelineRun will start building the image. During this time the status will show `in progress`:
 
 ![build status](../../img/build-status.png)
@@ -53,8 +51,6 @@ To run the build again using the Console, follow these steps:
 1. Change the tag of the build for example to `v1.0.0`.
 
 2. Click `Submit`.
-
-3. Click `Deploy changes`.
 
 To re-build the image using the same tag, restart the build pipeline using the Tekton cli in the Shell:
 

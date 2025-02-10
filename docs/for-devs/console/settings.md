@@ -30,17 +30,10 @@ Enable to install a Grafana instance for the team.
 
 - Grafana is provisioned with multiple dashboards that rely on the Platform Prometheus. If Prometheus on the Platform is not enabled, these dashboards will not work!
 
-### Prometheus
-
-Enable to install a Prometheus instance for the team. The Prometheus instance is configured to only scrape metrics from `PodMonitors` and `ServiceMonitors` that have the label `prometheus: team-<team-name>`.
-
 ### Alertmanger
 
-Enable to install an Alertmanager instance for the team. The Alertmanger instance will only show alerts based on `Rules` for the Team's Prometheus.
+Enable to install an Alertmanager instance for the team.
 
-### Private
-
-Select to disable cross-team access (and make the Team Grafana private for Team members only)
 
 ## Configure alert settings
 
@@ -65,7 +58,7 @@ There is no validation as there is no schema published. Add/change resource quot
 :::
 
 
-## Configure Network Policies
+## Enable Network Policies
 
 | Option           | Description                                                                            |
 | ---------------- | -------------------------------------------------------------------------------------- |

@@ -27,8 +27,6 @@ In this lab we will create sealed secrets and see how to securely store sensitiv
 
 7. Click on `submit`.
 
-8. Click on `Deploy Changes`.
-
 Note that the secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
 
 ![Created sealed secret](../../img/created-sealed-secrets.png)

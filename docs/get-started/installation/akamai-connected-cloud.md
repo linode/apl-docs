@@ -22,21 +22,25 @@ sidebar_label: Akamai Connected Cloud
 
 4. In the App Platform for LKE section, select “Yes, enable App Platform for LKE”
 
-:::note 
+:::info
 The App Platform for LKE requires HA control plane to be enabled. When App Platform for LKE is enabled, HA control plane will automatically be enabled.
+:::
+
+:::info
+It is advised to configure Control Plane ACL. This will restrict access to the Kubernetes API. The ACL will NOT restrict access to the App Platform Console!
 :::
 
 5. In the Add Node Pools section, select the required resources for the Linode worker node(s). To the right of each plan, select the plus + and minus - to add or remove a Linode to a node pool one at time.
 
-:::note 
+:::info
 During the Beta period the App Platform for LKE requires a node pool with at least **3 worker** nodes with a minimum of **16 GB memory** and **4 CPUs** per node. Make sure to select the required Linode plan.
 :::
 
-:::note
+6. Select Add to include the node pool in your configuration. If you decide that you need more hardware resources after you deploy your cluster, you can always [edit your Node Pool](https://techdocs.akamai.com/cloud-computing/docs/manage-nodes-and-node-pools).
+
+:::info
 The App Platform for LKE is not supported in combination with Shared CPU.
 :::
-
-6. Select Add to include the node pool in your configuration. If you decide that you need more hardware resources after you deploy your cluster, you can always [edit your Node Pool](https://techdocs.akamai.com/cloud-computing/docs/manage-nodes-and-node-pools).
 
 7. Once a pool has been added to your configuration, it is listed in the Cluster Summary on the right-hand side of Cloud Manager detailing your cluster's hardware resources and monthly cost. Additional pools can be added before finalizing the cluster creation process by repeating the previous step for each additional pool.
 
@@ -84,7 +88,7 @@ kubectl get secret platform-admin-initial-credentials -n keycloak --template={{.
 
 5. Change the initial password
 
-## Provision Object Storage for the App Platform (Expected to be available on November 12)
+## Provision Object Storage for the App Platform
 
 When signed in to the Console (the web UI of the App Platform), the first thing you’ll need to do is configure Object Storage. A wizard will be displayed asking you if the App Platform should provision all the required Buckets and access key for you. This is not required, but strongly recommended as this will prevent `out of disk space errors` when using Storage Volumes for integrated applications. Using Object Storage also has the advantage to create backups of all databases used by the platform.
 

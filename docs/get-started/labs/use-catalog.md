@@ -10,29 +10,33 @@ In this lab we are going to explore the Catalog. The Catalog is a library of cur
 
 The Catalog contains a set of Helm charts that can be used as quick starts. The following quick starts are available:
 
-### quickstart-k8s-deployment
+### k8s-deployment
 
-The `quickstart-k8s-deployment` Helm chart can be used to create a Kubernetes `Deployment` (to deploy a single image), a `Service` and a `ServiceAccount`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` can be created.
+The `k8s-deployment` Helm chart can be used to create a Kubernetes `Deployment` (to deploy a single image), a `Service` and a `ServiceAccount`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` can be created.
 
-### quickstart-k8s-deployment-otel
+### k8s-deployment-otel
 
-The `quickstart-k8s-deployment-otel` Helm chart can be used to create a Kubernetes `Deployment` (to deploy a single image), a `Service`, a `ServiceAccount`, an `OpenTelemetryCollector` and an `Instrumentation`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` can be created.
+The `k8s-deployment-otel` Helm chart can be used to create a Kubernetes `Deployment` (to deploy a single image), a `Service`, a `ServiceAccount`, an `OpenTelemetryCollector` and an `Instrumentation`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` can be created.
 
-### quickstart-k8s-deployments-canary
+### k8s-deployments-canary
 
-The `quickstart-k8s-deployments-canary` Helm chart can be used to create 2 Kubernetes `Deployments` (to deploy 2 versions of an image), a `Service` and a `ServiceAccount`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` (for each version) can be created.
+The `k8s-deployments-canary` Helm chart can be used to create 2 Kubernetes `Deployments` (to deploy 2 versions of an image), a `Service` and a `ServiceAccount`. Optionally a `HorizontalPodAutoscaler`, a Prometheus `ServiceMonitor` and a `Configmap` (for each version) can be created.
 
-### quickstart-knative-service
+### knative-service
 
-The `quickstart-knative-service` Helm chart can be used to create a Knative `Service` (to deploy a single image), a `Service` and a `ServiceAccount`. Optionally a Prometheus `ServiceMonitor` can be created.
+The `knative-service` Helm chart can be used to create a Knative `Service` (to deploy a single image), a `Service` and a `ServiceAccount`. Optionally a Prometheus `ServiceMonitor` can be created.
 
-### quickstart-postgreSQL cluster
+### postgresql-cluster
 
-The `quickstart-postgresql` Helm chart can be used to create a cloudnativepg PostgreSQL `Cluster`. Optionally a Prometheus `PodMonitor` and a `Configmap` (for adding a postgresql dashboard to Grafana) can be created.
+The `postgresql-cluster` Helm chart can be used to create a cloudnativepg PostgreSQL `Cluster`. Optionally a Prometheus `PodMonitor` and a `Configmap` (for adding a postgresql dashboard to Grafana) can be created.
 
-### quickstart-redis
+### redis-cluster
 
-The `quickstart-redis` Helm chart can be used to create a Redis master-replica cluster.
+The `redis-cluster` Helm chart can be used to create a Redis master-replica cluster.
+
+### rabbitmq-cluster
+
+The `rabbitmq-cluster` Helm chart can be used to create a RabbitMQ cluster.
 
 ## Using the Catalog
 
@@ -40,7 +44,7 @@ The `quickstart-redis` Helm chart can be used to create a Redis master-replica c
 
 2. You will now see all the templates that are available to use.
 
-![catalog](../../img/catalog.png)
+![catalog](../../img/team-catalog.png)
 
 3. Click on the `Quickstart-k8s-deployment` template.
 

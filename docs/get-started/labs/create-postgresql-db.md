@@ -18,7 +18,7 @@ You can create a postgresql database from the Catalog:
 
 4. Change other parameter values if required.
 
-5. Click `Submit` and the `Deploy Changes`.
+5. Click `Submit`.
 
 The operator will now create the database and add secrets to the team's namespace called `<database-name>-superuser` and `<database-name>-app`. `<database-name>-superuser` contains the secrets for the superuser of the PostgreSQL cluster, whereas the `<database-name>-app` is granted access to the default database with the name set for the database. Each secret contains the username and password for the database with the keys `username` and `password`.
 

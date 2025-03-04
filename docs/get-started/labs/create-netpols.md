@@ -66,7 +66,7 @@ The egress rules are namespace wide. You cannot bind an egress policy to one Wor
 
 ### Build Images for the Application
 
-Build the `vote`, `worker` and `result` images from this [repo](https://github.com/linode/apl-example-app). Use the Build feature to build the images with `mode: Docker`. Set the `path` to `./vote/Dockerfile` for the Vote image (and `./worker/Dockerfile` for the Worker and `./result/Dockerfile` for Result).
+Build the `vote`, `worker` and `result` images from this [repo](https://github.com/linode/apl-examples). Use the Build feature to build the images with `mode: Docker`. Set the `path` to `./vote-app/vote/Dockerfile` for the Vote image (and `./vote-app/worker/Dockerfile` for the Worker and `./vote-app/result/Dockerfile` for Result).
 
 ### Create a Redis Cluster and a PostgreSQL Database
 

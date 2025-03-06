@@ -37,6 +37,7 @@ Recovering any of the platform databases should be performed in the following or
 ### Listing backup resources
 
 Available backups can be listed using the following command. Consider only `completed` ones for recovery.
+Note that the time stamps of the backup names are universal time (UTC).
 
 ```sh
 kubectl get backup -n <app>

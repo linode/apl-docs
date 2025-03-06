@@ -302,7 +302,7 @@ databases:
 
 ## Point-in-time recovery
 
-For restoring a backup only up to a specific point in time, add a recovery target to the `recovery` sections above, according to the [CloudnativePG docs](https://cloudnative-pg.io/documentation/current/recovery/#point-in-time-recovery-pitr). For example, for restoring Gitea up to a change that was made after `"2023-07-06T08:00:39Z"`, add the following value:
+For restoring a backup only up to a specific point in time, add a recovery target to the `recovery` sections above, according to the [CloudnativePG docs](https://cloudnative-pg.io/documentation/current/recovery/#point-in-time-recovery-pitr). For example, for restoring Gitea up to a change that was made after 2023-03-06 08:00:39 CET, add the following value:
 
 ```yaml
 databases:
@@ -314,10 +314,14 @@ databases:
       owner: gitea
       recoveryTarget:
         # Time base target for the recovery
-        targetTime: "2023-07-06T08:00:39Z"
+        targetTime: "2023-03-06 08:00:39+01"
     externalClusters:
     # ...
 ```
+
+You can also use a [named backup resource](#regular-recovery-with-backup-in-same-cluster). However, the backup must be from **before** the timestamp you choose as a recovery target, considering that they are named with a timestamp in universal time (UTC).
+
+Note that the timestamp above is not exactly in the common ISO 8601 format such as `2023-07-06T08:00:39Z`. Instead date and time must be separated by space and the timezone should be written out explicitly such as `+00` (for UTC) or `+01` (for CET without DST). For all valid formats, refer to the [specific section of the PostgreSQL documentation](https://www.postgresql.org/docs/current/datatype-datetime.html#DATATYPE-DATETIME-INPUT-TIME-STAMPS).
 
 ## Emergency backup and restore
 

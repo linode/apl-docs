@@ -75,8 +75,8 @@ databases:
   gitea:
     # ...
     recovery:
-      source:
-        backup: <backup-name>
+      backup:
+        name: <backup-name>
       database: gitea
       owner: gitea
       secret:
@@ -89,8 +89,8 @@ databases:
   harbor:
     # ...
     recovery:
-      source:
-        backup: <backup-name>
+      backup:
+        name: <backup-name>
       database: registry
       owner: harbor
 ```
@@ -101,8 +101,8 @@ databases:
   keycloak:
     # ...
     recovery:
-      source:
-        backup: <backup-name>
+      backup:
+        name: <backup-name>
       database: keycloak
       owner: keycloak
 ```

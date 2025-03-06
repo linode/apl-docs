@@ -21,72 +21,6 @@ In the event that platform-critical services Gitea and Keycloak are not able to 
 
 Where applicable, in these manifests the `initdb` section in `clusterSpec.bootstrap` can be replaced with `recovery` and `externalClusters` just as instructed below. Note that `recovery` and `externalClusters` do not need to be reflected in the values file later, since they are only considered when initializing the cluster; even when Tekton does revert these changes, after a successful recovery this no longer has an effect.
 
-## Preparation of backup and recovery
-
-During a backup or recovery of the database, the application should to be shut down for avoiding any write operations leading to inconsistencies. The following steps for each application will be referred to in the sections below.
-
-### Gitea app
-
-For temporarily disabling Gitea:
-```sh
-## Disable ArgoCD auto-sync during the changes
-kubectl patch application -n argocd gitea-gitea --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
-## Scale Gitea statefulset to zero
-kubectl patch statefulset -n gitea gitea --patch '[{"op": "replace", "path": "/spec/replicas", "value": 0}]' --type=json
-## Verify that pods are shut down
-kubectl get statefulset -n gitea gitea  # Should show READY 0/0
-```
-
-For restoring Gitea processes:
-```sh
-## Re-enable ArgoCD auto-sync, which should also change the Gitea statefulset to scale up
-kubectl patch application -n argocd gitea-gitea --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
-## Optional: scale up, for not having to wait for re-sync of ArgoCD
-kubectl patch statefulset -n gitea gitea --patch '[{"op": "replace", "path": "/spec/replicas", "value": 1}]' --type=json
-```
-
-### Keycloak app
-
-For temporarily disabling Keycloak:
-```sh
-## Disable ArgoCD auto-sync during the changes
-kubectl patch application -n argocd keycloak-keycloak-operator --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
-## Scale Keycloak statefulset to zero
-kubectl patch keycloak -n keycloak keycloak --patch '[{"op": "replace", "path": "/spec/instances", "value": 0}]' --type=json
-## Verify that pods are shut down
-kubectl get statefulset -n keycloak keycloak  # Should show READY 0/0
-```
-
-For restoring Keycloak processes:
-```sh
-## Re-enable ArgoCD auto-sync
-kubectl patch application -n argocd keycloak-keycloak-operator-cr --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
-## Optional: scale up, for not having to wait for re-sync of ArgoCD
-kubectl patch keycloak -n keycloak keycloak --patch '[{"op": "replace", "path": "/spec/instances", "value": 1}]' --type=json
-## Required: force a restart of the platform Keycloak operator; ArgoCD re-creates the Deployment
-kubectl delete deploy -n apl-keycloak-operator apl-keycloak-operator
-```
-
-### Harbor app
-
-For temporarily disabling Harbor:
-```sh
-## Disable ArgoCD auto-sync during the changes
-kubectl patch application -n argocd harbor-harbor --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
-## Scale Harbor deployment to zero
-kubectl patch deploy -n harbor harbor-core --patch '[{"op": "replace", "path": "/spec/replicas", "value": 0}]' --type=json
-## Verify that pods are shut down
-kubectl get deploy -n harbor harbor-core  # Should show READY 0/0
-```
-
-For restoring Harbor processes:
-```sh
-## Re-enable ArgoCD auto-sync
-kubectl patch application -n argocd harbor-harbor --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
-## Optional: scale up, for not having to wait for re-sync of ArgoCD
-kubectl patch deploy -n harbor harbor-core --patch '[{"op": "replace", "path": "/spec/replicas", "value": 1}]' --type=json
-```
-
 ## Regular recovery with backup in same cluster
 
 This procedure should be taken if the database has gotten to an unhealthy state, e.g. because of volume filesystem corruption. For reverting undesired updates, additional instructions for a point-in-time recovery are to be considered as described in the following sections.
@@ -177,7 +111,37 @@ Note that ArgoCD may show a sync error, pointing out that there are multiple `bo
 
 ### Shutting down services
 
-Check the Tekton pipelines to ensure that values changes have been deployed as expected. After this, follow [above instructions](#preparation-of-backup-and-recovery) to shut down Gitea, Harbor, or Keycloak as needed.
+Check the Tekton pipelines to ensure that values changes have been deployed as expected. After this, during a backup or recovery of the database, the application should to be shut down for avoiding any write operations leading to inconsistencies.
+
+For temporarily disabling Gitea:
+```sh
+## Disable ArgoCD auto-sync during the changes
+kubectl patch application -n argocd gitea-gitea --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
+## Scale Gitea statefulset to zero
+kubectl patch statefulset -n gitea gitea --patch '[{"op": "replace", "path": "/spec/replicas", "value": 0}]' --type=json
+## Verify that pods are shut down
+kubectl get statefulset -n gitea gitea  # Should show READY 0/0
+```
+
+For temporarily disabling Keycloak:
+```sh
+## Disable ArgoCD auto-sync during the changes
+kubectl patch application -n argocd keycloak-keycloak-operator --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
+## Scale Keycloak statefulset to zero
+kubectl patch keycloak -n keycloak keycloak --patch '[{"op": "replace", "path": "/spec/instances", "value": 0}]' --type=json
+## Verify that pods are shut down
+kubectl get statefulset -n keycloak keycloak  # Should show READY 0/0
+```
+
+For temporarily disabling Harbor:
+```sh
+## Disable ArgoCD auto-sync during the changes
+kubectl patch application -n argocd harbor-harbor --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
+## Scale Harbor deployment to zero
+kubectl patch deploy -n harbor harbor-core --patch '[{"op": "replace", "path": "/spec/replicas", "value": 0}]' --type=json
+## Verify that pods are shut down
+kubectl get deploy -n harbor harbor-core  # Should show READY 0/0
+```
 
 ### Removing the existing database
 
@@ -213,13 +177,39 @@ kubectl delete cluster -n keycloak keycloak-db
 kubectl patch application -n argocd keycloak-keycloak-otomi-db --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
 ```
 
-### Observe the cluster recreation and restart services
+The cluster should now be recreated from the backup. Wait until the `Cluster` status shows `Cluster in healthy state` and restart the dependent services.
 
-The cluster should now be recreated from the backup. Wait until the `Cluster` status shows `Cluster in healthy state` and restart the dependent services using the instructions above.
+### Restarting services
+
+For restoring Gitea processes:
+```sh
+## Re-enable ArgoCD auto-sync, which should also change the Gitea statefulset to scale up
+kubectl patch application -n argocd gitea-gitea --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
+## Optional: scale up, for not having to wait for re-sync of ArgoCD
+kubectl patch statefulset -n gitea gitea --patch '[{"op": "replace", "path": "/spec/replicas", "value": 1}]' --type=json
+```
+
+For restoring Keycloak processes:
+```sh
+## Re-enable ArgoCD auto-sync
+kubectl patch application -n argocd keycloak-keycloak-operator-cr --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
+## Optional: scale up, for not having to wait for re-sync of ArgoCD
+kubectl patch keycloak -n keycloak keycloak --patch '[{"op": "replace", "path": "/spec/instances", "value": 1}]' --type=json
+## Required: force a restart of the platform Keycloak operator; ArgoCD re-creates the Deployment
+kubectl delete deploy -n apl-keycloak-operator apl-keycloak-operator
+```
+
+For restoring Harbor processes:
+```sh
+## Re-enable ArgoCD auto-sync
+kubectl patch application -n argocd harbor-harbor --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
+## Optional: scale up, for not having to wait for re-sync of ArgoCD
+kubectl patch deploy -n harbor harbor-core --patch '[{"op": "replace", "path": "/spec/replicas", "value": 1}]' --type=json
+```
 
 ## Obtaining a backup outside the cluster
 
-These instructions for example apply for Gitea in the last step of [reinstalling a platform setup on a new cluster](platform-reinstall.md). If the backup to recover from is not available as a `Backup` resource within the cluster, but in an attached object storage, follow the instructions above, except for making the following change to `env/databases/<app>.yaml` in the `values` repository.
+The following instructions for example apply for Gitea in the last step of [reinstalling a platform setup on a new cluster](platform-reinstall.md). If the backup to recover from is not available as a `Backup` resource within the cluster, but in an attached object storage, follow the instructions above, except for making the following change to `env/databases/<app>.yaml` in the `values` repository:
 
 Adjust the object storage parameters below as needed, at least replacing the `<bucket-name>` and `<location>` placeholders. Typically `serverName` should remain unchanged. `linode-creds` are the account credentials set up by the platform and can be reused provided that they have access to the storage.
 
@@ -333,9 +323,9 @@ databases:
 
 The methods using the built-in tools of PostgreSQL `pg_dump` and `pg_restore` should be used of the operator is not available. This type of backup can also be used as an additional safety measure before using any of the aforementioned methods. Be aware that the backups are stored on the computer where the commands are executed. This requires a stable connection to the database pods during the time of the backup and recovery.
 
-1. Scale the application to zero that is using the database cluster ([see above](#preparation-of-backup-and-recovery)).
+1. Scale the application to zero that is using the database cluster ([see above](#shutting-down-services)).
 2. Perform the backup or the restore as needed (following commands).
-3. Restore the application processes ([see above](#preparation-of-backup-and-recovery)).
+3. Restore the application processes ([see above](#restarting-services)).
 
 Note that in difference to the commands as documented in the [CNPG site](https://cloudnative-pg.io/documentation/current/troubleshooting/#emergency-backup), the following `pg_restore` commands include the `--clean` flag which will clear tables before the import. Otherwise, the import will likely fail as the database is usually not empty after the application has been initializing it on startup. Nevertheless **use this flag with care**!
 

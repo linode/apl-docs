@@ -177,8 +177,8 @@ When the platform is installed, Gitea can also be restored to the state as prese
 
 * For restoring the database, refer to the [instructions on platform databases](platform-databases.md).
   1. [Adjust the values file in the repository](platform-databases.md#regular-recovery-with-backup-in-same-cluster) taking into account the [cluster is restored from a remote backup](platform-databases.md#obtaining-a-backup-outside-the-cluster).
-  2. [Shut down Gitea](platform-databases.md#gitea-app).
+  2. [Shut down Gitea](platform-databases.md#shutting-down-services).
   3. Delete the Gitea database.
-  4. [Start Gitea](platform-databases.md#gitea-app).
+  4. [Start Gitea](platform-databases.md#restarting-services).
   5. Activate backups for Gitea in the platform Settings -> Backups.
 * The contents of the code repositories can be retrieved following the [Gitea-specific steps](gitea.md).

@@ -6,20 +6,28 @@ sidebar_label: Reinstall
 
 ## Prerequisites
 
-* The following steps assume that all required backups exist in object storage, and that this storage has not been corrupted.
-* You should have downloaded a (non-redacted) values file using Platform -> Maintenance.
-* It requires that you have your own domain name for the cluster. The old and the reinstalled cluster may use the same domain, but in that case the old cluster should no longer be running. For avoiding issues with DNS caching it is advised to use a new (sub-)domain.
-* Re-installing a Linode LKE cluster with the platform reinstalled is currently not supported. It can only be installed in a new LKE cluster without the pre-installed platform, using your own domain.
-* Gitea cannot be restored directly onto a new platform. The data and a database backup can however be restored after the installation with an initial database.
+- All the required backups exist in object storage, and the storage has not been corrupted.
+
+- You should have downloaded a (non-redacted) values file using Platform -> Maintenance.
+
+- You should have your own domain name for the cluster. The old and the reinstalled cluster may use the same domain, but in that case the old cluster should no longer be running. For avoiding issues with DNS caching it is advised to use a new (sub-)domain.
+
+- Re-installing a Linode LKE cluster with the App Platform for LKE is currently not supported. It can only be installed in a new LKE cluster without the pre-installed platform, using your own domain.
+
+- Gitea cannot be restored directly onto a new installation of App Platform. The data and a database backup can however be restored after the installation with an initial database.
 
 ## Steps
 
 The following steps are described in more detail:
 
 1. Pepare a new cluster.
+
 2. Prepare the values for for reinstallation.
+
 3. Make sure to stop any write operations to object storage.
+
 4. Reinstall the platform on the new cluster.
+
 5. Restore the Gitea database and repositories.
 
 ## Provision a new cluster
@@ -49,15 +57,16 @@ kubectl config use-context lke$CLUSTER_ID-ctx
 
 ## Values file adjustments
 
-Make a copy of the downloaded values file and adjust
-   * `cluster.domainSuffix`
-   * `dns.domainFilters`
-   * [DNS configuration](../../get-started/installation/dns.md) must be updated, if the previous platform was provisioned directly through Linode API
-   * `cluster.name` (preferably to the label of the new cluster from the previous step)
-   * any other credentials (e.g. access tokens) that will change
-   * domains of any services that are changed
+Make a copy of the downloaded values file and adjust:
 
-First relocate the new cluster's backups, provided they are using the same storage buckets, by updating the `pathSuffix`. The backups can be activated except for Gitea, which should only be activated after the recovery (in the last step).
+- `cluster.domainSuffix`
+- `dns.domainFilters`
+- [DNS configuration](../../get-started/installation/dns.md) must be updated, if the previous platform was provisioned directly through Linode API
+- `cluster.name` (preferably to the label of the new cluster from the previous step)
+- Other credentials (e.g. access tokens) that will change
+- Domains of any services that are changed
+
+First relocate the new cluster's backups, provided they are using the same object storage (buckets), by updating the `pathSuffix`. The backups can be activated except for Gitea, which should only be activated after the recovery (in the last step).
 
 ```yaml
 # ...
@@ -85,6 +94,7 @@ Then prepare the database to be initialized with the backup data from the attach
 In the following examples, replace the `<bucket-name>` and `<storage-region>` placeholders. If the source platform itself has been recovered from a backup before, also update the last portion of the `destinationPath`, e.g. to `harbor-1`. In that case, change the aforementioned `pathSuffix` to a different value, e.g. `harbor-2`.
 
 In the section `databases.harbor`:
+
 ```yaml
 # ...
 databases:
@@ -116,6 +126,7 @@ databases:
 ```
 
 In `databases.keycloak`:
+
 ```yaml
 # ...
 databases:
@@ -166,19 +177,23 @@ helm install -f updated-values.yaml apl apl/apl
 
 Note that due to some race conditions during the Helm execution, some recoverable errors may occur during the installation process. Currently known issues are:
 
-* The database recovery pods (suffixed with `-full-recovery`) may fail to start, reporting a missing secret. This can usually be fixed by deleting the pod. It will be recreated automatically.
-* The Istio operator can sometimes take a long time  to start.
+- The database recovery pods (suffixed with `-full-recovery`) may fail to start, reporting a missing secret. This can usually be fixed by deleting the pod. It will be recreated automatically.
+- The Istio operator can sometimes take a long time  to start.
 
 When the installation has completed, you should be able to log into the console using the credentials known from the previous platform.
 
 ## Restoring Gitea repositories
 
-When the platform is installed, Gitea can also be restored to the state as preserved in the backups.
+When the platform is installed, Gitea can also be restored to the state as preserved in the backups. For restoring the database, refer to the [instructions on platform databases](platform-databases.md).
 
-* For restoring the database, refer to the [instructions on platform databases](platform-databases.md).
-  1. [Adjust the values file in the repository](platform-databases.md#regular-recovery-with-backup-in-same-cluster) taking into account the [cluster is restored from a remote backup](platform-databases.md#obtaining-a-backup-outside-the-cluster).
-  2. [Shut down Gitea](platform-databases.md#shutting-down-services).
-  3. Delete the Gitea database.
-  4. [Start Gitea](platform-databases.md#restarting-services).
-  5. Activate backups for Gitea in the platform Settings -> Backups.
-* The contents of the code repositories can be retrieved following the [Gitea-specific steps](gitea.md).
+1. [Adjust the values file in the repository](platform-databases.md#regular-recovery-with-backup-in-same-cluster) taking into account the [cluster is restored from a remote backup](platform-databases.md#obtaining-a-backup-outside-the-cluster).
+
+2. [Shut down Gitea](platform-databases.md#shutting-down-services).
+
+3. Delete the Gitea database.
+
+4. [Start Gitea](platform-databases.md#restarting-services).
+
+5. Activate backups for Gitea in the platform Settings -> Backups.
+
+The contents of the code repositories can be retrieved following the [Gitea-specific steps](gitea.md).

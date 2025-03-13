@@ -5,15 +5,15 @@ sidebar_label: Gitea
 ---
 ## Introduction
 
-Gitea stores the platform configuration (value repository), the workload catalog, and user-created repositories.
+Gitea stores the platform configuration (in the `values` repository), the workload catalog (in the `charts` repository), and user-created repositories.
 
-The recovery described here uses the application-level backup of Gitea, i.e. using the `gitea dump` command line. That backup type includes a current SQL dump of the database as well as all repositories' data. However, [Gitea documentation](https://docs.gitea.com/administration/backup-and-restore) recommends different methods for restoring the database, due to potential compatibility issues.
+The recovery procedure described here uses the application-level backup of Gitea, i.e. using the `gitea dump` command line. This includes a current SQL dump of the database as well as all repositories and data. However, [Gitea documentation](https://docs.gitea.com/administration/backup-and-restore) recommends different methods for restoring the database, due to potential compatibility issues.
 
-A restore using this backup is advised, if for some reason only Gitea has been affected by a severe operational event leading to data corruption or loss. It is also possible to restore only either the database or single repositories. After such a partial restore there may be mismatches between the repository information and the database however.
+A restore using this backup is advised if for some reason only Gitea has been affected by a severe operational event leading to data corruption or loss. It is also possible to restore the complete the database or single repositories. Be aware that after a partial restore there may be mismatches between the repository information and the database.
 
 ## Retrieving backups
 
-While uploading and keeping backups on the configured object storage, there is also a local retention of these backups on a local volume for one day. After the local retention has expired, archives can be retrieved from the remote storage.
+When uploading and storing backups in the configured object storage bucket, there is also a local retention of the backups on a local volume for one day. After the local retention has expired, archives can be retrieved from the remote storage.
 
 Note that `rclone` is installed on the first time upload of a Gitea backup. If not present, it can be obtained from the releases page at https://github.com/rclone/rclone/releases/. Following variables such as `$BUCKET_NAME` or storage authentication are pre-configured in the container, so they do not need to be changed.
 

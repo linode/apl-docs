@@ -4,17 +4,17 @@ title: Restoring platform databases
 sidebar_label: Databases
 ---
 
-Generally it is recommended to get familiar with the [CNPG documentation](https://cloudnative-pg.io/documentation/current/recovery/) on how to restore a PostgreSQL database. The steps here are plotted out specifically to this platform.
+Generally it is recommended to get familiar with the [CNPG documentation](https://cloudnative-pg.io/documentation/current/recovery/) on how to restore a PostgreSQL database. The steps here are written down specifically for App Platform for LKE.
 
 ## Initial notes
 
-Changes to the `values` repository can usually be made through the Gitea UI after signing in with the `platform-admin` user. As this requires Keycloak in addition to Gitea operating normally, the risk can be reduced by creating an application token and pulling/pushing local changes to the repository. In Gitea, go to the user settings, `Applications` tab, enter a token name and select `repo` as the scope. After creating this token, you can include it in the repository URL, e.g.
+Changes to the `values` repository can usually be made through the Gitea UI after signing in with the `platform-admin` user. As this requires Keycloak in addition to Gitea operating normally, the risk can be reduced by creating an application token and pulling/pushing local changes to the repository. In Gitea, go to the user settings, click on the `Applications` tab, enter a token name and select `repo` as the scope. After creating this token, you can include it in the repository URL, e.g.
 
 ```sh
 git clone https://<token>@gitea.example.com/otomi/values.git
 ```
 
-In the event that platform-critical services Gitea and Keycloak are not able to start, required changes to the database configuration can be applied directly in the following ArgoCD applications in the `argocd` namespace. This change persists and is synchronized into the cluster until the next following Tekton pipeline overwrites them:
+In the event that platform-critical services Gitea and Keycloak are not able to start, required changes to the database configuration can be applied directly in the following Argo CD applications in the `argocd` namespace. This change persists and is synchronized into the cluster until the next following Tekton pipeline overwrites them:
 
 * Gitea database: `gitea-gitea-otomi-db`
 * Keycloak database: `keycloak-keycloak-otomi-db`
@@ -28,10 +28,15 @@ This procedure should be taken if the database has gotten to an unhealthy state,
 Recovering any of the platform databases should be performed in the following order:
 
 1. Note the name of the `Backup` resource that you intend to run the recovery from.
+
 2. Make adjustments to the values as described in this section. This needs to be done within the values repository directly, since this is not exposed to the platform API.
+
 3. Shut down the service accessing the database (see above).
+
 4. Halt ArgoCD auto-sync and delete the database `Cluster` resource.
+
 5. Re-enable ArgoCD sync.
+
 6. Re-enable the backup disabled in step 2. This is also possible via the Console.
 
 ### Listing backup resources
@@ -44,7 +49,7 @@ kubectl get backup -n <app>
 ```
 where `<app>` is to be replaced with `gitea`, `harbor`, or `keycloak`.
 
-### Adjustments to backup configuration
+### Adjustments to the backup configuration
 
 After the recovery, new backups will be created. For avoiding accidental mixing and overwriting of backups, CloudnativePG does not allow for the new backup and the recovery source to be in the same location. Therefore, the backups should be temporarily disabled, and the suffix (the directory inside the object storage) are to be adjusted.
 
@@ -64,7 +69,7 @@ platformBackups:
 # ...
 ```
 
-### Adjustments to database configuration
+### Adjustments to the database configuration
 
 The following change only has an effect on an initial database cluster. Therefore it can be made ahead of shutting down platform-critical services.
 

@@ -32,15 +32,13 @@ image:
 
 6. Click `Submit`.
 
-7. Click `Deploy Changes`.
-
 All the needed Argo CD resources to deploy your workload will now be created. 
 
-8. Click on `Workloads` in the left menu. You will now see a list of all Workloads and there status:
+7. Click on `Workloads` in the left menu. You will now see a list of all Workloads and their status:
 
 ![workloads](../../img/workloads-2.png)
 
-9. In the workloads list, click on the `Application` link of your workload to see the status of your workload in Argo CD:
+8. In the workloads list, click on the `Application` link of your workload to see the status of your workload in Argo CD:
 
 ![workloads](../../img/workloads-3.png)
 

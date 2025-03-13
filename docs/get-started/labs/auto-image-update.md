@@ -36,8 +36,6 @@ image:
 
 6. Click `Submit`.
 
-7. Click `Deploy Changes`.
-
 In the example above, we used the `Digest` update strategy. The `Semver` strategy allows you to track & update images which use tags that follow the semantic versioning scheme.
 
 ## Expose the service
@@ -59,7 +57,7 @@ Now go to the `green` repo in Gitea and change the the welcome message:
     <style>
       body {
         color: #ffffff;
-        background-color: green
+        background-color: green;
         font-family: Arial, sans-serif;
         font-size: 14px;
       }

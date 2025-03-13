@@ -46,5 +46,3 @@ Snapshots are currently not supported on Linode.
 6. (optional) Change the default TTL (expiration of the backup). Defaults to 7 days.
 
 7. Click `Submit`.
-
-8. Click `Deploy Changes`.

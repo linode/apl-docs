@@ -4,10 +4,6 @@ title: Scan your running containers for vulnerabilities
 sidebar_label: Scan Containers
 ---
 
-:::important
-Trivy Operator is not supported when App Platform is deployed directly through LKE (not manually installed) or when running Kubernetes version 1.31.
-:::
-
 :::info
 Trivy Operator needs to be activated for this lab.
 :::

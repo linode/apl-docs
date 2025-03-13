@@ -53,9 +53,7 @@ image:
   tag: latest
 ```
 
-6. Click `Submit`
-
-Now click on `Deploy Changes`
+6. Click `Submit`.
 
 After a few minutes, all the needed Argo CD resources (one `applicationSet` per Workload) to deploy your workload will be created. In the workloads list, click on the `Application` link of your workload to see the status of your workload.
 

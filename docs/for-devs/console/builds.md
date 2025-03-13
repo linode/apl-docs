@@ -57,13 +57,13 @@ Now choose the type of the build:
 
 ### Buildpacks
 
-1. Add the URL of the Git repository that contains the application source code
+1. Add the URL of the Git repository that contains the application source code.
 
-2. (optional) Add the path. This is a subpath within the repo where the source to build is located
+2. (optional) Add the path. This is a subpath within the repo where the source to build is located.
 
-3. (optional) Change the revision. This can be a commit, a tag, or a branch
+3. (optional) Change the revision. This can be a commit, a tag, or a branch.
 
-4. (optional) Add Environment variables to set during build-time
+4. (optional) Add Environment variables to set during build-time.
 
 5. (Optional) Select `External Repo` if the repository used for the Build is not a public or a private Git repo in the local Gitea. When selected, fill in the secret name that contains the required SSH credentials. Read more [here](https://tekton.dev/docs/how-to-guides/clone-repository/#git-authentication) about how to setup SSH authentication with your Git provider.
 
@@ -75,31 +75,31 @@ To see the more status details of the build, click on the `PipelineRun` link of 
 
 ### Configure a webhook for the Git repo in Gitea
 
-1. In the Console, click on `Apps` in the left menu and then open `Gitea`
+1. In the Console, click on `Apps` in the left menu and then open `Gitea`.
 
-2. In the top left menu of Gitea, click on `Explore` and then on the `green` repo
+2. In the top left menu of Gitea, click on `Explore` and then on the `green` repo.
 
-3. Go to `Settings` (top right) and then to `Webhooks`
+3. Go to `Settings` (top right) and then to `Webhooks`.
 
-4. Click `Add Webhook` and select `Gitea`
+4. Click `Add Webhook` and select `Gitea`.
 
 5. In the `Target URL`, paste the webhook URL from your clipboard.
 
-6. Click `Add Webhook`
+6. Click `Add Webhook`.
 
 ### Expose the trigger listener publicly
 
 When using an external (private) Git repository, the trigger event listener that is created can also be exposed publicly. To expose the event listener publicly:
 
-1. Go to Services
+1. Go to Services.
 
-2. Click create new service
+2. Click create new service.
 
-3. Select the `el-gitea-webhook-<build-name>` internal service
+3. Select the `el-gitea-webhook-<build-name>` internal service.
 
-4. Under `Exposure`, select `External`
+4. Under `Exposure`, select `External`.
 
-5. Click `Submit` and the `Deploy Changes`
+5. Click `Submit`.
 
 ### Restart a build
 

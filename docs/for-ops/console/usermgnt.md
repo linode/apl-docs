@@ -49,11 +49,9 @@ What you need to know about the User Management feature:
 
 6. Click `Submit`.
 
-7. Click `Deploy Changes`.
+7. In the list of Users, click on the `copy initial credentials to clipboard` icon.
 
-8. In the list of Users, click on the `copy initial credentials to clipboard` icon.
-
-9. Send the initial credentials to the new user.
+8. Send the initial credentials to the new user.
 
 The new user will be prompted to change the initial password at first login.
 
@@ -70,8 +68,6 @@ The following example shows how to create a user account and assign the user the
 3. Select the `Assign to team <team-name>` checkbox.
 
 4. Click on `Update Users`.
-
-5. Click on `Deploy Changes`.
 
 
 

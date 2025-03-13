@@ -12,13 +12,18 @@ The Platform dashboard uses the Platform Grafana and Prometheus to get it's info
 
 ## Dashboard elements
 
-The dashboard has 3 elements
+The dashboard has 4 elements
 
+- [Available versions](#available-versions)
 - [Inventory](#inventory)
 - [Cluster Resource Utilization](#cluster-resource-utilization)
 - [Cluster Resource Request Commitments](#cluster-resource-request-commitments)
 
 ![Team dashboard](../../img/platform-dashboard.png)
+
+### Available versions
+
+When there is a new release (version) of the App Platform, the available version will be shown here.
 
 ### Inventory
 

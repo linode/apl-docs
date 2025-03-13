@@ -4,7 +4,7 @@ title: Create Sealed Secrets
 sidebar_label: Create Sealed Secrets
 ---
 
-In this lab we will create sealed secrets and see how to securely sensitive information in git repository.
+In this lab we will create sealed secrets and see how to securely store sensitive information in git repository.
 
 ## Creating a Sealed Secret
 
@@ -26,8 +26,6 @@ In this lab we will create sealed secrets and see how to securely sensitive info
 ![Create sealed secret](../../img/create-sealed-secrets.png)
 
 7. Click on `submit`.
-
-8. Click on `Deploy Changes`.
 
 Note that the secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
 

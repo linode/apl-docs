@@ -12,9 +12,9 @@ To install on any other conformant Kubernetes, use the `custom` provider. Make s
 
 Have a Kubernetes cluster running with one of the following Kubernetes versions:
 
-- `1.29`
 - `1.30`
 - `1.31`
+- `1.32`
 
 and a node pool with at least **12 vCPU** and **24 GB RAM**.
 

@@ -1,8 +1,6 @@
 module.exports = {
   mainSidebar: {
-    "Akamai App Platform": [
-      "akamai-app-platform/introduction",
-    ],
+    "Akamai App Platform": ["akamai-app-platform/introduction"],
     "Getting Started": [
       "get-started/overview",
       {
@@ -54,7 +52,6 @@ module.exports = {
       {
         "Console - Team View": [
           "for-devs/console/overview",
-          "for-devs/console/deploy-changes",
           "for-devs/console/dashboard",
           "for-devs/console/apps",
           "for-devs/console/catalog",
@@ -68,7 +65,6 @@ module.exports = {
           "for-devs/console/settings",
           "for-devs/console/sealed-secrets",
           "for-devs/console/shell",
-          
         ],
       },
     ],
@@ -96,7 +92,6 @@ module.exports = {
               "for-ops/console/settings/dns",
               "for-ops/console/settings/ingress",
               "for-ops/console/settings/oidc",
-              "for-ops/console/settings/smtp",
               "for-ops/console/settings/backup",
               "for-ops/console/settings/obj",
             ],
@@ -109,7 +104,7 @@ module.exports = {
           "for-ops/how-to/use-catalog",
           "for-ops/how-to/ingress-classes",
           "for-ops/how-to/use-team-admin",
-          "for-ops/how-to/core-only",
+          // "for-ops/how-to/core-only",
           "for-ops/how-to/backups",
           "for-ops/how-to/clone-apl",
           "for-ops/how-to/manage-age",
@@ -118,7 +113,15 @@ module.exports = {
         ],
       },
       {
-        "CLI": [
+        "Disaster recovery": [
+          "for-ops/disaster-recovery/overview",
+          "for-ops/disaster-recovery/gitea",
+          "for-ops/disaster-recovery/platform-databases",
+          "for-ops/disaster-recovery/platform-reinstall",
+        ],
+      },
+      {
+        CLI: [
           "for-ops/cli/installation",
           "for-ops/cli/deploying",
           "for-ops/cli/known-issues",
@@ -162,7 +165,6 @@ module.exports = {
           "apps/argocd",
           "apps/certmanager",
           "apps/cloudnativepg",
-          "apps/drone",
           "apps/external-dns",
           "apps/falco",
           "apps/gitea",

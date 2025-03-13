@@ -51,8 +51,6 @@ versionTwo:
 
 6. Click `Submit`
 
-7. Click on `Deploy Changes`
-
 We now created 2 deployments. One for `blue` and one for `green`. The `green` image (our canary) will be automatically updated after a change (commit).
 
 ## Expose the service
@@ -63,11 +61,9 @@ We now created 2 deployments. One for `blue` and one for `green`. The `green` im
 
 - Under `Traffic Control` click `enabled` (and use the default weights for v1 and v2).
 
-- Under `Exposure Ingress`, select `Ingress` and use the default configuration.
+- Under `Exposure Ingress`, select `External` and use the default configuration.
 
 - Click `Submit`.
-
-- Click `Deploy Changes`.
 
 ## See the results
 

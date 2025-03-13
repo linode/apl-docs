@@ -42,6 +42,28 @@ App Platform is not supported in combination with Shared CPU Linode plans.
 
 7. Once a node pool has been added to your configuration, it is listed in the **Cluster Summary** section detailing your cluster's hardware resources and monthly cost. Additional pools can be added before finalizing the cluster creation process by repeating the previous step for each additional pool.
 
+:::info
+The App Platform for LKE requires HA control plane to be enabled. When App Platform for LKE is enabled, HA control plane will automatically be enabled.
+:::
+
+:::info
+It is advised to configure Control Plane ACL. This will restrict access to the Kubernetes API. The ACL will NOT restrict access to the App Platform Console!
+:::
+
+5. In the Add Node Pools section, select the required resources for the Linode worker node(s). To the right of each plan, select the plus + and minus - to add or remove a Linode to a node pool one at time.
+
+:::info
+During the Beta period the App Platform for LKE requires a node pool with at least **3 worker** nodes with a minimum of **16 GB memory** and **4 CPUs** per node. Make sure to select the required Linode plan.
+:::
+
+6. Select Add to include the node pool in your configuration. If you decide that you need more hardware resources after you deploy your cluster, you can always [edit your Node Pool](https://techdocs.akamai.com/cloud-computing/docs/manage-nodes-and-node-pools).
+
+:::info
+The App Platform for LKE is not supported in combination with Shared CPU.
+:::
+
+7. Once a pool has been added to your configuration, it is listed in the Cluster Summary on the right-hand side of Cloud Manager detailing your cluster's hardware resources and monthly cost. Additional pools can be added before finalizing the cluster creation process by repeating the previous step for each additional pool.
+
 8. When you are satisfied with the configuration of your cluster, click the **Create Cluster** button. This creates your cluster and displays the cluster's details page in the Cloud Manager. Once the cluster has been fully provisioned, App Platform is installed. **The installation of App Platform takes around 10 until 15 minutes.** When the installation is finished, the URL of the **Portal Endpoint** is displayed in the **App Platform** section. The progress of the installation is checked every 60 seconds. When the installation is still in progress, the message “Installation in progress” is displayed instead of the URL of the Portal Endpoint.
 
 9. When the installation of both the LKE cluster and App Platform is complete, click on the provided URL of the Portal Endpoint:

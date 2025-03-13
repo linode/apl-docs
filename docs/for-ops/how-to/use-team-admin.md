@@ -67,8 +67,6 @@ image:
 
 9.  Click on `Submit`.
 
-10. Click on `Deploy Changes`.
-
 
 ## Publicly expose a service deployed in any namespace
 
@@ -84,12 +82,10 @@ Let's now configure public exposure for the workload we deployed in the namespac
 
 4. Fill in the port of the service (8080 in this case).
 
-5. Under `Exposure Ingress`, select `Ingress`.
+5. Under `Exposure Ingress`, select `External`.
 
 6. Turn off `Use team domain` and fill in the name of the service as the hostname (hello-deploy in this example).
 
 7. Click on `Submit`.
-
-8. Click on `Deploy Changes` (the Deploy Changes button in the left panel will light-up after you click on submit).
 
 Your service and URL will now show up in the list of Services.

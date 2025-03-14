@@ -12,7 +12,7 @@ When the Network Policies `Egress control` option is enabled for the team, all t
 
 ## Network Policies (all)
 
-All Network Policies of the team are listed here.
+All Network Policies of the Team are listed here.
 
 | Property      | Description                                                     |
 | ------------- | --------------------------------------------------------------- |

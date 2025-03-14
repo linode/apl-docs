@@ -14,7 +14,7 @@ Ask your platform administrator to activate the Harbor App to use this feature.
 
 ## Builds (all)
 
-All Builds of the team are listed here.
+All Builds of the Team are listed here.
 
 ![Team builds](../../img/team-builds.png)
 

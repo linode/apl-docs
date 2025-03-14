@@ -99,12 +99,24 @@ module.exports = {
         ],
       },
       {
+        "Console - Team-Admin": [
+          "for-ops/console/team-admin-overview",
+          "for-ops/console/team-admin-catalog",
+          "for-ops/console/team-admin-projects",
+          "for-ops/console/team-admin-builds",
+          "for-ops/console/team-admin-sealed-secrets",
+          "for-ops/console/team-admin-workloads",
+          "for-ops/console/team-admin-netpols",
+          "for-ops/console/team-admin-services",
+          "for-ops/console/team-admin-security-policies",
+        ],
+      },
+      {
         "How To": [
           "for-ops/how-to/overview",
           "for-ops/how-to/use-catalog",
           "for-ops/how-to/ingress-classes",
           "for-ops/how-to/use-team-admin",
-          // "for-ops/how-to/core-only",
           "for-ops/how-to/backups",
           "for-ops/how-to/clone-apl",
           "for-ops/how-to/manage-age",

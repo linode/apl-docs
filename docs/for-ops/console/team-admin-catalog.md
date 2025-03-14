@@ -14,9 +14,9 @@ The Catalog contains a set of Helm charts that can be used as quick starts, but 
 
 ## Helm charts available for platform administrators
 
-Next to the Helm charts that are by default included in the Catalog and made available for Teams, the Catalog also by default includes a set of curated Helm charts that can only be installed by platform administrators. These Helm charts are visable in the Catalog for the Team `Admin`.
+Next to the Helm charts that are by default included in the Catalog and made available for Teams, the Catalog also by default includes a set of curated Helm charts that can only be installed by platform administrators. These Helm charts are visible in the Catalog for the Team `Admin`.
 
-The Helm charts that are by default added to the Catalog are maintained in the [apl-charts](https://github.com/linode/apl-charts) Github repository. Currently the following Helm charts are made available for platform-administrators:
+The Helm charts that are by default added to the Catalog are maintained in the [apl-charts](https://github.com/linode/apl-charts) GitHub repository. Currently the following Helm charts are made available for platform-administrators:
 
 1. Kwasm Operator
 
@@ -60,7 +60,7 @@ The `kubeflow-pipelines` Helm chart can be used to install KubeFlow Pipelines in
 
 8. Click `ADD CHART`.
 
-The Helm chart will now be added to the `charts` repository in the Local Git service (Gitea) and will be visable in the Catalog:
+The Helm chart will now be added to the `charts` repository in the Local Git service (Gitea) and will be visible in the Catalog:
 
 ![catalog](../../img/team-admin-catalog.png)
 

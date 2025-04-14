@@ -11,7 +11,7 @@ To create backups, Object Storage needs to be enabled.
 :::
 
 :::info
-The Backup in the Settings will NOT be visible when the installation is done by Akamai Connected Cloud. 
+The Backup in the Settings will NOT be visible when the installation is done by Akamai Cloud. 
 :::
 
 The Backup section provides the option to:

@@ -31,7 +31,7 @@ App Platform requires HA control plane. When you enable the **App Platform** set
 5. In the **Add Node Pools** section, select the required resources for the worker nodes. To the right of each plan, select the plus + and minus - to add or remove a node to a node pool one at time.
 
 :::note
-During the beta period, App Platform requires a node pool with at least **3 worker** nodes with a minimum of **16 GB memory** and **4 CPUs** per node.
+During the beta period, App Platform requires a node pool with at least **3 worker** nodes with a minimum of **8 GB memory** and **4 CPUs** per node.
 :::
 
 :::note
@@ -64,13 +64,13 @@ The App Platform for LKE is not supported in combination with Shared CPU.
 
 7. Once a pool has been added to your configuration, it is listed in the Cluster Summary on the right-hand side of Cloud Manager detailing your cluster's hardware resources and monthly cost. Additional pools can be added before finalizing the cluster creation process by repeating the previous step for each additional pool.
 
-8. When you are satisfied with the configuration of your cluster, click the **Create Cluster** button. This creates your cluster and displays the cluster's details page in the Cloud Manager. Once the cluster has been fully provisioned, App Platform is installed. **The installation of App Platform takes around 10 until 15 minutes.** When the installation is finished, the URL of the **Portal Endpoint** is displayed in the **App Platform** section. The progress of the installation is checked every 60 seconds. When the installation is still in progress, the message “Installation in progress” is displayed instead of the URL of the Portal Endpoint.
+8. When you are satisfied with the configuration of your cluster, click the **Create Cluster** button. This creates your cluster and displays the cluster's details page in the Cloud Manager. Once the cluster has been fully provisioned, App Platform is installed. **The installation of App Platform takes around 10 to 15 minutes.** When the installation is finished, the URL of the **Portal Endpoint** is displayed in the **App Platform** section. The progress of the installation is checked every 60 seconds. When the installation is still in progress, the message “Installation in progress” is displayed instead of the URL of the Portal Endpoint.
 
 9. When the installation of both the LKE cluster and App Platform is complete, click on the provided URL of the Portal Endpoint:
 
 ![details-page](../../img/cluster-details-page.png)
 
-This takes you to App Platform Console login page:
+This takes you to App Platform Portal login page:
 
 ![sign-in](../../img/sign-in-page.png)
 
@@ -102,7 +102,7 @@ This takes you to App Platform Console login page:
    kubectl get secret platform-admin-initial-credentials -n keycloak --template={{.data.password}} | base64 -d
    ```
 
-3. Navigate back to App Platform Console login page in your web browser and sign in with these credentials.
+3. Navigate back to App Platform Portal login page in your web browser and sign in with these credentials.
 
 4. The first time you log in, you are prompted to change your password. Enter your new password and click **Submit**. If you need to change your password later, see the [Change user passwords](http://localhost:3001/docs/for-ops/how-to/change-user-passwords) and [Change admin password](http://localhost:3001/docs/for-ops/how-to/change-admin-password) guides.
 
@@ -110,9 +110,9 @@ This takes you to App Platform Console login page:
 
 ## Provision Object Storage for the App Platform
 
-Aftering logging in to the App Platform Console for the first time, you should configure Object Storage. This is not required, but strongly recommended as this will prevent _out of disk space errors_ when using Storage Volumes for integrated applications. Using Object Storage also has the advantage of creating backups of all databases used by the platform.
+Aftering logging in to the App Platform Portal for the first time, you should configure Object Storage. This is not required, but strongly recommended as this will prevent _out of disk space errors_ when using Storage Volumes for integrated applications. Using Object Storage also has the advantage of creating backups of all databases used by the platform.
 
-1. The **Object Storage Wizard** screen is automatically displayed when logging in for the first time. This walks you through adding an API token so that it can automatically create amd configure all required Object Storage buckets. Click **Yes** to continue with this process. If you don’t want the platform to create all the required buckets, then click **Skip for now**. In this case, some features like creating backups of databases will not be available. You can start the Wizard at any time in the Console (Platform View: Maintenance, Show Object Storage Wizard).
+1. The **Object Storage Wizard** screen is automatically displayed when logging in for the first time. This walks you through adding an API token so that it can automatically create amd configure all required Object Storage buckets. Click **Yes** to continue with this process. If you don’t want the platform to create all the required buckets, then click **Skip for now**. In this case, some features like creating backups of databases will not be available. You can start the Wizard at any time in the Portal (Platform View: Maintenance, Show Object Storage Wizard).
 
 1. Follow the instructions to [create a Personal Access Token](https://techdocs.akamai.com/linode-api/reference/get-started#personal-access-tokens). The API token only needs **Read/Write** to Object Storage. Once created, save or copy the generated access token.
 

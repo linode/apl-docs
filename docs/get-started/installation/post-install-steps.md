@@ -138,17 +138,17 @@ When Object Storage is configured and an API Token is added, then activate the V
 
 Akamai App Platform is a composable platform. Activate more Apps based on the required platform capabilities:
 
-| Capability                                  | App                                             | Object storage |
-| ------------------------------------------- | ----------------------------------------------- | -------------- | -------- | --- |
-| Log aggregation                             | Loki and Grafana                                | Optional       |
-| Metric collection                           | Prometheus and Grafana                          | No             |
-| Send Alerts                                 | Prometheus and Alert manager                    | No             |
-| Tracing                                     | Tempo, OTEL, Loki and Grafana                   | Required       |
-| Build images from source code               | Harbor                                          | Optional       |
-| Scan running containers for vulnerabilities | Trivy                                           | No             |
-| Enforce security policies                   | Kyverno                                         | No             |
-| Database backups                            | CloudnativePG                                   | Required       |
-| <!--                                        | Long term retention of Logs, Metrics and Traces | Thanos         | Required | --> |
+| Capability                                      | App                                             | Object storage |
+| ----------------------------------------------- | ----------------------------------------------- | -------------- |
+| Log aggregation                                 | Loki and Grafana                                | Optional       |
+| Metric collection                               | Prometheus and Grafana                          | No             |
+| Send Alerts                                     | Prometheus and Alert manager                    | No             |
+| Tracing                                         | Tempo, OTEL, Loki and Grafana                   | Required       |
+| Build images from source code                   | Harbor                                          | Optional       |
+| Scan running containers for vulnerabilities     | Trivy                                           | No             |
+| Enforce security policies                       | Kyverno                                         | No             |
+| Database backups                                | CloudnativePG                                   | Required       |
+| Long term retention of Logs, Metrics and Traces | Thanos                                          | Required       |
 
 ## Step 7: Create Teams
 

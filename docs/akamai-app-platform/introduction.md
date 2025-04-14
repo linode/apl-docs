@@ -6,11 +6,11 @@ sidebar_label: Introduction
 
 ## What is Akamai App Platform
 
-Akamai App Platform is a platform that combines developer and operations-centric tools, automation and self-service to streamline the application lifecycle when using Kubernetes. From development to delivery to management of containerized application workloads.
+Akamai App Platform is a Kubernetes platform that combines developer-centric and operations-centric tooling along with automation and a self-service portal. This streamlines the application life cycle when using Kubernetes, from development to delivery to the management of containerized application workloads.
 
-The platform connects many of the technologies found in the Cloud Native Computing Foundation (CNCF) landscape in a way to provide direct value. No more re-inventing the wheel when building and maintaining your own Kubernetes based platform or bespoke stack.
+The platform connects many of the technologies found in the Cloud Native Computing Foundation (CNCF) landscape in a way that provides direct value. This avoids the need to reinvent the wheel when building and maintaining your own Kubernetes based platform or bespoke stack.
 
-The App Platform is optimized to run on Linode Kubernetes Engine (LKE), but can also (manually) be installed on any other [conformant Kubernetes cluster](https://www.cncf.io/training/certification/software-conformance/).
+App Platform is optimized to run on Linode Kubernetes Engine (LKE), but it can also be manually installed on any other [conformant Kubernetes cluster](https://www.cncf.io/training/certification/software-conformance/).
 
 The platform includes:
 
@@ -83,4 +83,3 @@ The platform includes:
 Get a complete suite of integrated and pre-configured Kubernetes projects to support all the required platform capabilities. Compose your ideal platform by enableling the Kubernetes applications to support all the required capabilities:
 
 ![integrated-apps](../img/integrated-apps.png)
-

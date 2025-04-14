@@ -136,32 +136,28 @@ When Object Storage is configured and an API Token is added, then activate the V
 
 ## Step 6 (optional): Activate more Apps
 
-App Platform for LKE is a composable platform. Activate more Apps based on the required platform capabilities:
+Akamai App Platform is a composable platform. Activate more Apps based on the required platform capabilities:
 
-| Capability      | App                                                    | Object storage |
-| --------------- | ------------------------------------------------------ | -------------- |
-| Log aggregation | Loki and Grafana | Optional |
-| Metric collection | Prometheus and Grafana | No |
-| Send Alerts | Prometheus and Alert manager | No |
-| Tracing | Tempo, OTEL, Loki and Grafana | Required |
-| Build images from source code | Harbor | Optional |
-| Scan running containers for vulnerabilities | Trivy | No |
-| Enforce security policies | Kyverno | No |
-| Database backups | CloudnativePG | Required |
-<!-- | Long term retention of Logs, Metrics and Traces | Thanos | Required | -->
+| Capability                                      | App                                             | Object storage |
+| ----------------------------------------------- | ----------------------------------------------- | -------------- |
+| Log aggregation                                 | Loki and Grafana                                | Optional       |
+| Metric collection                               | Prometheus and Grafana                          | No             |
+| Send Alerts                                     | Prometheus and Alert manager                    | No             |
+| Tracing                                         | Tempo, OTEL, Loki and Grafana                   | Required       |
+| Build images from source code                   | Harbor                                          | Optional       |
+| Scan running containers for vulnerabilities     | Trivy                                           | No             |
+| Enforce security policies                       | Kyverno                                         | No             |
+| Database backups                                | CloudnativePG                                   | Required       |
+| Long term retention of Logs, Metrics and Traces | Thanos                                          | Required       |
 
 ## Step 7: Create Teams
 
 Create your first team. Follow the instructions [here](/docs/for-ops/console/teams#creating-a-team).
 
 ## Step 8: Create users and add them to a Team
- 
+
 :::info
 The option to create users and add them to Teams is not available when installed with [OIDC](oidc.md).
 :::
 
 Create Users and add them to a Team. Follow the instructions [here](/docs/for-ops/console/user-management)
-
-
-
-

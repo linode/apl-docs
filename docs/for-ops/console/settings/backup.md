@@ -11,7 +11,7 @@ To create backups, Object Storage needs to be enabled.
 :::
 
 :::info
-The Backup in the Settings will NOT be visible when the installation is done by Akamai Connected Cloud. 
+The Backup in the Settings will NOT be visible when the installation is done by Akamai Cloud. 
 :::
 
 The Backup section provides the option to:
@@ -32,16 +32,16 @@ Select to backup the database of the app.
 ### Persistent Volume Backups
 
 :::info
-The Persistent Volume Backups section will not be visible when the installation is done by Akamai Connected Cloud. This is because using Velero is not (yet) supported for Linode Volumes.
+The Persistent Volume Backups section will not be visible when App Platform is deployed directly through LKE (not manually installed). This is because using Velero is not (yet) supported for Akamai's Block Storage Volumes.
 :::
 
 :::note
 To use Velero to create backups of Persistent Volumes, Object Storage needs to be enabled.
 :::
 
-To use Velero to create backups of Persistent Volumes in Linode:
+To use Velero to create backups of Persistent Volumes in Akamai:
 
-1. Create a Linode API Token in Linode.
+1. Create a Linode API Token in Akamai's Cloud Manager.
 
 2. Fill in the token and submit changes.
 

@@ -15,7 +15,7 @@ To prevent loss of data it is advised to configure Object Storage before activat
 :::
 
 :::info
-The Local Minio provider will not be visible when the installation is done by Akamai Connected Cloud.
+The Local Minio provider will not be visible when App Platform is deployed directly through LKE (not manually installed).
 :::
 
 ### Providers

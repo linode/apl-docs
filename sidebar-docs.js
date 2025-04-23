@@ -24,7 +24,7 @@ module.exports = {
           "get-started/labs/labs-prerequisites",
           "get-started/labs/create-repos",
           "get-started/labs/register-repos",
-          "get-started/labs/build-images",
+          "get-started/labs/create-images",
           "get-started/labs/trigger-builds",
           "get-started/labs/push-images",
           "get-started/labs/create-sealed-secrets",

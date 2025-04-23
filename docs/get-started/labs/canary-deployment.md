@@ -12,7 +12,7 @@ For this we are going to deploy the stable version (blue), introduce a new versi
 
 For this lab we need the 2 images (`blue` and `green`) we already created in the previous labs. If you haven't created the blue and green images, first complete these 2 labs:
 
-- [Build images](build-images.md)
+- [Build images](create-images.md)
 
 - [Trigger builds](trigger-builds.md)
 

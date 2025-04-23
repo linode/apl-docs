@@ -1,6 +1,6 @@
 ---
 slug: netpols
-title: Team Network Policies
+title: Network Policies
 sidebar_label: Network Policies
 ---
 

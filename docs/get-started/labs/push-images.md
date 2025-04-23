@@ -1,7 +1,7 @@
 ---
 slug: push-images
 title: Push images to Harbor
-sidebar_label: Push Images
+sidebar_label: Manually Push Images
 ---
 
 :::info

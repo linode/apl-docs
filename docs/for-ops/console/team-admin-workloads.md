@@ -6,7 +6,7 @@ sidebar_label: Workloads
 
 The Workload self-service feature for the Team Admin is the same as for regular Teams, but with the following differences:
 
-- The Workload can be used to deploy Helm charts from the Catalog in any namespace.
+- The Workload can be used to deploy Helm charts from the Catalog in any namespace (also in all Team namespaces).
 
 - If the namespace does not exist, the namespace can be automatically created.
 

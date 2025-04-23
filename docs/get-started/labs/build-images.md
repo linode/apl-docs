@@ -1,7 +1,7 @@
 ---
-slug: build-images
-title: Build images from application source
-sidebar_label: Build Images
+slug: create-images
+title: Create container images
+sidebar_label: Create Container Images
 ---
 
 :::info

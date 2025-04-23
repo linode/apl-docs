@@ -1,6 +1,6 @@
 ---
 slug: user-management
-title: Team - User Management
+title: Team User Management
 sidebar_label: User Management
 ---
 

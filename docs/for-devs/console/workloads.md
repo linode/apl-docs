@@ -1,10 +1,8 @@
 ---
 slug: workloads
-title: Team Workloads
+title: Workloads
 sidebar_label: Workloads
 ---
-
-<!-- ![Console: new service](img/team-services.png) -->
 
 A Workload is a self-service feature for creating Kubernetes resources using Helm charts from the Catalog.
 

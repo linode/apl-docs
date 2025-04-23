@@ -1,7 +1,7 @@
 ---
-slug: create-repos
-title: Create code repositories
-sidebar_label: Create Code Repositories
+slug: register-repos
+title: Register code repositories
+sidebar_label: Register Code Repositories
 ---
 
 As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like Gitlab, or use Github. But if you don't, you can use the integrated Git service.

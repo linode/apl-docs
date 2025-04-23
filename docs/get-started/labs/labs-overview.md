@@ -22,7 +22,7 @@ Welcome to the Akamai App Platform labs! We recommend reviewing these labs to le
 
 ### [Register code repositories](register-repos.md)
 
-### [Create container images](build-images.md)
+### [Create container images](create-images.md)
 
 ### [Trigger builds](trigger-builds.md)
 

@@ -16,7 +16,7 @@ Welcome to the Akamai App Platform labs! We recommend reviewing these labs to le
 
 ---
 
-**Create code repositories and build/push images**
+**Create and register code repositories and create images**
 
 ### [Create private Git repositories](create-repos.md)
 
@@ -38,7 +38,7 @@ Welcome to the Akamai App Platform labs! We recommend reviewing these labs to le
 
 ### [Use the Catalog](use-catalog.md)
 
-### [Create a workload using the developer catalog](create-workloads.md)
+### [Create a workload using catalog](create-workloads.md)
 
 ### [Configure the auto image updater](auto-image-update.md)
 

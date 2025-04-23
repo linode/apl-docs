@@ -32,7 +32,7 @@ module.exports = {
           "get-started/labs/use-catalog",
           "get-started/labs/create-workloads",
           "get-started/labs/expose-services",
-          "get-started/labs/configure-cname",
+          // "get-started/labs/configure-cname",
           "get-started/labs/auto-image-update",
           "get-started/labs/create-postgresql-db",
           "get-started/labs/scan-images",

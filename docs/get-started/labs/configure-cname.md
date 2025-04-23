@@ -4,8 +4,7 @@ title: Configuring a CNAME
 sidebar_label: Configure a CNAME
 ---
 
-
-## Using a CNAME
+## Configure a Service with a CNAME
 
 Select `Use CNAME` when the URL of the service is used as a value in a CNAME.
 

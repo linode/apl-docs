@@ -4,7 +4,7 @@ title: Create code repositories
 sidebar_label: Create Code Repositories
 ---
 
-As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like GitLab, or use GitHub. But if you don't, you can use the integrated Git service powered by Gitea.
+As a developer you'll need a Git repository for your code. Most organizations will probably use a Git service like GitLab or GitHub. But if you don't, you can use the integrated Git service powered by Gitea.
 
 As a Team member, you can create and manage your own repositories.
 
@@ -13,10 +13,10 @@ Team members first have to sign in to Gitea (using OpenID), after which they are
 :::
 
 :::info
-The default `platform-admin` account does not have access to Team organizations in Gitea. When using the platform-admin account, make sure to add your account to the Owners group of the Team's organization.
+The default `platform-admin` account does not have access to Team organizations in Gitea. When using the platform-admin account, make sure to add your account to the Owners group of the Team's organization in Gitea.
 :::
 
-In the labs we'll be using a Team called `labs` and a user called `labs-user@example.com`.
+In the labs we'll be using a Team called `labs` and a user called `labs-user@labs.com`.
 
 ## Create the private repository
 

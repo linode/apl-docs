@@ -12,7 +12,7 @@ The image update feature is only supported in combination with a Helm chart stor
 
 ## Create a Workload with auto image updater
 
-Before creating a workload from the developer catalog, we'll need the `repository` and `tag` of the image we like to deploy. Go to the list of Builds and add the `repository` of the `green` build to your clipboard. Remember that the tag is `latest`.
+Before creating a workload from the developer catalog, we'll need the `repository` and `tag` of the image we like to deploy. Go to the list of Container Images and add the `repository` of the `green` build to your clipboard. Remember that the tag is `main`.
 
 You can now create a workload from the developer catalog:
 
@@ -31,7 +31,7 @@ You can now create a workload from the developer catalog:
 ```yaml
 image:
   repository: <paste from clipboard>
-  tag: latest
+  tag: main
 ```
 
 6. Click `Submit`.

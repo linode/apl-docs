@@ -8,29 +8,30 @@ sidebar_label: Lab Prerequisites
 
 1. DNS is configured. See [here](get-started/installation/overview.md). Not needed when using the LKE automatic installation.
 
-2. Platform Applications for the following labs are enabled:
+2. Prometheus is enabled on the platform level.
+
+2. Enable additional App on the platform level to support the following labs:
 
 | Lab                                         | App                                 |
 |---------------------------------------------|-------------------------------------|
 | Create container images                     | Harbor                              |
 | Trigger builds                              | Harbor                              |
-| Manually Push images to harbor              | Harbor                              |
+| Manually Push images to Harbor              | Harbor                              |
 | Scan running containers for vulnerabilities | Prometheus, Grafana, Trivy Operator |
 | View container logs                         | Loki, Grafana                       |
-| View container metrics                      | Prometheus                          |
-| Using custom metrics                        | Prometheus                          |
 | Tracing with Open Telemetry                 | Loki, Otel, Tempo                   |
 | Create a RabbitMQ cluster                   | RabbitMQ                            |
 
-
+:::info
 For the [Tracing with Open Telemetry](use-otel.md) Lab, tracing needs to be configured in the `Istio` and `Nginx Ingress` apps.
+:::
 
-3. A team called `labs` is created with `Alertmanager` activated. See how you can create teams on: [Platform - Teams](docs/for-ops/console/teams.md).
+3. A team called `labs` is created with `Dashboards` and `Alerts` enabled. See [here](docs/for-ops/console/teams.md) how to create Teams.
 
-4. A user account is created and added to the `labs` Team. In the labs we'll be using the user `labs-user@example.com`. See how you can create users on: [Platform - User Management](docs/for-ops/console/usermgnt.md).
+4. A user account is created and added to the `labs` Team. In the labs we'll be using the user `team-user@labs.com`. See [here](docs/for-ops/console/usermgnt.md)how to create users and assign them to Teams.
 
 :::note
-For each Team an Organization in Gitea is created. Only members of the Team are made a member of the `Owners` group of this organization. When using the `platform-admin` account, make sure to add your account to the `Owners` group of the Team's organization.
+An organization in Gitea is automatically created for each Team. Only members of the Team are added to the `Owners` group of this organization. When using the `platform-admin` account, make sure to add your account to the `Owners` group of the Team's organization in Gitea.
 :::
 
 ## Sign in to the Console
@@ -39,6 +40,6 @@ For each Team an Organization in Gitea is created. Only members of the Team are 
 
 - Sign in with the created user account.
 
-After sign in, you will see this page (with grafana enabled):
+After sign in, you will see this page (with Dashboards enabled):
 
 ![Team dashboard](../../img/team-dashboard.png)

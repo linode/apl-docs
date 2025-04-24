@@ -10,11 +10,15 @@ For this we are going to deploy the stable version (blue), introduce a new versi
 
 ## Prepare images
 
-For this lab we need the 2 images (`blue` and `green`) we already created in the previous labs. If you haven't created the blue and green images, first complete these 2 labs:
+For this lab we need the 2 images (`blue` and `green`) we already created in the previous labs. If you haven't created the blue and green images, first complete these 4 labs:
 
-- [Build images](create-images.md)
+- [Create Code Repositories](create-repos.md)
 
-- [Trigger builds](trigger-builds.md)
+- [Register Code Repositories](create-repos.md)
+
+- [Create Container Images](create-images.md)
+
+- [Trigger Builds](trigger-builds.md)
 
 Or you can use public images e.g. `nginx:latest` and `tomcat:latest` for this lab.
 
@@ -41,12 +45,12 @@ Go to the list of Builds and add the `repository` of the `green` build to your c
 versionOne:
   image:
     repository: # paste from clipboard, but change to blue
-    tag: latest
+    tag: main
 # The v2 as canary with the auto image updater configured
 versionTwo:
   image:
     repository: # paste from clipboard. This will be the green image
-    tag: latest
+    tag: main
 ```
 
 6. Click `Submit`
@@ -57,13 +61,13 @@ We now created 2 deployments. One for `blue` and one for `green`. The `green` im
 
 - In the left menu panel under click `Services` then click on `Create Service`.
 
-- Select the `canary` service.
+- Select the `canary` service from the drop-down list.
 
-- Under `Traffic Control` click `enabled` (and use the default weights for v1 and v2).
+- Click on `Advanced Settings`.
 
-- Under `Exposure Ingress`, select `External` and use the default configuration.
+- Click on `Enable Traffic Control` (and use the default weights for v1 and v2).
 
-- Click `Submit`.
+- Click `Create Service`.
 
 ## See the results
 

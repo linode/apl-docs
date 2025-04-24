@@ -58,7 +58,7 @@ export ENV_DIR=~/workspace/values-folder
 
 5. Use `otomi-cli`:
 
-The local development environment is now ready to use [otomi-cli](/docs/for-ops/cli/installation) commands.
+The local development environment is now ready to use [otomi-cli](/docs/for-ops/how-to/use-the-cli) commands.
 
 ## Age keys rotation
 

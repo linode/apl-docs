@@ -118,6 +118,7 @@ module.exports = {
           "for-ops/how-to/manage-age",
           "for-ops/how-to/change-admin-password",
           "for-ops/how-to/change-user-passwords",
+          "for-ops/how-to/use-the-cli",
         ],
       },
       {

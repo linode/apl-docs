@@ -1,5 +1,5 @@
 ---
-slug: using-the-cli
+slug: use-the-cli
 title: Using the CLI
 sidebar_label: Using the CLI
 ---

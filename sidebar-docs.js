@@ -128,44 +128,7 @@ module.exports = {
           "for-ops/disaster-recovery/platform-reinstall",
         ],
       },
-      // {
-      //   CLI: [
-      //     "for-ops/cli/installation",
-      //     "for-ops/cli/deploying",
-      //     "for-ops/cli/known-issues",
-      //     {
-      //       "CLI Commands": [
-      //         "for-ops/cli/apply",
-      //         "for-ops/cli/bash",
-      //         "for-ops/cli/bootstrap",
-      //         "for-ops/cli/commit",
-      //         "for-ops/cli/decrypt",
-      //         "for-ops/cli/destroy",
-      //         "for-ops/cli/diff",
-      //         "for-ops/cli/encrypt",
-      //         "for-ops/cli/lint",
-      //         "for-ops/cli/pull",
-      //         "for-ops/cli/rotate-keys",
-      //         "for-ops/cli/status",
-      //         "for-ops/cli/sync",
-      //         "for-ops/cli/template",
-      //         "for-ops/cli/test",
-      //         "for-ops/cli/validate-templates",
-      //         "for-ops/cli/validate-values",
-      //         "for-ops/cli/values",
-      //         "for-ops/cli/x",
-      //       ],
-      //     },
-      //   ],
-      // },
-      {
-        SRE: [
-          "for-ops/sre/overview",
-          "for-ops/sre/daily",
-          "for-ops/sre/known-issues",
-          "for-ops/sre/troubleshooting",
-        ],
-      },
+      "for-ops/known-issues",
       {
         "Integrated Apps": [
           "apps/overview",

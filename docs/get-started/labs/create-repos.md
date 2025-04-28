@@ -101,9 +101,9 @@ Create the `green` repository and add the same 2 files that where added to the `
 
 3. Add the name `green` for the repository.
 
-4. Optional: Enable `Initialize Repository`.
+4. Select `Make Repository Private`.
 
-5. Make Repository Private.
+5. Select `Initialize Repository`.
 
 6. Click on `Create Repository`.
 

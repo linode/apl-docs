@@ -28,7 +28,7 @@ For the [Tracing with Open Telemetry](use-otel.md) Lab, tracing needs to be conf
 
 3. A team called `labs` is created with `Dashboards` and `Alerts` enabled. See [here](docs/for-ops/console/teams.md) how to create Teams.
 
-4. A user account is created and added to the `labs` Team. In the labs we'll be using the user `team-user@labs.com`. See [here](docs/for-ops/console/usermgnt.md)how to create users and assign them to Teams.
+4. A user account is created and added to the `labs` Team. In the labs we'll be using the user `labs-user@labs.com`. See [here](docs/for-ops/console/usermgnt.md)how to create users and assign them to Teams.
 
 :::note
 An organization in Gitea is automatically created for each Team. Only members of the Team are added to the `Owners` group of this organization. When using the `platform-admin` account, make sure to add your account to the `Owners` group of the Team's organization in Gitea.

@@ -10,12 +10,12 @@ Maintenance actions available for platform administrators.
 
 The following Maintennace actions are available:
 
-- `Download Values`: Download all platform values (including secrets) in a single file.
+- `DOWNLOAD VALUES`: Download all platform values (including secrets) in a single file.
 
-- `Download Values (secrets redacted)`: Download all platform values without secrets.
+- `DOWNLOAD VALUES (SECRETS REDACTED)`: Download all platform values without secrets.
 
 :::info
 The following maintenance action is only available when App Platform is installed through Akamai Cloud.
 :::
 
-- `Start Object Storage Wizard`: Start the Object Storage Wizard to create buckets and an access key in Linode.
+- `START OBJECT STORAGE WIZARD`: Start the Object Storage Wizard to create buckets and an access key in Linode.

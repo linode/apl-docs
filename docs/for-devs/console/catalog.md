@@ -55,16 +55,8 @@ Using the `spin-app` Helm chart requires a `spin-shim-executor` to be added to t
 
 2. You will now see all the templates that are available for use
 
-![Team catalog](../../img/team-catalog.png)
+3. Click on the `k8s-deployment` template. In the Info tab you'll see some information about the Chart like the version and additional instructions.
 
-3. Click on the `k8s-deployment` template
+4. Click on the `Values` tab
 
-![catalog](../../img/catalog-2.png)
-
-In the Info tab you'll see some information about the Chart like the version and additional instructions.
-
-3. Click on the `Values` tab
-
-![catalog](../../img/catalog-3.png)
-
-4. Continue to [create a workload](workloads.md)
+5. Continue to [create a workload](workloads.md)

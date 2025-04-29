@@ -26,9 +26,6 @@ The dashboard has 5 elements
 
 - [Vulnerabilities](#vulnerabilities)
 
-
-![Team dashboard](../../img/team-dashboard.png)
-
 ### Inventory
 
 The inventory shows the resources within the Team. Click on an inventory item to go directly to the full list.

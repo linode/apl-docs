@@ -4,6 +4,10 @@ title: Team User Management
 sidebar_label: User Management
 ---
 
+:::info
+The User Management section in the menu is only visable for users with the platform administrator or team administrator role.
+:::
+
 ## About User Management
 
 What you need to know about the User Management feature:

@@ -19,8 +19,6 @@ The dashboard has 4 elements
 - [Cluster Resource Utilization](#cluster-resource-utilization)
 - [Cluster Resource Request Commitments](#cluster-resource-request-commitments)
 
-![Team dashboard](../../img/platform-dashboard.png)
-
 ### Available versions
 
 When there is a new release (version) of the App Platform, the available version will be shown here.

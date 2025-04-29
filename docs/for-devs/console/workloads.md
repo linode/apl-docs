@@ -10,8 +10,6 @@ A Workload is a self-service feature for creating Kubernetes resources using Hel
 
 All Workloads of the team are listed here.
 
-![Team workloads](../../img/team-workloads.png)
-
 | Property | Description                                       |
 | -------- | ------------------------------------------------- |
 | Name     | The name of the workload                          |

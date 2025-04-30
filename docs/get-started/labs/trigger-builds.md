@@ -24,9 +24,7 @@ In the previous lab we created a Container Image using the `blue` repo in Gitea.
 
 App Platform will now create the Tekton event listener and configure the webhook for the `green` repo.
 
-Because the build has not been triggered yet, the status of the container image will show a status `waiting for first event`:
-
-![trigger build](../../img/trigger-builds-1.png)
+Because the build task has not been triggered yet, the status of the container image will show a status `waiting for first event`.
 
 ## Trigger the build
 
@@ -44,13 +42,7 @@ The build should now have started. Based on the webhook, Tekton has now created 
 
 1. In the Console, click on `Container Images`
 
-Because the build for the `green-main` image was triggered, a `PipelineRun` is now running and the status of the Container Image will now show `in progress`:
-
-![trigger build](../../img/trigger-builds-2.png)
-
-When the build task has completed, the status will show `ready`:
-
-![trigger build](../../img/trigger-builds-3.png)
+Because the build for the `green-main` image was triggered, a `PipelineRun` is now running and the status of the Container Image will now show `in progress`. When the build task has completed, the status will show `ready`.
 
 2. In the list of Container Images, click on the `PipelineRun` link of the `green` build.
 

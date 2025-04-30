@@ -50,8 +50,6 @@ When the build is ready you can see the image in Harbor:
 
 ## Manually re-run the build task (optional)
 
-For this step you need to have the Tekton cli installed. If you don't have the Tekton cli installed, you can install it from this page: [https://tekton.dev/docs/cli/](https://tekton.dev/docs/cli/)
-
 To re-build the image using the same tag, restart the build pipeline using the Tekton cli in the Shell:
 
 1. Start a shell in the Console

@@ -20,7 +20,7 @@ In the previous lab we created 2 code repositories. The `blue` and the `green` r
 
 ![kubecfg](../../img/add-code-repo.png)
 
-7. Click `Add Code repository`
+7. Click `Add Code Repository`
 
 Follow the above steps again, but now for the `green` repository.
 

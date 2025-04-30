@@ -18,7 +18,6 @@ All Container Images created by the Team are listed here.
 | ----------- | ------------------------------------------------------------------------------------------------------ |
 | Name        | The auto-generated name used to identify the Container Image in App Platform                           |
 | Type        | Type of the build task. `docker` or `buildpacks`                                                       |
-| Webhook url | The webhook URL if a webhook listener is configured                                                   |
 | Tekton      | Link to the `PipelineRun` in the Tekton dashboard                                                      |
 | Repository  | The repository name of the image in the container registry                                             |
 | Tag         | The tag of the image in the container registry                                                         |

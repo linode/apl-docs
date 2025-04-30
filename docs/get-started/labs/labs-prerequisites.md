@@ -34,6 +34,8 @@ For the [Tracing with Open Telemetry](use-otel.md) Lab, tracing needs to be conf
 An organization in Gitea is automatically created for each Team. Only members of the Team are added to the `Owners` group of this organization. When using the `platform-admin` account, make sure to add your account to the `Owners` group of the Team's organization in Gitea.
 :::
 
+5. The Kube API URL has been added to the [Cluster Settings](../../for-ops/console/settings/cluster.md). Select the `platform` view and click on `Settings` in the left menu. Then click on `Cluster`. When using LKE: You can find the Kube API URL in the Summary of your LKE cluster. Here it is called the `Kubernetes API Endpoint`. You can remove `:433` at the end.
+
 ## Sign in to the Console
 
 - Go to the provided URL. The URL will look like this: https://console.yourdomain.com

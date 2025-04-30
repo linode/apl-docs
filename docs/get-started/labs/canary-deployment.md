@@ -81,7 +81,7 @@ After a refresh of the page you should see:
 
 ## Update the canary image
 
-Go to the `green` repo and change the `background-color` in the `green.html` file from `green` to `MediumSeaGreen` and commit the change. After a couple of minutes you should now see the background color of version 1 (our canary) changed:
+Go to the `green` repo and change the `background-color` in the `green.html` file from `green` to `MediumSeaGreen` and commit the change. After a couple of minutes you should now see that the background color of version 2 has changed.
 
 ![Team apps](../../img/canary-v2-mediumgreen.png)
 

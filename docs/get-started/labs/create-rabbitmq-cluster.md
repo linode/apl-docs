@@ -57,7 +57,7 @@ policies:
 Remember that even though these values can be edited afterwards, not all specifications or definitions can be updated after a `queue` or `policy` has been created. Please make sure everything is filled in correctly.
 :::
 
-6. Click `submit`.
+6. Click `Submit`.
 
 ## Accessing the RabbitMQ Management UI
 
@@ -76,13 +76,13 @@ In this example the `rabbitMQ cluster` was created in the Team demo, so we have 
 1. Use the following command to retrieve the username:
 
 ```bash
-kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-demo -o jsonpath="{.data.username}" | base64 --decode
+kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-labs -o jsonpath="{.data.username}" | base64 --decode
 ```
 
 2. Use the following command to retrieve the password:
 
 ```bash
-kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-demo -o jsonpath="{.data.password}" | base64 --decode
+kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-labs -o jsonpath="{.data.password}" | base64 --decode
 ```
 :::info
 Make sure you don't copy the `%` symbol at the end.

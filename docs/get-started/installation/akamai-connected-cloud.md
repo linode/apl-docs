@@ -130,4 +130,4 @@ We recommend to go through the [Hands-on Labs](../labs/overview) to learn how to
 
 ## Known issues
 
-Are you experiencing issue during installation or operation? Check the [Known Issues page](../../for-ops/sre/known-issues.md)
+Are you experiencing issue during installation or operation? Check the [Known Issues page](../../for-ops/known-issues.md)

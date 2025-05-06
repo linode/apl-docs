@@ -4,7 +4,7 @@ title: Create rabbitMQ Cluster
 sidebar_label: Create RabbitMQ cluster
 ---
 
-In this lab we will create a RabbitMQ Cluster using the quick start Rabbitmq Helm chart from the Catalog.
+In this lab we will create a RabbitMQ Cluster using the Rabbitmq-cluster Helm chart from the Catalog.
 
 :::info
 For this lab, RabbitMQ Operator needs to be activated.
@@ -14,7 +14,7 @@ For this lab, RabbitMQ Operator needs to be activated.
 
 1. In the left sidebar click on `Catalog`.
 
-2. Click on the `RabbitMQ` item in the Catalog. This will take you to the page with the readme where you can see all specifications and definitions that you can use to create your RabbitMQ Cluster with Queues and Policies.
+2. Click on the `rabbitmq-cluster` item in the Catalog. This will take you to the page with the readme where you can see all specifications and definitions that you can use to create your RabbitMQ Cluster with Queues and Policies.
 
 3. Click on the `Values` tab and fill in a name for the RabbitMQ Cluster. In this lab we will create a rabbitMQ Cluster with the name `rabbit1`.
 
@@ -57,7 +57,7 @@ policies:
 Remember that even though these values can be edited afterwards, not all specifications or definitions can be updated after a `queue` or `policy` has been created. Please make sure everything is filled in correctly.
 :::
 
-6. Click `submit`.
+6. Click `Submit`.
 
 ## Accessing the RabbitMQ Management UI
 
@@ -70,19 +70,19 @@ To access the `RabbitMQ Management UI` you have two options:
 In this lab we are going to use port-forwarding. 
 
 :::note
-In this example the `rabbitMQ cluster` was created in the Team demo, so we have to get the `secret` from the `team-demo` namespace. Please retrieve the `secret` from the namespace where the `rabbitMQ cluster` was created.
+In this example the `rabbitMQ cluster` was created in the Team labs, so we have to get the `secret` from the `team-labs` namespace. Please retrieve the `secret` from the namespace where the `rabbitMQ cluster` was created.
 :::
 
 1. Use the following command to retrieve the username:
 
 ```bash
-kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-demo -o jsonpath="{.data.username}" | base64 --decode
+kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-labs -o jsonpath="{.data.username}" | base64 --decode
 ```
 
 2. Use the following command to retrieve the password:
 
 ```bash
-kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-demo -o jsonpath="{.data.password}" | base64 --decode
+kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-labs -o jsonpath="{.data.password}" | base64 --decode
 ```
 :::info
 Make sure you don't copy the `%` symbol at the end.
@@ -97,7 +97,7 @@ Now you have to `port-forward` the rabbitmq `container` with port number `15672`
 3. Use the following command to enable the port-forwarding:
 
 ```bash
-kubectl port-forward -n team-demo rabbit1-rabbitmq-server-0 56027:15672
+kubectl port-forward -n team-labs rabbit1-rabbitmq-server-0 56027:15672
 ```
 
 4. Open a browser and go to `http://localhost:56027`
@@ -127,13 +127,13 @@ To connect to the `rabbitMQ cluster` you use `AMQP` to open a connection. To ope
 1. Get the host use the following command:
 
 ```bash
-kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-demo -o jsonpath="{.data.host}" | base64 --decode
+kubectl get secret rabbit1-rabbitmq-cluster-default-user -n team-labs -o jsonpath="{.data.host}" | base64 --decode
 ```
 
 2. Get the port use the following command:
 
 ```bash
-kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-demo -o jsonpath="{.data.port}" | base64 --decode
+kubectl get secret rabbit1-rabbitmq-cluster-default-user -n team-labs -o jsonpath="{.data.port}" | base64 --decode
 ```
 
 The connection string is build like this:

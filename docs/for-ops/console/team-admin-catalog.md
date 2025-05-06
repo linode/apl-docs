@@ -52,17 +52,13 @@ The `kubeflow-pipelines` Helm chart can be used to install KubeFlow Pipelines in
 
 6. Click on `GET DETAILS`.
 
-![catalog](../../img/add-helm-chart.png)
-
 7. Optionally change the `Icon URL` to point to an icon you want to use for this hem chart in the Catalog.
 
 8. If the Helm chart should be made available for all Teams, select `Allow teams to use this chart`.
 
 8. Click `ADD CHART`.
 
-The Helm chart will now be added to the `charts` repository in the Local Git service (Gitea) and will be visible in the Catalog:
-
-![catalog](../../img/team-admin-catalog.png)
+The Helm chart will now be added to the `charts` repository in the Local Git service (Gitea) and will be visible in the Catalog.
 
 
 

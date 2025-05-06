@@ -5,7 +5,7 @@ sidebar_label: Backups
 ---
 
 :::info
-To enable this feature, first make sure [Velero](../../apps/velero.md) is activated and a Linode API Token is added to the Backup section in the Settings.
+To enable this feature, first make sure Velero is activated and a Linode API Token is added to the Backup section in the Settings.
 :::
 
 :::info

@@ -1,34 +1,22 @@
 ---
 slug: create-repos
-title: Create a private Git repo
-sidebar_label: Create GIT repos
+title: Create code repositories
+sidebar_label: Create Code Repositories
 ---
 
-As a developer you'll need a Git repository for your code. Most organizations will probably have a central code repository like Gitlab, or use Github. But if you don't, you can use the integrated Git service.
+As a developer you'll need a Git repository for your code. Most organizations will probably use a Git service like GitLab or GitHub. But if you don't, you can use the integrated Git service powered by Gitea.
 
-As a team member, you can create and manage your own repositories.
+As a Team member, you can create and manage your own repositories.
 
 :::info
-Team members first have to sign in to Gitea (using OpenID), after which they are automatically added to the correct team.
+Team members first have to sign in to Gitea (using OpenID), after which they are automatically granted access to the Team's organization in Gitea.
 :::
 
 :::info
-The `otomi-admin` account is unable to login with OpenID, this account needs to login with the user/password login form.
+The default `platform-admin` account does not have access to Team organizations in Gitea. When using the platform-admin account, make sure to add your account to the Owners group of the Team's organization in Gitea.
 :::
 
-In the labs we'll be using a Team called `labs` and a user called `labs-user@example.com`.
-
-## Using a Git client
-
-Gitea only supports HTTPS for Git authentication. To connect to Git using HTTPS you'll first need to add a password to your account in Gitea:
-
-1. Sign in to Gitea using OpenID.
-
-2. Click on your account (top right) and then click `Settings`.
-
-3. Fill in a password in the `Account` tab.
-
-After adding a password, you can now authenticate using your username (labs-user) and the password created in Gitea.
+In the labs we'll be using a Team called `labs` and a user called `labs-user@labs.com`.
 
 ## Create the private repository
 
@@ -38,13 +26,11 @@ In the apps section in the console, you'll see an app called Gitea. Click on it.
 
 Now follow these steps:
 
-1. Click on `Sign In` with OpenID.
-
-![kubecfg](../../img/gitea-openid.png)
-
-2. Click on `+ New Repository`
+1. Click on `+ New Repository`
 
 ![kubecfg](../../img/new-gitea-repo.png)
+
+2. Select `team-labs`(the Team that you are a member of) as the `Owner`.
 
 3. Add the name `blue` for the repository.
 
@@ -106,18 +92,20 @@ Add `blue.html`:
 </html>
 ```
 
-In the following labs we are going to use the `blue` repository, but we'll also need a `green` repository. 
-Create the `green` repository and add the 2 files, but change `blue` into `green`:
+In the upcoming labs we are going to use the `blue` repository, but we'll also need a `green` repository. 
+Create the `green` repository and add the same 2 files that where added to the `blue` repo, but change `blue` into `green`:
 
 1. Click on `+ New Repository`.
 
-2. Add the name `green` for the repository.
+2. Select `team-labs`(the Team that you are a member of) as the `Owner`.
 
-3. Optional: Enable `Initialize Repository`.
+3. Add the name `green` for the repository.
 
-4. Make Repository Private.
+4. Select `Make Repository Private`.
 
-5. Click on `Create Repository`.
+5. Select `Initialize Repository`.
+
+6. Click on `Create Repository`.
 
 Add the following 2 files to the repository:
 
@@ -166,3 +154,5 @@ Add `green.html`:
   </body>
 </html>
 ```
+
+Now continue with the next lab to [register the code repositories](register-repos.md) in App Platform.

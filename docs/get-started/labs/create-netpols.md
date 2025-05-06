@@ -64,9 +64,17 @@ The egress rules are namespace wide. You cannot bind an egress policy to one Wor
 
 ## Setting Up Network Policies for the Example Voting App: An Ingress Example
 
-### Build Images for the Application
+### Create the images for the application
 
-Build the `vote`, `worker` and `result` images from this [repo](https://github.com/linode/apl-examples). Use the Build feature to build the images with `mode: Docker`. Set the `path` to `./vote-app/vote/Dockerfile` for the Vote image (and `./vote-app/worker/Dockerfile` for the Worker and `./vote-app/result/Dockerfile` for Result).
+1. Register the Code Repository using this Repository URL: https://github.com/linode/apl-examples.
+
+2. Create 3 Container Images (vote, worker and result) using the Docker build task
+
+- Set the path for the vote image to `vote-app/vote/Dockerfile`
+
+- Set the path for the worker image to `vote-app/worker/Dockerfile`
+
+- Set the path for the result image to `vote-app/result/Dockerfile`
 
 ### Create a Redis Cluster and a PostgreSQL Database
 
@@ -166,17 +174,11 @@ replicaCount: 1
 The result pod will show an error “Waiting for db” in the logs. This is an expected error that will be resolved when all the steps in the lab are done.
 :::
 
-### Register Services for Exposure
+### Create the Services
 
-#### Vote
+- Create the `vote` service.
 
-- Register the `vote` service.
-- Set exposure to `External`.
-
-#### Result
-
-- Register the `result` service.
-- Set exposure to `External`.
+- Create the `result` service.
 
 ### Create the Network Policies for the Example Voting App
 

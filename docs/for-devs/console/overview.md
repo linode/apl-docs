@@ -17,13 +17,14 @@ Self-service section:
 - [Dashboard](dashboard.md): An overview of Team Pod status, resource utilization and vulnerabilities.
 - [Apps](apps.md): All the apps available to the Team.
 - [Catalog](catalog.md): The Helm charts available for the Team in the Catalog.
-- [Projects](projects.md): A self-service form to create Projects.
-- [Builds](builds.md): A self-service form to create Builds.
+- [Code Repositories](code-repositories.md): A self-service form to register code repositories to App Platform and use them to create Container Images.
+- [Container Images](container-images.md): A self-service form to create container images from registered Code Repositories.
 - [Sealed Secrets](sealed-secrets.md): A self-service form to create Sealed Secrets.
 - [Workloads](workloads.md): A self-service form to create Workloads.
 - [Network Policies](netpols.md): A self-service form to create Network Policies.
-- [Services](services.md): A self-service form to create Services.
-- [Security Policies](security-policies.md): A list of all Security Policies applicable to the Team.
+- [Services](services.md): A self-service form to create Services to publicly expose deployed Workloads.
+- [Security Policies](security-policies.md): A list of Security Policies applicable to the Team.
+- [User Management](usermgnt.md): A self-service form for Team administrators to add users to the Team
 - [Settings](settings.md): Specific Team configuration options.
 
 Access Section:

@@ -5,7 +5,7 @@ sidebar_label: DNS
 ---
 
 :::info
-The DNS section in the Settings will NOT be visible when the installation is done by Akamai Connected Cloud. In this case the DNS configuration is managed by Akamai.
+The DNS section in the Settings will NOT be visible when the installation is done by Akamai Cloud. In this case the DNS configuration is managed by Akamai.
 :::
 
 ## DNS

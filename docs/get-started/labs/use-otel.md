@@ -49,7 +49,9 @@ For this lab we're going to use the [Spring PetClinic Sample Application](https:
 Using a Gitea repository is not required. You can also build using public repositories.
 :::
 
-1. Create a new repo called `petclinic`.
+### Create the code repository
+
+1. Create a new repo called `petclinic` in the `team-labs` Gitea organization.
 
 2. Clone the Spring PetClinic Sample Application:
 
@@ -58,40 +60,60 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
 ```
 
-3. Mirror the Spring PetClinic Sample Application to your `petclinc` repo:
+3. Mirror the Spring PetClinic Sample Application to the `petclinc` repo:
 
 ```
-git push --mirror https://gitea.<your-domain>/<your-user-name>/petclinic.git
+git push --mirror https://gitea.<your-domain>/<team-name>/petclinic.git
 ```
 
-4. Go to `Builds` in the left menu and click `Create Build`.
+### Add the code repository
 
-5. Fill in the Build name `petclinic`.
+1. In the left menu in the Console, click on `Code Repositories`.
 
-6. Choose `Buildpacks`.
+2. Click on `ADD CODE REPOSITORY`.
 
-7. Fill in the `Repo URL` with the `petclinic` Gitea repo you created.
+3. Provide a name for this code repository. The name will be used to identify the code repository in App Platform. You can only use the name once within a Team. We are going to use the name `petclinic` for this code repository.
 
-8. Click `Submit`.
+4. Select `Gitea` for the Git service (default)
+
+5. Select `petclinic` from the `Repository` drop-down list:
+
+6. Click `Add Code repository`
+
+### Create the container image
+
+1. In the left menu of the Console, click on `Container Images`.
+
+2. Click on `CREATE CONTAINER IMAGE`.
+
+3. Select the `BuildPacks` build task.
+
+4. Select the `petclinic` repository from the Repository drop-down list.
+
+5. Select the Reference `main`.
+
+6. Optionally you can change the Image name and tag. This is the name and tag used to store the image in the private Harbor image registry.
+
+7. Click `Create Container Image`.
 
 ## Create a workload from the developer catalog
 
-Go to the list of Builds and add the repository of the `petclinc` build to your clipboard. Remember that the tag is latest.
+1. Go to Container Images in the left menu and click on the `Add to clipboard` of the `petclinc` image in the Repository column. Remember that the tag is main.
 
-1. Go to `Workloads` in the left menu and click on `Create Workload`.
+2. Go to `Workloads` in the left menu and click on `Create Workload`.
 
-2. Select `Quickstart-K8s-Deployment-Otel` from the catalog.
+3. Select `Quickstart-K8s-Deployment-Otel` from the catalog.
 
-3. Add the Name `petclinic` for the workload.
+4. Add the Name `petclinic` for the workload.
 
-4. Leave the `Auto image updater` to `Disabled`.
+5. Leave the `Auto image updater` to `Disabled`.
 
-5. In the workload `values`, change the following parameters:
+6. In the workload `values`, change the following parameters:
 
 ```yaml
 image:
   repository: <paste from clipboard>
-  tag: latest
+  tag: main
 ```
 
 Because we're deploying a Java application here, maybe also change the resources:
@@ -110,13 +132,11 @@ resources:
 
 ## Expose the service
 
-1. In the left menu panel under click `Services` then click on `Create Service`.
+1. In the left menu click `Services` then click on `CREATE SERVICE`.
 
-2. Select the `petclinic` service.
+2. Select the `petclinic` service from the `Service Name` drop-down list:
 
-3. Under `Exposure Ingress`, select `External` and use the default configuration.
-
-4. Click `Submit`.
+4. Click `Create Service`.
 
 ## See traces
 

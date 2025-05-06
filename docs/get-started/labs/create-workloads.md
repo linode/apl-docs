@@ -8,13 +8,13 @@ In the previous lab we deployed a workload using Argo CD with a BYO manifest and
 
 ## Create a Workload using the Catalog
 
-Before creating a Workload from the Catalog, we'll need the `repository` and `tag` of the image to use. Go to the list of Builds and add the `repository` of the `blue` build to your clipboard. Remember that the tag is `latest`.
+Before creating a Workload from the Catalog, we'll need the `repository` and `tag` of the image to use. Go to the list of Container Images and add the `repository` of the `blue` image to your clipboard. Remember that the tag of the blue image we created is `main`.
 
 You can create a workload from the developer catalog:
 
-1. Go to `Catalog` in the left menu and click on the `Quickstart-K8s-Deployment`template.
+1. Go to `Catalog` in the left menu and click on the `k8s-deployment`template.
 
-2. Click on `Values`.
+2. Click on `VALUES`.
 
 3. Add the Name `blue`.
 
@@ -25,14 +25,14 @@ You can create a workload from the developer catalog:
 ```yaml
 image:
   repository: <paste from clipboard>
-  tag: latest
+  tag: main
 ```
 
 ![workloads](../../img/workloads-1.png)
 
-6. Click `Submit`.
+6. Click `SUBMIT`.
 
-All the needed Argo CD resources to deploy your workload will now be created. 
+App Platform will now create an Argo CD application to deploy the workload. 
 
 7. Click on `Workloads` in the left menu. You will now see a list of all Workloads and their status:
 

@@ -4,7 +4,7 @@ title: DNS
 sidebar_label: DNS
 ---
 
-The [Builds](../../for-devs/console/builds.md) and [Projects](../../for-devs/console/projects.md) features are NOT supported without DNS configured. Install with DNS to use all features.
+The [Container Images](../../for-devs/console/container-images.md) feature is NOT supported without DNS configured. Install with DNS to use all features.
 
 ## Linode Domains
 

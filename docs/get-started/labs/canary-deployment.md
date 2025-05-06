@@ -65,7 +65,7 @@ We now created 2 deployments. One for `blue` and one for `green`. The `green` im
 
 - Click on `Advanced Settings`.
 
-- Click on `Enable Traffic Control` (and use the default weights for v1 and v2).
+- Click on `Enable Traffic Management` (and use the default weights for v1 and v2).
 
 - Click `Create Service`.
 

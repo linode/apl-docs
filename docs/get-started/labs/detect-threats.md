@@ -14,6 +14,10 @@ Falco is a cloud native security tool that provides runtime security. It leverag
 
 For this lab we'll deploy the `event-generator` in a Team namespace. The event-generator is a tool designed to generate events for both syscalls and k8s audits. The tool can be used to check if Falco is working properly. It does so by performing a variety of suspects actions which trigger security events. The event-event generator implements a minimalistic framework which makes easy to implement new actions.
 
+:::info
+Installing the `falcosecurity/event-generator` can only be done by a user with the platform admin role.
+:::
+
 1. Add the falcosecurity charts repository:
 
 ```bash

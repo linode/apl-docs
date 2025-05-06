@@ -98,17 +98,17 @@ git push --mirror https://gitea.<your-domain>/<team-name>/petclinic.git
 
 ## Create a workload from the developer catalog
 
-Go to the list of Builds and add the repository of the `petclinc` build to your clipboard. Remember that the tag is latest.
+1. Go to Container Images in the left menu and click on the `Add to clipboard` of the `petclinc` image in the Repository column. Remember that the tag is main.
 
-1. Go to `Workloads` in the left menu and click on `Create Workload`.
+2. Go to `Workloads` in the left menu and click on `Create Workload`.
 
-2. Select `Quickstart-K8s-Deployment-Otel` from the catalog.
+3. Select `Quickstart-K8s-Deployment-Otel` from the catalog.
 
-3. Add the Name `petclinic` for the workload.
+4. Add the Name `petclinic` for the workload.
 
-4. Leave the `Auto image updater` to `Disabled`.
+5. Leave the `Auto image updater` to `Disabled`.
 
-5. In the workload `values`, change the following parameters:
+6. In the workload `values`, change the following parameters:
 
 ```yaml
 image:

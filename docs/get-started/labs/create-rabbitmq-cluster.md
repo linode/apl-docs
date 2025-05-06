@@ -4,7 +4,7 @@ title: Create rabbitMQ Cluster
 sidebar_label: Create RabbitMQ cluster
 ---
 
-In this lab we will create a RabbitMQ Cluster using the quick start Rabbitmq Helm chart from the Catalog.
+In this lab we will create a RabbitMQ Cluster using the Rabbitmq-cluster Helm chart from the Catalog.
 
 :::info
 For this lab, RabbitMQ Operator needs to be activated.
@@ -127,13 +127,13 @@ To connect to the `rabbitMQ cluster` you use `AMQP` to open a connection. To ope
 1. Get the host use the following command:
 
 ```bash
-kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-labs -o jsonpath="{.data.host}" | base64 --decode
+kubectl get secret rabbit1-rabbitmq-cluster-default-user -n team-labs -o jsonpath="{.data.host}" | base64 --decode
 ```
 
 2. Get the port use the following command:
 
 ```bash
-kubectl get secret rabbit1-quickstart-rabbitmq-default-user -n team-labs -o jsonpath="{.data.port}" | base64 --decode
+kubectl get secret rabbit1-rabbitmq-cluster-default-user -n team-labs -o jsonpath="{.data.port}" | base64 --decode
 ```
 
 The connection string is build like this:

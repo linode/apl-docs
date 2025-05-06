@@ -38,10 +38,6 @@ env:
         key: password
 ```
 
-:::note
-Using the superuser credentials for connecting an app is discouraged. The app user has the access it needs for initializing tables etc.
-:::
-
 ## Monitoring
 
 The `postgresql` quick start template includes two parameters that can be used to create a `PodMonitor` and a Grafana Dashboard. Set the `monitoring` parameter to `true` to create a PodMonitor and set the `dashboard` parameter to `true` to add a cloudnativepg dashboard to the Team's Grafana. Note that this dashboard can be used to monitor multiple databases so you'll just need to create it once.

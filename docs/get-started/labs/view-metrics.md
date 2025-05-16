@@ -5,7 +5,7 @@ sidebar_label: View Container Metrics
 ---
 
 :::info
-Prometheus and Grafana for the Team need to be activated for this lab.
+Prometheus on the Platform and Dashboards for the Team need to be enabled
 :::
 
 When your application is deployed, you would of course like to be able to see container metrics for debugging purposes. Prometheus is used for collecting metrics. When Prometheus is enabled on the platform level and Grafana is enabled for the Team, general container metrics (provided by the Platform Prometheus) can be used in Grafana dashboards.

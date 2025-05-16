@@ -4,11 +4,15 @@ title: OpenTelemetry
 sidebar_label: Use OpenTelemery
 ---
 
+:::info
+This lab requires a user with the `platform-administrator` role!
+:::
+
 In order to make a system observable, it must be instrumented. Language specific implementation of OpenTelemetry provides a way to instrument your application without touching your source code. In this lab we're going to instrument a Java application.
 
 ## Prerequisites
 
-Make sure the following Apps are enabled: 
+Make sure the following Apps are enabled on the platform (requires a user with the `platform-administrator` role): 
 
 - `Tempo` on Platform
 - `Otel` on Platform
@@ -40,6 +44,10 @@ Setting the `samplingRatio` to `100` is only done for this lab to make sure all 
 6. Click `Submit`.
 
 7. Repeat step 2 to 6 for the `ingress-nginx-platform` app.
+
+:::note
+Sometimes instrumenting the nginx-ingress controller requires a restart of the pods. Restart the `ingress-nginx-platform-controller` Pod if you don't see any traces from nginx.
+:::
 
 ## Build an image from source code
 

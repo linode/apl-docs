@@ -1,6 +1,6 @@
 ---
 slug: scan-containers
-title: Scan your running containers for vulnerabilities
+title: Scan running containers for vulnerabilities
 sidebar_label: Scan Containers
 ---
 

@@ -22,7 +22,7 @@ You can now create a workload from the developer catalog:
 
 3. Add the Name `green` for the workload.
 
-4. Set the `Auto image updater` to `Digest` and fill in the `ImageRepository` from the clipboard.
+4. Set the `Auto image updater` to `Digest` and fill in the `ImageRepository` (from the clipboard) and the `tag`.
 
 `Digest` is the update strategy and will update the image to the most recent pushed version of a given tag.
 

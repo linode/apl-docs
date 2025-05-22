@@ -4,9 +4,13 @@ title: Scan images for vulnerabilities
 sidebar_label: Scan Images
 ---
 
+:::info
+This lab requires a user with the `platform-administrator` role!
+:::
+
 ## Prerequisites
 
-To automatically scan images for vulnerabilities, `Automatically scan images on push` in the Team project settings in Harbor needs to be enabled by the platform administrator:
+To automatically scan images for vulnerabilities, `Automatically scan images on push` in the Team project settings in Harbor needs to be enabled by a user with the `platform-administrator` role:
 
 ![image vulnerabilities](../../img/harbor-config.png)
 

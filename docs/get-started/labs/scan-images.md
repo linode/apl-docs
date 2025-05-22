@@ -1,6 +1,6 @@
 ---
 slug: scan-images
-title: Scan your images for vulnerabilities
+title: Scan images for vulnerabilities
 sidebar_label: Scan Images
 ---
 

@@ -12,8 +12,6 @@ sidebar_label: Overview
 
 ### [Managing Ingress Controllers](ingress-classes.md).
 
-### [Use the team-admin](use-team-admin.md).
-
 ### [Using Core only](core-only.md).
 
 ### [Create and restore backups](backups.md).
@@ -25,4 +23,6 @@ sidebar_label: Overview
 ### [Change the otomi-admin password](change-admin-password.md).
 
 ### [Change or reset user passwords](change-user-passwords.md).
+
+### [Make a platform admin Owner of a Team Organization in Gitea](make-owner-in-gitea.md)
 

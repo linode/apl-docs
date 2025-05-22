@@ -6,11 +6,13 @@ sidebar_label: Lab Prerequisites
 
 ## Prerequisites
 
-1. DNS is configured. See [here](get-started/installation/overview.md). Not needed when using the LKE automatic installation.
+1. Make sure App Platform is installed with DNS. See [here](get-started/installation/overview.md). Not needed when using the LKE automatic installation.
 
-2. Prometheus is enabled on the platform level.
+2. Sign in with a user that has the `platform-administrator` role
 
-2. Enable additional App on the platform level to support the following labs:
+3. Enable Prometheus on the platform level.
+
+4. Enable additional Apps on the platform level to support the following labs:
 
 | Lab                                         | App                                 |
 |---------------------------------------------|-------------------------------------|
@@ -26,22 +28,24 @@ sidebar_label: Lab Prerequisites
 For the [Tracing with Open Telemetry](use-otel.md) Lab, tracing needs to be configured in the `Istio` and `Nginx Ingress` apps.
 :::
 
-3. A team called `labs` is created with `Dashboards` and `Alerts` enabled. See [here](docs/for-ops/console/teams.md) how to create Teams.
+5. Create a Team called `labs` with `Dashboards` and `Alerts` enabled. See [here](docs/for-ops/console/teams.md) how to create Teams.
 
-4. A user account is created and added to the `labs` Team. In the labs we'll be using the user `labs-user@labs.com`. See [here](docs/for-ops/console/usermgnt.md) how to create users and assign them to Teams.
+6. Create a user and make this user a member of the `labs` Team. In the labs we'll be using the user `labs-user@labs.com`. See [here](docs/for-ops/console/usermgnt.md) how to create users and assign them to Teams.
 
-:::note
-An organization in Gitea is automatically created for each Team. Only members of the Team are added to the `Owners` group of this organization. When using the `platform-admin` account, make sure to add your account to the `Owners` group of the Team's organization in Gitea.
+:::info
+The App Platform will automatically create an organization for each Team in Gitea. Only members of the Team are added to the `Owners` group of this organization. It is possible to go through the labs using the (default) `platform-admin` user account that was created during the installation of the App Platform. When using the `platform-admin` user, then make sure to add your account to the `Owners` group of the Team's organization in Gitea. Follow the instruction for adding the platform-admin user to the Owners group of a Team's organization in Gitea [here](../../for-ops/how-to/make-owner-in-gitea.md)
 :::
 
-5. The Kube API URL has been added to the [Cluster Settings](../../for-ops/console/settings/cluster.md). Select the `platform` view and click on `Settings` in the left menu. Then click on `Cluster`. When using LKE: You can find the Kube API URL in the Summary of your LKE cluster. Here it is called the `Kubernetes API Endpoint`. You can remove `:443` at the end.
+6. Add the Kube API to the [Cluster Settings](../../for-ops/console/settings/cluster.md). Select the `platform` view and click on `Settings` in the left menu. Then click on `Cluster`. When using LKE: You can find the Kube API URL in the Summary of your LKE cluster. Here it is called the `Kubernetes API Endpoint`. You can remove `:443` at the end.
 
-## Sign in to the Console
+## Start with the labs
 
-- Go to the provided URL. The URL will look like this: https://console.yourdomain.com
+- Go to https://console.yourdomain.com.
 
-- Sign in with the created user account.
+- Sign in with the created user account (labs-user@labs.com) and change the initial password.
 
 After sign in, you will see this page (with Dashboards enabled):
 
 ![Team dashboard](../../img/team-dashboard.png)
+
+- Start with the [first lab](create-repos.md) to create a code repository in Gitea (the self-hosted Git service in the App Platform).

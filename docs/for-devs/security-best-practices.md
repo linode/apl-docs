@@ -4,7 +4,7 @@ title: Security Best Practices
 sidebar_label: Security Best Practices
 ---
 
-In addition to the out-of-the-box security capabilities provides by App Platform, it is a responsibility of Teams to keep their applications safe from bad actors. Here is a list of security best-practices Teams should implement:
+In addition to the out-of-the-box security capabilities provides by App Platform, it is a responsibility of Teams to keep their applications secure. Here is a list of security best-practices Teams are advised to implement:
 
 1. Use [secrets](../for-devs/console/sealed-secrets.md) to secure sensitive data and use a `secretKeyRef` to map an environment variable to the secret data.
 

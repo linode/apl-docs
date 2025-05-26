@@ -4,7 +4,7 @@ title: Security Best Practices
 sidebar_label: Security Best Practices
 ---
 
-The Akamai App Platform comes with many security capabilities. It is up to the platform administrator to make sure these capabilities are enabled and correctly used. The following checklist can be used to make sure security is implemented to follow best-practices when running App PLatform on LKE.
+The Akamai App Platform comes with many security capabilities. It is a responsibility of the platform administrator to ensure these capabilities are enabled and correctly used. The following checklist can be used to make sure security is implemented to follow best-practices when running App PLatform on LKE.
 
 1. **Install the cloud-firewall-controller for LKE**
 
@@ -32,9 +32,9 @@ App Platform comes with a fully integrated and pre-configured stack of observabi
 
 7. **Secure Personally Identifiable Information**
 
-By default (during installation), App Platform will use a self-hosted Keycloak instance as an internal identity provider (IdP). When users are created in App Platform, these users will be stored in Keycloak. The user data in Keycloak is NOT encrypted. When Personally Identifiable Information (PII) needs to be encrypted because of compliance regulations, it is advised to enable disk encryption or configure App Platform to use an external IdP:
+By default (during installation), App Platform will use a self-hosted Keycloak instance as an internal identity provider (IdP). Users created in App Platform are stored in the PostgreSQL database of Keycloak. The user data in the database is NOT encrypted. When Personally Identifiable Information (PII) needs to be encrypted because of compliance regulations, it is advised to enable disk encryption or configure App Platform to use an external IdP:
 
-- Enable disk encryption on all nodes.
+- **Enable disk encryption on all nodes**
 
 Disk encryption ensures that your data stored on compute instances is secured. In addition to Akamai's information security compliance with standards such as SOC 2, disk encryption provides further protections by keeping data encrypted, even if the disk is removed, decommissioned, or disposed of. See [here](https://techdocs.akamai.com/cloud-computing/docs/local-disk-encryption) for more information on disk encryption.
 

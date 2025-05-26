@@ -68,6 +68,7 @@ module.exports = {
           "for-devs/console/shell",
         ],
       },
+      "for-devs/security-best-practices",
     ],
     "For Platform Adminstrators": [
       {
@@ -130,6 +131,7 @@ module.exports = {
         ],
       },
       "for-ops/known-issues",
+      "for-ops/security-best-practices",
     ],
   },
 };

@@ -51,28 +51,7 @@ Sometimes instrumenting the nginx-ingress controller requires a restart of the p
 
 ## Build an image from source code
 
-For this lab we're going to use the [Spring PetClinic Sample Application](https://github.com/spring-projects/spring-petclinic). Follow these steps to build an image from source code:
-
-:::note
-Using a Gitea repository is not required. You can also build using public repositories.
-:::
-
-### Create the code repository
-
-1. Create a new repo called `petclinic` in the `team-labs` Gitea organization.
-
-2. Clone the Spring PetClinic Sample Application:
-
-```bash
-git clone https://github.com/spring-projects/spring-petclinic.git
-cd spring-petclinic
-```
-
-3. Mirror the Spring PetClinic Sample Application to the `petclinc` repo:
-
-```
-git push --mirror https://gitea.<your-domain>/<team-name>/petclinic.git
-```
+For this lab we're going to use the [Spring PetClinic Sample Application](https://github.com/spring-projects/spring-petclinic). Follow these steps to build an image from source code.
 
 ### Add the code repository
 
@@ -82,9 +61,9 @@ git push --mirror https://gitea.<your-domain>/<team-name>/petclinic.git
 
 3. Provide a name for this code repository. The name will be used to identify the code repository in App Platform. You can only use the name once within a Team. We are going to use the name `petclinic` for this code repository.
 
-4. Select `Gitea` for the Git service (default)
+4. Select `GitHub` for the Git service (default)
 
-5. Select `petclinic` from the `Repository` drop-down list:
+5. Fill in the following `Repository URL`: https://github.com/spring-projects/spring-petclinic.git
 
 6. Click `Add Code repository`
 

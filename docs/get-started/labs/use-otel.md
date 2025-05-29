@@ -61,7 +61,7 @@ For this lab we're going to use the [Spring PetClinic Sample Application](https:
 
 3. Provide a name for this code repository. The name will be used to identify the code repository in App Platform. You can only use the name once within a Team. We are going to use the name `petclinic` for this code repository.
 
-4. Select `GitHub` for the Git service (default)
+4. Select `GitHub` for the Git service.
 
 5. Fill in the following `Repository URL`: https://github.com/spring-projects/spring-petclinic.git
 

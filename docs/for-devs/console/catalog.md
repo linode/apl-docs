@@ -40,13 +40,7 @@ The `redis-cluster` Helm chart can be used to create a Redis master-replica clus
 
 The `rabbitmq-cluster` Helm chart can be used to create a `RabbitmqCluster`, `queues` and `Policy`s.
 
-Using the `rabbitmq-cluster` Helm chart requires `RabbitMQ` to be enabled by a platform administrator. 
-
-8. SpinApp
-
-The `spin-app` Helm chart can be used to create a `SpinApp`. A SpinApp is a Custom Resource to deploy WebAssembly microservices and web applications based on Spin.
-
-Using the `spin-app` Helm chart requires a `spin-shim-executor` to be added to the Team by a platform administrator.
+Using the `rabbitmq-cluster` Helm chart requires `RabbitMQ` to be enabled by a platform administrator.
 
 
 ## Using the Catalog

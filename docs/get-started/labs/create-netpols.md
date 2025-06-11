@@ -82,7 +82,7 @@ Name: `vote`
 image:
   repository: harbor.<your-domain>/team-<team-name>/vote
   pullPolicy: IfNotPresent
-  tag: latest
+  tag: main
 containerPorts:
   - name: http
     containerPort: 80
@@ -103,7 +103,7 @@ Name: `worker`
 image:
   repository: harbor.<your-domain>/team-<team-name>/worker
   pullPolicy: IfNotPresent
-  tag: latest
+  tag: main
 containerPorts:
   - name: http
     containerPort: 80
@@ -140,7 +140,7 @@ Name: `result`
 image:
   repository: harbor.<your-domain>/team-<team-name>/result
   pullPolicy: IfNotPresent
-  tag: latest
+  tag: main
 containerPorts:
   - name: http
     containerPort: 80

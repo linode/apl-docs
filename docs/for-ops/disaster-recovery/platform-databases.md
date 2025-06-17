@@ -8,18 +8,31 @@ Generally it is recommended to get familiar with the [CNPG documentation](https:
 
 ## Initial notes
 
+Since the procedure requires patching the existing Kubernetes resources, the apl-operator must be scaled down to prevent overwrites:
+
+```
+kubectl patch application -n argocd apl-operator-apl-operator --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
+kubectl scale --replicas=0 -n apl-operator deployment apl-operator
+```
+
+Once the restore procedure is completed, enable the apl-operator:
+
+```
+kubectl scale --replicas=1 -n apl-operator deployment apl-operator
+```
+
 Changes to the `values` repository can usually be made through the Gitea UI after signing in with the `platform-admin` user. As this requires Keycloak in addition to Gitea operating normally, the risk can be reduced by creating an application token and pulling/pushing local changes to the repository. In Gitea, go to the user settings, click on the `Applications` tab, enter a token name and select `repo` as the scope. After creating this token, you can include it in the repository URL, e.g.
 
 ```sh
 git clone https://<token>@gitea.example.com/otomi/values.git
 ```
 
-In the event that platform-critical services Gitea and Keycloak are not able to start, required changes to the database configuration can be applied directly in the following Argo CD applications in the `argocd` namespace. This change persists and is synchronized into the cluster until the next following Tekton pipeline overwrites them:
+In the event that platform-critical services Gitea and Keycloak are not able to start, required changes to the database configuration can be applied directly in the following Argo CD applications in the `argocd` namespace:
 
-* Gitea database: `gitea-gitea-otomi-db`
-* Keycloak database: `keycloak-keycloak-otomi-db`
+- Gitea database: `gitea-gitea-otomi-db`
+- Keycloak database: `keycloak-keycloak-otomi-db`
 
-Where applicable, in these manifests the `initdb` section in `clusterSpec.bootstrap` can be replaced with `recovery` and `externalClusters` just as instructed below. Note that `recovery` and `externalClusters` do not need to be reflected in the values file later, since they are only considered when initializing the cluster; even when Tekton does revert these changes, after a successful recovery this no longer has an effect.
+Where applicable, in these manifests the `initdb` section in `clusterSpec.bootstrap` can be replaced with `recovery` and `externalClusters` just as instructed below. Note that `recovery` and `externalClusters` do not need to be reflected in the values file later, since they are only considered when initializing the cluster.
 
 ## Regular recovery with backup in same cluster
 
@@ -47,6 +60,7 @@ Note that the time stamps of the backup names are universal time (UTC).
 ```sh
 kubectl get backup -n <app>
 ```
+
 where `<app>` is to be replaced with `gitea`, `harbor`, or `keycloak`.
 
 ### Adjustments to the backup configuration
@@ -60,12 +74,12 @@ Example:
 ```yaml
 # ...
 platformBackups:
-    database:
-        gitea:
-            enabled: false
-            retentionPolicy: 7d
-            schedule: 0 0 * * *
-            pathSuffix: gitea-1
+  database:
+    gitea:
+      enabled: false
+      retentionPolicy: 7d
+      schedule: 0 0 * * *
+      pathSuffix: gitea-1
 # ...
 ```
 
@@ -76,6 +90,7 @@ The following change only has an effect on an initial database cluster. Therefor
 In the file `env/databases/<app>.yaml`, update the structure of `databases.<app>.recovery` as follows, depending on the app, inserting the backup name as determined above:
 
 For Gitea:
+
 ```yaml
 databases:
   gitea:
@@ -90,6 +105,7 @@ databases:
 ```
 
 For Harbor:
+
 ```yaml
 databases:
   harbor:
@@ -102,6 +118,7 @@ databases:
 ```
 
 For Keycloak:
+
 ```yaml
 databases:
   keycloak:
@@ -120,31 +137,34 @@ Note that ArgoCD may show a sync error, pointing out that there are multiple `bo
 Check the Tekton pipelines to ensure that values changes have been deployed as expected. After this, during a backup or recovery of the database, the application should to be shut down for avoiding any write operations leading to inconsistencies.
 
 For temporarily disabling Gitea:
+
 ```sh
 ## Disable ArgoCD auto-sync during the changes
 kubectl patch application -n argocd gitea-gitea --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
-## Scale Gitea statefulset to zero
-kubectl patch statefulset -n gitea gitea --patch '[{"op": "replace", "path": "/spec/replicas", "value": 0}]' --type=json
+## Scale Gitea deployment to zero
+kubectl scale deployment -n gitea gitea --replicas=0
 ## Verify that pods are shut down
-kubectl get statefulset -n gitea gitea  # Should show READY 0/0
+kubectl get deployment -n gitea gitea  # Should show READY 0/0
 ```
 
 For temporarily disabling Keycloak:
+
 ```sh
 ## Disable ArgoCD auto-sync during the changes
 kubectl patch application -n argocd keycloak-keycloak-operator --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
 ## Scale Keycloak statefulset to zero
-kubectl patch keycloak -n keycloak keycloak --patch '[{"op": "replace", "path": "/spec/instances", "value": 0}]' --type=json
+kubectl  scale statefulset -n keycloak keycloak --replicas=0
 ## Verify that pods are shut down
 kubectl get statefulset -n keycloak keycloak  # Should show READY 0/0
 ```
 
 For temporarily disabling Harbor:
+
 ```sh
 ## Disable ArgoCD auto-sync during the changes
 kubectl patch application -n argocd harbor-harbor --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
 ## Scale Harbor deployment to zero
-kubectl patch deploy -n harbor harbor-core --patch '[{"op": "replace", "path": "/spec/replicas", "value": 0}]' --type=json
+kubectl scale deployment -n harbor harbor-core --replicas=0
 ## Verify that pods are shut down
 kubectl get deploy -n harbor harbor-core  # Should show READY 0/0
 ```
@@ -154,6 +174,7 @@ kubectl get deploy -n harbor harbor-core  # Should show READY 0/0
 After deploying the values changes and shutting down applications accessing the database, delete the database cluster.
 
 For Gitea:
+
 ```sh
 ## Disable ArgoCD auto-sync during the changes
 kubectl patch application -n argocd gitea-gitea-otomi-db --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
@@ -164,6 +185,7 @@ kubectl patch application -n argocd gitea-gitea-otomi-db --patch '[{"op": "add",
 ```
 
 For Harbor:
+
 ```sh
 ## Disable ArgoCD auto-sync during the changes
 kubectl patch application -n argocd harbor-harbor-otomi-db --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
@@ -174,6 +196,7 @@ kubectl patch application -n argocd harbor-harbor-otomi-db --patch '[{"op": "add
 ```
 
 For Keycloak:
+
 ```sh
 ## Disable ArgoCD auto-sync during the changes
 kubectl patch application -n argocd keycloak-keycloak-otomi-db --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
@@ -188,6 +211,7 @@ The cluster should now be recreated from the backup. Wait until the `Cluster` st
 ### Restarting services
 
 For restoring Gitea processes:
+
 ```sh
 ## Re-enable ArgoCD auto-sync, which should also change the Gitea statefulset to scale up
 kubectl patch application -n argocd gitea-gitea --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
@@ -196,6 +220,7 @@ kubectl patch statefulset -n gitea gitea --patch '[{"op": "replace", "path": "/s
 ```
 
 For restoring Keycloak processes:
+
 ```sh
 ## Re-enable ArgoCD auto-sync
 kubectl patch application -n argocd keycloak-keycloak-operator-cr --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
@@ -206,6 +231,7 @@ kubectl delete deploy -n apl-keycloak-operator apl-keycloak-operator
 ```
 
 For restoring Harbor processes:
+
 ```sh
 ## Re-enable ArgoCD auto-sync
 kubectl patch application -n argocd harbor-harbor --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
@@ -220,6 +246,7 @@ The following instructions for example apply for Gitea in the last step of [rein
 Adjust the object storage parameters below as needed, at least replacing the `<bucket-name>` and `<location>` placeholders. Typically `serverName` should remain unchanged. `linode-creds` are the account credentials set up by the platform and can be reused provided that they have access to the storage.
 
 env/databases/gitea.yaml:
+
 ```yaml
 databases:
   gitea:
@@ -249,6 +276,7 @@ databases:
 ```
 
 env/databases/harbor.yaml:
+
 ```yaml
 databases:
   harbor:
@@ -278,6 +306,7 @@ databases:
 ```
 
 env/databases/keycloak.yaml:
+
 ```yaml
 databases:
   keycloak:
@@ -320,7 +349,7 @@ databases:
       owner: gitea
       recoveryTarget:
         # Time base target for the recovery
-        targetTime: "2023-03-06 08:00:39+01"
+        targetTime: '2023-03-06 08:00:39+01'
     externalClusters:
     # ...
 ```
@@ -344,17 +373,20 @@ In the following steps, the `-n` suffix of each pod name (e.g. `gitea-db-n`) nee
 ### Gitea database
 
 Determine the primary instance:
+
 ```sh
 kubectl get cluster -n gitea gitea-db
 ```
 
 Backup:
+
 ```sh
 kubectl exec -n gitea gitea-db-n postgres \
   -- pg_dump -Fc -d gitea > gitea.dump
 ```
 
 Restore:
+
 ```sh
 kubectl exec -i -n gitea gitea-db-n postgres \
   -- pg_restore --no-owner --role=gitea -d gitea --verbose --clean < gitea.dump
@@ -363,17 +395,20 @@ kubectl exec -i -n gitea gitea-db-n postgres \
 ### Keycloak database
 
 Determine the primary instance:
+
 ```sh
 kubectl get cluster -n keycloak keycloak-db
 ```
 
 Backup:
+
 ```sh
 kubectl exec -n keycloak keycloak-db-n postgres \
   -- pg_dump -Fc -d keycloak > keycloak.dump
 ```
 
 Restore:
+
 ```sh
 kubectl exec -i -n keycloak keycloak-db-n postgres \
   -- pg_restore --no-owner --role=keycloak -d keycloak --verbose --clean < keycloak.dump
@@ -382,17 +417,20 @@ kubectl exec -i -n keycloak keycloak-db-n postgres \
 ### Harbor database
 
 Determine the primary instance:
+
 ```sh
 kubectl get cluster -n harbor harbor-otomi-db
 ```
 
 Backup:
+
 ```sh
 kubectl exec -n harbor harbor-otomi-db-n postgres \
   -- pg_dump -Fc -d harbor > harbor.dump
 ```
 
 Restore:
+
 ```sh
 kubectl exec -i -n harbor harbor-otomi-db-n postgres \
   -- pg_restore --no-owner --role=keycloak -d harbor --verbose --clean < harbor.dump

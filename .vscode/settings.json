@@ -15,7 +15,8 @@
   "editor.formatOnSave": true,
   "files.associations": {
     "CODE_OF_CONDUCT": "markdown",
-    "CONTRIBUTING": "markdown"
+    "CONTRIBUTING": "markdown",
+    "CODEOWNERS": "plaintext"
   },
   "prettier.enable": true,
   "yaml.schemas": {

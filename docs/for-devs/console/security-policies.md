@@ -36,8 +36,32 @@ When Security Policies are enabled for the Team, then know that:
 
 ## See policy reports
 
-1. Go to `Workloads`.
+### Option 1: Using kubectl inside the Cloud Shell
+Requirement: The cloud shell for your team should be enabled in the team settings. This can be done by the platform admin or a team admin.
 
-2. Click on the ArgoCD `application` for the Workload you want to see the policy report.
+1. When logged in a team user, click the shell icon on the left menu bar
+2. In the shell use kubectl to get the list of `policyreports`
+    ```bash
+    kubectl get policyreports -n team-<team name>
+    ```
+3. View a specific report
+    ```
+    kubectl get policyreports -n team-<team name> <report id>
+    ```
 
-3. In the `Application Details Tree` you will see a `policyreport` attached to the `ReplicaSet` and an `admissionreport` attached to each `Pod`.
+### Option 2: Using kubectl locally
+Requirement: The kubernetes API server endpoint must be configured (under Settings -> Cluster) in order for you to be able to download the kubeconfig file. This can be done by the platform admin.
+
+1. When logged in a team user, click on **Download KUBECFG** in the left menu bar
+2. set your local KUBECONFIG variable
+    ```bash
+    export KUBECONFIG=<path to the downloaded file in step 1>
+    ```
+3. In the shell use kubectl to get the list of `policyreports`
+    ```bash
+    kubectl get policyreports -n team-<team name>
+    ```
+4. View a specific report
+    ```
+    kubectl get policyreports -n team-<team name> <report id>
+    ```

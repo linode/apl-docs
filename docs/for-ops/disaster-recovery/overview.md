@@ -11,10 +11,11 @@ This area covers some potential scenarios, when a complete or partial restore of
 This guide has the following prerequisites and limitations that should be checked regularly:
 
 1. The following items should be backed up regularly by the platform administrator:
-  - The Kubernetes secret ending in "-wildcard-cert" in namespace "istio-system" (if installed via the Linode cloud console, or using your own certificate).
-  - The Kubernetes secret "otomi-sops-secrets" in namespace "otomi-pipelines".
-  - A download of the complete values in Platform -> Maintenance. Depending on whether these are downloaded with or without secrets, some passwords might have to be reset after recovery.
-  - Optionally manual backups of databases, as covered in this guide for the CloudNative PostgreSQL Operator, should be taken.
+
+- The Kubernetes secret ending in "-wildcard-cert" in namespace "istio-system" (if installed via the Linode cloud console, or using your own certificate).
+- The Kubernetes secret "otomi-sops-secrets" in namespace "otomi-pipelines".
+- A download of the complete values in Platform -> Maintenance. Depending on whether these are downloaded with or without secrets, some passwords might have to be reset after recovery.
+- Optionally manual backups of databases, as covered in this guide for the CloudNative PostgreSQL Operator, should be taken.
 
 2. Object storage needs to be set up for all backup types referred to. Credentials should be added to Platform Settings -> Object Storage.
 
@@ -30,6 +31,6 @@ This guide has the following prerequisites and limitations that should be checke
 
 ## Guides
 
-* [Gitea](gitea.md): Restoring the platform's Gitea database and repositories from the application backup
-* [Databases](platform-databases.md): Backup and restore of the CNPG databases
-* [Reinstall](platform-reinstall.md): Restoring the complete platform, including settings and data
+- [Gitea](gitea.md): Restoring the platform's Gitea database and repositories from the application backup
+- [Databases](platform-databases.md): Backup and restore of the CNPG databases
+- [Reinstall](platform-reinstall.md): Restoring the complete platform, including settings and data

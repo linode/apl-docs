@@ -6,7 +6,7 @@ sidebar_label: Upgrade Instructions
 
 The Akamai App Platform is regularly updated to provide new features, improvements, and security enhancements. There are multiple methods available to upgrade your installation. This page outlines two recommended approaches for performing an upgrade.
 
-## Upgrading Through the Platform Dashboard
+## Upgrading through the Platform Dashboard
 
 The primary method to upgrade the Akamai App Platform is via the platform dashboard. Within the dashboard you can see your current version in the top right corner, there is also a table listing all available versions, each accompanied by a brief description of the changes introduced in that release. To see the full release notes of that version you can click on the version tag. To initiate the upgrade, simply click the `Upgrade to vx.x.x` button to upgrade to the latest version.
 

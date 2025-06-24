@@ -8,9 +8,9 @@ sidebar_label: Upgrade Notes
 
 In some cases between versions upgrades there are issues that can occur, on this page you will find fixes on how to deal with those issues.
 
-## v4.5.0 to a newer version
+## v4.4.4 to v4.7.0 or higher
 
-From v4.5.0 to a newer version there might occur an issue with the harbor redis, which results in the harbor-redis-0 pod restarting indefinitely.
+From v4.4.4 to a higher version there might occur an issue with the harbor redis, which results in the harbor-redis-0 pod restarting indefinitely.
 
 To solve this issue you have to delete the harbor redis data according to the following steps.
 

@@ -52,8 +52,6 @@ kubectl scale sts harbor-redis --replicas=1 -n harbor
 ```
 
 ### Wait for pod ready status
-Now that the pod is restarted and has status `ready` the issue should be resolved.
-
 :::note
 If the version you are going to upgrade to is of v4.7.0 or higher you also have to scale up the apl-operator
 :::
@@ -61,3 +59,11 @@ If the version you are going to upgrade to is of v4.7.0 or higher you also have 
 ```shell
 kubectl scale deploy apl-operator --replicas=1 -n apl-operator
 ```
+
+### Enable ArgoCD autoSync on harbor-harbor
+```shell
+kubectl patch application harbor-harbor \
+  -n argocd \
+  --type='json' \
+  -p='[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true,"selfHeal": true}}]'
+  ```

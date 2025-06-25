@@ -13,20 +13,19 @@ Platform apps in Akamai App Platform have 3 release stages: Alpha, Beta and GA. 
 App Platform also sets standards for the following platform app integration criteria:
 
 1. Backup and restore: Databases used by a platform app are automatically backed-up and restore procedures are tested.
-2. Seamless database upgrades: Databases used by a platform app are automatically upgraded without downtime.
-3. High Availability: A platform app is by default configured for High Availability.
-4. Lifecycle management: The platform app is part of the platform release cycle and will be upgraded accordingly.
-5. Authentication: Only authenticated users can access the platform app.
-6. Graceful Termination: Pods of a platform app will terminate gracefully in case of a node drain operation.
-7. Continuity: A platform app will not be removed without a deprecation notice.
-8. Kubernetes version support: A platform app is supported on all App Platform supported Kubernetes versions.
+2. Smooth database upgrades: Databases used by a platform app are automatically upgraded.
+3. Lifecycle management: The platform app is part of the platform release cycle and will be upgraded accordingly.
+4. Authentication: Only authenticated users can access the platform app.
+5. Graceful Termination: Pods of a platform app will terminate gracefully in case of a node drain operation.
+6. Continuity: A platform app will not be removed without a deprecation notice.
+7. Kubernetes version support: A platform app is supported on all App Platform supported Kubernetes versions.
 
 Based on the release stage, a platform app partially or fully complies to the integration criteria due to its immaturity or current limitations of the platform itself:
 
 | Release Stage | Integration Criteria Compliance    |
 | ------------- | ---------------------------------- |
-| Alpha         | Minimal compliant (5, 6)           |
-| Beta          | Partial compliant (3, 5, 6, 7, 8)  |
+| Alpha         | Minimal compliant (4, 5)           |
+| Beta          | Partial compliant (4, 5, 6, 7)     |
 | GA            | Fully compliant                    |
 
 Alpha platform apps are labeled as `ALPHA`. Beta platform apps are labeled as `BETA`. GA platform apps do not have a label.

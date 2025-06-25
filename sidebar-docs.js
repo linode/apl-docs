@@ -130,6 +130,8 @@ module.exports = {
           "for-ops/disaster-recovery/platform-reinstall",
         ],
       },
+      "for-ops/upgrade-instructions",
+      "for-ops/upgrade-notes",
       "for-ops/known-issues",
       "for-ops/security-best-practices",
     ],

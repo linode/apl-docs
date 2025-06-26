@@ -6,7 +6,7 @@ sidebar_label: Upgrade Notes
 
 ## About upgrade notes
 
-In some cases between versions upgrades there are issues that can occur. on this page you will find fixes on how to deal with those issues.
+In some cases between versions upgrades there are issues that can occur. This page describes known potential issues and their mitigations.
 
 ## v4.4.4 to v4.7.0 or higher
 

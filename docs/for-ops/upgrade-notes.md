@@ -6,15 +6,24 @@ sidebar_label: Upgrade Notes
 
 ## About upgrade notes
 
-In some cases between versions upgrades there are issues that can occur, on this page you will find fixes on how to deal with those issues.
+In some cases between versions upgrades there are issues that can occur. on this page you will find fixes on how to deal with those issues.
 
 ## v4.4.4 to v4.7.0 or higher
 
-From v4.4.4 to a higher version there might occur an issue with the harbor redis, which results in the harbor-redis-0 pod restarting indefinitely.
+Prior to the platform upgrade, a Gitea upgrade requires that no stale pipelines are running and attempting to apply changes to the cluster.
+There might occur an issue with the Redis instance of Harbor, which results in the `harbor-redis-0` pod restarting indefinitely after the upgrade.
 
-To solve this issue you have to delete the harbor redis data according to the following steps.
+### Ensuring no stale pipelines run
 
-### Disable ArgoCD autoSync on harbor-harbor
+First of all, ensure no other platform users are currently applying changes to the cluster. Before upgrading, go to Apps -> Tekton and select "PipelineRuns" on the left, and "otomi-pipelines" on the top-right dropdown. Ensure that no pipelines are running: Their status must be either Succeeded, Failed, or Canceled. If any of them are in state Pending or Running, open the menu next to them, and select "Stop".
+
+As soon as the upgrade is started, it will create a PipelineRun. This one will be automatically terminated, and as of v4.7.0 Tekton is no longer used for applying platform changes.
+
+### Fixing the Redis instance of Harbor
+
+To solve this issue you have to delete the Harbor Redis data according to the following steps.
+
+#### Disable ArgoCD autoSync on harbor-harbor
 ```shell
 kubectl patch application harbor-harbor \
   -n argocd \
@@ -22,7 +31,7 @@ kubectl patch application harbor-harbor \
   -p='[{"op": "remove", "path": "/spec/syncPolicy/automated"}]'
 ```
 
-### Scale down harbor-jobservice, harbor-core to zero
+#### Scale down harbor-jobservice, harbor-core to zero
 ```shell
 kubectl scale deploy harbor-jobservice --replicas=0 -n harbor
 kubectl scale deploy harbor-core --replicas=0 -n harbor
@@ -36,22 +45,22 @@ If the version you are going to upgrade to is of v4.7.0 or higher you also have 
 kubectl scale deploy apl-operator --replicas=0 -n apl-operator
 ```
 
-### Scale down the harbor redis to zero
+#### Scale down harbor-redis to zero
 ```shell
 kubectl scale sts harbor-redis --replicas=0 -n harbor
 ```
 
-### PVC data-harbor-redis-0 is deleted
+#### PVC data-harbor-redis-0 is deleted
 ```shell
 kubectl delete pvc data-harbor-redis-0 -n harbor
 ```
 
-### Scale up harbor-redis to one
+#### Scale up harbor-redis to one
 ```shell
 kubectl scale sts harbor-redis --replicas=1 -n harbor
 ```
 
-### Wait for pod ready status
+#### Wait for pod ready status
 :::note
 If the version you are going to upgrade to is of v4.7.0 or higher you also have to scale up the apl-operator
 :::
@@ -60,10 +69,10 @@ If the version you are going to upgrade to is of v4.7.0 or higher you also have 
 kubectl scale deploy apl-operator --replicas=1 -n apl-operator
 ```
 
-### Enable ArgoCD autoSync on harbor-harbor
+#### Enable ArgoCD autoSync on harbor-harbor
 ```shell
 kubectl patch application harbor-harbor \
   -n argocd \
   --type='json' \
   -p='[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true,"selfHeal": true}}]'
-  ```
+```

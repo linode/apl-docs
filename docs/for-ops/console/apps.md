@@ -19,13 +19,16 @@ App Platform also sets standards for the following platform app integration crit
 5. Graceful Termination: Pods of a platform app will terminate gracefully in case of a node drain operation.
 6. Continuity: A platform app will not be removed without a deprecation notice.
 7. Kubernetes version support: A platform app is supported on all App Platform supported Kubernetes versions.
+8. Monitoring and observability: Prometheus rules and grafana dashboards are provided and maintained for the app.
+9. Resource management: Correct resources are set and managed.
+
 
 Based on the release stage, a platform app partially or fully complies to the integration criteria due to its immaturity or current limitations of the platform itself:
 
 | Release Stage | Integration Criteria Compliance    |
 | ------------- | ---------------------------------- |
 | Alpha         | Minimal compliant (4, 5)           |
-| Beta          | Partial compliant (4, 5, 6, 7)     |
+| Beta          | Partial compliant (4, 5, 6, 7, 9)  |
 | GA            | Fully compliant                    |
 
 Alpha platform apps are labeled as `ALPHA`. Beta platform apps are labeled as `BETA`. GA platform apps do not have a label.

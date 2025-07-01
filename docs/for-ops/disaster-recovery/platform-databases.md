@@ -153,7 +153,7 @@ For temporarily disabling Keycloak:
 ## Disable ArgoCD auto-sync during the changes
 kubectl patch application -n argocd keycloak-keycloak-operator --patch '[{"op": "remove", "path": "/spec/syncPolicy/automated"}]' --type=json
 ## Scale Keycloak statefulset to zero
-kubectl  scale statefulset -n keycloak keycloak --replicas=0
+kubectl scale statefulset -n keycloak keycloak --replicas=0
 ## Verify that pods are shut down
 kubectl get statefulset -n keycloak keycloak  # Should show READY 0/0
 ```
@@ -216,7 +216,7 @@ For restoring Gitea processes:
 ## Re-enable ArgoCD auto-sync, which should also change the Gitea statefulset to scale up
 kubectl patch application -n argocd gitea-gitea --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
 ## Optional: scale up, for not having to wait for re-sync of ArgoCD
-kubectl patch statefulset -n gitea gitea --patch '[{"op": "replace", "path": "/spec/replicas", "value": 1}]' --type=json
+kubectl scale deployment -n gitea gitea --replicas=1
 ```
 
 For restoring Keycloak processes:
@@ -225,7 +225,7 @@ For restoring Keycloak processes:
 ## Re-enable ArgoCD auto-sync
 kubectl patch application -n argocd keycloak-keycloak-operator-cr --patch '[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true, "allowEmpty": true}}]' --type=json
 ## Optional: scale up, for not having to wait for re-sync of ArgoCD
-kubectl patch keycloak -n keycloak keycloak --patch '[{"op": "replace", "path": "/spec/instances", "value": 1}]' --type=json
+kubectl scale statefulset -n keycloak keycloak --replicas=1
 ## Required: force a restart of the platform Keycloak operator; ArgoCD re-creates the Deployment
 kubectl delete deploy -n apl-keycloak-operator apl-keycloak-operator
 ```

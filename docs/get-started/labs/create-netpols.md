@@ -249,14 +249,14 @@ The [Netshoot](https://github.com/nicolaka/netshoot) pod is a network troublesho
 1. Run the following command in the Netshoot pod:
 
 ```shell
-curl https://apl-docs.net
+curl -s 'https://techdocs.akamai.com/app-platform/docs/welcome' -H 'sec-ch-ua: "Microsoft Edge";v="137"' -H 'sec-fetch-dest: document' -H 'sec-fetch-mode: navigate' -H 'sec-fetch-site: same-origin' -H 'sec-fetch-user: ?1' -H 'user-agent: Edg/137.0.0.0'
 ```
 You should see the HTML of the apl-docs.net website
 
-2. Run the following command to see the `<title data-rh="true">App Platform for LKE</title>` message:
+2. Run the following command to see the `<title>Welcome to the Akamai App Platform</title>` message:
 
 ```shell
-curl -s https://apl-docs.net | grep -o '<title.*</title>'
+curl -s 'https://techdocs.akamai.com/app-platform/docs/welcome' -H 'sec-ch-ua: "Microsoft Edge";v="137"' -H 'sec-fetch-dest: document' -H 'sec-fetch-mode: navigate' -H 'sec-fetch-site: same-origin' -H 'sec-fetch-user: ?1' -H 'user-agent: Edg/137.0.0.0' | grep -o '<title.*</title>'
 ```
 
 3. Type `exit` to exit the Netshoot pod.

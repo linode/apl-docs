@@ -139,14 +139,6 @@ kubectl scale deploy apl-operator --replicas=1 -n apl-operator
 kubectl patch application apl-operator-apl-operator \
   -n argocd \
   --type='json' \
-  -p='[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true,"selfHeal": true}}]' 
+  -p='[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true,"selfHeal": true, "allowEmpty": false}}]' 
 ```
 
-#### Enable ArgoCD autoSync on harbor-harbor
-
-```shell
-kubectl patch application harbor-harbor \
-  -n argocd \
-  --type='json' \
-  -p='[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true,"selfHeal": true}}]'
-```

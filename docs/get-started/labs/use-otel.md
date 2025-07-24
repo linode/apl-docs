@@ -12,7 +12,7 @@ In order to make a system observable, it must be instrumented. Language specific
 
 ## Prerequisites
 
-Make sure the following Apps are enabled on the platform (requires a user with the `platform-administrator` role): 
+Make sure the following Apps are enabled on the platform (requires a user with the `platform-administrator` role):
 
 - `Tempo` on Platform
 - `Otel` on Platform
@@ -81,7 +81,9 @@ For this lab we're going to use the [Spring PetClinic Sample Application](https:
 
 6. Optionally you can change the Image name and tag. This is the name and tag used to store the image in the private Harbor image registry.
 
-7. Click `Create Container Image`.
+7. Under `Extra arguments`, click `Add argument`. Set `Name`: `BP_JVM_VERSION` and `Value`: `17`.
+
+8. Click `Create Container Image`.
 
 ## Create a workload from the developer catalog
 

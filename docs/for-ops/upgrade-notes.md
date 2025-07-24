@@ -97,8 +97,15 @@ kubectl scale deploy harbor-core --replicas=0 -n harbor
 ```
 
 :::note
-If the version you are going to upgrade to is of v4.7.0 or higher you also have to scale down the apl-operator
+If the version you are going to upgrade to is of v4.7.0 or higher you also have to stop automated syncing and scale down the apl-operator
 :::
+
+```shell
+kubectl patch application apl-operator-apl-operator \
+ -n argocd \
+ --type='json' \
+ -p='[{"op": "remove", "path": "/spec/syncPolicy/automated"}]'
+```
 
 ```shell
 kubectl scale deploy apl-operator --replicas=0 -n apl-operator
@@ -121,17 +128,17 @@ kubectl scale sts harbor-redis --replicas=1 -n harbor
 
 #### Wait for pod ready status
 :::note
-If the version you are going to upgrade to is of v4.7.0 or higher you also have to scale up the apl-operator
+If the version you are going to upgrade to is of v4.7.0 or higher you also have to enable automated syncing and scale up the apl-operator
 :::
 
 ```shell
 kubectl scale deploy apl-operator --replicas=1 -n apl-operator
 ```
 
-#### Enable ArgoCD autoSync on harbor-harbor
 ```shell
-kubectl patch application harbor-harbor \
+kubectl patch application apl-operator-apl-operator \
   -n argocd \
   --type='json' \
-  -p='[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true,"selfHeal": true}}]'
+  -p='[{"op": "add", "path": "/spec/syncPolicy/automated", "value": {"prune": true,"selfHeal": true, "allowEmpty": false}}]' 
 ```
+

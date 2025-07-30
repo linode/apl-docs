@@ -53,8 +53,6 @@ Outbound Rules let you:
 
 Use the `k8s-deployment` chart:
 
-#### Vote app
-
 ```yaml
 image:
   repository: harbor.<your-domain>/team-<team-name>/vote
@@ -73,7 +71,6 @@ replicaCount: 1
 #### Worker app
 
 ```yaml
-name: worker
 image:
   repository: harbor.<your-domain>/team-<team-name>/worker
   pullPolicy: IfNotPresent

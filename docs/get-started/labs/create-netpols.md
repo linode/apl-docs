@@ -4,87 +4,56 @@ title: Configuring network policies
 sidebar_label: Create Network Policies
 ---
 
-In some cases you want to explicitly allow access to your application. This can be done by creating network policies. 2 types of network policies are supported:
+In this lab you’ll explicitly open only the network paths your app needs using two dedicated UIs:
 
-1. Policies for ingress traffic inside the cluster.
+1. **Inbound Rules** — pod‑to‑pod (cluster‑internal)
+2. **Outbound Rules** — external (egress to FQDNs/IPs)
 
-2. Policies for egress traffic to go outside of the cluster (to access external FQDNs).
+When **Ingress control** is enabled for your team, _all_ pod‑to‑pod traffic is denied by default. When **Egress control** is enabled, _all_ external traffic is denied by default. You’ll create only the rules required by your Voting App.
 
-## Understanding Internal Ingress Network Policies
+---
 
-The internal ingress network policies allow you to:
+## Understanding Inbound Rules
 
-- Deny all traffic to Pods (default mode)
+Inbound Rules let you:
 
-- Allow selected Workload Pods running on the cluster to access your Workload's Pods
+- Keep pods locked down (deny‑all by default)
+- Allow specific workloads (via workload dropdown + auto‑fetched labels) to connect to your pods
 
-- Allow all traffic to the Pods of a Workload
+---
 
-`Deny all` and `Allow all` we don't need to explain right?
+## Understanding Outbound Rules
 
-:::info
-The Ingress Network Policies rely on Pod labels. We require that a single label covers Pods for a given workload. We recommend to use the `otomi.io/app: <workload-name>` label.
-:::
+Outbound Rules let you:
 
-To allow other Workloads in the cluster to access your Workload's Pods, follow these steps:
+- Keep pods locked down from external traffic (deny‑all by default)
+- Allow namespace‑wide access to specific FQDNs or IPs
 
-1. Navigate to the `Network Policies` page in the Console and click `Create Netpol`.
+---
 
-2. Name the network policy and select the `ingress` rule type.
+## Lab Part 1: Deploy the Voting App
 
-3. Add the selector label name and value for the Workload Pods to be accessed. E.g.: use the `otomi.io/app` label.
+### 1. Build container images
 
-4. Select either `AllowAll` or `AllowOnly` mode.
+1. Register the Code Repository at `https://github.com/linode/apl-examples`.
+2. Create three Docker build tasks:
 
-5. If you select `AllowOnly`, specify the namespace (e.g., `team-labs`), and the selector label name and value for the Workload Pods to be accessed.
+   - **vote** → `vote-app/vote/Dockerfile`
+   - **worker** → `vote-app/worker/Dockerfile`
+   - **result** → `vote-app/result/Dockerfile`
 
-6. Add more rules if needed.
+### 2. Deploy Redis & Postgres
 
-## Understanding Egress Network Policies
+1. In the Catalog, install **redis** (master‑replica) with `auth.enabled=false`.
+2. Install **postgresql** with default settings.
 
-The egress network policies allow you to:
+### 3. Deploy your workloads
 
-- Deny all traffic from the Pods of a Workload (default)
+#### Vote app
 
-- Allow all Pods within a namespace to access external FQDNs or IPs through an egress rule
+Use the `k8s-deployment` chart:
 
-To allow your Workload's Pods to access external FQDNs or IPs, follow these steps:
-
-1. Navigate to the `Network Policies` page in the Console and click `Create Netpol`.
-
-2. Name the network policy and select the `egress` rule type.
-
-3. Add the FQDN or IP to be accessed.
-
-4. Add port number(s) and protocol if needed.
-
-:::info
-The egress rules are namespace wide. You cannot bind an egress policy to one Workload only.
-:::
-
-## Setting Up Network Policies for the Example Voting App: An Ingress Example
-
-### Create the images for the application
-
-1. Register the Code Repository using this Repository URL: https://github.com/linode/apl-examples.
-
-2. Create 3 Container Images (vote, worker and result) using the Docker build task
-
-- Set the path for the vote image to `vote-app/vote/Dockerfile`
-
-- Set the path for the worker image to `vote-app/worker/Dockerfile`
-
-- Set the path for the result image to `vote-app/result/Dockerfile`
-
-### Create a Redis Cluster and a PostgreSQL Database
-
-Use the `postgresql` and the `redis` charts from the Catalog to create a Redis master-replica cluster and a PostgreSQL database. For this lab, Redis authentication needs to be turned off by setting `auth.enabled=false`.
-
-### Deploy the Vote App
-
-Use the `k8s-deployment` chart to deploy the vote app. Use the following values:
-
-Name: `vote`
+#### Vote app
 
 ```yaml
 image:
@@ -101,13 +70,10 @@ env:
 replicaCount: 1
 ```
 
-### Deploy the Worker App
-
-Use the `k8s-deployment` chart to deploy the worker app. Use the following values:
-
-Name: `worker`
+#### Worker app
 
 ```yaml
+name: worker
 image:
   repository: harbor.<your-domain>/team-<team-name>/worker
   pullPolicy: IfNotPresent
@@ -138,13 +104,10 @@ replicaCount: 1
 The worker pod will show an error “Waiting for db” in the logs. This is an expected error that will be resolved when all the steps in the lab are done.
 :::
 
-### Deploy the Result App
-
-Use the `k8s-deployment` chart to deploy the result app. Use the following values:
-
-Name: `result`
+#### Result app
 
 ```yaml
+name: result
 image:
   repository: harbor.<your-domain>/team-<team-name>/result
   pullPolicy: IfNotPresent
@@ -170,95 +133,107 @@ env:
     value: <psql-cluster-name>
 replicaCount: 1
 ```
+
 :::note
 The result pod will show an error “Waiting for db” in the logs. This is an expected error that will be resolved when all the steps in the lab are done.
 :::
 
-### Create the Services
+### 4. Expose your services
 
-- Create the `vote` service.
+- Create a service for `vote`.
+- Create a service for `result`.
 
-- Create the `result` service.
+---
 
-### Create the Network Policies for the Example Voting App
+## Lab Part 2: Ingress Rules for Voting App
 
-#### Postgres Database
+You’ll allow only Worker & Result to reach Postgres, and only Vote & Worker to reach Redis.
 
-1. Create a new `Network policy` and select the `ingress` rule type.
+### Postgres Ingress
 
-2. Add the selector label name `otomi.io/app`.
+1. **Navigate:** **Network Policies > Inbound Rules**
+2. **CREATE INBOUND RULE**
+3. **Name:** `postgres-ingress`
+4. **Sources:**
 
-3. Add the selector label value `<postgres-workload-name>`.
+   - **Workload:** select **worker**
+   - **Label(s):** leave `otomi.io/app=worker` (auto‑fetched)
+   - Click **ADD SOURCE**, then add:
 
-4. Select `AllowOnly`.
+     - **Workload:** result
+     - **Label(s):** `otomi.io/app=result`
 
-5. Add the namespace `team-<name>`, the selector label name `otomi.io/app` and the selector label value `worker`.
+5. **Target:**
 
-6. Add the namespace `team-<name>`, the selector label name `otomi.io/app` and the selector label value `result`.
+   - **Workload:** postgres
+   - **Label:** `otomi.io/app=postgres`
 
-#### Redis
+6. **Save Changes**
 
-1. Create a new `Network policy` and select the `ingress` rule type.
+### Redis Ingress
 
-2. Add the selector label name `otomi.io/app`.
+1. **CREATE INBOUND RULE**
+2. **Name:** `redis-ingress`
+3. **Sources:**
 
-3. Add the selector label value `<redis-workload-name>`.
+   - Workload: **worker** → `otomi.io/app=worker`
+   - ADD SOURCE → **vote** → `otomi.io/app=vote`
 
-4. Select `AllowOnly`.
+4. **Target:** Redis → `otomi.io/app=redis`
+5. **Save Changes**
 
-5. Add the namespace `team-<name>`, the selector label name `otomi.io/app` and the selector label value `worker`.
+---
 
-6. Add the namespace `team-<name>`, the selector label name `otomi.io/app` and the selector label value `vote`.
+## Lab Part 3: Egress Rule for Troubleshooting
 
-### Test the Voting App
+You’ll allow HTTPS egress to `apl-docs.net` so you can test connectivity.
 
-1. Go to the external URL of the `vote` application.
+### Create apl‑docs.net Egress
 
-2. Click on `Cats` or `Dogs`.
+1. **Navigate:** **Network Policies > Outbound Rules**
+2. **CREATE OUTBOUND RULE**
+3. **Name:** `apl-docs-egress`
+4. **Domain name or IP address:** `apl-docs.net`
+5. **Protocol & Port:**
 
-3. Now go to the external URL of the `result` application.
+   - Protocol: **HTTPS**
+   - Port: **443**
 
-4. You should see the result of your vote.
+6. **Save Changes**
 
-## Setting Up Network Policies for apl-docs.net: An Egress Example
+---
 
-### Register the Network Policy for apl-docs.net
+## Lab Part 4: Testing
 
-1. Navigate to the `Network Policies` page in the Console and click `Create Netpol`.
+### Verify pod‑to‑pod (Ingress)
 
-2. Name the network policy `apl-docs` and select the `egress` rule type.
+1. Browse to your **Vote** service’s external URL → cast a vote.
+2. Browse to your **Result** service’s URL → confirm the vote appears.
 
-3. Add the FQDN `apl-docs.net` to be accessed.
+### Verify external (Egress)
 
-4. Add port number `443` and protocol `HTTPS`.
+1. Launch Netshoot in your team namespace:
 
-### Deploy Netshoot Pod
+   ```bash
+   kubectl run -i --tty --rm netshoot \
+     --image nicolaka/netshoot -n team-labs
+   ```
 
-Deploy a Netshoot pod in your namespace within your Kubernetes cluster. You can do this using kubectl command:
+2. Inside the pod, run:
 
-```shell
-kubectl run -i --tty --rm netshoot --image nicolaka/netshoot -n team-labs
-```
+   ```bash
+   curl -s https://techdocs.akamai.com/app-platform/docs/welcome \
+     | grep -o '<title.*</title>'
+   ```
 
-:::info
-The [Netshoot](https://github.com/nicolaka/netshoot) pod is a network troubleshooting tool that includes a lot of network tools like `curl`, `dig`, `nslookup`, `ping`, `traceroute`, etc.
-:::
+   You should see:
 
-### Test the Egress Network Policy
+   ```
+   <title>Welcome to the Akamai App Platform</title>
+   ```
 
-1. Run the following command in the Netshoot pod:
+3. Exit the pod (`exit`). It will be removed automatically.
 
-```shell
-curl -s 'https://techdocs.akamai.com/app-platform/docs/welcome' -H 'sec-ch-ua: "Microsoft Edge";v="137"' -H 'sec-fetch-dest: document' -H 'sec-fetch-mode: navigate' -H 'sec-fetch-site: same-origin' -H 'sec-fetch-user: ?1' -H 'user-agent: Edg/137.0.0.0'
-```
-You should see the HTML of the apl-docs.net website
+---
 
-2. Run the following command to see the `<title>Welcome to the Akamai App Platform</title>` message:
-
-```shell
-curl -s 'https://techdocs.akamai.com/app-platform/docs/welcome' -H 'sec-ch-ua: "Microsoft Edge";v="137"' -H 'sec-fetch-dest: document' -H 'sec-fetch-mode: navigate' -H 'sec-fetch-site: same-origin' -H 'sec-fetch-user: ?1' -H 'user-agent: Edg/137.0.0.0' | grep -o '<title.*</title>'
-```
-
-3. Type `exit` to exit the Netshoot pod.
-
-When you exit the Netshoot pod, it will be removed from the cluster.
+Congratulations—your Voting App is now locked down to exactly the paths you opened!

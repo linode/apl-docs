@@ -4,59 +4,64 @@ title: Network Policies
 sidebar_label: Network Policies
 ---
 
-A Network Policy is a self-service feature for creating Kubernetes Network Policies (Ingress) and Istio Service Entries (Egress).
+Kubernetes Network Policies (Ingress) and Istio Service Entries (Egress) are managed via two dedicated UIs: **Inbound Rules** and **Outbound Rules**. When Ingress control is enabled for your team, _all_ pod‑to‑pod traffic is denied by default. When Egress control is enabled, _all_ external traffic is denied by default. You must explicitly create rules to open up traffic.
 
-When the Network Policies `Ingress control` option is enabled for the team, all traffic to the Pods of the Team (from other Pods within the Team and from Pods in other Teams) will be blocked by default. To allow other Pods to access your Pod you will need to create a Network Policy of type `ingress`.
+---
 
-When the Network Policies `Egress control` option is enabled for the team, all traffic to external endpoints (outside of the cluster) is blocked by default. To allow access to external endpoints you will need to create a Network Policy of type `egress`.
+## Inbound Rules
 
-## Network Policies (all)
+This page lists every Ingress rule for your team:
 
-All Network Policies of the Team are listed here.
+| Property | Description                                         |
+| -------- | --------------------------------------------------- |
+| Name     | The name of the Inbound rule                        |
+| Source   | The workload (and its pod label) allowed to connect |
+| Target   | The workload (and its pod label) receiving traffic  |
 
-| Property      | Description                                                     |
-| ------------- | --------------------------------------------------------------- |
-| Name          | The name of the Network Policy                                  |
-| Rule type     | Type of the Network Policy (Ingress or Egress)                  |
-| Team          | The name of the Team responsible for the build                  |
+1. **Create inbound rule**: click **CREATE INBOUND RULE**.
 
-## Create a Network Policy
+2. **Inbound rule name**: enter a unique, descriptive name.
 
-1. Enter a name for the Network Policy.
+3. **Sources**
 
-2. Select the Rule type:
+   - Click the **Workload** dropdown → pick a Knative Service, Deployment, Helm release, etc.
+   - The **Label(s)** dropdown will auto‑fetch that workload’s pod labels; you can leave the default or pick another.
+   - Click **ADD SOURCE** to permit multiple source entries.
 
-- Use `Ingress` to allow other Pods to connect to your Pod
-- Use `Egress` to allow all Pods in the Team to connect an external (outside of the cluster) endpoint (based on a FQDN or an IP address)
+4. **Target**
 
-### Ingress
+   - Click the **Workload** dropdown → pick the target workload whose pods you’re opening up.
+   - You can leave the default label or pick another.
 
-If type `Ingress` is selected:
+5. **Save Changes** to apply the rule. You can edit or delete rules via the same UI.
 
-3. Add the label name and value of your Pod.
+---
 
-4. Select the mode.
+## Outbound Rules
 
-- Select `AllowAll` to allow all Pods in all Teams to connect to your Pod
-- Select `AllowOnly` to only allow specific Pods in a specific Namespace
+This page lists every Egress rule for your team:
 
-If mode `AllowOnly` is selected:
+| Property | Description                                |
+| -------- | ------------------------------------------ |
+| Name     | The name of the Outbound rule              |
+| Domain   | The FQDN or IP address being contacted     |
+| Port     | The port number(s) opened (1–65535)        |
+| Protocol | The protocol(s) allowed (TCP, HTTP, HTTPS) |
 
-- Add the label name (`fromLabelName`) of the Pod that is allowed to connect
-- Add the label value (`fromLabelValue`) of the Pod that is allowed to connect
-- Add the namespace (`fromNamespace`) of the Pod that is allowed to connect
+1. **Create outbound rule**: click **CREATE OUTBOUND RULE**.
 
+2. **Outbound rule name**: enter a unique, descriptive name.
 
-### Egress
+3. **Domain name or IP address**: enter the FQDN or IPv4/IPv6.
 
-If type `Egress` is selected:
+4. **Protocol & Port**
 
-3. Add the Fully Qualified Domain Name (FQDN) or the IP address of the external endpoint.
+   - Use the **Protocol** dropdown to pick TCP, HTTP or HTTPS.
+   - Enter a **Port** (1–65535).
+   - Click **ADD PORT** to open additional port/protocol fields.
 
-4. Add the Port number (between 1 and 65535).
+5. **Save Changes** to enable egress. Modify or remove rules at any time via the same form.
 
-5. Select the Protocol (HTTP, HTTPS or TCP).
+---
 
-
-
-
+> Inbound rule creation now uses workload‑driven dropdowns instead of freeform text fields. The UI fetches label keys/values for you—no more guessing label names.

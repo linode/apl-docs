@@ -107,22 +107,11 @@ databases:
       owner: harbor
     externalClusters:
       - name: harbor-backup
-        barmanObjectStore:
-          serverName: harbor-otomi-db
-          destinationPath: s3://<bucket-name>/harbor
-          endpointURL: https://<storage-region>.linodeobjects.com
-          s3Credentials:
-            accessKeyId:
-              name: linode-creds
-              key: S3_STORAGE_ACCOUNT
-            secretAccessKey:
-              name: linode-creds
-              key: S3_STORAGE_KEY
-          wal:
-            compression: gzip
-            maxParallel: 8
-          data:
-            compression: gzip
+        plugin:
+          name: barman-cloud.cloudnative-pg.io
+          parameters:
+            barmanObjectName: harbor-otomi-db
+            serverName: harbor-otomi-db
 ```
 
 In `databases.keycloak`:
@@ -139,22 +128,11 @@ databases:
       owner: keycloak
     externalClusters:
       - name: keycloak-backup
-        barmanObjectStore:
-          serverName: keycloak-db
-          destinationPath: s3://<bucket-name>/keycloak
-          endpointURL: https://<storage-region>.linodeobjects.com
-          s3Credentials:
-            accessKeyId:
-              name: linode-creds
-              key: S3_STORAGE_ACCOUNT
-            secretAccessKey:
-              name: linode-creds
-              key: S3_STORAGE_KEY
-          wal:
-            compression: gzip
-            maxParallel: 8
-          data:
-            compression: gzip
+        plugin:
+          name: barman-cloud.cloudnative-pg.io
+          parameters:
+            barmanObjectName: keycloak-db
+            serverName: keycloak-db
 ```
 
 ## Stopping write operations

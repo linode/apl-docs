@@ -107,7 +107,6 @@ The worker pod will show an error “Waiting for db” in the logs. This is an e
 #### Result app
 
 ```yaml
-name: result
 image:
   repository: harbor.<your-domain>/team-<team-name>/result
   pullPolicy: IfNotPresent

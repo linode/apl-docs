@@ -12,11 +12,11 @@ Kubernetes Network Policies (Ingress) and Istio Service Entries (Egress) are man
 
 This page lists every Ingress rule for your team:
 
-| Property | Description                                         |
-| -------- | --------------------------------------------------- |
-| Name     | The name of the Inbound rule                        |
-| Source   | The workload (and its pod label) allowed to connect |
-| Target   | The workload (and its pod label) receiving traffic  |
+| Property | Description                                                                         |
+| -------- | ----------------------------------------------------------------------------------- |
+| Name     | The name of the Inbound rule                                                        |
+| Source   | The workload(s) network traffic that is going to be accepted by the target workload |
+| Target   | The workload (and its pod label) receiving traffic                                  |
 
 1. **Create inbound rule**: click **CREATE INBOUND RULE**.
 

@@ -36,7 +36,7 @@ Outbound Rules let you:
 ### 1. Build container images
 
 1. Register the Code Repository at `https://github.com/linode/apl-examples`.
-2. Create three Docker build tasks:
+2. Create three Docker Container Images. For the Dockerfile path you can use:
 
    - **vote** → `vote-app/vote/Dockerfile`
    - **worker** → `vote-app/worker/Dockerfile`
@@ -64,7 +64,7 @@ containerPorts:
     protocol: TCP
 env:
   - name: REDIS_HOST
-    value: <redis-cluster-name>-master
+    value: <redis-cluster-name>-quickstart-redis-master
 replicaCount: 1
 ```
 
@@ -91,7 +91,7 @@ env:
         name: <psql-cluster-name>-app
         key: password
   - name: REDIS_HOST
-    value: <redis-cluster-name>-master
+    value: <redis-cluster-name>-quickstart-redis-master
   - name: DATABASE_HOST
     value: <psql-cluster-name>-rw
 replicaCount: 1
@@ -153,7 +153,7 @@ You’ll allow only Worker & Result to reach Postgres, and only Vote & Worker to
 4. **Sources:**
 
    - **Workload:** select **worker**
-   - **Label(s):** leave `otomi.io/app=worker` (auto‑fetched)
+   - **Label(s):** Select `otomi.io/app=worker`from the drop-down
    - Click **ADD SOURCE**, then add:
 
      - **Workload:** result
@@ -182,14 +182,14 @@ You’ll allow only Worker & Result to reach Postgres, and only Vote & Worker to
 
 ## Lab Part 3: Egress Rule for Troubleshooting
 
-You’ll allow HTTPS egress to `apl-docs.net` so you can test connectivity.
+You’ll allow HTTPS egress to `techdocs.akamai.com` so you can test connectivity.
 
 ### Create apl‑docs.net Egress
 
 1. **Navigate:** **Network Policies > Outbound Rules**
 2. **CREATE OUTBOUND RULE**
-3. **Name:** `apl-docs-egress`
-4. **Domain name or IP address:** `apl-docs.net`
+3. **Name:** `techdocs-egress`
+4. **Domain name or IP address:** `techdocs.akamai.com`
 5. **Protocol & Port:**
 
    - Protocol: **HTTPS**

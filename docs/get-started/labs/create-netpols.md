@@ -35,7 +35,7 @@ Outbound Rules let you:
 
 ### 1. Build container images
 
-1. Register the Code Repository at `https://github.com/linode/apl-examples`.
+1. Register a Code Repository with `https://github.com/linode/apl-examples` as the URL.
 2. Create three Docker Container Images. For the Dockerfile path you can use:
 
    - **vote** → `vote-app/vote/Dockerfile`
@@ -182,14 +182,14 @@ You’ll allow only Worker & Result to reach Postgres, and only Vote & Worker to
 
 ## Lab Part 3: Egress Rule for Troubleshooting
 
-You’ll allow HTTPS egress to `techdocs.akamai.com` so you can test connectivity.
+You’ll allow HTTPS egress to `example.com` so you can test connectivity.
 
-### Create apl‑docs.net Egress
+### Create example.com Egress
 
 1. **Navigate:** **Network Policies > Outbound Rules**
 2. **CREATE OUTBOUND RULE**
-3. **Name:** `techdocs-egress`
-4. **Domain name or IP address:** `techdocs.akamai.com`
+3. **Name:** `example-egress`
+4. **Domain name or IP address:** `example.com`
 5. **Protocol & Port:**
 
    - Protocol: **HTTPS**
@@ -218,14 +218,13 @@ You’ll allow HTTPS egress to `techdocs.akamai.com` so you can test connectivit
 2. Inside the pod, run:
 
    ```bash
-   curl -s https://techdocs.akamai.com/app-platform/docs/welcome \
-     | grep -o '<title.*</title>'
+    curl -s https://example.com | grep -o '<h1.*</h1>'
    ```
 
    You should see:
 
    ```
-   <title>Welcome to the Akamai App Platform</title>
+   <h1>Example Domain</h1>
    ```
 
 3. Exit the pod (`exit`). It will be removed automatically.

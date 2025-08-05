@@ -60,8 +60,6 @@ This page lists every Egress rule for your team:
    - Enter a **Port** (1–65535).
    - Click **ADD PORT** to open additional port/protocol fields.
 
-5. **Save Changes** to enable egress. Modify or remove rules at any time via the same form.
+5. **Save Changes** to apply the rule. You can edit or delete rules via the same UI.
 
 ---
-
-> Inbound rule creation now uses workload‑driven dropdowns instead of freeform text fields. The UI fetches label keys/values for you—no more guessing label names.

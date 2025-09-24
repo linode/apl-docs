@@ -38,9 +38,9 @@ Outbound Rules let you:
 1. Register a Code Repository with `https://github.com/linode/apl-examples` as the URL.
 2. Create three Docker Container Images. For the Dockerfile path you can use:
 
-   - **vote** → `vote-app/vote/Dockerfile`
-   - **worker** → `vote-app/worker/Dockerfile`
-   - **result** → `vote-app/result/Dockerfile`
+   - **vote** → `./vote-app/vote/Dockerfile`
+   - **worker** → `./vote-app/worker/Dockerfile`
+   - **result** → `./vote-app/result/Dockerfile`
 
 ### 2. Deploy Redis & Postgres
 

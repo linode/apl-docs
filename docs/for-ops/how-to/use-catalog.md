@@ -40,7 +40,7 @@ The `postgresql-cluster` Helm chart can be used to create a cloudnativepg Postgr
 
 ### quickstart-redis
 
-The `redis-cluster` Helm chart can be used to create a Redis master-replica cluster.
+The `redis-ha` Helm chart can be used to create a Redis high availability cluster with master-replica topology and HAProxy load balancer.
 
 ## Customize the catalog
 

@@ -64,7 +64,7 @@ containerPorts:
     protocol: TCP
 env:
   - name: REDIS_HOST
-    value: <redis-ha-name>-redis-ha-haproxy
+    value: <redis-ha-name>-redis-ha
 replicaCount: 1
 ```
 
@@ -91,7 +91,7 @@ env:
         name: <psql-cluster-name>-app
         key: password
   - name: REDIS_HOST
-    value: <redis-ha-name>-redis-ha-haproxy
+    value: <redis-ha-name>-redis-ha
   - name: DATABASE_HOST
     value: <psql-cluster-name>-rw
 replicaCount: 1

@@ -46,7 +46,7 @@ The `rabbitmq-cluster` Helm chart can be used to create a RabbitMQ cluster.
 
 ![catalog](../../img/team-catalog.png)
 
-3. Click on the `Quickstart-k8s-deployment` template.
+3. Click on the `k8s-deployment` template.
 
 ![catalog](../../img/catalog-2.png)
 

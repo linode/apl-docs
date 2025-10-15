@@ -91,7 +91,7 @@ For this lab we're going to use the [Spring PetClinic Sample Application](https:
 
 2. Go to `Workloads` in the left menu and click on `Create Workload`.
 
-3. Select `Quickstart-K8s-Deployment-Otel` from the catalog.
+3. Select `k8s-deployment-otel` from the catalog.
 
 4. Add the Name `petclinic` for the workload.
 

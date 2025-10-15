@@ -18,7 +18,7 @@ You can now create a workload from the developer catalog:
 
 1. Go to `Workloads` in the left menu and click on `Create Workload`
 
-2. Select `Quickstart-K8s-Deployment` from the catalog.
+2. Select `k8s-deployment` from the catalog.
 
 3. Add the Name `green` for the workload.
 

@@ -30,9 +30,9 @@ The `knative-service` Helm chart can be used to create a Knative `Service` (to d
 
 The `postgresql-cluster` Helm chart can be used to create a cloudnativepg PostgreSQL `Cluster`. Optionally a Prometheus `PodMonitor` and a `Configmap` (for adding a postgresql dashboard to Grafana) can be created.
 
-### redis-cluster
+### redis-ha
 
-The `redis-cluster` Helm chart can be used to create a Redis master-replica cluster.
+The `redis-ha` Helm chart can be used to create a Redis high availability cluster with master-replica topology and HAProxy load balancer.
 
 ### rabbitmq-cluster
 

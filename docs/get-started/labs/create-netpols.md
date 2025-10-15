@@ -44,8 +44,8 @@ Outbound Rules let you:
 
 ### 2. Deploy Redis & Postgres
 
-1. In the Catalog, install **redis** (master‑replica) with `auth.enabled=false`.
-2. Install **postgresql** with default settings.
+1. In the Catalog, install **redis** (redis-ha) with default settings.
+2. Install **postgresql** (postgresql-cluster) with default settings.
 
 ### 3. Deploy your workloads
 
@@ -64,7 +64,7 @@ containerPorts:
     protocol: TCP
 env:
   - name: REDIS_HOST
-    value: <redis-cluster-name>-quickstart-redis-master
+    value: <redis-ha-name>
 replicaCount: 1
 ```
 
@@ -91,7 +91,7 @@ env:
         name: <psql-cluster-name>-app
         key: password
   - name: REDIS_HOST
-    value: <redis-cluster-name>-quickstart-redis-master
+    value: <redis-ha-name>
   - name: DATABASE_HOST
     value: <psql-cluster-name>-rw
 replicaCount: 1
@@ -172,8 +172,12 @@ You’ll allow only Worker & Result to reach Postgres, and only Vote & Worker to
 2. **Name:** `redis-ingress`
 3. **Sources:**
 
-   - Workload: **worker** → `otomi.io/app=worker`
-   - ADD SOURCE → **vote** → `otomi.io/app=vote`
+   - **Workload:** select **worker**
+   - **Label(s):** Select `otomi.io/app=worker`from the drop-down
+   - Click **ADD SOURCE**, then add:
+
+     - **Workload:** vote
+     - **Label(s):** `otomi.io/app=vote`
 
 4. **Target:** Redis → `otomi.io/app=redis`
 5. **Save Changes**

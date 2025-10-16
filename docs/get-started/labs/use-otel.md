@@ -81,7 +81,7 @@ For this lab we're going to use the [Spring PetClinic Sample Application](https:
 
 6. Optionally you can change the Image name and tag. This is the name and tag used to store the image in the private Harbor image registry.
 
-7. Under `Extra arguments`, click `Add argument`. Set `Name`: `BP_JVM_VERSION` and `Value`: `17`.
+7. Under `Extra arguments`, click `Add argument`. Set `Name`: `BP_JVM_VERSION` and `Value`: `25`.
 
 8. Click `Create Container Image`.
 

@@ -241,9 +241,43 @@ kubectl patch deploy -n harbor harbor-core --patch '[{"op": "replace", "path": "
 
 ## Obtaining a backup outside the cluster
 
-The following instructions for example apply for Gitea in the last step of [reinstalling a platform setup on a new cluster](platform-reinstall.md). If the backup to recover from is not available as a `Backup` resource within the cluster, but in an attached object storage, follow the instructions above, except for making the following change to `env/databases/<app>.yaml` in the `values` repository:
+The following instructions for example apply for Gitea in the last step of [reinstalling a platform setup on a new cluster](platform-reinstall.md). If the backup to recover from is not available as a `Backup` resource within the cluster, but in an attached object storage, you need to create an `ObjectStorage` resource in the cluster as below, and make adjustments to the respective `env/databases/<app>.yaml` in the `values` repository. The `ObjectStoreage` resource can be saved in a file and stored in the cluster using `kubectl apply -f <objectstore-filename>.yaml`.
 
-Adjust the object storage parameters below as needed, at least replacing the `<bucket-name>` and `<location>` placeholders. Typically `serverName` should remain unchanged. `linode-creds` are the account credentials set up by the platform and can be reused provided that they have access to the storage.
+Adjust the object storage parameters below as needed, at least replacing the `<bucket-name>` and `<region>` placeholders. Typically `serverName` should remain unchanged. `linode-creds` are the account credentials set up by the platform and can be reused provided that they have access to the storage.
+
+### Gitea
+
+ObjectStore resource:
+
+```yaml
+apiVersion: barmancloud.cnpg.io/v1
+kind: ObjectStore
+metadata:
+  name: gitea-restore
+  namespace: harbor
+spec:
+  configuration:
+    destinationPath: s3://<bucket-name>/harbor
+    endpointURL: https://<region>.linodeobjects.com
+    s3Credentials:
+      accessKeyId:
+        key: S3_STORAGE_ACCOUNT
+        name: linode-creds
+      secretAccessKey:
+        key: S3_STORAGE_KEY
+        name: linode-creds
+    data:
+      compression: gzip
+    wal:
+      compression: gzip
+  instanceSidecarConfiguration:
+    env:
+      - name: AWS_REQUEST_CHECKSUM_CALCULATION
+        value: WHEN_REQUIRED
+      - name: AWS_RESPONSE_CHECKSUM_VALIDATION
+        value: WHEN_REQUIRED
+```
+
 
 env/databases/gitea.yaml:
 
@@ -257,22 +291,44 @@ databases:
       owner: gitea
     externalClusters:
       - name: gitea-backup
-        barmanObjectStore:
-          serverName: gitea-db
-          destinationPath: s3://<bucket-name>/gitea
-          endpointURL: https://<location>.linodeobjects.com
-          s3Credentials:
-            accessKeyId:
-              name: linode-creds
-              key: S3_STORAGE_ACCOUNT
-            secretAccessKey:
-              name: linode-creds
-              key: S3_STORAGE_KEY
-          wal:
-            compression: gzip
-            maxParallel: 8
-          data:
-            compression: gzip
+        plugin:
+          name: barman-cloud.cloudnative-pg.io
+          parameters:
+            barmanObjectName: gitea-restore  # Needs to correspond with ObjectStore name
+            serverName: gitea-db
+```
+
+### Harbor
+
+ObjectStore resource:
+
+```yaml
+apiVersion: barmancloud.cnpg.io/v1
+kind: ObjectStore
+metadata:
+  name: harbor-restore
+  namespace: harbor
+spec:
+  configuration:
+    destinationPath: s3://<bucket-name>/harbor
+    endpointURL: https://<region>.linodeobjects.com
+    s3Credentials:
+      accessKeyId:
+        key: S3_STORAGE_ACCOUNT
+        name: linode-creds
+      secretAccessKey:
+        key: S3_STORAGE_KEY
+        name: linode-creds
+    data:
+      compression: gzip
+    wal:
+      compression: gzip
+  instanceSidecarConfiguration:
+    env:
+      - name: AWS_REQUEST_CHECKSUM_CALCULATION
+        value: WHEN_REQUIRED
+      - name: AWS_RESPONSE_CHECKSUM_VALIDATION
+        value: WHEN_REQUIRED
 ```
 
 env/databases/harbor.yaml:
@@ -287,22 +343,44 @@ databases:
       owner: harbor
     externalClusters:
       - name: harbor-backup
-        barmanObjectStore:
-          serverName: harbor-otomi-db
-          destinationPath: s3://<bucket-name>/harbor
-          endpointURL: https://<location>.linodeobjects.com
-          s3Credentials:
-            accessKeyId:
-              name: linode-creds
-              key: S3_STORAGE_ACCOUNT
-            secretAccessKey:
-              name: linode-creds
-              key: S3_STORAGE_KEY
-          wal:
-            compression: gzip
-            maxParallel: 8
-          data:
-            compression: gzip
+        plugin:
+          name: barman-cloud.cloudnative-pg.io
+          parameters:
+            barmanObjectName: harbor-restore  # Needs to correspond with ObjectStore name
+            serverName: harbor-otomi-db
+```
+
+### Keycloak
+
+ObjectStore resource:
+
+```yaml
+apiVersion: barmancloud.cnpg.io/v1
+kind: ObjectStore
+metadata:
+  name: keycloak-restore
+  namespace: keycloak
+spec:
+  configuration:
+    destinationPath: s3://<bucket-name>/keycloak
+    endpointURL: https://<region>.linodeobjects.com
+    s3Credentials:
+      accessKeyId:
+        key: S3_STORAGE_ACCOUNT
+        name: linode-creds
+      secretAccessKey:
+        key: S3_STORAGE_KEY
+        name: linode-creds
+    data:
+      compression: gzip
+    wal:
+      compression: gzip
+  instanceSidecarConfiguration:
+    env:
+      - name: AWS_REQUEST_CHECKSUM_CALCULATION
+        value: WHEN_REQUIRED
+      - name: AWS_RESPONSE_CHECKSUM_VALIDATION
+        value: WHEN_REQUIRED
 ```
 
 env/databases/keycloak.yaml:
@@ -317,22 +395,11 @@ databases:
       owner: keycloak
     externalClusters:
       - name: keycloak-backup
-        barmanObjectStore:
-          serverName: keycloak-db
-          destinationPath: s3://<bucket-name>/keycloak
-          endpointURL: https://<location>.linodeobjects.com
-          s3Credentials:
-            accessKeyId:
-              name: linode-creds
-              key: S3_STORAGE_ACCOUNT
-            secretAccessKey:
-              name: linode-creds
-              key: S3_STORAGE_KEY
-          wal:
-            compression: gzip
-            maxParallel: 8
-          data:
-            compression: gzip
+        plugin:
+          name: barman-cloud.cloudnative-pg.io
+          parameters:
+            barmanObjectName: keycloak-restore  # Needs to correspond with ObjectStore name
+            serverName: keycloak-db
 ```
 
 ## Point-in-time recovery

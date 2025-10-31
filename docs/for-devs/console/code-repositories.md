@@ -32,7 +32,7 @@ All registered code repositories of the Team are listed here.
 
 ### Gitea
 
-1. Use the drop-down option to select a repository that is available within the Team's organization in Gitea. 
+1. Use the drop-down option to select a repository that is available within the Team's organization in Gitea.
 
 2. If no repository is available: Click on the `Create Repository` link to be redirected to the Team's organization in Gitea and click on `New Repository` to create a new repository.
 
@@ -44,12 +44,11 @@ All registered code repositories of the Team are listed here.
 
 2. Optionally: Select `Private` If the repository in GitHub is private.
 
-3. Optionally: Select a secret that contains the authentication credentials. Only Sealed Secrets of type `basic-auth` and `ssh-auth` will be shown. If no secret is available, then first [create a Sealed Secret](sealed-secrets.md).
+3. Optionally: Select a secret that contains the authentication credentials. Only Sealed Secrets of type `basic-auth` and `ssh-auth` will be shown. If no secret is available, then first [create a Sealed Secret](sealed-secrets.md). While creating the `basic-auth` secret containing Github token, enter any string in the username input field and paste the token in the password input field.
 
 4. Optionally: Test the connection to see if the authentication credentials are valid and App Platform can use the credentials to access the private repository.
 
 5. Click `Add Code Repository` to save the repository. The code repository can be added even if the test connection fails.
-
 
 ### GitLab
 

@@ -27,7 +27,7 @@ module.exports = {
           "get-started/labs/create-images",
           "get-started/labs/trigger-builds",
           "get-started/labs/push-images",
-          "get-started/labs/create-sealed-secrets",
+          "get-started/labs/create-secrets",
           "get-started/labs/using-argo-cd",
           "get-started/labs/use-catalog",
           "get-started/labs/create-workloads",

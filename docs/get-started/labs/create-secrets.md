@@ -4,38 +4,41 @@ title: Create Secrets
 sidebar_label: Create Secrets
 ---
 
-In this lab we will create sealed secrets and see how to securely store sensitive information in git repository.
+In this lab we will create secrets using Sealed Secrets and see how to securely store sensitive information in a git repository.
 
-## Creating a Sealed Secret
+## Creating a Secret
 
-1. Click on the `Sealed Secrets` in the sidebar.
+1. Click on the `Secrets` in the sidebar.
 
-2. Click on `Create SealedSecret`. This will take you to the page where you can create a sealed secret.
+2. Click on `Create Secret`. This will take you to the page where you can create a secret.
 
 3. Fill in a name for your secret. In this lab we will use the name `secret-credentials`
 
-4. Select the secret type. In this lab we will create a secret of type `opaque`.
+4. Select the secret type. In this lab we will create a secret of type `kubernetes.io/opaque`.
 
-5. Click on `Add Item` so you can fill in two key-value pairs
+5. Click on `+Add another` so you can fill in two key-value pairs
 
-6. In the `Encrypted data` section. Add the following key-value pairs:
+6. In the `Secret data` section. Add the following key-value pairs:
 
 - `key=password value=helloworld`
 - `key=username value=labs-user`
 
-![Create sealed secret](../../img/create-sealed-secrets.png)
+![Create secret](../../img/create-secret.png)
 
-7. Click on `submit`.
+7. Click on `Create Secret`.
 
-Note that the secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
+:::note
+The secret value will only be visible at the time of creation. After creation, the value field will display asterisks `****` to indicate the data is encrypted and cannot be revealed through the interface, though it can be overwritten. To overwrite the secret, click on the lock `🔒` icon next to the value field, enter the new secret value, and click on `Save Changes`.
+:::
 
-![Created sealed secret](../../img/created-sealed-secrets.png)
+![Created secret](../../img/created-secret.png)
+![Edit secret](../../img/created-secret-edit.png)
 
 ## Checking the GIT repository
 
-Now go to Gitea and check the otomi/values repository. You will see that under `values/env/teams/sealedsecrets.<team-name>.yaml` the secret is stored in yaml, but the values are encrypted.
+Now go to Gitea and check the `otomi/values` repository. You will see that under `values/env/teams/<team-name>/sealedsecrets/secret-credentials.yaml` the secret is stored in yaml, but the values are encrypted.
 
-![Repository sealed secret](../../img/repository-sealed-secrets.png)
+![Repository secret](../../img/repository-secret.png)
 
 ## Checking the Kubernetes secret
 
@@ -54,7 +57,7 @@ data:
   username: bGFicy11c2Vy
 kind: Secret
 metadata:
-  creationTimestamp: '2024-09-12T06:11:55Z'
+  creationTimestamp: '2025-11-11T13:44:16Z'
   name: secret-credentials
   namespace: team-labs
   ownerReferences:
@@ -62,15 +65,19 @@ metadata:
       controller: true
       kind: SealedSecret
       name: secret-credentials
-      uid: b9dc5d5c-9699-4efb-86a8-7bd1dd869318
-  resourceVersion: '357105'
-  uid: 84dd34e1-2313-482d-b7de-e5d848675fb7
+      uid: fc1014f6-0212-49f7-a95d-c4169e053b60
+  resourceVersion: '240057431'
+  uid: b76d6944-fa91-4392-ba4c-80e3e07c7e82
 type: kubernetes.io/opaque
 ```
 
-If you want to decode the secret you can use `base64 -- decode`:
+If you want to decode the secret you can use `base64 --decode`. Run the following command:
 
 ```bash
 kubectl get secret secret-credentials -n team-labs -o jsonpath="{.data.password}" | base64 --decode
+```
+
+Expected output:
+```
 helloworld
 ```

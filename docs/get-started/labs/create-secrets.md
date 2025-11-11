@@ -1,7 +1,7 @@
 ---
-slug: create-sealed-secrets
-title: Create Sealed Secrets
-sidebar_label: Create Sealed Secrets
+slug: create-secrets
+title: Create Secrets
+sidebar_label: Create Secrets
 ---
 
 In this lab we will create sealed secrets and see how to securely store sensitive information in git repository.

@@ -1,26 +1,25 @@
 ---
 slug: secrets
 title: Team Secrets
-sidebar_label: Sealed Secrets
+sidebar_label: Secrets
 ---
 
-Sealed Secrets are encrypted Kubernetes Secrets. The encrypted secrets are stored in the Values Git repository. When a Sealed Secrets secret is created in the Console, the Kubernetes Secret will appear in the Team's namespace and can be used as you would use any secret that you would have created directly.
+Secrets in the Console are securely encrypted and stored in your Values Git repository using Sealed Secrets. When you create a secret in the Console, it generates a standard Kubernetes Secret in your Team's namespace that can be used like any other Kubernetes secret.
 
-7 types of secrets are supported:
+6 types of secrets are supported:
 
 - Opaque
-- Service Account Token
 - Docker Config
 - Docker Config Json
 - Basic Auth
 - SSH Auth
 - TLS
 
-## Create a Sealed Secret
+## Create a Secret
 
-1. Provide a name for the Sealed Secret. The Kubernetes secret will have the same name.
+1. Provide a name for the Secret. The Kubernetes secret will have the same name.
 
-2. Select `Immutable` if the data of the Sealed Secret (and the Kubernetes secret) can not be updated after the Sealed Secret has been created. When the Sealed Secret is Immutable, only the metadata can be modified after creation.
+2. Select `Immutable` if the data of the secret (and the Kubernetes secret) can not be updated after the secret has been created. When the secret is Immutable, only the metadata can be modified after creation.
 
 3. Select the Type:
 
@@ -28,7 +27,7 @@ Sealed Secrets are encrypted Kubernetes Secrets. The encrypted secrets are store
 
 Opaque is the default secret type in Kubernetes. Read more about Opaque secrets [here](https://kubernetes.io/docs/concepts/configuration/secret/#opaque-secrets).
 
-4. Add the `Encrypted data`:
+4. Add the `Secret data`:
 
 | Key     | Value                                     | 
 | ------- | ----------------------------------------- |
@@ -36,33 +35,11 @@ Opaque is the default secret type in Kubernetes. Read more about Opaque secrets 
 
 5. Add more data items if needed.
 
-:::note
-The secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
-:::
-
-### Service Account Token secret
-
-| Key     | Value                                     | 
-| ------- | ----------------------------------------- |
-| extra   | The token                                 |
-
-See [here](https://kubernetes.io/docs/concepts/configuration/secret/#serviceaccount-token-secrets") for more information about service account token secrets.
-
-You need to ensure that the `kubernetes.io/service-account.name` annotation is set to an existing ServiceAccount name. See the [metadata](#metadata) section for adding annotations.
-
-:::note
-The secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
-:::
-
 ### Docker Config secret
 
 | Key          | Value                                     | 
 | ------------ | ----------------------------------------- |
 | .dockercfg   | a .dockerconfigjson key for which the value is the content of a base64 encoded `~/.docker/config.json` file |
-
-:::note
-The secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
-:::
 
 ### Docker Config Json secret
 
@@ -95,10 +72,6 @@ password="" # your password, can be token
 kubectl create secret docker-registry --dry-run=client regcred --docker-email=$email --docker-server=$server --docker-username=$username --docker-password=$password -o jsonpath='{.data.\.dockerconfigjson}' | base64 --decode
 ```
 
-:::note
-The secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
-:::
-
 ### Basic Auth secret
 
 | Key          | Value                                     | 
@@ -106,19 +79,11 @@ The secret value will only be visible at the time of creation or once it has bee
 | username     | a username                                |
 | password     | a password                                |
 
-:::note
-The secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
-:::
-
 ### SSH Auth secret
 
 | Key          | Value                                     | 
 | ------------ | ----------------------------------------- |
 | ssh-privatekey    | a `ssh-privatekey` key-value pair in the data field as the SSH credential to use |
-
-:::note
-The secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
-:::
 
 ### TLS secret
 
@@ -129,7 +94,7 @@ The secret value will only be visible at the time of creation or once it has bee
 | tls.key | The private key certificate content       |
 
 :::note
-The secret value will only be visible at the time of creation or once it has been successfully synchronized with the cluster.
+The secret value will only be visible at the time of creation. After creation, the value field will display asterisks `****` to indicate the data is encrypted and cannot be revealed through the interface, though it can be overwritten. To overwrite the secret, click on the lock `🔒` icon next to the value field, enter the new secret value, and click on `Save Changes`.
 :::
 
 
@@ -137,10 +102,10 @@ The secret value will only be visible at the time of creation or once it has bee
 
 Adding metadata is optional.
 
-Add the following standard metadata to the sealed-secret:
+Add the following standard metadata to the secret:
 
+- `Labels`. See [here](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) for more information about labels
 - `Annotations`. See [here](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) for more information about annotations
 - `Finalizers`. See [here](https://kubernetes.io/docs/concepts/overview/working-with-objects/finalizers/) for more information about finalizers
-- `Labels`. See [here](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) for more information about labels
 
-Click on `+ Add Item` and add a key-value pair.
+Click the corresponding add button (`+Add Labels`, `+Add Annotations` or `+Add Finalizers`) to add key-value pairs.

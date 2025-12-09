@@ -8,29 +8,51 @@ Follow the post-installation steps after initial installation.
 
 ## Step 1: Get the initial administrator credentials
 
-When the installer job (in the default namespace) has finished you can obtain the initial administrator credentials and sign in to the Console.
+The `apl-operator` handles the installation and continuously reconciles the cluster. During the installation process, a `welcome` ConfigMap is created in the `apl-operator` namespace containing the console URL and login instructions. Note that the presence of this ConfigMap does not necessarily mean the full installation is complete, as the operator continues to reconcile.
 
-Use the following command to get the logs of the installer job:
+The best way to verify that the installation is complete and ready to use is to check if the console URL is accessible in your browser.
 
-```
-kubectl logs jobs/apl -n default -f
-```
-
-At the end of the logs you should see the following message:
+To view the welcome message and console URL, use the following command:
 
 ```bash
-########################################################################################################################################
-#
-#  The App Platform console is available at https://console.${domainSuffix}
-#
-#  Obtain login credentials by using the below commands:
-#      kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.username}' | base64 -d
-#      kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.password}' | base64 -d
-#
-########################################################################################################################################
+kubectl get configmap welcome -n apl-operator -o yaml
 ```
 
-Perform the 2 commands to get the initail credentails and use them to sign in to the Console. You will need to change your password at first login.
+The ConfigMap contains a welcome message with the console URL and instructions for obtaining your login credentials:
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: welcome
+  namespace: apl-operator
+data:
+  consoleUrl: https://console.${domainSuffix}
+  message: |
+    Welcome to App Platform!
+
+    Your installation has completed successfully.
+
+    CONSOLE ACCESS:
+      The App Platform console is available at: https://console.${domainSuffix}
+
+    LOGIN CREDENTIALS:
+      To obtain your login credentials, run the following commands:
+
+      Username: kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.username}' | base64 -d
+      Password: kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.password}' | base64 -d
+
+    NEXT STEPS:
+      1. Visit the console URL above
+      2. Log in using the credentials obtained from the commands above
+      3. Explore the platform features and start deploying your applications
+
+    For documentation and support, visit: https://techdocs.akamai.com/app-platform/docs/welcome
+  secretName: platform-admin-initial-credentials
+  secretNamespace: keycloak
+```
+
+Perform the 2 commands shown in the message to get the initial credentials and use them to sign in to the Console. You will need to change your password at first login.
 
 ## Step 2 (optional): Add the auto generated CA to your keychain
 

@@ -52,13 +52,17 @@ helm install -f values.yaml apl apl/apl
 
 ## Monitoring the installation
 
-The chart deploys a Job (`-apl`) in the `default` namespace. Monitor the chart install using `kubectl`:
+The chart deploys the `apl-operator` which handles the installation and continuously reconciles the cluster. You can monitor the installation progress using `kubectl`:
 
 ```bash
-# get the status of the job
-kubectl get job apl -w
-# watch the helm chart install status:
+# Watch the apl-operator pod status
+kubectl get pods -n apl-operator -w
+
+# Watch the helm chart install status
 watch helm list -Aa
+
+# Check for the welcome ConfigMap (created during installation)
+kubectl get configmap welcome -n apl-operator
 ```
 
 Or view detailed info about Kubernetes resources with [k9s](https://k9scli.io)

@@ -140,13 +140,21 @@ helm repo update
 helm install -f values.yaml apl apl/apl
 ```
 
-Monitor the logs of the installer job:
+The chart deploys the `apl-operator` which handles the installation and continuously reconciles the cluster. You can monitor the installation progress:
 
 ```bash
-kubectl logs jobs/apl -n default -f
+# Watch the apl-operator pod status
+kubectl get pods -n apl-operator -w
+
+# Check for the welcome ConfigMap (created during installation)
+kubectl get configmap welcome -n apl-operator
 ```
 
-When the installer is finished, copy the `url` and `admin-password` from the console output.
+To verify that the installation is complete and ready to use, check if the console URL is accessible in your browser. You can retrieve the console URL from the `welcome` ConfigMap:
+
+```bash
+kubectl get configmap welcome -n apl-operator -o jsonpath='{.data.consoleUrl}'
+```
 
 Follow the post installation steps [here](post-install-steps.md).
 

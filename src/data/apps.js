@@ -114,10 +114,10 @@ export default [
     desc: "A nonprofit Certificate Authority providing industry recognized TLS certificates",
   },
   {
-    href: "https://kiali.io/",
-    src: "kiali-logo.svg",
-    name: "Kiali",
-    desc: "Observe the Istio service mesh relations and connections",
+    href: "https://www.jaegertracing.io/",
+    src: "jaeger-logo.svg",
+    name: "Jaeger",
+    desc: "End-to-end distributed tracing and monitor for complex distributed systems",
   },
   {
     href: "https://min.io/",

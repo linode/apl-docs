@@ -32,7 +32,7 @@ Welcome to the Akamai App Platform labs! We recommend reviewing these labs to le
 
 **Create workloads**
 
-### [Create Sealed secrets](create-sealed-secrets.md)
+### [Create secrets](create-secrets.md)
 
 ### [Create Kubernetes resources with Argo CD](using-argo-cd.md)
 

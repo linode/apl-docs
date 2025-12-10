@@ -8,29 +8,31 @@ Follow the post-installation steps after initial installation.
 
 ## Step 1: Get the initial administrator credentials
 
-When the installer job (in the default namespace) has finished you can obtain the initial administrator credentials and sign in to the Console.
-
-Use the following command to get the logs of the installer job:
-
-```
-kubectl logs jobs/apl -n default -f
-```
-
-At the end of the logs you should see the following message:
+Once the App Platform URL appears in Linode Kubernetes cluster page obtain the post installation steps from the Kubernetes cluster:
 
 ```bash
-########################################################################################################################################
-#
-#  The App Platform console is available at https://console.${domainSuffix}
-#
-#  Obtain login credentials by using the below commands:
-#      kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.username}' | base64 -d
-#      kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.password}' | base64 -d
-#
-########################################################################################################################################
+kubectl get configmap welcome -n apl-operator -o y
 ```
 
-Perform the 2 commands to get the initail credentails and use them to sign in to the Console. You will need to change your password at first login.
+For user convenience the below commands allows to obtain the App Platform URL and credentials:
+
+URL:
+
+```bash
+kubectl get configmap welcome -n apl-operator -o jsonpath='{.data.consoleUrl}'
+```
+
+Username:
+
+```bash
+kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.username}' | base64 -d
+```
+
+Password:
+
+```bash
+kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.password}' | base64 -d
+```
 
 ## Step 2 (optional): Add the auto generated CA to your keychain
 
@@ -75,7 +77,6 @@ Adding the URL of the K8s cluster API is required by teams to be able to downloa
 3. Add the full URL of the API server.
 
 4. Click on `Submit`.
-
 
 ## Step 4 (optional): Configure Object Storage
 
@@ -138,17 +139,17 @@ When Object Storage is configured and an API Token is added, then activate the V
 
 Akamai App Platform is a composable platform. Activate more Apps based on the required platform capabilities:
 
-| Capability                                      | App                                             | Object storage |
-| ----------------------------------------------- | ----------------------------------------------- | -------------- |
-| Log aggregation                                 | Loki and Grafana                                | Optional       |
-| Metric collection                               | Prometheus and Grafana                          | No             |
-| Send Alerts                                     | Prometheus and Alert manager                    | No             |
-| Tracing                                         | Tempo, OTEL, Loki and Grafana                   | Required       |
-| Build images from source code                   | Harbor                                          | Optional       |
-| Scan running containers for vulnerabilities     | Trivy                                           | No             |
-| Enforce security policies                       | Kyverno                                         | No             |
-| Database backups                                | CloudnativePG                                   | Required       |
-| Long term retention of Logs, Metrics and Traces | Thanos                                          | Required       |
+| Capability                                      | App                           | Object storage |
+| ----------------------------------------------- | ----------------------------- | -------------- |
+| Log aggregation                                 | Loki and Grafana              | Optional       |
+| Metric collection                               | Prometheus and Grafana        | No             |
+| Send Alerts                                     | Prometheus and Alert manager  | No             |
+| Tracing                                         | Tempo, OTEL, Loki and Grafana | Required       |
+| Build images from source code                   | Harbor                        | Optional       |
+| Scan running containers for vulnerabilities     | Trivy                         | No             |
+| Enforce security policies                       | Kyverno                       | No             |
+| Database backups                                | CloudnativePG                 | Required       |
+| Long term retention of Logs, Metrics and Traces | Thanos                        | Required       |
 
 ## Step 7: Create Teams
 

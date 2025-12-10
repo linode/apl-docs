@@ -52,16 +52,21 @@ helm install -f values.yaml apl apl/apl
 
 ## Monitoring the installation
 
-The chart deploys a Job (`-apl`) in the `default` namespace. Monitor the chart install using `kubectl`:
+The `apl` Helm chart deploys the operator to the `apl-operator` namespace.
+
+The installation is completed once the App Platform URL is reachable. The URL will be stored in the `welcome` config map:
 
 ```bash
-# get the status of the job
-kubectl get job apl -w
-# watch the helm chart install status:
-watch helm list -Aa
+kubectl get configmap welcome -n apl-operator -oyaml
 ```
 
-Or view detailed info about Kubernetes resources with [k9s](https://k9scli.io)
+You can follow the operator logs by executing the below command:
+
+```bash
+kubectl logs -n apl-operator -l app.kubernetes.io/name=apl-operator -f
+```
+
+For the detailed information about Kubernetes resources it is recommended to use [k9s](https://k9scli.io)
 
 When the chart is installed, follow the [post installation steps](post-install-steps.md).
 

@@ -8,51 +8,31 @@ Follow the post-installation steps after initial installation.
 
 ## Step 1: Get the initial administrator credentials
 
-The `apl-operator` handles the installation and continuously reconciles the cluster. During the installation process, a `welcome` ConfigMap is created in the `apl-operator` namespace containing the console URL and login instructions. Note that the presence of this ConfigMap does not necessarily mean the full installation is complete, as the operator continues to reconcile.
-
-The best way to verify that the installation is complete and ready to use is to check if the console URL is accessible in your browser.
-
-To view the welcome message and console URL, use the following command:
+Once the App Platform URL appears in Linode Kubernetes cluster page obtain the post installation steps from the Kubernetes cluster:
 
 ```bash
-kubectl get configmap welcome -n apl-operator -o yaml
+kubectl get configmap welcome -n apl-operator -o y
 ```
 
-The ConfigMap contains a welcome message with the console URL and instructions for obtaining your login credentials:
+For user convenience the below commands allows to obtain the App Platform URL and credentials:
 
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: welcome
-  namespace: apl-operator
-data:
-  consoleUrl: https://console.${domainSuffix}
-  message: |
-    Welcome to App Platform!
+URL:
 
-    Your installation has completed successfully.
-
-    CONSOLE ACCESS:
-      The App Platform console is available at: https://console.${domainSuffix}
-
-    LOGIN CREDENTIALS:
-      To obtain your login credentials, run the following commands:
-
-      Username: kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.username}' | base64 -d
-      Password: kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.password}' | base64 -d
-
-    NEXT STEPS:
-      1. Visit the console URL above
-      2. Log in using the credentials obtained from the commands above
-      3. Explore the platform features and start deploying your applications
-
-    For documentation and support, visit: https://techdocs.akamai.com/app-platform/docs/welcome
-  secretName: platform-admin-initial-credentials
-  secretNamespace: keycloak
+```bash
+kubectl get configmap welcome -n apl-operator -o jsonpath='{.data.consoleUrl}'
 ```
 
-Perform the 2 commands shown in the message to get the initial credentials and use them to sign in to the Console. You will need to change your password at first login.
+Username:
+
+```bash
+kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.username}' | base64 -d
+```
+
+Password:
+
+```bash
+kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.password}' | base64 -d
+```
 
 ## Step 2 (optional): Add the auto generated CA to your keychain
 
@@ -97,7 +77,6 @@ Adding the URL of the K8s cluster API is required by teams to be able to downloa
 3. Add the full URL of the API server.
 
 4. Click on `Submit`.
-
 
 ## Step 4 (optional): Configure Object Storage
 
@@ -160,17 +139,17 @@ When Object Storage is configured and an API Token is added, then activate the V
 
 Akamai App Platform is a composable platform. Activate more Apps based on the required platform capabilities:
 
-| Capability                                      | App                                             | Object storage |
-| ----------------------------------------------- | ----------------------------------------------- | -------------- |
-| Log aggregation                                 | Loki and Grafana                                | Optional       |
-| Metric collection                               | Prometheus and Grafana                          | No             |
-| Send Alerts                                     | Prometheus and Alert manager                    | No             |
-| Tracing                                         | Tempo, OTEL, Loki and Grafana                   | Required       |
-| Build images from source code                   | Harbor                                          | Optional       |
-| Scan running containers for vulnerabilities     | Trivy                                           | No             |
-| Enforce security policies                       | Kyverno                                         | No             |
-| Database backups                                | CloudnativePG                                   | Required       |
-| Long term retention of Logs, Metrics and Traces | Thanos                                          | Required       |
+| Capability                                      | App                           | Object storage |
+| ----------------------------------------------- | ----------------------------- | -------------- |
+| Log aggregation                                 | Loki and Grafana              | Optional       |
+| Metric collection                               | Prometheus and Grafana        | No             |
+| Send Alerts                                     | Prometheus and Alert manager  | No             |
+| Tracing                                         | Tempo, OTEL, Loki and Grafana | Required       |
+| Build images from source code                   | Harbor                        | Optional       |
+| Scan running containers for vulnerabilities     | Trivy                         | No             |
+| Enforce security policies                       | Kyverno                       | No             |
+| Database backups                                | CloudnativePG                 | Required       |
+| Long term retention of Logs, Metrics and Traces | Thanos                        | Required       |
 
 ## Step 7: Create Teams
 

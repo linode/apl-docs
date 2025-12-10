@@ -13,7 +13,7 @@ Self-service section:
 - [Catalog](team-admin-catalog.md): The Helm charts available for platform administrators to install in any namespace
 - [Code Repositories](team-admin-code-repositories.md): A self-service form for platform administrators to register code repositories.
 - [Container Images](team-admin-container-images.md): A self-service form for platform administrators to create container images from registered code repositories.
-- [Sealed Secrets](team-admin-sealed-secrets.md): A self-service form for platform administrators to create Sealed Secrets.
+- [Secrets](team-admin-secrets.md): A self-service form for platform administrators to create a secret using Sealed Secrets.
 - [Workloads](team-admin-workloads.md): A self-service form to create for platform administrators Workloads in any namespace.
 - [Network Policies](team-admin-netpols.md): A self-service form for platform administrators to create Network Policies (in the `team-admin` namespace only).
 - [Services](team-admin-services.md): A self-service form for platform administrators to create Services to expose endpoints (`ClusterIP` services) from any namespace.

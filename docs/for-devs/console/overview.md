@@ -19,7 +19,7 @@ Self-service section:
 - [Catalog](catalog.md): The Helm charts available for the Team in the Catalog.
 - [Code Repositories](code-repositories.md): A self-service form to register code repositories to App Platform and use them to create Container Images.
 - [Container Images](container-images.md): A self-service form to create container images from registered Code Repositories.
-- [Sealed Secrets](sealed-secrets.md): A self-service form to create Sealed Secrets.
+- [Secrets](secrets.md): A self-service form to create a secret using Sealed Secrets.
 - [Workloads](workloads.md): A self-service form to create Workloads.
 - [Network Policies](netpols.md): A self-service form to create Network Policies.
 - [Services](services.md): A self-service form to create Services to publicly expose deployed Workloads.

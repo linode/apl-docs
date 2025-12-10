@@ -39,15 +39,6 @@ policies:
     pattern: ".*"
     definition:
       dead-letter-exchange: cc
-      ha-mode: all
-    spec:
-      applyTo: classic_queues
-      priority: 1
-      vhost: "/"
-  - name: my-policy2
-    pattern: ".*"
-    definition:
-      dead-letter-exchange: cc
       max-age: 1h
     spec:
       applyTo: quorum_queues

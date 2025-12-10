@@ -140,13 +140,19 @@ helm repo update
 helm install -f values.yaml apl apl/apl
 ```
 
-Monitor the logs of the installer job:
+The `apl` Helm chart deploys the operator to the `apl-operator` namespace.
+
+The installation is completed once the App Platform URL is reachable. The URL will be stored in the `welcome` config map:
 
 ```bash
-kubectl logs jobs/apl -n default -f
+kubectl get configmap welcome -n apl-operator -oyaml
 ```
 
-When the installer is finished, copy the `url` and `admin-password` from the console output.
+You can follow the operator logs by executing the below command:
+
+```bash
+kubectl logs -n apl-operator -l app.kubernetes.io/name=apl-operator -f
+```
 
 Follow the post installation steps [here](post-install-steps.md).
 

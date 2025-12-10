@@ -120,12 +120,6 @@ export default [
     desc: "End-to-end distributed tracing and monitor for complex distributed systems",
   },
   {
-    href: "https://kiali.io/",
-    src: "kiali-logo.svg",
-    name: "Kiali",
-    desc: "Observe the Istio service mesh relations and connections",
-  },
-  {
     href: "https://min.io/",
     src: "minio-logo.svg",
     name: "Minio",

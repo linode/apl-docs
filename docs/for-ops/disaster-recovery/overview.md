@@ -29,6 +29,17 @@ This guide has the following prerequisites and limitations that should be checke
 
 7. All instructions assume you are familiar with essential Kubernetes tools such as `kubectl` and have access to the Kubernetes API. Usage of TUI applications such as `k9s` from the administration terminal is strongly recommended.
 
+## BYO Git
+
+When using an external Git repository (BYO Git), disaster recovery is significantly simplified. The platform configuration is already stored externally, so Gitea backup and restore is not required. To restore the platform, you only need:
+
+- The age keys (`privateKey` and `publicKey`) used for SOPS encryption.
+- Access to the external Git repository.
+
+Make sure to store the age keys securely outside of the cluster.
+
+See the [BYO Git installation guide](../../get-started/installation/byo-git.md) for more details.
+
 ## Guides
 
 - [Gitea](gitea.md): Restoring the platform's Gitea database and repositories from the application backup

@@ -15,6 +15,7 @@ module.exports = {
           "get-started/installation/sops",
           "get-started/installation/entrypoint",
           "get-started/installation/byo-wildcard",
+          "get-started/installation/byo-git",
         ],
       },
       "get-started/installation/post-install-steps",

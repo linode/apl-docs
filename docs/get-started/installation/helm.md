@@ -57,7 +57,7 @@ The `apl` Helm chart deploys the operator to the `apl-operator` namespace.
 The installation is completed once the App Platform URL is reachable. The URL will be stored in the `welcome` config map:
 
 ```bash
-kubectl get configmap welcome -n apl-operator -oyaml
+kubectl get configmap welcome -n apl-operator -o yaml
 ```
 
 You can follow the operator logs by executing the below command:

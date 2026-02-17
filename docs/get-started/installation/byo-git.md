@@ -8,6 +8,7 @@ By default, the App Platform installs Gitea as the built-in Git repository to st
 
 ## Prerequisites
 
+- A Kubernetes cluster with a minimum of 4 nodes with 4 GB of memory each. The recommended setup is 3 nodes with 8 GB of memory each.
 - A Git repository hosted on GitHub or GitLab.
 - A personal access token with read/write access to the repository.
 - The repository should be empty or initialized with a default branch.

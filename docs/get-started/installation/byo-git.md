@@ -8,8 +8,7 @@ By default, the App Platform installs Gitea as the built-in Git repository to st
 
 ## Prerequisites
 
-- A Kubernetes cluster with a minimum of 4 nodes with 4 GB of memory each. The recommended setup is 3 nodes with 8 GB of memory each.
-- A Git repository hosted on GitHub or GitLab.
+- An empty git repository accessible from kubernetes cluster via the HTTPS protocol.
 - A personal access token with read/write access to the repository.
 - The repository should be empty or initialized with a default branch.
 
@@ -65,13 +64,20 @@ otomi:
 
 ## Disaster recovery with BYO Git
 
-When using an external Git repository, disaster recovery is significantly simplified. Since the platform configuration is already stored in your external Git provider, there is no need to back up or restore Gitea. To restore the platform, you can re-use the same `values.yaml` from the initial installation. The only addition required is the age keys used for SOPS encryption.
+To restore the platform, you can re-use the same `values.yaml` from the initial installation. The only addition required is the age keys used for SOPS encryption.
 
 > Make sure to store your age keys securely outside of the cluster (e.g. in a password manager or secrets vault). These are the only values not already captured in your Git repository or `values.yaml`.
 
 Add the `privateKey` and `publicKey` to the `kms.sops.age` section of your existing `values.yaml`:
 
 ```yaml
+otomi:
+  git:
+    repoUrl: https://github.com/<owner>/<repo>
+    username: <git-username>
+    password: <personal-access-token>
+    email: <git-email>
+    branch: main
 kms:
   sops:
     age:

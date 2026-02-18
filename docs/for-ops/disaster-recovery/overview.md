@@ -34,9 +34,14 @@ This guide has the following prerequisites and limitations that should be checke
 When using an external Git repository (BYO Git), disaster recovery is significantly simplified. The platform configuration is already stored externally, so Gitea backup and restore is not required. To restore the platform, you only need:
 
 - The age keys (`privateKey` and `publicKey`) used for SOPS encryption.
-- Access to the external Git repository.
+- Access credentials to the external Git repository.
 
-Make sure to store the age keys securely outside of the cluster.
+Make sure to store the age `privateKey` securely outside the cluster.
+The `privateKey` can be retrieved from the cluster with the following command:
+
+```bash
+kubectl get secret apl-sops-secrets -n apl-operator -o jsonpath='{.data.SOPS_AGE_KEY}' | base64 --decode
+```
 
 See the [BYO Git installation guide](../../get-started/installation/byo-git.md) for more details.
 

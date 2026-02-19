@@ -1,16 +1,30 @@
 ---
-slug: catalog
-title: Catalog
-sidebar_label: Catalog
+slug: catalogs
+title: App Catalogs
+sidebar_label: App Catalogs
 ---
 
 ## About the Catalog Helm charts
 
-The Catalog is a library of curated Helm charts to create Kubernetes resources. By default the Catalog contains a set of Helm charts provided to get started quickly, but they can also be modified depending on your requirements or be removed from the Catalog. 
+A catalog is a library of curated Helm charts to create Kubernetes resources. The default Catalog contains a set of Helm charts provided to get started quickly. Platform administrators are managing the registered catalogs in the platform view and team members are deploying application from a given catalog in the team view.
 
-The contents of the Catalog and the RBAC configuration (which Team can use which Helm chart) are managed by the platform administrator. Contact the platform administrator if you would like to add your own charts to use within your Team.
+## Catalog management
 
-The Catalog contains a set of Helm charts that can be used as quick starts. The following quick starts are available:
+Each catalog has a single version that is set during the catalog registration. It is recommended to set a tag instead branch to ensure stability.
+The catalog version can be changed at any time by the platform administrator. It is worth noting that the version change does not affect the existing team workloads and takes an effect only for new workloads deployed from that catalog.
+
+Platform administrators can manage and register additional catalogs in the `Catalogs` page from the platform view.
+
+## Catalog usage
+
+A user selects a given catalog and an application to be deployed. Next, team member can adjust helm values and submit the change. The application status can be seen in the `Workloads` page.
+
+The workload version does not follow the catalog version automatically. Team member can adjust its version independently from the catalog version.
+
+## Default Catalog
+
+The default catalog is hosted at https://github.com/linode/apl-charts
+It contains a set of Helm charts that can be used as quick starts. The following quick starts are available:
 
 1. Kubernetes Deployment
 
@@ -26,7 +40,7 @@ The `k8s-deployments-canary` Helm chart can be used to create 2 Kubernetes `Depl
 
 4. Knative-service
 
-The `knative-service` Helm chart can be used to create a Knative `Service` (to deploy a single image), a `Service` and a  `ServiceAccount`. Optionally a Prometheus `ServiceMonitor` can be created.
+The `knative-service` Helm chart can be used to create a Knative `Service` (to deploy a single image), a `Service` and a `ServiceAccount`. Optionally a Prometheus `ServiceMonitor` can be created.
 
 5. PostgreSQL cluster
 
@@ -41,16 +55,3 @@ The `redis-ha` Helm chart can be used to create a Redis high availability cluste
 The `rabbitmq-cluster` Helm chart can be used to create a `RabbitmqCluster`, `queues` and `Policy`s.
 
 Using the `rabbitmq-cluster` Helm chart requires `RabbitMQ` to be enabled by a platform administrator.
-
-
-## Using the Catalog
-
-1. Click on `Catalog` in the left menu
-
-2. You will now see all the templates that are available for use
-
-3. Click on the `k8s-deployment` template. In the Info tab you'll see some information about the Chart like the version and additional instructions.
-
-4. Click on the `Values` tab
-
-5. Continue to [create a workload](workloads.md)

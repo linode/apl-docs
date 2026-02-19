@@ -15,11 +15,20 @@ The catalog version can be changed at any time by the platform administrator. It
 
 Platform administrators can manage and register additional catalogs in the `Catalogs` page from the platform view.
 
-## Catalog usage
+## Deploying workloads from the catalog
 
 A user selects a given catalog and an application to be deployed. Next, team member can adjust helm values and submit the change. The application status can be seen in the `Workloads` page.
 
 The workload version does not follow the catalog version automatically. Team member can adjust its version independently from the catalog version.
+
+## Catalog usage recommendations
+
+- Use immutable Git tags (not branches) for catalog registration to ensure stable and repeatable deployments.
+- Follow semantic versioning (SemVer) for catalog tags.
+- Bump the catalog major version for breaking chart changes, and minor/patch versions for backward-compatible updates and fixes.
+- Validate chart updates in a non-production environment before promoting a new catalog tag in the App Platform.
+- Keep release notes for each catalog tag so teams can see what changed and plan workload upgrades.
+- Upgrade existing workloads individually after a catalog update, because workload versions do not update automatically.
 
 ## Default Catalog
 

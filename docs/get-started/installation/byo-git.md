@@ -64,13 +64,18 @@ otomi:
 
 ## Disaster recovery with BYO Git
 
-To restore the platform, you can re-use the same `values.yaml` from the initial installation. The only addition required is the age keys used for SOPS encryption.
+To restore the platform, you can re-use the same `values.yaml` from the initial installation. 
+The only addition required is the age keys used for SOPS encryption.
+And the installation mode must be set to `recovery` to prevent the platform from trying to re-initialize the Git repository (since it already exists and is managed externally).
 
 > Make sure to store your age keys securely outside of the cluster (e.g. in a password manager or secrets vault). These are the only values not already captured in your Git repository or `values.yaml`.
 
 Add the `privateKey` and `publicKey` to the `kms.sops.age` section of your existing `values.yaml`:
 
 ```yaml
+cluster:
+  name: your-cluster-name
+  provider: linode
 otomi:
   git:
     repoUrl: https://github.com/<owner>/<repo>
@@ -84,6 +89,8 @@ kms:
       privateKey: "<your-age-private-key>"
       publicKey: "<your-age-public-key>"
     provider: age
+installation:
+  mode: recovery
 ```
 
 Then reinstall the platform using the updated values file:

@@ -38,7 +38,7 @@ dns:
     - example.com
   provider:
     linode:
-      apiToken: "<your-linode-api-token>"
+      apiToken: '<your-linode-api-token>'
 kms:
   sops:
     provider: age
@@ -54,23 +54,26 @@ otomi:
 
 ### Git configuration options
 
-| Parameter | Description |
-| --- | --- |
-| `otomi.git.repoUrl` | The HTTPS URL of the external Git repository |
-| `otomi.git.username` | The Git username for authentication |
+| Parameter            | Description                                    |
+| -------------------- | ---------------------------------------------- |
+| `otomi.git.repoUrl`  | The HTTPS URL of the external Git repository   |
+| `otomi.git.username` | The Git username for authentication            |
 | `otomi.git.password` | A personal access token with read/write access |
-| `otomi.git.email` | The email address used for Git commits |
-| `otomi.git.branch` | The branch to use (e.g. `main`) |
+| `otomi.git.email`    | The email address used for Git commits         |
+| `otomi.git.branch`   | The branch to use (e.g. `main`)                |
 
 ## Disaster recovery with BYO Git
 
-To restore the platform, you can re-use the same `values.yaml` from the initial installation. 
-The only addition required is the age keys used for SOPS encryption.
-And the installation mode must be set to `recovery` to prevent the platform from trying to re-initialize the Git repository (since it already exists and is managed externally).
+Since the configuration parametes (the values repository) is stored outside the cluster the disaster recover process is straightforward.
 
-> Make sure to store your age keys securely outside of the cluster (e.g. in a password manager or secrets vault). These are the only values not already captured in your Git repository or `values.yaml`.
+To restore the App Platform, you can re-use the same `values.yaml` file from the initial installation.
+In the recovery mode the `values.yaml` file must contian the following parameters:
 
-Add the `privateKey` and `publicKey` to the `kms.sops.age` section of your existing `values.yaml`:
+- `kms.sops.age` with `privateKey` and `publicKey`
+- `otomi.git` configuration options
+- `installation.mode` set to `recovery`
+
+For example:
 
 ```yaml
 cluster:
@@ -86,17 +89,22 @@ otomi:
 kms:
   sops:
     age:
-      privateKey: "<your-age-private-key>"
-      publicKey: "<your-age-public-key>"
+      privateKey: '<your-age-private-key>'
+      publicKey: '<your-age-public-key>'
     provider: age
 installation:
   mode: recovery
 ```
 
 Then reinstall the platform using the updated values file:
+The following command can be used to reinstall the App Platform:
 
 ```bash
 helm install -f values.yaml apl apl/apl
 ```
+
+> Make sure to store your age keys securely outside of the cluster (e.g. in a password manager or secrets vault). Without them you won't be able to decrypt the secrets stored in the git repository.
+
+> This procedure works out of the box for App Platform instancies that manage their own DNS records (via external-dns and cert manager).
 
 See the [disaster recovery documentation](../../for-ops/disaster-recovery/overview.md) for the full procedure.

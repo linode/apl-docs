@@ -56,4 +56,8 @@ Install with an entrypoint for an external gateway.
 
 Install using a BYO (wild card) certificate.
 
+### [Bring Your Own Git](byo-git.md)
+
+Install using an external Git repository (e.g. GitHub or GitLab) instead of the built-in Gitea.
+
 ---

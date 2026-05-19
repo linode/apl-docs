@@ -13,7 +13,7 @@ This guide has the following prerequisites and limitations that should be checke
 1. The following items should be backed up regularly by the platform administrator:
 
 - The Kubernetes secret ending in "-wildcard-cert" in namespace "istio-system" (if installed via the Linode cloud console, or using your own certificate).
-- The Kubernetes secret "otomi-sops-secrets" in namespace "otomi-pipelines".
+- The `sealed-secrets-key` Kubernetes secret in namespace `sealed-secrets`. This contains the RSA key pair required to decrypt all platform secrets. See [Sealed Secrets Key Recovery](sealed-secrets-key.md) for export instructions.
 - A download of the complete values in Platform -> Maintenance. Depending on whether these are downloaded with or without secrets, some passwords might have to be reset after recovery.
 - Optionally manual backups of databases, as covered in this guide for the CloudNative PostgreSQL Operator, should be taken.
 
@@ -33,20 +33,22 @@ This guide has the following prerequisites and limitations that should be checke
 
 When using an external Git repository (BYO Git), disaster recovery is significantly simplified. The platform configuration is already stored externally, so Gitea backup and restore is not required. To restore the platform, you only need:
 
-- The age keys (`privateKey` and `publicKey`) used for SOPS encryption.
+- The sealed-secrets key pair from the original cluster.
 - Access credentials to the external Git repository.
 
-Make sure to store the age `privateKey` securely outside the cluster.
-The `privateKey` can be retrieved from the cluster with the following command:
+Export the sealed-secrets key pair before decommissioning the cluster:
 
 ```bash
-kubectl get secret apl-sops-secrets -n apl-operator -o jsonpath='{.data.SOPS_AGE_KEY}' | base64 --decode
+kubectl get secrets -n sealed-secrets \
+  -l sealedsecrets.bitnami.com/sealed-secrets-key=active \
+  -o yaml > sealed-secrets-key.yaml
 ```
 
-See the [BYO Git installation guide](../../get-started/installation/byo-git.md) for more details.
+Store the exported file securely outside the cluster. See the [BYO Git installation guide](../../get-started/installation/byo-git.md) and [Recovery Installation](../../get-started/installation/recovery.md) for more details.
 
 ## Guides
 
 - [Gitea](gitea.md): Restoring the platform's Gitea database and repositories from the application backup
 - [Databases](platform-databases.md): Backup and restore of the CNPG databases
 - [Reinstall](platform-reinstall.md): Restoring the complete platform, including settings and data
+- [Sealed Secrets Key](sealed-secrets-key.md): Back up and restore the sealed secrets key pair used to encrypt all platform secrets

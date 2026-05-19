@@ -15,7 +15,7 @@ By default, the App Platform installs Gitea as the built-in Git repository to st
 ## Advantages of BYO Git
 
 - Use your existing Git workflows and access controls.
-- Simplified disaster recovery: the platform configuration is stored externally, so you only need to back up your age keys to restore the platform.
+- Simplified disaster recovery: the platform configuration is stored externally, so you only need to back up the sealed-secrets key pair to restore the platform.
 - No need to manage and back up the built-in Gitea instance.
 
 ## Configure the values
@@ -39,9 +39,6 @@ dns:
   provider:
     linode:
       apiToken: '<your-linode-api-token>'
-kms:
-  sops:
-    provider: age
 otomi:
   hasExternalDNS: true
   git:
@@ -51,6 +48,10 @@ otomi:
     email: <git-email>
     branch: main
 ```
+
+:::note
+For v5.x clusters, also add the SOPS configuration to your `values.yaml`. See [SOPS](sops.md) for the required `kms.sops` settings.
+:::
 
 ### Git configuration options
 
@@ -64,45 +65,11 @@ otomi:
 
 ## Disaster recovery with BYO Git
 
-Since the configuration parameters (the values repository) is stored outside the cluster the disaster recover process is straightforward. In the recovery mode the `values.yaml` file must contian the following parameters:
+Since the values repository is stored outside the cluster, disaster recovery is straightforward. You only need the sealed-secrets key pair from the original cluster and your Git credentials to restore the platform on a new cluster.
 
-- `kms.sops.age` with `privateKey` and `publicKey`
-- `otomi.git` configuration options
-- `installation.mode` set to `recovery`
+See [Recovery Installation](recovery.md) for step-by-step instructions and [Sealed Secrets Key Recovery](../../for-ops/disaster-recovery/sealed-secrets-key.md) for how to back up and restore the key pair.
 
-For example:
+:::note
+For v5.x clusters, disaster recovery requires your age keys instead of the sealed-secrets key pair. See [Manage Age](../../for-ops/how-to/manage-age.md) for the v5.x recovery procedure.
+:::
 
-```yaml
-cluster:
-  name: your-cluster-name
-  provider: linode
-otomi:
-  git:
-    repoUrl: https://github.com/<owner>/<repo>
-    username: <git-username>
-    password: <personal-access-token>
-    email: <git-email>
-    branch: main
-kms:
-  sops:
-    age:
-      privateKey: '<your-age-private-key>'
-      publicKey: '<your-age-public-key>'
-    provider: age
-installation:
-  mode: recovery
-```
-
-The following command can be used to re-install the App Platform:
-
-```bash
-helm install -f values.yaml apl apl/apl
-```
-
-> Make sure to store your age keys securely outside of the cluster (e.g. in a password manager or secrets vault). Without them you won't be able to decrypt the secrets stored in the git repository.
-
-> This procedure works out of the box for App Platform instancies that manage their own DNS records (via external-dns and cert manager).
-
-> This procedure does not cover the recovery of databases used by Gitea and/or Harbor.
-
-See the [disaster recovery documentation](../../for-ops/disaster-recovery/overview.md) for the full procedure.

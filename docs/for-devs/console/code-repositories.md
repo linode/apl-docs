@@ -44,7 +44,7 @@ All registered code repositories of the Team are listed here.
 
 2. Optionally: Select `Private` If the repository in GitHub is private.
 
-3. Optionally: Select a secret that contains the authentication credentials. Only Sealed Secrets of type `basic-auth` and `ssh-auth` will be shown. If no secret is available, then first [create a Sealed Secret](sealed-secrets.md). While creating the `basic-auth` secret containing Github token, enter any string in the username input field and paste the token in the password input field.
+3. Optionally: Select a secret that contains the authentication credentials. Only Sealed Secrets of type `basic-auth` and `ssh-auth` will be shown. If no secret is available, then first [create a Sealed Secret](secrets.md). While creating the `basic-auth` secret containing Github token, enter any string in the username input field and paste the token in the password input field.
 
 4. Optionally: Test the connection to see if the authentication credentials are valid and App Platform can use the credentials to access the private repository.
 

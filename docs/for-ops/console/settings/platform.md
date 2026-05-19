@@ -16,3 +16,7 @@ The Platform settings section offers configuration options for platform and feat
 | External IdP | Set this to true when bringing your own external IDP such as Azure AD. (Expects required `oidc:` fields to be set.)  |
 | Node Selector | When a label/value pair is added, all platform workloads will be scheduled on the nodes with this label/value pair |
 | Version | The installed version. Change to a new valid release to upgrade. see the [core repo](https://github.com/linode/apl-core) for all available versions |
+
+:::note
+Sensitive values configured here, such as the global pull secret, are encrypted using Sealed Secrets and stored securely in the values repository. No secrets are stored in plaintext on disk or in Git. See [Platform Secrets](../secrets.md) for more information.
+:::

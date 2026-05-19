@@ -4,6 +4,10 @@ title: Manage Age for Development, Security, and Recovery
 sidebar_label: Manage Age
 ---
 
+:::caution
+SOPS-based key management was removed in v6.0.0.
+:::
+
 :::info
 This documentation was written for SOPS that is using Age Encryption. Please check the SOPS page for other [KMS](/docs/get-started/installation/sops#use-sops-with-an-external-key-management-service-kms) providers.
 :::

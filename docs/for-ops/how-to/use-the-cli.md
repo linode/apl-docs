@@ -57,6 +57,10 @@ otomi --help
 
 To find the options available.
 
+:::caution
+`otomi decrypt`, `otomi encrypt`, and `otomi rotate-keys` are SOPS-based commands that were removed in v6.0.0.
+:::
+
 ## Command Reference
 
 | Command                     | Description                                                                                          |

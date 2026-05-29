@@ -76,6 +76,7 @@
     "telemetry",
     "rolearn",
     "OTEL",
+    "oyaml",
     "Istio",
     "RGNAME",
     "otomipool",

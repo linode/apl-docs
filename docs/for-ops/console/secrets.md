@@ -4,6 +4,8 @@ title: Platform Secrets
 sidebar_label: Secrets
 ---
 
+The **Secrets** page lists all platform secrets managed by Sealed Secrets. Platform administrators can create new secrets and update existing ones. Secret values are write-only — they are encrypted immediately on save and are never displayed in plaintext.
+
 Platform secrets are encrypted using [Bitnami Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets) and distributed to applications via the [External Secrets Operator](https://external-secrets.io) (ESO). No secrets are stored in plaintext on disk or in Git.
 
 ## How Platform Secrets Work
@@ -32,7 +34,7 @@ The operator polls the values Git repository for changes. When a change is detec
 
 1. Helmfile applies updated `ExternalSecret` resources.
 2. ESO syncs the corresponding Kubernetes Secrets to each application's namespace.
-3. ESO refreshes all secrets on a one-hour interval to keep them in sync.
+3. ESO refreshes all secrets on a hardcoded one-hour interval. Secret updates take up to one hour to propagate to application namespaces.
 
 ## The Sealed Secrets Key Pair
 
@@ -44,14 +46,4 @@ If this key pair is lost and cannot be recovered, all `SealedSecret` manifests b
 
 ### Back Up the Key Pair
 
-Run the following command on the cluster to export the key manifest:
-
-```bash
-kubectl get secrets -n sealed-secrets \
-  -l sealedsecrets.bitnami.com/sealed-secrets-key=active \
-  -o yaml > sealed-secrets-key.yaml
-```
-
-Store the resulting `sealed-secrets-key.yaml` file securely — for example, in a password manager or encrypted storage outside the cluster.
-
-See [Sealed Secrets Key Recovery](../disaster-recovery/sealed-secrets-key.md) for instructions on how to use this backup to restore a cluster.
+See [Sealed Secrets Key Recovery](../disaster-recovery/sealed-secrets-key.md) for the export command and instructions on how to use this backup to restore a cluster.

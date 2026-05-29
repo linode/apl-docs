@@ -44,7 +44,7 @@ Install with DNS.
 
 Install with Azure Entra ID for OIDC.
 
-### [Sealed Secrets](sops.md)
+### [Sealed Secrets](sealed-secrets.md)
 
 Platform secrets are encrypted automatically using Sealed Secrets. Learn how to back up the key pair.
 

@@ -23,7 +23,7 @@ head /dev/urandom | LC_ALL=C tr -dc A-Za-z0-9 | head -c 16
 
 ### Step 2: Update the Password in Keycloak
 
-1. Log in to Keycloak as the `otomi-admin` user.
+1. Log in to the Keycloak admin console using the platform admin credentials.
 
 2. Go to **Users** in the left-hand sidebar and find the `otomi-admin` user.
 

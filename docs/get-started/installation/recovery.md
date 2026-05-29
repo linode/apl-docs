@@ -41,15 +41,7 @@ installation:
         resourceVersion: ""
 ```
 
-The values for `tls.crt` and `tls.key` come directly from the `sealed-secrets-key.yaml` backup file — they are already base64-encoded.
-
-To obtain the manifest from a running cluster before decommissioning it:
-
-```bash
-kubectl get secrets -n sealed-secrets \
-  -l sealedsecrets.bitnami.com/sealed-secrets-key=active \
-  -o yaml > sealed-secrets-key.yaml
-```
+The values for `tls.crt` and `tls.key` come directly from the `sealed-secrets-key.yaml` backup file — they are already base64-encoded. See [Sealed Secrets Key Recovery](../../for-ops/disaster-recovery/sealed-secrets-key.md) for the export command.
 
 3. Install the platform:
 

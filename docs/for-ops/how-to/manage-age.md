@@ -5,7 +5,7 @@ sidebar_label: Manage Age
 ---
 
 :::caution
-SOPS-based key management was removed in v6.0.0.
+SOPS-based key management was removed in v6.0.0. Upgrading from v5.x to v6.0.0 migrates your secrets automatically.
 :::
 
 :::info

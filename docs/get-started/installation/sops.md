@@ -5,7 +5,7 @@ sidebar_label: SOPS
 ---
 
 :::caution
-SOPS-based encryption was removed in v6.0.0. See [Sealed Secrets](sealed-secrets.md) for the current approach.
+SOPS-based encryption was removed in v6.0.0. Upgrading from v5.x to v6.0.0 migrates your secrets automatically. See [Sealed Secrets](sealed-secrets.md) for the current approach.
 :::
 
 If you would like sensitive information in the `values` repository to be encrypted, you will have to use [sops](https://github.com/mozilla/sops).

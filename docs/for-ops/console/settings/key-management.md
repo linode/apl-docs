@@ -5,7 +5,7 @@ sidebar_label: Key Management
 ---
 
 :::caution
-SOPS-based key management was removed in v6.0.0. See [Platform Secrets](../secrets.md) for the current approach.
+SOPS-based key management was removed in v6.0.0. Upgrading from v5.x to v6.0.0 migrates your secrets automatically. See [Platform Secrets](../secrets.md) for the current approach.
 :::
 
 :::info

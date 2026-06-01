@@ -44,9 +44,9 @@ Install with DNS.
 
 Install with Azure Entra ID for OIDC.
 
-### [Use SOPS for encryption](sops.md)
+### [Sealed Secrets](sealed-secrets.md)
 
-Install with SOPS.
+Platform secrets are encrypted automatically using Sealed Secrets. Learn how to back up the key pair.
 
 ### [Use an entrypoint](entrypoint.md)
 
@@ -59,5 +59,9 @@ Install using a BYO (wild card) certificate.
 ### [Bring Your Own Git](byo-git.md)
 
 Install using an external Git repository (e.g. GitHub or GitLab) instead of the built-in Gitea.
+
+### [Recovery Installation](recovery.md)
+
+Reinstall on a new cluster using an existing BYO Git repository and a backed-up sealed-secrets key pair.
 
 ---

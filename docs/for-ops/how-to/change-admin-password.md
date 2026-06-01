@@ -4,6 +4,10 @@ title: Change the otomi-admin password
 sidebar_label: Change admin password
 ---
 
+:::caution
+This page describes the SOPS-based workflow for updating the admin password, which was removed in v6.0.0. Upgrading from v5.x to v6.0.0 migrates your secrets automatically. See [Update the otomi-admin password](update-admin-password.md) for the current guide.
+:::
+
 This how to provides step-by-step instructions to reset the `otomi-admin` password.
 
 ## Prerequisites:

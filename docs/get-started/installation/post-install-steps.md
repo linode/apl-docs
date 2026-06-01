@@ -34,7 +34,13 @@ Password:
 kubectl get secret platform-admin-initial-credentials -n keycloak -o jsonpath='{.data.password}' | base64 -d
 ```
 
-## Step 2 (optional): Add the auto generated CA to your keychain
+## Step 2: Back up the sealed-secrets key pair
+
+Back up the sealed-secrets key pair immediately. If the cluster is ever destroyed and this backup is missing, all platform secrets are unrecoverable and the platform must be reinstalled with fresh secrets.
+
+See [Sealed Secrets Key Recovery](./sealed-secrets.md) for the export command and storage instructions.
+
+## Step 3 (optional): Add the auto generated CA to your keychain
 
 The generated CA is not trusted on your local machine when installed using Let's Encrypt `staging` certificates. Here are some options to prevent you from clicking away lots of security warning in your browser:
 
@@ -64,7 +70,7 @@ But you could also run Chrome in insecure mode:
 alias chrome-insecure='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors --ignore-urlfetcher-cert-requests &> /dev/null'
 ```
 
-## Step 3 (Optional): Add the URL of the Kubernetes API
+## Step 4 (Optional): Add the URL of the Kubernetes API
 
 :::info
 Adding the URL of the K8s cluster API is required by teams to be able to download the KUBECONFIG
@@ -78,7 +84,7 @@ Adding the URL of the K8s cluster API is required by teams to be able to downloa
 
 4. Click on `Submit`.
 
-## Step 4 (optional): Configure Object Storage
+## Step 5 (optional): Configure Object Storage
 
 If you're planning on activating apps that can use Object Storage (like Loki, Harbor, Tempo, Velero), then first configure Object Storage. Check the table in Step 6 to see which App requires Object Storage configured.
 
@@ -101,7 +107,7 @@ When Linode is selected, create the buckets for the apps you are planning to use
 
 4. Click on `Submit`.
 
-## Step 5 (Optional): Add a Linode Personal Access Token to backup Persistent Volumes (Linode only)
+## Step 6 (Optional): Add a Linode Personal Access Token to backup Persistent Volumes (Linode only)
 
 To use the self-service feature to create backups of Persistent Volumes in Linode, first create a new Personal Access Token with Read/Write access for Volumes:
 
@@ -135,7 +141,7 @@ Then Add the Token:
 
 When Object Storage is configured and an API Token is added, then activate the Velero App. You can now use the Backup self-service feature to create backup schedules to backup Persistent Volumes.
 
-## Step 6 (optional): Activate more Apps
+## Step 7 (optional): Activate more Apps
 
 Akamai App Platform is a composable platform. Activate more Apps based on the required platform capabilities:
 
@@ -151,11 +157,11 @@ Akamai App Platform is a composable platform. Activate more Apps based on the re
 | Database backups                                | CloudnativePG                 | Required       |
 | Long term retention of Logs, Metrics and Traces | Thanos                        | Required       |
 
-## Step 7: Create Teams
+## Step 8: Create Teams
 
 Create your first team. Follow the instructions [here](/docs/for-ops/console/teams#creating-a-team).
 
-## Step 8: Create users and add them to a Team
+## Step 9: Create users and add them to a Team
 
 :::info
 The option to create users and add them to Teams is not available when installed with [OIDC](oidc.md).

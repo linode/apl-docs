@@ -63,3 +63,35 @@ N.A.
 ### Resolution
 
 - Increase the resource allocation for the Argo CD Application Controller. This can be achieved by updating the resource configuration in the values repository within Gitea (`apps/argocd.yaml`). The updated configuration will automatically restart the Argo CD application.
+
+## Teams are not deleted properly
+
+### Details
+
+When deleting a team through the console only the gitea values are removed at the moment. Because of this argocd will show status unknown for those repositories. To fix this follow these steps to remove teams properly.
+
+Application Platform - Console:
+- Platform View: Click on Team to remove, scroll down and click on delete, fill in team name.
+
+Gitea:
+- Delete all team organization repositories: Go to team organization page, click on repositories, click on the repository you want to remove, click on settings, click on 'Delete This Repository', fill in the repository name
+- Delete team organization (ex: team-remove-me): Go to team organization page, click on settings, click on 'Delete This Organization' and fill in the organization name.
+- Delete team argocd repository (ex: otomi/team-remove-me-argocd): On the Gitea Home Page, under repositories, click on the repository (ex: otomi/team-remove-me-argocd) you want to remove, click on settings, click on 'Delete This Repository', fill in the repository name
+
+Argocd:
+- Go to applications, search for the team that needs to be removed.
+- Delete the following applications:
+    Team-teamname (ex: team-remove-me)
+    Team-teamname-team-ns-teamname (ex: team-remove-me-team-ns-remove-me)
+    Team-teamname-tekton-dashboard-teamname (ex: team-remove-me-tekton-dashboard-remove-me)
+    Team-teamname-values-gitops (ex: team-remove-me-values-gitops)
+- Remove any other application that is in the team project.
+- Delete App project (if still present)
+    Go to Settings, Projects, remove the project with the same team name.
+
+Harbor:
+- In Projects click on the team, select all the repositories, click delete
+- In Projects select the team project that needs to be removed, click on action, choose delete.
+
+Delete namespace
+- In a terminal run the following command: kubectl delete namespace <teamname>
